@@ -1,0 +1,11 @@
+# ---- 核心管线 ----
+ollama>=0.3.0
+chromadb>=0.5.0
+pymupdf>=1.24.0
+
+# ---- 音频 ASR（本地转写）----
+faster-whisper>=1.0.0        # 本地语音转写（自带 ctranslate2 / av，无需系统 ffmpeg）
+modelscope>=1.15.0           # 从阿里源离线下载 whisper 权重（规避 HuggingFace 不稳定）
+
+# ---- 测试 ----
+pytest>=8.0.0                # 单元测试：python -m pytest test_pipeline.py -v

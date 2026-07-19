@@ -1,0 +1,15 @@
+{"book": "CS", "question": "What is an algorithm in computer science?", "keywords": ["algorithm"]}
+{"book": "CS", "question": "What is a data structure and why is it useful?", "keywords": ["data structure"]}
+{"book": "CS", "question": "What does an operating system do?", "keywords": ["operating system"]}
+{"book": "CS", "question": "What is the difference between hardware and software?", "keywords": ["hardware", "software"]}
+{"book": "CS", "question": "What is a process in an operating system?", "keywords": ["process"]}
+{"book": "Medicine", "question": "What is the difference between prokaryotic and eukaryotic cells?", "keywords": ["prokaryotic", "eukaryotic"]}
+{"book": "Medicine", "question": "How do antibiotics affect bacteria?", "keywords": ["antibiotic", "bacteria"]}
+{"book": "Medicine", "question": "What is the function of the cell membrane?", "keywords": ["membrane"]}
+{"book": "Medicine", "question": "What is the difference between a virus and a bacterium?", "keywords": ["virus", "bacteria"]}
+{"book": "Medicine", "question": "What is the role of the immune system?", "keywords": ["immune"]}
+{"book": "Law", "question": "What are the elements of a valid contract?", "keywords": ["contract", "offer", "acceptance"]}
+{"book": "Law", "question": "What is a tort?", "keywords": ["tort"]}
+{"book": "Law", "question": "What is consideration in contract law?", "keywords": ["consideration"]}
+{"book": "Law", "question": "What is the difference between civil and criminal law?", "keywords": ["civil", "criminal"]}
+{"book": "Law", "question": "What is liability in business law?", "keywords": ["liability"]}

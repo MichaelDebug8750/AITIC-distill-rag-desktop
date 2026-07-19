@@ -1,0 +1,41 @@
+# 路线B（完整隔离）：Ollama 也进容器 + GPU 直通，管线连容器内 Ollama
+# 前提：docker run --rm --gpus all nvidia/cuda:12.4.0-base-ubuntu22.04 nvidia-smi 能认到 5090
+# 用法：docker compose -f docker-compose.gpu.yml up -d
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      # 复用宿主已下好的模型，避免容器里重下 qwen3:8b / qwen3-vl:8b / bge-m3
+      # Windows 改成:  - C:/Users/Seifer/.ollama:/root/.ollama
+      - ollama_models:/root/.ollama
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    restart: unless-stopped
+
+  pipeline:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: distill-pipeline:latest
+    container_name: distill-pipeline
+    depends_on:
+      - ollama
+    environment:
+      - OLLAMA_HOST=http://ollama:11434
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+    working_dir: /app/data
+    stdin_open: true
+    tty: true
+
+volumes:
+  ollama_models:

@@ -1,0 +1,80 @@
+# ============================================================
+#  AITIC 知识蒸馏 RAG 管线 · .gitignore
+#  原则：只提交"源码 + 配置 + 评测集"，其余可重建/可另行提供的一律不入库
+# ============================================================
+
+# ---------- 虚拟环境 / 缓存 ----------
+.venv/
+distill/
+env/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.idea/
+.vscode/
+
+# ---------- 模型权重（约 12GB，通过 ollama pull 获取）----------
+models/
+*.gguf
+*.bin
+*.safetensors
+
+# ---------- 向量库（build 自动生成，可重建）----------
+vectordb/
+vectordb_bench/
+data/vectordb/
+data/vectordb_bench/
+*.sqlite3
+
+# ---------- 压缩包（是仓库内容的重复，且体积大）----------
+*.zip
+*.7z
+*.rar
+*.tar
+*.gz
+
+# ---------- backup/ 历史留档（含重复的教材 PDF，体积大）----------
+backup/
+
+# ---------- 大体积素材 ----------
+#   GitHub 单文件 >50MB 警告、>100MB 直接拒绝 push。
+#   med.pdf 61MB、电子书 100MB+、音频 22MB —— 这些属"测试数据集"而非源码，
+#   随结项交付另行提供（评测集 Ground Truth 的 eval_*.jsonl 仍在仓库内）。
+*.pdf
+*.epub
+*.azw3
+*.mobi
+*.mp3
+*.wav
+*.flac
+*.url
+data/7699-*/
+
+# ---------- 一次性修补脚本（改动已并入 main.py，仅本地留档）----------
+code/fix_*.py
+code/fixcpu.py
+fix_*.py
+
+# ---------- main.py 历史备份 ----------
+*.bak
+*.bak*
+code/main.py.gpubak
+
+# ---------- 评测结果 JSON（跑评测脚本自动生成）----------
+data/*_result.json
+data/*_metrics.json
+*vl_cache.json
+
+# ---------- Web 上传临时目录 ----------
+code/_uploads/
+_uploads/
+
+# ---------- 本文件的原始版本（规则已并入）----------
+gitignore.txt
+
+# ---------- 系统杂项 ----------
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,20 @@
+# 路线A（推荐）：Ollama 留在宿主机用原生 GPU，容器只跑管线，通过 host.docker.internal 连过去
+# 不碰 GPU 直通，100% 能起；管线本身容器化了，属于真·Docker 部署
+services:
+  pipeline:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: distill-pipeline:latest
+    container_name: distill-pipeline
+    environment:
+      - OLLAMA_HOST=http://host.docker.internal:11434
+    extra_hosts:
+      # Windows/Mac 的 Docker Desktop 自带 host.docker.internal；这行是给 Linux 兜底
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./data:/app/data       # PDF/音频/vectordb/vl_cache.json 都在这，持久化
+      - ./models:/app/models   # faster-whisper 权重
+    working_dir: /app/data
+    stdin_open: true
+    tty: true

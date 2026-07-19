@@ -1,0 +1,20 @@
+# 构建镜像时不需要的东西（数据/权重/向量库都是运行时挂载进去的）
+# 用 **/ 是因为你的 vectordb / vl_cache.json / __pycache__ 都在 code/ 里
+.venv/
+**/.venv/
+.idea/
+.git/
+**/__pycache__/
+**/*.pyc
+**/.pytest_cache/
+**/vectordb/
+**/vl_cache.json
+agent_*/
+**/agent_*/
+data/
+models/
+backup/
+**/*.mp3
+**/*.wav
+**/*.flac
+**/*.zip

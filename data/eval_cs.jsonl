@@ -1,0 +1,25 @@
+{"book": "CS", "question": "What is Process?", "keywords": ["process"], "src_page": 3}
+{"book": "CS", "question": "What is System call?", "keywords": ["system call"], "src_page": 4}
+{"book": "CS", "question": "What is Context switch?", "keywords": ["context switch", "register", "scheduler"], "src_page": 52}
+{"book": "CS", "question": "What is Scheduling?", "keywords": ["scheduling"], "src_page": 4}
+{"book": "CS", "question": "What is Virtual memory?", "keywords": ["virtual memory", "address", "physical"], "src_page": 7}
+{"book": "CS", "question": "What is Paging?", "keywords": ["paging"], "src_page": 6}
+{"book": "CS", "question": "What is Address space?", "keywords": ["address space", "virtual", "memory"], "src_page": 5}
+{"book": "CS", "question": "What is Page fault?", "keywords": ["page fault", "disk"], "src_page": 7}
+{"book": "CS", "question": "What is Semaphore?", "keywords": ["semaphore"], "src_page": 20}
+{"book": "CS", "question": "What is Mutex?", "keywords": ["mutex", "lock", "thread"], "src_page": 121}
+{"book": "CS", "question": "What is Deadlock?", "keywords": ["deadlock", "waiting"], "src_page": 9}
+{"book": "CS", "question": "What is Thread?", "keywords": ["thread"], "src_page": 8}
+{"book": "CS", "question": "What is Concurrency?", "keywords": ["concurrency"], "src_page": 3}
+{"book": "CS", "question": "What is File system?", "keywords": ["file system", "inode"], "src_page": 10}
+{"book": "CS", "question": "What is Inode?", "keywords": ["inode", "block"], "src_page": 11}
+{"book": "CS", "question": "What is Fork?", "keywords": ["fork"], "src_page": 4}
+{"book": "CS", "question": "What is Scheduler?", "keywords": ["scheduler"], "src_page": 52}
+{"book": "CS", "question": "What is TLB?", "keywords": ["translation", "cache"], "src_page": 6}
+{"book": "CS", "question": "What is Spin lock?", "keywords": ["spin", "lock"], "src_page": 8}
+{"book": "CS", "question": "What is Pipe?", "keywords": ["pipe", "process"], "src_page": 64}
+{"book": "CS", "question": "What is Segmentation?", "keywords": ["segmentation", "memory"], "src_page": 6}
+{"book": "CS", "question": "What is Disk scheduling?", "keywords": ["disk"], "src_page": 10}
+{"book": "CS", "question": "What is RAID?", "keywords": ["raid", "disk", "redundant"], "src_page": 10}
+{"book": "CS", "question": "What is Journaling?", "keywords": ["journaling", "crash", "recovery"], "src_page": 11}
+{"book": "CS", "question": "What is the difference between single-CPU hardware and multi-CPU hardware?", "keywords": ["single-cpu hardware", "multi-cpu hardware"], "src_page": 118}
