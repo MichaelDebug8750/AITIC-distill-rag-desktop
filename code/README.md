@@ -1,6 +1,6 @@
 # 高效自动化知识蒸馏与智能体生成管线
 
-把任意学科教材（文本、图表、**音频**）自动转化为可本地运行、低 Token 消耗、带引用溯源的垂直领域问答智能体。基于 Ollama，消费级硬件可跑。
+把任意学科教材（**PDF / EPUB / 音频 / 图片**）自动转化为可本地运行、低 Token 消耗、带引用溯源的垂直领域问答智能体。基于 Ollama，消费级硬件可跑。
 
 ## 这是什么
 
@@ -18,7 +18,7 @@
 核心特性：
 - **混合路由**：纯文字页走文本通道，含图页自动走 VL（多模态）解析，把图表里的标签也变成可检索文字
 - **音频 ASR**：本地 faster-whisper 转写（CPU/int8，无需云端），转写文本按时间戳分块并入同一向量库
-- **Token 高效**：语义分块 + 检索预算控制，单次问答 Token ≈ 基线的 40%（实测三学科平均 48.6%，最优 38%）
+- **Token 高效**：语义分块 + 检索预算控制，单次问答 Token 约为基线的 48.6%（三学科平均），最优 46.4%（CS 单科），优于 ≤60% 目标
 - **引用锚定**：回答带 `[p.X]` 页码 / `[audio mm:ss]` 时间戳来源；无依据则 `[NO REFERENCE FOUND]`，不编造
 - **动态预算**：检索命中却拒答时自动升配重答一次，把过度拒答从 20% 降至 6.7%，且仅少数题触发
 - **智能体生成**：一条命令产出「定制 system prompt + 工具链(检索/计算器) + Ollama 配置 + 一键脚本」
@@ -65,6 +65,12 @@ python main.py build --pdf ../data/cs.pdf --no-vl
 # 音频：本地 ASR 转写后入库（append，可叠加到已建库上）
 #   --max-seconds 只取前 N 秒（对齐 ≤5min 口径）
 python main.py build --audio ../data/Starmer.mp3 --max-seconds 300
+
+# EPUB：本地解析后入库（append，按章节溯源 ch:标题）
+python main.py build --epub ../data/book.epub --max-chapters 20
+
+# 独立图片：走 VL 解析后入库（append，溯源 image:文件名）
+python main.py build --image ../data/figure.png
 
 # 混合库：先 PDF（替换建库）后音频（append）→ 图文+音频同库
 python main.py build --pdf ../data/med.pdf
@@ -131,6 +137,9 @@ python dynamic_eval.py     # 动态预算：三模式对照（固定900 / 固定
 | `--audio` | — | 音频路径 MP3/WAV/FLAC（转写后 append） |
 | `--max-seconds` | 全长 | 仅取音频前 N 秒 |
 | `--asr-model` | 自动 | faster-whisper 本地模型目录 |
+| `--epub` | — | EPUB 路径（解析后 append，按章节 `ch:标题` 溯源） |
+| `--max-chapters` | 全部 | 仅取 EPUB 前 N 章 |
+| `--image` | — | 独立图片 PNG/JPG（走 VL 解析后 append，`image:文件名` 溯源） |
 
 **agent**：`--pdf`（给定则先建库再生成）、`--max-pages` / `--vl-limit` / `--no-vl` 同上。
 
@@ -163,7 +172,7 @@ Ollama_test/
 | 平均 | 1597 | 775 | **48.6%** | **100%** |
 
 - **多模态**：图内信息类问题 Hit@5 由 **0%（纯文本）→ 100%（文本+VL）**
-- **幻觉率**：21 道不可答探针**零编造（0%）**
+- **幻觉率**：21 道不可答探针**零编造（0%）**（含空输出口径 4.8%）
 - **动态预算**：过度拒答 **20% → 6.7%**
 - **音频**：本地转写 en / 390s、混合库跨模态检索 + 时间戳溯源
 
