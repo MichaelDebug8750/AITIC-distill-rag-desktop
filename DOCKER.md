@@ -64,17 +64,12 @@ docker compose run --rm pipeline agent --pdf med.pdf
 ```
 > 路线B 把上面命令里的 `docker compose` 换成 `docker compose -f docker-compose.gpu.yml`。
 
-## 一个必要的代码改动（连接地址走环境变量）
-容器里 `127.0.0.1` 指的是容器自己，不是宿主。所以 `main.py` 里 Ollama 的地址要能读 `OLLAMA_HOST` 环境变量（compose 已经把它设好了）。
+## 连接地址走环境变量（已实现，无需手动改）
+容器里 `127.0.0.1` 指的是容器自己，不是宿主。所以 `main.py` 里 Ollama 的地址需能读 `OLLAMA_HOST` 环境变量（compose / Dockerfile 已把它设好）。
 
-在 `main.py` 顶部加：
-```python
-import os
-OLLAMA_BASE = os.environ.get("OLLAMA_HOST", "http://127.0.0.1:11434").rstrip("/")
-```
-然后把 HTTP 兜底里写死的 `http://127.0.0.1:11434` 换成 `OLLAMA_BASE`（就是你之前修 502 时加的 urllib 直连那几处：`embed()` / `_generate()` / `_chat_vl()` 里的 `_post_json`）。
+**本项目 `main.py` 已实现**：HTTP 兜底处（`embed()` / `_generate()` 等）已用 `os.environ.get("OLLAMA_HOST", "http://127.0.0.1:11434")` 读取，容器内自动打到宿主，无需再改代码。
 
-> ollama 官方 python 库本身会自动读 `OLLAMA_HOST`，所以库这条通道不改也能连上；改的是你手写的 HTTP 兜底那条，避免它 fallback 时打到容器自己。
+> ollama 官方 python 库本身也会自动读 `OLLAMA_HOST`；手写的 urllib HTTP 兜底通道同样已改为读该变量，避免 fallback 时打到容器自己。
 
 ## 排错
 - **`host.docker.internal` 连不上**：确认宿主 Ollama 在跑（`http://127.0.0.1:11434/api/tags` 浏览器能打开）。Linux 才需要 compose 里的 `extra_hosts`，Windows/Mac 自带。
