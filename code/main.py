@@ -637,6 +637,79 @@ def ask(col, question, verbose=True, dynamic=DYNAMIC_BUDGET):
     return answer
 
 
+# ============ brief 文档生成模式（面向业务场景：综合资料生成结构化摘要）============
+BRIEF_PROMPT = """You are writing a concise briefing document for a business/professional reader.
+Using ONLY the material below, write a structured brief on the given TOPIC.
+Requirements:
+- Organize as: 【概要】one-sentence summary; 【要点】3-6 bullet points; 【依据】key supporting facts.
+- After each factual claim, cite the source page like [p.X] using ONLY pages present in the material.
+- Do NOT invent anything not in the material. If the material is insufficient, say so plainly.
+- Understanding-level accuracy is fine; you need not quote verbatim.
+
+Material:
+{context}
+
+Topic: {topic}
+
+Brief:"""
+
+
+BRIEF_SYSTEM = ("You are a briefing writer. You MUST produce a structured brief based on the given material. "
+                "Never output '[NO REFERENCE FOUND]' or refuse; if some detail is missing, write the brief with what IS present.")
+
+def _gen_brief_raw(prompt):
+    """brief 专用生成：think=False + 只剥 think 标签、不套 ask 那套\"空则拒答\"兜底，避免长文档被误判拒答。"""
+    kw = {"model": LLM_MODEL, "prompt": prompt, "system": BRIEF_SYSTEM,
+          "think": False, "options": {"temperature": TEMPERATURE, "num_predict": max(NUM_PREDICT, 700)}}
+    try:
+        r = ollama.generate(**kw)
+    except Exception:
+        # 与 _generate 一致的 /api/chat 降级
+        payload = {"model": LLM_MODEL, "stream": False, "think": False,
+                   "messages": [{"role": "system", "content": BRIEF_SYSTEM},
+                                {"role": "user", "content": prompt}],
+                   "options": {"temperature": TEMPERATURE, "num_predict": max(NUM_PREDICT, 700)}}
+        out = _post_json("/api/chat", payload)
+        r = {"response": out.get("message", {}).get("content", ""),
+             "prompt_eval_count": out.get("prompt_eval_count", 0), "eval_count": out.get("eval_count", 0)}
+    text = re.sub(r"<think>.*?</think>", "", str(r.get("response", "")), flags=re.S | re.I)
+    text = re.sub(r"</?think>", "", text, flags=re.I).strip()
+    toks = r.get("prompt_eval_count", 0) + r.get("eval_count", 0)
+    return text, toks
+
+def _run_once_brief(docs, topic, budget):
+    """同构复用检索/相关度打包/溯源；生成走 _gen_brief_raw（不套问答拒答兜底）。"""
+    if RELEVANCE_TRIM:
+        packed, packed_idx = _pack_relevance(docs, topic, budget)
+    else:
+        packed, packed_idx = _pack_truncate(docs, budget)
+    context = "\n---\n".join(packed)
+    text, toks = _gen_brief_raw(BRIEF_PROMPT.format(context=context, topic=topic))
+    return text, toks, packed_idx
+
+
+def brief(col, topic, verbose=True):
+    """面向业务场景：围绕 topic 综合检索资料，生成带出处的结构化 brief 文档。
+       复用与 ask 相同的检索/相关度打包/引用溯源；直接用升配预算一步到位。"""
+    qv = embed([topic])[0]
+    res = col.query(query_embeddings=[qv], n_results=TOP_K)
+    docs, metas = res["documents"][0], res["metadatas"][0]
+    answer, toks, packed_idx = _run_once_brief(docs, topic, BUDGET_ESCALATED)
+    if verbose:
+        def _src(m):
+            t = m.get("type")
+            if t == "audio":
+                return "audio %s" % m.get("time", "?")
+            if t in ("epub", "image"):
+                return m.get("loc", t)
+            return "p%d(%s)" % (m["page"], m["type"])
+        srcs = sorted({_src(metas[i]) for i in packed_idx if i < len(metas)})
+        print("\n" + answer)
+        print("\n[来源] %s  | tokens: %d" % ("、".join(srcs), toks))
+    return answer
+# ============ brief 模式结束 ============
+
+
 # ----------------------------- 入口 -----------------------------
 def main():
     ap = argparse.ArgumentParser(description="知识蒸馏管线 · 混合路由 RAG")
@@ -664,6 +737,9 @@ def main():
     g.add_argument("--max-pages", type=int, default=120)
     g.add_argument("--vl-limit", type=int, default=15)
     g.add_argument("--no-vl", action="store_true", help="纯文本模式，跳过 VL")
+
+    br = sub.add_parser("brief", help="围绕一个主题生成带出处的 brief 文档")
+    br.add_argument("topic")
 
     args = ap.parse_args()
 
@@ -693,6 +769,8 @@ def main():
             ask(col, q)
     elif args.cmd == "agent":
         gen_agent(args.pdf, args.max_pages, args.vl_limit, use_vl=not args.no_vl)
+    elif args.cmd == "brief":
+        brief(get_collection(), args.topic)
     else:
         ap.print_help()
 
