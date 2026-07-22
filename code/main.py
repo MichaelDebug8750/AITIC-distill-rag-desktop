@@ -215,6 +215,11 @@ def load_vl_cache():
     return {}
 
 
+def save_vl_cache(cache):
+    """把 VL 描述缓存落盘。断点续传的关键：每处理完一页就调一次，中断也不丢已处理页。"""
+    json.dump(cache, open(VL_CACHE, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+
+
 # ----------------------------- 建库 -----------------------------
 def build(pdf, max_pages, vl_limit, use_vl):
     if not os.path.exists(pdf):
@@ -229,6 +234,10 @@ def build(pdf, max_pages, vl_limit, use_vl):
 
     cache = load_vl_cache()
     cache_key = lambda p: "%s::p%d" % (os.path.basename(pdf), p)
+    _pref = os.path.basename(pdf) + "::"
+    _resumed = sum(1 for kk in cache if kk.startswith(_pref))
+    if _resumed:
+        print("== 断点续传：检测到已缓存 %d 页 VL 描述，将跳过重复解析 ==" % _resumed)
 
     d = fitz.open(pdf)
     n = min(len(d), max_pages)
@@ -252,12 +261,13 @@ def build(pdf, max_pages, vl_limit, use_vl):
                 t1 = time.time()
                 vtxt = vl_parse(page.get_pixmap(dpi=VL_DPI).tobytes("png"))
                 cache[k] = vtxt
+                save_vl_cache(cache)   # 断点续传：每处理完一页立即落盘，中断也不丢
                 print(" %.0fs" % (time.time() - t1))
             for ch in semantic_chunks("FIGURE p%d: %s" % (i + 1, vtxt)):
                 vl_chunks.append((ch, i + 1, "figure"))
             vl_done += 1
     d.close()
-    json.dump(cache, open(VL_CACHE, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+    save_vl_cache(cache)
 
     alldocs = text_chunks + vl_chunks
     for s in range(0, len(alldocs), 64):
