@@ -172,11 +172,11 @@ def api_ask(payload: dict):
     docs, metas = _retrieve(question)
 
     # 第一档：常态预算（保 Token 效率）
-    answer, toks, packed_idx = M._run_once(docs, question, M.CONTEXT_BUDGET)
+    answer, toks, packed_idx = M._run_once(docs, question, M.CONTEXT_BUDGET, metas)
     escalated = False
     # 动态升配：仅当"检索有命中却拒答"时升配重答（与 CLI 同策略）
     if M.DYNAMIC_BUDGET and docs and M.is_abstain(answer):
-        ans2, toks2, idx2 = M._run_once(docs, question, M.BUDGET_ESCALATED)
+        ans2, toks2, idx2 = M._run_once(docs, question, M.BUDGET_ESCALATED, metas)
         toks += toks2
         escalated = True
         if not M.is_abstain(ans2):
@@ -190,6 +190,32 @@ def api_ask(payload: dict):
         "escalated": escalated,
         "elapsed_ms": int((time.time() - t0) * 1000),
         "budget": M.BUDGET_ESCALATED if escalated else M.CONTEXT_BUDGET,
+        "cite_check": M.verify_citations(answer, packed_idx, metas),
+    }
+
+
+@app.post("/api/brief")
+def api_brief(payload: dict):
+    """非流式简报生成：围绕 topic 综合检索资料，产出带出处的结构化 brief 文档。
+       复用 main.brief 的生成逻辑（_run_once_brief），返回结构与 /api/ask 一致，前端可复用渲染。"""
+    topic = (payload.get("topic") or payload.get("question") or "").strip()
+    if not topic:
+        return JSONResponse({"error": "主题为空"}, status_code=400)
+
+    t0 = time.time()
+    docs, metas = _retrieve(topic)
+    answer, toks, packed_idx = M._run_once_brief(docs, topic, M.BUDGET_ESCALATED, metas)
+
+    return {
+        "answer": answer,
+        "abstained": False,
+        "sources": _sources_from(metas, packed_idx, docs),
+        "tokens": toks,
+        "escalated": False,
+        "elapsed_ms": int((time.time() - t0) * 1000),
+        "budget": M.BUDGET_ESCALATED,
+        "cite_check": M.verify_citations(answer, packed_idx, metas),
+        "mode": "brief",
     }
 
 
@@ -226,7 +252,7 @@ async def api_ask_stream(q: str):
                 packed, packed_idx = M._pack_relevance(docs, question, budget)
             else:
                 packed, packed_idx = M._pack_truncate(docs, budget)
-            context = "\n---\n".join(packed)
+            context = M._labeled_context(packed, packed_idx, metas)   # 每块带真页标签，让模型引用真页码
             prompt = M.PROMPT.format(context=context, question=question)
 
             yield ("meta", {"budget": budget, "tag": tag,
@@ -313,6 +339,7 @@ async def api_ask_stream(q: str):
             "tokens": toks,
             "escalated": escalated,
             "elapsed_ms": int((time.time() - t0) * 1000),
+            "cite_check": M.verify_citations(answer, packed_idx, metas),
         })
 
     return StreamingResponse(gen(), media_type="text/event-stream",

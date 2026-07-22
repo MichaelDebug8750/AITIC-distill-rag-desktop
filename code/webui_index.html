@@ -167,13 +167,14 @@
     <div class="inp">
       <input id="q" placeholder="输入你的问题…" autocomplete="off">
       <button id="send">提问</button>
+      <button id="brief" style="margin-left:8px;background:#2E5496;">📄 生成简报</button>
     </div>
   </footer>
 </main>
 
 <script>
 const $ = s => document.querySelector(s);
-const chat = $('#chat'), qEl = $('#q'), sendBtn = $('#send');
+const chat = $('#chat'), qEl = $('#q'), sendBtn = $('#send'), briefBtn = $('#brief');
 
 // ---------- 系统状态 ----------
 async function loadStatus(){
@@ -236,6 +237,19 @@ function renderCites(sources){
   return h + '</div>';
 }
 function escapeHtml(t){ const d=document.createElement('div'); d.textContent=t||''; return d.innerHTML; }
+function renderCiteCheck(cc){
+  if(!cc || !cc.total) return '';
+  const ok = cc.ok;
+  const bg = ok ? '#E7F6EC' : '#FDECEA', fg = ok ? '#1E7E34' : '#C0392B';
+  const icon = ok ? '\u2705' : '\u26A0\uFE0F';
+  let txt = icon + ' \u5F15\u7528\u6821\u9A8C ' + cc.hit.length + '/' + cc.total + ' \u547D\u4E2D\u68C0\u7D22\u6765\u6E90';
+  if(!ok && cc.fabricated && cc.fabricated.length){
+    txt += ' \u00B7 \u7591\u4F3C\u7F16\u9020 ' + cc.fabricated.join('\u3001');
+  }
+  return '<div style="margin-top:6px;display:inline-block;padding:3px 10px;border-radius:12px;background:'
+       + bg + ';color:' + fg + ';font-size:12px;font-weight:600;">' + escapeHtml(txt) + '</div>';
+}
+
 
 // ---------- 提问（SSE 流式）----------
 let busy = false;
@@ -284,6 +298,7 @@ function ask(){
     ansEl.className = 'ans' + (d.abstained ? ' refuse' : '');
     ansEl.textContent = d.answer || '(空)';
     box.insertAdjacentHTML('beforeend', renderCites(d.sources));
+    box.insertAdjacentHTML('beforeend', renderCiteCheck(d.cite_check));
     const tag = d.escalated ? ' · 动态升配' : '';
     const st  = d.abstained ? '🛡 无依据 · 已拒答（不编造）' : '✅ 有依据作答';
     box.insertAdjacentHTML('beforeend',
@@ -305,6 +320,45 @@ function ask(){
 }
 
 sendBtn.onclick = ask;
+
+// ---------- 生成简报（brief · 非流式，复用同一套气泡/引用渲染）----------
+async function briefAsk(){
+  const q = qEl.value.trim();
+  if(!q || busy) return;
+  busy = true; sendBtn.disabled = true; briefBtn.disabled = true; qEl.value = '';
+  const hint = $('#hint'); if(hint) hint.remove();
+
+  chat.appendChild(el('msg me', '\uD83D\uDCC4 \u7B80\u62A5\uFF1A' + escapeHtml(q))); scroll();
+
+  const box = el('msg ai');
+  const ansEl = el('ans'); ansEl.innerHTML = '<span class="cursor"></span> \u6B63\u5728\u751F\u6210\u7B80\u62A5\u2026';
+  box.appendChild(ansEl);
+  chat.appendChild(box); scroll();
+
+  const t0 = Date.now();
+  try{
+    const r = await (await fetch('/api/brief', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ topic: q })
+    })).json();
+    if(r.error) throw new Error(r.error);
+    ansEl.className = 'ans';
+    ansEl.innerHTML = escapeHtml(r.answer || '(\u7A7A)').replace(/\n/g,'<br>');
+    box.insertAdjacentHTML('beforeend', renderCites(r.sources));
+    box.insertAdjacentHTML('beforeend', renderCiteCheck(r.cite_check));
+    const ms = (r.elapsed_ms!=null ? r.elapsed_ms : (Date.now()-t0));
+    box.insertAdjacentHTML('beforeend',
+      '<div class="meta"><span>\uD83D\uDCC4 \u7B80\u62A5\u6A21\u5F0F \u00B7 \u5E26\u51FA\u5904\u751F\u6210</span>'
+      + '<span>Token ' + (r.tokens||0) + '</span>'
+      + '<span>\u8017\u65F6 ' + (ms/1000).toFixed(1) + 's</span></div>');
+  }catch(e){
+    ansEl.className = 'ans refuse';
+    ansEl.innerHTML = '\u274C \u751F\u6210\u5931\u8D25\uFF1A' + escapeHtml(String(e.message||e));
+  }finally{
+    busy=false; sendBtn.disabled=false; briefBtn.disabled=false; scroll(); qEl.focus();
+  }
+}
+briefBtn.onclick = briefAsk;
 qEl.addEventListener('keydown', e=>{ if(e.key==='Enter') ask(); });
 qEl.focus();
 </script>

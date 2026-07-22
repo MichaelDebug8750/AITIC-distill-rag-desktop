@@ -57,7 +57,7 @@ VL_CACHE = "./vl_cache.json"
 
 HEADING_RE = re.compile(r"^\s*(\d+(\.\d+)*[\.\)]|[A-Z][A-Z ]{3,}$|Chapter\s+\d+|CHAPTER\s+\d+)")
 
-PROMPT = """Answer the question using ONLY the material below. Cite the source page like [p.X] when possible.
+PROMPT = """Answer the question using ONLY the material below. Each block starts with a source tag like [p.112]. When you cite, reuse the tag shown above that block (e.g. [p.112]).
 If there is no basis in the material, answer exactly "[NO REFERENCE FOUND]".
 
 Material:
@@ -154,7 +154,7 @@ def _generate(model, prompt, system=None, options=None):
     """生成：优先 ollama 库；库不兼容（502 等）时降级 HTTP /api/generate。
        返回对象统一支持 out["response"] 与 out.get(key, default)。"""
     try:
-        kw = {"model": model, "prompt": prompt}
+        kw = {"model": model, "prompt": prompt, "think": False}   # think=False：避免推理块被 _strip_think 剥空后误判拒答
         if system is not None:
             kw["system"] = system
         if options is not None:
@@ -591,14 +591,79 @@ def _pack_truncate(docs, budget):
     return packed, idx
 
 
-def _run_once(docs, question, budget):
+
+# ============ 引用准确度：真页标签 + 引用校验（检验功能）============
+def _cite_tag(m):
+    """一个检索块的\"引用标签\"：喂进 context 让模型照标，也用于事后校验。
+       页码型→ p.112；EPUB/图片→ 用 loc（ch2:Viruses / image:fig.png）；音频→ audio mm:ss。"""
+    t = m.get("type")
+    if t == "audio":
+        return "audio %s" % m.get("time", "?")
+    if t in ("epub", "image"):
+        return m.get("loc", t)
+    return "p.%d" % m["page"]
+
+
+def _labeled_context(packed, packed_idx, metas=None):
+    """给每块前缀真实来源标签，让模型引用真实页码而非瞎编。
+       metas=None（评测脚本）时退回纯拼接，行为与旧版一致。"""
+    if not metas:
+        return "\n---\n".join(packed)
+    blocks = []
+    for pos, i in enumerate(packed_idx):
+        tag = _cite_tag(metas[i]) if i < len(metas) else "?"
+        blocks.append("[%s]\n%s" % (tag, packed[pos]))
+    return "\n---\n".join(blocks)
+
+
+def _norm_cite(s):
+    """归一化一个引用/标签：'p.112'/'p112'/'P.112(text)' → 'p.112'；其余（ch../image../audio..）小写去空格。"""
+    s = s.strip().lower().replace(" ", "").split("(")[0]
+    mm = re.match(r"p\.?(\d+)", s)
+    return ("p.%s" % mm.group(1)) if mm else s
+
+
+def verify_citations(answer, packed_idx, metas):
+    """检验功能：核对正文里的 [p.X] 等引用，是否都落在\"实际喂给模型的检索块\"里。
+       引用了检索块里没有的页 = 疑似编造，标记出来。返回校验详情 + 引用准确率。"""
+    metas = metas or []
+    valid = {_norm_cite(_cite_tag(metas[i])) for i in packed_idx if i < len(metas)}
+    cited = []
+    for raw in re.findall(r"\[([^\]]+)\]", str(answer)):
+        n = _norm_cite(raw)
+        if re.match(r"(p\.\d+|ch|image|audio)", n):   # 只算引用型括号，忽略 [NO REFERENCE FOUND] 等
+            cited.append(n)
+    cset = list(dict.fromkeys(cited))                   # 去重保序
+    hit = [c for c in cset if c in valid]
+    bad = [c for c in cset if c not in valid]
+    total = len(cset)
+    return {
+        "total": total,
+        "hit": hit,
+        "fabricated": bad,
+        "valid_sources": sorted(valid),
+        "ok": (total == 0) or (not bad),
+        "rate": (len(hit) / total) if total else 1.0,
+    }
+
+
+def _cite_check_line(cc):
+    if cc["total"] == 0:
+        return "正文无显式引用"
+    if cc["ok"]:
+        return "%d/%d 引用全部命中检索来源 OK" % (len(cc["hit"]), cc["total"])
+    return "%d/%d 命中；疑似编造: %s  <-- 警告" % (len(cc["hit"]), cc["total"], "、".join(cc["fabricated"]))
+
+
+def _run_once(docs, question, budget, metas=None):
     """按给定预算打包检索块并生成一次。
+       metas 提供时给每块前缀真实来源标签（让模型引用真页码，杜绝瞎编）；不提供则纯拼接（兼容评测脚本）。
        返回 (答案, tokens, 打包块的原始下标列表)——下标供引用溯源精确对齐。"""
     if RELEVANCE_TRIM:
         packed, packed_idx = _pack_relevance(docs, question, budget)
     else:
         packed, packed_idx = _pack_truncate(docs, budget)
-    context = "\n---\n".join(packed)
+    context = _labeled_context(packed, packed_idx, metas)
     out = _generate(LLM_MODEL, PROMPT.format(context=context, question=question),
                     options={"temperature": TEMPERATURE, "num_predict": NUM_PREDICT})
     toks = out.get("prompt_eval_count", 0) + out.get("eval_count", 0)
@@ -611,11 +676,11 @@ def ask(col, question, verbose=True, dynamic=DYNAMIC_BUDGET):
     docs, metas = res["documents"][0], res["metadatas"][0]
 
     # 第一档：预算 900（常态，保 Token 效率）
-    answer, toks, packed_idx = _run_once(docs, question, CONTEXT_BUDGET)
+    answer, toks, packed_idx = _run_once(docs, question, CONTEXT_BUDGET, metas)
     escalated = False
     # 动态升配：仅当"检索有命中却拒答"时，升到 1800 重答一次
     if dynamic and docs and is_abstain(answer):
-        ans2, toks2, packed_idx2 = _run_once(docs, question, BUDGET_ESCALATED)
+        ans2, toks2, packed_idx2 = _run_once(docs, question, BUDGET_ESCALATED, metas)
         toks += toks2                      # 两次调用 token 累计，成本如实计
         escalated = True
         if not is_abstain(ans2):           # 升配后答出来了才采用
@@ -632,8 +697,10 @@ def ask(col, question, verbose=True, dynamic=DYNAMIC_BUDGET):
         # 按实际打包的块下标取来源（相关度裁剪下打包的不一定是前几块）
         srcs = sorted({_src(metas[i]) for i in packed_idx if i < len(metas)})
         tag = "  (动态升配 %d)" % BUDGET_ESCALATED if escalated else ""
+        cc = verify_citations(answer, packed_idx, metas)
         print("\n" + answer)
         print("\n[来源] %s  | tokens: %d%s" % ("、".join(srcs), toks, tag))
+        print("[引用校验] %s" % _cite_check_line(cc))
     return answer
 
 
@@ -642,7 +709,7 @@ BRIEF_PROMPT = """You are writing a concise briefing document for a business/pro
 Using ONLY the material below, write a structured brief on the given TOPIC.
 Requirements:
 - Organize as: 【概要】one-sentence summary; 【要点】3-6 bullet points; 【依据】key supporting facts.
-- After each factual claim, cite the source page like [p.X] using ONLY pages present in the material.
+- Each block starts with a source tag like [p.112]. When you cite a fact, reuse the tag shown above that block (e.g. [p.112]).
 - Do NOT invent anything not in the material. If the material is insufficient, say so plainly.
 - Understanding-level accuracy is fine; you need not quote verbatim.
 
@@ -677,13 +744,14 @@ def _gen_brief_raw(prompt):
     toks = r.get("prompt_eval_count", 0) + r.get("eval_count", 0)
     return text, toks
 
-def _run_once_brief(docs, topic, budget):
-    """同构复用检索/相关度打包/溯源；生成走 _gen_brief_raw（不套问答拒答兜底）。"""
+def _run_once_brief(docs, topic, budget, metas=None):
+    """同构复用检索/相关度打包/溯源；生成走 _gen_brief_raw（不套问答拒答兜底）。
+       metas 提供时给每块前缀真实来源标签，让 brief 正文引用真页码。"""
     if RELEVANCE_TRIM:
         packed, packed_idx = _pack_relevance(docs, topic, budget)
     else:
         packed, packed_idx = _pack_truncate(docs, budget)
-    context = "\n---\n".join(packed)
+    context = _labeled_context(packed, packed_idx, metas)
     text, toks = _gen_brief_raw(BRIEF_PROMPT.format(context=context, topic=topic))
     return text, toks, packed_idx
 
@@ -694,7 +762,7 @@ def brief(col, topic, verbose=True):
     qv = embed([topic])[0]
     res = col.query(query_embeddings=[qv], n_results=TOP_K)
     docs, metas = res["documents"][0], res["metadatas"][0]
-    answer, toks, packed_idx = _run_once_brief(docs, topic, BUDGET_ESCALATED)
+    answer, toks, packed_idx = _run_once_brief(docs, topic, BUDGET_ESCALATED, metas)
     if verbose:
         def _src(m):
             t = m.get("type")
@@ -704,8 +772,10 @@ def brief(col, topic, verbose=True):
                 return m.get("loc", t)
             return "p%d(%s)" % (m["page"], m["type"])
         srcs = sorted({_src(metas[i]) for i in packed_idx if i < len(metas)})
+        cc = verify_citations(answer, packed_idx, metas)
         print("\n" + answer)
         print("\n[来源] %s  | tokens: %d" % ("、".join(srcs), toks))
+        print("[引用校验] %s" % _cite_check_line(cc))
     return answer
 # ============ brief 模式结束 ============
 
