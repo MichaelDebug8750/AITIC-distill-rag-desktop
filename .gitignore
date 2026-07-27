@@ -120,3 +120,5 @@ desktop.ini
 
 # ---------- main.py 的运行副本（内容同 code/main.py，避免双份代码分叉）----------
 data/main.py
+
+data/cite_eval_result_*.json
