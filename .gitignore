@@ -17,6 +17,7 @@ __pycache__/
 
 # ---------- 模型权重（约 12GB，通过 ollama pull 获取）----------
 models/
+deploy_pack/
 *.gguf
 *.bin
 *.safetensors
@@ -26,6 +27,7 @@ vectordb/
 vectordb_bench/
 data/vectordb/
 data/vectordb_bench/
+data/vectordb_backup*/
 *.sqlite3
 
 # ---------- 压缩包（是仓库内容的重复，且体积大）----------
@@ -37,6 +39,29 @@ data/vectordb_bench/
 
 # ---------- backup/ 历史留档（含重复的教材 PDF，体积大）----------
 backup/
+
+# ---------- 语料库（2.8GB，55 本教材/公版文学，另行提供）----------
+books/
+book/
+
+# ---------- 评测中间产物与结果（可由脚本重跑生成，体积大）----------
+#   eval_results* 每份含 4432 题的完整答案文本，约 20-30MB/份，已有 7+ 份
+eval_results/
+eval_results_*/
+eval_ab_*/
+eval_v*_probe/
+eval_v*_gate/
+txt/
+dump_text/
+glossary*.json
+distinctive.json
+mined*.json
+restore*.json
+dropped.json
+summary3.json
+stat.json
+书籍体检报告.txt
+verify_eval_报告.txt
 
 # ---------- 大体积素材 ----------
 #   GitHub 单文件 >50MB 警告、>100MB 直接拒绝 push。
@@ -56,6 +81,12 @@ data/7699-*/
 code/fix_*.py
 code/fixcpu.py
 fix_*.py
+
+# ---------- 消融/评测临时文件 ----------
+_main_ablation.py
+data/_main_ablation.py
+.built_book
+data/.built_book
 
 # ---------- main.py 历史备份 ----------
 *.bak
@@ -78,3 +109,14 @@ gitignore.txt
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# ============================================================
+#  ⚠️ 例外：以下必须提交（若被上面规则误伤，用 ! 放行）
+# ============================================================
+!eval/eval_ALL.jsonl
+!eval/eval_*.jsonl
+!eval/eval_by_book/
+!eval/eval_by_book/*.jsonl
+
+# ---------- main.py 的运行副本（内容同 code/main.py，避免双份代码分叉）----------
+data/main.py

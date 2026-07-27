@@ -47,6 +47,9 @@ TOP_K, CONTEXT_BUDGET = 8, 900          # 消融得到的最优预算
 NUM_PREDICT, TEMPERATURE = 300, 0.0
 BUDGET_ESCALATED = 1800                  # 动态预算：首答拒答且检索有命中时升配重答一次
 DYNAMIC_BUDGET = True                    # 关掉则恒用 900（用于对照评测）
+# 升配闸门：首答拒答后，若最优检索块的距离大于此值，判定为"库里真没有"，不再升配。
+# None = 关闭闸门（旧行为，全部升配）。数值需先用 calib_gate.py 标定。
+ESCALATE_SIM_GATE = 1.1762
 RELEVANCE_TRIM = True                    # 动态裁剪：按相关度整块保留（关掉=旧的按检索序字符截断，用于对照）
 VL_DPI = 150
 VL_RETRY = 3
@@ -57,7 +60,7 @@ VL_CACHE = "./vl_cache.json"
 
 HEADING_RE = re.compile(r"^\s*(\d+(\.\d+)*[\.\)]|[A-Z][A-Z ]{3,}$|Chapter\s+\d+|CHAPTER\s+\d+)")
 
-PROMPT = """Answer the question using ONLY the material below. Each block starts with a source tag like [p.112]. When you cite, reuse the tag shown above that block (e.g. [p.112]).
+PROMPT = """Answer the question using ONLY the material below. Each block starts with a source tag like {tag_example}. When you cite, reuse the tag shown above that block (e.g. {tag_example}).
 If there is no basis in the material, answer exactly "[NO REFERENCE FOUND]".
 
 Material:
@@ -463,7 +466,8 @@ def _compose_system(subject, role, book):
         'You are %s. You assist users with the material "%s" (domain: %s).\n'
         "Rules:\n"
         "- Answer ONLY using the retrieved material provided at query time.\n"
-        "- Always cite sources: text/figure as [p.X], audio as [audio mm:ss].\n"
+        "- Always cite sources by reusing the bracket tag shown above each block "
+        "(e.g. [p.112], [ch2:Title], [audio mm:ss]).\n"
         '- If the retrieved material gives no basis, answer exactly "[NO REFERENCE FOUND]".\n'
         "- For arithmetic, a calculator tool computes the exact result; report it faithfully.\n"
         "- Be precise, concise, and educational."
@@ -674,7 +678,16 @@ def _run_once(docs, question, budget, metas=None):
     else:
         packed, packed_idx = _pack_truncate(docs, budget)
     context = _labeled_context(packed, packed_idx, metas)
-    out = _generate(LLM_MODEL, PROMPT.format(context=context, question=question),
+    # 举例用实际出现的标签，避免 PDF 的 [p.X] 格式串到 EPUB/音频/图片上
+    if metas:
+        _tags = [_cite_tag(metas[i]) for i in packed_idx if i < len(metas)]
+        _uniq = list(dict.fromkeys(_tags))[:2]
+        tag_example = " or ".join("[%s]" % t for t in _uniq) if _uniq else "[p.112]"
+    else:
+        tag_example = "[p.112]"
+    out = _generate(LLM_MODEL,
+                    PROMPT.format(context=context, question=question,
+                                  tag_example=tag_example),
                     options={"temperature": TEMPERATURE, "num_predict": NUM_PREDICT})
     toks = out.get("prompt_eval_count", 0) + out.get("eval_count", 0)
     return out["response"].strip(), toks, packed_idx
@@ -684,12 +697,17 @@ def ask(col, question, verbose=True, dynamic=DYNAMIC_BUDGET):
     qv = embed([question])[0]
     res = col.query(query_embeddings=[qv], n_results=TOP_K)
     docs, metas = res["documents"][0], res["metadatas"][0]
+    _d = (res.get("distances") or [[]])[0]
+    best_dist = min(_d) if _d else None      # 最优检索块的距离，越小越相关
 
     # 第一档：预算 900（常态，保 Token 效率）
     answer, toks, packed_idx = _run_once(docs, question, CONTEXT_BUDGET, metas)
     escalated = False
-    # 动态升配：仅当"检索有命中却拒答"时，升到 1800 重答一次
-    if dynamic and docs and is_abstain(answer):
+    # 闸门：检索都不沾边就别升配——实测 72% 的升配花在库外问题上且全部白跑
+    _gate_ok = (ESCALATE_SIM_GATE is None or best_dist is None
+                or best_dist <= ESCALATE_SIM_GATE)
+    # 动态升配：仅当"检索有命中却拒答"且通过闸门时，升到 1800 重答一次
+    if dynamic and docs and is_abstain(answer) and _gate_ok:
         ans2, toks2, packed_idx2 = _run_once(docs, question, BUDGET_ESCALATED, metas)
         toks += toks2                      # 两次调用 token 累计，成本如实计
         escalated = True
@@ -707,6 +725,8 @@ def ask(col, question, verbose=True, dynamic=DYNAMIC_BUDGET):
         # 按实际打包的块下标取来源（相关度裁剪下打包的不一定是前几块）
         srcs = sorted({_src(metas[i]) for i in packed_idx if i < len(metas)})
         tag = "  (动态升配 %d)" % BUDGET_ESCALATED if escalated else ""
+        if best_dist is not None:
+            tag += "  dist=%.4f" % best_dist
         cc = verify_citations(answer, packed_idx, metas)
         print("\n" + answer)
         print("\n[来源] %s  | tokens: %d%s" % ("、".join(srcs), toks, tag))
