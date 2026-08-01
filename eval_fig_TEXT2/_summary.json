@@ -1,0 +1,18 @@
+[
+ {
+  "book": "Anatomy_and_Physiology_2e.pdf",
+  "subject": "Medicine",
+  "ans_lo": 0,
+  "fuzzy_lo": 0,
+  "ans_ok": 0,
+  "ans_t": 6,
+  "fuzzy_ok": 0,
+  "fuzzy_t": 0,
+  "unans_ok": 0,
+  "unans_t": 0,
+  "fabricated": 0,
+  "over_refused": 6,
+  "escalated": 6,
+  "token_median": 770
+ }
+]

@@ -1,0 +1,36 @@
+{
+ "run_at": "2026-07-30 15:52:09",
+ "main_py": "E:\\Ollama_test\\data\\main.py",
+ "workdir": "E:\\Ollama_test\\data",
+ "use_vl": false,
+ "runtime": {
+  "code_sha": "232b7134a2ac",
+  "chunk_sha": "677d4622f062",
+  "llm_model": "qwen3:8b",
+  "embed_model": "bge-m3",
+  "top_k": 8,
+  "context_budget": 900,
+  "budget_escalated": 1800,
+  "dynamic_budget": true,
+  "escalate_sim_gate": 1.1762,
+  "relevance_trim": true,
+  "num_predict": 300,
+  "temperature": 0.0,
+  "generate_calls": 0,
+  "generate_fallback_calls": 0,
+  "generate_first_error": null
+ },
+ "ask_total": 82,
+ "ask_with_stale_library": 0,
+ "ask_with_api_chat_fallback": 0,
+ "books": {
+  "Microbiology.pdf": {
+   "chunk_sha": "677d4622f062",
+   "library_chunk_sha": "677d4622f062",
+   "library_ok": true,
+   "library_n_chunks": 8956,
+   "library_built_at": "2026-07-30 15:49:33",
+   "n_questions": 82
+  }
+ }
+}

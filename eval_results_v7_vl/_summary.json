@@ -1,0 +1,34 @@
+[
+ {
+  "book": "Anatomy_and_Physiology_2e.pdf",
+  "subject": "Medicine",
+  "ans_lo": 45,
+  "fuzzy_lo": 11,
+  "ans_ok": 45,
+  "ans_t": 48,
+  "fuzzy_ok": 11,
+  "fuzzy_t": 25,
+  "unans_ok": 23,
+  "unans_t": 25,
+  "fabricated": 2,
+  "over_refused": 6,
+  "escalated": 31,
+  "token_median": 398
+ },
+ {
+  "book": "Gray's Anatomy — Henry Gray.pdf",
+  "subject": "Medicine",
+  "ans_lo": 40,
+  "fuzzy_lo": 13,
+  "ans_ok": 40,
+  "ans_t": 45,
+  "fuzzy_ok": 10,
+  "fuzzy_t": 22,
+  "unans_ok": 24,
+  "unans_t": 25,
+  "fabricated": 1,
+  "over_refused": 2,
+  "escalated": 19,
+  "token_median": 405
+ }
+]

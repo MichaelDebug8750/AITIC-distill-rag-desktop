@@ -36,6 +36,8 @@ WORKDIR = '.'             # 子进程工作目录 = main.py 所在目录
 DB_PATH = './vectordb'    # main.py 里是相对路径，故随 WORKDIR 走
 
 BUILD_TIMEOUT = 14400      # 单本建库上限 4 小时（A&P 1347 页会很久）
+USE_VL = False             # 由 --use-vl 覆盖
+VL_LIMIT = 15              # 由 --vl-limit 覆盖
 ASK_TIMEOUT = 300
 
 # 与 main.py is_abstain 同口径
@@ -47,6 +49,15 @@ ABSTAIN = re.compile(r'no reference found|\[[^\]]*\bno\b[^\]]*\breferences?\b', 
 ENV = dict(os.environ)
 ENV['PYTHONIOENCODING'] = 'utf-8'
 ENV['PYTHONUTF8'] = '1'
+# ask 是逐题起子进程，库指纹告警要走一行式，否则刷屏
+ENV['DISTILL_QUIET_LIB'] = '1'
+
+# 与 main.py 里的标记保持一致（改一处两处都要改）
+STALE_MARK = '[STALE-LIBRARY]'
+FALLBACK_MARK = 'ollama.generate 调用失败'
+
+# 全程累计：子进程里的计数拿不到，只能从每题输出里数
+RUN_STATS = {'ask': 0, 'stale': 0, 'fallback': 0}
 
 
 def run(cmd, timeout):
@@ -58,10 +69,72 @@ def run(cmd, timeout):
         return '__TIMEOUT__', -9
 
 
+def fingerprint_of_main():
+    """跑 main.py fingerprint --json 拿库指纹 + 运行时配置。
+       必须走子进程：ask 也是子进程，import 进来的那份配置不代表实际生效的那份。"""
+    out, rc = run([PY, MAIN, 'fingerprint', '--json'], 120)
+    if rc != 0:
+        return {'_error': 'fingerprint 调用失败(rc=%s)' % rc, '_raw': out[-300:]}
+    for line in reversed(out.strip().split('\n')):
+        line = line.strip()
+        if line.startswith('{'):
+            try:
+                return json.loads(line)
+            except Exception:
+                pass
+    return {'_error': '没解析出 JSON', '_raw': out[-300:]}
+
+
+FP_BOOKS = {}
+
+
+def dump_fingerprint(outdir, last_fpr):
+    """把"这轮到底跑的是什么"写成独立文件。有它，任何一份结果都能自证。"""
+    obj = {
+        'run_at': time.strftime('%Y-%m-%d %H:%M:%S'),
+        'main_py': MAIN,
+        'workdir': WORKDIR,
+        'use_vl': USE_VL,
+        'runtime': (last_fpr or {}).get('runtime'),
+        'ask_total': RUN_STATS['ask'],
+        'ask_with_stale_library': RUN_STATS['stale'],
+        'ask_with_api_chat_fallback': RUN_STATS['fallback'],
+        'books': FP_BOOKS,
+    }
+    try:
+        json.dump(obj, io.open(os.path.join(outdir, '_fingerprint.json'), 'w',
+                               encoding='utf-8'), ensure_ascii=False, indent=1)
+    except Exception as e:
+        print('  !! _fingerprint.json 写入失败：%s' % e)
+
+
+def show_fingerprint(fpr, book=''):
+    """打印并判定。返回 library_ok。"""
+    if '_error' in fpr:
+        print('  !! 指纹采集失败：%s' % fpr['_error'])
+        print('     （main.py 可能还是旧版，没有 fingerprint 子命令 —— 先把新 main.py 拷过去）')
+        return None
+    rt = fpr.get('runtime', {})
+    ok = fpr.get('library_ok')
+    print('  指纹 chunk_sha=%s  库块数=%s  gate=%s  trim=%s  dynamic=%s' % (
+        rt.get('chunk_sha'), fpr.get('library_n_chunks'),
+        rt.get('escalate_sim_gate'), rt.get('relevance_trim'), rt.get('dynamic_budget')))
+    if not ok:
+        print('  !! 库指纹不一致（%s）：库 %s vs 代码 %s' % (
+            fpr.get('status'), fpr.get('library_chunk_sha'), rt.get('chunk_sha')))
+        print('     这个库不是当前代码建的，跑出来的数字归因不到当前代码。')
+    return ok
+
+
 def parse_ask(raw):
     """从 ask 的输出里切出答案正文、tokens、是否动态升配"""
     if raw == '__TIMEOUT__':
         return '', 0, False, True
+    RUN_STATS['ask'] += 1
+    if STALE_MARK in raw:
+        RUN_STATS['stale'] += 1
+    if FALLBACK_MARK in raw:
+        RUN_STATS['fallback'] += 1
     tok = 0
     m = re.search(r'tokens:\s*(\d+)', raw)
     if m:
@@ -151,8 +224,12 @@ def build_book(path, max_pages):
         if os.path.isdir(db):
             shutil.rmtree(db, ignore_errors=True)
         return run([PY, MAIN, 'build', '--epub', path], BUILD_TIMEOUT)
-    return run([PY, MAIN, 'build', '--pdf', path,
-                '--max-pages', str(max_pages), '--no-vl'], BUILD_TIMEOUT)
+    cmd = [PY, MAIN, 'build', '--pdf', path, '--max-pages', str(max_pages)]
+    if USE_VL:
+        cmd += ['--vl-limit', str(VL_LIMIT)]      # 开 VL：含图页交 Qwen3-VL 读图
+    else:
+        cmd += ['--no-vl']                        # 纯文本模式
+    return run(cmd, BUILD_TIMEOUT)
 
 
 def build_and_mark(path, book, max_pages):
@@ -177,15 +254,26 @@ def main():
     ap.add_argument('--resume', action='store_true')
     ap.add_argument('--skip-build', action='store_true')
     ap.add_argument('--use-vl', action='store_true', help='开启 VL 读图（很慢，默认关）')
+    ap.add_argument('--vl-limit', type=int, default=15, help='单本最多 VL 解析多少含图页')
     ap.add_argument('--main', default='main.py', help='main.py 路径，如 E:\\Ollama_test\\code\\main.py')
     ap.add_argument('--workdir', default='', help='跑 main.py 的工作目录（向量库所在处），'
                                                  '如 E:\\Ollama_test\\data')
     ap.add_argument('--set-gate', default='', help='覆盖 ESCALATE_SIM_GATE，如 1.1762 或 none')
     ap.add_argument('--set-dynamic', default='', choices=['', 'on', 'off'],
                     help='覆盖 DYNAMIC_BUDGET：on/off')
+    ap.add_argument('--allow-stale', action='store_true',
+                    help='库指纹与当前代码不一致时仍继续（做旧库对照组才用；默认中止）')
+    ap.add_argument('--set-prompt', default='', choices=['', 'V0', 'V1', 'V2', 'V3', 'V5'],
+                    help='切 PROMPT 变体（V0=现网原版）。走环境变量，子进程自动继承')
+    ap.add_argument('--set-vlquota', type=int, default=-1,
+                    help='分型检索：给图块强制保留几个席位（0=关闭，v7full 口径）')
+    ap.add_argument('--set-qexpand', type=int, default=-1,
+                    help='短查询扩写：查询词数<=此值时启用（0=关闭，v7full 口径；建议 3）')
     a = ap.parse_args()
 
-    global MAIN, WORKDIR
+    global MAIN, WORKDIR, USE_VL, VL_LIMIT
+    USE_VL = a.use_vl
+    VL_LIMIT = a.vl_limit
     if not os.path.exists(a.main):
         print('找不到 main.py：%s\n用 --main 指定完整路径' % a.main); sys.exit(1)
     MAIN = os.path.abspath(a.main)
@@ -203,6 +291,12 @@ def main():
             if n != 1:
                 print('!! 没在 main.py 里找到 ESCALATE_SIM_GATE，无法覆盖'); sys.exit(1)
             shown.append('ESCALATE_SIM_GATE=%s' % v)
+        # 显式指定 gate 时必须同时关掉按学科分档，否则分档表会盖过这次消融，
+        # 消融配置静默失效——这正是翻车#2 的形状。
+        src, n2 = re.subn(r'^GATE_BY_SUBJECT\s*=.*$', 'GATE_BY_SUBJECT = False',
+                          src, count=1, flags=re.M)
+        if n2:
+            shown.append('GATE_BY_SUBJECT=False(因显式指定gate)')
         if a.set_dynamic:
             v = 'True' if a.set_dynamic == 'on' else 'False'
             src, n = re.subn(r'^DYNAMIC_BUDGET\s*=\s*\w+',
@@ -216,8 +310,18 @@ def main():
         print('★ 消融覆盖: %s  → 临时脚本 %s' % (' , '.join(shown), os.path.basename(tmp)))
 
     db = os.path.join(WORKDIR, 'vectordb')
+    if a.set_prompt:
+        ENV['DISTILL_PROMPT_VARIANT'] = a.set_prompt
+        print('PROMPT   : %s（经环境变量注入，子进程继承）' % a.set_prompt)
+    if a.set_vlquota >= 0:
+        ENV['DISTILL_VL_QUOTA'] = str(a.set_vlquota)
+        print('VL配额   : %d（分型检索，0=关闭）' % a.set_vlquota)
+    if a.set_qexpand >= 0:
+        ENV['DISTILL_QUERY_EXPAND'] = str(a.set_qexpand)
+        print('短查询扩写: 词数<=%d 时启用（0=关闭）' % a.set_qexpand)
     print('main.py  : %s' % MAIN)
     print('工作目录 : %s' % WORKDIR)
+    print('建库模式 : %s' % ('★ 文本 + VL 读图（vl-limit=%d）' % VL_LIMIT if USE_VL else '纯文本（--no-vl）'))
     print('向量库   : %s  %s' % (db, '(已存在，建库会覆盖)' if os.path.isdir(db) else '(将新建)'))
     if not os.path.isdir(db):
         print('  !! 这里没有 vectordb，工作目录可能指错了，指错会白跑一夜')
@@ -262,6 +366,7 @@ def main():
         print('\n' + '=' * 72)
         print('【%s】%d 题' % (book[:56], len(rows)), flush=True)
 
+        fpr = None
         if a.skip_build:
             own = db_owner()
             if own != book:
@@ -270,6 +375,13 @@ def main():
                 print('     去掉 --skip-build 重建，否则数据无效。')
                 continue
             print('  复用已有库（标记确认：%s）' % own)
+            # .built_book 只绑定"哪本书"，不绑定"哪版代码"——v6chk 就是栽在这。
+            # 复用库时必须额外核对分块指纹。
+            fpr = fingerprint_of_main()
+            libok = show_fingerprint(fpr, book)
+            if libok is False and not a.allow_stale:
+                print('     跳过本书。确要用旧库做对照请加 --allow-stale。')
+                continue
         if not a.skip_build:
             t0 = time.time()
             print('  建库中（大部头可能要几十分钟，别关窗口）...', flush=True)
@@ -280,6 +392,11 @@ def main():
             m = re.search(r'完成：[^\n]*', out)
             print('  %s' % (m.group(0) if m else '建库完成'))
             print('  建库耗时 %.1f 分钟' % ((time.time() - t0) / 60), flush=True)
+            fpr = fingerprint_of_main()
+            libok = show_fingerprint(fpr, book)
+            if libok is False and not a.allow_stale:
+                print('     刚建完就不一致，说明建库用的 main.py 和评测用的不是同一份，跳过。')
+                continue
 
         res = []
         t0 = time.time()
@@ -335,6 +452,18 @@ def main():
         json.dump(summary, io.open(sumpath, 'w', encoding='utf-8'),
                   ensure_ascii=False, indent=1)
 
+        # 自证档：与 _summary.json 平级但独立成文件，不改 summary 结构，
+        # analyze_all.py / compare3.py 读 _summary.json 的行为完全不受影响。
+        FP_BOOKS[book] = {
+            'chunk_sha': (fpr or {}).get('runtime', {}).get('chunk_sha'),
+            'library_chunk_sha': (fpr or {}).get('library_chunk_sha'),
+            'library_ok': (fpr or {}).get('library_ok'),
+            'library_n_chunks': (fpr or {}).get('library_n_chunks'),
+            'library_built_at': (fpr or {}).get('library_built_at'),
+            'n_questions': len(rows),
+        }
+        dump_fingerprint(a.out, fpr)
+
     if not summary:
         print('\n没跑成任何一本，检查路径和文件名')
         return
@@ -367,6 +496,21 @@ def main():
              100.0 * t['over_refused'] / max(1, t['ans_t'] + t['fuzzy_t']),
              t['escalated']))
     print('\n逐题结果在 %s\\ 下，MISS 的题带 answer 全文，可直接拉出来看' % a.out)
+
+    # ---- 本轮自证 ----
+    print('\n== 本轮自证（细节见 %s\\_fingerprint.json）==' % a.out)
+    shas = {v.get('chunk_sha') for v in FP_BOOKS.values() if v.get('chunk_sha')}
+    print('  分块指纹        : %s' % ('、'.join(sorted(shas)) if shas else '未采集'))
+    bad = [b for b, v in FP_BOOKS.items() if v.get('library_ok') is False]
+    print('  库指纹不一致的书: %s' % ('无' if not bad else '%d 本 <-- %s' % (len(bad), '、'.join(b[:20] for b in bad))))
+    print('  ask 子进程总数  : %d' % RUN_STATS['ask'])
+    if RUN_STATS['stale']:
+        print('  !! 其中 %d 题跑在指纹不一致的库上' % RUN_STATS['stale'])
+    if RUN_STATS['fallback']:
+        print('  !! 其中 %d 题降级到 /api/chat（踩坑#12 的调用模式，与历史结果不可直接对比）'
+              % RUN_STATS['fallback'])
+    else:
+        print('  /api/chat 降级  : 0 次（全程走 /api/generate）')
 
 
 if __name__ == '__main__':

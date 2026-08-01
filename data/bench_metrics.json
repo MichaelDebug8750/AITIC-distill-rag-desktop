@@ -1,0 +1,50 @@
+{
+  "CS": {
+    "pages": 120,
+    "baseline": {
+      "chunks": 358,
+      "tokens": 1591.2,
+      "hit@5": 1.0,
+      "lat": 5.65
+    },
+    "pipeline": {
+      "chunks": 921,
+      "tokens": 738.4,
+      "hit@5": 1.0,
+      "lat": 4.64
+    },
+    "ratio": 0.464
+  },
+  "Medicine": {
+    "pages": 120,
+    "baseline": {
+      "chunks": 344,
+      "tokens": 1696.2,
+      "hit@5": 1.0,
+      "lat": 5.26
+    },
+    "pipeline": {
+      "chunks": 715,
+      "tokens": 812.8,
+      "hit@5": 1.0,
+      "lat": 4.99
+    },
+    "ratio": 0.479
+  },
+  "Law": {
+    "pages": 120,
+    "baseline": {
+      "chunks": 345,
+      "tokens": 1503.6,
+      "hit@5": 1.0,
+      "lat": 5.36
+    },
+    "pipeline": {
+      "chunks": 745,
+      "tokens": 774.4,
+      "hit@5": 1.0,
+      "lat": 5.02
+    },
+    "ratio": 0.515
+  }
+}

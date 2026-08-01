@@ -1,0 +1,55 @@
+{
+ "run_at": "2026-07-31 11:02:58",
+ "main_py": "E:\\Ollama_test\\data\\main.py",
+ "workdir": "E:\\Ollama_test\\data",
+ "use_vl": false,
+ "runtime": {
+  "code_sha": "c81316fdb66f",
+  "chunk_sha": "8140205c1c70",
+  "llm_model": "qwen3:8b",
+  "embed_model": "bge-m3",
+  "top_k": 8,
+  "context_budget": 900,
+  "budget_escalated": 1800,
+  "dynamic_budget": true,
+  "escalate_sim_gate": 1.1762,
+  "relevance_trim": true,
+  "num_predict": 300,
+  "temperature": 0.0,
+  "generate_calls": 0,
+  "generate_fallback_calls": 0,
+  "generate_first_error": null,
+  "vl_prose": true,
+  "vl_quota": 0,
+  "prompt_variant": "V3",
+  "prompt_sha": "451bbe7da8ed",
+  "env": {
+   "ollama_server": "0.32.3",
+   "ollama_py": "0.6.2",
+   "model_digest": null,
+   "model_quant": "Q4_K_M",
+   "model_params": "8.2B"
+  }
+ },
+ "ask_total": 63,
+ "ask_with_stale_library": 0,
+ "ask_with_api_chat_fallback": 0,
+ "books": {
+  "Anatomy_and_Physiology_2e.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 9163,
+   "library_built_at": "2026-07-31 11:00:03",
+   "n_questions": 60
+  },
+  "Gray's Anatomy — Henry Gray.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 4383,
+   "library_built_at": "2026-07-31 11:02:51",
+   "n_questions": 3
+  }
+ }
+}

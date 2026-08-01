@@ -1,0 +1,26 @@
+{
+  "Q4_K_M": {
+    "cov_hits": 2,
+    "cov_total": 5,
+    "cov_rate": 40.0,
+    "probe_refused": 3,
+    "probe_total": 3,
+    "avg_tok": 548.375,
+    "mean_s": 3.100556492805481,
+    "median_s": 3.3476253747940063,
+    "vram": "10.0 GB",
+    "determinism": "OK"
+  },
+  "Q8_0": {
+    "cov_hits": 1,
+    "cov_total": 5,
+    "cov_rate": 20.0,
+    "probe_refused": 3,
+    "probe_total": 3,
+    "avg_tok": 524.875,
+    "mean_s": 4.117092102766037,
+    "median_s": 4.408411383628845,
+    "vram": "13 GB",
+    "determinism": "OK"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "eval_file": "eval_law.jsonl",
+  "book": null,
+  "n_questions": 21,
+  "n_answered": 18,
+  "n_abstain": 3,
+  "n_with_cite": 18,
+  "total_citations": 19,
+  "hit": 19,
+  "fabricated": 0,
+  "citation_accuracy": 1.0,
+  "clean_rate": 1.0,
+  "bad_questions": []
+}

@@ -1,124 +1,94 @@
-# ============================================================
-#  AITIC 知识蒸馏 RAG 管线 · .gitignore
-#  原则：只提交"源码 + 配置 + 评测集"，其余可重建/可另行提供的一律不入库
-# ============================================================
+# =====================================================================
+# 仓库只放：源码 + 文档 + 每轮评测的 _summary.json / _fingerprint.json
+# 语料、模型权重、向量库、音频、压缩包、逐题 jsonl 一律不入库
+# =====================================================================
 
-# ---------- 虚拟环境 / 缓存 ----------
-.venv/
-distill/
-env/
-venv/
-__pycache__/
-*.pyc
-*.pyo
-.pytest_cache/
-.idea/
-.vscode/
+# ---------- 语料（版权 + 体积）----------
+books/
+*.pdf
+*.epub
+*.azw3
+*.mobi
 
-# ---------- 模型权重（约 12GB，通过 ollama pull 获取）----------
-models/
+# ---------- 模型权重 ----------
+data/models/
 deploy_pack/
 *.gguf
 *.bin
 *.safetensors
+*.pt
+*.onnx
 
-# ---------- 向量库（build 自动生成，可重建）----------
+# ---------- 向量库 ----------
 vectordb/
-vectordb_bench/
-data/vectordb/
-data/vectordb_bench/
-data/vectordb_backup*/
+**/vectordb/
+vectordb_backup*/
+**/vectordb_backup*/
 *.sqlite3
 
-# ---------- 压缩包（是仓库内容的重复，且体积大）----------
+# ---------- 运行时产物 / 缓存 ----------
+vl_cache*.json
+.built_book
+**/.built_book
+_main_ablation.py
+figure_page/
+figure_pages/
+
+# ---------- 音视频 ----------
+*.mp3
+*.wav
+*.flac
+*.mp4
+
+# ---------- 压缩包（需要就重新打，不进版本控制）----------
 *.zip
 *.7z
 *.rar
 *.tar
 *.gz
 
-# ---------- backup/ 历史留档（含重复的教材 PDF，体积大）----------
+# ---------- 评测结果 ----------
+# 逐题 jsonl 可重跑且体积大；_summary.json 与 _fingerprint.json 是指标与
+# 自证信息的载体，必须进库。所以这里按**文件**忽略 jsonl，而不是按目录忽略整个结果夹
+# ——目录级忽略后 Git 不会再进入该目录，! 例外规则也就救不回里面的文件。
+eval_results*/**/*.jsonl
+eval_ab_*/**/*.jsonl
+eval_v*chk/**/*.jsonl
+eval_v*_probe/**/*.jsonl
+eval_fig_*/**/*.jsonl
+eval_vl_*/**/*.jsonl
+eval_gate*/**/*.jsonl
+
+# 题集目录（eval/ 下）：题集本身要入库，它是评测可复现的前提，故不忽略
+# 但 eval/ 下若有临时生成的图题，用 make_figure_eval.py 可重建：
+eval/eval_figure/
+eval/eval_vl_fig/
+
+# 中间分析产物（脚本可重新生成）
+fab_v*.json
+fab_v*.md
+fab_review.*
+fig2_questions.json
+figure_eval_review.md
+
+# ---------- 备份 / 快照 ----------
 backup/
-
-# ---------- 语料库（2.8GB，55 本教材/公版文学，另行提供）----------
-books/
-book/
-
-# ---------- 评测中间产物与结果（可由脚本重跑生成，体积大）----------
-#   eval_results* 每份含 4432 题的完整答案文本，约 20-30MB/份，已有 7+ 份
-eval_results/
-eval_results_*/
-eval_ab_*/
-eval_v*_probe/
-eval_v*_gate/
-txt/
-dump_text/
-glossary*.json
-distinctive.json
-mined*.json
-restore*.json
-dropped.json
-summary3.json
-stat.json
-书籍体检报告.txt
-verify_eval_报告.txt
-
-# ---------- 大体积素材 ----------
-#   GitHub 单文件 >50MB 警告、>100MB 直接拒绝 push。
-#   med.pdf 61MB、电子书 100MB+、音频 22MB —— 这些属"测试数据集"而非源码，
-#   随结项交付另行提供（评测集 Ground Truth 的 eval_*.jsonl 仍在仓库内）。
-*.pdf
-*.epub
-*.azw3
-*.mobi
-*.mp3
-*.wav
-*.flac
-*.url
-data/7699-*/
-
-# ---------- 一次性修补脚本（改动已并入 main.py，仅本地留档）----------
-code/fix_*.py
-code/fixcpu.py
-fix_*.py
-
-# ---------- 消融/评测临时文件 ----------
-_main_ablation.py
-data/_main_ablation.py
-.built_book
-data/.built_book
-
-# ---------- main.py 历史备份 ----------
+*.gpubak
 *.bak
-*.bak*
-code/main.py.gpubak
 
-# ---------- 评测结果 JSON（跑评测脚本自动生成）----------
-data/*_result.json
-data/*_metrics.json
-*vl_cache.json
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+distill/
 
-# ---------- Web 上传临时目录 ----------
-code/_uploads/
-_uploads/
-
-# ---------- 本文件的原始版本（规则已并入）----------
-gitignore.txt
-
-# ---------- 系统杂项 ----------
+# ---------- 编辑器 / 系统 ----------
+.vscode/
+.idea/
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# ============================================================
-#  ⚠️ 例外：以下必须提交（若被上面规则误伤，用 ! 放行）
-# ============================================================
-!eval/eval_ALL.jsonl
-!eval/eval_*.jsonl
-!eval/eval_by_book/
-!eval/eval_by_book/*.jsonl
-
-# ---------- main.py 的运行副本（内容同 code/main.py，避免双份代码分叉）----------
-data/main.py
-
-data/cite_eval_result_*.json
+data/7699-*/

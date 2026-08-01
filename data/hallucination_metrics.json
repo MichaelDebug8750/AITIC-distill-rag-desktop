@@ -1,0 +1,226 @@
+{
+  "CS": {
+    "unanswerable": 7,
+    "hallucinations": 0,
+    "hallu_rate": 0.0,
+    "answerable": 5,
+    "wrong_refusals": 4,
+    "refuse_rate": 0.8,
+    "unanswerable_log": [
+      {
+        "q": "What are the elements of a valid contract?",
+        "abstain": true,
+        "answer": "[NO REFERENCE FOUND]"
+      },
+      {
+        "q": "What is a tort?",
+        "abstain": true,
+        "answer": "[NO REFERENCE FOUND]"
+      },
+      {
+        "q": "How do antibiotics affect bacteria?",
+        "abstain": true,
+        "answer": "[NO REFERENCE FOUND]"
+      },
+      {
+        "q": "What is the difference between prokaryotic and eukaryotic cells?",
+        "abstain": true,
+        "answer": "[NO REFERENCE"
+      },
+      {
+        "q": "What is the role of the immune system?",
+        "abstain": true,
+        "answer": "[NO REFERENCE FOUND]"
+      },
+      {
+        "q": "What is the capital of France?",
+        "abstain": true,
+        "answer": "[NO REFERENCE FOUND]"
+      },
+      {
+        "q": "Who wrote Romeo and Juliet?",
+        "abstain": true,
+        "answer": "[NO REFERENCE FOUND]"
+      }
+    ],
+    "answerable_log": [
+      {
+        "q": "What is an algorithm in computer science?",
+        "abstain": true,
+        "answer": "[NO REFERENCE FOUND]"
+      },
+      {
+        "q": "What is a data structure and why is it useful?",
+        "abstain": false,
+        "answer": "A data structure is a way to organize and manage data efficiently, enabling systems to track and manipulate information effectively. In the context of operating systems, data structures like the process list are critical for managing running programs and their states. They allow the OS to keep track of all active processes, determine which process is currently executing, and handle resource allocation and scheduling"
+      },
+      {
+        "q": "What does an operating system do?",
+        "abstain": true,
+        "answer": ""
+      },
+      {
+        "q": "What is the difference between hardware and software?",
+        "abstain": true,
+        "answer": ""
+      },
+      {
+        "q": "What is a process in an operating system?",
+        "abstain": true,
+        "answer": ""
+      }
+    ]
+  },
+  "Medicine": {
+    "unanswerable": 7,
+    "hallucinations": 0,
+    "hallu_rate": 0.0,
+    "answerable": 5,
+    "wrong_refusals": 2,
+    "refuse_rate": 0.4,
+    "unanswerable_log": [
+      {
+        "q": "What does an operating system do?",
+        "abstain": true,
+        "answer": "[NO REFERENCE FOUND]"
+      },
+      {
+        "q": "What is a data structure and why is it useful?",
+        "abstain": true,
+        "answer": "[NO REFERENCE FOUND]"
+      },
+      {
+        "q": "What is the difference between hardware and software?",
+        "abstain": true,
+        "answer": "[NO REFERENCE FOUND]"
+      },
+      {
+        "q": "What is an algorithm in computer science?",
+        "abstain": true,
+        "answer": "[NO REFERENCE FOUND]"
+      },
+      {
+        "q": "What is liability in business law?",
+        "abstain": true,
+        "answer": "[NO REFERENCE FOUND]"
+      },
+      {
+        "q": "What is the capital of France?",
+        "abstain": true,
+        "answer": "[NO REFERENCE FOUND]"
+      },
+      {
+        "q": "Who wrote Romeo and Juliet?",
+        "abstain": true,
+        "answer": "[NO REFERENCE FOUND]"
+      }
+    ],
+    "answerable_log": [
+      {
+        "q": "What is the difference between prokaryotic and eukaryotic cells?",
+        "abstain": false,
+        "answer": "Prokaryotic cells lack a nucleus surrounded by a complex nuclear membrane [p.10"
+      },
+      {
+        "q": "How do antibiotics affect bacteria?",
+        "abstain": false,
+        "answer": "Antibiotics affect bacteria by targeting their unique cell structures, which can disrupt their growth or kill them. This is highlighted in the material, which states that bacteria have such structures that can be targets for antibiotics, immunity, and phage infection [p.7]. However, the development of antibiotic resistance,"
+      },
+      {
+        "q": "What is the function of the cell membrane?",
+        "abstain": true,
+        "answer": "[NO REFERENCE FOUND]"
+      },
+      {
+        "q": "What is the difference between a virus and a bacterium?",
+        "abstain": true,
+        "answer": "[NO REFERENCE FOUND]"
+      },
+      {
+        "q": "What is the role of the immune system?",
+        "abstain": false,
+        "answer": "The immune system's role involves both innate nonspecific host defenses and adaptive specific host defenses to protect the body from pathogens. Innate defenses provide immediate, non-specific protection, while adaptive defenses involve specialized cells like T and B lymphocytes to target specific pathogens [p.17][p.18]."
+      }
+    ]
+  },
+  "Law": {
+    "unanswerable": 7,
+    "hallucinations": 0,
+    "hallu_rate": 0.0,
+    "answerable": 5,
+    "wrong_refusals": 4,
+    "refuse_rate": 0.8,
+    "unanswerable_log": [
+      {
+        "q": "What is the difference between prokaryotic and eukaryotic cells?",
+        "abstain": true,
+        "answer": "[NO REFERENCE FOUND]"
+      },
+      {
+        "q": "How do antibiotics affect bacteria?",
+        "abstain": true,
+        "answer": "[NO REFERENCE FOUND]"
+      },
+      {
+        "q": "What is the role of the immune system?",
+        "abstain": true,
+        "answer": ""
+      },
+      {
+        "q": "What does an operating system do?",
+        "abstain": true,
+        "answer": "[NO REFERENCE FOUND]"
+      },
+      {
+        "q": "What is a neural network?",
+        "abstain": true,
+        "answer": "[NO REFERENCE FOUND]"
+      },
+      {
+        "q": "What is the capital of France?",
+        "abstain": true,
+        "answer": "[NO REFERENCE FOUND]"
+      },
+      {
+        "q": "What is photosynthesis?",
+        "abstain": true,
+        "answer": "[NO REFERENCE FOUND]"
+      }
+    ],
+    "answerable_log": [
+      {
+        "q": "What are the elements of a valid contract?",
+        "abstain": true,
+        "answer": ""
+      },
+      {
+        "q": "What is a tort?",
+        "abstain": true,
+        "answer": ""
+      },
+      {
+        "q": "What is consideration in contract law?",
+        "abstain": true,
+        "answer": ""
+      },
+      {
+        "q": "What is the difference between civil and criminal law?",
+        "abstain": true,
+        "answer": ""
+      },
+      {
+        "q": "What is liability in business law?",
+        "abstain": false,
+        "answer": "In business law, liability encompasses torts (intentional or negligent acts) and product liability, which involves legal actions by consumers against companies for defective products causing harm [p.1]. Corporate liability may also arise from the actions or omissions of employees, with consequences ranging from civil remedies (e.g., damages, injunctions"
+      }
+    ]
+  },
+  "_overall": {
+    "hallu_rate": 0.0,
+    "refuse_rate": 0.667,
+    "hallucinations": 0,
+    "unanswerable": 21,
+    "wrong_refusals": 10,
+    "answerable": 15
+  }
+}

@@ -1,0 +1,18 @@
+[
+ {
+  "book": "Microbiology.pdf",
+  "subject": "Medicine",
+  "ans_lo": 34,
+  "fuzzy_lo": 12,
+  "ans_ok": 33,
+  "ans_t": 39,
+  "fuzzy_ok": 11,
+  "fuzzy_t": 18,
+  "unans_ok": 24,
+  "unans_t": 25,
+  "fabricated": 1,
+  "over_refused": 2,
+  "escalated": 11,
+  "token_median": 388
+ }
+]

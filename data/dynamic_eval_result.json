@@ -1,0 +1,26 @@
+{
+  "n_total": 15,
+  "n_escalated": 3,
+  "low": [
+    3,
+    8285
+  ],
+  "high": [
+    2,
+    11273
+  ],
+  "dyn": [
+    1,
+    10569
+  ],
+  "rescued": [
+    [
+      "Medicine",
+      "What is the function of the cell membrane?"
+    ],
+    [
+      "Medicine",
+      "What is the difference between a virus and a bacterium?"
+    ]
+  ]
+}

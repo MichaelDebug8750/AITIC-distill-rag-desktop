@@ -1,0 +1,41 @@
+{
+  "pdf": [
+    {
+      "book": "CS",
+      "pages": 120,
+      "ppm_text": 388.3,
+      "ppm_vl": 433.8,
+      "sec_text": 18.5,
+      "sec_vl": 16.6
+    },
+    {
+      "book": "Medicine",
+      "pages": 120,
+      "ppm_text": 538.1,
+      "ppm_vl": 493.0,
+      "sec_text": 13.4,
+      "sec_vl": 14.6
+    },
+    {
+      "book": "Law",
+      "pages": 120,
+      "ppm_text": 543.3,
+      "ppm_vl": 482.4,
+      "sec_text": 13.3,
+      "sec_vl": 14.9
+    }
+  ],
+  "audio": {
+    "processed_s": 300,
+    "transcribe_s": 38.0,
+    "rtf": 0.127,
+    "under_2min": true
+  },
+  "query": {
+    "n": 5,
+    "avg_s": 4.24,
+    "min_s": 3.93,
+    "max_s": 4.43,
+    "qpm": 14.2
+  }
+}

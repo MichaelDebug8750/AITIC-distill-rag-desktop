@@ -1,0 +1,14 @@
+{
+  "eval_file": "eval_cs.jsonl",
+  "book": null,
+  "n_questions": 25,
+  "n_answered": 23,
+  "n_abstain": 2,
+  "n_with_cite": 22,
+  "total_citations": 24,
+  "hit": 24,
+  "fabricated": 0,
+  "citation_accuracy": 1.0,
+  "clean_rate": 1.0,
+  "bad_questions": []
+}

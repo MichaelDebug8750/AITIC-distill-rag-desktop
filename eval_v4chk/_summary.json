@@ -1,0 +1,50 @@
+[
+ {
+  "book": "Business Ethics.pdf",
+  "subject": "Business",
+  "ans_lo": 47,
+  "fuzzy_lo": 3,
+  "ans_ok": 47,
+  "ans_t": 50,
+  "fuzzy_ok": 3,
+  "fuzzy_t": 25,
+  "unans_ok": 25,
+  "unans_t": 25,
+  "fabricated": 0,
+  "over_refused": 8,
+  "escalated": 38,
+  "token_median": 346
+ },
+ {
+  "book": "Think Python — Allen Downey.pdf",
+  "subject": "Computer Science",
+  "ans_lo": 25,
+  "fuzzy_lo": 9,
+  "ans_ok": 25,
+  "ans_t": 30,
+  "fuzzy_ok": 5,
+  "fuzzy_t": 13,
+  "unans_ok": 25,
+  "unans_t": 25,
+  "fabricated": 0,
+  "over_refused": 4,
+  "escalated": 32,
+  "token_median": 450
+ },
+ {
+  "book": "Microbiology.pdf",
+  "subject": "Medicine",
+  "ans_lo": 30,
+  "fuzzy_lo": 11,
+  "ans_ok": 29,
+  "ans_t": 39,
+  "fuzzy_ok": 3,
+  "fuzzy_t": 18,
+  "unans_ok": 24,
+  "unans_t": 25,
+  "fabricated": 1,
+  "over_refused": 6,
+  "escalated": 34,
+  "token_median": 465
+ }
+]

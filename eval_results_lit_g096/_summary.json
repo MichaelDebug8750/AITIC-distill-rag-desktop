@@ -1,0 +1,18 @@
+[
+ {
+  "book": "charlotte-bronte_jane-eyre.epub",
+  "subject": "Literature",
+  "ans_lo": 32,
+  "fuzzy_lo": 9,
+  "ans_ok": 32,
+  "ans_t": 35,
+  "fuzzy_ok": 8,
+  "fuzzy_t": 14,
+  "unans_ok": 25,
+  "unans_t": 25,
+  "fabricated": 0,
+  "over_refused": 5,
+  "escalated": 4,
+  "token_median": 337
+ }
+]
