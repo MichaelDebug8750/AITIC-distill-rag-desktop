@@ -1,11 +1,18 @@
 # ---- 核心管线 ----
-ollama>=0.3.0
-chromadb>=0.5.0
-pymupdf>=1.24.0
+ollama==0.6.2
+chromadb==1.5.9
+pymupdf==1.28.0
+EbookLib==0.20               # EPUB 读取
+beautifulsoup4==4.15.0       # EPUB HTML 转文本
+
+# ---- 本地 Web UI ----
+fastapi==0.141.1
+uvicorn==0.52.1
+python-multipart==0.0.32     # Web 文件上传
 
 # ---- 音频 ASR（本地转写）----
-faster-whisper>=1.0.0        # 本地语音转写（自带 ctranslate2 / av，无需系统 ffmpeg）
-modelscope>=1.15.0           # 从阿里源离线下载 whisper 权重（规避 HuggingFace 不稳定）
+faster-whisper==1.2.1        # 本地语音转写（自带 ctranslate2 / av，无需系统 ffmpeg）
+modelscope==1.39.0           # 从阿里源离线下载 whisper 权重（规避 HuggingFace 不稳定）
 
 # ---- 测试 ----
-pytest>=8.0.0                # 单元测试：python -m pytest test_pipeline.py -v
+pytest==9.1.1                # 单元测试：python -m pytest test_pipeline.py -v

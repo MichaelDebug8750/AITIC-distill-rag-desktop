@@ -59,6 +59,10 @@ eval_fig_*/**/*.jsonl
 eval_vl_*/**/*.jsonl
 eval_gate*/**/*.jsonl
 
+# 标准 Hit@5：正式 summary/report/builds 入库；逐题 Top-5 明细体积大、可复算，不入库。
+eval/hit5_*/**/*.jsonl
+eval/hit5_smoke/
+
 # 题集目录（eval/ 下）：题集本身要入库，它是评测可复现的前提，故不忽略
 # 但 eval/ 下若有临时生成的图题，用 make_figure_eval.py 可重建：
 eval/eval_figure/
@@ -70,6 +74,12 @@ fab_v*.md
 fab_review.*
 fig2_questions.json
 figure_eval_review.md
+
+# v8final 审计是正式验收证据，覆盖上面的中间产物通配规则。
+!eval/fab_v8_auto.json
+!eval/fab_v8_auto.md
+!eval/fab_v8_manual_audit.json
+!eval/fab_v8_manual_audit.md
 
 # ---------- 备份 / 快照 ----------
 backup/

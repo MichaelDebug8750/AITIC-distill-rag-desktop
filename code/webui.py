@@ -92,10 +92,9 @@ def _collection():
 
 
 def _retrieve(question):
-    """检索：返回 (docs, metas)。与 main.ask 第一步一致。"""
+    """检索：返回 (docs, metas, dists)，完整复用 main 的扩写与 VL 配额。"""
     qv = M.embed([question])[0]
-    res = _collection().query(query_embeddings=[qv], n_results=M.TOP_K)
-    return res["documents"][0], res["metadatas"][0]
+    return M._retrieve(_collection(), qv, question)
 
 
 def _sources_from(metas, packed_idx, docs=None):
@@ -169,13 +168,13 @@ def api_ask(payload: dict):
         return JSONResponse({"error": "问题为空"}, status_code=400)
 
     t0 = time.time()
-    docs, metas = _retrieve(question)
+    docs, metas, dists = _retrieve(question)
 
     # 第一档：常态预算（保 Token 效率）
     answer, toks, packed_idx = M._run_once(docs, question, M.CONTEXT_BUDGET, metas)
     escalated = False
     # 动态升配：仅当"检索有命中却拒答"时升配重答（与 CLI 同策略）
-    if M.DYNAMIC_BUDGET and docs and M.is_abstain(answer):
+    if M.should_escalate(answer, docs, dists, M.DYNAMIC_BUDGET):
         ans2, toks2, idx2 = M._run_once(docs, question, M.BUDGET_ESCALATED, metas)
         toks += toks2
         escalated = True
@@ -203,7 +202,7 @@ def api_brief(payload: dict):
         return JSONResponse({"error": "主题为空"}, status_code=400)
 
     t0 = time.time()
-    docs, metas = _retrieve(topic)
+    docs, metas, _dists = _retrieve(topic)
     answer, toks, packed_idx = M._run_once_brief(docs, topic, M.BUDGET_ESCALATED, metas)
 
     return {
@@ -235,7 +234,7 @@ async def api_ask_stream(q: str):
         t0 = time.time()
         loop = asyncio.get_event_loop()
         try:
-            docs, metas = await loop.run_in_executor(None, _retrieve, question)
+            docs, metas, dists = await loop.run_in_executor(None, _retrieve, question)
         except Exception as e:
             msg = str(e)[:200]
             if "10061" in msg or "refused" in msg.lower() or "urlopen" in msg.lower():
@@ -253,7 +252,7 @@ async def api_ask_stream(q: str):
             else:
                 packed, packed_idx = M._pack_truncate(docs, budget)
             context = M._labeled_context(packed, packed_idx, metas)   # 每块带真页标签，让模型引用真页码
-            prompt = M.PROMPT.format(context=context, question=question)
+            prompt = M._format_prompt(context, question, packed_idx, metas)
 
             yield ("meta", {"budget": budget, "tag": tag,
                             "sources": _sources_from(metas, packed_idx, docs)})
@@ -273,6 +272,7 @@ async def api_ask_stream(q: str):
                     stream = ollama.generate(
                         model=M.LLM_MODEL,
                         prompt=prompt,                    # prompt 以 "Answer:" 结尾 → 补全模式
+                        think=False,
                         stream=True,
                         options={"temperature": M.TEMPERATURE,
                                  "num_predict": M.NUM_PREDICT},
@@ -318,7 +318,7 @@ async def api_ask_stream(q: str):
 
         # ---- 动态升配（仅当检索有命中却拒答）----
         escalated = False
-        if M.DYNAMIC_BUDGET and docs and M.is_abstain(answer):
+        if M.should_escalate(answer, docs, dists, M.DYNAMIC_BUDGET):
             escalated = True
             yield _sse("escalate", {"from": M.CONTEXT_BUDGET, "to": M.BUDGET_ESCALATED,
                                     "reason": "首答拒答且检索有命中，补充上下文重试"})
@@ -385,7 +385,8 @@ if _UPLOAD_OK:
         try:
             up = os.path.join(HERE, "_uploads")
             os.makedirs(up, exist_ok=True)
-            path = os.path.join(up, file.filename)
+            filename = os.path.basename(file.filename or "upload.bin")
+            path = os.path.join(up, filename)
             with open(path, "wb") as f:
                 f.write(await file.read())
             loop = asyncio.get_event_loop()

@@ -127,6 +127,8 @@ class TestMainPure:
         "no reference found",
         "The answer is [NO RELEVANT REFERENCE FOUND].",
         "NO REFERENCES FOUND",
+        "",
+        None,
     ])
     def test_is_abstain_true(self, ans):
         assert main.is_abstain(ans) is True
@@ -134,7 +136,6 @@ class TestMainPure:
     @pytest.mark.parametrize("ans", [
         "A bacteriophage has a capsid and tail fibers [p.2].",
         "The process is an instance of a running program.",
-        "",
     ])
     def test_is_abstain_false(self, ans):
         assert main.is_abstain(ans) is False
@@ -151,6 +152,73 @@ class TestMainPure:
 
     def test_semantic_chunks_empty(self):
         assert main.semantic_chunks("") == []
+
+    def test_format_prompt_supplies_real_tag_example(self):
+        metas = [{"page": 7, "type": "text", "source": "book.pdf"}]
+        prompt = main._format_prompt("[p.7]\nsource block", "question?", [0], metas)
+        assert "[p.7]" in prompt
+        assert "question?" in prompt
+
+    def test_verify_citations_requires_explicit_citation(self):
+        metas = [{"page": 7, "type": "text", "source": "book.pdf"}]
+        good = main.verify_citations("Supported answer [p.7].", [0], metas)
+        missing = main.verify_citations("Supported answer without a citation.", [0], metas)
+        abstain = main.verify_citations("[NO REFERENCE FOUND]", [0], metas)
+        assert good["ok"] is True
+        assert missing["ok"] is False and missing["missing"] is True
+        assert abstain["ok"] is True and abstain["missing"] is False
+
+    def test_subject_of_ignores_generic_data_dir(self):
+        assert main._subject_of(r"E:\Ollama_test\data\book.pdf") is None
+        assert main._subject_of(r"E:\Ollama_test\books\Medicine\book.pdf") == "Medicine"
+
+    def test_resolve_gate_is_case_insensitive(self, monkeypatch):
+        monkeypatch.setattr(main, "read_manifest", lambda: {"subject": "medicine"})
+        assert main.resolve_gate() == main.ESCALATE_GATE_BY_SUBJECT["Medicine"]
+
+    def test_build_image_rasterizes_svg_before_vl(self, tmp_path, monkeypatch):
+        """Ollama 不接收 SVG；build_image 必须把它转成 PNG 后再传给 VL。"""
+        import base64
+
+        svg_path = tmp_path / "flow.svg"
+        svg_path.write_text(
+            '<svg xmlns="http://www.w3.org/2000/svg" width="320" height="120">'
+            '<rect width="320" height="120" fill="white"/>'
+            '<text x="20" y="70" font-size="32">INPUT TO VECTOR DB</text>'
+            '</svg>',
+            encoding="utf-8",
+        )
+
+        class FakeCollection:
+            def __init__(self):
+                self.upsert_args = None
+
+            def upsert(self, **kwargs):
+                self.upsert_args = kwargs
+
+        class FakeClient:
+            def get_or_create_collection(self, _name):
+                return collection
+
+        collection = FakeCollection()
+        seen = {}
+
+        def fake_chat_vl(_model, _prompt, image_b64):
+            image_bytes = base64.b64decode(image_b64)
+            seen["image_bytes"] = image_bytes
+            return "The diagram says INPUT TO VECTOR DB."
+
+        monkeypatch.setattr(main.chromadb, "PersistentClient", lambda path: FakeClient())
+        monkeypatch.setattr(main, "_chat_vl", fake_chat_vl)
+        monkeypatch.setattr(main, "embed", lambda texts: [[0.0] for _ in texts])
+        monkeypatch.setattr(main, "write_manifest", lambda **kwargs: None)
+        monkeypatch.setattr(main, "_stamp_collection", lambda _col: None)
+
+        main.build_image(str(svg_path))
+
+        assert seen["image_bytes"].startswith(b"\x89PNG\r\n\x1a\n")
+        assert collection.upsert_args["metadatas"][0]["type"] == "image"
+        assert collection.upsert_args["metadatas"][0]["loc"] == "image:flow.svg"
 
 
 if __name__ == "__main__":

@@ -112,6 +112,11 @@ def _grounding(answer, term, cited_text):
     return round(len(aw & _content_words(cited_text)) / len(aw), 3), len(aw)
 
 
+def _clean_fenced_text(text):
+    """Remove source-formatting whitespace that would dirty Markdown diffs."""
+    return "\n".join(line.rstrip() for line in (text or "").splitlines()).rstrip()
+
+
 CITE_PAGE = re.compile(r"\[p\.(\d+)\]")
 CITE_CH = re.compile(r"\[ch(\d+)[:\]]")
 
@@ -221,18 +226,22 @@ def main():
         f.write("# 编造判定人工复核清单\n\n")
         f.write("共 %d 道。自动初判仅供排序，**最终结论以引用页原文为准**。\n\n" % len(recs))
         f.write("判据：引用页原文是否真的支撑答案。支撑=题目有问题；不支撑=真幻觉。\n\n")
-        for x in sorted(recs, key=lambda y: -y["grounding"]):
+        ordered = sorted(recs, key=lambda y: -y["grounding"])
+        for index, x in enumerate(ordered):
             f.write("---\n\n## %s\n\n" % x["question"])
             f.write("- 书：`%s`（%s）\n- 术语：`%s`\n- 构题来源：%s\n" %
                     (x["book"], x["subject"], x["term"], x["src"]))
             f.write("- 字面出现 %s 次 ｜ 逐词共现 %s 段 ｜ 接地率 %.2f（答案 %d 个内容词）\n- **初判：%s**\n\n" %
                     (x["exact"], x["cooccur"], x["grounding"], x["n_ans_words"], x["flag"]))
-            f.write("**模型答案**\n\n> %s\n\n" % x["answer"].replace("\n", " ")[:600])
+            answer = x["answer"].replace("\n", " ")[:600].rstrip()
+            f.write("**模型答案**\n\n> %s\n\n" % answer)
             if x["cited_text"]:
-                f.write("**引用页原文（截断）**\n\n```\n%s\n```\n\n" % x["cited_text"])
+                f.write("**引用页原文（截断）**\n\n```\n%s\n```\n\n" %
+                        _clean_fenced_text(x["cited_text"]))
             else:
                 f.write("*（答案里没有可解析的引用标记，或引用页超出范围）*\n\n")
-            f.write("判定：[ ] 题目有问题　[ ] 真幻觉　[ ] 待定\n\n")
+            ending = "\n" if index == len(ordered) - 1 else "\n\n"
+            f.write("判定：[ ] 题目有问题　[ ] 真幻觉　[ ] 待定" + ending)
     print("\n已生成：\n  %s.md    <- 人工复核用，按可疑度排序\n  %s.json  <- 机器可读" % (a.out, a.out))
 
 

@@ -18,16 +18,16 @@
 核心特性：
 - **混合路由**：纯文字页走文本通道，含图页自动走 VL（多模态）解析，把图表里的标签也变成可检索文字
 - **音频 ASR**：本地 faster-whisper 转写（CPU/int8，无需云端），转写文本按时间戳分块并入同一向量库
-- **Token 高效**：语义分块 + 检索预算控制，单次问答 Token 约为基线的 48.6%（三学科平均），最优 46.4%（CS 单科），优于 ≤60% 目标
+- **Token 高效**：早期三科控制实验中为基线的 46.4%–51.5%；最终代码仍需按同口径复测
 - **引用锚定**：回答带 `[p.X]` 页码 / `[audio mm:ss]` 时间戳来源；无依据则 `[NO REFERENCE FOUND]`，不编造
-- **动态预算**：检索命中却拒答时自动升配重答一次，把过度拒答从 20% 降至 6.7%，且仅少数题触发
+- **动态预算**：检索命中却拒答时按学科闸门升配；v8final 全量升配率为 17.7%
 - **智能体生成**：一条命令产出「定制 system prompt + 工具链(检索/计算器) + Ollama 配置 + 一键脚本」
 - **持久化**：build 一次存盘，ask 多次直接加载，不重复 embedding
 
 ## 环境要求
 
 - Windows / macOS / Linux，建议 ≥16GB RAM（有 GPU 更快；无 GPU 走 CPU 降级）
-- [Python](https://www.python.org/) 3.11+
+- [Python](https://www.python.org/) 3.11（固定版本；不要使用 3.14）
 - [Ollama](https://ollama.com/)（已启动）
 
 ## 一键安装（Windows）
@@ -42,7 +42,7 @@ setup.bat
 ### 手动安装（macOS / Linux 或想自己来）
 
 ```bash
-python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
+python3.11 -m venv .venv && source .venv/bin/activate   # Windows: py -3.11 -m venv .venv
 pip install -r requirements.txt
 ollama pull qwen3:8b && ollama pull qwen3-vl:8b && ollama pull bge-m3
 ollama create distill-assistant -f Modelfile        # 可选
@@ -70,7 +70,7 @@ python main.py build --audio ../data/Starmer.mp3 --max-seconds 300
 python main.py build --epub ../data/book.epub --max-chapters 20
 
 # 独立图片：走 VL 解析后入库（append，溯源 image:文件名）
-python main.py build --image ../data/figure.png
+python main.py build --image ../data/figure.svg   # PNG/JPG/SVG
 
 # 混合库：先 PDF（替换建库）后音频（append）→ 图文+音频同库
 python main.py build --pdf ../data/med.pdf
@@ -112,7 +112,7 @@ python main.py agent --pdf ../data/med.pdf
 
 ```bash
 pip install pytest
-python -m pytest test_pipeline.py -v      # 44 项：计算器安全/路由/拒答判定/分块/时间戳
+python -m pytest test_pipeline.py -v      # 计算器安全/路由/拒答/引用/分块/学科闸门
 ```
 
 ### 5) 评测脚本
@@ -162,18 +162,18 @@ Ollama_test/
 └─ agent_<书名>/       agent 生成的智能体包
 ```
 
-## 评测结论（三学科 · 各 120 页）
+## 早期控制实验（三学科 · 各 120 页）
 
-| 学科 | 基线 Token | 本管线 Token | 占基线 | Hit@5 |
+| 学科 | 基线 Token | 本管线 Token | 占基线 | 旧脚本命中率 |
 |---|---|---|---|---|
 | CS | 1591 | 738 | 46.4% | 100% |
 | 医学 | 1696 | 813 | 47.9% | 100% |
 | 法学 | 1504 | 774 | 51.5% | 100% |
 | 平均 | 1597 | 775 | **48.6%** | **100%** |
 
-- **多模态**：图内信息类问题 Hit@5 由 **0%（纯文本）→ 100%（文本+VL）**
+- **多模态小样本**：图内问题的旧脚本答案关键词覆盖由 **0%（纯文本）→ 100%（文本+VL）**
 - **幻觉率**：21 道不可答探针**零编造（0%）**（含空输出口径 4.8%）
 - **动态预算**：过度拒答 **20% → 6.7%**
 - **音频**：本地转写 en / 390s、混合库跨模态检索 + 时间戳溯源
 
-所有指标达标（Token ≤60%、Hit@5 ≥85%、幻觉率 ≤15%）。
+这些结果是早期小样本，不等同于最终验收。旧脚本的“Hit@5”实际核验模型答案关键词，并非标准的 top-k 检索命中。55 本 / 4432 题结果及限制见 [`../eval/评测报告_v8final_验收候选.md`](../eval/评测报告_v8final_验收候选.md)。

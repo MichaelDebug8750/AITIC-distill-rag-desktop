@@ -1,0 +1,277 @@
+[
+  {
+    "book": "Business Ethics.pdf",
+    "seconds": 44.317,
+    "chunks": 2649
+  },
+  {
+    "book": "Entrepreneurship.pdf",
+    "seconds": 68.162,
+    "chunks": 4380
+  },
+  {
+    "book": "Introduction to Business.pdf",
+    "seconds": 85.723,
+    "chunks": 6159
+  },
+  {
+    "book": "Introductory Business Statistics.pdf",
+    "seconds": 58.011,
+    "chunks": 4215
+  },
+  {
+    "book": "Organizational Behavior.pdf",
+    "seconds": 68.968,
+    "chunks": 4636
+  },
+  {
+    "book": "Principles of Accounting, Volume 1 Financial Accounting.pdf",
+    "seconds": 83.982,
+    "chunks": 5055
+  },
+  {
+    "book": "Principles of Accounting, Volume 2 Managerial Accounting.pdf",
+    "seconds": 60.961,
+    "chunks": 3878
+  },
+  {
+    "book": "Principles of Economics.pdf",
+    "seconds": 101.232,
+    "chunks": 6995
+  },
+  {
+    "book": "Principles of Macroeconomics.pdf",
+    "seconds": 65.355,
+    "chunks": 4428
+  },
+  {
+    "book": "Principles of Management.pdf",
+    "seconds": 64.092,
+    "chunks": 4431
+  },
+  {
+    "book": "Principles of Microeconomics.pdf",
+    "seconds": 57.205,
+    "chunks": 4080
+  },
+  {
+    "book": "Automate the Boring Stuff with Python.pdf",
+    "seconds": 32.824,
+    "chunks": 2233
+  },
+  {
+    "book": "Computer Networks A Systems Approach — Peterson.pdf",
+    "seconds": 62.784,
+    "chunks": 4589
+  },
+  {
+    "book": "Crafting Interpreters — Robert Nystrom.pdf",
+    "seconds": 43.067,
+    "chunks": 2946
+  },
+  {
+    "book": "Eloquent JavaScript — Marijn Haverbeke.pdf",
+    "seconds": 29.928,
+    "chunks": 2060
+  },
+  {
+    "book": "Operating Systems - Three Easy Pieces.pdf",
+    "seconds": 55.475,
+    "chunks": 4211
+  },
+  {
+    "book": "Problem Solving with Algorithms and Data Structures.pdf",
+    "seconds": 16.65,
+    "chunks": 1260
+  },
+  {
+    "book": "Think Java — Allen Downey.pdf",
+    "seconds": 16.097,
+    "chunks": 1280
+  },
+  {
+    "book": "Think Python — Allen Downey.pdf",
+    "seconds": 19.058,
+    "chunks": 1441
+  },
+  {
+    "book": "American Government.pdf",
+    "seconds": 80.783,
+    "chunks": 5497
+  },
+  {
+    "book": "Business Law.pdf",
+    "seconds": 14.905,
+    "chunks": 1103
+  },
+  {
+    "book": "Business Law and the Legal Environment.pdf",
+    "seconds": 140.185,
+    "chunks": 10678
+  },
+  {
+    "book": "Criminal Law.pdf",
+    "seconds": 3.721,
+    "chunks": 245
+  },
+  {
+    "book": "Introduction to Political Science.pdf",
+    "seconds": 68.579,
+    "chunks": 4719
+  },
+  {
+    "book": "Introduction to the Law of Contracts.pdf",
+    "seconds": 9.999,
+    "chunks": 634
+  },
+  {
+    "book": "The Common Law — Oliver Wendell Holmes.pdf",
+    "seconds": 26.992,
+    "chunks": 1854
+  },
+  {
+    "book": "arthur-conan-doyle_the-adventures-of-sherlock-holmes.epub",
+    "seconds": 15.888,
+    "chunks": null
+  },
+  {
+    "book": "bram-stoker_dracula.epub",
+    "seconds": 22.909,
+    "chunks": null
+  },
+  {
+    "book": "charles-dickens_a-tale-of-two-cities.epub",
+    "seconds": 21.184,
+    "chunks": null
+  },
+  {
+    "book": "charlotte-bronte_jane-eyre.epub",
+    "seconds": 28.628,
+    "chunks": null
+  },
+  {
+    "book": "emily-bronte_wuthering-heights.epub",
+    "seconds": 18.48,
+    "chunks": null
+  },
+  {
+    "book": "f-scott-fitzgerald_the-great-gatsby.epub",
+    "seconds": 8.217,
+    "chunks": null
+  },
+  {
+    "book": "herman-melville_moby-dick.epub",
+    "seconds": 33.258,
+    "chunks": null
+  },
+  {
+    "book": "jane-austen_pride-and-prejudice.epub",
+    "seconds": 18.904,
+    "chunks": null
+  },
+  {
+    "book": "lewis-carroll_alices-adventures-in-wonderland_john-tenniel.epub",
+    "seconds": 5.026,
+    "chunks": null
+  },
+  {
+    "book": "mark-twain_the-adventures-of-tom-sawyer.epub",
+    "seconds": 11.362,
+    "chunks": null
+  },
+  {
+    "book": "mary-shelley_frankenstein.epub",
+    "seconds": 12.4,
+    "chunks": null
+  },
+  {
+    "book": "oscar-wilde_the-picture-of-dorian-gray.epub",
+    "seconds": 12.18,
+    "chunks": null
+  },
+  {
+    "book": "Anatomy_and_Physiology_2e.pdf",
+    "seconds": 134.152,
+    "chunks": 9147
+  },
+  {
+    "book": "Biology_2e.pdf",
+    "seconds": 149.651,
+    "chunks": 10092
+  },
+  {
+    "book": "Chemistry_2e.pdf",
+    "seconds": 106.552,
+    "chunks": 7267
+  },
+  {
+    "book": "Concepts of Biology.pdf",
+    "seconds": 62.762,
+    "chunks": 4127
+  },
+  {
+    "book": "Current Essentials of Medicine.pdf",
+    "seconds": 31.85,
+    "chunks": 2307
+  },
+  {
+    "book": "Essentials of Medical Physiology.pdf",
+    "seconds": 131.587,
+    "chunks": 10486
+  },
+  {
+    "book": "Fundamentals-of-Nursing-Pharmacology-1st-Canadian-Edition-1749572880.pdf",
+    "seconds": 45.937,
+    "chunks": 3004
+  },
+  {
+    "book": "Gray's Anatomy — Henry Gray.pdf",
+    "seconds": 66.194,
+    "chunks": 4384
+  },
+  {
+    "book": "Introduction to Human Nutrition.pdf",
+    "seconds": 46.119,
+    "chunks": 3546
+  },
+  {
+    "book": "Microbiology.pdf",
+    "seconds": 114.148,
+    "chunks": 8956
+  },
+  {
+    "book": "Abnormal Psychology.pdf",
+    "seconds": 32.813,
+    "chunks": 2369
+  },
+  {
+    "book": "Cognitive Psychology.pdf",
+    "seconds": 22.049,
+    "chunks": 1466
+  },
+  {
+    "book": "Introduction to Psychoanalysis — Sigmund Freud.pdf",
+    "seconds": 32.893,
+    "chunks": 2199
+  },
+  {
+    "book": "Principles of Social Psychology.pdf",
+    "seconds": 50.3,
+    "chunks": 3701
+  },
+  {
+    "book": "Psychology2e_WEB.pdf",
+    "seconds": 74.915,
+    "chunks": 5209
+  },
+  {
+    "book": "Psychology The Science of Behaviour.pdf",
+    "seconds": 6.337,
+    "chunks": 376
+  },
+  {
+    "book": "The Interpretation of Dreams — Sigmund Freud.pdf",
+    "seconds": 52.342,
+    "chunks": 3788
+  }
+]

@@ -62,13 +62,24 @@ ESCALATE_SIM_GATE = 1.1762
 #       低闸门会把本来答得出来的题误判为"库里没有"。
 # 未列出的学科回退到 ESCALATE_SIM_GATE（保守值），因为闸门定低的代价是漏答（伤准确度），
 # 定高的代价只是多花 token——评委优先级里准确度远大于 token。
+# 【2026-08-01 修订】全量 4432 题实测后的分档表。逐题翻转（v7full -> v8gate）：
+#   Psychology  净 +2  因闸门漏答 0 道  升配 160->47   <- 低闸门最干净
+#   Business    净 +2  因闸门漏答 3 道  升配 254->87
+#   Literature  净  0  （本就是高闸门）  升配 192->195
+#   CS          净 -1  因闸门漏答 1 道  升配 167->46
+#   Medicine    净 -3  因闸门漏答 6 道  升配 265->90    <- 提回高闸门
+#   Law         净 -5  因闸门漏答 5 道  升配 150->41    <- 提回高闸门
+# Law/Medicine 的「How is X discussed in this book」型提问检索距离偏大，
+# 行为更接近叙事文本而非术语型教材，低闸门会把答得出来的题误判为库里没有：
+#   "How is surety discussed in this book?"  1.1762 下详述 suretyship，0.96 下 [NO REFERENCE FOUND]
+# 取舍依据：评委优先级为准确度 >> 时间 >> token，故宁可多花 token 也不漏答。
 ESCALATE_GATE_BY_SUBJECT = {
-    "Business": 0.96,
-    "Computer Science": 0.96,
-    "Medicine": 0.96,
-    "Law": 0.96,            # 未单独 A/B，随教材档；全量跑会验证
-    "Psychology": 0.96,     # 同上
-    "Literature": 1.1762,
+    "Business": 0.96,          # A/B: 净 +2
+    "Computer Science": 0.96,  # A/B: 净 -1（噪声内）
+    "Psychology": 0.96,        # A/B: 净 +2，零漏答
+    "Medicine": 1.1762,        # A/B: 0.96 下净 -3、漏答 6 道 -> 保守档
+    "Law": 1.1762,             # A/B: 0.96 下净 -5、漏答 5 道 -> 保守档
+    "Literature": 1.1762,      # A/B: 0.96 下可答 -5.9pp
 }
 # 关掉分档、全局用 ESCALATE_SIM_GATE：DISTILL_GATE_BY_SUBJECT=0
 GATE_BY_SUBJECT = os.environ.get("DISTILL_GATE_BY_SUBJECT", "1").strip() not in ("0", "off", "false", "no")
@@ -86,7 +97,12 @@ def resolve_gate():
     if not GATE_BY_SUBJECT:
         return ESCALATE_SIM_GATE
     subj = (read_manifest() or {}).get("subject")
-    return ESCALATE_GATE_BY_SUBJECT.get(subj, ESCALATE_SIM_GATE)
+    if subj:
+        wanted = str(subj).strip().casefold()
+        for name, gate in ESCALATE_GATE_BY_SUBJECT.items():
+            if name.casefold() == wanted:
+                return gate
+    return ESCALATE_SIM_GATE
 RELEVANCE_TRIM = True                    # 动态裁剪：按相关度整块保留（关掉=旧的按检索序字符截断，用于对照）
 VL_DPI = 150
 VL_RETRY = 3
@@ -447,7 +463,8 @@ def env_fingerprint():
        环境不是背景，是变量。"""
     if _ENV_FP_CACHE:
         return _ENV_FP_CACHE
-    out = {"ollama_server": None, "ollama_py": None, "model_digest": None}
+    out = {"ollama_server": None, "ollama_py": None,
+           "model_digest": None, "model_digest_source": None}
     import urllib.request
     try:
         with urllib.request.urlopen(_ollama_host() + "/api/version", timeout=5) as r:
@@ -469,7 +486,19 @@ def env_fingerprint():
         with urllib.request.urlopen(req, timeout=10) as r:
             info = json.loads(r.read().decode("utf-8"))
         det = info.get("details", {}) or {}
-        out["model_digest"] = (info.get("digest") or "")[:16] or None
+        digest = info.get("digest") or ""
+        if digest:
+            out["model_digest_source"] = "api/show"
+        else:
+            # 新版 /api/show 通常不返回 digest；/api/tags 的模型列表才包含。
+            with urllib.request.urlopen(_ollama_host() + "/api/tags", timeout=10) as r:
+                tags = json.loads(r.read().decode("utf-8"))
+            for item in tags.get("models", []):
+                if item.get("name") == LLM_MODEL or item.get("model") == LLM_MODEL:
+                    digest = item.get("digest") or ""
+                    out["model_digest_source"] = "api/tags"
+                    break
+        out["model_digest"] = digest[:16] or None
         out["model_quant"] = det.get("quantization_level")
         out["model_params"] = det.get("parameter_size")
     except Exception as e:
@@ -514,7 +543,11 @@ def _subject_of(path):
         # 会让跨平台测试静默失效
         parts = [x for x in re.split(r"[\\/]+", str(path)) if x]
         d = parts[-2] if len(parts) >= 2 else ""
-        return d if d and d.lower() not in ("books", "", ".") else None
+        # data/input 等只是容器目录，不能被误写成学科；真正的学科目录仍原样保留，
+        # 未在分档表中的新学科会由 resolve_gate() 安全回退到全局闸门。
+        generic = {"books", "data", "input", "inputs", "document", "documents",
+                   "doc", "docs", "file", "files", "source", "sources", "."}
+        return d if d and d.casefold() not in generic else None
     except Exception:
         return None
 
@@ -848,6 +881,9 @@ def build_image(img_path):
     """独立图片入库：走 VL 通道生成描述，append 到现有 knowledge_base。"""
     if not os.path.exists(img_path):
         sys.exit("[错误] 找不到图片：%s" % img_path)
+    ext = os.path.splitext(img_path)[1].lower()
+    if ext not in (".png", ".jpg", ".jpeg", ".svg"):
+        sys.exit("[错误] 不支持的图片格式：%s（仅 PNG/JPG/SVG）" % ext)
 
     client = chromadb.PersistentClient(path=DB_PATH)
     col = client.get_or_create_collection(COLLECTION)   # 不删库，append
@@ -855,7 +891,23 @@ def build_image(img_path):
     t0 = time.time()
     base = os.path.basename(img_path)
     print("== 独立图片入库：%s（走 VL 解析）==" % base)
-    b64 = base64.b64encode(open(img_path, "rb").read()).decode()
+    if ext == ".svg":
+        # Ollama 的 images 字段不直接接收 SVG；使用已有 PyMuPDF 在本地栅格化，
+        # 保留矢量文字/公式结构后再送入 VL，不引入 Cairo 等系统依赖。
+        svg_doc = None
+        try:
+            svg_doc = fitz.open(img_path)
+            if len(svg_doc) < 1:
+                raise ValueError("SVG 没有可渲染页面")
+            image_bytes = svg_doc[0].get_pixmap(dpi=VL_DPI, alpha=False).tobytes("png")
+        except Exception as e:
+            sys.exit("[错误] SVG 栅格化失败：%s" % e)
+        finally:
+            if svg_doc is not None:
+                svg_doc.close()
+    else:
+        image_bytes = open(img_path, "rb").read()
+    b64 = base64.b64encode(image_bytes).decode()
     p = ("Describe this image in detail for a knowledge base: list every text label, "
          "component, or figure element, then briefly explain what the image shows.")
     desc = ""
@@ -955,8 +1007,8 @@ def gen_agent(pdf=None, max_pages=120, vl_limit=15, use_vl=True):
         "echo == 1) 创建专属 Ollama 模型（system prompt + 参数）==\r\n"
         'ollama create %s -f "%s\\Modelfile"\r\n'
         "echo == 2) 启动智能体对话（工具：检索 + 计算器）==\r\n"
-        'python "%s\\agent_runtime.py" --db "%s" --collection %s --prompt "%s\\system_prompt.txt"\r\n'
-        % (model_name, outdir, code_dir, db_abs, COLLECTION, outdir)
+        'python "%s\\agent_runtime.py" --db "%s" --collection %s --prompt "%s\\system_prompt.txt" --model %s\r\n'
+        % (model_name, outdir, code_dir, db_abs, COLLECTION, outdir, model_name)
     )
     open(os.path.join(outdir, "run.bat"), "w", encoding="utf-8", newline="").write(runbat)
 
@@ -966,10 +1018,10 @@ def gen_agent(pdf=None, max_pages=120, vl_limit=15, use_vl=True):
         "- 工具链：检索（RAG + 引用溯源）、计算器（白名单 AST 安全求值）；规则路由\n"
         "- 一键启动：双击 `run.bat`（先 `ollama create` 专属模型，再进入对话）\n"
         "- 手动启动对话：\n"
-        '  `python "%s\\agent_runtime.py" --db "%s" --prompt system_prompt.txt`\n\n'
+        '  `python "%s\\agent_runtime.py" --db "%s" --prompt system_prompt.txt --model %s`\n\n'
         "对话中：普通问题走检索问答（带 [p.X] / [audio mm:ss] 引用）；"
         "输入算式（如 `3*(4+5)`、`sqrt(144)`）走计算器，返回精确结果。\n"
-        % (model_name, subject, code_dir, db_abs)
+        % (model_name, subject, code_dir, db_abs, model_name)
     )
     open(os.path.join(outdir, "README.md"), "w", encoding="utf-8").write(readme)
 
@@ -1077,6 +1129,22 @@ def _labeled_context(packed, packed_idx, metas=None):
     return "\n---\n".join(blocks)
 
 
+def _format_prompt(context, question, packed_idx=None, metas=None):
+    """统一格式化问答 prompt，供 CLI、Web UI 和生成智能体共同使用。
+
+    ``PROMPT`` 的所有变体都要求 ``tag_example``；集中在这里生成可避免
+    调用方漏传占位符，也确保 PDF/EPUB/音频/图片展示各自真实的引用格式。
+    """
+    tags = []
+    if metas:
+        for i in (packed_idx or []):
+            if i < len(metas):
+                tags.append(_cite_tag(metas[i]))
+    uniq = list(dict.fromkeys(tags))[:2]
+    tag_example = " or ".join("[%s]" % t for t in uniq) if uniq else "[p.112]"
+    return PROMPT.format(context=context, question=question, tag_example=tag_example)
+
+
 def _norm_cite(s):
     """归一化一个引用/标签：'p.112'/'p112'/'P.112(text)' → 'p.112'；其余（ch../image../audio..）小写去空格。"""
     s = s.strip().lower().replace(" ", "").split("(")[0]
@@ -1098,19 +1166,22 @@ def verify_citations(answer, packed_idx, metas):
     hit = [c for c in cset if c in valid]
     bad = [c for c in cset if c not in valid]
     total = len(cset)
+    abstained = is_abstain(answer)
+    missing = total == 0 and not abstained
     return {
         "total": total,
         "hit": hit,
         "fabricated": bad,
         "valid_sources": sorted(valid),
-        "ok": (total == 0) or (not bad),
-        "rate": (len(hit) / total) if total else 1.0,
+        "missing": missing,
+        "ok": (not missing) and (not bad),
+        "rate": (len(hit) / total) if total else (1.0 if abstained else 0.0),
     }
 
 
 def _cite_check_line(cc):
     if cc["total"] == 0:
-        return "正文无显式引用"
+        return "正文无显式引用  <-- 警告" if cc.get("missing") else "拒答，无需引用"
     if cc["ok"]:
         return "%d/%d 引用全部命中检索来源 OK" % (len(cc["hit"]), cc["total"])
     return "%d/%d 命中；疑似编造: %s  <-- 警告" % (len(cc["hit"]), cc["total"], "、".join(cc["fabricated"]))
@@ -1125,16 +1196,8 @@ def _run_once(docs, question, budget, metas=None):
     else:
         packed, packed_idx = _pack_truncate(docs, budget)
     context = _labeled_context(packed, packed_idx, metas)
-    # 举例用实际出现的标签，避免 PDF 的 [p.X] 格式串到 EPUB/音频/图片上
-    if metas:
-        _tags = [_cite_tag(metas[i]) for i in packed_idx if i < len(metas)]
-        _uniq = list(dict.fromkeys(_tags))[:2]
-        tag_example = " or ".join("[%s]" % t for t in _uniq) if _uniq else "[p.112]"
-    else:
-        tag_example = "[p.112]"
     out = _generate(LLM_MODEL,
-                    PROMPT.format(context=context, question=question,
-                                  tag_example=tag_example),
+                    _format_prompt(context, question, packed_idx, metas),
                     options={"temperature": TEMPERATURE, "num_predict": NUM_PREDICT})
     toks = out.get("prompt_eval_count", 0) + out.get("eval_count", 0)
     return out["response"].strip(), toks, packed_idx
@@ -1251,6 +1314,15 @@ def _retrieve(col, qv, question=None):
     return docs, metas, dists
 
 
+def should_escalate(answer, docs, dists, dynamic=True):
+    """统一判断是否动态升配，避免 CLI、Web UI、智能体使用不同闸门口径。"""
+    if not dynamic or not docs or not is_abstain(answer):
+        return False
+    best_dist = min(dists) if dists else None
+    gate = resolve_gate()
+    return gate is None or best_dist is None or best_dist <= gate
+
+
 def ask(col, question, verbose=True, dynamic=DYNAMIC_BUDGET):
     qv = embed([question])[0]
     docs, metas, _d = _retrieve(col, qv, question)
@@ -1259,11 +1331,8 @@ def ask(col, question, verbose=True, dynamic=DYNAMIC_BUDGET):
     # 第一档：预算 900（常态，保 Token 效率）
     answer, toks, packed_idx = _run_once(docs, question, CONTEXT_BUDGET, metas)
     escalated = False
-    # 闸门：检索都不沾边就别升配——实测 72% 的升配花在库外问题上且全部白跑
-    _gate = resolve_gate()          # 按库的学科取闸门，未知学科回退全局值
-    _gate_ok = (_gate is None or best_dist is None or best_dist <= _gate)
     # 动态升配：仅当"检索有命中却拒答"且通过闸门时，升到 1800 重答一次
-    if dynamic and docs and is_abstain(answer) and _gate_ok:
+    if should_escalate(answer, docs, _d, dynamic):
         ans2, toks2, packed_idx2 = _run_once(docs, question, BUDGET_ESCALATED, metas)
         toks += toks2                      # 两次调用 token 累计，成本如实计
         escalated = True
@@ -1383,7 +1452,7 @@ def main():
     b.add_argument("--asr-model", default=None, help="faster-whisper 本地模型目录")
     b.add_argument("--epub", help="EPUB 路径（转文本后 append 入库）")
     b.add_argument("--max-chapters", type=int, default=None, help="仅取 EPUB 前 N 章")
-    b.add_argument("--image", help="独立图片路径 PNG/JPG（走 VL 解析后 append 入库）")
+    b.add_argument("--image", help="独立图片路径 PNG/JPG/SVG（走 VL 解析后 append 入库）")
 
     a = sub.add_parser("ask", help="向已建好的库提一个问题")
     a.add_argument("question")

@@ -11,7 +11,7 @@ throughput.py — 吞吐 / 延迟 专项测试
   3. 查询延迟：多次问答的端到端耗时（平均/最快/最慢）
 
 复用 main 的 build / build_audio / ask，配置与生产一致。
-用独立库 ./vectordb_bench，不动你现有的 ./vectordb。
+每次使用独立的 ./throughput_runs/<时间戳>/，不动现有 ./vectordb，也不复用 VL 缓存。
 从当前目录读 cs.pdf / med.pdf / bizlaw.pdf / Starmer.mp3（在 data 目录下运行）。
 用法：python ../code/throughput.py
 """
@@ -19,13 +19,18 @@ import os
 import sys
 import time
 import json
+import platform
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import main
 import asr
 import fitz
 
-main.DB_PATH = "./vectordb_bench"   # 隔离，不动用户现有向量库
+RUN_ID = time.strftime("%Y%m%d_%H%M%S")
+BENCH_ROOT = os.path.abspath(os.environ.get(
+    "DISTILL_THROUGHPUT_DIR", os.path.join("throughput_runs", RUN_ID)))
+main.DB_PATH = os.path.join(BENCH_ROOT, "vectordb")
+main.VL_CACHE = os.path.join(BENCH_ROOT, "vl_cache.json")
 
 BOOKS = {"CS": "cs.pdf", "Medicine": "med.pdf", "Law": "bizlaw.pdf"}
 AUDIO = "Starmer.mp3"
@@ -116,11 +121,27 @@ def query_latency():
 
 
 def main_run():
+    os.makedirs(BENCH_ROOT, exist_ok=False)
     print("环境说明：以下为本机（含 GPU）实测；无 GPU 降级吞吐另行验证。")
-    result = {"pdf": pdf_throughput(), "audio": audio_throughput(), "query": query_latency()}
-    json.dump(result, open("throughput_result.json", "w", encoding="utf-8"),
-              ensure_ascii=False, indent=2)
-    print("\n结果已存 throughput_result.json")
+    print("独立评测目录：%s（新库、新 VL 缓存，不复用历史结果）" % BENCH_ROOT)
+    result = {
+        "meta": {
+            "run_id": RUN_ID,
+            "bench_root": BENCH_ROOT,
+            "fresh_db": True,
+            "fresh_vl_cache": True,
+            "python": sys.version,
+            "platform": platform.platform(),
+            "runtime": main.runtime_fingerprint(),
+        },
+        "pdf": pdf_throughput(),
+        "audio": audio_throughput(),
+        "query": query_latency(),
+    }
+    output = os.path.join(BENCH_ROOT, "throughput_result.json")
+    with open(output, "w", encoding="utf-8") as f:
+        json.dump(result, f, ensure_ascii=False, indent=2)
+    print("\n结果已存 %s" % output)
 
 
 if __name__ == "__main__":

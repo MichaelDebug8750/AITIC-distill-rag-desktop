@@ -1,0 +1,952 @@
+[
+  {
+    "book": "Abnormal Psychology.pdf",
+    "subject": "Psychology",
+    "question": "What does public opinion mean?",
+    "term": "public opinion",
+    "answer": "Public stigma refers to when members of a society endorse negative stereotypes of people with a mental disorder and discriminate against them. [p.504]",
+    "cited": [
+      504
+    ],
+    "exact": 0,
+    "cooccur": 3,
+    "grounding": 0.091,
+    "n_ans_words": 11,
+    "flag": "真幻觉：答案仅 9% 来自引用页，引用为装饰",
+    "cited_text": "2nd edition as of August 2020 \nGlossary-23 \n \nProjective tests – A psychological test which consists of simple ambiguous stimuli that can \nelicit an unlimited number of responses \nPsychoanalysis - Psychoanalytic therapy used to understand the personality of a therapist’s \npatient and to expose repressed material \nPsychological debriefing - A type of crisis intervention that requires individuals who have \nrecently experienced a traumatic event to discuss or process their thoughts and feelings related to \nthe traumatic event, typically within 72 hours of the event \nPsychological model – includes learning, personality, stress, cognition, self-efficacy, and early \nlife experiences and how they affect mental illness \nPsychological or psychogenic perspective - States that emotional or psychological factors are \nthe cause of mental disorders and represented a challenge to the biological perspec\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "Abnormal Psychology.pdf",
+    "subject": "Psychology",
+    "question": "Define positive statement.",
+    "term": "positive statement",
+    "answer": "The term \"positive\" in the context of reinforcement and punishment refers to the addition of a stimulus, which can be either good or bad. It does not imply an affective connotation of good or bad. [p.107]",
+    "cited": [
+      107
+    ],
+    "exact": 0,
+    "cooccur": 2,
+    "grounding": 0.182,
+    "n_ans_words": 11,
+    "flag": "真幻觉：答案仅 18% 来自引用页，引用为装饰",
+    "cited_text": "2nd edition as of August 2020 \n2-38 \n \nOperant conditioning is a type of associate learning which focuses on consequences that \nfollow a response or behavior that we make (anything we do, say, or think/feel) and whether it \nmakes a behavior more or less likely to occur. This should sound much like what you just read \nabout in terms of Thorndike’s work. Skinner talked about contingencies or when one thing \noccurs due to another. Think of it as an If-Then statement. If I do X, then Y will happen. For \noperant conditioning, this means that if I make a behavior, then a specific consequence will \nfollow. The events (response and consequence) are linked in time. \nWhat form do these consequences take? There are two main ways they can present \nthemselves. \no Reinforcement – Due to the consequence, a behavior/response is strengthened \nand more likely to occur in the future. \no Punishment – Due to\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "American Government.pdf",
+    "subject": "Law",
+    "question": "What does the term oral stage refer to?",
+    "term": "oral stage",
+    "answer": "The term \"oral stage\" refers to the part of the Supreme Court procedures where each side's lawyers have thirty minutes to make their legal case during oral arguments, though the justices often interrupt the presentations with questions. [p.484]",
+    "cited": [
+      484
+    ],
+    "exact": 0,
+    "cooccur": 4,
+    "grounding": 0.286,
+    "n_ans_words": 21,
+    "flag": "真幻觉：答案仅 29% 来自引用页，引用为装饰",
+    "cited_text": "same-sex couples the right to marry would mean “thousands and thousands of people are going to live out \ntheir lives and go to their deaths without their states ever recognizing the equal dignity of their relationships” \nbecame a foundational point of the Court’s opinion, written by then-Justice Anthony Kennedy.58 With such \npower over the Court, the solicitor general is sometimes referred to as “the tenth justice.” \nSUPREME COURT PROCEDURES \nOnce a case has been placed on the docket, briefs, or short arguments explaining each party’s view of the case, \nmust be submitted—first by the petitioner putting forth the case, then by the respondent. After initial briefs \nhave been filed, both parties may file subsequent briefs in response to the first. Likewise, people and groups \nthat are not party to the case but are interested in its outcome may file an amicus curiae (“friend of the court”) \n\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "American Government.pdf",
+    "subject": "Law",
+    "question": "What is a national interest argument?",
+    "term": "national interest argument",
+    "answer": "A national interest argument is a concept that involves the representation of people's interests by individuals who are not necessarily their neighbors, as argued by Alexander Hamilton in Federalist No.35. This argument suggests that the interests of the nation as a whole should be considered rather than the interests of local or particular groups. [p.63]",
+    "cited": [
+      63
+    ],
+    "exact": 0,
+    "cooccur": 8,
+    "grounding": 0.143,
+    "n_ans_words": 21,
+    "flag": "真幻觉：答案仅 14% 来自引用页，引用为装饰",
+    "cited_text": "and now known as The Federalist Papers, these eighty-five essays were originally published in newspapers in \nNew York and other states under the name of Publius, a supporter of the Roman Republic. \nFIGURE 2.13 From 1787 to 1788, Alexander Hamilton, James Madison, and John Jay authored a series of essays \nintended to convince Americans, especially New Yorkers, to support the new Constitution. These essays, which \noriginally appeared in newspapers, were collected and published together under the title The Federalist in 1788. \nThey are now known as The Federalist Papers. \nThe essays addressed a variety of issues that troubled citizens. For example, in Federalist No. 51, attributed to \nJames Madison (Figure 2.14), the author assured readers they did not need to fear that the national \ngovernment would grow too powerful. The federal system, in which power was divided between the national \nand\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "Anatomy_and_Physiology_2e.pdf",
+    "subject": "Medicine",
+    "question": "What is a reasonably possible?",
+    "term": "reasonably possible",
+    "answer": "The question \"What is a reasonably possible?\" is not directly addressed in the provided material. However, based on the context of the material, it can be inferred that a reasonably possible scenario refers to something that is within a normal range or set point, such as physiological parameters fluctuating within a normal range. [p.36]",
+    "cited": [
+      36
+    ],
+    "exact": 0,
+    "cooccur": 0,
+    "grounding": 0.0,
+    "n_ans_words": 15,
+    "flag": "真幻觉：答案仅 0% 来自引用页，引用为装饰",
+    "cited_text": "dissolved in the blood. When pressure is reduced, less gas remains dissolved. You have seen this in effect when you \nopen a carbonated drink. Removing the seal of the bottle reduces the pressure of the gas over the liquid. This in turn \ncauses bubbles as dissolved gases (in this case, carbon dioxide) come out of solution in the liquid. \nThe most common symptoms of DCS are pain in the joints, with headache and disturbances of vision occurring in 10 \npercent to 15 percent of cases. Left untreated, very severe DCS can result in death. Immediate treatment is with \npure oxygen. The affected person is then moved into a hyperbaric chamber. A hyperbaric chamber is a reinforced, \nclosed chamber that is pressurized to greater than atmospheric pressure. It treats DCS by repressurizing the body \nso that pressure can then be removed much more gradually. Because the hyperbaric chamber introduces oxyge\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "Anatomy_and_Physiology_2e.pdf",
+    "subject": "Medicine",
+    "question": "Describe indirect method.",
+    "term": "indirect method",
+    "answer": "The indirect method refers to a pathway in the basal ganglia circuitry where the projection goes through a few intervening nuclei, causing or reinforcing the normal inhibition of the thalamus. [p.535]",
+    "cited": [
+      535
+    ],
+    "exact": 0,
+    "cooccur": 0,
+    "grounding": 0.357,
+    "n_ans_words": 14,
+    "flag": "真幻觉：答案仅 36% 来自引用页，引用为装饰",
+    "cited_text": "FIGURE 13.9 Frontal Section of Cerebral Cortex and Basal Nuclei The major components of the basal nuclei, shown in a frontal section \nof the brain, are the caudate (just lateral to the lateral ventricle), the putamen (inferior to the caudate and separated by the large white-\nmatter structure called the internal capsule), and the globus pallidus (medial to the putamen). \nThe basal nuclei in the cerebrum are connected with a few more nuclei in the brain stem that together act as a \nfunctional group that forms a motor pathway. Two streams of information processing take place in the basal nuclei. \nAll input to the basal nuclei is from the cortex into the striatum (Figure 13.10). The direct pathway is the projection \nof axons from the striatum to the globus pallidus internal segment (GPi) and the substantia nigra pars reticulata \n(SNr). The GPi/SNr then projects to the thalamus, which project\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "arthur-conan-doyle_the-adventures-of-sherlock-holmes.epub",
+    "subject": "Literature",
+    "question": "Give the definition of pay schedule.",
+    "term": "pay schedule",
+    "answer": "The pay schedule in the context of the material refers to the agreed-upon compensation of £4 a week for the position described. [ch14:The Redheaded League]",
+    "cited": [
+      14
+    ],
+    "exact": 0,
+    "cooccur": 0,
+    "grounding": 0.167,
+    "n_ans_words": 6,
+    "flag": "真幻觉：答案仅 17% 来自引用页，引用为装饰",
+    "cited_text": "The Redheaded League I had called upon my friend, Mr. Sherlock Holmes, one day in the autumn of last year and found him in deep conversation with a very stout, florid-faced, elderly gentleman with fiery red hair. With an apology for my intrusion, I was about to withdraw when Holmes pulled me abruptly into the room and closed the door behind me. “You could not possibly have come at a better time, my dear Watson,” he said cordially. “I was afraid that you were engaged.” “So I am. Very much so.” “Then I can wait in the next room.” “Not at all. This gentleman, Mr. Wilson, has been my partner and helper in many of my most successful cases, and I have no doubt that he will be of the utmost use to me in yours also.” The stout gentleman half rose from his chair and gave a bob of greeting, with a quick little questioning glance from his small fat-encircled eyes. “Try the settee,” said Holmes, rel\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "arthur-conan-doyle_the-adventures-of-sherlock-holmes.epub",
+    "subject": "Literature",
+    "question": "What is a for-profit business?",
+    "term": "for-profit business",
+    "answer": "A for-profit business is a business that operates with the intention of generating profit for its owners or shareholders. According to the material, Westaway’s is a for-profit business as it is described as an agency for governesses managed by Miss Stoper, and it operates with the purpose of matching governesses with employment opportunities, likely generating revenue. [ch7:The Adventure of the Copper Beeches]",
+    "cited": [
+      7
+    ],
+    "exact": 0,
+    "cooccur": 1,
+    "grounding": 0.0,
+    "n_ans_words": 18,
+    "flag": "真幻觉：答案仅 0% 来自引用页，引用为装饰",
+    "cited_text": "The Adventure of the Copper Beeches “To the man who loves art for its own sake,” remarked Sherlock Holmes, tossing aside the advertisement sheet of the Daily Telegraph , “it is frequently in its least important and lowliest manifestations that the keenest pleasure is to be derived. It is pleasant to me to observe, Watson, that you have so far grasped this truth that in these little records of our cases which you have been good enough to draw up, and, I am bound to say, occasionally to embellish, you have given prominence not so much to the many causes célèbres and sensational trials in which I have figured but rather to those incidents which may have been trivial in themselves, but which have given room for those faculties of deduction and of logical synthesis which I have made my special province.” “And yet,” said I, smiling, “I cannot quite hold myself absolved from the charge of sensa\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "Biology_2e.pdf",
+    "subject": "Medicine",
+    "question": "Describe analytical intelligence.",
+    "term": "analytical intelligence",
+    "answer": "Analytical intelligence refers to the ability to use logical thinking, such as inductive and deductive reasoning, to analyze and understand complex information. This type of intelligence is essential in scientific inquiry, where observations are made, data is recorded, and conclusions are drawn based on these data. [p.32]",
+    "cited": [
+      32
+    ],
+    "exact": 0,
+    "cooccur": 0,
+    "grounding": 0.524,
+    "n_ans_words": 21,
+    "flag": "真幻觉：答案仅 52% 来自引用页，引用为装饰",
+    "cited_text": "biologists studying physiology, however, focus on the internal functioning of an organism. Some areas of biology \nfocus on only particular types of living things. For example, botanists explore plants, while zoologists specialize in \nanimals. \nScientific Reasoning \nOne thing is common to all forms of science: an ultimate goal “to know.” Curiosity and inquiry are the driving forces \nfor the development of science. Scientists seek to understand the world and the way it operates. To do this, they use \ntwo methods of logical thinking: inductive reasoning and deductive reasoning. \nInductive reasoning is a form of logical thinking that uses related observations to arrive at a general conclusion. \nThis type of reasoning is common in descriptive science. A life scientist such as a biologist makes observations and \nrecords them. These data can be qualitative or quantitative, and one can supplemen\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "bram-stoker_dracula.epub",
+    "subject": "Literature",
+    "question": "Describe conventional mindset.",
+    "term": "conventional mindset",
+    "answer": "The conventional mindset is described as being unfitting when applied to someone who has revolutionised therapeutics by his discovery of the continuous evolution of brain-matter. [ch18:XVIII]",
+    "cited": [
+      18
+    ],
+    "exact": 0,
+    "cooccur": 0,
+    "grounding": 0.0,
+    "n_ans_words": 12,
+    "flag": "真幻觉：答案仅 0% 来自引用页，引用为装饰",
+    "cited_text": "XVIII Dr. Seward’s Diary. 30 September. ﻿—I got home at five o’clock, and found that Godalming and Morris had not only arrived, but had already studied the transcript of the various diaries and letters which Harker and his wonderful wife had made and arranged. Harker had not yet returned from his visit to the carriers’ men, of whom Dr. Hennessey had written to me. Mrs. Harker gave us a cup of tea, and I can honestly say that, for the first time since I have lived in it, this old house seemed like home . When we had finished, Mrs. Harker said:﻿— “ Dr. Seward, may I ask a favour? I want to see your patient, Mr. Renfield. Do let me see him. What you have said of him in your diary interests me so much!” She looked so appealing and so pretty that I could not refuse her, and there was no possible reason why I should; so I took her with me. When I went into the room, I told the man that a lady \n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "bram-stoker_dracula.epub",
+    "subject": "Literature",
+    "question": "What is meant by hoarding disorder?",
+    "term": "hoarding disorder",
+    "answer": "The description provided in the material illustrates elements that could be associated with hoarding disorder, which is characterized by the persistent difficulty in discarding or parting with possessions, regardless of their actual value. The items mentioned, such as title deeds, notepaper, envelopes, and personal grooming items, are kept in a disordered manner, indicating an inability to organize or discard items despite their potential lack of value. [ch22:XXII]",
+    "cited": [
+      22
+    ],
+    "exact": 0,
+    "cooccur": 0,
+    "grounding": 0.032,
+    "n_ans_words": 31,
+    "flag": "真幻觉：答案仅 3% 来自引用页，引用为装饰",
+    "cited_text": "XXII Jonathan Harker’s Journal. 3 October. ﻿—As I must do something or go mad, I write this diary. It is now six o’clock, and we are to meet in the study in half an hour and take something to eat; for Dr. Van Helsing and Dr. Seward are agreed that if we do not eat we cannot work our best. Our best will be, God knows, required today. I must keep writing at every chance, for I dare not stop to think. All, big and little, must go down; perhaps at the end the little things may teach us most. The teaching, big or little, could not have landed Mina or me anywhere worse than we are today. However, we must trust and hope. Poor Mina told me just now, with the tears running down her dear cheeks, that it is in trouble and trial that our faith is tested﻿—that we must keep on trusting; and that God will aid us up to the end. The end! oh my God! what end?﻿ ﻿… To work! To work! When Dr. Van Helsing and\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "bram-stoker_dracula.epub",
+    "subject": "Literature",
+    "question": "What is a probable cause?",
+    "term": "probable cause",
+    "answer": "A probable cause is the disease, as the text mentions that \"the disease—for not to be all well is a disease—interest me.\" [ch9:IX]",
+    "cited": [
+      9
+    ],
+    "exact": 0,
+    "cooccur": 3,
+    "grounding": 0.2,
+    "n_ans_words": 5,
+    "flag": "真幻觉：答案仅 20% 来自引用页，引用为装饰",
+    "cited_text": "IX Letter, Mina Harker to Lucy Westenra. “ Budapest, 24 August. “My dearest Lucy﻿— “I know you will be anxious to hear all that has happened since we parted at the railway station at Whitby. Well, my dear, I got to Hull all right, and caught the boat to Hamburg, and then the train on here. I feel that I can hardly recall anything of the journey, except that I knew I was coming to Jonathan, and, that as I should have to do some nursing, I had better get all the sleep I could.﻿ ﻿… I found my dear one, oh, so thin and pale and weak-looking. All the resolution has gone out of his dear eyes, and that quiet dignity which I told you was in his face has vanished. He is only a wreck of himself, and he does not remember anything that has happened to him for a long time past. At least, he wants me to believe so, and I shall never ask. He has had some terrible shock, and I fear it might tax his poor\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "Business Law and the Legal Environment.pdf",
+    "subject": "Law",
+    "question": "Explain the term cash discount.",
+    "term": "cash discount",
+    "answer": "The term \"cash discount\" refers to a situation where a seller allows a buyer to deduct a percentage from the invoice price if payment is made within a specified period, typically net 10, net 30, or net 45 days. This is a form of early payment discount. [p.473]",
+    "cited": [
+      473
+    ],
+    "exact": 0,
+    "cooccur": 6,
+    "grounding": 0.0,
+    "n_ans_words": 18,
+    "flag": "真幻觉：答案仅 0% 来自引用页，引用为装饰",
+    "cited_text": "Saylor URL: http://www.saylor.org/books \n \nSaylor.org \n \n \n473 \nif Able makes a contract with Woodsman for the latter to cut the trees in Able’s backyard as a Christmas \ngift to Able’s uphill Neighbor (so that Neighbor will have a view), Neighbor could sue Woodsman for \nbreach of the contract. \nIf a person is not an intended beneficiary—not a creditor or donee beneficiary—then he or she is said to be \nonly an incidental beneficiary, and that person has no rights. So if Able makes the contract with \nWoodsman not to benefit Neighbor but for Able’s own benefit, the fact that the tree removal would benefit \nNeighbor does not make Neighbor an intended beneficiary. \nThe beneficiary’s rights are always limited by the terms of the contract. A failure by the promisee to \nperform his part of the bargain will terminate the beneficiary’s rights if the promisee’s lapse terminates \nhis own rights, abs\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "Business Law.pdf",
+    "subject": "Law",
+    "question": "What is a Group process?",
+    "term": "Group process",
+    "answer": "The group process refers to the process by which parties with nonidentical preferences allocate resources through interpersonal activity and joint decision making. [p.171]",
+    "cited": [
+      171
+    ],
+    "exact": 0,
+    "cooccur": 6,
+    "grounding": 0.0,
+    "n_ans_words": 11,
+    "flag": "真幻觉：答案仅 0% 来自引用页，引用为装饰",
+    "cited_text": "Chapter 1\n1. b\n3. a\n5. a\n7. d\n9. What is the supreme law of the land? The federal constitution is the supreme law of the land. What are\nstatutes? Laws enacted by Congress or a state legislative body. What are ordinances? Laws enacted by local\nlegislative bodies. What are administrative rules? Laws issued by administrative agencies under the authority\ngiven to them in statutes.\n11. The term “unfair trade practices” is broadly used and refers to any deceptive or fraudulent business\npractice or act that causes injury to a consumer. Some examples include, but are not limited to, false\nrepresentations of a good or service including deceptive pricing, non-compliance with manufacturing\nstandards, and false advertising. The FTC investigates allegations of unfair trade practices raised by consumers\nand businesses, pre-merger notification filings, congressional inquiries, or reports in the media a\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "Current Essentials of Medicine.pdf",
+    "subject": "Medicine",
+    "question": "What is a Causal attribution?",
+    "term": "Causal attribution",
+    "answer": "A causal attribution refers to the identification of the cause of a condition, such as focal segmental glomerulosclerosis, which may be primary (idiopathic) or secondary due to physiologic response to hyperfiltration or glomerular hypertrophy in disorders with decreased renal mass, or nonspecific healing from prior inflammatory injury. [p.352]",
+    "cited": [
+      352
+    ],
+    "exact": 0,
+    "cooccur": 0,
+    "grounding": 0.783,
+    "n_ans_words": 23,
+    "flag": "题目可能有问题：答案 78% 复述引用页（概念在书里，只是用词不同）",
+    "cited_text": "Chapter 11 Genitourinary and Renal Disorders\n339\n11\nFocal Segmental Glomerulosclerosis\n■Essentials of Diagnosis\n•\nMay be primary (idiopathic) or secondary (physiologic response\nto hyperﬁltration or glomerular hypertrophy as in disorders with\ndecreased renal mass such as unilateral renal agenesis, after\nnephrectomy, massive obesity, reﬂux nephropathy; or nonspeciﬁc\nhealing from prior inﬂammatory injury)\n•\nOther causes include familial forms, toxin related (heroin), infec-\ntions (HIV)\n•\nAlong with membranous nephropathy, most common cause of\nnephrotic syndrome in nondiabetic adults\n•\nPrimary form often presents with acute nephrotic syndrome:\nProteinuria, hypoalbuminemia, edema, hyperlipidemia\n•\nSecondary forms often asymptomatic, presenting with non-\nnephrotic proteinuria and slowly progressive kidney disease\n•\nDepending on the history, further tests may include serologies\n(HIV), renal ult\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "Current Essentials of Medicine.pdf",
+    "subject": "Medicine",
+    "question": "What is a distorted body image?",
+    "term": "distorted body image",
+    "answer": "A distorted body image refers to an excessive preoccupation with an imagined defect in appearance, which is a characteristic of body dysmorphic disorder. [p.398]",
+    "cited": [
+      398
+    ],
+    "exact": 0,
+    "cooccur": 0,
+    "grounding": 0.875,
+    "n_ans_words": 8,
+    "flag": "题目可能有问题：答案 88% 复述引用页（概念在书里，只是用词不同）",
+    "cited_text": "Chapter 14 Psychiatric Disorders\n385\n14\nEating Disorders\n■Essentials of Diagnosis\n•\nSevere abnormalities in eating behavior\n•\nIncludes anorexia nervosa and bulimia nervosa\n•\nDisturbance in perception of body shape or weight\n•\nAnorexia: Refusal to maintain a minimally normal body weight\n•\nBulimia: Repeated binge eating, followed by compensatory behav-\nior to prevent weight gain (eg, vomiting, use of laxatives, exces-\nsive exercise, fasting)\n•\nMedical sequelae include gastrointestinal disturbances, electrolyte\nimbalance, cardiovascular abnormalities, amenorrhea or oligomen-\norrhea, caries or periodontitis\n■Differential Diagnosis\n•\nMajor depressive disorder\n•\nBody dysmorphic disorder: Excessive preoccupation with an\nimagined defect in appearance\n•\nObsessive-compulsive disorder\n•\nWeight loss secondary to medical illness (eg, neoplasm, gastroin-\ntestinal disease, hyperthyroidism, diabetes)\n■T\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "PROBE_DEFECT_SUPPORTED",
+    "manual_note": "引用页明确写有身体形状/体重知觉障碍及躯体变形障碍；答案是原文概念的合理同义转述，探针的字面零出现规则误判。"
+  },
+  {
+    "book": "emily-bronte_wuthering-heights.epub",
+    "subject": "Literature",
+    "question": "What is a work style?",
+    "term": "work style",
+    "answer": "A work style refers to the manner in which someone performs their work, including the techniques, approaches, and behaviors they exhibit. In the context of the provided material, it can be inferred that a work style involves the way one conducts themselves professionally, such as using proper language, maintaining appropriate behavior, and being attentive to one's actions, as described in [ch21:XXI]. However, the term \"work style\" is not explicitly defined in the material.",
+    "cited": [
+      21
+    ],
+    "exact": 0,
+    "cooccur": 6,
+    "grounding": 0.037,
+    "n_ans_words": 27,
+    "flag": "真幻觉：答案仅 4% 来自引用页，引用为装饰",
+    "cited_text": "XXI We had sad work with little Cathy that day: she rose in high glee, eager to join her cousin, and such passionate tears and lamentations followed the news of his departure that Edgar himself was obliged to soothe her, by affirming he should come back soon: he added, however, “if I can get him”; and there were no hopes of that. This promise poorly pacified her; but time was more potent; and though still at intervals she inquired of her father when Linton would return, before she did see him again his features had waxed so dim in her memory that she did not recognise him. When I chanced to encounter the housekeeper of Wuthering Heights, in paying business visits to Gimmerton, I used to ask how the young master got on; for he lived almost as secluded as Catherine herself, and was never to be seen. I could gather from her that he continued in weak health, and was a tiresome inmate. She sa\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "Entrepreneurship.pdf",
+    "subject": "Business",
+    "question": "What is a cause-and-effect relationship?",
+    "term": "cause-and-effect relationship",
+    "answer": "A cause-and-effect relationship is the identification of relationships between two or more variables where one variable is the cause and the other is the effect. [p.321]",
+    "cited": [
+      321
+    ],
+    "exact": 0,
+    "cooccur": 10,
+    "grounding": 0.8,
+    "n_ans_words": 5,
+    "flag": "题目可能有问题：答案 80% 复述引用页（概念在书里，只是用词不同）",
+    "cited_text": "Key Terms \nadvertising mass communication that allows companies to reach a broad audience through TV, radio, \nnewspaper, Internet, magazines, and outdoor ads \nbrand image a company promotes and the connotations it fosters of itself and its products \nbrand advocate someone who is a fan of your products and passes on the word to others \nbrand strategy image a company conveys to its customers \nbundling bundle of products that is discounted to encourage customers to buy in bulk \ncausal research identification of cause-and effect-relationships between two or more variables \nclose step in the sales process in which the salesperson asks for and gets the sale \nconjoint analysis survey tool in which respondents must rank, choose, or a rate a number of “conjoint,” or \nlinked, features or benefits \ncost-led pricing easiest way to price a product by taking the cost of making the product and marking \n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "PROBE_DEFECT_SUPPORTED",
+    "manual_note": "原文术语因换行/连字符写成 cause-and effect-relationships，并给出同一定义；属于规范化漏检。"
+  },
+  {
+    "book": "Entrepreneurship.pdf",
+    "subject": "Business",
+    "question": "What is meant by Group process?",
+    "term": "Group process",
+    "answer": "The term \"Group process\" refers to the methods and techniques used by a group to work together effectively towards a common goal. For instance, the Nominal Group technique is a group process that occurs in a group setting, where participants contribute ideas and reach a consensus through structured steps. [p.221]",
+    "cited": [
+      221
+    ],
+    "exact": 0,
+    "cooccur": 65,
+    "grounding": 0.217,
+    "n_ans_words": 23,
+    "flag": "真幻觉：答案仅 22% 来自引用页，引用为装饰",
+    "cited_text": "multifunctional group, meaning participants come from different departments and with different skill sets, \ngives entrepreneurs and support teams a genuine chance to suggest and actualize ideas. The group works \ntogether to refine and prototype potential solutions to a problem. \nLINK TO LEARNING \nBrainstorming is a highly researched and often practiced technique for the development of innovative \nsolutions. One of the more successful proponents of brainstorming is the United Nations Children’s Fund \n(UNICEF). UNICEF faces unique problems of solving resource problems for mothers and children in \nunderdeveloped nations. See how UNICEF practices brainstorming to solve problems (https://openstax.org/\nl/52UNICEFbrain) including child survival, gender inclusion, refugee crises, education, and others. \nThe setting for a brainstorming session should remain as informal and relaxed as possible. Th\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "Essentials of Medical Physiology.pdf",
+    "subject": "Medicine",
+    "question": "What is an Attachment style?",
+    "term": "Attachment style",
+    "answer": "The attachment style refers to the manner in which cells are attached to each other or to the extracellular matrix, and it is provided by either actin filaments or intermediate filaments. This leads to the classification of anchoring junctions into four types. [p.47]",
+    "cited": [
+      47
+    ],
+    "exact": 0,
+    "cooccur": 0,
+    "grounding": 0.133,
+    "n_ans_words": 15,
+    "flag": "真幻觉：答案仅 13% 来自引用页，引用为装饰",
+    "cited_text": "Section 1 t General Physiology\n24\nFIGURE 2.2: Gap junction\nchannel is surrounded by 6 subunits of proteins which \nare called connexins or connexons (Fig. 2.2).\nFunctions of Gap Junction\n1. Diameter of the channel in the gap junction is about \n1.5 to 3 nm. So, the channel permits the passage of \nglucose, amino acids, ions and other substances, \nwhich have a molecular weight less than 1,000\n2.  It helps in the exchange of chemical messengers \nbetween the cells \n3. It helps in rapid propagation of action potential from \none cell to another cell.\nRegulation of the Diameter of \nChannels in Gap Junction\nIn the gap junctions, the diameter of each channel is \nregulated by the intracellular calcium ions. When the \nconcentration of intracellular calcium ion increases, the \nprotein subunits of connexin surrounding the channel \ncome close to each other by sliding. Thus, the diameter \nof the channel \n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "Fundamentals-of-Nursing-Pharmacology-1st-Canadian-Edition-1749572880.pdf",
+    "subject": "Medicine",
+    "question": "What does the term Forming stage refer to?",
+    "term": "Forming stage",
+    "answer": "The term \"Forming stage\" refers to the formation of the platelet plug, which is the second step in the process of hemostasis. This stage involves platelets clumping together, becoming spiked and sticky, and binding to the exposed collagen and endothelial lining at the site of vessel rupture. This process is assisted by von Willebrand factor. [p.347]",
+    "cited": [
+      347
+    ],
+    "exact": 0,
+    "cooccur": 0,
+    "grounding": 0.269,
+    "n_ans_words": 26,
+    "flag": "真幻觉：答案仅 27% 来自引用页，引用为装饰",
+    "cited_text": "Blood and Coagulation \nNow that we have reviewed the functions of the heart, blood vessels, and kidneys, we will review \ncoagulation. As we discussed, the primary function of blood as it moves through the blood vessels in \nthe body is to deliver oxygen and nutrients and remove wastes as it is filtered by the kidney, but that is \nonly the beginning of the story. Cellular elements of blood include red blood cells (RBCs), white blood \ncells (WBCs), and platelets, and each element has its own function. Red blood cells carry oxygen; \nwhite blood cells assist with the immune response; and platelets are key players in hemostasis, the \nprocess by which the body seals a small ruptured blood vessel and prevents further loss of blood. There \nare three steps to the hemostasis process: vascular spasm, the formation of a platelet plug, and \ncoagulation (blood clotting). Failure of any of these steps w\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "Fundamentals-of-Nursing-Pharmacology-1st-Canadian-Edition-1749572880.pdf",
+    "subject": "Medicine",
+    "question": "What is an automatic processing?",
+    "term": "automatic processing",
+    "answer": "Automatic processing refers to involuntary responses controlled by the brain without the need for conscious thought, such as the heart beating or the lungs breathing. These functions are managed by the autonomic nervous system (ANS), which operates through a balance of the sympathetic and parasympathetic nervous systems. [p.197]",
+    "cited": [
+      197
+    ],
+    "exact": 0,
+    "cooccur": 0,
+    "grounding": 0.13,
+    "n_ans_words": 23,
+    "flag": "真幻觉：答案仅 13% 来自引用页，引用为装饰",
+    "cited_text": "4.1 Autonomic Nervous System Regulation Introduction \nLearning Objectives \n1. Identify the classifications and actions of autonomic nervous system drugs \n2. Give examples of when, how, and to whom autonomic nervous system drugs may be administered \n3. Identify the side effects and special considerations associated with autonomic nervous system drugs \n4. Include considerations and implications of using autonomic nervous system drugs across the lifespan \n5. Include evidence-based concepts when using the nursing process and clinical reasoning related to medications that affect \nthe autonomic nervous system \nKey Terms \n• acetylcholine (ACh) \n• adrenergic \n• adrenergic agonists \n• adrenergic antagonists \n• anticholinergics \n• autonomic nervous system \n• catecholamines \n• central nervous system \n• cholinergic \n• chronotropic \n• fight or flight response \n• glyconeogenesis \n• hemostasis \n• hyper\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "f-scott-fitzgerald_the-great-gatsby.epub",
+    "subject": "Literature",
+    "question": "What does the term romantic love refer to?",
+    "term": "romantic love",
+    "answer": "The term \"romantic love\" refers to a fresh and breathing affection that is not musty and laid away already in lavender, but rather redolent of this year’s shining motorcars and of dances whose flowers were scarcely withered. This form of love is associated with vibrant and radiant activities and is depicted as something that excites and increases the value of the beloved in the eyes of the lover. [ch8:VIII]",
+    "cited": [
+      8
+    ],
+    "exact": 0,
+    "cooccur": 4,
+    "grounding": 0.031,
+    "n_ans_words": 32,
+    "flag": "真幻觉：答案仅 3% 来自引用页，引用为装饰",
+    "cited_text": "VIII I couldn’t sleep all night; a foghorn was groaning incessantly on the Sound, and I tossed half-sick between grotesque reality and savage, frightening dreams. Toward dawn I heard a taxi go up Gatsby’s drive, and immediately I jumped out of bed and began to dress﻿—I felt that I had something to tell him, something to warn him about, and morning would be too late. Crossing his lawn, I saw that his front door was still open and he was leaning against a table in the hall, heavy with dejection or sleep. “Nothing happened,” he said wanly. “I waited, and about four o’clock she came to the window and stood there for a minute and then turned out the light.” His house had never seemed so enormous to me as it did that night when we hunted through the great rooms for cigarettes. We pushed aside curtains that were like pavilions, and felt over innumerable feet of dark wall for electric light swit\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "Gray's Anatomy — Henry Gray.pdf",
+    "subject": "Medicine",
+    "question": "What does parasympathetic nervous system mean?",
+    "term": "parasympathetic nervous system",
+    "answer": "The parasympathetic nervous system refers to the part of the autonomic division of the peripheral nervous system (PNS) that originates from the cranial and sacral regions of the central nervous system (CNS). [p.48]",
+    "cited": [
+      48
+    ],
+    "exact": 0,
+    "cooccur": 16,
+    "grounding": 0.0,
+    "n_ans_words": 9,
+    "flag": "真幻觉：答案仅 0% 来自引用页，引用为装饰",
+    "cited_text": "The Body\n26\nFig. 1.35 Course of sympathetic nerves traveling to the heart. \nT1 to T4\nSympathetic cardiac nerves\nSympathetic cardiac nerves\nSympathetic trunk\nCardiac plexus\nCervical\nWhite ramus\ncommunicans\nGray ramus\ncommunicans\n3. Sympathetic innervation of thoracic and \ncervical viscera\nPreganglionic sympathetic  bers may synapse with post-\nganglionic motor neurons in ganglia and then leave the \nganglia medially to innervate thoracic or cervical viscera \n(Fig. 1.35). They may ascend in the trunk before synaps-\ning; after synapsing, the postganglionic  bers may combine \nwith those from other levels to form named visceral nerves, \nsuch as cardiac nerves. Often, these nerves join branches \nfrom the parasympathetic system to form plexuses on or \nnear the surface of the target organ; for example, the \ncardiac and pulmonary plexuses. Branches of the plexus \ninnervate the organ. Spinal cord le\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "Introduction to Human Nutrition.pdf",
+    "subject": "Medicine",
+    "question": "What are wellness programs?",
+    "term": "wellness programs",
+    "answer": "Wellness programs, as described in the material, include AIDS Targeted nutrition (TN) programs for vulnerable groups, such as advice to pregnant mothers and TN programs for people living with HIV (PLWH), which include food assistance, food-based dietary guidelines, plus advice on safe foods and drinking water. Additionally, individual therapeutic or medical nutrition (IMN) programs are part of these wellness initiatives, encompassing facility-based IMN programs with defined algorithms and home-based care IMN programs with practical advice. Food and supplement assistance are also components of these programs. [p.372]",
+    "cited": [
+      372
+    ],
+    "exact": 0,
+    "cooccur": 0,
+    "grounding": 0.079,
+    "n_ans_words": 38,
+    "flag": "真幻觉：答案仅 8% 来自引用页，引用为装饰",
+    "cited_text": "Food and Nutrition-Related Diseases \n357\nMalignant diseases and dementia may develop. This \nis the ﬁ nal stage, and if not treated by antiretroviral \ndrugs and speciﬁ c drugs for the secondary infec-\ntions it invariably leads to death.\nNutrition and HIV/AIDS\nThe role of nutrition in HIV/AIDS is complex. As \nmentioned above, malnutrition could contribute to \nincreased vulnerability to infection in developing \ncountries. The virus probably increases nutritional \nneeds, while its effects on the nervous and digestive \nsystem lead to decreased appetite and intakes, \nimpaired digestion, and malabsorption. The conse-\nquent loss of lean body mass gave the infection its \noriginal African name of “thin disease.” There are \nindications that improved nutrition may slow the \nprogression of HIV infection to AIDS. There is evi-\ndence that nutritional support can help in the toler-\nance of antiretrovira\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "Introduction to Human Nutrition.pdf",
+    "subject": "Medicine",
+    "question": "What are the main ingredients of Neapolitan pizza dough?",
+    "term": "",
+    "answer": "The main ingredients of Neapolitan pizza dough are pizza, cheese, and tomato. [p.91]",
+    "cited": [
+      91
+    ],
+    "exact": 0,
+    "cooccur": 0,
+    "grounding": 0.0,
+    "n_ans_words": 7,
+    "flag": "真幻觉：答案仅 0% 来自引用页，引用为装饰",
+    "cited_text": "76 \nIntroduction to Human Nutrition\nmutation in SGLT1 is responsible for the very rare \nglucose–galactose malabsorption syndrome, but such \nindividuals absorb fructose well. In up to 60% of \nadults, the capacity for facilitated diffusion of fructose \nappears to be limited, resulting in symptoms of \n“intestinal distress” when challenged by consumption \nof 50 g fructose.\n5.3 Glycemic carbohydrates\nThe rate of uptake of glucose (and other sugars) from \nthe gut is determined by the rate of hydrolysis of oli-\ngosaccharides and polysaccharides that are suscepti-\nble to pancreatic and brush border enzymes. In addi-\ntion to the primary structure of the polymers, many \nTable 5.2  Carbohydrate composition (g/100 g) of some vegetable dishes\nDish\nWater\nCarbohydrate\nStarch\nTotal sugars\nGlucose\nFructose\nGalactose\nSucrose \nMaltose\nLactose\nOligosaccharides\nNSPs\nCellulose\nBhaji, okra\n77.7\n 7.6\n 0.4\n5.5\n1\n---\n",
+    "src": "world-knowledge probe",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "Introduction to Political Science.pdf",
+    "subject": "Law",
+    "question": "What is a Social-information-processing approach?",
+    "term": "Social-information-processing approach",
+    "answer": "The Social-information-processing approach is a framework that examines how the media affect what people think by focusing on the information processing mechanisms individuals use to interpret media content. This approach is discussed in the context of how the media influence public opinion and perception. [p.574]",
+    "cited": [
+      574
+    ],
+    "exact": 0,
+    "cooccur": 1,
+    "grounding": 0.125,
+    "n_ans_words": 16,
+    "flag": "真幻觉：答案仅 12% 来自引用页，引用为装饰",
+    "cited_text": "101. Ken’ichi Ikeda and Sean E. Richey, “Japanese Network Capital: The Impact of Social Networks on \nJapanese Political Participation,” Political Behavior 27, no. 3 (September 2005): 239–260. \n102. Klesner, “Social Capital,” 29. \n103. Sebastián Valenzuela, Namsu Park, and Kerk F. Kee, “Is There Social Capital in a Social Network Site? \nFacebook Use and College Students’ Life Satisfaction, Trust, and Participation,” Journal of Computer-\nMediated Communication 14, no. 4 (July 2009): 875–901, https://doi.org/10.1111/\nj.1083-6101.2009.01474.x. \n104. Homero Gil de Zúñiga, Nakwon Jung, and Sebastián Valenzuela, “Social Media Use for News and \nIndividuals’ Social Capital, Civic Engagement and Political Participation,” Journal of Computer-Mediated \nCommunication 17, no. 3 (April 2012): 329, https://doi.org/10.1111/j.1083-6101.2012.01574.x. \n105. Lambe Kayode Mustapha, Victor Olanrewaju Gbonegun,\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "Introduction to Political Science.pdf",
+    "subject": "Law",
+    "question": "Describe nonparental type.",
+    "term": "nonparental type",
+    "answer": "The term \"families\" is used in the broadest sense to include those who sheltered you and raised you as a child. This includes caregivers in institutional settings, extended biological and nonbiological relatives. [p.576]",
+    "cited": [
+      576
+    ],
+    "exact": 0,
+    "cooccur": 0,
+    "grounding": 0.0,
+    "n_ans_words": 17,
+    "flag": "真幻觉：答案仅 0% 来自引用页，引用为装饰",
+    "cited_text": "145. David A. Graham, “The Polling Crisis Is a Catastrophe for American Democracy,” Atlantic, November 4, \n2020, https://www.theatlantic.com/ideas/archive/2020/11/polling-catastrophe/616986/. \n146. Nate Cohn, “What Went Wrong with Polling? Some Early Theories,” New York Times, November 10, 2020, \nhttps://www.nytimes.com/2020/11/10/upshot/polls-what-went-wrong.html. \n147. Dylan Matthews, “One Pollster’s Explanation for Why the Polls Got It Wrong,” Vox, Vox Media, November \n10, 2020, https://www.vox.com/policy-and-politics/2020/11/10/21551766/election-polls-results-wrong-\ndavid-shor. \n148. Joshua Clinton, “Polling Problems and Why We Should Still Trust (Some) Polls,” The Vanderbilt Project on \nUnity and American Democracy, Vanderbilt University, January 11, 2021, https://www.vanderbilt.edu/\nunity/2021/01/11/polling-problems-and-why-we-should-still-trust-some-polls/. \n149. Sam Wang, “Why Po\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "Introduction to Psychoanalysis — Sigmund Freud.pdf",
+    "subject": "Psychology",
+    "question": "What is meant by economic liberty?",
+    "term": "economic liberty",
+    "answer": "The material does not provide a direct definition of \"economic liberty.\" However, it does mention that \"the motivating force of human society is fundamentally economic; since there is not sufficient nourishment to support its members without work on their part.\" This suggests that economic factors are central to sustaining human society, implying that economic liberty might relate to the freedom individuals have in contributing to and benefiting from economic activities. [p.285]",
+    "cited": [
+      285
+    ],
+    "exact": 0,
+    "cooccur": 0,
+    "grounding": 0.032,
+    "n_ans_words": 31,
+    "flag": "真幻觉：答案仅 3% 来自引用页，引用为装饰",
+    "cited_text": "The Sexual Life of Man\n269\nrelation\nto what\nis condemned\nin\nlater\nyears\nas\nperversity.\nPermit me first to explain to you the cause of your reluctance\nand then to present to you the sum of our observations.\nIt\nis\nbiologically improbable, even absurd,\nto assume that children\nhave no sexual life—sexual excitements,\ndesires, and some sort\nof satisfaction—but that they develop\nit suddenly between the\nages of twelve and fourteen.\nThis would be just as improbable\nfrom the viewpoint of biology as to say that they were not born\nwith genitals but developed them only in the period of puberty.\nThe new factor which becomes active in them at the time is the\nfunction of reproduction, which avails itself for its own purposes\nof all the physical and psychic material already present.\nYou\ncommit the error of confusing sexuality with reproduction and\nthereby block the road to the understanding of sexuality,\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "Introductory Business Statistics.pdf",
+    "subject": "Business",
+    "question": "What is an exit poll?",
+    "term": "exit poll",
+    "answer": "An exit poll is a type of survey conducted to gauge voters' intentions and opinions immediately after they have cast their votes, typically during or right after an election. [p.49]",
+    "cited": [
+      49
+    ],
+    "exact": 0,
+    "cooccur": 0,
+    "grounding": 0.0,
+    "n_ans_words": 16,
+    "flag": "真幻觉：答案仅 0% 来自引用页，引用为装饰",
+    "cited_text": "31 . A study was done to determine the age, number of times per week, and the duration (amount of time) of \nresidents using a local park in San Jose. The first house in the neighborhood around the park was selected \nrandomly and then every eighth house in the neighborhood around the park was interviewed. The sampling \nmethod was: \na. simple random \nb. systematic \nc. stratified \nd. cluster \n32 . Name the sampling method used in each of the following situations: \na. A person in the airport is handing out questionnaires to travelers asking them to evaluate the airport’s \nservice. The person does not ask travelers who are hurrying through the airport with their hands full of \nluggage, but instead asks all travelers who are sitting near gates and not taking naps while they wait. \nb. A teacher wants to know if students are doing homework so they randomly select rows two and five and then \ncall\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "lewis-carroll_alices-adventures-in-wonderland_john-tenniel.epub",
+    "subject": "Literature",
+    "question": "What is a descriptive representation?",
+    "term": "descriptive representation",
+    "answer": "A descriptive representation is a representation that describes the object in terms of its properties or characteristics. In the context of the provided material, the Mock Turtle's explanation of the regular course includes \"Reeling and Writhing, of course, to begin with,\" which is a descriptive representation of the initial state of the course. [ch9:IX]",
+    "cited": [
+      9
+    ],
+    "exact": 0,
+    "cooccur": 0,
+    "grounding": 0.125,
+    "n_ans_words": 16,
+    "flag": "真幻觉：答案仅 12% 来自引用页，引用为装饰",
+    "cited_text": "IX The Mock Turtle’s Story “You can’t think how glad I am to see you again, you dear old thing!” said the Duchess, as she tucked her arm affectionately into Alice’s, and they walked off together. Alice was very glad to find her in such a pleasant temper, and thought to herself that perhaps it was only the pepper that had made her so savage when they met in the kitchen. “When I’m a Duchess,” she said to herself, (not in a very hopeful tone though), “I won’t have any pepper in my kitchen at all . Soup does very well without﻿—Maybe it’s always pepper that makes people hot-tempered,” she went on, very much pleased at having found out a new kind of rule, “and vinegar that makes them sour﻿—and camomile that makes them bitter﻿—and﻿—and barley-sugar and such things that make children sweet-tempered. I only wish people knew that : then they wouldn’t be so stingy about it, you know﻿—” She had quit\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "mark-twain_the-adventures-of-tom-sawyer.epub",
+    "subject": "Literature",
+    "question": "What is a prosocial behavior?",
+    "term": "prosocial behavior",
+    "answer": "A prosocial behavior is to not get drunk, as the speaker advises others to avoid getting drunk to prevent ending up in trouble. [ch23:XXIII]",
+    "cited": [
+      23
+    ],
+    "exact": 0,
+    "cooccur": 0,
+    "grounding": 0.0,
+    "n_ans_words": 9,
+    "flag": "真幻觉：答案仅 0% 来自引用页，引用为装饰",
+    "cited_text": "XXIII The Salvation of Muff Potter At last the sleepy atmosphere was stirred﻿—and vigorously: the murder trial came on in the court. It became the absorbing topic of village talk immediately. Tom could not get away from it. Every reference to the murder sent a shudder to his heart, for his troubled conscience and fears almost persuaded him that these remarks were put forth in his hearing as “feelers”; he did not see how he could be suspected of knowing anything about the murder, but still he could not be comfortable in the midst of this gossip. It kept him in a cold shiver all the time. He took Huck to a lonely place to have a talk with him. It would be some relief to unseal his tongue for a little while; to divide his burden of distress with another sufferer. Moreover, he wanted to assure himself that Huck had remained discreet. “Huck, have you ever told anybody about﻿—that?” “ ’Bout wh\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "mark-twain_the-adventures-of-tom-sawyer.epub",
+    "subject": "Literature",
+    "question": "What is an unanimity of acceptance?",
+    "term": "unanimity of acceptance",
+    "answer": "The material mentions a \"unanimous call for an explanation\" which indicates an unanimity of acceptance. This refers to a situation where everyone present agrees or accepts something without dissent.  \n[ch34:XXXIV]",
+    "cited": [
+      34
+    ],
+    "exact": 0,
+    "cooccur": 0,
+    "grounding": 0.077,
+    "n_ans_words": 13,
+    "flag": "真幻觉：答案仅 8% 来自引用页，引用为装饰",
+    "cited_text": "XXXIV Floods of Gold Huck said: “Tom, we can slope, if we can find a rope. The window ain’t high from the ground.” “Shucks! what do you want to slope for?” “Well, I ain’t used to that kind of a crowd. I can’t stand it. I ain’t going down there, Tom.” “Oh, bother! It ain’t anything. I don’t mind it a bit. I’ll take care of you.” Sid appeared. “Tom,” said he, “auntie has been waiting for you all the afternoon. Mary got your Sunday clothes ready, and everybody’s been fretting about you. Say﻿—ain’t this grease and clay, on your clothes?” “Now, Mr. Siddy, you jist ’tend to your own business. What’s all this blowout about, anyway?” “It’s one of the widow’s parties that she’s always having. This time it’s for the Welshman and his sons, on account of that scrape they helped her out of the other night. And say﻿—I can tell you something, if you want to know.” “Well, what?” “Why, old Mr. Jones is g\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "mary-shelley_frankenstein.epub",
+    "subject": "Literature",
+    "question": "Describe individual-level change.",
+    "term": "individual-level change",
+    "answer": "The material describes individual-level change through the experience of a character who undergoes a transformation in their emotional and psychological state. This is evident in the description of the character's restless state, their separation from what they love, and their eventual deep sleep, indicating a shift in their condition. [ch20:ChapterXX]",
+    "cited": [
+      20
+    ],
+    "exact": 0,
+    "cooccur": 0,
+    "grounding": 0.0,
+    "n_ans_words": 20,
+    "flag": "真幻觉：答案仅 0% 来自引用页，引用为装饰",
+    "cited_text": "Chapter XX I sat one evening in my laboratory; the sun had set, and the moon was just rising from the sea; I had not sufficient light for my employment, and I remained idle, in a pause of consideration of whether I should leave my labour for the night, or hasten its conclusion by an unremitting attention to it. As I sat, a train of reflection occurred to me, which led me to consider the effects of what I was now doing. Three years before I was engaged in the same manner, and had created a fiend whose unparalleled barbarity had desolated my heart, and filled it forever with the bitterest remorse. I was now about to form another being, of whose dispositions I was alike ignorant; she might become ten thousand times more malignant than her mate, and delight, for its own sake, in murder and wretchedness. He had sworn to quit the neighbourhood of man, and hide himself in deserts; but she had n\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "mary-shelley_frankenstein.epub",
+    "subject": "Literature",
+    "question": "What is an individual-level change?",
+    "term": "individual-level change",
+    "answer": "An individual-level change refers to a transformation that occurs within a person, affecting their health, emotions, or mindset. In the material, it is mentioned that \"A change indeed had taken place in me: my health, which had hitherto declined, was now much restored; and my spirits, when unchecked by the memory of my unhappy promise, rose proportionably.\" This indicates a personal transformation in health and emotional state. [ch18:ChapterXVIII]",
+    "cited": [
+      18
+    ],
+    "exact": 0,
+    "cooccur": 0,
+    "grounding": 0.346,
+    "n_ans_words": 26,
+    "flag": "真幻觉：答案仅 35% 来自引用页，引用为装饰",
+    "cited_text": "Chapter XVIII Day after day, week after week, passed away on my return to Geneva; and I could not collect the courage to recommence my work. I feared the vengeance of the disappointed fiend, yet I was unable to overcome my repugnance to the task which was enjoined me. I found that I could not compose a female without again devoting several months to profound study and laborious disquisition. I had heard of some discoveries having been made by an English philosopher, the knowledge of which was material to my success, and I sometimes thought of obtaining my father’s consent to visit England for this purpose; but I clung to every pretence of delay, and shrunk from taking the first step in an undertaking whose immediate necessity began to appear less absolute to me. A change indeed had taken place in me: my health, which had hitherto declined, was now much restored; and my spirits, when unch\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "mary-shelley_frankenstein.epub",
+    "subject": "Literature",
+    "question": "Define selective engagement.",
+    "term": "selective engagement",
+    "answer": "Selective engagement refers to the focused pursuit of a single study or objective with such intensity that it leads to significant proficiency and achievements. This concept is illustrated by the individual who, with a mind of moderate capacity, continually sought the attainment of one object of pursuit and was solely wrapt up in it, resulting in rapid improvement and notable discoveries.  \nAnswer: A mind of moderate capacity, which closely pursues one study, must infallibly arrive at great proficiency in that study; and I, who continually sought the attainment of one object of pursuit, and was solely wrapt up in this, improved so rapidly, that, at the end of two years, I made some discoveries in the improvement of some chemical instruments, which procured me great esteem and admiration at the university. [ch4:ChapterIV]",
+    "cited": [
+      4
+    ],
+    "exact": 0,
+    "cooccur": 0,
+    "grounding": 0.068,
+    "n_ans_words": 44,
+    "flag": "真幻觉：答案仅 7% 来自引用页，引用为装饰",
+    "cited_text": "Chapter IV From this day natural philosophy, and particularly chemistry, in the most comprehensive sense of the term, became nearly my sole occupation. I read with ardour those works, so full of genius and discrimination, which modern enquirers have written on these subjects. I attended the lectures, and cultivated the acquaintance, of the men of science of the university; and I found even in M. Krempe a great deal of sound sense and real information, combined, it is true, with a repulsive physiognomy and manners, but not on that account the less valuable. In M. Waldman I found a true friend. His gentleness was never tinged by dogmatism; and his instructions were given with an air of frankness and good nature, that banished every idea of pedantry. In a thousand ways he smoothed for me the path of knowledge, and made the most abstruse enquiries clear and facile to my apprehension. My appl\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "Microbiology.pdf",
+    "subject": "Medicine",
+    "question": "Describe hidden diversity.",
+    "term": "hidden diversity",
+    "answer": "The true diversity of microbial life is largely unknown, which means that its effects and potential benefits have not been fully explored. [p.14]",
+    "cited": [
+      14
+    ],
+    "exact": 0,
+    "cooccur": 0,
+    "grounding": 0.167,
+    "n_ans_words": 12,
+    "flag": "真幻觉：答案仅 17% 来自引用页，引用为装饰",
+    "cited_text": "production, anoxygenic photosynthesis).\n12.\nThe interactions of microorganisms among themselves and with their environment are determined by their\nmetabolic abilities (e.g., quorum sensing, oxygen consumption, nitrogen transformations).\n13.\nThe survival and growth of any microorganism in a given environment depends on its metabolic\ncharacteristics.\n14.\nThe growth of microorganisms can be controlled by physical, chemical, mechanical, or biological means.\nInformation Flow and Genetics\n15.\nGenetic variations can impact microbial functions (e.g., in biofilm formation, pathogenicity and drug\nresistance).\n16.\nAlthough the central dogma is universal in all cells, the processes of replication, transcription, and translation\ndiffer in Bacteria, Archaea, and Eukaryotes.\n17.\nThe regulation of gene expression is influenced by external and internal molecular cues and/or signals.\n18.\nThe synthesis of \n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "Operating Systems - Three Easy Pieces.pdf",
+    "subject": "Computer Science",
+    "question": "Explain the term latency period.",
+    "term": "latency period",
+    "answer": "The term \"latency period\" refers to the delay or time taken for a read, program, or erase operation to complete in flash memory technologies such as SLC, MLC, and TLC. Specifically, the material discusses read latency, which is the time taken for a read operation to complete, noting that it takes just 10s of microseconds. Program latency is mentioned as higher and more variable, with SLC having a minimum of 200 microseconds. [p.660]",
+    "cited": [
+      660
+    ],
+    "exact": 0,
+    "cooccur": 0,
+    "grounding": 0.455,
+    "n_ans_words": 22,
+    "flag": "真幻觉：答案仅 46% 来自引用页，引用为装饰",
+    "cited_text": "FLASH-BASED SSDS\n5\nRead\nProgram\nErase\nDevice\n(µs)\n(µs)\n(µs)\nSLC\n25\n200-300\n1500-2000\nMLC\n50\n600-900\n˜3000\nTLC\n˜75\n˜900-1350\n˜4500\nFigure I.2: Raw Flash Performance Characteristics\nI.4\nFlash Performance And Reliability\nBecause we’re interested in building a storage device out of raw ﬂash\nchips, it is worthwhile to understand their basic performance character-\nistics. Figure I.2 presents a rough summary of some numbers found in\nthe popular press [V12]. Therein, the author presents the basic operation\nlatency of reads, programs, and erases across SLC, MLC, and TLC ﬂash,\nwhich store 1, 2, and 3 bits of information per cell, respectively.\nAs we can see from the table, read latencies are quite good, taking just\n10s of microseconds to complete. Program latency is higher and more\nvariable, as low as 200 microseconds for SLC, but higher as you pack\nmore bits into each cell; to get good write perf\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "Operating Systems - Three Easy Pieces.pdf",
+    "subject": "Computer Science",
+    "question": "What is a continuous development?",
+    "term": "continuous development",
+    "answer": "A continuous development refers to the ongoing evolution of ideas that provide more features and enhance modern systems for users and applications. [p.38]",
+    "cited": [
+      38
+    ],
+    "exact": 0,
+    "cooccur": 0,
+    "grounding": 0.2,
+    "n_ans_words": 10,
+    "flag": "真幻觉：答案仅 20% 来自引用页，引用为装饰",
+    "cited_text": "INTRODUCTION TO OPERATING SYSTEMS\n15\nASIDE: THE IMPORTANCE OF UNIX\nIt is difﬁcult to overstate the importance of UNIX in the history of oper-\nating systems. Inﬂuenced by earlier systems (in particular, the famous\nMultics system from MIT), UNIX brought together many great ideas and\nmade a system that was both simple and powerful.\nUnderlying the original “Bell Labs” UNIX was the unifying principle of\nbuilding small powerful programs that could be connected together to\nform larger workﬂows. The shell, where you type commands, provided\nprimitives such as pipes to enable such meta-level programming, and\nthus it became easy to string together programs to accomplish a big-\nger task.\nFor example, to ﬁnd lines of a text ﬁle that have the word\n“foo” in them, and then to count how many such lines exist, you would\ntype: grep foo file.txt|wc -l, thus using the grep and wc (word\ncount) programs to ach\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "Organizational Behavior.pdf",
+    "subject": "Business",
+    "question": "Describe bottom-up implementation.",
+    "term": "bottom-up implementation",
+    "answer": "The bottom-up approach reverses the logic of the top-down approach, where leaders determine the organizational structure and assume employee behavior will change naturally. Instead, the bottom-up approach starts with the input from employees and lower levels of the organization, allowing for changes in behavior and structure to emerge from the grassroots level. [p.481]",
+    "cited": [
+      481
+    ],
+    "exact": 0,
+    "cooccur": 1,
+    "grounding": 0.269,
+    "n_ans_words": 26,
+    "flag": "真幻觉：答案仅 27% 来自引用页，引用为装饰",
+    "cited_text": "Top-down change approaches rely on mechanistic assumptions about the nature of an organization. In this \napproach, a relatively small group of individuals in the organization will design a process and instruct others \nthroughout the organization as to how the process of change should unfold. Most employees in the top-down \napproach play a passive role during the design process and are generally expected to follow the directions \ngiven to them by leaders in the organization. In other words, this approach to change relies on the formal \norganization to drive the legitimacy of the change. \nThe opposite of the top-down change approach is the emergent or bottom-up approach. This approach \nrelies on the belief that employees will be more invested in change if they play some role in the process of \ndesigning the change. Participatory management, the inclusion of employees in the deliberations a\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "Principles of Accounting, Volume 2 Managerial Accounting.pdf",
+    "subject": "Business",
+    "question": "What does the term going public refer to?",
+    "term": "going public",
+    "answer": "The term \"going public\" refers to a company's decision to offer its shares for sale to the general public, which allows the company to raise capital from a wide range of investors. This process involves adhering to specific financial reporting standards and regulations, such as those set by the SEC, to ensure transparency and trust in the financial information provided. [p.50]",
+    "cited": [
+      50
+    ],
+    "exact": 0,
+    "cooccur": 5,
+    "grounding": 0.12,
+    "n_ans_words": 25,
+    "flag": "真幻觉：答案仅 12% 来自引用页，引用为装饰",
+    "cited_text": "spends everything in their budget regardless of the value added or the necessity. This is not ethical behavior \nand is usually the result of a budgetary process that needs to be modified so that the possibility of being able \nto pad the budget is removed or at least minimized. \nAll employees within a company are expected to act ethically within their business actions. This can sometimes \nbe difficult when the company itself almost promotes the idea of unethical actions. For example, Wells Fargo \nstarted offering incentives to their employees who succeeded in selling to current customers other services \nand products that the bank had to offer. This incentive created an unethical culture. Employees manufactured \nfake accounts, credit cards, and other services in order to qualify for the bonuses. In the end, 5,300 employees \nlost their jobs, and everyone learned a lesson on creating proper \n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "Principles of Economics.pdf",
+    "subject": "Business",
+    "question": "What is an Americans with Disabilities Act?",
+    "term": "Americans with Disabilities Act",
+    "answer": "The Americans with Disabilities Act of 1990 prohibits discrimination against those with disabilities and requires reasonable [p.347].",
+    "cited": [
+      347
+    ],
+    "exact": 0,
+    "cooccur": 1,
+    "grounding": 1.0,
+    "n_ans_words": 5,
+    "flag": "题目可能有问题：答案 100% 复述引用页（概念在书里，只是用词不同）",
+    "cited_text": "Law \nProtection \nImmigration Reform \nand Control Act of \n1986 \nProhibits hiring of illegal immigrants; requires employers to ask for proof of citizenship; \nprotects rights of legal immigrants \nWorker Adjustment and \nRetraining Notification \nAct of 1988 \nRequires employers with more than 100 employees to provide written notice 60 days \nbefore plant closings or large layoffs \nAmericans with \nDisabilities Act of 1990 \nProhibits discrimination against those with disabilities and requires reasonable \naccommodations for them on the job \nFamily and Medical \nLeave Act of 1993 \nAllows employees to take up to 12 weeks of unpaid leave per year for family reasons, \nincluding birth or family illness \nPension Protection Act \nof 2006 \nPenalizes firms for underfunding their pension plans and gives employees more \ninformation about their pension accounts \nLilly Ledbetter Fair Pay \nAct of 2009 \nRestores p\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "PROBE_DEFECT_SUPPORTED",
+    "manual_note": "引用页明确列出 Americans with Disabilities Act of 1990 及其禁止歧视、要求合理便利的定义；换行造成字面检索漏检。"
+  },
+  {
+    "book": "Principles of Economics.pdf",
+    "subject": "Business",
+    "question": "What is a dissenting opinion?",
+    "term": "dissenting opinion",
+    "answer": "A dissenting opinion is an opinion that differs from the majority view, often based on one's values and cannot be proven true or false. [p.56]",
+    "cited": [
+      56
+    ],
+    "exact": 0,
+    "cooccur": 0,
+    "grounding": 0.5,
+    "n_ans_words": 10,
+    "flag": "真幻觉：答案仅 50% 来自引用页，引用为装饰",
+    "cited_text": "opinion. We cannot test them since we cannot prove opinions to be true or false. They just are opinions based \non one's values. For example, an economist could analyze a proposed subway system in a certain city. If the \nexpected benefits exceed the costs, he concludes that the project is worthy—an example of positive analysis. \nAnother economist argues for extended unemployment compensation during the COVID-19 pandemic \nbecause a rich country like the United States should take care of its less fortunate citizens—an example of \nnormative analysis. \nEven if the line between positive and normative statements is not always crystal clear, economic analysis does \ntry to remain rooted in the study of the actual people who inhabit the actual economy. Fortunately however, the \nassumption that individuals are purely self-interested is a simplification about human nature. In fact, we need \nto look \n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "Principles of Economics.pdf",
+    "subject": "Business",
+    "question": "What are the main ingredients of Neapolitan pizza dough?",
+    "term": "",
+    "answer": "The main ingredients of Neapolitan pizza dough are flour, yeast, and water. [p.176]",
+    "cited": [
+      176
+    ],
+    "exact": 0,
+    "cooccur": 0,
+    "grounding": 0.75,
+    "n_ans_words": 8,
+    "flag": "题目可能有问题：答案 75% 复述引用页（概念在书里，只是用词不同）",
+    "cited_text": "• Natural Resources (Land and Raw Materials) - The ingredients for the pizza are raw materials. These \ninclude the flour, yeast, and water for the dough, the tomatoes, herbs, and water for the sauce, the cheese, \nand the toppings. If the pizza place uses a wood-burning oven, we would include the wood as a raw \nmaterial. If the establishment heats the oven with natural gas, we would count this as a raw material. Don’t \nforget electricity for lights. If, instead of pizza, we were looking at an agricultural product, like wheat, we \nwould include the land the farmer used for crops here. \n• Labor – When we talk about production, labor means human effort, both physical and mental. The \npizzaiolo was the primary example of labor here. They need to be strong enough to roll out the dough and \nto insert and retrieve the pizza from the oven, but they also must know how to make the pizza, how long i\n---\n",
+    "src": "world-knowledge probe",
+    "manual_verdict": "PROBE_DEFECT_SUPPORTED",
+    "manual_note": "引用页逐项写明 dough 使用 flour、yeast、water，答案完全由原文支持。"
+  },
+  {
+    "book": "Principles of Management.pdf",
+    "subject": "Business",
+    "question": "What is meant by free-market economics?",
+    "term": "free-market economics",
+    "answer": "Free-market economics refers to an economic system characterized by free trade, capital flows, communications, and cheaper foreign labor markets, which are part of the processes of globalization. This system is defined as the development of an integrated global economy. [p.92]",
+    "cited": [
+      92
+    ],
+    "exact": 0,
+    "cooccur": 5,
+    "grounding": 0.0,
+    "n_ans_words": 19,
+    "flag": "真幻觉：答案仅 0% 来自引用页，引用为装饰",
+    "cited_text": "While the type, size, scope, location, purpose, and mission of an organization all help determine the external \nenvironment in which it operates, it still must meet the requirements and contingencies of that environment to \nsurvive and prosper. This chapter is primarily concerned with how organizations fit with their external \nenvironments and how organizations are structured to meet challenges and opportunities of these \nenvironments. Major takeaways for readers of this chapter include the following: 1) Be able to identify \nelements in any organization’s external—and internal—environment that may interest or affect you as an \nemployee, shareholder, family member, or observer. 2) Gain insights into how to develop strategies and tactics \nthat would help you (and your organization) navigate ways to cope with or try to dominate or appeal to \nelements (e.g., market segments, stakeholders, po\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "Problem Solving with Algorithms and Data Structures.pdf",
+    "subject": "Computer Science",
+    "question": "What does Tree Diagram mean?",
+    "term": "Tree Diagram",
+    "answer": "A tree diagram refers to a hierarchical structure where nodes are connected in a parent-child relationship, and it is used to represent the organization of directories and files in a file system, as well as the structure of HTML documents. The material explains that a tree diagram can be exemplified by a file system hierarchy, where a subtree can be detached and reattached under another directory, or by a web page structure represented through HTML tags. [p.191]",
+    "cited": [
+      191
+    ],
+    "exact": 0,
+    "cooccur": 1,
+    "grounding": 0.267,
+    "n_ans_words": 30,
+    "flag": "真幻觉：答案仅 27% 来自引用页，引用为装饰",
+    "cited_text": "Problem Solving with Algorithms and Data Structures, Release 3.0\nFigure 6.2: A Small Part of the Unix File System Hierarchy\nA third property is that each leaf node is unique. We can specify a path from the root of the tree\nto a leaf that uniquely identiﬁes each species in the animal kingdom; for example, Animalia →\nChordate →Mammal →Carnivora →Felidae →Felis →Domestica.\nAnother example of a tree structure that you probably use every day is a ﬁle system. In a ﬁle\nsystem, directories, or folders, are structured as a tree. Figure 6.2 illustrates a small part of a\nUnix ﬁle system hierarchy.\nThe ﬁle system tree has much in common with the biological classiﬁcation tree. You can follow\na path from the root to any directory. That path will uniquely identify that subdirectory (and\nall the ﬁles in it). Another important property of trees, derived from their hierarchical nature,\nis that you can mov\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "Psychology The Science of Behaviour.pdf",
+    "subject": "Psychology",
+    "question": "What is meant by innate behavior?",
+    "term": "innate behavior",
+    "answer": "Innate behavior refers to behavior that is biologically determined and present from birth, as opposed to being learned through experience. This type of behavior is typically associated with the \"nature\" side of the nature versus nurture controversy in psychology. [p.28]",
+    "cited": [
+      28
+    ],
+    "exact": 0,
+    "cooccur": 1,
+    "grounding": 0.278,
+    "n_ans_words": 18,
+    "flag": "真幻觉：答案仅 28% 来自引用页，引用为装饰",
+    "cited_text": "108\nChapter 4 • BIOLOGY OF BEHAVIOR\nBiology and Culture\nEnvironmental Effects on Brain Development\nOne of the oldest controversies in psychology concerns the\nrespective roles of nature and nurture in human develop-\nment. Normally, when people ask, “Is it caused by biological\nor social factors?” or “Is it innate or learned?” they are refer-\nring to the origins of a particular behavior, talent, or per-\nsonality trait. Almost always, biology and innateness are\nplaced on the “nature” side of the dichotomy; social factors\nand learning are placed on the “nurture” side. Historically,\nthis was considered to be an appropriate division.\nAs you will see throughout this book, however, most\nmodern psychologists consider the nature–nurture issue to\nbe a relic of outdated thinking about behavior. That is, as we\nlearn more about the ways in which behaviors, talents, and\npersonality traits develop, we di\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "Psychology The Science of Behaviour.pdf",
+    "subject": "Psychology",
+    "question": "What is an internal environment?",
+    "term": "internal environment",
+    "answer": "The internal environment refers to the internal functions of the body regulated by the hypothalamus through its control of the autonomic nervous system and the endocrine system. [p.3]",
+    "cited": [
+      3
+    ],
+    "exact": 0,
+    "cooccur": 4,
+    "grounding": 0.5,
+    "n_ans_words": 10,
+    "flag": "存疑：逐词共现 4 段且答案 50% 复述引用页",
+    "cited_text": "The Brain and Its Components\nStructure of the Nervous System • Cells of the Nervous System • The Excitable Axon: The Action Potential •\nCommunication with Other Cells: Synapses • A Simple Neural Circuit\nThe central nervous system consists of the brain and the spinal cord. The peripheral nervous system consists of nerves\nthat connect the central nervous system to sense organs, muscles, and glands. The primary functions of the brain are to\ncontrol behavior, to process information about the environment, and to regulate the physiological processes of the body.\nThe brain floats in cerebrospinal fluid, enclosed by the meninges, and is protected from many chemicals by the\nblood–brain barrier. The functions of the brain are accomplished by circuits of neurons (nerve cells), supported by glial\ncells. Neurons communicate with one another by releasing chemicals called neurotransmitters. The message\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "UNCERTAIN",
+    "manual_note": "引用材料确实讨论脑调节身体生理过程，但没有把 internal environment 作为独立术语定义；答案可能是合理综合，也可能是语义拉伸。"
+  },
+  {
+    "book": "The Common Law — Oliver Wendell Holmes.pdf",
+    "subject": "Law",
+    "question": "What is meant by national interest argument?",
+    "term": "national interest argument",
+    "answer": "The national interest argument refers to considerations of what is expedient for the community concerned, which are the secret root from which the law draws all the juices of life. This concept is rooted in the idea that every important principle developed by litigation is, in fact, and at bottom, the result of more or less definitely understood views of public policy. [p.61]",
+    "cited": [
+      61
+    ],
+    "exact": 0,
+    "cooccur": 0,
+    "grounding": 0.0,
+    "n_ans_words": 26,
+    "flag": "真幻觉：答案仅 0% 来自引用页，引用为装饰",
+    "cited_text": "EARLY FORMS OF LIABILITY. \n35 \nslave under all the systems was to be surrendered to the \nrelatives of the slain man, that they might do with him \nwhat they liked.!| \nThe deodand was an accursed thing. \nThe original limitation of liability tc surrender, when the \nowner was before the court, could not be accounted for if \nit was his liability, and not that of his property, which \nwas in question. \nEven where, as in some of the cases, \nexpiation seems to be intended rather than vengeance, the \nobject is equally remote from an extrajudicial distress. \nThe foregoing history, apart from the purposes for which \nit has been given, well illustrates the paradox of form and \nsubstance in the development of law. \nIn form its growth \nis logical. \nThe official theory is that each new decision \nfollows syllogistically from existing precedents. \nBut just \nas the clavicle in the cat only tells of the exi\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  },
+  {
+    "book": "The Interpretation of Dreams — Sigmund Freud.pdf",
+    "subject": "Psychology",
+    "question": "Describe dual court system.",
+    "term": "dual court system",
+    "answer": "The material mentions a \"presiding judge\" who was standing on one or two chairs, with the term \"Stuhlrichter\" literally meaning \"chair-judge,\" indicating a dual court system where the judge's position is symbolically represented by the chair. This dual court system is referenced in the context of a political crisis in Hungary, where a coalition government was formed under Széll. [p.439]",
+    "cited": [
+      439
+    ],
+    "exact": 0,
+    "cooccur": 0,
+    "grounding": 0.227,
+    "n_ans_words": 22,
+    "flag": "真幻觉：答案仅 23% 来自引用页，引用为装饰",
+    "cited_text": "if we were to judge from this single example, we should be inclined to\nthink that the apparent absurdity had been permitted or even designed.\nii\nHere is another, almost exactly similar, example from a dream of my\nown. (I lost my father in 1896.) After his death my father played a political\npart among the Magyars and brought them together politically. Here I saw a\nsmall and indistinct picture: a crowd of men as though they were in the Re-\nichstag; someone standing on one or two chairs, with other people round him.\nI remembered how like Garibaldi he had looked on his death-bed, and felt\nglad that that promise had come true.\nWhat could be more absurd than this? It was dreamt at a time at\nwhich the Hungarians had been driven by parliamentary obstruction into\na state of lawlessness and were plunged into the crisis from which they\nwere rescued by Koloman Széll.1 The trivial detail of the scene\n---\n",
+    "src": "cross-domain (verified 0 occurrences)",
+    "manual_verdict": "CONFIRMED_HALLUCINATION",
+    "manual_note": "引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。"
+  }
+]

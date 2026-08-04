@@ -116,9 +116,10 @@ def show_fingerprint(fpr, book=''):
         return None
     rt = fpr.get('runtime', {})
     ok = fpr.get('library_ok')
-    print('  指纹 chunk_sha=%s  库块数=%s  gate=%s  trim=%s  dynamic=%s' % (
+    print('  指纹 chunk_sha=%s  库块数=%s  subject=%s  gate_effective=%s  trim=%s  dynamic=%s' % (
         rt.get('chunk_sha'), fpr.get('library_n_chunks'),
-        rt.get('escalate_sim_gate'), rt.get('relevance_trim'), rt.get('dynamic_budget')))
+        rt.get('gate_subject'), rt.get('gate_effective'),
+        rt.get('relevance_trim'), rt.get('dynamic_budget')))
     if not ok:
         print('  !! 库指纹不一致（%s）：库 %s vs 代码 %s' % (
             fpr.get('status'), fpr.get('library_chunk_sha'), rt.get('chunk_sha')))
@@ -291,12 +292,12 @@ def main():
             if n != 1:
                 print('!! 没在 main.py 里找到 ESCALATE_SIM_GATE，无法覆盖'); sys.exit(1)
             shown.append('ESCALATE_SIM_GATE=%s' % v)
-        # 显式指定 gate 时必须同时关掉按学科分档，否则分档表会盖过这次消融，
-        # 消融配置静默失效——这正是翻车#2 的形状。
-        src, n2 = re.subn(r'^GATE_BY_SUBJECT\s*=.*$', 'GATE_BY_SUBJECT = False',
-                          src, count=1, flags=re.M)
-        if n2:
-            shown.append('GATE_BY_SUBJECT=False(因显式指定gate)')
+            # 只有显式指定 gate 时才关掉按学科分档，否则单独做 dynamic 消融会
+            # 静默改变第二个变量，无法再把结果归因给动态预算。
+            src, n2 = re.subn(r'^GATE_BY_SUBJECT\s*=.*$', 'GATE_BY_SUBJECT = False',
+                              src, count=1, flags=re.M)
+            if n2:
+                shown.append('GATE_BY_SUBJECT=False(因显式指定gate)')
         if a.set_dynamic:
             v = 'True' if a.set_dynamic == 'on' else 'False'
             src, n = re.subn(r'^DYNAMIC_BUDGET\s*=\s*\w+',
@@ -460,6 +461,11 @@ def main():
             'library_ok': (fpr or {}).get('library_ok'),
             'library_n_chunks': (fpr or {}).get('library_n_chunks'),
             'library_built_at': (fpr or {}).get('library_built_at'),
+            'gate_subject': (fpr or {}).get('runtime', {}).get('gate_subject'),
+            'gate_effective': (fpr or {}).get('runtime', {}).get('gate_effective'),
+            'prompt_variant': (fpr or {}).get('runtime', {}).get('prompt_variant'),
+            'prompt_sha': (fpr or {}).get('runtime', {}).get('prompt_sha'),
+            'model_digest': (fpr or {}).get('runtime', {}).get('env', {}).get('model_digest'),
             'n_questions': len(rows),
         }
         dump_fingerprint(a.out, fpr)

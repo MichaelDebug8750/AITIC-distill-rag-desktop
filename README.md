@@ -40,8 +40,9 @@ Dockerfile · docker-compose*.yml · deploy.ps1 · run.sh   部署与容器化
 ## 快速开始
 
 ```bash
-# 1) 装依赖
-pip install -r code/requirements.txt
+# 1) 固定使用 Python 3.11，并安装依赖
+py -3.11 -m venv code/.venv
+code/.venv/Scripts/python -m pip install -r code/requirements.txt
 
 # 2) 拉模型（需先装 Ollama）
 ollama pull qwen3:8b && ollama pull bge-m3 && ollama pull qwen3-vl:8b
@@ -60,15 +61,20 @@ uvicorn webui:app --host 127.0.0.1 --port 8000    # 在 code/ 目录下
 
 | 指标 | 结果 |
 |---|---|
-| Token 用量 | 最优约为基线 46.4%（三科平均约 48.6%），优于 ≤60% 目标 |
-| 检索 Hit@5 | 医/法 100%、CS（前 250 页库）达标 |
-| 幻觉率 | 0%（编造口径，21 题无一虚构；含空输出口径 4.8%） |
-| 量化选型 | Q4_K_M —— 相比 Q8_0 省约 30% 显存、快约 31.7%，质量无实质差异 |
-| 部署 | Docker / 无 GPU CPU 降级 / GGUF 包 均实测通过 |
+| v8final 规模 | 55 本书 / 6 学科 / 4432 题 |
+| 可答题严格命中 | 2017 / 2153 = **93.7%** |
+| 不可答题正确拒答 | 1324 / 1374 = **96.4%** |
+| 自动判定编造 | 50 / 1374 = 3.6%；逐条语义审计确认 **45 / 1374 = 3.28%**（保守 3.35%） |
+| 标准 Gold-term Hit@5 | 全部 2620 / 3058 = **85.7%**；answerable 2042 / 2153 = **94.8%** |
+| Token | 总量 2,003,555；中位数 378 |
+| 动态升配 | 784 / 4432 = **17.7%** |
+| 旧三科 Token 专项 | 基线的 46.4%–51.5%；需按最终代码复测 |
+
+完整口径、分学科数据和限制见 [`eval/评测报告_v8final_验收候选.md`](eval/评测报告_v8final_验收候选.md)。标准检索明细见 [`eval/hit5_v8final/hit5_v8final_report.md`](eval/hit5_v8final/hit5_v8final_report.md)，50 条审计见 [`eval/fab_v8_manual_audit.md`](eval/fab_v8_manual_audit.md)。现有证据仍不能替代多模态准确率、项目成员人工签字和干净环境重复部署验收。
 
 ## 交付物
 
-① 源码仓库（本仓库）｜② 部署包｜③ 三学科测试数据集 + 音频（61 题评测集）｜④ 评测报告｜⑤ 技术文档
+① 源码仓库｜② GGUF + Modelfile + 启动脚本｜③ 六学科 55 本书 / 4432 题数据与音频专项｜④ v8final 评测报告｜⑤ 技术与部署文档
 
 ---
 

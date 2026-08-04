@@ -11,6 +11,8 @@
 **/vl_cache.json
 agent_*/
 **/agent_*/
+# agent_runtime.py 是生成智能体必需的源码；上面的宽通配会误伤它。
+!code/agent_runtime.py
 data/
 models/
 backup/

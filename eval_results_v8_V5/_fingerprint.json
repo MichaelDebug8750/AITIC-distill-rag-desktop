@@ -1,0 +1,483 @@
+{
+ "run_at": "2026-08-02 12:29:34",
+ "main_py": "E:\\Ollama_test\\data\\main.py",
+ "workdir": "E:\\Ollama_test\\data",
+ "use_vl": false,
+ "runtime": {
+  "code_sha": "fc75d576cc5f",
+  "chunk_sha": "8140205c1c70",
+  "llm_model": "qwen3:8b",
+  "embed_model": "bge-m3",
+  "top_k": 8,
+  "context_budget": 900,
+  "budget_escalated": 1800,
+  "dynamic_budget": true,
+  "escalate_sim_gate": 1.1762,
+  "gate_by_subject": true,
+  "gate_effective": 0.96,
+  "gate_subject": "Psychology",
+  "relevance_trim": true,
+  "num_predict": 300,
+  "temperature": 0.0,
+  "generate_calls": 0,
+  "generate_fallback_calls": 0,
+  "generate_first_error": null,
+  "vl_prose": true,
+  "vl_quota": 0,
+  "query_expand": 0,
+  "prompt_variant": "V5",
+  "prompt_sha": "6dfb7f8a8547",
+  "env": {
+   "ollama_server": "0.32.3",
+   "ollama_py": "0.6.2",
+   "model_digest": null,
+   "model_quant": "Q4_K_M",
+   "model_params": "8.2B"
+  }
+ },
+ "ask_total": 4432,
+ "ask_with_stale_library": 0,
+ "ask_with_api_chat_fallback": 0,
+ "books": {
+  "Business Ethics.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 2651,
+   "library_built_at": "2026-08-02 09:53:50",
+   "n_questions": 100
+  },
+  "Entrepreneurship.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 4387,
+   "library_built_at": "2026-08-02 09:57:37",
+   "n_questions": 99
+  },
+  "Introduction to Business.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 6158,
+   "library_built_at": "2026-08-02 10:01:39",
+   "n_questions": 68
+  },
+  "Introductory Business Statistics.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 4216,
+   "library_built_at": "2026-08-02 10:04:14",
+   "n_questions": 95
+  },
+  "Organizational Behavior.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 4638,
+   "library_built_at": "2026-08-02 10:07:40",
+   "n_questions": 99
+  },
+  "Principles of Accounting, Volume 1 Financial Accounting.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 5057,
+   "library_built_at": "2026-08-02 10:11:18",
+   "n_questions": 97
+  },
+  "Principles of Accounting, Volume 2 Managerial Accounting.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 3881,
+   "library_built_at": "2026-08-02 10:14:35",
+   "n_questions": 100
+  },
+  "Principles of Economics.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 6995,
+   "library_built_at": "2026-08-02 10:18:30",
+   "n_questions": 95
+  },
+  "Principles of Macroeconomics.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 4428,
+   "library_built_at": "2026-08-02 10:21:51",
+   "n_questions": 100
+  },
+  "Principles of Management.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 4433,
+   "library_built_at": "2026-08-02 10:25:17",
+   "n_questions": 99
+  },
+  "Principles of Microeconomics.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 4082,
+   "library_built_at": "2026-08-02 10:28:42",
+   "n_questions": 100
+  },
+  "Automate the Boring Stuff with Python.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 2233,
+   "library_built_at": "2026-08-02 10:31:46",
+   "n_questions": 81
+  },
+  "Computer Networks A Systems Approach — Peterson.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 4589,
+   "library_built_at": "2026-08-02 10:34:51",
+   "n_questions": 81
+  },
+  "Crafting Interpreters — Robert Nystrom.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 2946,
+   "library_built_at": "2026-08-02 10:37:37",
+   "n_questions": 65
+  },
+  "Eloquent JavaScript — Marijn Haverbeke.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 2060,
+   "library_built_at": "2026-08-02 10:39:47",
+   "n_questions": 77
+  },
+  "Operating Systems - Three Easy Pieces.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 4211,
+   "library_built_at": "2026-08-02 10:42:37",
+   "n_questions": 79
+  },
+  "Problem Solving with Algorithms and Data Structures.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 1260,
+   "library_built_at": "2026-08-02 10:45:01",
+   "n_questions": 73
+  },
+  "Think Java — Allen Downey.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 1280,
+   "library_built_at": "2026-08-02 10:47:10",
+   "n_questions": 60
+  },
+  "Think Python — Allen Downey.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 1441,
+   "library_built_at": "2026-08-02 10:48:57",
+   "n_questions": 68
+  },
+  "American Government.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 5502,
+   "library_built_at": "2026-08-02 10:51:48",
+   "n_questions": 98
+  },
+  "Business Law.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 1103,
+   "library_built_at": "2026-08-02 10:54:33",
+   "n_questions": 67
+  },
+  "Business Law and the Legal Environment.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 10678,
+   "library_built_at": "2026-08-02 10:58:22",
+   "n_questions": 78
+  },
+  "Criminal Law.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 245,
+   "library_built_at": "2026-08-02 11:00:36",
+   "n_questions": 50
+  },
+  "Introduction to Political Science.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 4722,
+   "library_built_at": "2026-08-02 11:02:46",
+   "n_questions": 80
+  },
+  "Introduction to the Law of Contracts.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 634,
+   "library_built_at": "2026-08-02 11:05:00",
+   "n_questions": 70
+  },
+  "The Common Law — Oliver Wendell Holmes.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 1854,
+   "library_built_at": "2026-08-02 11:07:10",
+   "n_questions": 75
+  },
+  "arthur-conan-doyle_the-adventures-of-sherlock-holmes.epub": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 1118,
+   "library_built_at": "2026-08-02 11:09:27",
+   "n_questions": 76
+  },
+  "bram-stoker_dracula.epub": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 1649,
+   "library_built_at": "2026-08-02 11:11:46",
+   "n_questions": 72
+  },
+  "charles-dickens_a-tale-of-two-cities.epub": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 1517,
+   "library_built_at": "2026-08-02 11:14:03",
+   "n_questions": 68
+  },
+  "charlotte-bronte_jane-eyre.epub": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 2045,
+   "library_built_at": "2026-08-02 11:16:22",
+   "n_questions": 74
+  },
+  "emily-bronte_wuthering-heights.epub": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 1290,
+   "library_built_at": "2026-08-02 11:18:35",
+   "n_questions": 66
+  },
+  "f-scott-fitzgerald_the-great-gatsby.epub": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 543,
+   "library_built_at": "2026-08-02 11:20:33",
+   "n_questions": 51
+  },
+  "herman-melville_moby-dick.epub": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 2463,
+   "library_built_at": "2026-08-02 11:22:25",
+   "n_questions": 85
+  },
+  "jane-austen_pride-and-prejudice.epub": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 1375,
+   "library_built_at": "2026-08-02 11:25:11",
+   "n_questions": 70
+  },
+  "lewis-carroll_alices-adventures-in-wonderland_john-tenniel.epub": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 306,
+   "library_built_at": "2026-08-02 11:27:05",
+   "n_questions": 57
+  },
+  "mark-twain_the-adventures-of-tom-sawyer.epub": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 794,
+   "library_built_at": "2026-08-02 11:28:40",
+   "n_questions": 74
+  },
+  "mary-shelley_frankenstein.epub": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 871,
+   "library_built_at": "2026-08-02 11:30:50",
+   "n_questions": 59
+  },
+  "oscar-wilde_the-picture-of-dorian-gray.epub": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 875,
+   "library_built_at": "2026-08-02 11:32:39",
+   "n_questions": 65
+  },
+  "Anatomy_and_Physiology_2e.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 9163,
+   "library_built_at": "2026-08-02 11:36:08",
+   "n_questions": 98
+  },
+  "Biology_2e.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 10102,
+   "library_built_at": "2026-08-02 11:40:41",
+   "n_questions": 99
+  },
+  "Chemistry_2e.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 7269,
+   "library_built_at": "2026-08-02 11:44:40",
+   "n_questions": 99
+  },
+  "Concepts of Biology.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 4129,
+   "library_built_at": "2026-08-02 11:48:06",
+   "n_questions": 100
+  },
+  "Current Essentials of Medicine.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 2307,
+   "library_built_at": "2026-08-02 11:51:05",
+   "n_questions": 64
+  },
+  "Essentials of Medical Physiology.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 10486,
+   "library_built_at": "2026-08-02 11:54:47",
+   "n_questions": 91
+  },
+  "Fundamentals-of-Nursing-Pharmacology-1st-Canadian-Edition-1749572880.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 3004,
+   "library_built_at": "2026-08-02 11:58:06",
+   "n_questions": 63
+  },
+  "Gray's Anatomy — Henry Gray.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 4383,
+   "library_built_at": "2026-08-02 12:00:36",
+   "n_questions": 92
+  },
+  "Introduction to Human Nutrition.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 3546,
+   "library_built_at": "2026-08-02 12:03:50",
+   "n_questions": 80
+  },
+  "Microbiology.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 8956,
+   "library_built_at": "2026-08-02 12:07:43",
+   "n_questions": 82
+  },
+  "Abnormal Psychology.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 2369,
+   "library_built_at": "2026-08-02 12:10:29",
+   "n_questions": 84
+  },
+  "Cognitive Psychology.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 1466,
+   "library_built_at": "2026-08-02 12:13:05",
+   "n_questions": 74
+  },
+  "Introduction to Psychoanalysis — Sigmund Freud.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 2199,
+   "library_built_at": "2026-08-02 12:15:29",
+   "n_questions": 93
+  },
+  "Principles of Social Psychology.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 3701,
+   "library_built_at": "2026-08-02 12:18:43",
+   "n_questions": 78
+  },
+  "Psychology2e_WEB.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 5212,
+   "library_built_at": "2026-08-02 12:21:50",
+   "n_questions": 100
+  },
+  "Psychology The Science of Behaviour.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 376,
+   "library_built_at": "2026-08-02 12:24:30",
+   "n_questions": 86
+  },
+  "The Interpretation of Dreams — Sigmund Freud.pdf": {
+   "chunk_sha": "8140205c1c70",
+   "library_chunk_sha": "8140205c1c70",
+   "library_ok": true,
+   "library_n_chunks": 3788,
+   "library_built_at": "2026-08-02 12:27:28",
+   "n_questions": 78
+  }
+ }
+}

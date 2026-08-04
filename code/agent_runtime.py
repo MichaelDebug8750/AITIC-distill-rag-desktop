@@ -104,38 +104,49 @@ def route(q):
 
 
 # ----------------------------- 对话运行时 -----------------------------
-def _answer_with_system(main, col, question, system_text):
-    """检索 + 定制 system prompt 生成（复用 main 的检索预算与引用约束）。"""
+def _answer_with_system(main, col, question, system_text, model_name=None):
+    """按主程序同一检索、打包、闸门和引用口径运行生成智能体。"""
     qv = main.embed([question])[0]
-    res = col.query(query_embeddings=[qv], n_results=main.TOP_K)
-    docs, metas = res["documents"][0], res["metadatas"][0]
-    packed, used = [], 0
-    for doc in docs:
-        if used + len(doc) > main.CONTEXT_BUDGET:
-            if main.CONTEXT_BUDGET - used > 120:
-                packed.append(doc[:main.CONTEXT_BUDGET - used])
-            break
-        packed.append(doc); used += len(doc)
-    context = "\n---\n".join(packed)
-    out = main._generate(
-        main.LLM_MODEL,
-        main.PROMPT.format(context=context, question=question),
-        system=system_text or None,
-        options={"temperature": main.TEMPERATURE, "num_predict": main.NUM_PREDICT},
-    )
-    ans = out["response"].strip()
-    pt, gt = out.get("prompt_eval_count", 0), out.get("eval_count", 0)
+    docs, metas, dists = main._retrieve(col, qv, question)
 
-    def _src(m):
-        if m.get("type") == "audio":
-            return "audio %s" % m.get("time", "?")
-        return "p%d(%s)" % (m["page"], m["type"])
-    srcs = sorted({_src(m) for m in metas[:len(packed)]})
+    def run_once(budget):
+        if main.RELEVANCE_TRIM:
+            packed, packed_idx = main._pack_relevance(docs, question, budget)
+        else:
+            packed, packed_idx = main._pack_truncate(docs, budget)
+        context = main._labeled_context(packed, packed_idx, metas)
+        out = main._generate(
+            model_name or main.LLM_MODEL,
+            main._format_prompt(context, question, packed_idx, metas),
+            system=system_text or None,
+            options={"temperature": main.TEMPERATURE, "num_predict": main.NUM_PREDICT},
+        )
+        toks = out.get("prompt_eval_count", 0) + out.get("eval_count", 0)
+        return out["response"].strip(), toks, packed_idx
+
+    ans, toks, packed_idx = run_once(main.CONTEXT_BUDGET)
+    escalated = False
+    if main.should_escalate(ans, docs, dists, main.DYNAMIC_BUDGET):
+        ans2, toks2, idx2 = run_once(main.BUDGET_ESCALATED)
+        toks += toks2
+        escalated = True
+        if not main.is_abstain(ans2):
+            ans, packed_idx = ans2, idx2
+
+    srcs = sorted({"[%s]" % main._cite_tag(metas[i])
+                   for i in packed_idx if i < len(metas)})
+    best_dist = min(dists) if dists else None
+    tag = "  (动态升配 %d)" % main.BUDGET_ESCALATED if escalated else ""
+    if best_dist is not None:
+        tag += "  dist=%.4f" % best_dist
+    cc = main.verify_citations(ans, packed_idx, metas)
     print("\n" + ans)
-    print("\n[来源] %s  | tokens: %d" % ("、".join(srcs), pt + gt))
+    print("\n[来源] %s  | tokens: %d%s" % ("、".join(srcs), toks, tag))
+    print("[引用校验] %s" % main._cite_check_line(cc))
+    return ans
 
 
-def run(db_path, collection=None, system_path=None):
+def run(db_path, collection=None, system_path=None, model_name=None):
     here = os.path.dirname(os.path.abspath(__file__))
     sys.path.insert(0, here)          # 复用同目录 main.py
     import main
@@ -151,6 +162,7 @@ def run(db_path, collection=None, system_path=None):
     col = client.get_collection(collection or main.COLLECTION)
 
     print("== 智能体已启动（工具：检索 + 计算器 | 规则路由）==")
+    print("   模型：%s" % (model_name or main.LLM_MODEL))
     print("   直接提问走检索问答；输入算式（如 3*(4+5)）走计算器；exit 退出。")
     while True:
         try:
@@ -166,9 +178,9 @@ def run(db_path, collection=None, system_path=None):
                 print("[计算器] %s = %s" % (expr, val))
             except Exception as e:
                 print("[计算器] 无法求值（%s），转检索。" % e)
-                _answer_with_system(main, col, q, system_text)
+                _answer_with_system(main, col, q, system_text, model_name)
         else:
-            _answer_with_system(main, col, q, system_text)
+            _answer_with_system(main, col, q, system_text, model_name)
 
 
 if __name__ == "__main__":
@@ -176,5 +188,6 @@ if __name__ == "__main__":
     ap.add_argument("--db", required=True, help="向量库路径（如 ../vectordb）")
     ap.add_argument("--collection", default=None)
     ap.add_argument("--prompt", default=None, help="system_prompt.txt 路径")
+    ap.add_argument("--model", default=None, help="生成包创建的专属 Ollama 模型名")
     args = ap.parse_args()
-    run(args.db, args.collection, args.prompt)
+    run(args.db, args.collection, args.prompt, args.model)
