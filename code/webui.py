@@ -91,6 +91,30 @@ def _collection():
         raise RuntimeError(str(e) or "还没建库")
 
 
+def _library_info():
+    """读取建库清单，供演示页显示当前教材，避免示例问题与知识库错位。"""
+    manifest_path = os.path.join(M.DB_PATH, "build_manifest.json")
+    info = {"subject": "", "sources": [], "built_at": ""}
+    try:
+        with open(manifest_path, encoding="utf-8") as f:
+            manifest = json.load(f)
+        parts = manifest.get("parts") or []
+        sources = []
+        for part in parts:
+            source = str(part.get("source") or "").strip()
+            if source and source not in sources:
+                sources.append(source)
+        info.update({
+            "subject": str(manifest.get("subject") or "").strip(),
+            "sources": sources,
+            "built_at": str(manifest.get("built_at") or "").strip(),
+        })
+    except (OSError, ValueError, TypeError):
+        # 旧向量库可能没有清单；不影响问答，只是不显示教材信息。
+        pass
+    return info
+
+
 def _retrieve(question):
     """检索：返回 (docs, metas, dists)，完整复用 main 的扩写与 VL 配额。"""
     qv = M.embed([question])[0]
@@ -138,6 +162,7 @@ def status():
         "budget_escalated": M.BUDGET_ESCALATED,
         "top_k": M.TOP_K,
         "db_path": os.path.abspath(M.DB_PATH),
+        "library": _library_info(),
         "cwd": os.getcwd(),           # 相对路径 DB_PATH 跟随工作目录，暴露出来便于排查
         "ready": False,
         "upload_enabled": _UPLOAD_OK,

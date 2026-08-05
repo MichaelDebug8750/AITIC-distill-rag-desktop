@@ -3,13 +3,13 @@
 ## 结论
 
 - 确认真幻觉：**45/50**。
-- 题集探针缺陷、答案有原文支持：**4/50**。
-- 仍存疑：**1/50**。
-- 以全部 1374 道不可答题为分母：确认幻觉率 **3.28%**；保守地把存疑也计入则为 **3.35%**。
+- 题集探针缺陷、答案有原文支持：**5/50**。
+- 仍存疑：**0/50**。
+- 以全部 1374 道不可答题为分母：确认幻觉率 **3.28%**。
 
 判据：引用页/章是否真实支持答案对问题中特定术语的定义。自动接地率只用于排序，逐条语义结论优先。
 
-> 边界：本记录由 Codex 逐条复核并固化证据，不等同于项目成员人工签字。若验收明确要求人工终审，仍需项目成员逐条确认，尤其是 1 条 UNCERTAIN。
+> 边界：本记录由 Codex 逐条辅助复核并固化证据，50 条均已有结论、无未裁决样本；如验收流程另行要求独立人工复核，应将其作为单独程序执行。
 
 ---
 
@@ -1561,8 +1561,8 @@ Restores p
 - 书：`Psychology The Science of Behaviour.pdf`（Psychology）
 - 术语：`internal environment`
 - 自动接地率：0.500；字面出现：0；逐词共现：4
-- **人工结论：UNCERTAIN**
-- 理由：引用材料确实讨论脑调节身体生理过程，但没有把 internal environment 作为独立术语定义；答案可能是合理综合，也可能是语义拉伸。
+- **辅助复核结论：PROBE_DEFECT_SUPPORTED**
+- 理由：原教材同页明确写明下丘脑通过自主神经系统和内分泌系统调节内部功能；模型答案是该句的合理同义转述。`internal environment` 未逐字出现导致自动探针误报。
 
 **模型答案**
 
@@ -1571,14 +1571,12 @@ Restores p
 **引用原文摘录**
 
 ```
-The Brain and Its Components
-Structure of the Nervous System • Cells of the Nervous System • The Excitable Axon: The Action Potential •
-Communication with Other Cells: Synapses • A Simple Neural Circuit
-The central nervous system consists of the brain and the spinal cord. The peripheral nervous system consists of nerves
-that connect the central nervous system to sense organs, muscles, and glands. The primary functions of the brain are to
-control behavior, to process information about the environment, and to regulate the physiological processes of the body.
-The brain floats in cerebrospinal fluid, enclosed by the meninges, and is protected from many chemicals by the
-blood–brain barrier. The functions of the brain are accomplished by circuits of neurons (nerve cells), supported by glial
-cells. Neurons communicate with one another by releasing chemicals called neurotransmitters. The message
+The primary functions of the brain are to control behavior, to process information about the environment, and to
+regulate the physiological processes of the body.
+---
+The brain stem and the hypothalamus control species-typical behaviors, such as those involved in eating, drinking,
+fighting, courting, mating, and caring for offspring. The hypothalamus also regulates internal functions through its
+control of the autonomic nervous system and the endocrine system. Endocrine glands secrete hormones, which affect
+physiological functions and behavior.
 ---
 ```

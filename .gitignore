@@ -33,6 +33,9 @@ vl_cache*.json
 _main_ablation.py
 figure_page/
 figure_pages/
+.pytest_cache/
+.pytest_tmp_*/
+.deliverable_revision_*/
 
 # ---------- 音视频 ----------
 *.mp3

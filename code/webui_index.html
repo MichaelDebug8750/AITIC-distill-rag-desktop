@@ -4,60 +4,80 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>知识蒸馏 RAG · 本地问答</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2317375E'/%3E%3Ctext x='32' y='44' font-size='38' text-anchor='middle' fill='white'%3EK%3C/text%3E%3C/svg%3E">
 <style>
   :root{
-    --navy:#1F3A5F; --navy2:#27456B; --orange:#E8912B; --amber:#D98C1F;
+    --navy:#17375E; --navy2:#244D78; --orange:#F0A13A; --amber:#D98C1F;
     --green:#2E7D46; --red:#C0392B; --blue:#4F81BD;
-    --bg:#F4F6F9; --card:#fff; --line:#E3E8EF; --gray:#5A6472; --dark:#1A2230;
+    --bg:#F3F6FA; --card:#fff; --line:#DCE4EE; --gray:#596575; --dark:#172235;
+    --shadow:0 10px 30px rgba(23,55,94,.08);
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;
-       background:var(--bg);color:var(--dark);height:100vh;display:flex}
+  html,body{height:100%}
+  body{font-family:"Segoe UI","Microsoft YaHei UI","Microsoft YaHei","PingFang SC",system-ui,sans-serif;
+       background:var(--bg);color:var(--dark);min-height:100vh;min-height:100dvh;display:flex;overflow:hidden}
+  button,input{font:inherit}
+  button{-webkit-tap-highlight-color:transparent}
 
   /* ---------- 左侧：系统状态 ---------- */
-  aside{width:320px;background:var(--navy);color:#E6EDF6;padding:22px 18px;
-        display:flex;flex-direction:column;gap:16px;overflow-y:auto;flex-shrink:0}
+  aside{width:clamp(270px,23vw,310px);background:linear-gradient(165deg,#17375E 0%,#1E4671 100%);
+        color:#E6EDF6;padding:22px 18px;display:flex;flex-direction:column;gap:14px;
+        overflow-y:auto;flex-shrink:0;box-shadow:8px 0 28px rgba(23,55,94,.12);z-index:2}
   aside .brand{border-left:3px solid var(--orange);padding-left:11px}
   aside h1{font-size:17px;color:#fff;line-height:1.45;margin:0 0 6px}
   aside .sub{font-size:12px;color:#9AB0CC;margin:0}
-  .badge{display:inline-flex;align-items:center;gap:5px;background:#1a5c33;color:#8FE3A8;
-         font-size:13px;padding:5px 10px;border-radius:20px;font-weight:bold;width:fit-content}
+  .badge{display:inline-flex;align-items:center;gap:6px;background:rgba(24,125,65,.8);color:#B9F5CB;
+         font-size:13px;padding:7px 11px;border-radius:20px;font-weight:700;width:fit-content}
   .badge.off{background:#5c1a1a;color:#F2A6A0}
-  .box{background:var(--navy2);border:1px solid #3A5A82;border-radius:8px;padding:12px}
+  .box{background:rgba(45,87,130,.62);border:1px solid rgba(151,184,221,.25);
+       border-radius:10px;padding:12px 13px;box-shadow:inset 0 1px rgba(255,255,255,.035)}
   .box h3{font-size:12.5px;color:var(--orange);margin-bottom:8px;letter-spacing:1px}
   .kv{display:flex;justify-content:space-between;font-size:13px;padding:3px 0;gap:8px}
   .kv span:first-child{color:#9AB0CC;flex-shrink:0}
   .kv span:last-child{color:#E6EDF6;text-align:right;word-break:break-all}
   .big{font-size:34px;font-weight:bold;color:#fff;line-height:1}
   .big small{font-size:12px;color:#9AB0CC;font-weight:normal;margin-left:5px}
+  .library-box .kv:last-child{display:block}
+  .library-box .kv:last-child span{display:block;text-align:left}
+  #sSource{margin-top:4px;line-height:1.45;word-break:normal;overflow-wrap:anywhere}
   aside .foot{margin-top:auto;font-size:11.5px;color:#7A8CA6;line-height:1.7;
               border-top:1px solid #3A5A82;padding-top:12px}
 
   /* ---------- 右侧：主区 ---------- */
-  main{flex:1;display:flex;flex-direction:column;min-width:0}
-  header{background:#fff;border-bottom:1px solid var(--line);padding:14px 24px;
+  main{flex:1;display:flex;flex-direction:column;min-width:0;background:
+       radial-gradient(circle at 75% 0,rgba(79,129,189,.08),transparent 34%),var(--bg)}
+  header{background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);padding:14px 24px;
          display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
   header .t{font-size:17px;font-weight:bold;color:var(--navy)}
   header .d{font-size:13px;color:var(--gray);margin-top:2px}
-  .pill{font-size:12px;padding:4px 10px;border-radius:20px;background:#EEF3F8;color:var(--navy2)}
+  .pill{font-size:12px;padding:6px 11px;border-radius:20px;background:#EAF1F8;color:var(--navy2);
+        max-width:46%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border:1px solid #D9E5F1}
 
   #chat{flex:1;overflow-y:auto;padding:22px 24px;display:flex;flex-direction:column;gap:16px}
 
-  .hint{background:#fff;border:1px dashed var(--line);border-radius:10px;padding:24px;
-        text-align:center;color:var(--gray);font-size:15px;line-height:2}
+  .hint{background:rgba(255,255,255,.92);border:1px solid var(--line);border-radius:14px;padding:25px;
+        text-align:center;color:var(--gray);font-size:15px;line-height:1.8;box-shadow:var(--shadow)}
   .hint b{color:var(--navy)}
-  .chip{display:inline-block;background:#EEF3F8;border:1px solid var(--line);
-        border-radius:16px;padding:7px 14px;margin:5px;font-size:14px;cursor:pointer;
-        color:var(--navy2);transition:.15s}
-  .chip:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .hint .eyebrow{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--orange);margin-bottom:5px}
+  .chip{display:inline-flex;align-items:center;background:#EDF3F9;border:1px solid #D7E2EE;
+        border-radius:18px;padding:8px 14px;margin:5px;font-size:14px;cursor:pointer;
+        color:var(--navy2);transition:transform .15s,background .15s,color .15s,border-color .15s}
+  .chip:hover{background:var(--navy);color:#fff;border-color:var(--navy);transform:translateY(-1px)}
+  .chip.guard::before{content:"无依据";font-size:10.5px;font-weight:700;color:#9A5E10;
+                      background:#FFF1D9;border-radius:10px;padding:1px 6px;margin-right:6px}
+  .chip.guard:hover::before{color:#fff;background:rgba(255,255,255,.18)}
+  .chip:focus-visible,.action:focus-visible,#q:focus-visible{outline:3px solid rgba(240,161,58,.35);outline-offset:2px}
 
   .msg{max-width:88%}
   .msg.me{align-self:flex-end;background:var(--navy);color:#fff;padding:13px 17px;
           border-radius:12px 12px 3px 12px;font-size:16px}
   .msg.ai{align-self:flex-start;background:var(--card);border:1px solid var(--line);
-          border-radius:12px 12px 12px 3px;padding:15px 17px;width:88%}
+          border-radius:12px 12px 12px 3px;padding:15px 17px;width:88%;box-shadow:var(--shadow)}
   .ans{font-size:16px;line-height:1.9;white-space:pre-wrap;word-break:break-word}
   .ans.refuse{color:var(--red);font-weight:bold}
+  .refusal-note{margin-top:10px;padding:10px 12px;border-radius:7px;background:#FFF7F5;
+                border:1px solid #F3D6D1;color:#7B4A43;font-size:13px;line-height:1.6}
+  .refusal-note code{color:var(--red);font-family:Consolas,monospace;font-weight:700}
   .cursor{display:inline-block;width:7px;height:16px;background:var(--orange);
           vertical-align:-3px;animation:bl .9s infinite}
   @keyframes bl{50%{opacity:0}}
@@ -82,14 +102,47 @@
   .cite.open .sn{display:block}
   .meta{margin-top:12px;font-size:12.5px;color:#8A94A4;display:flex;gap:14px;flex-wrap:wrap}
 
-  footer{background:#fff;border-top:1px solid var(--line);padding:14px 24px;flex-shrink:0}
+  footer{background:rgba(255,255,255,.96);border-top:1px solid var(--line);padding:14px 24px;flex-shrink:0}
   .inp{display:flex;gap:10px}
   #q{flex:1;padding:14px 16px;border:1px solid var(--line);border-radius:8px;
-     font-size:16px;font-family:inherit;outline:none}
-  #q:focus{border-color:var(--navy)}
-  #send{background:var(--navy);color:#fff;border:none;border-radius:8px;
-        padding:0 30px;font-size:16px;cursor:pointer;font-family:inherit}
-  #send:disabled{background:#9AA5B4;cursor:not-allowed}
+     font-size:16px;outline:none;min-width:120px;transition:border-color .15s,box-shadow .15s}
+  #q:focus{border-color:#6388B2;box-shadow:0 0 0 3px rgba(79,129,189,.12)}
+  .action{height:51px;color:#fff;border:none;border-radius:8px;padding:0 24px;font-size:15px;
+          font-weight:700;cursor:pointer;white-space:nowrap;min-width:104px;transition:.15s;
+          box-shadow:0 5px 14px rgba(23,55,94,.16)}
+  .action:hover:not(:disabled){transform:translateY(-1px);filter:brightness(1.06)}
+  #send{background:var(--navy)}
+  #brief{background:#3469A8}
+  .action:disabled{background:#9AA5B4!important;cursor:not-allowed;box-shadow:none;transform:none}
+
+  @media (max-width:800px){
+    body{flex-direction:column;overflow:hidden}
+    aside{width:100%;height:auto;max-height:42vh;padding:12px 14px;display:grid;
+          grid-template-columns:1fr 1fr;gap:8px;box-shadow:0 6px 20px rgba(23,55,94,.12)}
+    aside .brand,.badge,.library-box{grid-column:1/-1}
+    aside .brand{padding-left:9px}
+    aside h1{font-size:15px;margin-bottom:2px}
+    aside .sub{font-size:11px}
+    .badge{font-size:12px;padding:5px 9px}
+    .box{padding:9px 10px}
+    .box.optional,aside .foot{display:none}
+    .big{font-size:27px}
+    main{min-height:0}
+    header{padding:10px 14px;gap:10px}
+    header .t{font-size:16px}
+    header .d{font-size:11.5px}
+    .pill{max-width:45%;font-size:11px}
+    #chat{padding:14px;gap:12px}
+    .hint{padding:17px 12px;font-size:14px}
+    .chip{font-size:13px;padding:7px 11px;margin:4px}
+    .msg,.msg.ai{max-width:100%;width:100%}
+    .msg.me{width:auto;max-width:92%;font-size:15px}
+    .ans{font-size:15px;line-height:1.75}
+    footer{padding:10px 12px}
+    .inp{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    #q{grid-column:1/-1;width:100%;height:46px;padding:10px 12px}
+    .action{width:100%;height:44px;min-width:0;padding:0 12px}
+  }
 </style>
 </head>
 <body>
@@ -100,7 +153,7 @@
     <div class="sub">可溯源 · 不编造 · 全本地</div>
   </div>
 
-  <div class="badge" id="netBadge">🔒 全本地运行 · 数据不出机</div>
+  <div class="badge" id="netBadge" aria-live="polite">🔒 全本地运行 · 数据不出机</div>
 
   <div class="box">
     <h3>系统状态</h3>
@@ -116,14 +169,20 @@
     <div class="big" id="sChunks">—<small>块</small></div>
   </div>
 
-  <div class="box">
+  <div class="box library-box">
+    <h3>当前知识库</h3>
+    <div class="kv"><span>学科</span><span id="sSubject">检测中…</span></div>
+    <div class="kv"><span>教材</span><span id="sSource" title="">—</span></div>
+  </div>
+
+  <div class="box optional">
     <h3>模型</h3>
     <div class="kv"><span>问答</span><span id="sLLM">—</span></div>
     <div class="kv"><span>视觉</span><span id="sVL">—</span></div>
     <div class="kv"><span>向量</span><span id="sEmb">—</span></div>
   </div>
 
-  <div class="box">
+  <div class="box optional">
     <h3>检索配置</h3>
     <div class="kv"><span>Top-K</span><span id="sTopK">—</span></div>
     <div class="kv"><span>上下文预算</span><span id="sBudget">—</span></div>
@@ -144,30 +203,26 @@
       <div class="t">问答</div>
       <div class="d">每句话可溯源到原文页码 · 无依据即拒答</div>
     </div>
-    <div class="pill" id="dbPath">—</div>
+    <div class="pill" id="dbPath" title="">正在读取知识库…</div>
   </header>
 
   <div id="chat">
     <div class="hint" id="hint">
+      <div class="eyebrow">当前资料演示</div>
       <b>这个系统只依据知识库回答，没有依据就明说不知道。</b><br>
-      试试下面的问题，或直接输入：
-      <div style="margin-top:12px">
-        <span class="chip">What is process?</span>
-        <span class="chip">What is virtual memory?</span>
-        <span class="chip">What is semaphore?</span>
-        <span class="chip">What is the treatment for malaria?</span>
-      </div>
-      <div style="font-size:13px;color:#8A94A4;margin-top:12px">
-        提示：后两个在当前库里没有依据 —— 看它会不会编
+      <div id="hintLibrary" style="font-size:13px;color:#7A8797;margin-top:2px">正在识别当前教材…</div>
+      <div id="demoQuestions" style="margin-top:12px"></div>
+      <div id="demoTip" style="font-size:13px;color:#8A94A4;margin-top:10px">
+        点击示例问题，或在下方直接输入
       </div>
     </div>
   </div>
 
   <footer>
     <div class="inp">
-      <input id="q" placeholder="输入你的问题…" autocomplete="off">
-      <button id="send">提问</button>
-      <button id="brief" style="margin-left:8px;background:#2E5496;">📄 生成简报</button>
+      <input id="q" placeholder="输入你的问题…" autocomplete="off" aria-label="问题">
+      <button id="send" class="action" type="button">提问</button>
+      <button id="brief" class="action" type="button">生成简报</button>
     </div>
   </footer>
 </main>
@@ -175,6 +230,65 @@
 <script>
 const $ = s => document.querySelector(s);
 const chat = $('#chat'), qEl = $('#q'), sendBtn = $('#send'), briefBtn = $('#brief');
+let busy = false, systemReady = false;
+
+const DEMO_PRESETS = [
+  {
+    match: 'The Interpretation of Dreams',
+    questions: [
+      {q:'What is dream-content?'},
+      {q:'Summarize what the text covers on dream-work.'},
+      {q:'How is preconscious discussed in this book?'},
+      {q:'Who won the 2024 Nobel Prize in Physics?', guard:true}
+    ]
+  },
+  {
+    match: 'cs.pdf',
+    questions: [
+      {q:'What is a process in an operating system?'},
+      {q:'What is virtual memory?'},
+      {q:'What is semaphore?'},
+      {q:'What is the treatment for malaria?', guard:true}
+    ]
+  },
+  {
+    match: 'med.pdf',
+    questions: [
+      {q:'What is a prokaryotic cell?'},
+      {q:'What are the parts of a bacteriophage?'},
+      {q:'What is the treatment for malaria?'},
+      {q:'Who won the 2024 Nobel Prize in Physics?', guard:true}
+    ]
+  }
+];
+
+function setBusy(value){
+  busy = value;
+  const disabled = busy || !systemReady;
+  sendBtn.disabled = disabled;
+  briefBtn.disabled = disabled;
+  qEl.disabled = !systemReady;
+  qEl.placeholder = systemReady ? '输入与当前教材相关的问题…' : '系统检查中，请稍候…';
+  document.querySelector('main').setAttribute('aria-busy', busy ? 'true' : 'false');
+}
+
+function renderDemoQuestions(library){
+  const sources = (library && library.sources) || [];
+  const source = sources[0] || '';
+  const preset = DEMO_PRESETS.find(p => source.includes(p.match));
+  const list = preset ? preset.questions : [];
+  const area = $('#demoQuestions');
+  if(!area) return;  // 首次提问后欢迎区会被移除；状态轮询仍需继续正常工作。
+  if(list.length){
+    area.innerHTML = list.map(item =>
+      `<button type="button" class="chip${item.guard ? ' guard' : ''}" title="${item.guard ? '用于演示无依据拒答' : '用于演示有依据作答'}">${escapeHtml(item.q)}</button>`
+    ).join('');
+    $('#demoTip').textContent = '标有“无依据”的问题用于演示拒答；其余为已验证命中题。';
+  }else{
+    area.innerHTML = '';
+    $('#demoTip').textContent = '知识库已切换，请输入与当前教材内容直接相关的问题。';
+  }
+}
 
 // ---------- 系统状态 ----------
 async function loadStatus(){
@@ -190,7 +304,23 @@ async function loadStatus(){
     $('#sEsc').textContent = '→ ' + r.budget_escalated;
     $('#sTrim').textContent = r.relevance_trim ? '已启用' : '关闭';
     $('#sHost').textContent = (r.ollama_host||'—').replace('http://','');
-    $('#dbPath').textContent = (r.db_path||'').split(/[\\/]/).slice(-2).join('/');
+    const library = r.library || {};
+    const sources = library.sources || [];
+    const source = sources.length ? sources.join(' + ') : '未记录教材名称';
+    $('#sSubject').textContent = library.subject || '未标注';
+    $('#sSource').textContent = source;
+    $('#sSource').title = source;
+    const libraryLabel = [library.subject, sources[0]].filter(Boolean).join(' · ')
+      || (r.db_path||'').split(/[\\/]/).slice(-2).join('/');
+    $('#dbPath').textContent = libraryLabel;
+    $('#dbPath').title = source;
+    const hintLibrary = $('#hintLibrary');
+    if(hintLibrary){
+      hintLibrary.textContent = sources.length
+        ? `当前教材：${source}${library.subject ? '（' + library.subject + '）' : ''}`
+        : '当前知识库未记录教材名称';
+    }
+    renderDemoQuestions(library);
 
     // 知识库状态：区分"没建库"和"Ollama没连上"
     if(r.chunks > 0)      $('#sReady').textContent = '✅ ' + r.chunks + ' 块';
@@ -207,14 +337,19 @@ async function loadStatus(){
     if(errs.length){ errEl.style.display='block'; errEl.innerHTML = errs.map(escapeHtml).join('<br><br>'); }
     else errEl.style.display='none';
 
+    systemReady = !!r.ready;
+    setBusy(busy);
     const b = $('#netBadge');
     if(r.ollama !== '已连接'){ b.className='badge off'; b.textContent='⚠️ Ollama ' + r.ollama; }
+    else if(r.chunks < 1){ b.className='badge off'; b.textContent='⚠️ 知识库尚未就绪'; }
     else { b.className='badge'; b.textContent='🔒 全本地运行 · 数据不出机'; }
   }catch(e){
+    systemReady = false; setBusy(false);
     $('#sOllama').textContent = '连接失败';
+    const b = $('#netBadge'); b.className='badge off'; b.textContent='⚠️ Web 服务状态异常';
   }
 }
-loadStatus(); setInterval(loadStatus, 15000);
+setBusy(false); loadStatus(); setInterval(loadStatus, 15000);
 
 // ---------- 示例问题 ----------
 document.addEventListener('click', e=>{
@@ -252,11 +387,10 @@ function renderCiteCheck(cc){
 
 
 // ---------- 提问（SSE 流式）----------
-let busy = false;
 function ask(){
   const q = qEl.value.trim();
-  if(!q || busy) return;
-  busy = true; sendBtn.disabled = true; qEl.value = '';
+  if(!q || busy || !systemReady) return;
+  setBusy(true); qEl.value = '';
   const hint = $('#hint'); if(hint) hint.remove();
 
   chat.appendChild(el('msg me', escapeHtml(q))); scroll();
@@ -296,15 +430,20 @@ function ask(){
     const d = JSON.parse(e.data);
     evBox.remove();
     ansEl.className = 'ans' + (d.abstained ? ' refuse' : '');
-    ansEl.textContent = d.answer || '(空)';
-    box.insertAdjacentHTML('beforeend', renderCites(d.sources));
-    box.insertAdjacentHTML('beforeend', renderCiteCheck(d.cite_check));
+    ansEl.textContent = d.abstained ? '知识库中没有找到足够依据，已拒绝回答。' : (d.answer || '(空)');
+    if(d.abstained){
+      box.insertAdjacentHTML('beforeend',
+        '<div class="refusal-note"><code>[NO REFERENCE FOUND]</code><br>已检查检索候选内容，但没有足够证据支持作答，因此不调用模型常识补全。</div>');
+    }else{
+      box.insertAdjacentHTML('beforeend', renderCites(d.sources));
+      box.insertAdjacentHTML('beforeend', renderCiteCheck(d.cite_check));
+    }
     const tag = d.escalated ? ' · 动态升配' : '';
-    const st  = d.abstained ? '🛡 无依据 · 已拒答（不编造）' : '✅ 有依据作答';
+    const st  = d.abstained ? '无依据 · 已拒答（不编造）' : '✅ 有依据作答';
     box.insertAdjacentHTML('beforeend',
       `<div class="meta"><span>${st}</span><span>Token ${d.tokens}</span>
        <span>耗时 ${(d.elapsed_ms/1000).toFixed(1)}s${tag}</span></div>`);
-    es.close(); busy=false; sendBtn.disabled=false; scroll(); qEl.focus();
+    es.close(); setBusy(false); scroll(); qEl.focus();
   });
 
   es.addEventListener('error', e=>{
@@ -312,10 +451,10 @@ function ask(){
     try{ m = JSON.parse(e.data).msg; }catch(_){}
     evBox.className='ev'; evBox.innerHTML = `<span style="color:#C0392B">❌ ${escapeHtml(m)}</span>`;
     ansEl.innerHTML = buf ? escapeHtml(buf) : '';
-    es.close(); busy=false; sendBtn.disabled=false;
+    es.close(); setBusy(false);
   });
 
-  es.onerror = ()=>{ if(busy){ es.close(); busy=false; sendBtn.disabled=false;
+  es.onerror = ()=>{ if(busy){ es.close(); setBusy(false);
                      ansEl.innerHTML = buf ? escapeHtml(buf) : '（连接中断）'; } };
 }
 
@@ -324,8 +463,8 @@ sendBtn.onclick = ask;
 // ---------- 生成简报（brief · 非流式，复用同一套气泡/引用渲染）----------
 async function briefAsk(){
   const q = qEl.value.trim();
-  if(!q || busy) return;
-  busy = true; sendBtn.disabled = true; briefBtn.disabled = true; qEl.value = '';
+  if(!q || busy || !systemReady) return;
+  setBusy(true); qEl.value = '';
   const hint = $('#hint'); if(hint) hint.remove();
 
   chat.appendChild(el('msg me', '\uD83D\uDCC4 \u7B80\u62A5\uFF1A' + escapeHtml(q))); scroll();
@@ -355,7 +494,7 @@ async function briefAsk(){
     ansEl.className = 'ans refuse';
     ansEl.innerHTML = '\u274C \u751F\u6210\u5931\u8D25\uFF1A' + escapeHtml(String(e.message||e));
   }finally{
-    busy=false; sendBtn.disabled=false; briefBtn.disabled=false; scroll(); qEl.focus();
+    setBusy(false); scroll(); qEl.focus();
   }
 }
 briefBtn.onclick = briefAsk;
