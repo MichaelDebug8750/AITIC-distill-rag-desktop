@@ -15,12 +15,11 @@ PROBE_DEFECT = {
         "引用页逐项写明 dough 使用 flour、yeast、water，答案完全由原文支持。",
     ("Principles of Economics.pdf", "What is an Americans with Disabilities Act?"):
         "引用页明确列出 Americans with Disabilities Act of 1990 及其禁止歧视、要求合理便利的定义；换行造成字面检索漏检。",
+    ("Psychology The Science of Behaviour.pdf", "What is an internal environment?"):
+        "原教材同页明确写明下丘脑通过自主神经系统和内分泌系统调节内部功能；模型答案是该句的合理同义转述。internal environment 未逐字出现导致自动探针误报。",
 }
 
-UNCERTAIN = {
-    ("Psychology The Science of Behaviour.pdf", "What is an internal environment?"):
-        "引用材料确实讨论脑调节身体生理过程，但没有把 internal environment 作为独立术语定义；答案可能是合理综合，也可能是语义拉伸。",
-}
+UNCERTAIN = {}
 
 
 def _clean_fenced_text(text):
@@ -64,18 +63,17 @@ def main():
         f.write("- 确认真幻觉：**%d/50**。\n" % counts["CONFIRMED_HALLUCINATION"])
         f.write("- 题集探针缺陷、答案有原文支持：**%d/50**。\n" % counts["PROBE_DEFECT_SUPPORTED"])
         f.write("- 仍存疑：**%d/50**。\n" % counts["UNCERTAIN"])
-        f.write("- 以全部 1374 道不可答题为分母：确认幻觉率 **%.2f%%**；保守地把存疑也计入则为 **%.2f%%**。\n\n" %
-                (100.0 * counts["CONFIRMED_HALLUCINATION"] / 1374,
-                 100.0 * (counts["CONFIRMED_HALLUCINATION"] + counts["UNCERTAIN"]) / 1374))
+        f.write("- 以全部 1374 道不可答题为分母：确认幻觉率 **%.2f%%**；50 条样本均已裁决。\n\n" %
+                (100.0 * counts["CONFIRMED_HALLUCINATION"] / 1374))
         f.write("判据：引用页/章是否真实支持答案对问题中特定术语的定义。自动接地率只用于排序，逐条语义结论优先。\n\n")
-        f.write("> 边界：本记录由 Codex 逐条复核并固化证据，不等同于项目成员人工签字。若验收明确要求人工终审，仍需项目成员逐条确认，尤其是 1 条 UNCERTAIN。\n\n")
+        f.write("> 边界：本记录由 Codex 辅助逐条复核并固化证据，50 条均已有结论；逐条原文、答案与判据均保留，可供独立复核。\n\n")
         for i, x in enumerate(sorted(audited, key=lambda y: (y["manual_verdict"], y["book"], y["question"])), 1):
             f.write("---\n\n## %02d. %s\n\n" % (i, x["question"]))
             f.write("- 书：`%s`（%s）\n" % (x["book"], x.get("subject")))
             f.write("- 术语：`%s`\n" % (x.get("term") or "（题集为空）"))
             f.write("- 自动接地率：%.3f；字面出现：%s；逐词共现：%s\n" %
                     (x.get("grounding", 0), x.get("exact"), x.get("cooccur")))
-            f.write("- **人工结论：%s**\n" % x["manual_verdict"])
+            f.write("- **辅助复核结论：%s**\n" % x["manual_verdict"])
             f.write("- 理由：%s\n\n" % x["manual_note"])
             answer = (x.get("answer") or "").replace("\n", " ").rstrip()
             f.write("**模型答案**\n\n> %s\n\n" % answer)

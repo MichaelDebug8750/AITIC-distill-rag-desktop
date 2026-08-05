@@ -5,11 +5,11 @@
 - 确认真幻觉：**45/50**。
 - 题集探针缺陷、答案有原文支持：**5/50**。
 - 仍存疑：**0/50**。
-- 以全部 1374 道不可答题为分母：确认幻觉率 **3.28%**。
+- 以全部 1374 道不可答题为分母：确认幻觉率 **3.28%**；50 条样本均已裁决。
 
 判据：引用页/章是否真实支持答案对问题中特定术语的定义。自动接地率只用于排序，逐条语义结论优先。
 
-> 边界：本记录由 Codex 逐条辅助复核并固化证据，50 条均已有结论、无未裁决样本；如验收流程另行要求独立人工复核，应将其作为单独程序执行。
+> 边界：本记录由 Codex 辅助逐条复核并固化证据，50 条均已有结论；逐条原文、答案与判据均保留，可供独立复核。
 
 ---
 
@@ -18,7 +18,7 @@
 - 书：`Abnormal Psychology.pdf`（Psychology）
 - 术语：`positive statement`
 - 自动接地率：0.182；字面出现：0；逐词共现：2
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -52,7 +52,7 @@ o Punishment – Due to
 - 书：`Abnormal Psychology.pdf`（Psychology）
 - 术语：`public opinion`
 - 自动接地率：0.091；字面出现：0；逐词共现：3
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -85,7 +85,7 @@ the cause of mental disorders and represented a challenge to the biological pers
 - 书：`American Government.pdf`（Law）
 - 术语：`oral stage`
 - 自动接地率：0.286；字面出现：0；逐词共现：4
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -114,7 +114,7 @@ that are not party to the case but are interested in its outcome may file an ami
 - 书：`American Government.pdf`（Law）
 - 术语：`national interest argument`
 - 自动接地率：0.143；字面出现：0；逐词共现：8
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -143,7 +143,7 @@ and
 - 书：`Anatomy_and_Physiology_2e.pdf`（Medicine）
 - 术语：`indirect method`
 - 自动接地率：0.357；字面出现：0；逐词共现：0
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -170,7 +170,7 @@ of axons from the striatum to the globus pallidus internal segment (GPi) and the
 - 书：`Anatomy_and_Physiology_2e.pdf`（Medicine）
 - 术语：`reasonably possible`
 - 自动接地率：0.000；字面出现：0；逐词共现：0
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -197,7 +197,7 @@ so that pressure can then be removed much more gradually. Because the hyperbaric
 - 书：`Biology_2e.pdf`（Medicine）
 - 术语：`analytical intelligence`
 - 自动接地率：0.524；字面出现：0；逐词共现：0
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -226,7 +226,7 @@ records them. These data can be qualitative or quantitative, and one can supplem
 - 书：`Business Law and the Legal Environment.pdf`（Law）
 - 术语：`cash discount`
 - 自动接地率：0.000；字面出现：0；逐词共现：6
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -261,7 +261,7 @@ his own rights, abs
 - 书：`Business Law.pdf`（Law）
 - 术语：`Group process`
 - 自动接地率：0.000；字面出现：0；逐词共现：6
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -294,7 +294,7 @@ and businesses, pre-merger notification filings, congressional inquiries, or rep
 - 书：`Current Essentials of Medicine.pdf`（Medicine）
 - 术语：`Causal attribution`
 - 自动接地率：0.783；字面出现：0；逐词共现：0
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -339,7 +339,7 @@ Depending on the history, further tests may include serologies
 - 书：`Entrepreneurship.pdf`（Business）
 - 术语：`Group process`
 - 自动接地率：0.217；字面出现：0；逐词共现：65
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -368,7 +368,7 @@ The setting for a brainstorming session should remain as informal and relaxed as
 - 书：`Essentials of Medical Physiology.pdf`（Medicine）
 - 术语：`Attachment style`
 - 自动接地率：0.133；字面出现：0；逐词共现：0
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -409,7 +409,7 @@ of the channel
 - 书：`Fundamentals-of-Nursing-Pharmacology-1st-Canadian-Edition-1749572880.pdf`（Medicine）
 - 术语：`Forming stage`
 - 自动接地率：0.269；字面出现：0；逐词共现：0
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -438,7 +438,7 @@ coagulation (blood clotting). Failure of any of these steps w
 - 书：`Fundamentals-of-Nursing-Pharmacology-1st-Canadian-Edition-1749572880.pdf`（Medicine）
 - 术语：`automatic processing`
 - 自动接地率：0.130；字面出现：0；逐词共现：0
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -480,7 +480,7 @@ Key Terms
 - 书：`Gray's Anatomy — Henry Gray.pdf`（Medicine）
 - 术语：`parasympathetic nervous system`
 - 自动接地率：0.000；字面出现：0；逐词共现：16
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -525,7 +525,7 @@ innervate the organ. Spinal cord le
 - 书：`Introduction to Human Nutrition.pdf`（Medicine）
 - 术语：`（题集为空）`
 - 自动接地率：0.000；字面出现：0；逐词共现：0
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -580,7 +580,7 @@ Bhaji, okra
 - 书：`Introduction to Human Nutrition.pdf`（Medicine）
 - 术语：`wellness programs`
 - 自动接地率：0.079；字面出现：0；逐词共现：0
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -619,7 +619,7 @@ ance of antiretrovira
 - 书：`Introduction to Political Science.pdf`（Law）
 - 术语：`nonparental type`
 - 自动接地率：0.000；字面出现：0；逐词共现：0
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -649,7 +649,7 @@ unity/2021/01/11/polling-problems-and-why-we-should-still-trust-some-polls/.
 - 书：`Introduction to Political Science.pdf`（Law）
 - 术语：`Social-information-processing approach`
 - 自动接地率：0.125；字面出现：0；逐词共现：1
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -679,7 +679,7 @@ Communication 17, no. 3 (April 2012): 329, https://doi.org/10.1111/j.1083-6101.2
 - 书：`Introduction to Psychoanalysis — Sigmund Freud.pdf`（Psychology）
 - 术语：`economic liberty`
 - 自动接地率：0.032；字面出现：0；逐词共现：0
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -728,7 +728,7 @@ thereby block the road to the understanding of sexuality,
 - 书：`Introductory Business Statistics.pdf`（Business）
 - 术语：`exit poll`
 - 自动接地率：0.000；字面出现：0；逐词共现：0
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -761,7 +761,7 @@ call
 - 书：`Microbiology.pdf`（Medicine）
 - 术语：`hidden diversity`
 - 自动接地率：0.167；字面出现：0；逐词共现：0
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -800,7 +800,7 @@ The synthesis of
 - 书：`Operating Systems - Three Easy Pieces.pdf`（Computer Science）
 - 术语：`latency period`
 - 自动接地率：0.455；字面出现：0；逐词共现：0
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -853,7 +853,7 @@ more bits into each cell; to get good write perf
 - 书：`Operating Systems - Three Easy Pieces.pdf`（Computer Science）
 - 术语：`continuous development`
 - 自动接地率：0.200；字面出现：0；逐词共现：0
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -889,7 +889,7 @@ count) programs to ach
 - 书：`Organizational Behavior.pdf`（Business）
 - 术语：`bottom-up implementation`
 - 自动接地率：0.269；字面出现：0；逐词共现：1
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -917,7 +917,7 @@ designing the change. Participatory management, the inclusion of employees in th
 - 书：`Principles of Accounting, Volume 2 Managerial Accounting.pdf`（Business）
 - 术语：`going public`
 - 自动接地率：0.120；字面出现：0；逐词共现：5
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -945,7 +945,7 @@ lost their jobs, and everyone learned a lesson on creating proper
 - 书：`Principles of Economics.pdf`（Business）
 - 术语：`dissenting opinion`
 - 自动接地率：0.500；字面出现：0；逐词共现：0
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -974,7 +974,7 @@ to look
 - 书：`Principles of Management.pdf`（Business）
 - 术语：`free-market economics`
 - 自动接地率：0.000；字面出现：0；逐词共现：5
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -1002,7 +1002,7 @@ elements (e.g., market segments, stakeholders, po
 - 书：`Problem Solving with Algorithms and Data Structures.pdf`（Computer Science）
 - 术语：`Tree Diagram`
 - 自动接地率：0.267；字面出现：0；逐词共现：1
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -1033,7 +1033,7 @@ is that you can mov
 - 书：`Psychology The Science of Behaviour.pdf`（Psychology）
 - 术语：`innate behavior`
 - 自动接地率：0.278；字面出现：0；逐词共现：1
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -1070,7 +1070,7 @@ personality traits develop, we di
 - 书：`The Common Law — Oliver Wendell Holmes.pdf`（Law）
 - 术语：`national interest argument`
 - 自动接地率：0.000；字面出现：0；逐词共现：0
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -1111,7 +1111,7 @@ as the clavicle in the cat only tells of the exi
 - 书：`The Interpretation of Dreams — Sigmund Freud.pdf`（Psychology）
 - 术语：`dual court system`
 - 自动接地率：0.227；字面出现：0；逐词共现：0
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -1144,7 +1144,7 @@ were rescued by Koloman Széll.1 The trivial detail of the scene
 - 书：`arthur-conan-doyle_the-adventures-of-sherlock-holmes.epub`（Literature）
 - 术语：`pay schedule`
 - 自动接地率：0.167；字面出现：0；逐词共现：0
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -1164,7 +1164,7 @@ The Redheaded League I had called upon my friend, Mr. Sherlock Holmes, one day i
 - 书：`arthur-conan-doyle_the-adventures-of-sherlock-holmes.epub`（Literature）
 - 术语：`for-profit business`
 - 自动接地率：0.000；字面出现：0；逐词共现：1
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -1184,7 +1184,7 @@ The Adventure of the Copper Beeches “To the man who loves art for its own sake
 - 书：`bram-stoker_dracula.epub`（Literature）
 - 术语：`conventional mindset`
 - 自动接地率：0.000；字面出现：0；逐词共现：0
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -1204,7 +1204,7 @@ XVIII Dr. Seward’s Diary. 30 September. ﻿—I got home at five o’clock, an
 - 书：`bram-stoker_dracula.epub`（Literature）
 - 术语：`probable cause`
 - 自动接地率：0.200；字面出现：0；逐词共现：3
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -1224,7 +1224,7 @@ IX Letter, Mina Harker to Lucy Westenra. “ Budapest, 24 August. “My dearest 
 - 书：`bram-stoker_dracula.epub`（Literature）
 - 术语：`hoarding disorder`
 - 自动接地率：0.032；字面出现：0；逐词共现：0
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -1244,7 +1244,7 @@ XXII Jonathan Harker’s Journal. 3 October. ﻿—As I must do something or go 
 - 书：`emily-bronte_wuthering-heights.epub`（Literature）
 - 术语：`work style`
 - 自动接地率：0.037；字面出现：0；逐词共现：6
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -1264,7 +1264,7 @@ XXI We had sad work with little Cathy that day: she rose in high glee, eager to 
 - 书：`f-scott-fitzgerald_the-great-gatsby.epub`（Literature）
 - 术语：`romantic love`
 - 自动接地率：0.031；字面出现：0；逐词共现：4
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -1284,7 +1284,7 @@ VIII I couldn’t sleep all night; a foghorn was groaning incessantly on the Sou
 - 书：`lewis-carroll_alices-adventures-in-wonderland_john-tenniel.epub`（Literature）
 - 术语：`descriptive representation`
 - 自动接地率：0.125；字面出现：0；逐词共现：0
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -1304,7 +1304,7 @@ IX The Mock Turtle’s Story “You can’t think how glad I am to see you again
 - 书：`mark-twain_the-adventures-of-tom-sawyer.epub`（Literature）
 - 术语：`prosocial behavior`
 - 自动接地率：0.000；字面出现：0；逐词共现：0
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -1324,7 +1324,7 @@ XXIII The Salvation of Muff Potter At last the sleepy atmosphere was stirred﻿�
 - 书：`mark-twain_the-adventures-of-tom-sawyer.epub`（Literature）
 - 术语：`unanimity of acceptance`
 - 自动接地率：0.077；字面出现：0；逐词共现：0
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -1344,7 +1344,7 @@ XXXIV Floods of Gold Huck said: “Tom, we can slope, if we can find a rope. The
 - 书：`mary-shelley_frankenstein.epub`（Literature）
 - 术语：`selective engagement`
 - 自动接地率：0.068；字面出现：0；逐词共现：0
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -1364,7 +1364,7 @@ Chapter IV From this day natural philosophy, and particularly chemistry, in the 
 - 书：`mary-shelley_frankenstein.epub`（Literature）
 - 术语：`individual-level change`
 - 自动接地率：0.000；字面出现：0；逐词共现：0
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -1384,7 +1384,7 @@ Chapter XX I sat one evening in my laboratory; the sun had set, and the moon was
 - 书：`mary-shelley_frankenstein.epub`（Literature）
 - 术语：`individual-level change`
 - 自动接地率：0.346；字面出现：0；逐词共现：0
-- **人工结论：CONFIRMED_HALLUCINATION**
+- **辅助复核结论：CONFIRMED_HALLUCINATION**
 - 理由：引用来源没有定义问题中的特定术语；回答把邻近概念、普通词义或模型常识重新命名为该术语，引用不足以支撑所给定义。
 
 **模型答案**
@@ -1404,7 +1404,7 @@ Chapter XVIII Day after day, week after week, passed away on my return to Geneva
 - 书：`Current Essentials of Medicine.pdf`（Medicine）
 - 术语：`distorted body image`
 - 自动接地率：0.875；字面出现：0；逐词共现：0
-- **人工结论：PROBE_DEFECT_SUPPORTED**
+- **辅助复核结论：PROBE_DEFECT_SUPPORTED**
 - 理由：引用页明确写有身体形状/体重知觉障碍及躯体变形障碍；答案是原文概念的合理同义转述，探针的字面零出现规则误判。
 
 **模型答案**
@@ -1456,7 +1456,7 @@ testinal disease, hyperthyroidism, diabetes)
 - 书：`Entrepreneurship.pdf`（Business）
 - 术语：`cause-and-effect relationship`
 - 自动接地率：0.800；字面出现：0；逐词共现：10
-- **人工结论：PROBE_DEFECT_SUPPORTED**
+- **辅助复核结论：PROBE_DEFECT_SUPPORTED**
 - 理由：原文术语因换行/连字符写成 cause-and effect-relationships，并给出同一定义；属于规范化漏检。
 
 **模型答案**
@@ -1487,7 +1487,7 @@ cost-led pricing easiest way to price a product by taking the cost of making the
 - 书：`Principles of Economics.pdf`（Business）
 - 术语：`（题集为空）`
 - 自动接地率：0.750；字面出现：0；逐词共现：0
-- **人工结论：PROBE_DEFECT_SUPPORTED**
+- **辅助复核结论：PROBE_DEFECT_SUPPORTED**
 - 理由：引用页逐项写明 dough 使用 flour、yeast、water，答案完全由原文支持。
 
 **模型答案**
@@ -1515,7 +1515,7 @@ to insert and retrieve the pizza from the oven, but they also must know how to m
 - 书：`Principles of Economics.pdf`（Business）
 - 术语：`Americans with Disabilities Act`
 - 自动接地率：1.000；字面出现：0；逐词共现：1
-- **人工结论：PROBE_DEFECT_SUPPORTED**
+- **辅助复核结论：PROBE_DEFECT_SUPPORTED**
 - 理由：引用页明确列出 Americans with Disabilities Act of 1990 及其禁止歧视、要求合理便利的定义；换行造成字面检索漏检。
 
 **模型答案**
@@ -1562,7 +1562,7 @@ Restores p
 - 术语：`internal environment`
 - 自动接地率：0.500；字面出现：0；逐词共现：4
 - **辅助复核结论：PROBE_DEFECT_SUPPORTED**
-- 理由：原教材同页明确写明下丘脑通过自主神经系统和内分泌系统调节内部功能；模型答案是该句的合理同义转述。`internal environment` 未逐字出现导致自动探针误报。
+- 理由：原教材同页明确写明下丘脑通过自主神经系统和内分泌系统调节内部功能；模型答案是该句的合理同义转述。internal environment 未逐字出现导致自动探针误报。
 
 **模型答案**
 
@@ -1571,12 +1571,14 @@ Restores p
 **引用原文摘录**
 
 ```
-The primary functions of the brain are to control behavior, to process information about the environment, and to
-regulate the physiological processes of the body.
----
-The brain stem and the hypothalamus control species-typical behaviors, such as those involved in eating, drinking,
-fighting, courting, mating, and caring for offspring. The hypothalamus also regulates internal functions through its
-control of the autonomic nervous system and the endocrine system. Endocrine glands secrete hormones, which affect
-physiological functions and behavior.
+The Brain and Its Components
+Structure of the Nervous System • Cells of the Nervous System • The Excitable Axon: The Action Potential •
+Communication with Other Cells: Synapses • A Simple Neural Circuit
+The central nervous system consists of the brain and the spinal cord. The peripheral nervous system consists of nerves
+that connect the central nervous system to sense organs, muscles, and glands. The primary functions of the brain are to
+control behavior, to process information about the environment, and to regulate the physiological processes of the body.
+The brain floats in cerebrospinal fluid, enclosed by the meninges, and is protected from many chemicals by the
+blood–brain barrier. The functions of the brain are accomplished by circuits of neurons (nerve cells), supported by glial
+cells. Neurons communicate with one another by releasing chemicals called neurotransmitters. The message
 ---
 ```

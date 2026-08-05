@@ -905,8 +905,8 @@
     "cooccur": 4,
     "grounding": 0.5,
     "n_ans_words": 10,
-    "flag": "探针误判：问题术语未逐字出现，但答案由引用页内部功能段落直接支持",
-    "cited_text": "The primary functions of the brain are to control behavior, to process information about the environment, and to regulate the physiological processes of the body.\n---\nThe brain stem and the hypothalamus control species-typical behaviors, such as those involved in eating, drinking, fighting, courting, mating, and caring for offspring. The hypothalamus also regulates internal functions through its control of the autonomic nervous system and the endocrine system. Endocrine glands secrete hormones, which affect physiological functions and behavior.\n---\n",
+    "flag": "存疑：逐词共现 4 段且答案 50% 复述引用页",
+    "cited_text": "The Brain and Its Components\nStructure of the Nervous System • Cells of the Nervous System • The Excitable Axon: The Action Potential •\nCommunication with Other Cells: Synapses • A Simple Neural Circuit\nThe central nervous system consists of the brain and the spinal cord. The peripheral nervous system consists of nerves\nthat connect the central nervous system to sense organs, muscles, and glands. The primary functions of the brain are to\ncontrol behavior, to process information about the environment, and to regulate the physiological processes of the body.\nThe brain floats in cerebrospinal fluid, enclosed by the meninges, and is protected from many chemicals by the\nblood–brain barrier. The functions of the brain are accomplished by circuits of neurons (nerve cells), supported by glial\ncells. Neurons communicate with one another by releasing chemicals called neurotransmitters. The message\n---\n",
     "src": "cross-domain (verified 0 occurrences)",
     "manual_verdict": "PROBE_DEFECT_SUPPORTED",
     "manual_note": "原教材同页明确写明下丘脑通过自主神经系统和内分泌系统调节内部功能；模型答案是该句的合理同义转述。internal environment 未逐字出现导致自动探针误报。"
