@@ -20,7 +20,7 @@
   button{-webkit-tap-highlight-color:transparent}
 
   /* ---------- 左侧：系统状态 ---------- */
-  aside{width:clamp(270px,23vw,310px);background:linear-gradient(165deg,#17375E 0%,#1E4671 100%);
+  aside{width:clamp(340px,27vw,410px);background:linear-gradient(165deg,#17375E 0%,#1E4671 100%);
         color:#E6EDF6;padding:22px 18px;display:flex;flex-direction:column;gap:14px;
         overflow-y:auto;flex-shrink:0;box-shadow:8px 0 28px rgba(23,55,94,.12);z-index:2}
   aside .brand{border-left:3px solid var(--orange);padding-left:11px}
@@ -41,7 +41,49 @@
   .library-box .kv:last-child span{display:block;text-align:left}
   #sSource{margin-top:4px;line-height:1.45;word-break:normal;overflow-wrap:anywhere}
   aside .foot{margin-top:auto;font-size:11.5px;color:#7A8CA6;line-height:1.7;
-              border-top:1px solid #3A5A82;padding-top:12px}
+               border-top:1px solid #3A5A82;padding-top:12px}
+  .sidebar-action{width:100%;border:1px solid rgba(255,255,255,.2);border-radius:9px;padding:10px 12px;
+                  color:#fff;background:rgba(255,255,255,.08);cursor:pointer;text-align:left;font-weight:700}
+  .sidebar-action:hover{background:rgba(255,255,255,.15)}
+  .kb-manager{background:rgba(12,39,70,.36);border:1px solid rgba(151,184,221,.28);border-radius:12px;padding:14px}
+  .kb-title{display:flex;align-items:center;justify-content:space-between;color:#fff;font-weight:700;font-size:13px;margin-bottom:9px}
+  .kb-title small{color:#9AB0CC;font-size:11px;font-weight:400}
+  .file-pick{display:flex;min-height:92px;flex-direction:column;align-items:center;justify-content:center;
+             border:1.5px dashed rgba(190,211,235,.45);background:rgba(255,255,255,.055);
+             border-radius:10px;padding:14px 12px;text-align:center;color:#C7D7E9;cursor:pointer;font-size:13px;line-height:1.5}
+  .file-pick:hover,.file-pick.drag{border-color:var(--orange);background:rgba(240,161,58,.09);color:#fff}
+  #pdfFile{display:none}
+  #fileName{display:-webkit-box;color:#fff;font-weight:650;line-height:1.45;min-height:38px;margin-top:4px;
+            overflow:hidden;overflow-wrap:anywhere;word-break:break-word;text-overflow:ellipsis;
+            -webkit-box-orient:vertical;-webkit-line-clamp:2;white-space:normal}
+  .build-options{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:9px 0;color:#B8C8DA;font-size:11.5px}
+  .build-options label{display:flex;align-items:center;gap:5px;cursor:pointer}
+  .build-options input{accent-color:var(--orange)}
+  #buildPdf{width:100%;border:0;border-radius:8px;padding:10px;background:var(--orange);color:#172235;
+            font-weight:800;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.13)}
+  #buildPdf:hover:not(:disabled){filter:brightness(1.06)}
+  #buildPdf:disabled{opacity:.5;cursor:not-allowed}
+  .build-state{display:none;margin-top:10px;padding-top:9px;border-top:1px solid rgba(255,255,255,.12)}
+  .build-state.show{display:block}
+  .progress-track{height:7px;background:rgba(255,255,255,.12);border-radius:8px;overflow:hidden}
+  #progressBar{height:100%;width:0;background:linear-gradient(90deg,var(--orange),#FFD47A);transition:width .35s}
+  #progressText{display:flex;justify-content:space-between;gap:8px;margin-top:6px;color:#C8D7E8;font-size:11.5px}
+  #progressText span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .recent-title{font-size:11px;letter-spacing:.08em;color:#91A9C4;margin:2px 2px -5px;text-transform:uppercase}
+  #libraryList{display:flex;flex-direction:column;gap:5px}
+  .library-item{width:100%;min-height:58px;border:1px solid transparent;border-radius:9px;padding:10px;background:transparent;
+                color:#DCE7F4;text-align:left;cursor:pointer;display:grid;grid-template-columns:9px 1fr auto;gap:8px;align-items:center}
+  .library-item:hover{background:rgba(255,255,255,.08)}
+  .library-item.active{background:rgba(255,255,255,.13);border-color:rgba(240,161,58,.55)}
+  .library-item:disabled{opacity:.55;cursor:not-allowed}
+  .lib-dot{width:8px;height:8px;border-radius:50%;background:#6D849E}
+  .library-item.active .lib-dot{background:#61D486;box-shadow:0 0 0 3px rgba(97,212,134,.13)}
+  .library-item.building .lib-dot{background:var(--orange);animation:bl 1s infinite}
+  .library-item.failed .lib-dot{background:#F2776B}
+  .lib-copy{min-width:0}.lib-name{font-size:13px;font-weight:650;line-height:1.35;overflow:hidden;text-overflow:ellipsis;
+             display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;white-space:normal;overflow-wrap:anywhere}
+  .lib-meta{font-size:10.5px;color:#8FA6C0;margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .lib-count{font-size:10.5px;color:#AFC0D4}
 
   /* ---------- 右侧：主区 ---------- */
   main{flex:1;display:flex;flex-direction:column;min-width:0;background:
@@ -66,7 +108,8 @@
   .chip.guard::before{content:"无依据";font-size:10.5px;font-weight:700;color:#9A5E10;
                       background:#FFF1D9;border-radius:10px;padding:1px 6px;margin-right:6px}
   .chip.guard:hover::before{color:#fff;background:rgba(255,255,255,.18)}
-  .chip:focus-visible,.action:focus-visible,#q:focus-visible{outline:3px solid rgba(240,161,58,.35);outline-offset:2px}
+  .chip:focus-visible,.action:focus-visible,#q:focus-visible,.sidebar-action:focus-visible,
+  .file-pick:focus-visible,#buildPdf:focus-visible,.library-item:focus-visible{outline:3px solid rgba(240,161,58,.35);outline-offset:2px}
 
   .msg{max-width:88%}
   .msg.me{align-self:flex-end;background:var(--navy);color:#fff;padding:13px 17px;
@@ -119,13 +162,13 @@
     body{flex-direction:column;overflow:hidden}
     aside{width:100%;height:auto;max-height:42vh;padding:12px 14px;display:grid;
           grid-template-columns:1fr 1fr;gap:8px;box-shadow:0 6px 20px rgba(23,55,94,.12)}
-    aside .brand,.badge,.library-box{grid-column:1/-1}
+    aside .brand,.badge,.kb-manager,.recent-title,#libraryList,.library-box{grid-column:1/-1}
     aside .brand{padding-left:9px}
     aside h1{font-size:15px;margin-bottom:2px}
     aside .sub{font-size:11px}
     .badge{font-size:12px;padding:5px 9px}
     .box{padding:9px 10px}
-    .box.optional,aside .foot{display:none}
+    .box.optional,aside .foot,.recent-title,#libraryList{display:none}
     .big{font-size:27px}
     main{min-height:0}
     header{padding:10px 14px;gap:10px}
@@ -154,6 +197,29 @@
   </div>
 
   <div class="badge" id="netBadge" aria-live="polite">🔒 全本地运行 · 数据不出机</div>
+
+  <button class="sidebar-action" id="newChat" type="button">＋ 新对话</button>
+
+  <section class="kb-manager" aria-labelledby="kbManagerTitle">
+    <div class="kb-title" id="kbManagerTitle"><span>新建知识库</span><small>PDF → 建库 → 问答</small></div>
+    <label class="file-pick" id="filePick" for="pdfFile" tabindex="0">
+      <span>选择或拖入 PDF</span>
+      <span id="fileName">尚未选择文件</span>
+    </label>
+    <input id="pdfFile" type="file" accept="application/pdf,.pdf">
+    <div class="build-options">
+      <span>默认处理完整文档</span>
+      <label title="识别 PDF 中的图表页；耗时会更长"><input id="useVl" type="checkbox" checked>识别图表</label>
+    </div>
+    <button id="buildPdf" type="button" disabled>开始建库</button>
+    <div class="build-state" id="buildState" aria-live="polite">
+      <div class="progress-track"><div id="progressBar"></div></div>
+      <div id="progressText"><span>准备中…</span><span>0%</span></div>
+    </div>
+  </section>
+
+  <div class="recent-title">最近知识库</div>
+  <div id="libraryList"><div class="lib-meta">正在读取…</div></div>
 
   <div class="box">
     <h3>系统状态</h3>
@@ -230,7 +296,8 @@
 <script>
 const $ = s => document.querySelector(s);
 const chat = $('#chat'), qEl = $('#q'), sendBtn = $('#send'), briefBtn = $('#brief');
-let busy = false, systemReady = false;
+const pdfFile = $('#pdfFile'), buildBtn = $('#buildPdf'), buildState = $('#buildState');
+let busy = false, systemReady = false, building = false, currentLibrary = {};
 
 const DEMO_PRESETS = [
   {
@@ -272,6 +339,20 @@ function setBusy(value){
   document.querySelector('main').setAttribute('aria-busy', busy ? 'true' : 'false');
 }
 
+function renderWelcome(note=''){
+  const sources = currentLibrary.sources || [];
+  const source = sources.length ? sources.join(' + ') : '当前知识库';
+  chat.innerHTML = `<div class="hint" id="hint">
+    <div class="eyebrow">${note ? escapeHtml(note) : '当前资料已就绪'}</div>
+    <b>选择资料、完成建库后，就可以像聊天一样直接提问。</b><br>
+    <div id="hintLibrary" style="font-size:13px;color:#7A8797;margin-top:2px">当前教材：${escapeHtml(source)}</div>
+    <div id="demoQuestions" style="margin-top:12px"></div>
+    <div id="demoTip" style="font-size:13px;color:#8A94A4;margin-top:10px">点击示例问题，或在下方直接输入</div>
+  </div>`;
+  renderDemoQuestions(currentLibrary);
+  scroll();
+}
+
 function renderDemoQuestions(library){
   const sources = (library && library.sources) || [];
   const source = sources[0] || '';
@@ -305,6 +386,7 @@ async function loadStatus(){
     $('#sTrim').textContent = r.relevance_trim ? '已启用' : '关闭';
     $('#sHost').textContent = (r.ollama_host||'—').replace('http://','');
     const library = r.library || {};
+    currentLibrary = library;
     const sources = library.sources || [];
     const source = sources.length ? sources.join(' + ') : '未记录教材名称';
     $('#sSubject').textContent = library.subject || '未标注';
@@ -343,13 +425,168 @@ async function loadStatus(){
     if(r.ollama !== '已连接'){ b.className='badge off'; b.textContent='⚠️ Ollama ' + r.ollama; }
     else if(r.chunks < 1){ b.className='badge off'; b.textContent='⚠️ 知识库尚未就绪'; }
     else { b.className='badge'; b.textContent='🔒 全本地运行 · 数据不出机'; }
+    return r;
   }catch(e){
     systemReady = false; setBusy(false);
     $('#sOllama').textContent = '连接失败';
     const b = $('#netBadge'); b.className='badge off'; b.textContent='⚠️ Web 服务状态异常';
+    return null;
   }
 }
 setBusy(false); loadStatus(); setInterval(loadStatus, 15000);
+
+// ---------- 知识库管理：选择 PDF → 后台建库 → 自动切换 ----------
+let selectedPdf = null, activePollJob = '';
+
+function humanSize(bytes){
+  if(bytes < 1024*1024) return (bytes/1024).toFixed(0) + ' KB';
+  return (bytes/1024/1024).toFixed(1) + ' MB';
+}
+
+function setSelectedPdf(file){
+  if(!file) return;
+  if(!file.name.toLowerCase().endsWith('.pdf')){
+    showBuild('请选择 PDF 文件', 100, true); return;
+  }
+  selectedPdf = file;
+  $('#fileName').textContent = `${file.name} · ${humanSize(file.size)}`;
+  $('#fileName').title = file.name;
+  buildBtn.disabled = building;
+  buildState.classList.remove('show');
+}
+
+function showBuild(phase, progress, isError=false){
+  const pct = Math.max(0, Math.min(100, Number(progress)||0));
+  buildState.classList.add('show');
+  $('#progressBar').style.width = pct + '%';
+  $('#progressBar').style.background = isError
+    ? '#F2776B' : 'linear-gradient(90deg,var(--orange),#FFD47A)';
+  $('#progressText').innerHTML = `<span title="${escapeHtml(phase)}">${escapeHtml(phase)}</span><span>${Math.round(pct)}%</span>`;
+}
+
+function renderLibraries(data){
+  const area = $('#libraryList');
+  const libs = (data && data.libraries) || [];
+  if(!libs.length){ area.innerHTML='<div class="lib-meta">暂无知识库</div>'; return; }
+  area.innerHTML = libs.map(lib=>{
+    const status = lib.status || 'missing';
+    const cls = ['library-item', lib.active ? 'active' : '', status].filter(Boolean).join(' ');
+    const meta = status === 'building' ? '正在建库…'
+      : status === 'failed' ? ('失败：' + (lib.error||'未知错误'))
+      : [lib.subject, lib.source].filter(Boolean).join(' · ') || '本地知识库';
+    const count = Number.isFinite(lib.chunks) && lib.chunks > 0 ? lib.chunks + ' 块' : '';
+    return `<button type="button" class="${cls}" data-library-id="${escapeHtml(lib.id)}"
+              ${status !== 'ready' ? 'disabled' : ''} title="${escapeHtml(meta)}">
+      <span class="lib-dot"></span><span class="lib-copy"><span class="lib-name">${escapeHtml(lib.name||'未命名知识库')}</span>
+      <span class="lib-meta">${escapeHtml(meta)}</span></span><span class="lib-count">${escapeHtml(count)}</span></button>`;
+  }).join('');
+  area.querySelectorAll('.library-item:not(:disabled)').forEach(btn=>{
+    btn.addEventListener('click', ()=>switchLibrary(btn.dataset.libraryId));
+  });
+}
+
+async function loadLibraries(){
+  try{
+    const res = await fetch('/api/libraries');
+    const data = await res.json();
+    if(!res.ok) throw new Error(data.error||'读取失败');
+    renderLibraries(data);
+    if(data.build && ['queued','running'].includes(data.build.status) && activePollJob !== data.build.id){
+      building = true; buildBtn.disabled = true; pollBuild(data.build.id);
+    }
+    return data;
+  }catch(e){
+    $('#libraryList').innerHTML = `<div class="lib-meta" style="color:#F2A6A0">${escapeHtml(e.message||String(e))}</div>`;
+    return null;
+  }
+}
+
+async function switchLibrary(id){
+  if(busy) return;
+  try{
+    const res = await fetch('/api/libraries/' + encodeURIComponent(id) + '/activate', {method:'POST'});
+    const data = await res.json();
+    if(!res.ok) throw new Error(data.error||'切换失败');
+    await loadStatus();
+    renderWelcome('已切换知识库');
+    await loadLibraries();
+    qEl.focus();
+  }catch(e){ showBuild('切换失败：' + (e.message||e), 100, true); }
+}
+
+async function pollBuild(jobId){
+  activePollJob = jobId;
+  try{
+    const res = await fetch('/api/build/jobs/' + encodeURIComponent(jobId));
+    const job = await res.json();
+    if(!res.ok) throw new Error(job.error||'无法读取建库进度');
+    const elapsed = job.elapsed_seconds != null && ['queued','running'].includes(job.status)
+      ? ` · ${job.elapsed_seconds.toFixed(1)}s` : '';
+    showBuild((job.phase || '正在建库') + elapsed, job.progress || 0, job.status === 'failed');
+    await loadLibrariesOnce(job);
+    if(['queued','running'].includes(job.status)){
+      setTimeout(()=>pollBuild(jobId), 850); return;
+    }
+    building = false; activePollJob = ''; buildBtn.disabled = !selectedPdf;
+    if(job.status === 'ready'){
+      showBuild(`建库完成 · ${job.chunks||0} 个知识块 · 已自动切换`, 100);
+      selectedPdf = null; pdfFile.value = ''; $('#fileName').textContent = '尚未选择文件';
+      buildBtn.disabled = true;
+      await loadStatus(); await loadLibraries();
+      renderWelcome('新知识库已就绪'); qEl.focus();
+    }else{
+      showBuild('建库失败：' + (job.error||'请检查 Ollama 与 PDF'), 100, true);
+    }
+  }catch(e){
+    building = false; activePollJob=''; buildBtn.disabled = !selectedPdf;
+    showBuild('进度读取失败：' + (e.message||e), 100, true);
+  }
+}
+
+async function loadLibrariesOnce(job){
+  // 建库轮询时同步刷新左侧状态，但不递归启动第二个轮询。
+  try{
+    const res = await fetch('/api/libraries');
+    const data = await res.json();
+    if(res.ok) renderLibraries(data);
+  }catch(_){ }
+}
+
+function uploadAndBuild(){
+  if(!selectedPdf || building) return;
+  building = true; buildBtn.disabled = true;
+  const form = new FormData();
+  form.append('kind','pdf'); form.append('max_pages','0'); form.append('vl_limit','15');
+  form.append('use_vl', $('#useVl').checked ? 'true' : 'false'); form.append('file', selectedPdf, selectedPdf.name);
+  const xhr = new XMLHttpRequest();
+  xhr.open('POST','/api/upload');
+  xhr.upload.onprogress = e=>{
+    if(e.lengthComputable) showBuild('正在上传 PDF', Math.max(2, (e.loaded/e.total)*12));
+    else showBuild('正在上传 PDF', 5);
+  };
+  xhr.onload = ()=>{
+    let data={}; try{ data=JSON.parse(xhr.responseText||'{}'); }catch(_){ }
+    if(xhr.status < 200 || xhr.status >= 300){
+      building=false; buildBtn.disabled=false;
+      showBuild('上传失败：' + (data.error||`HTTP ${xhr.status}`),100,true); return;
+    }
+    const job = data.job || {};
+    if(!job.id){ building=false; buildBtn.disabled=false; showBuild('服务未返回建库任务',100,true); return; }
+    showBuild(job.phase||'文件已接收',job.progress||10); pollBuild(job.id);
+  };
+  xhr.onerror = ()=>{ building=false; buildBtn.disabled=false; showBuild('上传连接中断',100,true); };
+  showBuild('准备上传',1); xhr.send(form);
+}
+
+pdfFile.addEventListener('change', ()=>setSelectedPdf(pdfFile.files && pdfFile.files[0]));
+buildBtn.addEventListener('click', uploadAndBuild);
+$('#newChat').addEventListener('click', ()=>{ if(!busy){ renderWelcome('新对话'); qEl.value=''; qEl.focus(); } });
+const filePick = $('#filePick');
+filePick.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); pdfFile.click(); } });
+['dragenter','dragover'].forEach(name=>filePick.addEventListener(name,e=>{e.preventDefault();filePick.classList.add('drag');}));
+['dragleave','drop'].forEach(name=>filePick.addEventListener(name,e=>{e.preventDefault();filePick.classList.remove('drag');}));
+filePick.addEventListener('drop', e=>setSelectedPdf(e.dataTransfer.files && e.dataTransfer.files[0]));
+loadLibraries();
 
 // ---------- 示例问题 ----------
 document.addEventListener('click', e=>{

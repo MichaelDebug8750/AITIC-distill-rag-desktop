@@ -3,6 +3,9 @@
 # 用法：在 deploy_pack 目录下  bash run.sh
 set -euo pipefail
 
+SCRIPT_DIR="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
+cd "$SCRIPT_DIR"
+
 echo "==> 1/3 检查 Ollama..."
 ollama --version >/dev/null
 

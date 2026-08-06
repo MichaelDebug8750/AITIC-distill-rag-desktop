@@ -17,6 +17,8 @@
 - **带出处、不瞎编**：回答附引用锚点；检索无依据时如实拒答 `[NO REFERENCE FOUND]`，而非编造。
 - **动态预算 + 相关度裁剪**：按需升配上下文预算；超预算时按相关度**整块保留**，减少残缺片段导致的误拒。
 - **一键部署**：Windows `deploy.ps1` / Linux `run.sh`，另附 Docker 与无 GPU（CPU 降级）方案。
+- **纯前端建库**：打开 WebUI 后在左侧选择 PDF，查看上传/建库进度；完成后自动切换并直接问答，无需输入后端命令。
+- **多知识库切换**：最近建好的知识库保留在左侧，可一键切换；“新对话”只清空聊天，不会删除知识库。
 
 ## 技术栈
 
@@ -49,14 +51,13 @@ code/.venv/Scripts/python -m pip install -r code/requirements.txt
 # 2) 拉模型（需先装 Ollama）
 ollama pull qwen3:8b && ollama pull bge-m3 && ollama pull qwen3-vl:8b
 
-# 3) 建库（以医学教材为例）
-python code/main.py build --pdf data/med.pdf --max-pages 120
-
-# 4) 提问
-python code/main.py ask "什么是革兰氏阴性菌？"
-
-# 5) 启动 WebUI（Windows 演示推荐：自动检查 Python/Ollama/模型/知识库并打开浏览器）
+# 3) 启动 WebUI（Windows 推荐：自动检查 Python/Ollama/模型并打开浏览器）
 start_webui.bat
+
+# 4) 在左侧选择 PDF → 点击“开始建库” → 等待自动切换 → 直接提问
+
+# CLI 仍可用：python code/main.py build --pdf data/med.pdf --max-pages 120
+#              python code/main.py ask "什么是革兰氏阴性菌？"
 
 # 只做演示前检查、不启动服务
 powershell -ExecutionPolicy Bypass -File .\start_webui.ps1 -CheckOnly

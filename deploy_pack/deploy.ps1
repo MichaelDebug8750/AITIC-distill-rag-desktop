@@ -14,7 +14,13 @@ if (-not (Test-Path (Join-Path $PSScriptRoot $gguf))) {
 }
 
 Write-Host ('==> 3/3 Creating model ' + $model + ' from GGUF...') -ForegroundColor Cyan
-ollama create $model -f (Join-Path $PSScriptRoot 'Modelfile')
+Push-Location -LiteralPath $PSScriptRoot
+try {
+    ollama create $model -f '.\Modelfile'
+}
+finally {
+    Pop-Location
+}
 
 Write-Host ''
 Write-Host 'Done. Test command:' -ForegroundColor Green

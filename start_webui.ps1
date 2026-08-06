@@ -52,10 +52,11 @@ if ($missing.Count) {
 Write-Host "  Ollama and required models: ready" -ForegroundColor Green
 
 if (-not (Test-Path -LiteralPath (Join-Path $DbDir "chroma.sqlite3") -PathType Leaf)) {
-    throw "Demo vector database was not found: $DbDir"
+    Write-Host "  No initial vector database found. WebUI will start; choose a PDF in the left panel to build one." -ForegroundColor DarkYellow
+} else {
+    Write-Host "  Initial vector database: $DbDir" -ForegroundColor Green
 }
 $env:DISTILL_DB = $DbDir
-Write-Host "  Vector database: $DbDir" -ForegroundColor Green
 
 if ($CheckOnly) {
     Write-Host "Preflight passed. The demo is ready to start." -ForegroundColor Green
