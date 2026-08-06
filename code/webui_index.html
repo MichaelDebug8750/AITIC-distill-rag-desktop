@@ -157,10 +157,11 @@
      font-size:16px;outline:none;min-width:120px;transition:border-color .15s,box-shadow .15s}
   #q:focus{border-color:#6388B2;box-shadow:0 0 0 3px rgba(79,129,189,.12)}
   .action{height:51px;color:#fff;border:none;border-radius:8px;padding:0 24px;font-size:15px;
-          font-weight:700;cursor:pointer;white-space:nowrap;min-width:104px;transition:.15s;
+          font-weight:700;cursor:pointer;white-space:nowrap;min-width:104px;transition:transform .15s,filter .15s;
           box-shadow:0 5px 14px rgba(23,55,94,.16)}
   .action:hover:not(:disabled){transform:translateY(-1px);filter:brightness(1.06)}
   #send{background:var(--navy)}
+  #send.stop{background:#B23A32}
   #brief{background:#3469A8}
   .action:disabled{background:#9AA5B4!important;cursor:not-allowed;box-shadow:none;transform:none}
 
@@ -307,7 +308,7 @@
 const $ = s => document.querySelector(s);
 const chat = $('#chat'), qEl = $('#q'), sendBtn = $('#send'), briefBtn = $('#brief');
 const pdfFile = $('#pdfFile'), buildBtn = $('#buildPdf'), buildState = $('#buildState');
-let busy = false, systemReady = false, building = false, currentLibrary = {};
+let busy = false, systemReady = false, building = false, currentLibrary = {}, activeRequest = null;
 
 const DEMO_PRESETS = [
   {
@@ -341,10 +342,12 @@ const DEMO_PRESETS = [
 
 function setBusy(value){
   busy = value;
-  const disabled = busy || !systemReady;
-  sendBtn.disabled = disabled;
-  briefBtn.disabled = disabled;
-  qEl.disabled = !systemReady;
+  const canStop = busy && !!activeRequest;
+  sendBtn.disabled = !systemReady || (busy && !canStop);
+  sendBtn.textContent = canStop ? '停止生成' : '提问';
+  sendBtn.classList.toggle('stop', canStop);
+  briefBtn.disabled = busy || !systemReady;
+  qEl.disabled = busy || !systemReady;
   qEl.placeholder = systemReady ? '输入与当前教材相关的问题…' : '系统检查中，请稍候…';
   document.querySelector('main').setAttribute('aria-busy', busy ? 'true' : 'false');
 }
@@ -673,6 +676,24 @@ function appendAnswerTools(box){
   box.appendChild(tools);
 }
 
+function stopActiveRequest(){
+  if(!activeRequest) return;
+  const req = activeRequest;
+  activeRequest = null;
+  if(req.type === 'stream'){
+    req.es.close();
+    if(req.evBox && req.evBox.isConnected) req.evBox.remove();
+    const text = req.getText().trim();
+    req.ansEl.className = 'ans';
+    req.ansEl.textContent = text || '（已停止生成）';
+    req.box.insertAdjacentHTML('beforeend','<div class="meta"><span>⏹ 已手动停止</span></div>');
+    if(text) appendAnswerTools(req.box);
+  }else if(req.type === 'brief'){
+    req.controller.abort();
+  }
+  setBusy(false); scroll(); qEl.focus();
+}
+
 
 // ---------- 提问（SSE 流式）----------
 function ask(){
@@ -689,32 +710,39 @@ function ask(){
   box.appendChild(evBox); box.appendChild(ansEl);
   chat.appendChild(box); scroll();
 
-  const es = new EventSource('/api/ask/stream?q=' + encodeURIComponent(q));
   let buf = '';
+  const es = new EventSource('/api/ask/stream?q=' + encodeURIComponent(q));
+  const request = {type:'stream', es, box, evBox, ansEl, getText:()=>buf};
+  activeRequest = request; setBusy(true);
 
   es.addEventListener('retrieved', e=>{
+    if(activeRequest !== request) return;
     const d = JSON.parse(e.data);
     evBox.innerHTML = `<span>🔍 检索到 ${d.n} 个候选块，正在生成…</span>`;
   });
 
   es.addEventListener('meta', e=>{
+    if(activeRequest !== request) return;
     const d = JSON.parse(e.data);
     if(d.tag === 'escalated'){ buf=''; ansEl.innerHTML='<span class="cursor"></span>'; }
   });
 
   es.addEventListener('delta', e=>{
+    if(activeRequest !== request) return;
     buf += JSON.parse(e.data).text;
     ansEl.innerHTML = escapeHtml(buf) + '<span class="cursor"></span>';
     scroll();
   });
 
   es.addEventListener('escalate', e=>{
+    if(activeRequest !== request) return;
     const d = JSON.parse(e.data);
     const w = el('ev esc', `⚡ 动态预算升配 ${d.from} → ${d.to}：${d.reason}`);
     box.insertBefore(w, ansEl); scroll();
   });
 
   es.addEventListener('done', e=>{
+    if(activeRequest !== request) return;
     const d = JSON.parse(e.data);
     evBox.remove();
     ansEl.className = 'ans' + (d.abstained ? ' refuse' : '');
@@ -732,22 +760,23 @@ function ask(){
       `<div class="meta"><span>${st}</span><span>Token ${d.tokens}</span>
        <span>耗时 ${(d.elapsed_ms/1000).toFixed(1)}s${tag}</span></div>`);
     appendAnswerTools(box);
-    es.close(); setBusy(false); scroll(); qEl.focus();
+    es.close(); activeRequest = null; setBusy(false); scroll(); qEl.focus();
   });
 
   es.addEventListener('error', e=>{
+    if(activeRequest !== request) return;
     let m='连接中断';
     try{ m = JSON.parse(e.data).msg; }catch(_){}
     evBox.className='ev'; evBox.innerHTML = `<span style="color:#C0392B">❌ ${escapeHtml(m)}</span>`;
     ansEl.innerHTML = buf ? escapeHtml(buf) : '';
-    es.close(); setBusy(false);
+    es.close(); activeRequest = null; setBusy(false);
   });
 
-  es.onerror = ()=>{ if(busy){ es.close(); setBusy(false);
+  es.onerror = ()=>{ if(activeRequest === request){ es.close(); activeRequest = null; setBusy(false);
                      ansEl.innerHTML = buf ? escapeHtml(buf) : '（连接中断）'; } };
 }
 
-sendBtn.onclick = ask;
+sendBtn.onclick = ()=> activeRequest ? stopActiveRequest() : ask();
 
 // ---------- 生成简报（brief · 非流式，复用同一套气泡/引用渲染）----------
 async function briefAsk(){
@@ -764,10 +793,13 @@ async function briefAsk(){
   chat.appendChild(box); scroll();
 
   const t0 = Date.now();
+  const controller = new AbortController();
+  const request = {type:'brief', controller, box, ansEl};
+  activeRequest = request; setBusy(true);
   try{
     const r = await (await fetch('/api/brief', {
       method:'POST', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({ topic: q })
+      body: JSON.stringify({ topic: q }), signal: controller.signal
     })).json();
     if(r.error) throw new Error(r.error);
     ansEl.className = 'ans';
@@ -782,8 +814,10 @@ async function briefAsk(){
     appendAnswerTools(box);
   }catch(e){
     ansEl.className = 'ans refuse';
-    ansEl.innerHTML = '\u274C \u751F\u6210\u5931\u8D25\uFF1A' + escapeHtml(String(e.message||e));
+    ansEl.innerHTML = e.name === 'AbortError' ? '（已停止生成）'
+      : '\u274C \u751F\u6210\u5931\u8D25\uFF1A' + escapeHtml(String(e.message||e));
   }finally{
+    if(activeRequest === request) activeRequest = null;
     setBusy(false); scroll(); qEl.focus();
   }
 }
