@@ -106,3 +106,6 @@ desktop.ini
 
 data/7699-*/
 data/webui_knowledge_bases/
+# 用户反馈里含真实提问内容，属运行期数据，不入仓库（回归集经人工订正后再单独提交）
+data/webui_feedback/
+.runtime_webui_*.log

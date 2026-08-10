@@ -8,7 +8,40 @@ $ErrorActionPreference = "Stop"
 $ProjectRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 $CodeDir = Join-Path $ProjectRoot "code"
 $DbDir = Join-Path $ProjectRoot "data\vectordb"
+$DataDir = Join-Path $ProjectRoot "data"
 $Url = "http://127.0.0.1:$Port"
+
+function Get-NormalizedPath {
+    param([string]$Path)
+    if ([string]::IsNullOrWhiteSpace($Path)) { return $null }
+    try {
+        return [System.IO.Path]::GetFullPath($Path).TrimEnd([char[]]"\/")
+    } catch {
+        return $null
+    }
+}
+
+function Test-LocalPortOpen {
+    param(
+        [string]$HostName = "127.0.0.1",
+        [int]$TargetPort,
+        [int]$TimeoutMs = 500
+    )
+    $client = New-Object System.Net.Sockets.TcpClient
+    $waitHandle = $null
+    try {
+        $attempt = $client.BeginConnect($HostName, $TargetPort, $null, $null)
+        $waitHandle = $attempt.AsyncWaitHandle
+        if (-not $waitHandle.WaitOne($TimeoutMs, $false)) { return $false }
+        $client.EndConnect($attempt)
+        return $true
+    } catch {
+        return $false
+    } finally {
+        if ($waitHandle) { $waitHandle.Close() }
+        $client.Close()
+    }
+}
 
 Write-Host "AITIC WebUI preflight" -ForegroundColor Cyan
 
@@ -63,15 +96,54 @@ if ($CheckOnly) {
     exit 0
 }
 
-try {
-    $existing = Invoke-RestMethod -Uri "$Url/api/status" -TimeoutSec 2
-    if ($existing.ready) {
-        Write-Host "WebUI is already running: $Url" -ForegroundColor Green
-        if (-not $NoBrowser) { Start-Process $Url }
-        exit 0
+if (Test-LocalPortOpen -TargetPort $Port) {
+    try {
+        $existing = Invoke-RestMethod -Uri "$Url/api/status" -TimeoutSec 2
+    } catch {
+        throw ("Port {0} is already occupied, but the service is not this AITIC beta WebUI. " +
+               "It will not be stopped or replaced. Details: {1}" -f $Port, $_.Exception.Message)
     }
-} catch {
-    # No service on this port yet; continue with startup.
+
+    $expectedCwd = Get-NormalizedPath $CodeDir
+    $expectedDb = Get-NormalizedPath $DbDir
+    $expectedData = Get-NormalizedPath $DataDir
+    $actualCwd = Get-NormalizedPath ([string]$existing.cwd)
+    $actualDb = Get-NormalizedPath ([string]$existing.db_path)
+    $sameCwd = $false
+    if ($actualCwd) {
+        $sameCwd = $actualCwd.Equals(
+            $expectedCwd, [System.StringComparison]::OrdinalIgnoreCase)
+    }
+    # 当前知识库可能是初始 data\vectordb，也可能是用户在前端新建后切换到
+    # data\webui_knowledge_bases\...\vectordb。只要求它仍位于本 beta 的 data 根下，
+    # 避免把稳定版或其他副本误认作当前服务。
+    $isInitialDb = $false
+    if ($actualDb) {
+        $isInitialDb = $actualDb.Equals(
+            $expectedDb, [System.StringComparison]::OrdinalIgnoreCase)
+    }
+    $isBetaDataDb = $false
+    if ($actualDb -and $expectedData) {
+        $dataPrefix = $expectedData + [System.IO.Path]::DirectorySeparatorChar
+        $isBetaDataDb = $actualDb.StartsWith(
+            $dataPrefix, [System.StringComparison]::OrdinalIgnoreCase)
+    }
+    $sameDb = $isInitialDb -or $isBetaDataDb
+
+    if (-not ($sameCwd -and $sameDb)) {
+        throw ("Port {0} is already used by another AITIC/Web service. " +
+               "Expected beta cwd='{1}', db_path='{2}', but received cwd='{3}', db_path='{4}'. " +
+               "The existing process will not be stopped or replaced." -f
+               $Port, $expectedCwd, $expectedDb, $actualCwd, $actualDb)
+    }
+    if (-not $existing.ready) {
+        throw ("This beta WebUI is already listening on port {0}, but it is not ready. " +
+               "Check Ollama and the active knowledge base; the process will not be restarted automatically." -f $Port)
+    }
+
+    Write-Host "This beta WebUI is already running: $Url" -ForegroundColor Green
+    if (-not $NoBrowser) { Start-Process $Url }
+    exit 0
 }
 
 if (-not $NoBrowser) {
