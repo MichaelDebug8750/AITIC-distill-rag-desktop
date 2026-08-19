@@ -1,0 +1,772 @@
+{
+  "schema": 1,
+  "base_url": "http://127.0.0.1:8021",
+  "service": {
+    "ollama": "已连接",
+    "ollama_host": "http://127.0.0.1:11434",
+    "chunks": 810,
+    "llm_model": "qwen3:8b",
+    "vl_model": "qwen3-vl:8b",
+    "embed_model": "bge-m3",
+    "offline": true,
+    "relevance_trim": true,
+    "context_budget": 900,
+    "budget_escalated": 1800,
+    "top_k": 8,
+    "hybrid_default": false,
+    "evidence_floor": 0.99,
+    "style_gate_max": 0.96,
+    "widen_refusal": false,
+    "keyword_df_ratio": "0",
+    "db_path": "E:\\Ollama_test_beta\\data\\webui_knowledge_bases\\20260812_143403_be688296\\vectordb",
+    "library": {
+      "subject": "incoming",
+      "sources": [
+        "GNU_make中文手册.pdf"
+      ],
+      "built_at": "2026-08-12 14:34:14"
+    },
+    "active_library_id": "20260812_143403_be688296",
+    "build": null,
+    "cwd": "E:\\Ollama_test_beta\\code",
+    "ready": true,
+    "upload_enabled": true
+  },
+  "selected_cases": [
+    {
+      "book_key": "anatomy_and_physiology_2e",
+      "book": "Anatomy_and_Physiology_2e.pdf",
+      "question": "Autonomic reflex that responds to stretch receptors in the atria that send impulses to the cardioaccelerator area to increase HR when venous flow into the",
+      "expected": "answer",
+      "language": "English"
+    },
+    {
+      "book_key": "anatomy_and_physiology_2e",
+      "book": "Anatomy_and_Physiology_2e.pdf",
+      "question": "Describe lean process.",
+      "expected": "abstain",
+      "language": "English"
+    },
+    {
+      "book_key": "emacs生存指南",
+      "book": "Emacs生存指南",
+      "question": "C-h f 用来查什么？",
+      "expected": "answer",
+      "language": "中文"
+    },
+    {
+      "book_key": "emacs生存指南",
+      "book": "Emacs生存指南",
+      "question": "什么是心肌梗死的典型心电图表现？",
+      "expected": "abstain",
+      "language": "中文"
+    }
+  ],
+  "results": [
+    {
+      "language": "English",
+      "book": "Anatomy_and_Physiology_2e.pdf",
+      "question": "Autonomic reflex that responds to stretch receptors in the atria that send impulses to the cardioaccelerator area to increase HR when venous flow into the",
+      "expected": "answer",
+      "style": "concise",
+      "hybrid_requested": false,
+      "status": 200,
+      "passed": true,
+      "elapsed": 2.59,
+      "abstained": false,
+      "answer": "The autonomic reflex that responds to stretch receptors in the atria, sending impulses to the cardioaccelerator area to increase HR when venous flow into the atria increases is known as the Bainbridge reflex [p.839]. This reflex is also referred to as the atrial reflex [p.839]. It is triggered by increased venous return, which stretches the atrial walls and activates baroreceptors, leading to an increase in heart rate through sympathetic stimulation [p.831].",
+      "retrieval": "vector",
+      "cite_ok": true,
+      "sources": [
+        {
+          "label": "Anatomy_and_Physiology_2e · p831",
+          "type": "text",
+          "loc": "",
+          "page": 831,
+          "library": "Anatomy_and_Physiology_2e",
+          "library_id": "20260812_142302_ef072e72",
+          "source": "Anatomy_and_Physiology_2e.pdf",
+          "snippet": "p831: baroreceptor firing decreases, and the cardiac centers increase sympathetic stimulation and decreaseparasympathetic stimulation.There is a similar reflex, called the atrial reflex or Bainbridge reflex, associated w"
+        },
+        {
+          "label": "Anatomy_and_Physiology_2e · p839",
+          "type": "text",
+          "loc": "",
+          "page": 839,
+          "library": "Anatomy_and_Physiology_2e",
+          "library_id": "20260812_142302_ef072e72",
+          "source": "Anatomy_and_Physiology_2e.pdf",
+          "snippet": "contracts and pumps blood to the bodyatrial reflex  (also, called Bainbridge reflex)autonomic reflex that responds to stretch receptorsin the atria that send impulses to thecardioaccelerator area to increase HR when veno"
+        }
+      ]
+    },
+    {
+      "language": "English",
+      "book": "Anatomy_and_Physiology_2e.pdf",
+      "question": "Describe lean process.",
+      "expected": "abstain",
+      "style": "concise",
+      "hybrid_requested": false,
+      "status": 200,
+      "passed": true,
+      "elapsed": 1.273,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]",
+      "retrieval": "vector",
+      "cite_ok": true,
+      "sources": [
+        {
+          "label": "Anatomy_and_Physiology_2e · p1067",
+          "type": "text",
+          "loc": "",
+          "page": 1067,
+          "library": "Anatomy_and_Physiology_2e",
+          "library_id": "20260812_142302_ef072e72",
+          "source": "Anatomy_and_Physiology_2e.pdf",
+          "snippet": "absorption occurs."
+        },
+        {
+          "label": "Anatomy_and_Physiology_2e · p221",
+          "type": "text",
+          "loc": "",
+          "page": 221,
+          "library": "Anatomy_and_Physiology_2e",
+          "library_id": "20260812_142302_ef072e72",
+          "source": "Anatomy_and_Physiology_2e.pdf",
+          "snippet": "p221: Bone MarkingsMarkingDescriptionExampleArticulationsWhere two bones meetKnee jointHeadProminent rounded surfaceHead of femurFacetFlat surfaceVertebraeCondyleRounded surfaceOccipital condylesProjectionsRaised marking"
+        },
+        {
+          "label": "Anatomy_and_Physiology_2e · p37",
+          "type": "text",
+          "loc": "",
+          "page": 37,
+          "library": "Anatomy_and_Physiology_2e",
+          "library_id": "20260812_142302_ef072e72",
+          "source": "Anatomy_and_Physiology_2e.pdf",
+          "snippet": "heat production."
+        },
+        {
+          "label": "Anatomy_and_Physiology_2e · p432",
+          "type": "text",
+          "loc": "",
+          "page": 432,
+          "library": "Anatomy_and_Physiology_2e",
+          "library_id": "20260812_142302_ef072e72",
+          "source": "Anatomy_and_Physiology_2e.pdf",
+          "snippet": "”longuslonglongbrevisshortbriefmaximuslargemaxmediusmedium“Medius” and “medium” both begin with “med.”minimustiny; littleminirectusstraightTo RECTify a situation is to straighten it out.multimanyIf something is MULTIcolo"
+        },
+        {
+          "label": "Anatomy_and_Physiology_2e · p49",
+          "type": "text",
+          "loc": "",
+          "page": 49,
+          "library": "Anatomy_and_Physiology_2e",
+          "library_id": "20260812_142302_ef072e72",
+          "source": "Anatomy_and_Physiology_2e.pdf",
+          "snippet": "growth  process of increasing in sizehomeostasis  steady state of body systems that livingorganisms maintaininferior  describes a position below or lower thananother part of the body proper; near or toward thetail (in hu"
+        },
+        {
+          "label": "Anatomy_and_Physiology_2e · p537",
+          "type": "text",
+          "loc": "",
+          "page": 537,
+          "library": "Anatomy_and_Physiology_2e",
+          "library_id": "20260812_142302_ef072e72",
+          "source": "Anatomy_and_Physiology_2e.pdf",
+          "snippet": "system."
+        },
+        {
+          "label": "Anatomy_and_Physiology_2e · p687",
+          "type": "text",
+          "loc": "",
+          "page": 687,
+          "library": "Anatomy_and_Physiology_2e",
+          "library_id": "20260812_142302_ef072e72",
+          "source": "Anatomy_and_Physiology_2e.pdf",
+          "snippet": "conjugate eye movementsparesis  partial loss of, or impaired, voluntary musclecontrolplantar reflex  superficial reflex initiated by gentlestimulation of the sole of the footpraxis  in a neurological exam, the act of doi"
+        }
+      ]
+    },
+    {
+      "language": "中文",
+      "book": "Emacs生存指南",
+      "question": "C-h f 用来查什么？",
+      "expected": "answer",
+      "style": "concise",
+      "hybrid_requested": false,
+      "status": 200,
+      "passed": true,
+      "elapsed": 1.413,
+      "abstained": false,
+      "answer": "C-h f 用来查找函数的文档，它可以通过 tab 进行补全，但需要知道一个前缀才行 [p.6]。",
+      "retrieval": "vector",
+      "cite_ok": true,
+      "sources": [
+        {
+          "label": "Emacs生存指南 · p3",
+          "type": "text",
+          "loc": "",
+          "page": 3,
+          "library": "Emacs生存指南",
+          "library_id": "20260812_143348_d5a3c794",
+          "source": "Emacs生存指南.pdf",
+          "snippet": "其实C-num 或者C-u 的职责并不是重复某个命令，而是将数字作为参数传递给要调用的命令。通常命令有一个（或更多）可选参数，C-u 可以指定第一个参数，也就是前缀参数了。碰巧大部分情况这个参数都表示对命令进行重复了，但也有一些例外的情况，通常命令的帮助里都会讲到，有参数的情况下是怎么样的一个行为（注意找“Withargument”的字样），例如常用的set-mark-command ，在有前缀参数的情况下并不是设置多次mark ，而是"
+        },
+        {
+          "label": "Emacs生存指南 · p5",
+          "type": "text",
+          "loc": "",
+          "page": 5,
+          "library": "Emacs生存指南",
+          "library_id": "20260812_143348_d5a3c794",
+          "source": "Emacs生存指南.pdf",
+          "snippet": "码的时候遵循一定的约定，在Elisp 文件被加载的时候，文件里定义的变量以及函数相关的文档就被Emacs 加载进索引中了，完全不需要额外的干预。C-h mEmacs 为不同的文件类型提供不同的编辑环境，称作mode 。有时候想要得到关于当前mode 的使用帮助、状态描述以及可用的快捷键列表等，只需要按下C-h m 就一目了然了！...C-h有芝麻开门，自然就有芝麻关门！C-h 可以当前缀用，也可以当后缀用。我时常记不住矩形操作的几个快捷"
+        },
+        {
+          "label": "Emacs生存指南 · p6",
+          "type": "text",
+          "loc": "",
+          "page": 6,
+          "library": "Emacs生存指南",
+          "library_id": "20260812_143348_d5a3c794",
+          "source": "Emacs生存指南.pdf",
+          "snippet": "p6: 更模糊的查找虽然 C-h f 和 C-h v 可以使用 tab 进行补全，但是必须要知道一个前缀才行。有些时候只知道一个关键字，却不一定是前缀，这个时候可以用 C-h a 来通过正则表达式来查找命令名。Emacs 会列出所有匹配的命令以及一个简短的文档，并可以通过点击链接定位到该命令的详细文档。C-h a 只会查找命令，如果需要匹配所有的函数以及变量的话，可以使用 M-xapropos 。如果这都找不到想要的结果的话，你可以考虑"
+        },
+        {
+          "label": "Emacs生存指南 · p8",
+          "type": "text",
+          "loc": "",
+          "page": 8,
+          "library": "Emacs生存指南",
+          "library_id": "20260812_143348_d5a3c794",
+          "source": "Emacs生存指南.pdf",
+          "snippet": "\"(message x)(message y))你可以用前面介绍的方法来查看foo 的文档，那正是由你写在参数列表后面的这个字符串生成的。另外，在Emacs 中有一类特殊的函数，称为command ，它们可以被用户交互地调用（例如，绑定到某个快捷键上，或者通过M-x 输入命令名进行调用）。普通函数并不能通过交互方式直接被调用，要定义一个command ，需要在函数的文档字符串（如"
+        }
+      ]
+    },
+    {
+      "language": "中文",
+      "book": "Emacs生存指南",
+      "question": "什么是心肌梗死的典型心电图表现？",
+      "expected": "abstain",
+      "style": "concise",
+      "hybrid_requested": false,
+      "status": 200,
+      "passed": true,
+      "elapsed": 0.51,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]",
+      "retrieval": "vector",
+      "cite_ok": true,
+      "sources": [
+        {
+          "label": "Emacs生存指南 · p2",
+          "type": "text",
+          "loc": "",
+          "page": 2,
+          "library": "Emacs生存指南",
+          "library_id": "20260812_143348_d5a3c794",
+          "source": "Emacs生存指南.pdf",
+          "snippet": "p2:  使用单个字符表示几个常用的修饰键： C : Control M : Meta ，通常 Alt 键被当作 Meta 使用 S : Shift s : Super ，通常就是键盘上带 Windows 徽章的那个键 使用连字符而不是加号连接。例如“C-w”就表示同时按下 Control 和 w 键，或者先按着 Control 键不放，再按 w 键。“C-@”也是同样的道理，只是大多数键盘上不能直接输入“@”这个字符，需要"
+        },
+        {
+          "label": "Emacs生存指南 · p3",
+          "type": "text",
+          "loc": "",
+          "page": 3,
+          "library": "Emacs生存指南",
+          "library_id": "20260812_143348_d5a3c794",
+          "source": "Emacs生存指南.pdf",
+          "snippet": "“#include \"”，再按C-e 跳到行尾，再输入一个“\"”，C-n 跳到下一行，然后按下F4 结束宏录制。之后按下C-x e e e（或者 C-3 <f4>）将宏重复播放三次就能把他们变成：#include \"stdio.h\"#include \"stdlib.h\"#include \"string.h\"#include \"time.h\"相比之下Elisp 中的宏可能会接触得比较少一些。如果需要用Elisp 来进行比较复杂的编程（例如"
+        },
+        {
+          "label": "Emacs生存指南 · p4",
+          "type": "text",
+          "loc": "",
+          "page": 4,
+          "library": "Emacs生存指南",
+          "library_id": "20260812_143348_d5a3c794",
+          "source": "Emacs生存指南.pdf",
+          "snippet": "该快捷键，这个功能非常贴心！"
+        }
+      ]
+    },
+    {
+      "language": "English",
+      "book": "Anatomy_and_Physiology_2e.pdf",
+      "question": "Autonomic reflex that responds to stretch receptors in the atria that send impulses to the cardioaccelerator area to increase HR when venous flow into the",
+      "expected": "answer",
+      "style": "standard",
+      "hybrid_requested": false,
+      "status": 200,
+      "passed": true,
+      "elapsed": 8.049,
+      "abstained": false,
+      "answer": "The autonomic reflex that responds to stretch receptors in the atria to increase HR when venous flow into the atria increases is called the Bainbridge reflex. [p.839]\n**从功能上看**，this reflex is triggered when increased venous return stretches the atrial walls, activating baroreceptors that send signals to the cardioaccelerator area in the brainstem. [p.831] This area then increases sympathetic stimulation to the heart, leading to a rise in heart rate. [p.831]\nThe reflex is part of the autonomic nervous system and operates independently of conscious control. [p.839] It ensures that the heart rate increases when there is a surge in blood returning to the atria, such as during physical activity or when blood volume rises. [p.831] This helps maintain adequate cardiac output and blood pressure. [p.839]",
+      "retrieval": "vector",
+      "cite_ok": true,
+      "sources": [
+        {
+          "label": "Anatomy_and_Physiology_2e · p831",
+          "type": "text",
+          "loc": "",
+          "page": 831,
+          "library": "Anatomy_and_Physiology_2e",
+          "library_id": "20260812_142302_ef072e72",
+          "source": "Anatomy_and_Physiology_2e.pdf",
+          "snippet": "p831: baroreceptor firing decreases, and the cardiac centers increase sympathetic stimulation and decreaseparasympathetic stimulation.There is a similar reflex, called the atrial reflex or Bainbridge reflex, associated w"
+        },
+        {
+          "label": "Anatomy_and_Physiology_2e · p839",
+          "type": "text",
+          "loc": "",
+          "page": 839,
+          "library": "Anatomy_and_Physiology_2e",
+          "library_id": "20260812_142302_ef072e72",
+          "source": "Anatomy_and_Physiology_2e.pdf",
+          "snippet": "contracts and pumps blood to the bodyatrial reflex  (also, called Bainbridge reflex)autonomic reflex that responds to stretch receptorsin the atria that send impulses to thecardioaccelerator area to increase HR when veno"
+        }
+      ]
+    },
+    {
+      "language": "English",
+      "book": "Anatomy_and_Physiology_2e.pdf",
+      "question": "Describe lean process.",
+      "expected": "abstain",
+      "style": "standard",
+      "hybrid_requested": false,
+      "status": 200,
+      "passed": true,
+      "elapsed": 3.198,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]",
+      "retrieval": "vector",
+      "cite_ok": true,
+      "sources": [
+        {
+          "label": "Anatomy_and_Physiology_2e · p101",
+          "type": "text",
+          "loc": "",
+          "page": 101,
+          "library": "Anatomy_and_Physiology_2e",
+          "library_id": "20260812_142302_ef072e72",
+          "source": "Anatomy_and_Physiology_2e.pdf",
+          "snippet": "p101: INTRODUCTION"
+        },
+        {
+          "label": "Anatomy_and_Physiology_2e · p1067",
+          "type": "text",
+          "loc": "",
+          "page": 1067,
+          "library": "Anatomy_and_Physiology_2e",
+          "library_id": "20260812_142302_ef072e72",
+          "source": "Anatomy_and_Physiology_2e.pdf",
+          "snippet": "absorption occurs."
+        },
+        {
+          "label": "Anatomy_and_Physiology_2e · p121",
+          "type": "text",
+          "loc": "",
+          "page": 121,
+          "library": "Anatomy_and_Physiology_2e",
+          "library_id": "20260812_142302_ef072e72",
+          "source": "Anatomy_and_Physiology_2e.pdf",
+          "snippet": "Matthew Meselson and Franklin Stahl.This method is illustrated in Figure 3.24 and described below."
+        },
+        {
+          "label": "Anatomy_and_Physiology_2e · p251",
+          "type": "text",
+          "loc": "",
+          "page": 251,
+          "library": "Anatomy_and_Physiology_2e",
+          "library_id": "20260812_142302_ef072e72",
+          "source": "Anatomy_and_Physiology_2e.pdf",
+          "snippet": "p251: INTRODUCTION"
+        },
+        {
+          "label": "Anatomy_and_Physiology_2e · p37",
+          "type": "text",
+          "loc": "",
+          "page": 37,
+          "library": "Anatomy_and_Physiology_2e",
+          "library_id": "20260812_142302_ef072e72",
+          "source": "Anatomy_and_Physiology_2e.pdf",
+          "snippet": "heat production."
+        },
+        {
+          "label": "Anatomy_and_Physiology_2e · p537",
+          "type": "text",
+          "loc": "",
+          "page": 537,
+          "library": "Anatomy_and_Physiology_2e",
+          "library_id": "20260812_142302_ef072e72",
+          "source": "Anatomy_and_Physiology_2e.pdf",
+          "snippet": "system."
+        },
+        {
+          "label": "Anatomy_and_Physiology_2e · p639",
+          "type": "text",
+          "loc": "",
+          "page": 639,
+          "library": "Anatomy_and_Physiology_2e",
+          "library_id": "20260812_142302_ef072e72",
+          "source": "Anatomy_and_Physiology_2e.pdf",
+          "snippet": "LEARNING OBJECTIVES systems.Coordinating that balance requires integration that begins with forebrain structures like the hypothalamus"
+        },
+        {
+          "label": "Anatomy_and_Physiology_2e · p681",
+          "type": "text",
+          "loc": "",
+          "page": 681,
+          "library": "Anatomy_and_Physiology_2e",
+          "library_id": "20260812_142302_ef072e72",
+          "source": "Anatomy_and_Physiology_2e.pdf",
+          "snippet": "p681: 16.5 The Coordination and Gait Exams"
+        }
+      ]
+    },
+    {
+      "language": "中文",
+      "book": "Emacs生存指南",
+      "question": "C-h f 用来查什么？",
+      "expected": "answer",
+      "style": "standard",
+      "hybrid_requested": false,
+      "status": 200,
+      "passed": true,
+      "elapsed": 9.01,
+      "abstained": false,
+      "answer": "C-h f 是 Emacs 中用于查找命令（function）文档的快捷键，它会根据输入的命令名显示对应的文档字符串，该字符串通常位于函数定义的参数列表之后，用于描述命令的功能和用法 [p.8]。 当你知道某个命令的名字，但不确定它的具体用法时，可以通过 C-h f 快速获取帮助信息。 例如，如果你输入 C-h f set-fill-column，Emacs 会显示该命令的文档字符串，告诉你它如何设置填充列的宽度。\n\n此外，C-h f 的使用方式与其他帮助命令类似，比如 C-h v 用于查找变量的文档，而 C-h a 则可以通过正则表达式模糊查找命令名。 如果你不确定命令的完整名称，但记得部分关键字，C-h a 会是一个更灵活的选择。 不过，C-h f 的优势在于它直接针对命令的文档，适合需要明确命令名的情况。",
+      "retrieval": "vector",
+      "cite_ok": true,
+      "sources": [
+        {
+          "label": "Emacs生存指南 · p3",
+          "type": "text",
+          "loc": "",
+          "page": 3,
+          "library": "Emacs生存指南",
+          "library_id": "20260812_143348_d5a3c794",
+          "source": "Emacs生存指南.pdf",
+          "snippet": "其实C-num 或者C-u 的职责并不是重复某个命令，而是将数字作为参数传递给要调用的命令。通常命令有一个（或更多）可选参数，C-u 可以指定第一个参数，也就是前缀参数了。碰巧大部分情况这个参数都表示对命令进行重复了，但也有一些例外的情况，通常命令的帮助里都会讲到，有参数的情况下是怎么样的一个行为（注意找“Withargument”的字样），例如常用的set-mark-command ，在有前缀参数的情况下并不是设置多次mark ，而是"
+        },
+        {
+          "label": "Emacs生存指南 · p5",
+          "type": "text",
+          "loc": "",
+          "page": 5,
+          "library": "Emacs生存指南",
+          "library_id": "20260812_143348_d5a3c794",
+          "source": "Emacs生存指南.pdf",
+          "snippet": "码的时候遵循一定的约定，在Elisp 文件被加载的时候，文件里定义的变量以及函数相关的文档就被Emacs 加载进索引中了，完全不需要额外的干预。C-h mEmacs 为不同的文件类型提供不同的编辑环境，称作mode 。有时候想要得到关于当前mode 的使用帮助、状态描述以及可用的快捷键列表等，只需要按下C-h m 就一目了然了！...C-h有芝麻开门，自然就有芝麻关门！C-h 可以当前缀用，也可以当后缀用。我时常记不住矩形操作的几个快捷"
+        },
+        {
+          "label": "Emacs生存指南 · p6",
+          "type": "text",
+          "loc": "",
+          "page": 6,
+          "library": "Emacs生存指南",
+          "library_id": "20260812_143348_d5a3c794",
+          "source": "Emacs生存指南.pdf",
+          "snippet": "p6: 更模糊的查找虽然 C-h f 和 C-h v 可以使用 tab 进行补全，但是必须要知道一个前缀才行。有些时候只知道一个关键字，却不一定是前缀，这个时候可以用 C-h a 来通过正则表达式来查找命令名。Emacs 会列出所有匹配的命令以及一个简短的文档，并可以通过点击链接定位到该命令的详细文档。C-h a 只会查找命令，如果需要匹配所有的函数以及变量的话，可以使用 M-xapropos 。如果这都找不到想要的结果的话，你可以考虑"
+        },
+        {
+          "label": "Emacs生存指南 · p8",
+          "type": "text",
+          "loc": "",
+          "page": 8,
+          "library": "Emacs生存指南",
+          "library_id": "20260812_143348_d5a3c794",
+          "source": "Emacs生存指南.pdf",
+          "snippet": "\"(message x)(message y))你可以用前面介绍的方法来查看foo 的文档，那正是由你写在参数列表后面的这个字符串生成的。另外，在Emacs 中有一类特殊的函数，称为command ，它们可以被用户交互地调用（例如，绑定到某个快捷键上，或者通过M-x 输入命令名进行调用）。普通函数并不能通过交互方式直接被调用，要定义一个command ，需要在函数的文档字符串（如"
+        }
+      ]
+    },
+    {
+      "language": "中文",
+      "book": "Emacs生存指南",
+      "question": "什么是心肌梗死的典型心电图表现？",
+      "expected": "abstain",
+      "style": "standard",
+      "hybrid_requested": false,
+      "status": 200,
+      "passed": true,
+      "elapsed": 0.408,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]",
+      "retrieval": "vector",
+      "cite_ok": true,
+      "sources": [
+        {
+          "label": "Emacs生存指南 · p2",
+          "type": "text",
+          "loc": "",
+          "page": 2,
+          "library": "Emacs生存指南",
+          "library_id": "20260812_143348_d5a3c794",
+          "source": "Emacs生存指南.pdf",
+          "snippet": "p2:  使用单个字符表示几个常用的修饰键： C : Control M : Meta ，通常 Alt 键被当作 Meta 使用 S : Shift s : Super ，通常就是键盘上带 Windows 徽章的那个键 使用连字符而不是加号连接。例如“C-w”就表示同时按下 Control 和 w 键，或者先按着 Control 键不放，再按 w 键。“C-@”也是同样的道理，只是大多数键盘上不能直接输入“@”这个字符，需要"
+        },
+        {
+          "label": "Emacs生存指南 · p3",
+          "type": "text",
+          "loc": "",
+          "page": 3,
+          "library": "Emacs生存指南",
+          "library_id": "20260812_143348_d5a3c794",
+          "source": "Emacs生存指南.pdf",
+          "snippet": "“#include \"”，再按C-e 跳到行尾，再输入一个“\"”，C-n 跳到下一行，然后按下F4 结束宏录制。之后按下C-x e e e（或者 C-3 <f4>）将宏重复播放三次就能把他们变成：#include \"stdio.h\"#include \"stdlib.h\"#include \"string.h\"#include \"time.h\"相比之下Elisp 中的宏可能会接触得比较少一些。如果需要用Elisp 来进行比较复杂的编程（例如"
+        },
+        {
+          "label": "Emacs生存指南 · p4",
+          "type": "text",
+          "loc": "",
+          "page": 4,
+          "library": "Emacs生存指南",
+          "library_id": "20260812_143348_d5a3c794",
+          "source": "Emacs生存指南.pdf",
+          "snippet": "该快捷键，这个功能非常贴心！"
+        }
+      ]
+    },
+    {
+      "language": "English",
+      "book": "Anatomy_and_Physiology_2e.pdf",
+      "question": "Autonomic reflex that responds to stretch receptors in the atria that send impulses to the cardioaccelerator area to increase HR when venous flow into the",
+      "expected": "answer",
+      "style": "detailed",
+      "hybrid_requested": false,
+      "status": 200,
+      "passed": true,
+      "elapsed": 15.131,
+      "abstained": false,
+      "answer": "Bainbridge reflex\nThe Bainbridge reflex is an autonomic reflex that responds to stretch receptors in the atria, sending impulses to the cardioaccelerator area to increase heart rate when venous flow into the atria increases [p.839].\n\nThis reflex is triggered when there is an increase in venous return to the atria, which stretches the atrial walls. The cardioaccelerator area, part of the autonomic nervous system, responds by increasing sympathetic stimulation to the heart, which in turn raises the heart rate. This mechanism helps to ensure that the heart can meet the increased demand for blood flow during conditions such as exercise or when there is a sudden increase in venous return. While both reflexes are involved in regulating heart rate, the Bainbridge reflex specifically relates to changes in atrial stretch due to venous return.\n\nThe Bainbridge reflex operates without direct nervous or endocrine control, relying solely on the mechanical stretching of the atria and the subsequent activation of baroreceptors. The reflex is particularly relevant in situations where there is a rapid change in venous return, such as during physical activity or when there is a sudden shift in body position.\n\nIn summary, the Bainbridge reflex is a key autonomic response that ensures the heart can adapt to increased venous return by increasing heart rate, thereby maintaining adequate cardiac output.",
+      "retrieval": "vector",
+      "cite_ok": true,
+      "sources": [
+        {
+          "label": "Anatomy_and_Physiology_2e · p831",
+          "type": "text",
+          "loc": "",
+          "page": 831,
+          "library": "Anatomy_and_Physiology_2e",
+          "library_id": "20260812_142302_ef072e72",
+          "source": "Anatomy_and_Physiology_2e.pdf",
+          "snippet": "p831: baroreceptor firing decreases, and the cardiac centers increase sympathetic stimulation and decreaseparasympathetic stimulation.There is a similar reflex, called the atrial reflex or Bainbridge reflex, associated w"
+        },
+        {
+          "label": "Anatomy_and_Physiology_2e · p839",
+          "type": "text",
+          "loc": "",
+          "page": 839,
+          "library": "Anatomy_and_Physiology_2e",
+          "library_id": "20260812_142302_ef072e72",
+          "source": "Anatomy_and_Physiology_2e.pdf",
+          "snippet": "contracts and pumps blood to the bodyatrial reflex  (also, called Bainbridge reflex)autonomic reflex that responds to stretch receptorsin the atria that send impulses to thecardioaccelerator area to increase HR when veno"
+        }
+      ]
+    },
+    {
+      "language": "English",
+      "book": "Anatomy_and_Physiology_2e.pdf",
+      "question": "Describe lean process.",
+      "expected": "abstain",
+      "style": "detailed",
+      "hybrid_requested": false,
+      "status": 200,
+      "passed": true,
+      "elapsed": 4.369,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]",
+      "retrieval": "vector",
+      "cite_ok": true,
+      "sources": [
+        {
+          "label": "Anatomy_and_Physiology_2e · p101",
+          "type": "text",
+          "loc": "",
+          "page": 101,
+          "library": "Anatomy_and_Physiology_2e",
+          "library_id": "20260812_142302_ef072e72",
+          "source": "Anatomy_and_Physiology_2e.pdf",
+          "snippet": "p101: INTRODUCTION"
+        },
+        {
+          "label": "Anatomy_and_Physiology_2e · p1067",
+          "type": "text",
+          "loc": "",
+          "page": 1067,
+          "library": "Anatomy_and_Physiology_2e",
+          "library_id": "20260812_142302_ef072e72",
+          "source": "Anatomy_and_Physiology_2e.pdf",
+          "snippet": "absorption occurs."
+        },
+        {
+          "label": "Anatomy_and_Physiology_2e · p121",
+          "type": "text",
+          "loc": "",
+          "page": 121,
+          "library": "Anatomy_and_Physiology_2e",
+          "library_id": "20260812_142302_ef072e72",
+          "source": "Anatomy_and_Physiology_2e.pdf",
+          "snippet": "Matthew Meselson and Franklin Stahl.This method is illustrated in Figure 3.24 and described below."
+        },
+        {
+          "label": "Anatomy_and_Physiology_2e · p251",
+          "type": "text",
+          "loc": "",
+          "page": 251,
+          "library": "Anatomy_and_Physiology_2e",
+          "library_id": "20260812_142302_ef072e72",
+          "source": "Anatomy_and_Physiology_2e.pdf",
+          "snippet": "p251: INTRODUCTION"
+        },
+        {
+          "label": "Anatomy_and_Physiology_2e · p37",
+          "type": "text",
+          "loc": "",
+          "page": 37,
+          "library": "Anatomy_and_Physiology_2e",
+          "library_id": "20260812_142302_ef072e72",
+          "source": "Anatomy_and_Physiology_2e.pdf",
+          "snippet": "heat production."
+        },
+        {
+          "label": "Anatomy_and_Physiology_2e · p537",
+          "type": "text",
+          "loc": "",
+          "page": 537,
+          "library": "Anatomy_and_Physiology_2e",
+          "library_id": "20260812_142302_ef072e72",
+          "source": "Anatomy_and_Physiology_2e.pdf",
+          "snippet": "system."
+        },
+        {
+          "label": "Anatomy_and_Physiology_2e · p639",
+          "type": "text",
+          "loc": "",
+          "page": 639,
+          "library": "Anatomy_and_Physiology_2e",
+          "library_id": "20260812_142302_ef072e72",
+          "source": "Anatomy_and_Physiology_2e.pdf",
+          "snippet": "LEARNING OBJECTIVES systems.Coordinating that balance requires integration that begins with forebrain structures like the hypothalamus"
+        },
+        {
+          "label": "Anatomy_and_Physiology_2e · p681",
+          "type": "text",
+          "loc": "",
+          "page": 681,
+          "library": "Anatomy_and_Physiology_2e",
+          "library_id": "20260812_142302_ef072e72",
+          "source": "Anatomy_and_Physiology_2e.pdf",
+          "snippet": "p681: 16.5 The Coordination and Gait Exams"
+        }
+      ]
+    },
+    {
+      "language": "中文",
+      "book": "Emacs生存指南",
+      "question": "C-h f 用来查什么？",
+      "expected": "answer",
+      "style": "detailed",
+      "hybrid_requested": false,
+      "status": 200,
+      "passed": true,
+      "elapsed": 11.395,
+      "abstained": false,
+      "answer": "**从功能上看**，C-h f 是 Emacs 中用于查找命令（function）文档的快捷键，它会显示该命令的详细说明，包括其用途、参数以及相关示例。 [p.6] 如果用户不确定命令的完整名称，也可以使用 C-h a 或 M-x apropos 来通过正则表达式或关键字模糊查找相关的命令。 [p.6] 如果用户需要查找变量或函数的信息，可以使用 C-h v 或 C-h f 的组合，或者使用 M-x apropos 来查找所有匹配的函数、变量或命令。 [p.6]\n\n此外，Emacs 的帮助系统非常强大，除了 C-h f 之外，还有许多其他帮助命令，例如 C-h m 用于查看当前 mode 的帮助信息，C-h C-h 用于列出所有帮助相关的选项，C-h i 用于打开 Emacs 的 Info 文档等。 [p.6]",
+      "retrieval": "vector",
+      "cite_ok": true,
+      "sources": [
+        {
+          "label": "Emacs生存指南 · p3",
+          "type": "text",
+          "loc": "",
+          "page": 3,
+          "library": "Emacs生存指南",
+          "library_id": "20260812_143348_d5a3c794",
+          "source": "Emacs生存指南.pdf",
+          "snippet": "其实C-num 或者C-u 的职责并不是重复某个命令，而是将数字作为参数传递给要调用的命令。通常命令有一个（或更多）可选参数，C-u 可以指定第一个参数，也就是前缀参数了。碰巧大部分情况这个参数都表示对命令进行重复了，但也有一些例外的情况，通常命令的帮助里都会讲到，有参数的情况下是怎么样的一个行为（注意找“Withargument”的字样），例如常用的set-mark-command ，在有前缀参数的情况下并不是设置多次mark ，而是"
+        },
+        {
+          "label": "Emacs生存指南 · p5",
+          "type": "text",
+          "loc": "",
+          "page": 5,
+          "library": "Emacs生存指南",
+          "library_id": "20260812_143348_d5a3c794",
+          "source": "Emacs生存指南.pdf",
+          "snippet": "码的时候遵循一定的约定，在Elisp 文件被加载的时候，文件里定义的变量以及函数相关的文档就被Emacs 加载进索引中了，完全不需要额外的干预。C-h mEmacs 为不同的文件类型提供不同的编辑环境，称作mode 。有时候想要得到关于当前mode 的使用帮助、状态描述以及可用的快捷键列表等，只需要按下C-h m 就一目了然了！...C-h有芝麻开门，自然就有芝麻关门！C-h 可以当前缀用，也可以当后缀用。我时常记不住矩形操作的几个快捷"
+        },
+        {
+          "label": "Emacs生存指南 · p6",
+          "type": "text",
+          "loc": "",
+          "page": 6,
+          "library": "Emacs生存指南",
+          "library_id": "20260812_143348_d5a3c794",
+          "source": "Emacs生存指南.pdf",
+          "snippet": "p6: 更模糊的查找虽然 C-h f 和 C-h v 可以使用 tab 进行补全，但是必须要知道一个前缀才行。有些时候只知道一个关键字，却不一定是前缀，这个时候可以用 C-h a 来通过正则表达式来查找命令名。Emacs 会列出所有匹配的命令以及一个简短的文档，并可以通过点击链接定位到该命令的详细文档。C-h a 只会查找命令，如果需要匹配所有的函数以及变量的话，可以使用 M-xapropos 。如果这都找不到想要的结果的话，你可以考虑"
+        },
+        {
+          "label": "Emacs生存指南 · p8",
+          "type": "text",
+          "loc": "",
+          "page": 8,
+          "library": "Emacs生存指南",
+          "library_id": "20260812_143348_d5a3c794",
+          "source": "Emacs生存指南.pdf",
+          "snippet": "\"(message x)(message y))你可以用前面介绍的方法来查看foo 的文档，那正是由你写在参数列表后面的这个字符串生成的。另外，在Emacs 中有一类特殊的函数，称为command ，它们可以被用户交互地调用（例如，绑定到某个快捷键上，或者通过M-x 输入命令名进行调用）。普通函数并不能通过交互方式直接被调用，要定义一个command ，需要在函数的文档字符串（如"
+        }
+      ]
+    },
+    {
+      "language": "中文",
+      "book": "Emacs生存指南",
+      "question": "什么是心肌梗死的典型心电图表现？",
+      "expected": "abstain",
+      "style": "detailed",
+      "hybrid_requested": false,
+      "status": 200,
+      "passed": true,
+      "elapsed": 0.408,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]",
+      "retrieval": "vector",
+      "cite_ok": true,
+      "sources": [
+        {
+          "label": "Emacs生存指南 · p2",
+          "type": "text",
+          "loc": "",
+          "page": 2,
+          "library": "Emacs生存指南",
+          "library_id": "20260812_143348_d5a3c794",
+          "source": "Emacs生存指南.pdf",
+          "snippet": "p2:  使用单个字符表示几个常用的修饰键： C : Control M : Meta ，通常 Alt 键被当作 Meta 使用 S : Shift s : Super ，通常就是键盘上带 Windows 徽章的那个键 使用连字符而不是加号连接。例如“C-w”就表示同时按下 Control 和 w 键，或者先按着 Control 键不放，再按 w 键。“C-@”也是同样的道理，只是大多数键盘上不能直接输入“@”这个字符，需要"
+        },
+        {
+          "label": "Emacs生存指南 · p3",
+          "type": "text",
+          "loc": "",
+          "page": 3,
+          "library": "Emacs生存指南",
+          "library_id": "20260812_143348_d5a3c794",
+          "source": "Emacs生存指南.pdf",
+          "snippet": "“#include \"”，再按C-e 跳到行尾，再输入一个“\"”，C-n 跳到下一行，然后按下F4 结束宏录制。之后按下C-x e e e（或者 C-3 <f4>）将宏重复播放三次就能把他们变成：#include \"stdio.h\"#include \"stdlib.h\"#include \"string.h\"#include \"time.h\"相比之下Elisp 中的宏可能会接触得比较少一些。如果需要用Elisp 来进行比较复杂的编程（例如"
+        },
+        {
+          "label": "Emacs生存指南 · p4",
+          "type": "text",
+          "loc": "",
+          "page": 4,
+          "library": "Emacs生存指南",
+          "library_id": "20260812_143348_d5a3c794",
+          "source": "Emacs生存指南.pdf",
+          "snippet": "该快捷键，这个功能非常贴心！"
+        }
+      ]
+    }
+  ],
+  "passed": true
+}

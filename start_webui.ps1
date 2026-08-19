@@ -69,7 +69,14 @@ foreach ($candidate in ($candidates | Select-Object -Unique)) {
 if (-not $PythonExe) {
     throw "No Python environment has all WebUI dependencies. Run code\setup.bat first."
 }
-Write-Host "  Python: $PythonExe" -ForegroundColor Green
+$PythonVersion = (& $PythonExe -c "import platform; print(platform.python_version())").Trim()
+Write-Host "  Python: $PythonExe ($PythonVersion)" -ForegroundColor Green
+if (-not $PythonVersion.StartsWith("3.11.")) {
+    $VersionWarning = (("  Warning: this project is pinned to Python 3.11, but the selected runtime is {0}. " +
+                        "It may work, but evaluation identity is not reproducible; " +
+                        "run code\setup.bat to create code\.venv.") -f $PythonVersion)
+    Write-Host $VersionWarning -ForegroundColor DarkYellow
+}
 
 try {
     $tags = Invoke-RestMethod -Uri "http://127.0.0.1:11434/api/tags" -TimeoutSec 5

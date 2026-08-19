@@ -1,0 +1,237 @@
+{
+  "seed": null,
+  "mode": "unseeded",
+  "rows": 20,
+  "outcomes": {
+    "编造": 2,
+    "拒答正确": 18
+  },
+  "same_as_old": 17,
+  "same_as_new": 20,
+  "answerable_hits": 0,
+  "correct_refusals": 18,
+  "fabrications": 2,
+  "elapsed_seconds": 85.58,
+  "results": [
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Define Objective self-awareness.",
+      "type": "unanswerable",
+      "old": "编造",
+      "new": "编造",
+      "observed": "编造",
+      "hit": null,
+      "abstained": false,
+      "answer": "Objective self-awareness is the ability of the patient to recognize personal identity and relate that to the examiner, as well as to understand language by following instructions to perform actions. \n\nThis concept is rooted in the neurological examination, where self-awareness is assessed through specific subtests. One such test involves the patient's ability to understand language by following complex instructions, such as “touch your right finger to your left elbow and then to your right knee.” Another aspect of objective self-awareness is the patient’s awareness of their immediate circumstances, including time, place, and personal identity. This awareness is crucial for determining the patient’s orientation, which is a fundamental component of cognitive function. The material discusses orientation as the patient’s awareness of their surroundings, including the date, their location, and their sense of self. [p.664]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Define cognitive empathy.",
+      "type": "unanswerable",
+      "old": "编造",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Define elasticity of savings.",
+      "type": "unanswerable",
+      "old": "编造",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Describe indirect method.",
+      "type": "unanswerable",
+      "old": "编造",
+      "new": "编造",
+      "observed": "编造",
+      "hit": null,
+      "abstained": false,
+      "answer": "The indirect method refers to a pathway that results in decreased activity in the cerebral cortex and therefore less motor activity.  \n\nThe indirect pathway is part of the basal ganglia circuitry and involves a longer route through the system. It includes additional connections, such as the disinhibition of the subthalamic nucleus. This pathway reinforces the normal inhibition of the thalamus, which in turn reduces the activity of the cerebral cortex. As a result, movement initiated by the cerebral cortex is diminished. The indirect pathway contrasts with the direct pathway, which leads to disinhibition of the thalamus and increased motor activity. The indirect pathway's effect on the thalamus and movement is a key aspect of how the basal ganglia regulate motor function. [p.566]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Describe lean process.",
+      "type": "unanswerable",
+      "old": "编造",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Explain the term direct labor time variance.",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Explain the term knowledge economy.",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Give the definition of Pearson correlation coefficient.",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Give the definition of party press era.",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What are free-market economics?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What are the main ingredients of Neapolitan pizza dough?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What does diversity training mean?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What does fiscal policy mean?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What does the term midterm elections refer to?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What does the term search warrant refer to?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What is a diathesis-stress model?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What is a head of state?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What is a market failure?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What is a reasonably possible?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What is an equal-time rule?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    }
+  ]
+}

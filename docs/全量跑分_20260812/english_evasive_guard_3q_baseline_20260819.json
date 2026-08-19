@@ -1,0 +1,50 @@
+{
+  "seed": null,
+  "mode": "unseeded",
+  "rows": 3,
+  "outcomes": {
+    "编造": 1,
+    "拒答正确": 2
+  },
+  "same_as_old": 2,
+  "same_as_new": 2,
+  "answerable_hits": 0,
+  "correct_refusals": 2,
+  "fabrications": 1,
+  "elapsed_seconds": 19.16,
+  "results": [
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Define cognitive empathy.",
+      "type": "unanswerable",
+      "old": "编造",
+      "new": "拒答正确",
+      "observed": "编造",
+      "hit": null,
+      "abstained": false,
+      "answer": "The material highlights that language is central to self-awareness, as evidenced by neurological subtests that assess a person's ability to understand and follow complex instructions, which are essential for empathetic understanding [p.664]."
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Define elasticity of savings.",
+      "type": "unanswerable",
+      "old": "编造",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What is a reasonably possible?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    }
+  ]
+}

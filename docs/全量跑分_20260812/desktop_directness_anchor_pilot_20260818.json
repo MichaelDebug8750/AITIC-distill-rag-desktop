@@ -1,0 +1,127 @@
+{
+  "seed": 42,
+  "rows": 10,
+  "outcomes": {
+    "未命中": 3,
+    "命中": 4,
+    "过度拒答": 3
+  },
+  "same_as_old": 0,
+  "same_as_new": 10,
+  "answerable_hits": 4,
+  "correct_refusals": 0,
+  "fabrications": 0,
+  "elapsed_seconds": 178.76,
+  "results": [
+    {
+      "book": "Emacs生存指南",
+      "question": "C-h f 用来查什么？",
+      "type": "answerable",
+      "old": "命中",
+      "new": "未命中",
+      "seeded": "未命中",
+      "hit": false,
+      "abstained": false,
+      "answer": "C-h f 用于查找命令的文档，可以通过输入命令名来获取相关帮助信息。 [p.6] 此外，如果只知道部分关键字，也可以使用 C-h a 或 M-x apropos 来通过正则表达式或模糊匹配查找相关的命令。"
+    },
+    {
+      "book": "Emacs生存指南",
+      "question": "C-h v 用来查什么？",
+      "type": "answerable",
+      "old": "过度拒答",
+      "new": "命中",
+      "seeded": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "C-h v 用来查找变量的定义和相关信息。 [p.5]\n\n在 Emacs 中，使用 C-h v 可以查找变量的定义，Emacs 会显示该变量的出处、作者提供的帮助信息以及变量当前的值。 [p.5] 此外，还可以通过点击链接直接打开源文件并定位到该变量定义的地方。 [p.5] 这种在线帮助信息是 Emacs 自动生成的，只要在书写 Elisp 代码时遵循一定的约定，Elisp 文件被加载时，文件中定义的变量和函数相关的文档就会被 Emacs 加载进索引中，完全不需要额外的干预。 [p.5]\n\n**从功能上看**，C-h v 的作用类似于 C-h f，只不过它是用来查找变量而不是函数。 [p.5] 当你按下 C-h v 后，输入变量名（也可以通过 tab 来补全），Emacs 会给出该变量的详细信息。 [p.5] 这种查找方式非常方便，尤其当你不确定变量的具体位置或含义时，可以快速获取相关信息。 [p.5]"
+    },
+    {
+      "book": "GNU_make中文手册",
+      "question": "Makefile 中一条普通规则的基本语法由哪三部分组成？",
+      "type": "answerable",
+      "old": "过度拒答",
+      "new": "命中",
+      "seeded": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "**从功能上看**，Makefile 中一条普通规则的基本语法由目标、依赖和命令三部分组成。 目标是规则中需要被创建或更新的文件，依赖是目标所依赖的文件，命令则是用于创建或更新目标的具体操作指令。 [p.27]\n\n在实际应用中，目标通常是一个文件名，依赖则是生成该目标所需的其他文件，而命令则是具体的编译或操作指令。 例如，在一个典型的规则中，`foo.o` 是目标，`foo.c` 和 `defs.h` 是依赖，而 `cc -c -g foo.c` 是命令。 [p.27] 这种结构使得 make 能够根据依赖文件的时间戳来判断是否需要执行命令以更新目标文件。 [p.26] 此外，规则中的依赖和命令之间用冒号分隔，而命令部分则描述了如何使用依赖文件来重建目标。 [p.27]"
+    },
+    {
+      "book": "GNU_make中文手册",
+      "question": "模式规则中的 % 如何工作？请说明 %.o : %.c 的含义。",
+      "type": "answerable",
+      "old": "命中",
+      "new": "过度拒答",
+      "seeded": "过度拒答",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "多模态AIGC讲义合订本_中文翻译与小白解释",
+      "question": "Stable Diffusion 中 seed number 如何影响重复生成和小幅改 prompt 的结果？",
+      "type": "answerable",
+      "old": "命中",
+      "new": "过度拒答",
+      "seeded": "过度拒答",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "多模态AIGC讲义合订本_中文翻译与小白解释",
+      "question": "扩散模型的 forward process 对图像做什么，最终得到什么？",
+      "type": "answerable",
+      "old": "命中",
+      "new": "过度拒答",
+      "seeded": "过度拒答",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "简明世界经济史",
+      "question": "元朝的货币是什么？",
+      "type": "answerable",
+      "old": "命中",
+      "new": "未命中",
+      "seeded": "未命中",
+      "hit": false,
+      "abstained": false,
+      "answer": "[ch4:2] 值得注意的是，元朝的货币制度并未直接提及“元”这一货币单位，而“元”作为货币单位的广泛使用，更多是受到后来明朝及清朝的影响，尤其是西班牙银圆在中国被称为“圆银”或“墨银”，并逐渐演变为“元”这一货币单位。 [ch12:3]"
+    },
+    {
+      "book": "简明世界经济史",
+      "question": "欧洲最早的中央银行是怎么产生的？",
+      "type": "answerable",
+      "old": "命中",
+      "new": "未命中",
+      "seeded": "未命中",
+      "hit": false,
+      "abstained": false,
+      "answer": "英格兰银行是欧洲最早的中央银行，其产生与1694年苏格兰贸易商人帕特森的提案及英国政府为筹集军费而设立的金融机构有关。  \n英格兰银行最初是由商人们为了筹集军费而设立的，作为向政府提供战争经费的条件，它获得了纸币的发行权，并在1697年获得了纸币的独家发行权，从而成为中央银行。这一制度为后来的法国、日本和美国等国家设立中央银行提供了范本。[ch21:6]  \n\n**从历史背景上看**，英格兰银行的成立与英国的军事需求密切相关。当时英国面临军费不足的问题，帕特森的提案被政府采纳，英格兰银行得以设立，成为向政府提供军费的金融机构。作为交换，英格兰银行获得了发行纸币的权利，这种纸币可以与金币、银币兑换，从而奠定了其作为中央银行的基础。[ch21:6]"
+    },
+    {
+      "book": "简明世界经济史",
+      "question": "英语中 capital（资本）一词的语源是什么？",
+      "type": "answerable",
+      "old": "过度拒答",
+      "new": "命中",
+      "seeded": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "绵羊等家畜的头是英语中“资本”（capital）的语源。 [ch3:1]\n在畜牧民的社会中，家畜不仅是生活的保障，也是一种可以交换的“货币”，它们的繁殖就像是获得“利息”，这种通过资产增殖来增加财富的方式，与现代资本运作有着相似之处。"
+    },
+    {
+      "book": "简明世界经济史",
+      "question": "银行的英文 bank 是怎么来的？",
+      "type": "answerable",
+      "old": "未命中",
+      "new": "命中",
+      "seeded": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "银行的英文 bank 起源于意大利语的“banco”，而“banco”又源自阿拉伯语中的“兑换货币的小桌子”。 在伊斯兰世界，兑换货币的小桌子被用来进行金融交易，这种形式后来传入意大利，并演变为“banco”一词。 在早期，金匠通过开具“保管证”（金匠汇票）来提供金融服务，这种票据逐渐发展为纸币的雏形。 [ch21:6]"
+    }
+  ]
+}

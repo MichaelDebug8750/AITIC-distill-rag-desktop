@@ -1,0 +1,4 @@
+# 原生桌面界面与 Windows 冻结工具；核心依赖仍由 code/requirements.txt 锁定。
+PySide6==6.10.1
+PyInstaller==6.21.0
+

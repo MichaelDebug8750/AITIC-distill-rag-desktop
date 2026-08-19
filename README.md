@@ -16,18 +16,23 @@
 - **多格式输入**：PDF（含扫描/图表）、EPUB、音频（本地 ASR）、独立图片（VL 通道）。
 - **带出处、不瞎编**：回答附引用锚点；检索无依据时如实拒答 `[NO REFERENCE FOUND]`，而非编造。
 - **动态预算 + 相关度裁剪**：按需升配上下文预算；超预算时按相关度**整块保留**，减少残缺片段导致的误拒。
-- **一键部署**：Windows `deploy.ps1` / Linux `run.sh`，另附 Docker 与无 GPU（CPU 降级）方案。
-- **纯前端建库**：打开 WebUI 后在左侧选择 PDF，查看上传/建库进度；完成后自动切换并直接问答，无需输入后端命令。
+- **Windows 原生桌面版**：提供 `.msi`、`.exe` 和便携 ZIP；界面在程序内运行，不打开浏览器、不启动 Web 服务。
+- **面向普通用户的安装向导**：可选择安装路径，显示安装进度，桌面快捷方式默认开启且可取消；完整包内置 Ollama 运行时，只把模型权重留给首次一键配置。
+- **模型管理**：可下载和切换 Qwen3 4B/8B/14B，一键配置推荐的回答/视觉/嵌入模型，或一键导入本地 GGUF/Modelfile。
+- **原生界面建库**：在“资料库”中多选 PDF / EPUB，按队列查看各书建库进度；
+  EPUB 会在本机转换为带页码的可检索文本，完成后可直接问答，无需输入后端命令。
 - **多知识库切换**：最近建好的知识库保留在左侧，可一键切换；“新对话”只清空聊天，不会删除知识库。
 
 ## 技术栈
 
-Ollama · Qwen3-8B（LLM）· Qwen3-VL-8B（图文）· bge-m3（嵌入）· ChromaDB（向量库）· faster-whisper（本地 ASR）· FastAPI（WebUI）
+Ollama · Qwen3-8B（LLM）· Qwen3-VL-8B（图文）· bge-m3（嵌入）· ChromaDB（向量库）· PySide6/Qt（原生桌面）· FastAPI（兼容 WebUI）
 
 ## 目录结构
 
 ```
 code/          主管线 main.py（build/ask/chat）、评测脚本、单元测试、WebUI、Modelfile
+desktop_app/   PySide6 原生界面与进程内后端适配层
+packaging/     PyInstaller/WiX 构建、桌面冒烟和第三方许可提示
 data/          评测集 eval_*.jsonl（Ground Truth）、智能体样例 agent_med/
 deploy_pack/   部署包（Modelfile / deploy.ps1 / run.sh）
 Dockerfile · docker-compose*.yml · deploy.ps1 · run.sh   部署与容器化
@@ -48,13 +53,14 @@ Dockerfile · docker-compose*.yml · deploy.ps1 · run.sh   部署与容器化
 py -3.11 -m venv code/.venv
 code/.venv/Scripts/python -m pip install -r code/requirements.txt
 
-# 2) 拉模型（需先装 Ollama）
+# 2) 源码模式需先装 Ollama 并拉模型；完整版 MSI 已内置 Ollama 运行时
 ollama pull qwen3:8b && ollama pull bge-m3 && ollama pull qwen3-vl:8b
 
-# 3) 启动 WebUI（Windows 推荐：自动检查 Python/Ollama/模型并打开浏览器）
-start_webui.bat
+# 3) Windows 普通用户推荐直接安装 dist/AITIC-Desktop-1.0.0-x64.msi
+#    源码调试原生界面：
+powershell -ExecutionPolicy Bypass -File .\start_desktop.ps1
 
-# 4) 在左侧选择 PDF → 点击“开始建库” → 等待自动切换 → 直接提问
+# 4) 打开“资料库”多选 PDF / EPUB → 等待队列建库 → 激活 → 直接提问
 
 # CLI 仍可用：python code/main.py build --pdf data/med.pdf --max-pages 120
 #              python code/main.py ask "什么是革兰氏阴性菌？"
@@ -62,6 +68,11 @@ start_webui.bat
 # 只做演示前检查、不启动服务
 powershell -ExecutionPolicy Bypass -File .\start_webui.ps1 -CheckOnly
 ```
+
+桌面安装、便携版、构建、数据位置和卸载说明见
+[`DESKTOP_README.md`](DESKTOP_README.md)，模型首次配置、切换和本地导入见
+[`MODEL_SETUP_GUIDE.md`](MODEL_SETUP_GUIDE.md)。旧 WebUI 仍作为兼容入口保留，但不是
+Beta Plus 的默认用户界面。
 
 ## 评测结果摘要（实测）
 

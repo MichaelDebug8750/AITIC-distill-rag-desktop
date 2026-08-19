@@ -1,0 +1,236 @@
+{
+  "seed": null,
+  "mode": "unseeded",
+  "rows": 20,
+  "outcomes": {
+    "拒答正确": 20
+  },
+  "same_as_old": 15,
+  "same_as_new": 18,
+  "answerable_hits": 0,
+  "correct_refusals": 20,
+  "fabrications": 0,
+  "elapsed_seconds": 81.67,
+  "results": [
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Define Objective self-awareness.",
+      "type": "unanswerable",
+      "old": "编造",
+      "new": "编造",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Define cognitive empathy.",
+      "type": "unanswerable",
+      "old": "编造",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Define elasticity of savings.",
+      "type": "unanswerable",
+      "old": "编造",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Describe indirect method.",
+      "type": "unanswerable",
+      "old": "编造",
+      "new": "编造",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Describe lean process.",
+      "type": "unanswerable",
+      "old": "编造",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Explain the term direct labor time variance.",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Explain the term knowledge economy.",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Give the definition of Pearson correlation coefficient.",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Give the definition of party press era.",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What are free-market economics?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What are the main ingredients of Neapolitan pizza dough?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What does diversity training mean?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What does fiscal policy mean?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What does the term midterm elections refer to?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What does the term search warrant refer to?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What is a diathesis-stress model?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What is a head of state?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What is a market failure?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What is a reasonably possible?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What is an equal-time rule?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    }
+  ]
+}

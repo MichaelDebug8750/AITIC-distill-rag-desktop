@@ -1,0 +1,38 @@
+{
+  "seed": null,
+  "mode": "unseeded",
+  "rows": 2,
+  "outcomes": {
+    "命中": 2
+  },
+  "same_as_old": 1,
+  "same_as_new": 0,
+  "answerable_hits": 2,
+  "correct_refusals": 0,
+  "fabrications": 0,
+  "elapsed_seconds": 23.33,
+  "results": [
+    {
+      "book": "Concepts of Biology",
+      "question": "Describe alveolus.",
+      "type": "answerable",
+      "old": "未命中",
+      "new": "未命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "Alveoli are thin-walled and look like tiny bubbles within the sacs. [p.421]\nAlveoli are the tiny air sacs in the lungs where gas exchange occurs. Each alveolus is surrounded by capillaries, allowing oxygen to diffuse into the blood and carbon dioxide to diffuse out. The thin walls of the alveoli facilitate this exchange, and the large surface area of the alveoli enhances the efficiency of gas diffusion. [p.421]\nThe structure of the alveoli is closely linked to the circulatory system, as the capillaries that surround them ensure that gases can move freely between the air and the blood. This intimate contact between the alveoli and capillaries is essential for respiration. [p.421] The arrangement of the alveoli and capillaries highlights the close relationship between the respiratory and circulatory systems. [p.421]"
+    },
+    {
+      "book": "Microbiology",
+      "question": "Describe disease control.",
+      "type": "answerable",
+      "old": "命中",
+      "new": "未命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "Controlling microbial growth is essential to prevent the spread of human disease and involves methods such as sterilization, disinfection, and the application of disinfectants, antiseptics, and sterilants [p.562]. \n\nDisease control encompasses a range of strategies aimed at reducing the incidence and spread of infectious diseases. This includes the use of sterilization and disinfection techniques to eliminate or reduce microbial presence, as well as the implementation of epidemiological studies to track and understand disease patterns [p.715]. Health agencies also play a crucial role by collecting and analyzing data on disease incidence to inform public health interventions [p.715]. Additionally, the work of pioneers in epidemiology has laid the foundation for understanding how diseases are transmitted and how to prevent their spread [p.715]. These approaches collectively contribute to the management and control of infectious diseases. \n\nThe material does not provide specific details on the exact methods used for disease control beyond the general strategies mentioned."
+    }
+  ]
+}

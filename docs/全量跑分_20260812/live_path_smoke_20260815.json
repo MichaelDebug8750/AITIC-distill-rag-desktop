@@ -1,0 +1,672 @@
+{
+  "schema": 1,
+  "base_url": "http://127.0.0.1:8027",
+  "multi_library_hybrid": {
+    "passed": true,
+    "status": 200,
+    "request": {
+      "question": "Compare what a stack diagram records with what reinforcement means in operant conditioning.",
+      "libraries": [
+        "20260806_075049_dab0c710",
+        "20260812_142732_44c49025"
+      ],
+      "mode": "auto",
+      "style": "concise",
+      "extend": false,
+      "hybrid": true,
+      "history": []
+    },
+    "response": {
+      "answer": "A stack diagram records the state of a program during function calls, showing frames that represent each function call with their local variables and parameters [K1:p.51]. In contrast, reinforcement in operant conditioning refers to the process of strengthening a behavior through consequences, either by adding a rewarding stimulus (positive reinforcement) or removing an aversive one (negative reinforcement) [K2:p.25]. The material does not cover the specific mechanisms or examples of reinforcement beyond its definition.",
+      "abstained": false,
+      "sources": [
+        {
+          "label": "K1 · Think Python — Allen Downey · p199",
+          "type": "text",
+          "loc": "",
+          "page": 199,
+          "library": "Think Python — Allen Downey",
+          "library_id": "20260806_075049_dab0c710",
+          "source": "Think Python — Allen Downey.pdf",
+          "snippet": "18.12 some code that tests it.2.If you run PokerHand.py, it deals seven 7-card poker hands and checks to see if any of themcontains a ﬂush.Read this code carefully before you go on.3.Add methods to PokerHand.py named has"
+        },
+        {
+          "label": "K1 · Think Python — Allen Downey · p51",
+          "type": "text",
+          "loc": "",
+          "page": 51,
+          "library": "Think Python — Allen Downey",
+          "library_id": "20260806_075049_dab0c710",
+          "source": "Think Python — Allen Downey.pdf",
+          "snippet": "p51: 3.16.Exercises29stack diagram: A graphical representation of a stack of functions, their variables, and thevalues they refer to.frame: A box in a stack diagram that represents a function call.It contains the local v"
+        },
+        {
+          "label": "K1 · Think Python — Allen Downey · p67",
+          "type": "text",
+          "loc": "",
+          "page": 67,
+          "library": "Think Python — Allen Downey",
+          "library_id": "20260806_075049_dab0c710",
+          "source": "Think Python — Allen Downey.pdf",
+          "snippet": "5.9 Stack diagrams for recursive functionsIn Section 3.10, we used a stack diagram to represent the state of a program during a func-tion call.The same kind of diagram can help interpret a recursive function.Every time a"
+        },
+        {
+          "label": "K2 · Psychology2e_WEB · p204",
+          "type": "text",
+          "loc": "",
+          "page": 204,
+          "library": "Psychology2e_WEB",
+          "library_id": "20260812_142732_44c49025",
+          "source": "Psychology2e_WEB.pdf",
+          "snippet": "LEARNING OBJECTIVES By the end of this section, you will be able to:• Define operant conditioning• Explain the difference between reinforcement and punishment• Distinguish between reinforcement schedulesThe previous sect"
+        },
+        {
+          "label": "K2 · Psychology2e_WEB · p25",
+          "type": "text",
+          "loc": "",
+          "page": 25,
+          "library": "Psychology2e_WEB",
+          "library_id": "20260812_142732_44c49025",
+          "source": "Psychology2e_WEB.pdf",
+          "snippet": "reinforcement and punishment.This device, known as an operant conditioning chamber (or more familiarly, aSkinner box), has remained a crucial resource for researchers studying behavior (Thorne & Henley, 2005).FIGURE 1.6 "
+        }
+      ],
+      "tokens": 2609,
+      "escalated": true,
+      "elapsed_ms": 4194,
+      "budget": 1800,
+      "cite_check": {
+        "total": 2,
+        "hit": [
+          "k1:p.51",
+          "k2:p.25"
+        ],
+        "fabricated": [],
+        "valid_sources": [
+          "k1:p.199",
+          "k1:p.51",
+          "k1:p.67",
+          "k2:p.204",
+          "k2:p.25"
+        ],
+        "missing": false,
+        "ok": true,
+        "rate": 1.0
+      },
+      "retrieval": "hybrid",
+      "page_scope": null,
+      "dropped_libraries": [],
+      "supplement": null,
+      "agent": {
+        "path": "agent_loop",
+        "rounds": 2,
+        "requested_mode": "auto",
+        "history_used": false,
+        "stop_reason": "存在 2 条无法判定的结论，已保留并降低可信度",
+        "confidence": {
+          "level": "低",
+          "state": "partial",
+          "signals": [
+            {
+              "name": "引用命中检索块",
+              "ok": true,
+              "detail": "2 处引用全部落在实际检索到的材料内"
+            },
+            {
+              "name": "引用是否支持结论",
+              "ok": false,
+              "detail": "1/3 条结论的引用原文可支持其内容"
+            },
+            {
+              "name": "证据覆盖完整度",
+              "ok": true,
+              "detail": "2/3 条结论可核对（2 条自带引用）"
+            },
+            {
+              "name": "检索结果相关性",
+              "ok": true,
+              "detail": "最优检索距离 0.7492，优于闸门 1.1762"
+            },
+            {
+              "name": "多来源印证",
+              "ok": true,
+              "detail": "5 个独立来源（跨知识库）"
+            },
+            {
+              "name": "循环后证据状态",
+              "ok": true,
+              "detail": "补充检索 2 轮后证据已完整"
+            },
+            {
+              "name": "逐句语义支持核验",
+              "ok": false,
+              "detail": "2 条可疑结论中裁剪 0 条，2 条未能确定"
+            }
+          ],
+          "reason": "本地逐句语义核验有 2 条未完成；已保留原句，需人工复核。"
+        },
+        "intent": {
+          "name": "图表解析",
+          "complexity": "复杂",
+          "route": "agent_loop",
+          "reason": "需要跨证据检索、比较或校准"
+        },
+        "libraries": [
+          {
+            "id": "20260806_075049_dab0c710",
+            "name": "Think Python — Allen Downey"
+          },
+          {
+            "id": "20260812_142732_44c49025",
+            "name": "Psychology2e_WEB"
+          }
+        ],
+        "cross_library": true,
+        "trace": [
+          {
+            "step": "意图识别",
+            "detail": "图表解析 · 复杂"
+          },
+          {
+            "step": "证据检索",
+            "detail": "检索 2 个知识库，形成 5 个可展示来源"
+          },
+          {
+            "step": "引用校验",
+            "detail": "引用全部命中检索来源"
+          },
+          {
+            "step": "逐句语义核验",
+            "detail": "逐句核验存在未知项，已保留原句并降低可信度"
+          },
+          {
+            "step": "答案校验",
+            "detail": "答案直接回应了问题"
+          },
+          {
+            "step": "停止判断",
+            "detail": "存在 2 条无法判定的结论，已保留并降低可信度"
+          }
+        ],
+        "evidence_chain": {
+          "conclusion": "A stack diagram records the state of a program during function calls, showing frames that represent each function call with their local variables and parameters .",
+          "basis": [
+            {
+              "claim": "A stack diagram records the state of a program during function calls, showing frames that represent each function call with their local variables and parameters .",
+              "raw": "A stack diagram records the state of a program during function calls, showing frames that represent each function call with their local variables and parameters [K1:p.51].",
+              "citations": [
+                "k1:p.51"
+              ],
+              "evidence": [
+                {
+                  "tag": "k1:p.51",
+                  "library": "Think Python — Allen Downey",
+                  "label": "K1 · Think Python — Allen Downey · p51",
+                  "page": 51,
+                  "type": "text",
+                  "snippet": "p51: 3.16.Exercises29stack diagram: A graphical representation of a stack of functions, their variables, and thevalues they refer to.frame: A box in a stack dia…",
+                  "grounding": 0.5
+                }
+              ],
+              "grounding": 0.5,
+              "measured": true,
+              "support_via": "citation",
+              "unmeasurable": false,
+              "supported": true
+            },
+            {
+              "claim": "In contrast, reinforcement in operant conditioning refers to the process of strengthening a behavior through consequences, either by adding a rewarding stimulus (positive reinforcement) or removing an aversive one (negative reinforcement) .",
+              "raw": "In contrast, reinforcement in operant conditioning refers to the process of strengthening a behavior through consequences, either by adding a rewarding stimulus (positive reinforcement) or removing an aversive one (negative reinforcement) [K2:p.25].",
+              "citations": [
+                "k2:p.25"
+              ],
+              "evidence": [
+                {
+                  "tag": "k2:p.25",
+                  "library": "Psychology2e_WEB",
+                  "label": "K2 · Psychology2e_WEB · p25",
+                  "page": 25,
+                  "type": "text",
+                  "snippet": "reinforcement and punishment.This device, known as an operant conditioning chamber (or more familiarly, aSkinner box), has remained a crucial resource for resea…",
+                  "grounding": 0.222
+                }
+              ],
+              "grounding": 0.222,
+              "measured": true,
+              "support_via": "citation",
+              "unmeasurable": false,
+              "supported": false
+            },
+            {
+              "claim": "The material does not cover the specific mechanisms or examples of reinforcement beyond its definition.",
+              "raw": "The material does not cover the specific mechanisms or examples of reinforcement beyond its definition.",
+              "citations": [],
+              "evidence": [],
+              "grounding": 0.125,
+              "measured": true,
+              "support_via": null,
+              "unmeasurable": false,
+              "supported": false
+            }
+          ],
+          "relations": [],
+          "confidence": {
+            "level": "低",
+            "state": "partial",
+            "signals": [
+              {
+                "name": "引用命中检索块",
+                "ok": true,
+                "detail": "2 处引用全部落在实际检索到的材料内"
+              },
+              {
+                "name": "引用是否支持结论",
+                "ok": false,
+                "detail": "1/3 条结论的引用原文可支持其内容"
+              },
+              {
+                "name": "证据覆盖完整度",
+                "ok": true,
+                "detail": "2/3 条结论可核对（2 条自带引用）"
+              },
+              {
+                "name": "检索结果相关性",
+                "ok": true,
+                "detail": "最优检索距离 0.7492，优于闸门 1.1762"
+              },
+              {
+                "name": "多来源印证",
+                "ok": true,
+                "detail": "5 个独立来源（跨知识库）"
+              },
+              {
+                "name": "循环后证据状态",
+                "ok": true,
+                "detail": "补充检索 2 轮后证据已完整"
+              },
+              {
+                "name": "逐句语义支持核验",
+                "ok": false,
+                "detail": "2 条可疑结论中裁剪 0 条，2 条未能确定"
+              }
+            ],
+            "reason": "本地逐句语义核验有 2 条未完成；已保留原句，需人工复核。"
+          },
+          "uncertainty": [
+            "本地逐句语义核验存在未知项；原句按 fail-open 规则保留，需人工复核",
+            "「In contrast, reinforcement in operant co…」的引用原文支持度仅 22%，建议复核",
+            "「The material does not cover the specific…」未附引用，也未能在材料中找到支撑"
+          ],
+          "grounding_measured": true
+        },
+        "directness": {
+          "ok": true,
+          "issues": [],
+          "retry": false,
+          "detail": "答案直接回应了问题"
+        },
+        "diagnosis": null,
+        "support_audit": {
+          "triggered": true,
+          "state": "degraded",
+          "checked": 2,
+          "supported": 0,
+          "pruned": 0,
+          "unknown": 2,
+          "orphaned": 0,
+          "reason": "逐句核验存在未知项，已保留原句并降低可信度",
+          "verdicts": [
+            {
+              "id": 1,
+              "status": "UNKNOWN",
+              "reason": "missing_or_duplicate"
+            },
+            {
+              "id": 2,
+              "status": "UNKNOWN",
+              "reason": "missing_or_duplicate"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "post_stream": {
+    "passed": true,
+    "status": 200,
+    "content_type": "text/event-stream; charset=utf-8",
+    "request": {
+      "question": "Autonomic reflex that responds to stretch receptors in the atria that send impulses to the cardioaccelerator area to increase HR when venous flow into the",
+      "libraries": [
+        "20260812_142302_ef072e72"
+      ],
+      "mode": "auto",
+      "style": "standard",
+      "extend": false,
+      "hybrid": false,
+      "history": []
+    },
+    "event_names": [
+      "agent",
+      "retrieved",
+      "meta",
+      "escalate",
+      "agent",
+      "meta",
+      "verified_delta",
+      "verified_delta",
+      "verified_delta",
+      "verified_delta",
+      "verified_delta",
+      "verified_delta",
+      "verified_delta",
+      "verified_delta",
+      "verified_delta",
+      "verified_delta",
+      "verified_delta",
+      "verified_delta",
+      "done"
+    ],
+    "done": {
+      "answer": "Bainbridge reflex is the autonomic reflex that responds to stretch receptors in the atria that send impulses to the cardioaccelerator area to increase HR when venous flow into the atria increases [p.839].\n\nThis reflex is triggered when there is an increase in venous return to the atria, which stretches the atrial walls. [p.831] The Bainbridge reflex is a key component of the body's autonomic regulation of heart rate.",
+      "abstained": false,
+      "sources": [
+        {
+          "label": "Anatomy_and_Physiology_2e · p831",
+          "type": "text",
+          "loc": "",
+          "page": 831,
+          "library": "Anatomy_and_Physiology_2e",
+          "library_id": "20260812_142302_ef072e72",
+          "source": "Anatomy_and_Physiology_2e.pdf",
+          "snippet": "p831: baroreceptor firing decreases, and the cardiac centers increase sympathetic stimulation and decreaseparasympathetic stimulation.There is a similar reflex, called the atrial reflex or Bainbridge reflex, associated w"
+        },
+        {
+          "label": "Anatomy_and_Physiology_2e · p839",
+          "type": "text",
+          "loc": "",
+          "page": 839,
+          "library": "Anatomy_and_Physiology_2e",
+          "library_id": "20260812_142302_ef072e72",
+          "source": "Anatomy_and_Physiology_2e.pdf",
+          "snippet": "contracts and pumps blood to the bodyatrial reflex  (also, called Bainbridge reflex)autonomic reflex that responds to stretch receptorsin the atria that send impulses to thecardioaccelerator area to increase HR when veno"
+        }
+      ],
+      "tokens": 3030,
+      "escalated": true,
+      "elapsed_ms": 7843,
+      "cite_check": {
+        "total": 2,
+        "hit": [
+          "p.839",
+          "p.831"
+        ],
+        "fabricated": [],
+        "valid_sources": [
+          "p.831",
+          "p.839"
+        ],
+        "missing": false,
+        "ok": true,
+        "rate": 1.0
+      },
+      "retrieval": "vector",
+      "page_scope": null,
+      "dropped_libraries": [],
+      "supplement": null,
+      "agent": {
+        "path": "agent_loop",
+        "rounds": 2,
+        "requested_mode": "auto",
+        "history_used": false,
+        "stop_reason": "逐句核验裁掉 3 条无据结论后返回",
+        "confidence": {
+          "level": "低",
+          "state": "partial",
+          "signals": [
+            {
+              "name": "引用命中检索块",
+              "ok": true,
+              "detail": "2 处引用全部落在实际检索到的材料内"
+            },
+            {
+              "name": "引用是否支持结论",
+              "ok": true,
+              "detail": "3/3 条结论的引用原文可支持其内容"
+            },
+            {
+              "name": "证据覆盖完整度",
+              "ok": true,
+              "detail": "3/3 条结论可核对（2 条自带引用）"
+            },
+            {
+              "name": "检索结果相关性",
+              "ok": true,
+              "detail": "最优检索距离 0.3309，优于闸门 1.1762"
+            },
+            {
+              "name": "多来源印证",
+              "ok": true,
+              "detail": "2 个独立来源"
+            },
+            {
+              "name": "循环后证据状态",
+              "ok": true,
+              "detail": "补充检索 2 轮后证据已完整"
+            },
+            {
+              "name": "逐句语义支持核验",
+              "ok": false,
+              "detail": "5 条可疑结论中裁剪 3 条，1 条未能确定"
+            }
+          ],
+          "reason": "本地逐句语义核验有 1 条未完成；已保留原句，需人工复核。"
+        },
+        "intent": {
+          "name": "事实查询",
+          "complexity": "简单",
+          "route": "fast_rag",
+          "reason": "问题边界明确，可先用首轮检索直接回答"
+        },
+        "libraries": [
+          {
+            "id": "20260812_142302_ef072e72",
+            "name": "Anatomy_and_Physiology_2e"
+          }
+        ],
+        "cross_library": false,
+        "trace": [
+          {
+            "step": "意图识别",
+            "detail": "事实查询 · 简单"
+          },
+          {
+            "step": "证据检索",
+            "detail": "检索 1 个知识库，形成 2 个可展示来源"
+          },
+          {
+            "step": "引用校验",
+            "detail": "引用全部命中检索来源"
+          },
+          {
+            "step": "逐句语义核验",
+            "detail": "逐句核验存在未知项，已保留原句并降低可信度"
+          },
+          {
+            "step": "答案校验",
+            "detail": "答案直接回应了问题"
+          },
+          {
+            "step": "停止判断",
+            "detail": "逐句核验裁掉 3 条无据结论后返回"
+          }
+        ],
+        "evidence_chain": {
+          "conclusion": "Bainbridge reflex is the autonomic reflex that responds to stretch receptors in the atria that send impulses to the cardioaccelerator area to increase HR when venous flow into the atria increases .",
+          "basis": [
+            {
+              "claim": "Bainbridge reflex is the autonomic reflex that responds to stretch receptors in the atria that send impulses to the cardioaccelerator area to increase HR when venous flow into the atria increases .",
+              "raw": "Bainbridge reflex is the autonomic reflex that responds to stretch receptors in the atria that send impulses to the cardioaccelerator area to increase HR when venous flow into the atria increases [p.839].",
+              "citations": [
+                "p.839"
+              ],
+              "evidence": [
+                {
+                  "tag": "p.839",
+                  "library": "Anatomy_and_Physiology_2e",
+                  "label": "Anatomy_and_Physiology_2e · p839",
+                  "page": 839,
+                  "type": "text",
+                  "snippet": "contracts and pumps blood to the bodyatrial reflex (also, called Bainbridge reflex)autonomic reflex that responds to stretch receptorsin the atria that send imp…",
+                  "grounding": 0.733
+                }
+              ],
+              "grounding": 0.733,
+              "measured": true,
+              "support_via": "citation",
+              "unmeasurable": false,
+              "supported": true
+            },
+            {
+              "claim": "This reflex is triggered when there is an increase in venous return to the atria, which stretches the atrial walls.",
+              "raw": "This reflex is triggered when there is an increase in venous return to the atria, which stretches the atrial walls.",
+              "citations": [],
+              "evidence": [
+                {
+                  "tag": "p.831",
+                  "library": "Anatomy_and_Physiology_2e",
+                  "label": "Anatomy_and_Physiology_2e · p831",
+                  "page": 831,
+                  "type": "text",
+                  "snippet": "p831: baroreceptor firing decreases, and the cardiac centers increase sympathetic stimulation and decreaseparasympathetic stimulation.There is a similar reflex,…",
+                  "grounding": 0.889,
+                  "implicit": true
+                }
+              ],
+              "grounding": 0.889,
+              "measured": true,
+              "support_via": "material",
+              "unmeasurable": false,
+              "supported": true
+            },
+            {
+              "claim": "The Bainbridge reflex is a key component of the body's autonomic regulation of heart rate.",
+              "raw": "[p.831] The Bainbridge reflex is a key component of the body's autonomic regulation of heart rate.",
+              "citations": [
+                "p.831"
+              ],
+              "evidence": [
+                {
+                  "tag": "p.831",
+                  "library": "Anatomy_and_Physiology_2e",
+                  "label": "Anatomy_and_Physiology_2e · p831",
+                  "page": 831,
+                  "type": "text",
+                  "snippet": "p831: baroreceptor firing decreases, and the cardiac centers increase sympathetic stimulation and decreaseparasympathetic stimulation.There is a similar reflex,…",
+                  "grounding": 0.375
+                }
+              ],
+              "grounding": 0.375,
+              "measured": true,
+              "support_via": "citation",
+              "unmeasurable": false,
+              "supported": true
+            }
+          ],
+          "relations": [],
+          "confidence": {
+            "level": "低",
+            "state": "partial",
+            "signals": [
+              {
+                "name": "引用命中检索块",
+                "ok": true,
+                "detail": "2 处引用全部落在实际检索到的材料内"
+              },
+              {
+                "name": "引用是否支持结论",
+                "ok": true,
+                "detail": "3/3 条结论的引用原文可支持其内容"
+              },
+              {
+                "name": "证据覆盖完整度",
+                "ok": true,
+                "detail": "3/3 条结论可核对（2 条自带引用）"
+              },
+              {
+                "name": "检索结果相关性",
+                "ok": true,
+                "detail": "最优检索距离 0.3309，优于闸门 1.1762"
+              },
+              {
+                "name": "多来源印证",
+                "ok": true,
+                "detail": "2 个独立来源"
+              },
+              {
+                "name": "循环后证据状态",
+                "ok": true,
+                "detail": "补充检索 2 轮后证据已完整"
+              },
+              {
+                "name": "逐句语义支持核验",
+                "ok": false,
+                "detail": "5 条可疑结论中裁剪 3 条，1 条未能确定"
+              }
+            ],
+            "reason": "本地逐句语义核验有 1 条未完成；已保留原句，需人工复核。"
+          },
+          "uncertainty": [
+            "本地逐句语义核验存在未知项；原句按 fail-open 规则保留，需人工复核"
+          ],
+          "grounding_measured": true
+        },
+        "directness": {
+          "ok": true,
+          "issues": [],
+          "retry": false,
+          "detail": "答案直接回应了问题"
+        },
+        "diagnosis": null,
+        "support_audit": {
+          "triggered": true,
+          "state": "pruned",
+          "checked": 5,
+          "supported": 1,
+          "pruned": 3,
+          "unknown": 1,
+          "orphaned": 0,
+          "reason": "逐句核验存在未知项，已保留原句并降低可信度",
+          "verdicts": [
+            {
+              "id": 1,
+              "status": "SUPPORTED",
+              "reason": "validated"
+            },
+            {
+              "id": 2,
+              "status": "UNSUPPORTED",
+              "reason": "explicit_unsupported"
+            },
+            {
+              "id": 3,
+              "status": "UNSUPPORTED",
+              "reason": "explicit_unsupported"
+            },
+            {
+              "id": 4,
+              "status": "PARTIAL",
+              "reason": "validated"
+            },
+            {
+              "id": 5,
+              "status": "UNKNOWN",
+              "reason": "quote_not_exact"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "passed": true
+}

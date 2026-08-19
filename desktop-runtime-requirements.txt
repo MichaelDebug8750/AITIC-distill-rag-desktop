@@ -1,0 +1,10 @@
+# 与 2026-08-17 current5 全量运行时一致的桌面核心依赖。
+ollama==0.6.2
+chromadb==1.5.9
+pymupdf==1.27.2.3
+EbookLib==0.20
+beautifulsoup4==4.15.0
+fastapi==0.139.2
+uvicorn==0.49.0
+python-multipart==0.0.32
+

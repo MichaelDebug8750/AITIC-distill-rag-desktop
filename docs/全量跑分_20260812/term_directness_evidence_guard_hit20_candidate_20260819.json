@@ -1,0 +1,237 @@
+{
+  "seed": null,
+  "mode": "unseeded",
+  "rows": 20,
+  "outcomes": {
+    "命中": 16,
+    "过度拒答": 4
+  },
+  "same_as_old": 16,
+  "same_as_new": 16,
+  "answerable_hits": 16,
+  "correct_refusals": 0,
+  "fabrications": 0,
+  "elapsed_seconds": 185.69,
+  "results": [
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Breaking down of more complex molecules into simpler molecules",
+      "type": "fuzzy_desc",
+      "old": "命中",
+      "new": "命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "Catabolism is the process by which larger more complex substances are broken down into smaller simpler molecules.\n**Explanation:** Catabolism is a fundamental biological process that involves the breakdown of complex molecules into simpler ones, releasing energy in the process. The process of catabolism is closely related to anabolism, which is the opposite process where simpler molecules are combined to form more complex substances. Together, these two processes make up metabolism, which is essential for sustaining life. [p.30]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Define active immunity.",
+      "type": "answerable",
+      "old": "命中",
+      "new": "命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "Active immunity is immunity developed from an individual’s own immune system [p.980].\n\nActive immunity refers to the resistance to pathogens acquired during an adaptive immune response within an individual. This type of immunity can be naturally acquired, such as when someone recovers from an infection, or artificially acquired, which involves the use of vaccines to stimulate the immune system [p.965]."
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Define alar plate.",
+      "type": "answerable",
+      "old": "命中",
+      "new": "命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "The alar plate is on the dorsal side of the neuraltube and gives rise to neurons that will receive sensory input from the periphery.[p.541]\n\nThe alar plate is a structure that forms part of the neural tube during embryonic development. It is located on the dorsal (back) side of the neural tube and plays a crucial role in the development of the central nervous system. Specifically, the alar plate gives rise to neurons that are responsible for receiving sensory information from the periphery, such as touch, temperature, and pain. These neurons are part of the sensory pathways that transmit information from the body to the brain. The alar plate's role in sensory processing highlights its importance in the formation of the spinal cord and the overall function of the nervous system."
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Define anticodon.",
+      "type": "answerable",
+      "old": "命中",
+      "new": "命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "The anticodon is a sequence of three bases on the tRNA molecule that complements the codon specifying its particular amino acid [p.125].\n\nThe anticodon functions by matching with the corresponding mRNA codon, allowing the tRNA to deliver the correct amino acid to the growing polypeptide chain during protein synthesis. This process is essential for accurate translation of genetic information into proteins. The anticodon ensures that the right amino acid is added at the right position, maintaining the integrity of the protein structure. This interaction is based on complementary base pairing, similar to how DNA strands pair during replication. The tRNA's ability to recognize and bind to the correct codon is crucial for the fidelity of the translation process."
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Define aphasia.",
+      "type": "answerable",
+      "old": "命中",
+      "new": "命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "Aphasia is a disorder of language that can be classified into expressive aphasia and receptive aphasia, depending on the affected brain region.\n\nAphasia refers to a disorder of language that results from damage to specific areas of the brain, such as Broca’s area or Wernicke’s area, and is characterized by difficulties in speech production or comprehension. Expressive aphasia, associated with Broca’s area, involves impaired speech production, leading to non-fluent, broken speech, while receptive aphasia, linked to Wernicke’s area, involves a loss of understanding of spoken or written language, even though speech production may remain intact [p.665].\n\nAnother aspect of aphasia involves the distinction between verb and noun impairments, known as V impairment or N impairment, or V–N dissociation, where patients struggle with using one type of word over the other. This can affect their ability to describe visual stimuli, such as a photograph, using active- or image-based language [p.666]."
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Define hyperchloremia.",
+      "type": "answerable",
+      "old": "命中",
+      "new": "命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "Hyperchloremia is higher-than-normal blood chloride levels.\n\nHyperchloremia occurs when there is an abnormal increase in the concentration of chloride ions in the blood. This can happen due to various factors such as dehydration, excessive intake of dietary salt (NaCl), swallowing of sea water, aspirin intoxication, congestive heart failure, and the hereditary, chronic lung disease [p.1214]. Chloride is the predominant extracellular anion and plays a crucial role in maintaining the osmotic pressure gradient between the intracellular fluid (ICF) and extracellular fluid (ECF), as well as in balancing cations in the ECF to maintain electrical neutrality [p.1214]."
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Describe afterload.",
+      "type": "answerable",
+      "old": "命中",
+      "new": "命中",
+      "observed": "过度拒答",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Describe anterior column.",
+      "type": "answerable",
+      "old": "过度拒答",
+      "new": "命中",
+      "observed": "过度拒答",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Describe antibody.",
+      "type": "answerable",
+      "old": "命中",
+      "new": "命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "Antibodies are glycoproteins consisting of two types of polypeptide chains with attached carbohydrates [p.961].\n\nAntibodies are made up of two identical heavy chains and two identical light chains, forming a four-chain structure. The heavy chains come together to form the Fc region, which is important for various immune functions, usually linked by disulfide bonds [p.961]. The light chains, along with parts of the heavy chains, form the antigen-binding site, which is crucial for recognizing and binding to specific antigens [p.961]. While the heavy chains mainly determine the class of the antibody, the light chains play an important role in the antigen-binding process [p.961]."
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Describe autophagy.",
+      "type": "answerable",
+      "old": "过度拒答",
+      "new": "命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "Autophagy is the lysosomal breakdown of a cell’s own components. [p.136]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Dorsiflexion of the foot with extension and splaying of the toes in response to the plantar reflex, normally suppressed by corticospinal input",
+      "type": "fuzzy_desc",
+      "old": "命中",
+      "new": "命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "**The positive Babinski sign** is characterized by dorsiflexion of the foot and extension and splaying of the toes in response to a plantar reflex, which is normally suppressed by the descending input of the corticospinal tract. [p.680] However, in adults, this reflex is usually inhibited by the corticospinal tract, which modifies the response to allow for more controlled movement during walking. In cases where this inhibition is absent—such as in certain neurological conditions—the reflex manifests as dorsiflexion of the foot and extension of the toes, known as the positive Babinski sign. [p.680]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Enzyme that hydrolyzes ATP to ADP",
+      "type": "fuzzy_desc",
+      "old": "命中",
+      "new": "命中",
+      "observed": "过度拒答",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Explain the term action potential.",
+      "type": "answerable",
+      "old": "命中",
+      "new": "命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "The action potential is the electrical signal generated by neurons through the controlled movement of ions across the cell membrane.  \n**Functionally**, the action potential is an all-or-none electrical impulse that travels along an axon, initiated when a stimulus reaches the threshold for depolarization. This process involves the opening of voltage-gated ion channels, allowing sodium ions to rush into the cell, which depolarizes the membrane. This is followed by the opening of potassium channels, leading to repolarization and a brief hyperpolarization, which marks the end of the action potential. The signal is characterized by a consistent peak voltage of +30 mV, regardless of the strength of the stimulus. [p.519]  \n**Mechanically**, the action potential relies on the regulated movement of sodium (Na⁺) and potassium (K⁺) ions across the membrane. At rest, the neuron maintains specific concentrations of these ions on either side of the membrane. When a stimulus triggers depolarization, voltage-gated sodium channels open, allowing Na⁺ to flow into the cell, which further depolarizes the membrane. This is followed by the opening of voltage-gated potassium channels, which allow K⁺ to exit the cell, leading to repolarization. The action potential cannot occur again until the membrane has fully recovered, which is why another action potential cannot be generated during the refractory period. [p.519]  \n**In terms of signal transmission**, the action potential ensures that electrical signals are transmitted rapidly and reliably across the nervous system. The signal is not amplified but rather repeated in a series of action potentials, which allows for the transmission of information over long distances. Stronger stimuli do not result in larger action potentials but instead in a higher frequency of action potentials, which conveys the intensity of the stimulus. [p.505]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Explain the term anatomy.",
+      "type": "answerable",
+      "old": "命中",
+      "new": "命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "The term anatomy refers to the scientific study of the body’s structures. [p.24]\n**Definition and Scope**\nAnatomy is the study of the body’s structures, including both the external and internal components, and how they are organized and related to one another. This field has historically been explored through observation of injuries, the examination of wounds, and the dissection of cadavers, allowing for a deeper understanding of the physical attributes of the human body. Over time, advancements in technology have introduced new methods, such as computer-assisted imaging, which enable the study of living bodies without the need for dissection.\n**Historical and Modern Context**\nThe origins of anatomy can be traced back to ancient times when early physicians studied the human body by observing injuries and the effects of trauma on the body. As knowledge advanced, the dissection of cadavers became a crucial method for gaining insight into the internal structures of the human body. This practice continues today in medical education and pathology labs, where dissection remains an essential tool for teaching and research. [p.24] In modern times, the integration of imaging technologies has expanded the scope of anatomical study, allowing for non-invasive exploration of the living body. [p.24]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Explain the term antigen.",
+      "type": "answerable",
+      "old": "命中",
+      "new": "命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "Antigen is a substance that may trigger a defensive response from leukocytes of the immune system if the body does not recognize the antigen as belonging to \"self\" [p.775].\n\nAntigens are substances that the immune system recognizes as foreign and responds to by producing antibodies. They can be large proteins, but may also include other organic molecules such as carbohydrates, lipids, and nucleic acids. [p.775] In the context of blood transfusions, antigens are often referred to as isoantigens or agglutinogens, which are found on the surface of red blood cells. When incompatible blood is transfused, these antigens trigger an immune response, leading to the production of antibodies by B lymphocytes called plasma cells. Antigens can also be internalized by antigen-presenting cells, which process them into smaller fragments and present them on the cell surface using MHC molecules to activate T cells [p.954]."
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Explain the term dehydration.",
+      "type": "answerable",
+      "old": "命中",
+      "new": "命中",
+      "observed": "过度拒答",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Give the definition of accessory digestive organ.",
+      "type": "answerable",
+      "old": "命中",
+      "new": "命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "The definition of accessory digestive organ is includes teeth, tongue, salivary glands, gallbladder, liver, and pancreas [p.1092].\n\nAccessory digestive organs are structures that support the main digestive process by aiding in the breakdown and processing of food. [p.1095] These organs include the teeth, which chew food into smaller pieces; the tongue, which helps in swallowing and mixing food with saliva; the salivary glands, which produce saliva to begin the digestion of carbohydrates; the liver, which produces bile to help digest fats; the gallbladder, which stores and releases bile into the small intestine; and the pancreas, which produces digestive enzymes and bicarbonate ions to neutralize stomach acid and aid in the digestion of proteins, carbohydrates, and fats. [p.1076] Each of these organs plays a crucial role in the digestive system, even though they are not part of the alimentary canal itself."
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Give the definition of anterograde amnesia.",
+      "type": "answerable",
+      "old": "命中",
+      "new": "命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "In the case of Henry Molaison, also known as patient HM, he could no longer form new memories after his bilateral lobectomy in 1953, which was performed to treat intractable epilepsy. This provided significant insight into the relationship between brain structures and memory function [p.664]."
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Give the definition of artificial pacemaker.",
+      "type": "answerable",
+      "old": "命中",
+      "new": "命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "An artificial pacemaker is a device that delivers electrical impulses to the heart muscle to ensure that the heart continues to contract and pump blood effectively. [p.821]\nThis device is used when the heart's natural pacemaker, the pacemaker cells, fails to maintain a proper rhythm. [p.821] The artificial pacemaker can be programmed by cardiologists to provide stimulation either temporarily upon demand or on a continuous basis. [p.821] Some devices also include built-in defibrillators. [p.821] The pacemaker cells, which are self-excitable and capable of depolarizing to threshold and firing action potentials on their own, determine the heart rate. [p.411] These cells are connected via gap junctions to surrounding muscle fibers and the heart’s conduction system, allowing them to transfer depolarization to other cardiac muscle fibers. [p.411]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Internalization and digestion of antigen in an antigen-presenting cell",
+      "type": "fuzzy_desc",
+      "old": "命中",
+      "new": "命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "Antigen processing is internalization and digestion of antigen in an antigen-presenting cell.\n\nAntigen processing is the mechanism by which antigens are taken up by antigen-presenting cells, broken down into smaller fragments, and then displayed on the cell surface for recognition by T cells. This process involves the internalization of antigens, followed by enzymatic digestion to produce smaller peptide fragments. These fragments are then loaded onto major histocompatibility complex (MHC) molecules and presented on the surface of the antigen-presenting cell, allowing T cells to recognize and respond to the antigen. The internalization and digestion of antigens are essential steps in the immune response, as they enable the immune system to detect and eliminate pathogens. [p.954]"
+    }
+  ]
+}

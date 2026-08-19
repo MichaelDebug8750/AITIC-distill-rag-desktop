@@ -1,0 +1,3270 @@
+{
+  "schema": 1,
+  "repeats": 10,
+  "ports": {
+    "8022": [
+      {
+        "book": "Anatomy_and_Physiology_2e.pdf",
+        "question": "Describe autophagy.",
+        "unique_signatures": 1,
+        "signature_counts": {
+          "[[\"Anatomy_and_Physiology_2e · p1059\", 0.8677], [\"Anatomy_and_Physiology_2e · p1067\", 0.8148], [\"Anatomy_and_Physiology_2e · p1101\", 0.8968], [\"Anatomy_and_Physiology_2e · p114\", 0.8124], [\"Anatomy_and_Physiology_2e · p279\", 0.9007], [\"Anatomy_and_Physiology_2e · p752\", 0.8895], [\"Anatomy_and_Physiology_2e · p933\", 0.8386], [\"Anatomy_and_Physiology_2e · p945\", 0.8724]]": 10
+        },
+        "rows": [
+          {
+            "repeat": 1,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1059",
+                0.8677
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1067",
+                0.8148
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1101",
+                0.8968
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p114",
+                0.8124
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p279",
+                0.9007
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p752",
+                0.8895
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p933",
+                0.8386
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p945",
+                0.8724
+              ]
+            ],
+            "elapsed_ms": 112
+          },
+          {
+            "repeat": 2,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1059",
+                0.8677
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1067",
+                0.8148
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1101",
+                0.8968
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p114",
+                0.8124
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p279",
+                0.9007
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p752",
+                0.8895
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p933",
+                0.8386
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p945",
+                0.8724
+              ]
+            ],
+            "elapsed_ms": 105
+          },
+          {
+            "repeat": 3,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1059",
+                0.8677
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1067",
+                0.8148
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1101",
+                0.8968
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p114",
+                0.8124
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p279",
+                0.9007
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p752",
+                0.8895
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p933",
+                0.8386
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p945",
+                0.8724
+              ]
+            ],
+            "elapsed_ms": 102
+          },
+          {
+            "repeat": 4,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1059",
+                0.8677
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1067",
+                0.8148
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1101",
+                0.8968
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p114",
+                0.8124
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p279",
+                0.9007
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p752",
+                0.8895
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p933",
+                0.8386
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p945",
+                0.8724
+              ]
+            ],
+            "elapsed_ms": 105
+          },
+          {
+            "repeat": 5,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1059",
+                0.8677
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1067",
+                0.8148
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1101",
+                0.8968
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p114",
+                0.8124
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p279",
+                0.9007
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p752",
+                0.8895
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p933",
+                0.8386
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p945",
+                0.8724
+              ]
+            ],
+            "elapsed_ms": 108
+          },
+          {
+            "repeat": 6,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1059",
+                0.8677
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1067",
+                0.8148
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1101",
+                0.8968
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p114",
+                0.8124
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p279",
+                0.9007
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p752",
+                0.8895
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p933",
+                0.8386
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p945",
+                0.8724
+              ]
+            ],
+            "elapsed_ms": 98
+          },
+          {
+            "repeat": 7,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1059",
+                0.8677
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1067",
+                0.8148
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1101",
+                0.8968
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p114",
+                0.8124
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p279",
+                0.9007
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p752",
+                0.8895
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p933",
+                0.8386
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p945",
+                0.8724
+              ]
+            ],
+            "elapsed_ms": 102
+          },
+          {
+            "repeat": 8,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1059",
+                0.8677
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1067",
+                0.8148
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1101",
+                0.8968
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p114",
+                0.8124
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p279",
+                0.9007
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p752",
+                0.8895
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p933",
+                0.8386
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p945",
+                0.8724
+              ]
+            ],
+            "elapsed_ms": 102
+          },
+          {
+            "repeat": 9,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1059",
+                0.8677
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1067",
+                0.8148
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1101",
+                0.8968
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p114",
+                0.8124
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p279",
+                0.9007
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p752",
+                0.8895
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p933",
+                0.8386
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p945",
+                0.8724
+              ]
+            ],
+            "elapsed_ms": 101
+          },
+          {
+            "repeat": 10,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1059",
+                0.8677
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1067",
+                0.8148
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1101",
+                0.8968
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p114",
+                0.8124
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p279",
+                0.9007
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p752",
+                0.8895
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p933",
+                0.8386
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p945",
+                0.8724
+              ]
+            ],
+            "elapsed_ms": 102
+          }
+        ]
+      },
+      {
+        "book": "Anatomy_and_Physiology_2e.pdf",
+        "question": "What does angle of the mandible mean?",
+        "unique_signatures": 1,
+        "signature_counts": {
+          "[[\"Anatomy_and_Physiology_2e · p266\", 0.6744], [\"Anatomy_and_Physiology_2e · p267\", 0.8046], [\"Anatomy_and_Physiology_2e · p287\", 0.78], [\"Anatomy_and_Physiology_2e · p357\", 0.7909], [\"Anatomy_and_Physiology_2e · p360\", 0.787], [\"Anatomy_and_Physiology_2e · p379\", 0.8011]]": 10
+        },
+        "rows": [
+          {
+            "repeat": 1,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p266",
+                0.6744
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p267",
+                0.8046
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p287",
+                0.78
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p357",
+                0.7909
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p360",
+                0.787
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p379",
+                0.8011
+              ]
+            ],
+            "elapsed_ms": 104
+          },
+          {
+            "repeat": 2,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p266",
+                0.6744
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p267",
+                0.8046
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p287",
+                0.78
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p357",
+                0.7909
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p360",
+                0.787
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p379",
+                0.8011
+              ]
+            ],
+            "elapsed_ms": 105
+          },
+          {
+            "repeat": 3,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p266",
+                0.6744
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p267",
+                0.8046
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p287",
+                0.78
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p357",
+                0.7909
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p360",
+                0.787
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p379",
+                0.8011
+              ]
+            ],
+            "elapsed_ms": 100
+          },
+          {
+            "repeat": 4,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p266",
+                0.6744
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p267",
+                0.8046
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p287",
+                0.78
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p357",
+                0.7909
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p360",
+                0.787
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p379",
+                0.8011
+              ]
+            ],
+            "elapsed_ms": 102
+          },
+          {
+            "repeat": 5,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p266",
+                0.6744
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p267",
+                0.8046
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p287",
+                0.78
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p357",
+                0.7909
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p360",
+                0.787
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p379",
+                0.8011
+              ]
+            ],
+            "elapsed_ms": 102
+          },
+          {
+            "repeat": 6,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p266",
+                0.6744
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p267",
+                0.8046
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p287",
+                0.78
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p357",
+                0.7909
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p360",
+                0.787
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p379",
+                0.8011
+              ]
+            ],
+            "elapsed_ms": 99
+          },
+          {
+            "repeat": 7,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p266",
+                0.6744
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p267",
+                0.8046
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p287",
+                0.78
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p357",
+                0.7909
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p360",
+                0.787
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p379",
+                0.8011
+              ]
+            ],
+            "elapsed_ms": 104
+          },
+          {
+            "repeat": 8,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p266",
+                0.6744
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p267",
+                0.8046
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p287",
+                0.78
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p357",
+                0.7909
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p360",
+                0.787
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p379",
+                0.8011
+              ]
+            ],
+            "elapsed_ms": 100
+          },
+          {
+            "repeat": 9,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p266",
+                0.6744
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p267",
+                0.8046
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p287",
+                0.78
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p357",
+                0.7909
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p360",
+                0.787
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p379",
+                0.8011
+              ]
+            ],
+            "elapsed_ms": 101
+          },
+          {
+            "repeat": 10,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p266",
+                0.6744
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p267",
+                0.8046
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p287",
+                0.78
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p357",
+                0.7909
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p360",
+                0.787
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p379",
+                0.8011
+              ]
+            ],
+            "elapsed_ms": 101
+          }
+        ]
+      },
+      {
+        "book": "Anatomy_and_Physiology_2e.pdf",
+        "question": "What does hydrostatic pressure mean?",
+        "unique_signatures": 1,
+        "signature_counts": {
+          "[[\"Anatomy_and_Physiology_2e · p1171\", 0.8068], [\"Anatomy_and_Physiology_2e · p1206\", 0.8295], [\"Anatomy_and_Physiology_2e · p861\", 0.7122], [\"Anatomy_and_Physiology_2e · p871\", 0.773]]": 10
+        },
+        "rows": [
+          {
+            "repeat": 1,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1171",
+                0.8068
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1206",
+                0.8295
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p861",
+                0.7122
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p871",
+                0.773
+              ]
+            ],
+            "elapsed_ms": 102
+          },
+          {
+            "repeat": 2,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1171",
+                0.8068
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1206",
+                0.8295
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p861",
+                0.7122
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p871",
+                0.773
+              ]
+            ],
+            "elapsed_ms": 105
+          },
+          {
+            "repeat": 3,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1171",
+                0.8068
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1206",
+                0.8295
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p861",
+                0.7122
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p871",
+                0.773
+              ]
+            ],
+            "elapsed_ms": 102
+          },
+          {
+            "repeat": 4,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1171",
+                0.8068
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1206",
+                0.8295
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p861",
+                0.7122
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p871",
+                0.773
+              ]
+            ],
+            "elapsed_ms": 104
+          },
+          {
+            "repeat": 5,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1171",
+                0.8068
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1206",
+                0.8295
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p861",
+                0.7122
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p871",
+                0.773
+              ]
+            ],
+            "elapsed_ms": 100
+          },
+          {
+            "repeat": 6,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1171",
+                0.8068
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1206",
+                0.8295
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p861",
+                0.7122
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p871",
+                0.773
+              ]
+            ],
+            "elapsed_ms": 105
+          },
+          {
+            "repeat": 7,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1171",
+                0.8068
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1206",
+                0.8295
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p861",
+                0.7122
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p871",
+                0.773
+              ]
+            ],
+            "elapsed_ms": 101
+          },
+          {
+            "repeat": 8,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1171",
+                0.8068
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1206",
+                0.8295
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p861",
+                0.7122
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p871",
+                0.773
+              ]
+            ],
+            "elapsed_ms": 101
+          },
+          {
+            "repeat": 9,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1171",
+                0.8068
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1206",
+                0.8295
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p861",
+                0.7122
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p871",
+                0.773
+              ]
+            ],
+            "elapsed_ms": 99
+          },
+          {
+            "repeat": 10,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1171",
+                0.8068
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1206",
+                0.8295
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p861",
+                0.7122
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p871",
+                0.773
+              ]
+            ],
+            "elapsed_ms": 105
+          }
+        ]
+      },
+      {
+        "book": "Business Law and the Legal Environment.pdf",
+        "question": "What are sticky wages and prices?",
+        "unique_signatures": 1,
+        "signature_counts": {
+          "[[\"Business Law and the Legal Environment · p1343\", 0.951], [\"Business Law and the Legal Environment · p1374\", 0.9499], [\"Business Law and the Legal Environment · p1825\", 1.0533], [\"Business Law and the Legal Environment · p300\", 1.0564], [\"Business Law and the Legal Environment · p315\", 1.0285], [\"Business Law and the Legal Environment · p457\", 0.9965], [\"Business Law and the Legal Environment · p631\", 1.0445]]": 10
+        },
+        "rows": [
+          {
+            "repeat": 1,
+            "signature": [
+              [
+                "Business Law and the Legal Environment · p1343",
+                0.951
+              ],
+              [
+                "Business Law and the Legal Environment · p1374",
+                0.9499
+              ],
+              [
+                "Business Law and the Legal Environment · p1825",
+                1.0533
+              ],
+              [
+                "Business Law and the Legal Environment · p300",
+                1.0564
+              ],
+              [
+                "Business Law and the Legal Environment · p315",
+                1.0285
+              ],
+              [
+                "Business Law and the Legal Environment · p457",
+                0.9965
+              ],
+              [
+                "Business Law and the Legal Environment · p631",
+                1.0445
+              ]
+            ],
+            "elapsed_ms": 104
+          },
+          {
+            "repeat": 2,
+            "signature": [
+              [
+                "Business Law and the Legal Environment · p1343",
+                0.951
+              ],
+              [
+                "Business Law and the Legal Environment · p1374",
+                0.9499
+              ],
+              [
+                "Business Law and the Legal Environment · p1825",
+                1.0533
+              ],
+              [
+                "Business Law and the Legal Environment · p300",
+                1.0564
+              ],
+              [
+                "Business Law and the Legal Environment · p315",
+                1.0285
+              ],
+              [
+                "Business Law and the Legal Environment · p457",
+                0.9965
+              ],
+              [
+                "Business Law and the Legal Environment · p631",
+                1.0445
+              ]
+            ],
+            "elapsed_ms": 103
+          },
+          {
+            "repeat": 3,
+            "signature": [
+              [
+                "Business Law and the Legal Environment · p1343",
+                0.951
+              ],
+              [
+                "Business Law and the Legal Environment · p1374",
+                0.9499
+              ],
+              [
+                "Business Law and the Legal Environment · p1825",
+                1.0533
+              ],
+              [
+                "Business Law and the Legal Environment · p300",
+                1.0564
+              ],
+              [
+                "Business Law and the Legal Environment · p315",
+                1.0285
+              ],
+              [
+                "Business Law and the Legal Environment · p457",
+                0.9965
+              ],
+              [
+                "Business Law and the Legal Environment · p631",
+                1.0445
+              ]
+            ],
+            "elapsed_ms": 101
+          },
+          {
+            "repeat": 4,
+            "signature": [
+              [
+                "Business Law and the Legal Environment · p1343",
+                0.951
+              ],
+              [
+                "Business Law and the Legal Environment · p1374",
+                0.9499
+              ],
+              [
+                "Business Law and the Legal Environment · p1825",
+                1.0533
+              ],
+              [
+                "Business Law and the Legal Environment · p300",
+                1.0564
+              ],
+              [
+                "Business Law and the Legal Environment · p315",
+                1.0285
+              ],
+              [
+                "Business Law and the Legal Environment · p457",
+                0.9965
+              ],
+              [
+                "Business Law and the Legal Environment · p631",
+                1.0445
+              ]
+            ],
+            "elapsed_ms": 102
+          },
+          {
+            "repeat": 5,
+            "signature": [
+              [
+                "Business Law and the Legal Environment · p1343",
+                0.951
+              ],
+              [
+                "Business Law and the Legal Environment · p1374",
+                0.9499
+              ],
+              [
+                "Business Law and the Legal Environment · p1825",
+                1.0533
+              ],
+              [
+                "Business Law and the Legal Environment · p300",
+                1.0564
+              ],
+              [
+                "Business Law and the Legal Environment · p315",
+                1.0285
+              ],
+              [
+                "Business Law and the Legal Environment · p457",
+                0.9965
+              ],
+              [
+                "Business Law and the Legal Environment · p631",
+                1.0445
+              ]
+            ],
+            "elapsed_ms": 102
+          },
+          {
+            "repeat": 6,
+            "signature": [
+              [
+                "Business Law and the Legal Environment · p1343",
+                0.951
+              ],
+              [
+                "Business Law and the Legal Environment · p1374",
+                0.9499
+              ],
+              [
+                "Business Law and the Legal Environment · p1825",
+                1.0533
+              ],
+              [
+                "Business Law and the Legal Environment · p300",
+                1.0564
+              ],
+              [
+                "Business Law and the Legal Environment · p315",
+                1.0285
+              ],
+              [
+                "Business Law and the Legal Environment · p457",
+                0.9965
+              ],
+              [
+                "Business Law and the Legal Environment · p631",
+                1.0445
+              ]
+            ],
+            "elapsed_ms": 99
+          },
+          {
+            "repeat": 7,
+            "signature": [
+              [
+                "Business Law and the Legal Environment · p1343",
+                0.951
+              ],
+              [
+                "Business Law and the Legal Environment · p1374",
+                0.9499
+              ],
+              [
+                "Business Law and the Legal Environment · p1825",
+                1.0533
+              ],
+              [
+                "Business Law and the Legal Environment · p300",
+                1.0564
+              ],
+              [
+                "Business Law and the Legal Environment · p315",
+                1.0285
+              ],
+              [
+                "Business Law and the Legal Environment · p457",
+                0.9965
+              ],
+              [
+                "Business Law and the Legal Environment · p631",
+                1.0445
+              ]
+            ],
+            "elapsed_ms": 101
+          },
+          {
+            "repeat": 8,
+            "signature": [
+              [
+                "Business Law and the Legal Environment · p1343",
+                0.951
+              ],
+              [
+                "Business Law and the Legal Environment · p1374",
+                0.9499
+              ],
+              [
+                "Business Law and the Legal Environment · p1825",
+                1.0533
+              ],
+              [
+                "Business Law and the Legal Environment · p300",
+                1.0564
+              ],
+              [
+                "Business Law and the Legal Environment · p315",
+                1.0285
+              ],
+              [
+                "Business Law and the Legal Environment · p457",
+                0.9965
+              ],
+              [
+                "Business Law and the Legal Environment · p631",
+                1.0445
+              ]
+            ],
+            "elapsed_ms": 107
+          },
+          {
+            "repeat": 9,
+            "signature": [
+              [
+                "Business Law and the Legal Environment · p1343",
+                0.951
+              ],
+              [
+                "Business Law and the Legal Environment · p1374",
+                0.9499
+              ],
+              [
+                "Business Law and the Legal Environment · p1825",
+                1.0533
+              ],
+              [
+                "Business Law and the Legal Environment · p300",
+                1.0564
+              ],
+              [
+                "Business Law and the Legal Environment · p315",
+                1.0285
+              ],
+              [
+                "Business Law and the Legal Environment · p457",
+                0.9965
+              ],
+              [
+                "Business Law and the Legal Environment · p631",
+                1.0445
+              ]
+            ],
+            "elapsed_ms": 102
+          },
+          {
+            "repeat": 10,
+            "signature": [
+              [
+                "Business Law and the Legal Environment · p1343",
+                0.951
+              ],
+              [
+                "Business Law and the Legal Environment · p1374",
+                0.9499
+              ],
+              [
+                "Business Law and the Legal Environment · p1825",
+                1.0533
+              ],
+              [
+                "Business Law and the Legal Environment · p300",
+                1.0564
+              ],
+              [
+                "Business Law and the Legal Environment · p315",
+                1.0285
+              ],
+              [
+                "Business Law and the Legal Environment · p457",
+                0.9965
+              ],
+              [
+                "Business Law and the Legal Environment · p631",
+                1.0445
+              ]
+            ],
+            "elapsed_ms": 100
+          }
+        ]
+      },
+      {
+        "book": "Cognitive Psychology.pdf",
+        "question": "Explain the term pluralist theory.",
+        "unique_signatures": 1,
+        "signature_counts": {
+          "[[\"Cognitive Psychology · p176\", 1.0069], [\"Cognitive Psychology · p181\", 1.0109], [\"Cognitive Psychology · p188\", 0.9759], [\"Cognitive Psychology · p189\", 0.9753], [\"Cognitive Psychology · p191\", 1.0171], [\"Cognitive Psychology · p244\", 0.9501], [\"Cognitive Psychology · p257\", 0.9992]]": 10
+        },
+        "rows": [
+          {
+            "repeat": 1,
+            "signature": [
+              [
+                "Cognitive Psychology · p176",
+                1.0069
+              ],
+              [
+                "Cognitive Psychology · p181",
+                1.0109
+              ],
+              [
+                "Cognitive Psychology · p188",
+                0.9759
+              ],
+              [
+                "Cognitive Psychology · p189",
+                0.9753
+              ],
+              [
+                "Cognitive Psychology · p191",
+                1.0171
+              ],
+              [
+                "Cognitive Psychology · p244",
+                0.9501
+              ],
+              [
+                "Cognitive Psychology · p257",
+                0.9992
+              ]
+            ],
+            "elapsed_ms": 109
+          },
+          {
+            "repeat": 2,
+            "signature": [
+              [
+                "Cognitive Psychology · p176",
+                1.0069
+              ],
+              [
+                "Cognitive Psychology · p181",
+                1.0109
+              ],
+              [
+                "Cognitive Psychology · p188",
+                0.9759
+              ],
+              [
+                "Cognitive Psychology · p189",
+                0.9753
+              ],
+              [
+                "Cognitive Psychology · p191",
+                1.0171
+              ],
+              [
+                "Cognitive Psychology · p244",
+                0.9501
+              ],
+              [
+                "Cognitive Psychology · p257",
+                0.9992
+              ]
+            ],
+            "elapsed_ms": 104
+          },
+          {
+            "repeat": 3,
+            "signature": [
+              [
+                "Cognitive Psychology · p176",
+                1.0069
+              ],
+              [
+                "Cognitive Psychology · p181",
+                1.0109
+              ],
+              [
+                "Cognitive Psychology · p188",
+                0.9759
+              ],
+              [
+                "Cognitive Psychology · p189",
+                0.9753
+              ],
+              [
+                "Cognitive Psychology · p191",
+                1.0171
+              ],
+              [
+                "Cognitive Psychology · p244",
+                0.9501
+              ],
+              [
+                "Cognitive Psychology · p257",
+                0.9992
+              ]
+            ],
+            "elapsed_ms": 101
+          },
+          {
+            "repeat": 4,
+            "signature": [
+              [
+                "Cognitive Psychology · p176",
+                1.0069
+              ],
+              [
+                "Cognitive Psychology · p181",
+                1.0109
+              ],
+              [
+                "Cognitive Psychology · p188",
+                0.9759
+              ],
+              [
+                "Cognitive Psychology · p189",
+                0.9753
+              ],
+              [
+                "Cognitive Psychology · p191",
+                1.0171
+              ],
+              [
+                "Cognitive Psychology · p244",
+                0.9501
+              ],
+              [
+                "Cognitive Psychology · p257",
+                0.9992
+              ]
+            ],
+            "elapsed_ms": 101
+          },
+          {
+            "repeat": 5,
+            "signature": [
+              [
+                "Cognitive Psychology · p176",
+                1.0069
+              ],
+              [
+                "Cognitive Psychology · p181",
+                1.0109
+              ],
+              [
+                "Cognitive Psychology · p188",
+                0.9759
+              ],
+              [
+                "Cognitive Psychology · p189",
+                0.9753
+              ],
+              [
+                "Cognitive Psychology · p191",
+                1.0171
+              ],
+              [
+                "Cognitive Psychology · p244",
+                0.9501
+              ],
+              [
+                "Cognitive Psychology · p257",
+                0.9992
+              ]
+            ],
+            "elapsed_ms": 103
+          },
+          {
+            "repeat": 6,
+            "signature": [
+              [
+                "Cognitive Psychology · p176",
+                1.0069
+              ],
+              [
+                "Cognitive Psychology · p181",
+                1.0109
+              ],
+              [
+                "Cognitive Psychology · p188",
+                0.9759
+              ],
+              [
+                "Cognitive Psychology · p189",
+                0.9753
+              ],
+              [
+                "Cognitive Psychology · p191",
+                1.0171
+              ],
+              [
+                "Cognitive Psychology · p244",
+                0.9501
+              ],
+              [
+                "Cognitive Psychology · p257",
+                0.9992
+              ]
+            ],
+            "elapsed_ms": 101
+          },
+          {
+            "repeat": 7,
+            "signature": [
+              [
+                "Cognitive Psychology · p176",
+                1.0069
+              ],
+              [
+                "Cognitive Psychology · p181",
+                1.0109
+              ],
+              [
+                "Cognitive Psychology · p188",
+                0.9759
+              ],
+              [
+                "Cognitive Psychology · p189",
+                0.9753
+              ],
+              [
+                "Cognitive Psychology · p191",
+                1.0171
+              ],
+              [
+                "Cognitive Psychology · p244",
+                0.9501
+              ],
+              [
+                "Cognitive Psychology · p257",
+                0.9992
+              ]
+            ],
+            "elapsed_ms": 101
+          },
+          {
+            "repeat": 8,
+            "signature": [
+              [
+                "Cognitive Psychology · p176",
+                1.0069
+              ],
+              [
+                "Cognitive Psychology · p181",
+                1.0109
+              ],
+              [
+                "Cognitive Psychology · p188",
+                0.9759
+              ],
+              [
+                "Cognitive Psychology · p189",
+                0.9753
+              ],
+              [
+                "Cognitive Psychology · p191",
+                1.0171
+              ],
+              [
+                "Cognitive Psychology · p244",
+                0.9501
+              ],
+              [
+                "Cognitive Psychology · p257",
+                0.9992
+              ]
+            ],
+            "elapsed_ms": 106
+          },
+          {
+            "repeat": 9,
+            "signature": [
+              [
+                "Cognitive Psychology · p176",
+                1.0069
+              ],
+              [
+                "Cognitive Psychology · p181",
+                1.0109
+              ],
+              [
+                "Cognitive Psychology · p188",
+                0.9759
+              ],
+              [
+                "Cognitive Psychology · p189",
+                0.9753
+              ],
+              [
+                "Cognitive Psychology · p191",
+                1.0171
+              ],
+              [
+                "Cognitive Psychology · p244",
+                0.9501
+              ],
+              [
+                "Cognitive Psychology · p257",
+                0.9992
+              ]
+            ],
+            "elapsed_ms": 104
+          },
+          {
+            "repeat": 10,
+            "signature": [
+              [
+                "Cognitive Psychology · p176",
+                1.0069
+              ],
+              [
+                "Cognitive Psychology · p181",
+                1.0109
+              ],
+              [
+                "Cognitive Psychology · p188",
+                0.9759
+              ],
+              [
+                "Cognitive Psychology · p189",
+                0.9753
+              ],
+              [
+                "Cognitive Psychology · p191",
+                1.0171
+              ],
+              [
+                "Cognitive Psychology · p244",
+                0.9501
+              ],
+              [
+                "Cognitive Psychology · p257",
+                0.9992
+              ]
+            ],
+            "elapsed_ms": 107
+          }
+        ]
+      }
+    ],
+    "8023": [
+      {
+        "book": "Anatomy_and_Physiology_2e.pdf",
+        "question": "Describe autophagy.",
+        "unique_signatures": 1,
+        "signature_counts": {
+          "[[\"Anatomy_and_Physiology_2e · p1059\", 0.8677], [\"Anatomy_and_Physiology_2e · p1067\", 0.8148], [\"Anatomy_and_Physiology_2e · p1101\", 0.8968], [\"Anatomy_and_Physiology_2e · p114\", 0.8124], [\"Anatomy_and_Physiology_2e · p279\", 0.9007], [\"Anatomy_and_Physiology_2e · p752\", 0.8895], [\"Anatomy_and_Physiology_2e · p933\", 0.8386], [\"Anatomy_and_Physiology_2e · p945\", 0.8724]]": 10
+        },
+        "rows": [
+          {
+            "repeat": 1,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1059",
+                0.8677
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1067",
+                0.8148
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1101",
+                0.8968
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p114",
+                0.8124
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p279",
+                0.9007
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p752",
+                0.8895
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p933",
+                0.8386
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p945",
+                0.8724
+              ]
+            ],
+            "elapsed_ms": 101
+          },
+          {
+            "repeat": 2,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1059",
+                0.8677
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1067",
+                0.8148
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1101",
+                0.8968
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p114",
+                0.8124
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p279",
+                0.9007
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p752",
+                0.8895
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p933",
+                0.8386
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p945",
+                0.8724
+              ]
+            ],
+            "elapsed_ms": 103
+          },
+          {
+            "repeat": 3,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1059",
+                0.8677
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1067",
+                0.8148
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1101",
+                0.8968
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p114",
+                0.8124
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p279",
+                0.9007
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p752",
+                0.8895
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p933",
+                0.8386
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p945",
+                0.8724
+              ]
+            ],
+            "elapsed_ms": 104
+          },
+          {
+            "repeat": 4,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1059",
+                0.8677
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1067",
+                0.8148
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1101",
+                0.8968
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p114",
+                0.8124
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p279",
+                0.9007
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p752",
+                0.8895
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p933",
+                0.8386
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p945",
+                0.8724
+              ]
+            ],
+            "elapsed_ms": 100
+          },
+          {
+            "repeat": 5,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1059",
+                0.8677
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1067",
+                0.8148
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1101",
+                0.8968
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p114",
+                0.8124
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p279",
+                0.9007
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p752",
+                0.8895
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p933",
+                0.8386
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p945",
+                0.8724
+              ]
+            ],
+            "elapsed_ms": 104
+          },
+          {
+            "repeat": 6,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1059",
+                0.8677
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1067",
+                0.8148
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1101",
+                0.8968
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p114",
+                0.8124
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p279",
+                0.9007
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p752",
+                0.8895
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p933",
+                0.8386
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p945",
+                0.8724
+              ]
+            ],
+            "elapsed_ms": 103
+          },
+          {
+            "repeat": 7,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1059",
+                0.8677
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1067",
+                0.8148
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1101",
+                0.8968
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p114",
+                0.8124
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p279",
+                0.9007
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p752",
+                0.8895
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p933",
+                0.8386
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p945",
+                0.8724
+              ]
+            ],
+            "elapsed_ms": 103
+          },
+          {
+            "repeat": 8,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1059",
+                0.8677
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1067",
+                0.8148
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1101",
+                0.8968
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p114",
+                0.8124
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p279",
+                0.9007
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p752",
+                0.8895
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p933",
+                0.8386
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p945",
+                0.8724
+              ]
+            ],
+            "elapsed_ms": 103
+          },
+          {
+            "repeat": 9,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1059",
+                0.8677
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1067",
+                0.8148
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1101",
+                0.8968
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p114",
+                0.8124
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p279",
+                0.9007
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p752",
+                0.8895
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p933",
+                0.8386
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p945",
+                0.8724
+              ]
+            ],
+            "elapsed_ms": 102
+          },
+          {
+            "repeat": 10,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1059",
+                0.8677
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1067",
+                0.8148
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1101",
+                0.8968
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p114",
+                0.8124
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p279",
+                0.9007
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p752",
+                0.8895
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p933",
+                0.8386
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p945",
+                0.8724
+              ]
+            ],
+            "elapsed_ms": 104
+          }
+        ]
+      },
+      {
+        "book": "Anatomy_and_Physiology_2e.pdf",
+        "question": "What does angle of the mandible mean?",
+        "unique_signatures": 1,
+        "signature_counts": {
+          "[[\"Anatomy_and_Physiology_2e · p266\", 0.6744], [\"Anatomy_and_Physiology_2e · p267\", 0.8046], [\"Anatomy_and_Physiology_2e · p287\", 0.78], [\"Anatomy_and_Physiology_2e · p357\", 0.7909], [\"Anatomy_and_Physiology_2e · p360\", 0.787], [\"Anatomy_and_Physiology_2e · p379\", 0.8011]]": 10
+        },
+        "rows": [
+          {
+            "repeat": 1,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p266",
+                0.6744
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p267",
+                0.8046
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p287",
+                0.78
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p357",
+                0.7909
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p360",
+                0.787
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p379",
+                0.8011
+              ]
+            ],
+            "elapsed_ms": 100
+          },
+          {
+            "repeat": 2,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p266",
+                0.6744
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p267",
+                0.8046
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p287",
+                0.78
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p357",
+                0.7909
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p360",
+                0.787
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p379",
+                0.8011
+              ]
+            ],
+            "elapsed_ms": 104
+          },
+          {
+            "repeat": 3,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p266",
+                0.6744
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p267",
+                0.8046
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p287",
+                0.78
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p357",
+                0.7909
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p360",
+                0.787
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p379",
+                0.8011
+              ]
+            ],
+            "elapsed_ms": 101
+          },
+          {
+            "repeat": 4,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p266",
+                0.6744
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p267",
+                0.8046
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p287",
+                0.78
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p357",
+                0.7909
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p360",
+                0.787
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p379",
+                0.8011
+              ]
+            ],
+            "elapsed_ms": 105
+          },
+          {
+            "repeat": 5,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p266",
+                0.6744
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p267",
+                0.8046
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p287",
+                0.78
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p357",
+                0.7909
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p360",
+                0.787
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p379",
+                0.8011
+              ]
+            ],
+            "elapsed_ms": 100
+          },
+          {
+            "repeat": 6,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p266",
+                0.6744
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p267",
+                0.8046
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p287",
+                0.78
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p357",
+                0.7909
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p360",
+                0.787
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p379",
+                0.8011
+              ]
+            ],
+            "elapsed_ms": 102
+          },
+          {
+            "repeat": 7,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p266",
+                0.6744
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p267",
+                0.8046
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p287",
+                0.78
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p357",
+                0.7909
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p360",
+                0.787
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p379",
+                0.8011
+              ]
+            ],
+            "elapsed_ms": 108
+          },
+          {
+            "repeat": 8,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p266",
+                0.6744
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p267",
+                0.8046
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p287",
+                0.78
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p357",
+                0.7909
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p360",
+                0.787
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p379",
+                0.8011
+              ]
+            ],
+            "elapsed_ms": 102
+          },
+          {
+            "repeat": 9,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p266",
+                0.6744
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p267",
+                0.8046
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p287",
+                0.78
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p357",
+                0.7909
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p360",
+                0.787
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p379",
+                0.8011
+              ]
+            ],
+            "elapsed_ms": 100
+          },
+          {
+            "repeat": 10,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p266",
+                0.6744
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p267",
+                0.8046
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p287",
+                0.78
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p357",
+                0.7909
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p360",
+                0.787
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p379",
+                0.8011
+              ]
+            ],
+            "elapsed_ms": 103
+          }
+        ]
+      },
+      {
+        "book": "Anatomy_and_Physiology_2e.pdf",
+        "question": "What does hydrostatic pressure mean?",
+        "unique_signatures": 1,
+        "signature_counts": {
+          "[[\"Anatomy_and_Physiology_2e · p1171\", 0.8068], [\"Anatomy_and_Physiology_2e · p1206\", 0.8295], [\"Anatomy_and_Physiology_2e · p861\", 0.7122], [\"Anatomy_and_Physiology_2e · p871\", 0.773]]": 10
+        },
+        "rows": [
+          {
+            "repeat": 1,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1171",
+                0.8068
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1206",
+                0.8295
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p861",
+                0.7122
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p871",
+                0.773
+              ]
+            ],
+            "elapsed_ms": 101
+          },
+          {
+            "repeat": 2,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1171",
+                0.8068
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1206",
+                0.8295
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p861",
+                0.7122
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p871",
+                0.773
+              ]
+            ],
+            "elapsed_ms": 110
+          },
+          {
+            "repeat": 3,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1171",
+                0.8068
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1206",
+                0.8295
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p861",
+                0.7122
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p871",
+                0.773
+              ]
+            ],
+            "elapsed_ms": 102
+          },
+          {
+            "repeat": 4,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1171",
+                0.8068
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1206",
+                0.8295
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p861",
+                0.7122
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p871",
+                0.773
+              ]
+            ],
+            "elapsed_ms": 101
+          },
+          {
+            "repeat": 5,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1171",
+                0.8068
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1206",
+                0.8295
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p861",
+                0.7122
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p871",
+                0.773
+              ]
+            ],
+            "elapsed_ms": 101
+          },
+          {
+            "repeat": 6,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1171",
+                0.8068
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1206",
+                0.8295
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p861",
+                0.7122
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p871",
+                0.773
+              ]
+            ],
+            "elapsed_ms": 101
+          },
+          {
+            "repeat": 7,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1171",
+                0.8068
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1206",
+                0.8295
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p861",
+                0.7122
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p871",
+                0.773
+              ]
+            ],
+            "elapsed_ms": 103
+          },
+          {
+            "repeat": 8,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1171",
+                0.8068
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1206",
+                0.8295
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p861",
+                0.7122
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p871",
+                0.773
+              ]
+            ],
+            "elapsed_ms": 101
+          },
+          {
+            "repeat": 9,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1171",
+                0.8068
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1206",
+                0.8295
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p861",
+                0.7122
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p871",
+                0.773
+              ]
+            ],
+            "elapsed_ms": 103
+          },
+          {
+            "repeat": 10,
+            "signature": [
+              [
+                "Anatomy_and_Physiology_2e · p1171",
+                0.8068
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p1206",
+                0.8295
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p861",
+                0.7122
+              ],
+              [
+                "Anatomy_and_Physiology_2e · p871",
+                0.773
+              ]
+            ],
+            "elapsed_ms": 103
+          }
+        ]
+      },
+      {
+        "book": "Business Law and the Legal Environment.pdf",
+        "question": "What are sticky wages and prices?",
+        "unique_signatures": 1,
+        "signature_counts": {
+          "[[\"Business Law and the Legal Environment · p1343\", 0.951], [\"Business Law and the Legal Environment · p1374\", 0.9499], [\"Business Law and the Legal Environment · p1825\", 1.0533], [\"Business Law and the Legal Environment · p300\", 1.0564], [\"Business Law and the Legal Environment · p315\", 1.0285], [\"Business Law and the Legal Environment · p457\", 0.9965], [\"Business Law and the Legal Environment · p631\", 1.0445]]": 10
+        },
+        "rows": [
+          {
+            "repeat": 1,
+            "signature": [
+              [
+                "Business Law and the Legal Environment · p1343",
+                0.951
+              ],
+              [
+                "Business Law and the Legal Environment · p1374",
+                0.9499
+              ],
+              [
+                "Business Law and the Legal Environment · p1825",
+                1.0533
+              ],
+              [
+                "Business Law and the Legal Environment · p300",
+                1.0564
+              ],
+              [
+                "Business Law and the Legal Environment · p315",
+                1.0285
+              ],
+              [
+                "Business Law and the Legal Environment · p457",
+                0.9965
+              ],
+              [
+                "Business Law and the Legal Environment · p631",
+                1.0445
+              ]
+            ],
+            "elapsed_ms": 104
+          },
+          {
+            "repeat": 2,
+            "signature": [
+              [
+                "Business Law and the Legal Environment · p1343",
+                0.951
+              ],
+              [
+                "Business Law and the Legal Environment · p1374",
+                0.9499
+              ],
+              [
+                "Business Law and the Legal Environment · p1825",
+                1.0533
+              ],
+              [
+                "Business Law and the Legal Environment · p300",
+                1.0564
+              ],
+              [
+                "Business Law and the Legal Environment · p315",
+                1.0285
+              ],
+              [
+                "Business Law and the Legal Environment · p457",
+                0.9965
+              ],
+              [
+                "Business Law and the Legal Environment · p631",
+                1.0445
+              ]
+            ],
+            "elapsed_ms": 105
+          },
+          {
+            "repeat": 3,
+            "signature": [
+              [
+                "Business Law and the Legal Environment · p1343",
+                0.951
+              ],
+              [
+                "Business Law and the Legal Environment · p1374",
+                0.9499
+              ],
+              [
+                "Business Law and the Legal Environment · p1825",
+                1.0533
+              ],
+              [
+                "Business Law and the Legal Environment · p300",
+                1.0564
+              ],
+              [
+                "Business Law and the Legal Environment · p315",
+                1.0285
+              ],
+              [
+                "Business Law and the Legal Environment · p457",
+                0.9965
+              ],
+              [
+                "Business Law and the Legal Environment · p631",
+                1.0445
+              ]
+            ],
+            "elapsed_ms": 101
+          },
+          {
+            "repeat": 4,
+            "signature": [
+              [
+                "Business Law and the Legal Environment · p1343",
+                0.951
+              ],
+              [
+                "Business Law and the Legal Environment · p1374",
+                0.9499
+              ],
+              [
+                "Business Law and the Legal Environment · p1825",
+                1.0533
+              ],
+              [
+                "Business Law and the Legal Environment · p300",
+                1.0564
+              ],
+              [
+                "Business Law and the Legal Environment · p315",
+                1.0285
+              ],
+              [
+                "Business Law and the Legal Environment · p457",
+                0.9965
+              ],
+              [
+                "Business Law and the Legal Environment · p631",
+                1.0445
+              ]
+            ],
+            "elapsed_ms": 102
+          },
+          {
+            "repeat": 5,
+            "signature": [
+              [
+                "Business Law and the Legal Environment · p1343",
+                0.951
+              ],
+              [
+                "Business Law and the Legal Environment · p1374",
+                0.9499
+              ],
+              [
+                "Business Law and the Legal Environment · p1825",
+                1.0533
+              ],
+              [
+                "Business Law and the Legal Environment · p300",
+                1.0564
+              ],
+              [
+                "Business Law and the Legal Environment · p315",
+                1.0285
+              ],
+              [
+                "Business Law and the Legal Environment · p457",
+                0.9965
+              ],
+              [
+                "Business Law and the Legal Environment · p631",
+                1.0445
+              ]
+            ],
+            "elapsed_ms": 100
+          },
+          {
+            "repeat": 6,
+            "signature": [
+              [
+                "Business Law and the Legal Environment · p1343",
+                0.951
+              ],
+              [
+                "Business Law and the Legal Environment · p1374",
+                0.9499
+              ],
+              [
+                "Business Law and the Legal Environment · p1825",
+                1.0533
+              ],
+              [
+                "Business Law and the Legal Environment · p300",
+                1.0564
+              ],
+              [
+                "Business Law and the Legal Environment · p315",
+                1.0285
+              ],
+              [
+                "Business Law and the Legal Environment · p457",
+                0.9965
+              ],
+              [
+                "Business Law and the Legal Environment · p631",
+                1.0445
+              ]
+            ],
+            "elapsed_ms": 105
+          },
+          {
+            "repeat": 7,
+            "signature": [
+              [
+                "Business Law and the Legal Environment · p1343",
+                0.951
+              ],
+              [
+                "Business Law and the Legal Environment · p1374",
+                0.9499
+              ],
+              [
+                "Business Law and the Legal Environment · p1825",
+                1.0533
+              ],
+              [
+                "Business Law and the Legal Environment · p300",
+                1.0564
+              ],
+              [
+                "Business Law and the Legal Environment · p315",
+                1.0285
+              ],
+              [
+                "Business Law and the Legal Environment · p457",
+                0.9965
+              ],
+              [
+                "Business Law and the Legal Environment · p631",
+                1.0445
+              ]
+            ],
+            "elapsed_ms": 103
+          },
+          {
+            "repeat": 8,
+            "signature": [
+              [
+                "Business Law and the Legal Environment · p1343",
+                0.951
+              ],
+              [
+                "Business Law and the Legal Environment · p1374",
+                0.9499
+              ],
+              [
+                "Business Law and the Legal Environment · p1825",
+                1.0533
+              ],
+              [
+                "Business Law and the Legal Environment · p300",
+                1.0564
+              ],
+              [
+                "Business Law and the Legal Environment · p315",
+                1.0285
+              ],
+              [
+                "Business Law and the Legal Environment · p457",
+                0.9965
+              ],
+              [
+                "Business Law and the Legal Environment · p631",
+                1.0445
+              ]
+            ],
+            "elapsed_ms": 102
+          },
+          {
+            "repeat": 9,
+            "signature": [
+              [
+                "Business Law and the Legal Environment · p1343",
+                0.951
+              ],
+              [
+                "Business Law and the Legal Environment · p1374",
+                0.9499
+              ],
+              [
+                "Business Law and the Legal Environment · p1825",
+                1.0533
+              ],
+              [
+                "Business Law and the Legal Environment · p300",
+                1.0564
+              ],
+              [
+                "Business Law and the Legal Environment · p315",
+                1.0285
+              ],
+              [
+                "Business Law and the Legal Environment · p457",
+                0.9965
+              ],
+              [
+                "Business Law and the Legal Environment · p631",
+                1.0445
+              ]
+            ],
+            "elapsed_ms": 104
+          },
+          {
+            "repeat": 10,
+            "signature": [
+              [
+                "Business Law and the Legal Environment · p1343",
+                0.951
+              ],
+              [
+                "Business Law and the Legal Environment · p1374",
+                0.9499
+              ],
+              [
+                "Business Law and the Legal Environment · p1825",
+                1.0533
+              ],
+              [
+                "Business Law and the Legal Environment · p300",
+                1.0564
+              ],
+              [
+                "Business Law and the Legal Environment · p315",
+                1.0285
+              ],
+              [
+                "Business Law and the Legal Environment · p457",
+                0.9965
+              ],
+              [
+                "Business Law and the Legal Environment · p631",
+                1.0445
+              ]
+            ],
+            "elapsed_ms": 101
+          }
+        ]
+      },
+      {
+        "book": "Cognitive Psychology.pdf",
+        "question": "Explain the term pluralist theory.",
+        "unique_signatures": 1,
+        "signature_counts": {
+          "[[\"Cognitive Psychology · p176\", 1.0069], [\"Cognitive Psychology · p181\", 1.0109], [\"Cognitive Psychology · p188\", 0.9759], [\"Cognitive Psychology · p189\", 0.9753], [\"Cognitive Psychology · p191\", 1.0171], [\"Cognitive Psychology · p244\", 0.9501], [\"Cognitive Psychology · p257\", 0.9992]]": 10
+        },
+        "rows": [
+          {
+            "repeat": 1,
+            "signature": [
+              [
+                "Cognitive Psychology · p176",
+                1.0069
+              ],
+              [
+                "Cognitive Psychology · p181",
+                1.0109
+              ],
+              [
+                "Cognitive Psychology · p188",
+                0.9759
+              ],
+              [
+                "Cognitive Psychology · p189",
+                0.9753
+              ],
+              [
+                "Cognitive Psychology · p191",
+                1.0171
+              ],
+              [
+                "Cognitive Psychology · p244",
+                0.9501
+              ],
+              [
+                "Cognitive Psychology · p257",
+                0.9992
+              ]
+            ],
+            "elapsed_ms": 106
+          },
+          {
+            "repeat": 2,
+            "signature": [
+              [
+                "Cognitive Psychology · p176",
+                1.0069
+              ],
+              [
+                "Cognitive Psychology · p181",
+                1.0109
+              ],
+              [
+                "Cognitive Psychology · p188",
+                0.9759
+              ],
+              [
+                "Cognitive Psychology · p189",
+                0.9753
+              ],
+              [
+                "Cognitive Psychology · p191",
+                1.0171
+              ],
+              [
+                "Cognitive Psychology · p244",
+                0.9501
+              ],
+              [
+                "Cognitive Psychology · p257",
+                0.9992
+              ]
+            ],
+            "elapsed_ms": 105
+          },
+          {
+            "repeat": 3,
+            "signature": [
+              [
+                "Cognitive Psychology · p176",
+                1.0069
+              ],
+              [
+                "Cognitive Psychology · p181",
+                1.0109
+              ],
+              [
+                "Cognitive Psychology · p188",
+                0.9759
+              ],
+              [
+                "Cognitive Psychology · p189",
+                0.9753
+              ],
+              [
+                "Cognitive Psychology · p191",
+                1.0171
+              ],
+              [
+                "Cognitive Psychology · p244",
+                0.9501
+              ],
+              [
+                "Cognitive Psychology · p257",
+                0.9992
+              ]
+            ],
+            "elapsed_ms": 100
+          },
+          {
+            "repeat": 4,
+            "signature": [
+              [
+                "Cognitive Psychology · p176",
+                1.0069
+              ],
+              [
+                "Cognitive Psychology · p181",
+                1.0109
+              ],
+              [
+                "Cognitive Psychology · p188",
+                0.9759
+              ],
+              [
+                "Cognitive Psychology · p189",
+                0.9753
+              ],
+              [
+                "Cognitive Psychology · p191",
+                1.0171
+              ],
+              [
+                "Cognitive Psychology · p244",
+                0.9501
+              ],
+              [
+                "Cognitive Psychology · p257",
+                0.9992
+              ]
+            ],
+            "elapsed_ms": 105
+          },
+          {
+            "repeat": 5,
+            "signature": [
+              [
+                "Cognitive Psychology · p176",
+                1.0069
+              ],
+              [
+                "Cognitive Psychology · p181",
+                1.0109
+              ],
+              [
+                "Cognitive Psychology · p188",
+                0.9759
+              ],
+              [
+                "Cognitive Psychology · p189",
+                0.9753
+              ],
+              [
+                "Cognitive Psychology · p191",
+                1.0171
+              ],
+              [
+                "Cognitive Psychology · p244",
+                0.9501
+              ],
+              [
+                "Cognitive Psychology · p257",
+                0.9992
+              ]
+            ],
+            "elapsed_ms": 102
+          },
+          {
+            "repeat": 6,
+            "signature": [
+              [
+                "Cognitive Psychology · p176",
+                1.0069
+              ],
+              [
+                "Cognitive Psychology · p181",
+                1.0109
+              ],
+              [
+                "Cognitive Psychology · p188",
+                0.9759
+              ],
+              [
+                "Cognitive Psychology · p189",
+                0.9753
+              ],
+              [
+                "Cognitive Psychology · p191",
+                1.0171
+              ],
+              [
+                "Cognitive Psychology · p244",
+                0.9501
+              ],
+              [
+                "Cognitive Psychology · p257",
+                0.9992
+              ]
+            ],
+            "elapsed_ms": 99
+          },
+          {
+            "repeat": 7,
+            "signature": [
+              [
+                "Cognitive Psychology · p176",
+                1.0069
+              ],
+              [
+                "Cognitive Psychology · p181",
+                1.0109
+              ],
+              [
+                "Cognitive Psychology · p188",
+                0.9759
+              ],
+              [
+                "Cognitive Psychology · p189",
+                0.9753
+              ],
+              [
+                "Cognitive Psychology · p191",
+                1.0171
+              ],
+              [
+                "Cognitive Psychology · p244",
+                0.9501
+              ],
+              [
+                "Cognitive Psychology · p257",
+                0.9992
+              ]
+            ],
+            "elapsed_ms": 102
+          },
+          {
+            "repeat": 8,
+            "signature": [
+              [
+                "Cognitive Psychology · p176",
+                1.0069
+              ],
+              [
+                "Cognitive Psychology · p181",
+                1.0109
+              ],
+              [
+                "Cognitive Psychology · p188",
+                0.9759
+              ],
+              [
+                "Cognitive Psychology · p189",
+                0.9753
+              ],
+              [
+                "Cognitive Psychology · p191",
+                1.0171
+              ],
+              [
+                "Cognitive Psychology · p244",
+                0.9501
+              ],
+              [
+                "Cognitive Psychology · p257",
+                0.9992
+              ]
+            ],
+            "elapsed_ms": 100
+          },
+          {
+            "repeat": 9,
+            "signature": [
+              [
+                "Cognitive Psychology · p176",
+                1.0069
+              ],
+              [
+                "Cognitive Psychology · p181",
+                1.0109
+              ],
+              [
+                "Cognitive Psychology · p188",
+                0.9759
+              ],
+              [
+                "Cognitive Psychology · p189",
+                0.9753
+              ],
+              [
+                "Cognitive Psychology · p191",
+                1.0171
+              ],
+              [
+                "Cognitive Psychology · p244",
+                0.9501
+              ],
+              [
+                "Cognitive Psychology · p257",
+                0.9992
+              ]
+            ],
+            "elapsed_ms": 101
+          },
+          {
+            "repeat": 10,
+            "signature": [
+              [
+                "Cognitive Psychology · p176",
+                1.0069
+              ],
+              [
+                "Cognitive Psychology · p181",
+                1.0109
+              ],
+              [
+                "Cognitive Psychology · p188",
+                0.9759
+              ],
+              [
+                "Cognitive Psychology · p189",
+                0.9753
+              ],
+              [
+                "Cognitive Psychology · p191",
+                1.0171
+              ],
+              [
+                "Cognitive Psychology · p244",
+                0.9501
+              ],
+              [
+                "Cognitive Psychology · p257",
+                0.9992
+              ]
+            ],
+            "elapsed_ms": 99
+          }
+        ]
+      }
+    ]
+  }
+}

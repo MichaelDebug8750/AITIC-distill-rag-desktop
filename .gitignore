@@ -127,3 +127,65 @@ packaging/preexisting_orphan_backup_*/
 packaging/generated/
 packaging/*_profile*/
 packaging/*.log
+
+# =====================================================================
+# 2026-08 桌面端开发期新增（与 Beta 线同口径）
+# 未跟踪条目一度累积到 342 个：后台跑分日志、一次性审计脚本、历史审计
+# 快照目录、冒烟报告。其中 .faiss_patch_20260805/ 含 node_modules，
+# 误跑一次 `git add .` 就会把 GiB 级二进制推进公开仓库且无法撤回。
+# =====================================================================
+
+# ---------- 后台跑分的 stdout / stderr ----------
+.*_stderr.log
+.*_stdout.log
+.runtime_webui_*.log
+
+# ---------- 一次性审计脚本与截图 ----------
+.deep_*
+.codex_ui_smoke*
+.repro_*
+
+# ---------- 历史审计 / 交付快照目录 ----------
+.faiss_patch_*/
+.delivery_final_*/
+.manual_review_*/
+.word_ppt_audit_*/
+.pytest_deep*/
+.dist_full_*
+.focus_*
+.json_*
+.paired_*
+.memaudit*
+.cn_*
+.cnfix_*
+.final_webui_*
+.hybgate_*
+.hybrid_gate_*
+
+# ---------- 构建产物与工具缓存 ----------
+build/
+.wix/
+data/logs/
+
+# ---------- 工具本地配置 ----------
+.claude/
+
+# ---------- 打包冒烟与构建报告 ----------
+# 全部由 packaging/ 下已入库的脚本生成，可重跑，且没有文档引用它们。
+# 入库的是脚本与合同定义，不是某一次运行的输出。
+packaging/*.json
+
+# ---------- 构建期生成的图标 ----------
+# build_desktop.ps1 第 43 行会调用 packaging/make_icon.py 重新生成。
+packaging/aitic.ico
+
+# ---------- 实验原始逐题数据（与 Beta 线同口径）----------
+# 逐题 jsonl 与跑分日志可重跑；题集 eval_*.jsonl 是复现前提，用 ! 放行。
+docs/**/*.jsonl
+!docs/**/eval_*.jsonl
+docs/**/*.log
+docs/全量跑分_*/**/*.txt
+
+# ---------- 打包与界面冒烟截图 ----------
+# 由 packaging/ 下已入库的冒烟脚本重跑即可再生，无文档引用。
+packaging/*.png

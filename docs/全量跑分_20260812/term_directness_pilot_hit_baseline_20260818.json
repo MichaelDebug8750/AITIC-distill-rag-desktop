@@ -1,0 +1,238 @@
+{
+  "seed": null,
+  "mode": "unseeded",
+  "rows": 20,
+  "outcomes": {
+    "命中": 16,
+    "过度拒答": 3,
+    "未命中": 1
+  },
+  "same_as_old": 14,
+  "same_as_new": 16,
+  "answerable_hits": 16,
+  "correct_refusals": 0,
+  "fabrications": 0,
+  "elapsed_seconds": 190.3,
+  "results": [
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Breaking down of more complex molecules into simpler molecules",
+      "type": "fuzzy_desc",
+      "old": "命中",
+      "new": "命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "Catabolism is the process by which larger more complex substances are broken down into smaller simpler molecules [p.30].\n\nCatabolism is a fundamental process in metabolism that involves the breakdown of complex molecules into simpler ones, releasing energy in the process. This breakdown is essential for the body to utilize the components of these molecules to build the structures and substances necessary for life. The process is part of a broader metabolic function that includes both catabolism and anabolism, where the latter involves the synthesis of complex molecules from simpler ones. The material also mentions that these processes are catalyzed by enzymes and involve the transfer of electrons and hydrogen ions, which play a key role in the release of energy [p.1106]."
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Define active immunity.",
+      "type": "answerable",
+      "old": "命中",
+      "new": "命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "Active immunity is immunity developed from an individual’s own immune system [p.980].\n\nActive immunity occurs when an individual's immune system responds to a pathogen, either through natural exposure to the pathogen or through artificial means such as vaccination. In the case of natural active immunity, the body is exposed to a pathogen, and the immune system mounts an adaptive response, producing memory cells that provide long-term protection. This type of immunity is characterized by a relatively slow but very specific and effective response controlled by lymphocytes. Artificially acquired active immunity involves the use of vaccines, which mimic the presence of a pathogen and stimulate the immune system to develop immunity without causing the disease [p.965]."
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Define alar plate.",
+      "type": "answerable",
+      "old": "命中",
+      "new": "命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "The alar plate is on the dorsal side of the neuraltube and gives rise to neurons that will receive sensory input from the periphery [p.541].\n\nThe alar plate is a structure that forms part of the developing spinal cord. It is located on the dorsal (back) side of the neural tube and plays a crucial role in the formation of the central nervous system. The neurons that arise from the alar plate are responsible for receiving sensory information from the periphery, such as touch, temperature, and pain. These neurons are part of the sensory pathways that transmit this information to the brain for processing. The alar plate's role in sensory reception is essential for the body's ability to respond to external stimuli."
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Define anticodon.",
+      "type": "answerable",
+      "old": "命中",
+      "new": "命中",
+      "observed": "过度拒答",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Define aphasia.",
+      "type": "answerable",
+      "old": "命中",
+      "new": "命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "Aphasia is a disorder of language that results from damage to specific areas of the brain, affecting either the ability to produce speech (expressive aphasia) or the ability to understand language (receptive aphasia) [p.665]. Expressive aphasia, associated with Broca’s area, involves difficulty in producing speech, leading to non-fluent, broken, or halting speech, and sometimes a loss of grammatical structure [p.665]. Receptive aphasia, linked to Wernicke’s area, affects the comprehension of language, where individuals may speak fluently but fail to understand spoken or written words, often reporting confusion about their own speech [p.665]. Patients with expressive aphasia may struggle to use verbs or nouns, a condition known as V impairment or N impairment, or experience a dissociation between the two [p.666]. In contrast, those with receptive aphasia may have trouble interpreting the content of speech, even though they can produce speech without difficulty."
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Define hyperchloremia.",
+      "type": "answerable",
+      "old": "命中",
+      "new": "命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "Hyperchloremia is higher-than-normal blood chloride levels. [p.1214]\n\nHyperchloremia occurs when there is an abnormal increase in the concentration of chloride ions in the blood. [p.1214] This condition can result from various factors such as dehydration, excessive intake of dietary salt (NaCl), swallowing of seawater, aspirin intoxication, congestive heart failure, and the hereditary, chronic lung disease. [p.1214] Chloride is the predominant extracellular anion and plays a crucial role in maintaining the osmotic pressure gradient between the intracellular fluid (ICF) and extracellular fluid (ECF), as well as in balancing cations in the ECF to maintain electrical neutrality of this fluid. [p.1214]\n\nChloride functions to balance cations in the extracellular fluid (ECF), maintaining the electrical neutrality of this fluid. [p.1214] It is a major contributor to the osmotic pressure gradient between the intracellular fluid (ICF) and extracellular fluid (ECF), and plays an important role in maintaining proper hydration. [p.1214]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Describe afterload.",
+      "type": "answerable",
+      "old": "命中",
+      "new": "命中",
+      "observed": "过度拒答",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Describe anterior column.",
+      "type": "answerable",
+      "old": "过度拒答",
+      "new": "命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "The anterior column is composed of the anterior arches of the vertebrae, which form a bony ring along with the posterior arches. [p.292]\n**从结构上看**，the anterior column is part of the vertebral column, which is made up of vertebrae connected by intervertebral discs and supported by ligaments. [p.292] The anterior longitudinal ligament, one of the thickest portions, is found in the thoracic and lumbar regions of the vertebral column [p.282]. [p.292] The vertebral column also includes the atlas and axis, which are specialized vertebrae at the top of the spine that allow for head movement [p.292]. While the material provides information about the structure and function of the vertebral column, it does not specifically describe the anterior column in detail beyond its role in the bony ring. [p.292]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Describe antibody.",
+      "type": "answerable",
+      "old": "命中",
+      "new": "命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "Antibodies are glycoproteins consisting of two types of polypeptide chains with attached carbohydrates [p.961].\n\nAntibodies are made up of two identical heavy chains and two identical light chains, forming a four-chain structure. The heavy chains come together to form the Fc region, which is important for the antibody's function. The light chains, along with parts of the heavy chains, form the antigen-binding site, which allows the antibody to recognize and bind to specific antigens. This structure enables antibodies to play a crucial role in the immune system by neutralizing pathogens and marking them for destruction. The material does not provide information on the specific functions of the Fc region beyond its structural role."
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Describe autophagy.",
+      "type": "answerable",
+      "old": "过度拒答",
+      "new": "命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "Autophagy is the process of a cell digesting its own structures.\nAutophagy, often referred to as \"self-eating,\" is a critical cellular process that allows a cell to break down and recycle its own damaged or unnecessary components. This process is carried out by lysosomes, which contain enzymes capable of breaking down various biomolecules. [p.114] Additionally, lysosomes are essential for the breakdown of foreign materials, such as bacteria, which are engulfed by immune cells like white blood cells through a process called phagocytosis. The material highlights that autophagy is a key mechanism in cellular maintenance and defense [p.114]."
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Dorsiflexion of the foot with extension and splaying of the toes in response to the plantar reflex, normally suppressed by corticospinal input",
+      "type": "fuzzy_desc",
+      "old": "命中",
+      "new": "命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "**从功能上看**，the plantar reflex, also known as the Babinski reflex, is a primitive reflex that involves dorsiflexion of the foot and extension and splaying of the toes when the sole of the foot is stimulated. [p.680] This reflex is typically suppressed in adults due to the descending input from the corticospinal tract, which modifies the response of the plantar reflex. However, in cases of upper motor neuron lesions, this suppression is lost, leading to the manifestation of the Babinski sign. The material indicates that this reflex is present in infants but changes as they learn to walk, with the toes curling and a moderate plantar flexion occurring instead. The corticospinal tract plays a crucial role in modulating this reflex, ensuring that the response is appropriate for maintaining balance and coordination. [p.680]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Enzyme that hydrolyzes ATP to ADP",
+      "type": "fuzzy_desc",
+      "old": "命中",
+      "new": "命中",
+      "observed": "未命中",
+      "hit": false,
+      "abstained": false,
+      "answer": "The enzyme that hydrolyzes ATP to ADP is not explicitly named in the provided material.  \n\n**从功能上看**，the process of hydrolysis of ATP to ADP is described as a reaction that releases energy stored in the phosphate bonds, and this reaction is reversible, as when ADP undergoes phosphorylation [p.92]. However, the specific enzyme responsible for this hydrolysis is not mentioned in the text. The material discusses the role of ATP in cellular processes such as muscle contraction, where ATP hydrolysis is involved, but it does not identify the enzyme that catalyzes the hydrolysis of ATP to ADP."
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Explain the term action potential.",
+      "type": "answerable",
+      "old": "命中",
+      "new": "命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "An action potential is an electrical signal generated by neurons that travels along an axon to transmit information across the nervous system.  \n**从功能上看**，this signal is initiated when a stimulus causes the membrane potential to reach a threshold, triggering the opening of voltage-gated ion channels. Sodium ions rush into the cell, causing depolarization, which is followed by the opening of potassium channels and the efflux of potassium ions, leading to repolarization. The action potential has a characteristic shape and peaks at a consistent voltage of +30 mV, regardless of the strength of the stimulus. [p.519]  \n\nThe process is all-or-none, meaning that once the threshold is reached, the action potential occurs fully, and no additional strength is added to the signal. Instead, stronger stimuli result in more frequent action potentials rather than larger ones. This ensures that the signal remains consistent in magnitude but can vary in frequency to encode different levels of input. [p.505]  \n\nThe action potential is essential for communication within the nervous system, allowing for rapid transmission of signals over long distances. It relies on the precise regulation of ion movement across the membrane, facilitated by transmembrane ion channels, which control when ions can enter or exit the cell. [p.519]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Explain the term anatomy.",
+      "type": "answerable",
+      "old": "命中",
+      "new": "命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "Anatomy is the scientific study of the body’s structures. [p.24]\n\nAnatomy, derived from a Greek root meaning “to cut apart,” involves examining the body’s structures, both large and small, through methods such as dissection and microscopic analysis. This field has historically relied on observing injuries and dissecting cadavers, but modern techniques now include computer-assisted imaging to study the living body. The study of anatomy provides insight into the physical attributes and relationships of the body’s components, forming the foundation for understanding how these structures function in physiology. [p.24]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Explain the term antigen.",
+      "type": "answerable",
+      "old": "命中",
+      "new": "命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "An antigen is a substance that may trigger a defensive response from leukocytes of the immune system if the body does not recognize the antigen as belonging to \"self\" [p.775].\n\nAntigens are substances that the immune system recognizes as foreign, prompting an immune response. They can be large proteins, carbohydrates, lipids, or nucleic acids, and they are often found on the surface of pathogens or cells. In the context of blood transfusions, antigens on red blood cells are referred to as isoantigens or agglutinogens, and they can trigger reactions when incompatible blood is transfused. Antigens can also be internalized by antigen-presenting cells, where they are processed into smaller fragments and displayed on the cell surface using MHC molecules to activate T-cells [p.954]."
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Explain the term dehydration.",
+      "type": "answerable",
+      "old": "命中",
+      "new": "命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "**从功能上看**，dehydration occurs when the body's water content is too low to maintain proper physiological processes. [p.1210] The body may also fail to retain enough water due to hormonal imbalances, such as a deficiency in antidiuretic hormone (ADH), which regulates water reabsorption in the kidneys [p.1226]. [p.1210] Infants are particularly vulnerable because their small body size means they can become dangerously dehydrated quickly. [p.1210]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Give the definition of accessory digestive organ.",
+      "type": "answerable",
+      "old": "命中",
+      "new": "命中",
+      "observed": "过度拒答",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Give the definition of anterograde amnesia.",
+      "type": "answerable",
+      "old": "命中",
+      "new": "命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "In the case of Henry Molaison, also known as patient HM, a bilateral lobectomy in 1953 to treat epilepsy led to this condition, where he could no longer form new memories, despite retaining his ability to recall past events. [p.664]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Give the definition of artificial pacemaker.",
+      "type": "answerable",
+      "old": "命中",
+      "new": "命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "An artificial pacemaker is a device that delivers electrical impulses to the heart muscle to ensure that the heart continues to contract and pump blood effectively [p.821].\n\nArtificial pacemakers are designed to help the heart maintain a regular rhythm by sending electrical signals to the heart muscle. These devices can be programmed by cardiologists to provide stimulation either temporarily upon demand or on a continuous basis. Some advanced models also include built-in defibrillators to manage abnormal heart rhythms. The primary function of an artificial pacemaker is to take over the role of the heart's natural pacemaker cells when they fail to generate adequate electrical impulses, ensuring that the heart beats properly and efficiently."
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Internalization and digestion of antigen in an antigen-presenting cell",
+      "type": "fuzzy_desc",
+      "old": "命中",
+      "new": "命中",
+      "observed": "命中",
+      "hit": true,
+      "abstained": false,
+      "answer": "Antigen internalization and digestion in an antigen-presenting cell is a key step in antigen processing. [p.980]\n**从功能上看**，this process involves the internalization of antigens by the antigen-presenting cell, followed by their digestion into smaller peptide fragments. [p.954] These fragments are then loaded onto major histocompatibility complex (MHC) molecules and presented on the cell surface for recognition by T cells. [p.954] The internalization of antigens is a critical first step, allowing the cell to break down and process the antigen into forms that can be recognized by the immune system. [p.980] The digestion of antigens occurs within the endomembrane system of the cell, where enzymes cleave the antigen into smaller pieces. [p.954] This process is essential for the immune system to detect and respond to pathogens, as it enables T cells to recognize antigens that have been processed and presented by antigen-presenting cells. [p.954]"
+    }
+  ]
+}

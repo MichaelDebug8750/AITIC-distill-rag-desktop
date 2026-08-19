@@ -1,0 +1,237 @@
+{
+  "seed": null,
+  "mode": "unseeded",
+  "rows": 20,
+  "outcomes": {
+    "拒答正确": 19,
+    "编造": 1
+  },
+  "same_as_old": 18,
+  "same_as_new": 19,
+  "answerable_hits": 0,
+  "correct_refusals": 19,
+  "fabrications": 1,
+  "elapsed_seconds": 898.93,
+  "results": [
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Define cognitive empathy.",
+      "type": "unanswerable",
+      "old": "编造",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Define elasticity of savings.",
+      "type": "unanswerable",
+      "old": "编造",
+      "new": "拒答正确",
+      "observed": "编造",
+      "hit": null,
+      "abstained": false,
+      "answer": "Elasticity of savings is not a term defined in the provided material. [p.416]\n\n**From the concept of elasticity** as described in the text, elasticity refers to the ability to stretch and rebound, a property associated with elastic fibers and tissues. [p.416] This property allows materials to return to their original shape after being stretched or compressed. [p.416] The material specifically mentions that the property of elastin is that after being stretched or compressed, it will return to its original shape, and elastic fibers are prominent in elastic tissues found in skin and the elastic ligaments of the vertebral column. [p.162]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Describe lean process.",
+      "type": "unanswerable",
+      "old": "编造",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Explain the term direct labor time variance.",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Explain the term knowledge economy.",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Give the definition of Pearson correlation coefficient.",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "Give the definition of party press era.",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What are free-market economics?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What are the main ingredients of Neapolitan pizza dough?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What does diversity training mean?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What does fiscal policy mean?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What does the term midterm elections refer to?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What does the term search warrant refer to?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What is a diathesis-stress model?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What is a head of state?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What is a market failure?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What is a reasonably possible?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What is an equal-time rule?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What is meant by police state?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e",
+      "question": "What is meant by select committee?",
+      "type": "unanswerable",
+      "old": "拒答正确",
+      "new": "拒答正确",
+      "observed": "拒答正确",
+      "hit": null,
+      "abstained": true,
+      "answer": "[NO REFERENCE FOUND]"
+    }
+  ]
+}

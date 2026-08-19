@@ -1,0 +1,368 @@
+{
+  "file": "focus_floor_en_repaired_20260816_rows.jsonl",
+  "pairs": 2014,
+  "arms": {
+    "A": {
+      "n": 1007,
+      "outcome_flips": 90,
+      "outcome_flip_rate": 0.0894,
+      "abstain_flips": 68,
+      "abstain_flip_rate": 0.0675,
+      "answer_text_changes": 601,
+      "answer_text_change_rate": 0.5968,
+      "by_type": {
+        "answerable": {
+          "n": 494,
+          "outcome_flips": 43,
+          "outcome_flip_rate": 0.087,
+          "abstain_flips": 33,
+          "abstain_flip_rate": 0.0668
+        },
+        "fuzzy_desc": {
+          "n": 103,
+          "outcome_flips": 14,
+          "outcome_flip_rate": 0.1359,
+          "abstain_flips": 8,
+          "abstain_flip_rate": 0.0777
+        },
+        "fuzzy_kw": {
+          "n": 110,
+          "outcome_flips": 17,
+          "outcome_flip_rate": 0.1545,
+          "abstain_flips": 11,
+          "abstain_flip_rate": 0.1
+        },
+        "unanswerable": {
+          "n": 300,
+          "outcome_flips": 16,
+          "outcome_flip_rate": 0.0533,
+          "abstain_flips": 16,
+          "abstain_flip_rate": 0.0533
+        }
+      },
+      "passes": {
+        "1": {
+          "拒答正确": 276,
+          "命中": 541,
+          "过度拒答": 78,
+          "未命中": 88,
+          "编造": 24
+        },
+        "2": {
+          "拒答正确": 272,
+          "命中": 548,
+          "未命中": 91,
+          "编造": 28,
+          "过度拒答": 68
+        }
+      },
+      "fabrication_pass1": 24,
+      "fabrication_pass2": 28,
+      "fabrication_intersection": 18,
+      "fabrication_union": 34,
+      "flip_examples": [
+        {
+          "book": "microbiology",
+          "question": "Summarize what the text covers on microbial metabolism.",
+          "from": "命中",
+          "to": "未命中"
+        },
+        {
+          "book": "anatomy_and_physiology_2e",
+          "question": "internalization antigen-presenting digestion",
+          "from": "过度拒答",
+          "to": "未命中"
+        },
+        {
+          "book": "businessethics",
+          "question": "communications allows electronic",
+          "from": "命中",
+          "to": "未命中"
+        },
+        {
+          "book": "microbiology",
+          "question": "What is the role of microbial growth?",
+          "from": "命中",
+          "to": "过度拒答"
+        },
+        {
+          "book": "microbiology",
+          "question": "What does A-B exotoxin mean?",
+          "from": "过度拒答",
+          "to": "命中"
+        },
+        {
+          "book": "psychology2e_web",
+          "question": "Increase in performance of individuals who are noticed, watched, and paid attention to by researchers or supervisors",
+          "from": "过度拒答",
+          "to": "命中"
+        },
+        {
+          "book": "businessethics",
+          "question": "shape combination personality",
+          "from": "未命中",
+          "to": "过度拒答"
+        },
+        {
+          "book": "conceptsofbiology",
+          "question": "Explain the term biosphere.",
+          "from": "命中",
+          "to": "过度拒答"
+        },
+        {
+          "book": "businessethics",
+          "question": "Legal doctrine holding that a corporation, separate and apart from the people who are its owners and managers, has some of the same legal rights and",
+          "from": "命中",
+          "to": "未命中"
+        },
+        {
+          "book": "anatomy_and_physiology_2e",
+          "question": "Describe afterload.",
+          "from": "命中",
+          "to": "过度拒答"
+        },
+        {
+          "book": "operatingsystemsthreeeasypieces",
+          "question": "What does this book say about arpaci-dusseau?",
+          "from": "命中",
+          "to": "未命中"
+        },
+        {
+          "book": "psychology2e_web",
+          "question": "What is an American Psychological Association?",
+          "from": "命中",
+          "to": "过度拒答"
+        },
+        {
+          "book": "theinterpretationofdreamssigmundfreud",
+          "question": "What is the role of dream-images?",
+          "from": "命中",
+          "to": "过度拒答"
+        },
+        {
+          "book": "anatomy_and_physiology_2e",
+          "question": "interspersed animal surrounding",
+          "from": "过度拒答",
+          "to": "未命中"
+        },
+        {
+          "book": "operatingsystemsthreeeasypieces",
+          "question": "What is the role of address translation?",
+          "from": "过度拒答",
+          "to": "命中"
+        },
+        {
+          "book": "principlesofmicroeconomics",
+          "question": "When the elasticity of supply is less than one, indicating that a 1 percent increase in price paid to the firm will result in a less than 1 percent increase in",
+          "from": "未命中",
+          "to": "命中"
+        },
+        {
+          "book": "microbiology",
+          "question": "What does this book say about control microbial?",
+          "from": "未命中",
+          "to": "命中"
+        },
+        {
+          "book": "operatingsystemsthreeeasypieces",
+          "question": "What is the role of deadlock?",
+          "from": "过度拒答",
+          "to": "命中"
+        },
+        {
+          "book": "psychology2e_web",
+          "question": "What does binaural cue mean?",
+          "from": "过度拒答",
+          "to": "命中"
+        },
+        {
+          "book": "conceptsofbiology",
+          "question": "Define strategic plan.",
+          "from": "编造",
+          "to": "拒答正确"
+        }
+      ]
+    },
+    "B": {
+      "n": 1007,
+      "outcome_flips": 93,
+      "outcome_flip_rate": 0.0924,
+      "abstain_flips": 71,
+      "abstain_flip_rate": 0.0705,
+      "answer_text_changes": 610,
+      "answer_text_change_rate": 0.6058,
+      "by_type": {
+        "answerable": {
+          "n": 494,
+          "outcome_flips": 48,
+          "outcome_flip_rate": 0.0972,
+          "abstain_flips": 38,
+          "abstain_flip_rate": 0.0769
+        },
+        "fuzzy_desc": {
+          "n": 103,
+          "outcome_flips": 16,
+          "outcome_flip_rate": 0.1553,
+          "abstain_flips": 9,
+          "abstain_flip_rate": 0.0874
+        },
+        "fuzzy_kw": {
+          "n": 110,
+          "outcome_flips": 17,
+          "outcome_flip_rate": 0.1545,
+          "abstain_flips": 12,
+          "abstain_flip_rate": 0.1091
+        },
+        "unanswerable": {
+          "n": 300,
+          "outcome_flips": 12,
+          "outcome_flip_rate": 0.04,
+          "abstain_flips": 12,
+          "abstain_flip_rate": 0.04
+        }
+      },
+      "passes": {
+        "1": {
+          "拒答正确": 272,
+          "命中": 553,
+          "未命中": 90,
+          "过度拒答": 64,
+          "编造": 28
+        },
+        "2": {
+          "拒答正确": 276,
+          "命中": 545,
+          "未命中": 95,
+          "过度拒答": 67,
+          "编造": 24
+        }
+      },
+      "fabrication_pass1": 28,
+      "fabrication_pass2": 24,
+      "fabrication_intersection": 20,
+      "fabrication_union": 32,
+      "flip_examples": [
+        {
+          "book": "anatomy_and_physiology_2e",
+          "question": "internalization antigen-presenting digestion",
+          "from": "命中",
+          "to": "过度拒答"
+        },
+        {
+          "book": "microbiology",
+          "question": "What does the term A site refer to?",
+          "from": "命中",
+          "to": "过度拒答"
+        },
+        {
+          "book": "microbiology",
+          "question": "What is the role of microbial growth?",
+          "from": "过度拒答",
+          "to": "命中"
+        },
+        {
+          "book": "businessethics",
+          "question": "What is a cap and trade?",
+          "from": "命中",
+          "to": "过度拒答"
+        },
+        {
+          "book": "microbiology",
+          "question": "What does A-B exotoxin mean?",
+          "from": "过度拒答",
+          "to": "命中"
+        },
+        {
+          "book": "psychology2e_web",
+          "question": "Increase in performance of individuals who are noticed, watched, and paid attention to by researchers or supervisors",
+          "from": "过度拒答",
+          "to": "命中"
+        },
+        {
+          "book": "businessethics",
+          "question": "shape combination personality",
+          "from": "过度拒答",
+          "to": "未命中"
+        },
+        {
+          "book": "psychology2e_web",
+          "question": "customs traditions beliefs",
+          "from": "过度拒答",
+          "to": "未命中"
+        },
+        {
+          "book": "businessethics",
+          "question": "Legal doctrine holding that a corporation, separate and apart from the people who are its owners and managers, has some of the same legal rights and",
+          "from": "未命中",
+          "to": "命中"
+        },
+        {
+          "book": "operatingsystemsthreeeasypieces",
+          "question": "Explain the term rally around the flag effect.",
+          "from": "编造",
+          "to": "拒答正确"
+        },
+        {
+          "book": "thinkpythonallendowney",
+          "question": "What is a benchmarking?",
+          "from": "命中",
+          "to": "未命中"
+        },
+        {
+          "book": "anatomy_and_physiology_2e",
+          "question": "Describe afterload.",
+          "from": "过度拒答",
+          "to": "命中"
+        },
+        {
+          "book": "operatingsystemsthreeeasypieces",
+          "question": "What does this book say about arpaci-dusseau?",
+          "from": "命中",
+          "to": "未命中"
+        },
+        {
+          "book": "anatomy_and_physiology_2e",
+          "question": "interspersed animal surrounding",
+          "from": "未命中",
+          "to": "过度拒答"
+        },
+        {
+          "book": "microbiology",
+          "question": "What does this book say about control microbial?",
+          "from": "命中",
+          "to": "未命中"
+        },
+        {
+          "book": "operatingsystemsthreeeasypieces",
+          "question": "What is the role of deadlock?",
+          "from": "命中",
+          "to": "过度拒答"
+        },
+        {
+          "book": "psychology2e_web",
+          "question": "What does binaural cue mean?",
+          "from": "命中",
+          "to": "过度拒答"
+        },
+        {
+          "book": "conceptsofbiology",
+          "question": "Define strategic plan.",
+          "from": "拒答正确",
+          "to": "编造"
+        },
+        {
+          "book": "anatomy_and_physiology_2e",
+          "question": "What is meant by autolysis?",
+          "from": "命中",
+          "to": "过度拒答"
+        },
+        {
+          "book": "microbiology",
+          "question": "What does this book say about microbial?",
+          "from": "过度拒答",
+          "to": "命中"
+        }
+      ]
+    }
+  }
+}

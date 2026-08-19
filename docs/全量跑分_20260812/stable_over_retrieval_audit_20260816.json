@@ -1,0 +1,2956 @@
+{
+  "schema": 1,
+  "base_url": "http://127.0.0.1:8022",
+  "cases": 39,
+  "by_type": {
+    "answerable": 36,
+    "fuzzy_desc": 3
+  },
+  "keyword_recalled": 37,
+  "term_recalled": 36,
+  "reports": [
+    {
+      "book": "Anatomy_and_Physiology_2e.pdf",
+      "question": "Describe actin.",
+      "type": "answerable",
+      "term": "actin",
+      "keywords": [
+        "actin",
+        "myofilaments",
+        "sarcomere"
+      ],
+      "matched_keywords": [
+        "actin",
+        "sarcomere"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 0.7833,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "Anatomy_and_Physiology_2e · p395",
+          "type": "text",
+          "text": "actin at the binding sites, detach, re-cock, attach to more binding sites, pull, detach, re-cock, etc.This repeatedmovement is known as the cross-bridge cycle.This motion of the myosin heads is similar to the oars when anindividual rows a boat: The paddle of the oars (the myosin heads) pull, are lifted from the water (detach),repositioned (re-cocked) and then immersed again to pull (Figure 10.11).Each cycle requires energy, and the actionof the myosin heads in the sarcomeres repetitively pulling on the thin filaments also requires energy, which is",
+          "distance": 0.7833
+        },
+        {
+          "index": 2,
+          "label": "Anatomy_and_Physiology_2e · p1067",
+          "type": "text",
+          "text": "absorption occurs.",
+          "distance": 0.8042
+        },
+        {
+          "index": 3,
+          "label": "Anatomy_and_Physiology_2e · p202",
+          "type": "text",
+          "text": "skin.",
+          "distance": 0.8188
+        },
+        {
+          "index": 4,
+          "label": "Anatomy_and_Physiology_2e · p395",
+          "type": "text",
+          "text": "provided by ATP.",
+          "distance": 0.825
+        },
+        {
+          "index": 5,
+          "label": "Anatomy_and_Physiology_2e · p396",
+          "type": "text",
+          "text": "it.As actin is pulled, the filaments move approximately 10 nm toward the M-line.This movement is called the powerstroke, as movement of the thin filament occurs at this step (Figure 10.11c).In the absence of ATP, the myosin headwill not detach from actin.One part of the myosin head attaches to the binding site on the actin, but the head has another binding site for ATP.38010 • Muscle TissueAccess for free at openstax.org",
+          "distance": 0.8426
+        },
+        {
+          "index": 6,
+          "label": "Anatomy_and_Physiology_2e · p118",
+          "type": "text",
+          "text": "p118: a protein that forms chains, is the primary component of these microfilaments.Actin fibers, twisted chains of actinfilaments, constitute a large component of muscle tissue and, along with the protein myosin, are responsible formuscle contraction.Like microtubules, actin filaments are long chains of single subunits (called actin subunits).Inmuscle cells, these long actin strands, called thin filaments, are “pulled” by thick filaments of the myosin protein to",
+          "distance": 0.8569
+        },
+        {
+          "index": 7,
+          "label": "Anatomy_and_Physiology_2e · p435",
+          "type": "text",
+          "text": "are acting in a coordinated pattern.",
+          "distance": 0.863
+        },
+        {
+          "index": 8,
+          "label": "Anatomy_and_Physiology_2e · p752",
+          "type": "text",
+          "text": "a position.",
+          "distance": 0.8667
+        }
+      ]
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e.pdf",
+      "question": "Describe afterload.",
+      "type": "answerable",
+      "term": "afterload",
+      "keywords": [
+        "afterload",
+        "effectively"
+      ],
+      "matched_keywords": [
+        "afterload"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 0.8397,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "Anatomy_and_Physiology_2e · p509",
+          "type": "text",
+          "text": "INTERACTIVE LINK Explain your answer.",
+          "distance": 0.8397
+        },
+        {
+          "index": 2,
+          "label": "Anatomy_and_Physiology_2e · p1079",
+          "type": "text",
+          "text": "p1079: the next meal.",
+          "distance": 0.8649
+        },
+        {
+          "index": 3,
+          "label": "Anatomy_and_Physiology_2e · p433",
+          "type": "text",
+          "text": "toward the midline).",
+          "distance": 0.9005
+        },
+        {
+          "index": 4,
+          "label": "Anatomy_and_Physiology_2e · p752",
+          "type": "text",
+          "text": "a position.",
+          "distance": 0.9084
+        },
+        {
+          "index": 5,
+          "label": "Anatomy_and_Physiology_2e · p19",
+          "type": "text",
+          "text": "There may be some variation.Preface3",
+          "distance": 0.9112
+        },
+        {
+          "index": 6,
+          "label": "Anatomy_and_Physiology_2e · p1325",
+          "type": "text",
+          "text": "afterbirth  1279Afterload  819agglutination  759agonist  410, 628agranular leukocytes  750ala  974alar cartilage  975alar plate  525alarm reaction  707Albinism  175Albumin  734Aldosterone  707alimentary canal  1025Alkaloids  560allantois  1263allele  1286alpha (α)-adrenergic receptor613alpha cell  712Alveolar dead space  993alveolar duct  982alveolar macrophage  983alveolar pores  982Alveolar process of the mandible250alveolar process of the maxilla",
+          "distance": 0.9159
+        },
+        {
+          "index": 7,
+          "label": "Anatomy_and_Physiology_2e · p537",
+          "type": "text",
+          "text": "system.",
+          "distance": 0.9179
+        },
+        {
+          "index": 8,
+          "label": "Anatomy_and_Physiology_2e · p395",
+          "type": "text",
+          "text": "provided by ATP.",
+          "distance": 0.9292
+        }
+      ]
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e.pdf",
+      "question": "Describe anterior column.",
+      "type": "answerable",
+      "term": "anterior column",
+      "keywords": [
+        "anterior column",
+        "horns"
+      ],
+      "matched_keywords": [
+        "horns"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": false,
+      "best_distance": 0.8256,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "Anatomy_and_Physiology_2e · p591",
+          "type": "text",
+          "text": "LEARNING OBJECTIVES The dorsal column is separated into two component",
+          "distance": 0.8256
+        },
+        {
+          "index": 2,
+          "label": "Anatomy_and_Physiology_2e · p292",
+          "type": "text",
+          "text": "7.3 The Vertebral Column consists of bony ring formed by the anterior andposterior arches.The atlas articulates with the densfrom the axis.A typical thoracic vertebra isdistinguished by its long, downward projecting spinous276     7 • Chapter ReviewAccess for free at openstax.org",
+          "distance": 0.8351
+        },
+        {
+          "index": 3,
+          "label": "Anatomy_and_Physiology_2e · p509",
+          "type": "text",
+          "text": "INTERACTIVE LINK Explain your answer.",
+          "distance": 0.8478
+        },
+        {
+          "index": 4,
+          "label": "Anatomy_and_Physiology_2e · p282",
+          "type": "text",
+          "text": "INTERACTIVE LINK Use this tool (http://openstax.org/l/vertcolumn) to identify the bones, intervertebral discs, and ligaments of thevertebral column.The thickest portions of the anterior longitudinal ligament and the supraspinous ligament arefound in which regions of the vertebral column?",
+          "distance": 0.8663
+        },
+        {
+          "index": 5,
+          "label": "Anatomy_and_Physiology_2e · p296",
+          "type": "text",
+          "text": "locations, and the bones united by each.31 .Describe the anterior, middle, and posteriorcranial fossae and their boundaries, and give themidline structure that divides each into right andleft areas.32 .Describe the parts of the nasal septum in boththe dry and living skull.33 .Describe the vertebral column and define eachregion.34 .Describe a typical vertebra.35 .Describe the sacrum.36 .Describe the structure and function of anintervertebral disc.",
+          "distance": 0.8744
+        },
+        {
+          "index": 6,
+          "label": "Anatomy_and_Physiology_2e · p1074",
+          "type": "text",
+          "text": "anal columns and one at the anus.Depressions between the anal columns, each called an anal sinus, secrete mucus that facilitates defecation.Thepectinate line (or dentate line) is a horizontal, jagged band that runs circumferentially just below the level of theanal sinuses, and represents the junction between the hindgut and external skin.The mucosa above this line is fairlyinsensitive, whereas the area below is very sensitive.The resulting difference in pain threshold is due to the fact that",
+          "distance": 0.8839
+        },
+        {
+          "index": 7,
+          "label": "Anatomy_and_Physiology_2e · p272",
+          "type": "text",
+          "text": "LEARNING OBJECTIVES The vertebral column is also known as the spinal column or spine (Figure 7.20).It consists of a sequence ofvertebrae (singular = vertebra), each of which is separated and united by an intervertebral disc.Together, thevertebrae and intervertebral discs form the vertebral column.It is a flexible column that supports the head, neck,and body and allows for their movements.It also protects the spinal cord, which passes down the back throughopenings in the vertebrae.",
+          "distance": 0.8886
+        },
+        {
+          "index": 8,
+          "label": "Anatomy_and_Physiology_2e · p542",
+          "type": "text",
+          "text": "p542: FIGURE 13.14 Cross-section of Spinal Cord The cross-section of a thoracic spinal cord segment shows the posterior, anterior, and lateralhorns of gray matter, as well as the posterior, anterior, and lateral columns of white matter.LM × 40.(Micrograph provided by the Regents ofUniversity of Michigan Medical School © 2012)White ColumnsJust as the gray matter is separated into horns, the white matter of the spinal cord is separated into columns.",
+          "distance": 0.892
+        }
+      ]
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e.pdf",
+      "question": "Explain the term alveolar process of the mandible.",
+      "type": "answerable",
+      "term": "alveolar process of the mandible",
+      "keywords": [
+        "alveolar process of the mandible",
+        "mandibular"
+      ],
+      "matched_keywords": [
+        "alveolar process of the mandible",
+        "mandibular"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 0.6341,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "Anatomy_and_Physiology_2e · p287",
+          "type": "text",
+          "text": "p287: Key Termsalveolar process of the mandible  upper border ofmandibular body that contains the lower teethalveolar process of the maxilla  curved, inferiormargin of the maxilla that supports and anchors theupper teethangle of the mandible  rounded corner located atoutside margin of the body and ramus junctionangle of the rib  portion of rib with greatest curvature;together, the rib angles form the most posteriorextent of the thoracic cageanterior (ventral) sacral foramen  one of the series of",
+          "distance": 0.6341
+        },
+        {
+          "index": 2,
+          "label": "Anatomy_and_Physiology_2e · p287",
+          "type": "text",
+          "text": "vertebral column that is formed by the fusion of fourcoccygeal vertebrae; also referred to as the“tailbone”condylar process of the mandible  thickened upwardprojection from posterior margin of mandibularramuscondyle  oval-shaped process located at the top ofthe condylar process of the mandiblecoronal suture  joint that unites the frontal bone tothe right and left parietal bones across the top ofthe skullcoronoid process of the mandible  flattened upward",
+          "distance": 0.7273
+        },
+        {
+          "index": 3,
+          "label": "Anatomy_and_Physiology_2e · p264",
+          "type": "text",
+          "text": "4).The curved, inferior margin of the maxillary bone that forms the upper jaw and contains the upper teeth is thealveolar process of the maxilla (Figure 7.14).Each tooth is anchored into a deep socket called an alveolus.On theanterior maxilla, just below the orbit, is the infraorbital foramen.This is the point of exit for a sensory nerve thatsupplies the nose, upper lip, and anterior cheek.On the inferior skull, the palatine process from each maxillary",
+          "distance": 0.7393
+        },
+        {
+          "index": 4,
+          "label": "Anatomy_and_Physiology_2e · p266",
+          "type": "text",
+          "text": "Important landmarks for the mandible include the following:• Alveolar process of the mandible—This is the upper border of the mandibular body and serves to anchor thelower teeth.• Mental protuberance—The forward projection from the inferior margin of the anterior mandible that forms thechin (mental = “chin”).• Mental foramen—The opening located on each side of the anterior-lateral mandible, which is the exit site for asensory nerve that supplies the chin.",
+          "distance": 0.7509
+        },
+        {
+          "index": 5,
+          "label": "Anatomy_and_Physiology_2e · p360",
+          "type": "text",
+          "text": "condyle of the mandible, with an articular disc located between these bones.During depression of the mandible (opening of the mouth),the mandibular condyle moves both forward and hinges downward as it travels from the mandibular fossa onto the articular tubercle.",
+          "distance": 0.7614
+        },
+        {
+          "index": 6,
+          "label": "Anatomy_and_Physiology_2e · p266",
+          "type": "text",
+          "text": "mandible of the adult skull.Each side of the mandible consists of a horizontal body and posteriorly, a verticallyoriented ramus of the mandible (ramus = “branch”).The outside margin of the mandible, where the body andramus come together is called the angle of the mandible (Figure 7.15).The ramus on each side of the mandible has two upward-going bony projections.The more anterior projection is theflattened coronoid process of the mandible, which provides attachment for one of the biting muscles.",
+          "distance": 0.7783
+        },
+        {
+          "index": 7,
+          "label": "Anatomy_and_Physiology_2e · p360",
+          "type": "text",
+          "text": "mandible, is a flexible articular disc (Figure 9.15).This disc serves to smooth the movements between the temporalbone and mandibular condyle.Movement at the TMJ during opening and closing of the mouth involves both gliding and hinge motions of themandible.With the mouth closed, the mandibular condyle and articular disc are located within the mandibular fossaof the temporal bone.During opening of the mouth, the mandible hinges downward and at the same time is pulled",
+          "distance": 0.7862
+        },
+        {
+          "index": 8,
+          "label": "Anatomy_and_Physiology_2e · p1055",
+          "type": "text",
+          "text": "p1055: FIGURE 23.10 Permanent and Deciduous Teeth This figure of two human dentitions shows the arrangement of teeth in the maxilla andmandible, and the relationship between the deciduous and permanent teeth.Anatomy of a ToothThe teeth are secured in the alveolar processes (sockets) of the maxilla and the mandible.Gingivae (commonlycalled the gums) are soft tissues that line the alveolar processes and surround the necks of the teeth.Teeth are also",
+          "distance": 0.806
+        }
+      ]
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e.pdf",
+      "question": "Give the definition of accessory digestive organ.",
+      "type": "answerable",
+      "term": "accessory digestive organ",
+      "keywords": [
+        "accessory digestive organ",
+        "gallbladder",
+        "salivary"
+      ],
+      "matched_keywords": [
+        "accessory digestive organ",
+        "gallbladder",
+        "salivary"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 0.6635,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "Anatomy_and_Physiology_2e · p1092",
+          "type": "text",
+          "text": "p1092: Key Termsabsorption  passage of digested products from theintestinal lumen through mucosal cells and into thebloodstream or lactealsaccessory digestive organ  includes teeth, tongue,salivary glands, gallbladder, liver, and pancreasaccessory duct  (also, duct of Santorini) duct that runsfrom the pancreas into the duodenumacinus  cluster of glandular epithelial cells in thepancreas that secretes pancreatic juice in thepancreasalimentary canal  continuous muscular digestive tube",
+          "distance": 0.6635
+        },
+        {
+          "index": 2,
+          "label": "Anatomy_and_Physiology_2e · p1095",
+          "type": "text",
+          "text": "23.1 Overview of the Digestive System The digestive system includes the organs of thealimentary canal and accessory structures.Thealimentary canal forms a continuous tube that is opento the outside environment at both ends.The organs ofthe alimentary canal are the mouth, pharynx,esophagus, stomach, small intestine, and largeintestine.The accessory digestive structures includethe teeth, tongue, salivary glands, liver, pancreas, andgallbladder.The wall of the alimentary canal iscomposed of four basic tissue layers: mucosa,",
+          "distance": 0.6827
+        },
+        {
+          "index": 3,
+          "label": "Anatomy_and_Physiology_2e · p1076",
+          "type": "text",
+          "text": "LEARNING OBJECTIVES 24).The digestive role of the liver is to produce bile and export it to theduodenum.The gallbladder primarily stores, concentrates, and releases bile.The pancreas produces pancreaticjuice, which contains digestive enzymes and bicarbonate ions, and delivers it to the duodenum.FIGURE 23.24 Accessory Organs The liver, pancreas, and gallbladder are considered accessory digestive organs, but their roles in thedigestive system are vital.106023 • The Digestive System",
+          "distance": 0.6995
+        },
+        {
+          "index": 4,
+          "label": "Anatomy_and_Physiology_2e · p1079",
+          "type": "text",
+          "text": "INTERACTIVE LINK These vital23.6 • Accessory Organs in Digestion: The Liver, Pancreas, and Gallbladder1063",
+          "distance": 0.7097
+        },
+        {
+          "index": 5,
+          "label": "Anatomy_and_Physiology_2e · p1041",
+          "type": "text",
+          "text": "intestineTABLE 23.1Digestive System OrgansThe easiest way to understand the digestive system is to divide its organs into two main categories.The first group isthe organs that make up the alimentary canal.Accessory digestive organs comprise the second group and arecritical for orchestrating the breakdown of food and the assimilation of its nutrients into the body.Accessorydigestive organs, despite their name, are critical to the function of the digestive system.",
+          "distance": 0.7182
+        },
+        {
+          "index": 6,
+          "label": "Anatomy_and_Physiology_2e · p14",
+          "type": "text",
+          "text": "23.5 The Small and Large Intestines 105023.6 Accessory Organs in Digestion: The Liver, Pancreas, and Gallbladder1060",
+          "distance": 0.7514
+        },
+        {
+          "index": 7,
+          "label": "Anatomy_and_Physiology_2e · p1041",
+          "type": "text",
+          "text": "3).Within the mouth, the teeth andtongue begin mechanical digestion, whereas the salivary glands begin chemical digestion.Once food products enterthe small intestine, the gallbladder, liver, and pancreas release secretions—such as bile and enzymes—essential fordigestion to continue.Together, these are called accessory organs because they sprout from the lining cells of thedeveloping gut (mucosa) and augment its function; indeed, you could not live without their vital contributions, and",
+          "distance": 0.7861
+        },
+        {
+          "index": 8,
+          "label": "Anatomy_and_Physiology_2e · p1041",
+          "type": "text",
+          "text": "the pharynx, esophagus, stomach, and small and large intestines to fit the functional needs of the body.Both themouth and anus are open to the external environment; thus, food and wastes within the alimentary canal aretechnically considered to be outside the body.Only through the process of absorption do the nutrients in food enterinto and nourish the body’s “inner space.”Accessory StructuresEach accessory digestive organ aids in the breakdown of food (Figure 23.",
+          "distance": 0.7978
+        }
+      ]
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e.pdf",
+      "question": "Give the definition of hypercapnia.",
+      "type": "answerable",
+      "term": "hypercapnia",
+      "keywords": [
+        "hypercapnia",
+        "elevated",
+        "abnormally"
+      ],
+      "matched_keywords": [
+        "hypercapnia",
+        "elevated",
+        "abnormally"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 1.0031,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "Anatomy_and_Physiology_2e · p405",
+          "type": "text",
+          "text": "by hyperreflexia (excessive reflex responses), often the result of damage to upper motor neurons in the CNS.Hypertonia can present with muscle rigidity (as seen in Parkinson’s disease) or spasticity, a phasic change in muscletone, where a limb will “snap” back from passive stretching (as seen in some strokes).",
+          "distance": 1.0031
+        },
+        {
+          "index": 2,
+          "label": "Anatomy_and_Physiology_2e · p1220",
+          "type": "text",
+          "text": "including pneumonia and congestive heart failure.Reduced breathing (hypoventilation) due to drugs such asmorphine, barbiturates, or ethanol (or even just holding one’s breath) can also result in hypercapnia.Hypocapnia, orabnormally low blood levels of CO2, occurs with any cause of hyperventilation that drives off the CO2, such assalicylate toxicity, elevated room temperatures, fever, or hysteria.Renal Regulation of Acid-Base BalanceThe renal regulation of the body’s acid-base balance addresses the metabolic component of the buffering system.",
+          "distance": 1.0138
+        },
+        {
+          "index": 3,
+          "label": "Anatomy_and_Physiology_2e · p1334",
+          "type": "text",
+          "text": "p1334: hypertonic  91hypertrophic cardiomyopathy776hypertrophy  390hyperventilation  1007Hypervolemia  850hypoblast  1263Hypocalcemia  225, 1199Hypocapnia  1204Hypochloremia  1198hypodermis  172hypoglossal canal  254hypoglossal nerve  538Hypokalemia  1198Hyponatremia  1197hyponychium  179hypoparathyroidism  705Hypophosphatemia  1199hypophyseal (pituitary) fossa244hypophyseal portal system  694hypothalamus  521, 692hypothenar  444hypothenar eminence  444",
+          "distance": 1.0569
+        },
+        {
+          "index": 4,
+          "label": "Anatomy_and_Physiology_2e · p1226",
+          "type": "text",
+          "text": "fluids found in other reservoirs in the bodyfluid compartment  fluid inside all cells of the bodyconstitutes a compartment system that is largelysegregated from other systemshydrostatic pressure  pressure exerted by a fluidagainst a wall, caused by its own weight or pumpingforcehypercalcemia  abnormally increased blood levels ofcalciumhypercapnia  abnormally elevated blood levels of CO2hyperchloremia  higher-than-normal blood chloridelevelshyperkalemia  higher-than-normal blood potassium",
+          "distance": 1.0609
+        },
+        {
+          "index": 5,
+          "label": "Anatomy_and_Physiology_2e · p137",
+          "type": "text",
+          "text": "hydrophobic  describes a substance or structurerepelled by waterhypertonic  describes a solution concentration that ishigher than a reference concentrationhypotonic  describes a solution concentration that islower than a reference concentrationintegral protein  membrane-associated protein thatspans the entire width of the lipid bilayerintermediate filament  type of cytoskeletal filamentmade of keratin, characterized by an intermediatethickness, and playing a role in resisting cellular",
+          "distance": 1.0955
+        },
+        {
+          "index": 6,
+          "label": "Anatomy_and_Physiology_2e · p1226",
+          "type": "text",
+          "text": "levelshypernatremia  abnormal increase in blood sodiumlevelshyperphosphatemia  abnormally increased bloodphosphate levelshypocalcemia  abnormally low blood levels of calciumhypocapnia  abnormally low blood levels of CO2hypochloremia  lower-than-normal blood chloridelevelshypokalemia  abnormally decreased blood levels ofpotassiumhyponatremia  lower-than-normal levels of sodium inthe bloodhypophosphatemia  abnormally low blood phosphatelevelsinterstitial fluid (IF)  fluid in the small spaces",
+          "distance": 1.1052
+        },
+        {
+          "index": 7,
+          "label": "Anatomy_and_Physiology_2e · p356",
+          "type": "text",
+          "text": "Similarly, hyperflexion is excessive flexion at a joint.Hyperextension injuries are common at hinge jointssuch as the knee or elbow.In cases of “whiplash” in which the head is suddenly moved backward and then forward,a patient may experience both hyperextension and hyperflexion of the cervical region.Abduction and AdductionAbduction and adduction motions occur within the coronal plane and involve medial-lateral motions of the limbs,fingers, toes, or thumb.",
+          "distance": 1.1058
+        },
+        {
+          "index": 8,
+          "label": "Anatomy_and_Physiology_2e · p373",
+          "type": "text",
+          "text": "of the forearmhyperextension  excessive extension of joint, beyondthe normal range of movementhyperflexion  excessive flexion of joint, beyond thenormal range of movementiliofemoral ligament  intrinsic ligament spanning fromthe ilium of the hip bone to the femur, on thesuperior-anterior aspect of the hip jointinferior rotation  movement of the scapula duringupper limb adduction in which the glenoid cavity ofthe scapula moves in a downward direction as the",
+          "distance": 1.1069
+        }
+      ]
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e.pdf",
+      "question": "What does the term anterior cardiac veins refer to?",
+      "type": "answerable",
+      "term": "anterior cardiac veins",
+      "keywords": [
+        "anterior cardiac veins",
+        "bypass",
+        "parallel"
+      ],
+      "matched_keywords": [
+        "anterior cardiac veins",
+        "bypass",
+        "parallel"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 0.8176,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "Anatomy_and_Physiology_2e · p840",
+          "type": "text",
+          "text": "the initial length of the muscle fibergreat cardiac vein  vessel that follows theinterventricular sulcus on the anterior surface of theheart and flows along the coronary sulcus into thecoronary sinus on the posterior surface; parallelsthe anterior interventricular artery and drains theareas supplied by this vesselheart block  interruption in the normal conductionpathwayheart bulge  prominent feature on the anteriorsurface of the heart, reflecting early cardiac",
+          "distance": 0.8176
+        },
+        {
+          "index": 2,
+          "label": "Anatomy_and_Physiology_2e · p839",
+          "type": "text",
+          "text": "anterior interventricular artery  (also, left anteriordescending artery or LAD) major branch of the leftcoronary artery that follows the anteriorinterventricular sulcusanterior interventricular sulcus  sulcus locatedbetween the left and right ventricles on the anteriorsurface of the heartaortic valve  (also, aortic semilunar valve) valvelocated at the base of the aortaartificial pacemaker  medical device that transmitselectrical signals to the heart to ensure that it",
+          "distance": 0.8514
+        },
+        {
+          "index": 3,
+          "label": "Anatomy_and_Physiology_2e · p808",
+          "type": "text",
+          "text": "and ventricle.The coronary sinus is a large, thin-walled vein on the posterior surface of the heart lying within theatrioventricular sulcus and emptying directly into the right atrium.The anterior cardiac veins parallel the smallcardiac arteries and drain the anterior surface of the right ventricle.Unlike these other cardiac veins, it bypasses thecoronary sinus and drains directly into the right atrium.plaque consisting of lipids, cholesterol and fatty acids, and white blood cells, primarily macrophages.",
+          "distance": 0.8741
+        },
+        {
+          "index": 4,
+          "label": "Anatomy_and_Physiology_2e · p808",
+          "type": "text",
+          "text": "p808: Coronary VeinsCoronary veins drain the heart and generally parallel the large surface arteries (see Figure 19.15).The greatcardiac vein can be seen initially on the surface of the heart following the interventricular sulcus, but it eventuallyflows along the coronary sulcus into the coronary sinus on the posterior surface.The great cardiac vein initiallyparallels the anterior interventricular artery and drains the areas supplied by this vessel.",
+          "distance": 0.8913
+        },
+        {
+          "index": 5,
+          "label": "Anatomy_and_Physiology_2e · p808",
+          "type": "text",
+          "text": "It receives several majorbranches, including the posterior cardiac vein, the middle cardiac vein, and the small cardiac vein.The posteriorcardiac vein parallels and drains the areas supplied by the marginal artery branch of the circumflex artery.Themiddle cardiac vein parallels and drains the areas supplied by the posterior interventricular artery.The smallcardiac vein parallels the right coronary artery and drains the blood from the posterior surfaces of the right atrium",
+          "distance": 0.898
+        },
+        {
+          "index": 6,
+          "label": "Anatomy_and_Physiology_2e · p49",
+          "type": "text",
+          "text": "anterior cavity  larger body cavity located anterior tothe posterior (dorsal) body cavity; includes theserous membrane-lined pleural cavities for thelungs, pericardial cavity for the heart, and peritonealcavity for the abdominal and pelvic organs; alsoreferred to as ventral cavitycatabolism  breaking down of more complexmolecules into simpler moleculescaudal  describes a position below or lower thananother part of the body proper; near or toward the",
+          "distance": 0.9004
+        },
+        {
+          "index": 7,
+          "label": "Anatomy_and_Physiology_2e · p906",
+          "type": "text",
+          "text": "arteryInternalthoracic veinsAlso called internal mammary veins; drain the anterior surface of the chest wall and lead tothe brachiocephalic veinIntercostal veinDrains the muscles of the thoracic wall and leads to the azygos veinEsophagealveinDrains the inferior portions of the esophagus and leads to the azygos veinBronchial veinDrains the systemic circulation from the lungs and leads to the azygos veinAzygos veinOriginates in the lumbar region and passes through the diaphragm into the thoracic cavity on",
+          "distance": 0.9076
+        },
+        {
+          "index": 8,
+          "label": "Anatomy_and_Physiology_2e · p838",
+          "type": "text",
+          "text": "primitive ventricle, primitive atrium, and the sinus venosus.Initially, all venous blood flows into the sinus venosus,and contractions propel the blood from tail to head, or from the sinus venosus to the truncus arteriosus.This is avery different pattern from that of an adult.FIGURE 19.36 Development of the Human Heart This diagram outlines the embryological development of the human heart during thefirst eight weeks and the subsequent formation of the four heart chambers.",
+          "distance": 0.91
+        }
+      ]
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e.pdf",
+      "question": "What is meant by acetylcholine?",
+      "type": "answerable",
+      "term": "acetylcholine",
+      "keywords": [
+        "acetylcholine",
+        "end-plate"
+      ],
+      "matched_keywords": [
+        "acetylcholine",
+        "end-plate"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 0.7568,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "Anatomy_and_Physiology_2e · p648",
+          "type": "text",
+          "text": "p648: Key Termsacetylcholine (ACh)  neurotransmitter that binds at amotor end-plate to trigger depolarizationadrenal medulla  interior portion of the adrenal (orsuprarenal) gland that releases epinephrine andnorepinephrine into the bloodstream as hormonesadrenergic  synapse where norepinephrine isreleased, which binds to α- or β-adrenergicreceptorsafferent branch  component of a reflex arc thatrepresents the input from a sensory neuron, foreither a special or general sense",
+          "distance": 0.7568
+        },
+        {
+          "index": 2,
+          "label": "Anatomy_and_Physiology_2e · p416",
+          "type": "text",
+          "text": "p416: Key Termsacetylcholine (ACh)  neurotransmitter that binds at amotor end-plate to trigger depolarizationactin  protein that makes up most of the thinmyofilaments in a sarcomere muscle fiberaction potential  change in voltage of a cellmembrane in response to a stimulus that results intransmission of an electrical signal; unique toneurons and muscle fibersaerobic respiration  production of ATP in thepresence of oxygenangiogenesis  formation of blood capillary networks",
+          "distance": 0.8194
+        },
+        {
+          "index": 3,
+          "label": "Anatomy_and_Physiology_2e · p630",
+          "type": "text",
+          "text": "hormones are released into the bloodstream.These are simplistic definitions, but they can help to clarify this point.Acetylcholine can be considered a neurotransmitter because it is released by axons at synapses.The adrenergicsystem, however, presents a challenge.Postganglionic sympathetic fibers release norepinephrine, which can beconsidered a neurotransmitter.But the adrenal medulla releases epinephrine and norepinephrine into circulation, sothey should be considered hormones.",
+          "distance": 0.8503
+        },
+        {
+          "index": 4,
+          "label": "Anatomy_and_Physiology_2e · p392",
+          "type": "text",
+          "text": "p392: Signaling begins when a neuronal action potential travels along the axon of a motor neuron, and then along theindividual branches to terminate at the NMJ.At the NMJ, the axon terminal releases a chemical messenger, orneurotransmitter, called acetylcholine (ACh).The ACh molecules diffuse across a minute space called thesynaptic cleft and bind to ACh receptors located within the motor end-plate of the sarcolemma on the other side ofthe synapse.",
+          "distance": 0.8838
+        },
+        {
+          "index": 5,
+          "label": "Anatomy_and_Physiology_2e · p648",
+          "type": "text",
+          "text": "of a neuron in the autonomic system that is locatedin the central nervous system, specifically thelateral horn of the spinal cord or a brain stemnucleuscholinergic  synapse at which acetylcholine isreleased and binds to the nicotinic or muscarinicreceptorchromaffin cells  neuroendocrine cells of the adrenalmedulla that release epinephrine andnorepinephrine into the bloodstream as part ofsympathetic system activityciliary ganglion  one of the terminal ganglia of the",
+          "distance": 0.8864
+        },
+        {
+          "index": 6,
+          "label": "Anatomy_and_Physiology_2e · p516",
+          "type": "text",
+          "text": "protein molecules and shorter chains of amino acidsneurotransmitter  chemical signal that is releasedfrom the synaptic end bulb of a neuron to cause achange in the target cellnicotinic receptor  type of acetylcholine receptorprotein that is characterized by also binding tonicotine and is an ionotropic receptornode of Ranvier  gap between two myelinated regionsof an axon, allowing for strengthening of theelectrical signal as it propagates down the axon",
+          "distance": 0.8985
+        },
+        {
+          "index": 7,
+          "label": "Anatomy_and_Physiology_2e · p630",
+          "type": "text",
+          "text": "p630: Autonomic System Signaling MoleculesSympatheticParasympatheticPreganglionicAcetylcholine → nicotinic receptorAcetylcholine →nicotinic receptorPostganglionicNorepinephrine → α- or β-adrenergic receptorsAcetylcholine → muscarinic receptor (associated with sweat glands andthe blood vessels associated with skeletal muscles onlyAcetylcholine →muscarinicreceptorTABLE 15.1Signaling molecules can belong to two broad groups.Neurotransmitters are released at synapses, whereas",
+          "distance": 0.9147
+        },
+        {
+          "index": 8,
+          "label": "Anatomy_and_Physiology_2e · p417",
+          "type": "text",
+          "text": "p417: the membrane of a muscle fiber with receptors forthe acetylcholine released by the terminalneurotransmitter  signaling chemical released bynerve terminals that bind to and activate receptorson target cellsoxygen debt  amount of oxygen needed tocompensate for ATP produced without oxygenduring muscle contractionpacesetter cell  cell that triggers action potentials insmooth musclepericyte  stem cell that regenerates smooth musclecellsperimysium  connective tissue that bundles skeletal",
+          "distance": 0.9266
+        }
+      ]
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e.pdf",
+      "question": "What is meant by acinus?",
+      "type": "answerable",
+      "term": "acinus",
+      "keywords": [
+        "acinus",
+        "glandular",
+        "cluster"
+      ],
+      "matched_keywords": [
+        "acinus",
+        "cluster"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 0.994,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "Anatomy_and_Physiology_2e · p1079",
+          "type": "text",
+          "text": "INTERACTIVE LINK The exocrine part of the pancreas arises as little grape-like cell clusters, each called an acinus (plural = acini),located at the terminal ends of pancreatic ducts.These acinar cells secrete enzyme-rich pancreatic juice into tinymerging ducts that form two dominant ducts.The larger duct fuses with the common bile duct (carrying bile fromthe liver and gallbladder) just before entering the duodenum via a common opening (the hepatopancreatic ampulla).",
+          "distance": 0.994
+        },
+        {
+          "index": 2,
+          "label": "Anatomy_and_Physiology_2e · p1326",
+          "type": "text",
+          "text": "anulus fibrosus  264anuria  1140aorta  870aortic arch  870aortic hiatus  870aortic sinuses  859aortic valve  787apex  974aphasia  649apical  134apical ectodermal ridge  308apneustic center  995Apocrine secretion  143apocrine sweat gland  180aponeurosis  372Apoptosis  155appendicular  417appendicular skeleton  237appendix  1055aquaporin  1152aqueous humor  570arachnoid granulations  531arachnoid mater  530arachnoid trabeculae  530arcuate line of the ilium  296",
+          "distance": 1.0498
+        },
+        {
+          "index": 3,
+          "label": "Anatomy_and_Physiology_2e · p1325",
+          "type": "text",
+          "text": "acetabular labrum  348acetabulum  297acetyl coenzyme A (acetyl CoA)1097acetylcholine (ACh)  376, 613acid  60acinus  1063Acne  186acromegaly  696acromial end of the clavicle  286acromial process  287acromioclavicular joint  287acromion  287acrosomal reaction  1254acrosome  1254actin  373action potential  376, 482activation energy  56activation gate  490Active immunity  949active transport  89Acute inflammation  935Acute mountain sickness (AMS)1008",
+          "distance": 1.0528
+        },
+        {
+          "index": 4,
+          "label": "Anatomy_and_Physiology_2e · p547",
+          "type": "text",
+          "text": "mater.The arachnoid defines a sac-like enclosure around the CNS.The trabeculae are found in the subarachnoidspace, which is filled with circulating CSF.The arachnoid emerges into the dural sinuses as the arachnoidgranulations, where the CSF is filtered back into the blood for drainage from the nervous system.The subarachnoid space is filled with circulating CSF, which also provides a liquid cushion to the brain and spinalcord.Similar to clinical blood work, a sample of CSF can be withdrawn to find chemical evidence of neuropathology",
+          "distance": 1.0709
+        },
+        {
+          "index": 5,
+          "label": "Anatomy_and_Physiology_2e · p547",
+          "type": "text",
+          "text": "p547: the arachnoid and subarachnoid space between them.An arachnoid villus is shown emerging into the dural sinus to allow CSF to filter backinto the blood for drainage.Dura MaterLike a thick cap covering the brain, the dura mater is a tough outer covering.The name comes from the Latin for“tough mother” to represent its physically protective role.It encloses the entire CNS and the major blood vesselsthat enter the cranium and vertebral cavity.It is directly attached to the inner surface of the bones of the cranium",
+          "distance": 1.0866
+        },
+        {
+          "index": 6,
+          "label": "Anatomy_and_Physiology_2e · p171",
+          "type": "text",
+          "text": "LEARNING OBJECTIVES is the inflammation of the peritoneum, and meningitis refers to the inflammation of the meninges, the toughmembranes that surround the central nervous systemThe four cardinal signs of inflammation—redness, swelling, pain, and local heat—were first recorded in antiquity.Cornelius Celsus is credited with documenting these signs during the days of the Roman Empire, as early as the firstcentury AD.A fifth sign, loss of function, may also accompany inflammation.",
+          "distance": 1.1048
+        },
+        {
+          "index": 7,
+          "label": "Anatomy_and_Physiology_2e · p546",
+          "type": "text",
+          "text": "The arachnoidmater is a membrane of thin fibrous tissue that forms a loose sac around the CNS.Beneath the arachnoid is a thin,filamentous mesh called the arachnoid trabeculae, which looks like a spider web, giving this layer its name.Directlyadjacent to the surface of the CNS is the pia mater, a thin fibrous membrane that follows the convolutions of gyriand sulci in the cerebral cortex and fits into other grooves and indentations (Figure 13.17).FIGURE 13.",
+          "distance": 1.106
+        },
+        {
+          "index": 8,
+          "label": "Anatomy_and_Physiology_2e · p927",
+          "type": "text",
+          "text": "p927: region, the upper back, and shouldertransient ischemic attack (TIA)  temporary loss ofneurological function caused by a brief interruptionin blood flow; also known as a mini-stroketransverse sinuses  pair of enlarged veins near thelambdoid suture that drain the occipital, sagittal,and straight sinuses, and leads to the sigmoidsinusestrunk  large vessel that gives rise to smaller vesselstunica externa  (also, tunica adventitia) outermostlayer or tunic of a vessel (except capillaries)",
+          "distance": 1.1093
+        }
+      ]
+    },
+    {
+      "book": "Business Ethics.pdf",
+      "question": "Give the definition of Citizens United.",
+      "type": "answerable",
+      "term": "Citizens United",
+      "keywords": [
+        "citizens united",
+        "unlimited",
+        "ruling"
+      ],
+      "matched_keywords": [
+        "citizens united",
+        "unlimited",
+        "ruling"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 0.794,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "Business Ethics · p124",
+          "type": "text",
+          "text": "p124: 16 .What Amendment was at the center of the Citizens United case?Explain.Endnotes",
+          "distance": 0.794
+        },
+        {
+          "index": 2,
+          "label": "Business Ethics · p120",
+          "type": "text",
+          "text": "LINK TO LEARNING Visit the U.S.Supreme Court case website (https://openstaxcollege.org/l/53OyezCase) named Oyez.Readthe Citizens United case, both the majority decision and the minority dissents.Judicial language can be a bitdifficult to understand, so you may have to read it twice, but it’s worth it, because of the importance of thecase.What does Citizens United mean for businesses?Business entities may now seek to persuade the voting publicby spending an unlimited amount of money on political ads, whether through social media or traditional print",
+          "distance": 0.8821
+        },
+        {
+          "index": 3,
+          "label": "Business Ethics · p123",
+          "type": "text",
+          "text": "First Amendmentb.Tenth Amendmentc.Commerce Claused.Supremacy Clause15 .The Citizens United case________.a.upheld existing law limiting spending on behalf of political candidatesb.overturned existing lawc.sent the case back to the lower court to be re-triedd.created more restrictive limits on political spending4 • Assessment Questions     113",
+          "distance": 0.919
+        },
+        {
+          "index": 4,
+          "label": "Business Ethics · p121",
+          "type": "text",
+          "text": "of fossil fuelscarbon tax  a pay-to-pollute system in which those who discharge carbon into the air pay a fee or taxCitizens United  a 2010 Supreme Court ruling in favor of unlimited spending by individuals and corporationson political campaignsCommerce Clause  an enumerated power listed in the Constitution giving the federal government the rightto regulate commerce between statescorporate personhood  the legal doctrine holding that a corporation, separate and apart from the people",
+          "distance": 0.9318
+        },
+        {
+          "index": 5,
+          "label": "Business Ethics · p119",
+          "type": "text",
+          "text": "What do you think accounts for your findings?Questions of regulation and political influence have become even more sensitive in recent years, following thedecision in Citizens United v.Federal Election Commission (2010).71 In Citizens United, the U.S.Supreme Court",
+          "distance": 0.9393
+        },
+        {
+          "index": 6,
+          "label": "Business Ethics · p126",
+          "type": "text",
+          "text": "https://www.wsj.com/articles/SB10001424052748704423504575212031417936798.71.Citizens United v.Federal Election Commission, 558 U.S.310 (2010).116     4 • EndnotesAccess for free at openstax.org",
+          "distance": 0.9817
+        },
+        {
+          "index": 7,
+          "label": "Business Ethics · p245",
+          "type": "text",
+          "text": "S.Constitution when held againsttheir will.To date, this effort has been unsuccessful.45 The courts have extended certain constitutional rightsto corporations, such as the First Amendment right to free speech (in the 2010 Citizens United case).Therefore, some reason, a logical extension of that concept would hold that animals and the environmenthave rights as well.Figure 8.12 This is Tommy the Chimpanzee’s “home,” a stretch of the word by any definition.",
+          "distance": 1.0369
+        },
+        {
+          "index": 8,
+          "label": "Business Ethics · p355",
+          "type": "text",
+          "text": "p355: Union of Concerned Scientists98United Nations (UN) GlobalCompact  128universal health care system266universal values  133utilitarianism  10, 38, 39, 40, 42utility function  40Vveil of ignorance  47, 49virtue ethics  24virtue theory  11WWeber  248wellness programs  262whistleblowing  201work style  191work-life balance  281Worker Adjustment andRetraining Notification (WARN)Act  147workplace campus  279workplace discrimination  149workplace diversity  214",
+          "distance": 1.0526
+        }
+      ]
+    },
+    {
+      "book": "Business Ethics.pdf",
+      "question": "What does enabling stakeholder mean?",
+      "type": "answerable",
+      "term": "enabling stakeholder",
+      "keywords": [
+        "enabling stakeholder",
+        "permits",
+        "function"
+      ],
+      "matched_keywords": [
+        "enabling stakeholder",
+        "function"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 0.7598,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "Business Ethics · p76",
+          "type": "text",
+          "text": "sparked a larger conversation about diversity and representation in film,” she said.11Defining Stakeholder CategoriesTo better understand stakeholder theory and, ultimately, manage stakeholder claims and expectations, it maybe helpful to take a closer look at categories of stakeholders.One way to categorize stakeholders is bydefining their impact.For example, regulatory stakeholders including stockholders, legislatures, governmentregulators, and boards of directors are enabling stakeholders because they permit the firm to function.",
+          "distance": 0.7598
+        },
+        {
+          "index": 2,
+          "label": "Business Ethics · p76",
+          "type": "text",
+          "text": "4).12Figure 3.4 Grouping stakeholders into meaningful categories according to relationship types allows an organization to prioritizestakeholders’ claims.(attribution: Copyright Rice University, OpenStax, under CC BY NC-SA 4.0 license)As the Figure 3.4 shows, enabling and functional stakeholders are those active in design, production, andmarketing.They provide input for the products or services the organization distributes in the form of output.Companies should identify all the stakeholders shown in the figure and consider how they are linked to the",
+          "distance": 0.7662
+        },
+        {
+          "index": 3,
+          "label": "Business Ethics · p76",
+          "type": "text",
+          "text": "firm.Although the diffused linkage stakeholders will vary according to place and time, the enabling, functional,and normative linkage stakeholders are constant, because they are integral to the operation of the firm.Stakeholders, in turn, can exert some control and authority by serving on the board of directors, by exercisingtheir power as purchasers, by being elected to public office, or by joining employees’ unions.In many cases, if one stakeholder effects a change in the firm, other stakeholders will be affected.",
+          "distance": 0.7738
+        },
+        {
+          "index": 4,
+          "label": "Business Ethics · p78",
+          "type": "text",
+          "text": "LINK TO LEARNING Once-loyal stakeholders became part of anaware and active public—a group of people united by a common problem and organized for satisfaction,sometimes demanding compensation.14A challenge for business leaders is to assign appropriate weights to stakeholder claims on their companies inan ethical manner.This task is even more difficult because a claim is not necessarily a formal process.“Essentially, stakeholders ‘want something’ from an organization.",
+          "distance": 0.7766
+        },
+        {
+          "index": 5,
+          "label": "Business Ethics · p25",
+          "type": "text",
+          "text": "LINK TO LEARNING For more on Warren Buffett’s thoughts about being both an economic and ethical leader, watch thisinterview (https://openstax.org/l/53Buffet) that appeared on the PBS NewsHour on June 6, 2017.Stockholders, Stakeholders, and GoodwillEarlier in this chapter, we explained that stakeholders are all the individuals and groups affected by abusiness’s decisions.Among these stakeholders are stockholders (or shareholders), individuals andinstitutions that own stock (or shares) in a corporation.",
+          "distance": 0.7973
+        },
+        {
+          "index": 6,
+          "label": "Business Ethics · p82",
+          "type": "text",
+          "text": "Stakeholders are essential parts of a cycle of mutual interest andinvolvement.",
+          "distance": 0.8026
+        },
+        {
+          "index": 7,
+          "label": "Business Ethics · p70",
+          "type": "text",
+          "text": "services to market to turn a profit.These stakeholders include customers, clients, employees, shareholders,communities, the environment, the government, and the media (traditional and social), among others.Allstakeholders should be considered essential to a business, but not all have equal priority.Different groups ofstakeholders carry different weights with decision makers in companies and assert varying levels of interestand influence.As we examine their roles, consider how an organization benefits by working with its",
+          "distance": 0.8338
+        },
+        {
+          "index": 8,
+          "label": "Business Ethics · p89",
+          "type": "text",
+          "text": "3.2 Weighing Stakeholder Claims Such classifications may include enabling stakeholders, normative stakeholders,functional stakeholders, and diffused stakeholders.Using the lens of the four “publics” (the nonpublic, thelatent, the aware, and the active), we can also understand a stakeholder claim on the basis of the public’sdegree of awareness of a problem and ability to do something about it.",
+          "distance": 0.8422
+        }
+      ]
+    },
+    {
+      "book": "Business Ethics.pdf",
+      "question": "What does the term eudaimonia refer to?",
+      "type": "answerable",
+      "term": "eudaimonia",
+      "keywords": [
+        "eudaimonia",
+        "contentment",
+        "activity"
+      ],
+      "matched_keywords": [
+        "eudaimonia",
+        "contentment",
+        "activity"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 0.9158,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "Business Ethics · p61",
+          "type": "text",
+          "text": "to character, motivation, or absolute principles of good and evil and separate from their capacity to producehappiness and pleasureeudaimonia  the happiness or human flourishing that results from virtuous activity; it is more thancontentment or satisfactiongolden mean  in Aristotelian virtue ethics, the aim of ethical behavior, a value between excess and deficiencyharm principle  the idea that the only purpose for which the power of the state can rightly be used is to",
+          "distance": 0.9158
+        },
+        {
+          "index": 2,
+          "label": "Business Ethics · p48",
+          "type": "text",
+          "text": "LINK TO LEARNING • Distinguish John Stuart Mill’s modification of utilitarianism from Bentham’s original formulation of it• Evaluate the role of utilitarianism in contemporary businessAlthough the ultimate aim of Aristotelian virtue ethics was eudaimonia, later philosophers began to questionthis notion of happiness.If happiness consists of leading the good life, what is good?More importantly, whodecides what is good?Jeremy Bentham (1748–1842), a progressive British philosopher and jurist of the",
+          "distance": 1.0184
+        },
+        {
+          "index": 3,
+          "label": "Business Ethics · p35",
+          "type": "text",
+          "text": "Birds and fish have little difficulty achieving their ends, and we can assume thatmuch of this is due to their genetic coding.Because happiness might not be genetically encoded in humanbeings, they must learn how to be happy.How do they do that?According to Aristotle, eudaimonia is achievedby leading a virtuous life, which is attained over time.“Happiness is a kind of activity; and an activity clearly isdeveloped and is not a piece of property already in one’s possession.",
+          "distance": 1.0265
+        },
+        {
+          "index": 4,
+          "label": "Business Ethics · p35",
+          "type": "text",
+          "text": "What is the telos of human beings?Aristotlebelieved it to be eudaimonia, or happiness.By this, he did not mean happiness in a superficial sense, such ashaving fun or being content.Rather, he equated happiness with human flourishing, which he believed could beattained through the exercise of the function that distinguishes humans from the natural world: reason.2 ForAristotle, reason was supreme and best used to increase not wealth but character.“But what is happiness?",
+          "distance": 1.0696
+        },
+        {
+          "index": 5,
+          "label": "Business Ethics · p328",
+          "type": "text",
+          "text": "p328: Figure A2 (attribution: Copyright Rice University, OpenStax, under CC BY NC-SA 4.0 license)What constitutes a virtue in the first place, according to Aristotle?Besides courage, the virtues include wisdom,kindness, love, beauty, honesty, and justice.These approximate the same virtues proclaimed by Plato.Aristotle also speaks of eudaemonia, a perfect balance of happiness and goodness interpreted classically.Humans experience eudaemonia both in themselves and in the world when they act virtuously and live a life of",
+          "distance": 1.1331
+        },
+        {
+          "index": 6,
+          "label": "Business Ethics · p330",
+          "type": "text",
+          "text": "p330: The term deontology stems from the Greek deon—duty, obligation, or command.As an ethical system, it is theradical opposite of utilitarianism in that it holds that the consequences of a moral decision are of no matterwhatsoever.What is important are the motives as to why one has acted in the way that one has.So an actionmay have beneficial results, but still be unethical if it has been performed for the wrong reasons.Similarly, anaction may have catastrophic consequences, but still be deemed moral if it has been done on the basis of the",
+          "distance": 1.1559
+        },
+        {
+          "index": 7,
+          "label": "Business Ethics · p353",
+          "type": "text",
+          "text": "Commission  149, 216Equal Pay Act  158ethical maximum  62ethical minimum  62ethical relativism  18ethics  8eudaimonia  25exigency  70Ffair wage  155fiduciary duty  89flextime  285Ford  85Ford Motor Company  85Foreign Corrupt Practices Act197Friedman  12, 88functional stakeholder  66Ggender diversity  216gender wage gap  231general index funds  91General Motors  324gig economy  288Global 100  95globalization  120, 122, 124golden mean  25goodwill  16",
+          "distance": 1.1607
+        },
+        {
+          "index": 8,
+          "label": "Business Ethics · p54",
+          "type": "text",
+          "text": "LINK TO LEARNING There is a definite contrast between utilitarianism, even Mill’s version, and Kant’s system of ethics, known asdeontology, in which duty, obligation, and good will are of the highest importance.(The word is derived fromthe Greek deon, meaning duty, and logos again, here meaning organization for the purpose of study.56 ) Anethical decision requires us to observe only the rights and duties we owe to others, and, in the context ofbusiness, act on the basis of a primary motive to do what is right by all stakeholders.",
+          "distance": 1.1925
+        }
+      ]
+    },
+    {
+      "book": "Business Law and the Legal Environment.pdf",
+      "question": "Describe summary judgment.",
+      "type": "answerable",
+      "term": "summary judgment",
+      "keywords": [
+        "summary judgment",
+        "preliminary",
+        "injunction"
+      ],
+      "matched_keywords": [
+        "summary judgment"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 0.7141,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "Business Law and the Legal Environment · p98",
+          "type": "text",
+          "text": "judgment as if the requested verdict had been directed.",
+          "distance": 0.7141
+        },
+        {
+          "index": 2,
+          "label": "Business Law and the Legal Environment · p899",
+          "type": "text",
+          "text": "account agreement.PNC moves for summary judgment on both counts.",
+          "distance": 0.7619
+        },
+        {
+          "index": 3,
+          "label": "Business Law and the Legal Environment · p1907",
+          "type": "text",
+          "text": "CASE QUESTIONS judgment.The case now is before the Court on plaintiff’s motion for summary judgment pursuant to Federal Rules ofCivil Procedure (Fed.R.Civ.P) 56(a).Defendant contests this motion on three grounds: (1) that service wasinadequate, (2) that defendant lacked the minimum contacts necessary to render it subject to in personam",
+          "distance": 0.7946
+        },
+        {
+          "index": 4,
+          "label": "Business Law and the Legal Environment · p1407",
+          "type": "text",
+          "text": "1998.] The trial court entered a final judgment granting the District’s motion for summary judgment anddismissing the complaint with prejudice.The trial court found that the District could not be held liableunder the MTCA for the conduct of Officer James which was both criminal and outside the course andscope of his employment.Cockrell…appeal[ed].DiscussionSummary judgment is granted in cases where there is “no genuine issue as to any material fact and that",
+          "distance": 0.7954
+        },
+        {
+          "index": 5,
+          "label": "Business Law and the Legal Environment · p789",
+          "type": "text",
+          "text": "issue.[Citation]Accordingly, the entry of a summary final judgment is reversed and the cause remanded for furtherproceedings.",
+          "distance": 0.8033
+        },
+        {
+          "index": 6,
+          "label": "Business Law and the Legal Environment · p93",
+          "type": "text",
+          "text": "2. Explain the meaning and use of directed verdicts. 3.Distinguish a directed verdict from a judgment n.o.v.(“notwithstanding the verdict”).After considerable discovery, one of the parties may believe that there is no triable issue of law or fact forthe court to consider and may file a motion with the court for summary judgment.Unless it is very clear,the judge will deny a summary judgment motion, because that ends the case at the trial level; it is a “finalorder” in the case that tells the plaintiff “no” and leaves no room to bring another lawsuit against the",
+          "distance": 0.8034
+        },
+        {
+          "index": 7,
+          "label": "Business Law and the Legal Environment · p1400",
+          "type": "text",
+          "text": "Judgment reversed.",
+          "distance": 0.8184
+        },
+        {
+          "index": 8,
+          "label": "Business Law and the Legal Environment · p1302",
+          "type": "text",
+          "text": "EXERCISES Explain.",
+          "distance": 0.8333
+        }
+      ]
+    },
+    {
+      "book": "Business Law and the Legal Environment.pdf",
+      "question": "Describe tenancy.",
+      "type": "answerable",
+      "term": "tenancy",
+      "keywords": [
+        "tenancy",
+        "confuse",
+        "careful"
+      ],
+      "matched_keywords": [
+        "tenancy"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 0.705,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "Business Law and the Legal Environment · p1250",
+          "type": "text",
+          "text": "EXERCISES 1.What is the difference between a periodic tenancy and a tenancy at will?2.What are the essential terms that must be in a written lease?",
+          "distance": 0.705
+        },
+        {
+          "index": 2,
+          "label": "Business Law and the Legal Environment · p1267",
+          "type": "text",
+          "text": "35.6 Summary and Exercises SummaryA leasehold is an interest in real property that terminates on a certain date.The leasehold itself is personalproperty and has three major forms: (1) the estate for years, (2) the periodic tenancy, and (3) the tenancyat will.The estate for years has a definite beginning and end; it need not be measured in years.A periodictenancy—sometimes known as an estate from year to year or month to month—is renewed automaticallyuntil either landlord or tenant notifies the other that it will end.",
+          "distance": 0.7102
+        },
+        {
+          "index": 3,
+          "label": "Business Law and the Legal Environment · p1248",
+          "type": "text",
+          "text": "term.Or the periodic tenancy may be created by implication, if the lease fails to state a term or is defectivein some other way, but the tenant takes possession and pays rent.The usual method of creating a periodictenancy occurs when the tenant remains on the premises (“holds over”) when an estate for years under a",
+          "distance": 0.7268
+        },
+        {
+          "index": 4,
+          "label": "Business Law and the Legal Environment · p782",
+          "type": "text",
+          "text": "accommodation party.",
+          "distance": 0.7271
+        },
+        {
+          "index": 5,
+          "label": "Business Law and the Legal Environment · p1257",
+          "type": "text",
+          "text": "holdover tenant: to impose another rental term.In order to extend the lease in this manner, the landlordneed simply notify the holdover tenant that she is being held to another term, usually measured by theperiodic nature of the rent payment.For example, if rent was paid each month, then imposition of a newterm results in a month-to-month tenancy.One year is the maximum tenancy that the landlord can createby electing to hold the tenant to another term.",
+          "distance": 0.739
+        },
+        {
+          "index": 6,
+          "label": "Business Law and the Legal Environment · p1176",
+          "type": "text",
+          "text": "KEY TAKEAWAY An easement appurtenant runs with the land and benefits the dominant tenement, burdening the servienttenement.An easement, generally, has a specific location or description within or over the servienttenement.Easements can be created by deed, by will, or by implication.",
+          "distance": 0.7464
+        },
+        {
+          "index": 7,
+          "label": "Business Law and the Legal Environment · p1248",
+          "type": "text",
+          "text": "The lawrecognizes three types of leasehold estates: the estate for years, the periodic tenancy, and the tenancy at will.Types of Leasehold EstatesEstate for YearsThe estate for years is characterized by a definite beginning and a definite end.When you rent anapartment for two years, beginning September 1 and ending on the second August 31, you are the ownerof an estate for years.Virtually any period will do; although it is called an estate “for years,” it can last but",
+          "distance": 0.756
+        },
+        {
+          "index": 8,
+          "label": "Business Law and the Legal Environment · p1245",
+          "type": "text",
+          "text": "EXERCISES tenancy or tenancy in common form of ownership.What do you recommend?Why?3.Suppose in Exercise 2 that a friend recommends that Pancho and Cisco use a tenancy bythe entirety.Would this form of ownership be appropriate?Why?4.Richard and Elizabeth, a married couple, live in a community property state.During theirmarriage, they save $500,000 from Elizabeth’s earnings.Richard does not work, butduring the marriage, he inherits $500,000.If Richard and Elizabeth are divorced, how will",
+          "distance": 0.7563
+        }
+      ]
+    },
+    {
+      "book": "Cognitive Psychology.pdf",
+      "question": "What does this book say about limbic system?",
+      "type": "answerable",
+      "term": "limbic system",
+      "keywords": [
+        "limbic system",
+        "diencephalon",
+        "hypothalamus"
+      ],
+      "matched_keywords": [
+        "limbic system",
+        "diencephalon",
+        "hypothalamus"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 0.8455,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "Cognitive Psychology · p45",
+          "type": "text",
+          "text": "p45: Figure 9.The thalamus serves as the relay center of the brain where most senses are routed for processing.The limbic system is involved in processing both emotion and memory.Interestingly, the senseof smell projects directly to the limbic system; therefore, not surprisingly, smell can evokeemotional responses in ways that other sensory modalities cannot.The limbic system is madeup of a number of different structures, but three of the most important are the hippocampus,",
+          "distance": 0.8455
+        },
+        {
+          "index": 2,
+          "label": "Cognitive Psychology · p46",
+          "type": "text",
+          "text": "p46: Figure 10.The limbic system is involved in mediating emotional response and memory.THE CASE OF HENRY MOLAISON (H.M.)In 1953, Henry Gustav Molaison (H.M.) was a 27-year-old man who experienced severeseizures.In an attempt to control his seizures, H.M.underwent brain surgery to removehis hippocampus and amygdala.Following the surgery, H.M’s seizures became much lesssevere, but he also suffered some unexpected—and devastating— consequences of the",
+          "distance": 0.8538
+        },
+        {
+          "index": 3,
+          "label": "Cognitive Psychology · p44",
+          "type": "text",
+          "text": "LEARNING OBJECTIVES •Identify and describe the role of the parts of the limbic system, the midbrain, andhindbrainAreas of the ForebrainOther areas of the forebrain (which includes the lobes that you learned about previously),are the parts located beneath the cerebral cortex, including the thalamus and the limbicsystem.The thalamus is a sensory relay for the brain.All of our senses, with the exception ofsmell, are routed through the thalamus before being directed to other areas of the brain for",
+          "distance": 0.8796
+        },
+        {
+          "index": 4,
+          "label": "Cognitive Psychology · p39",
+          "type": "text",
+          "text": "epithalamus.ThalamusThe thalamus is part of the limbic system.It consists of two lobes of grey matter along thebottom of the cerebral cortex.Because nearly all sensory information passes through thethalamus it is considered the sensory “way station” of the brain, passing information on to thecerebral cortex (which is in the forebrain).Lesions of, or stimulation to, the thalamus areassociated with changes in emotional reactivity.However, the importance of this structure on",
+          "distance": 0.9366
+        },
+        {
+          "index": 5,
+          "label": "Cognitive Psychology · p124",
+          "type": "text",
+          "text": "Intraumatic memories, there is a narrowed attentional focus on certain aspects of the memory,usually those that involved the most heightened emotional arousal.For instance, whenremembering a traumatic event, individuals are most likely to remember how scared they felt,the image of having a gun held to their head, or other details that are highly emotionallycharged.The limbic system is the part of the brain that is in charge of giving emotionalsignificance to sensory inputs; however, the limbic system (particularly one of its components,",
+          "distance": 0.9719
+        },
+        {
+          "index": 6,
+          "label": "Cognitive Psychology · p52",
+          "type": "text",
+          "text": "LEARNING OBJECTIVES • Explain the two hemispheres of the brain, lateralization and plasticityThe central nervous system (CNS), consists of the brain and the spinal cord.The BrainThe brain is a remarkably complex organ comprised of billions of interconnected neurons andglia.It is a bilateral, or two-sided, structure that can be separated into distinct lobes.Each lobeis associated with certain types of functions, but, ultimately, all of the areas of the braininteract with one another to provide the foundation for our thoughts and behaviors.",
+          "distance": 0.9901
+        },
+        {
+          "index": 7,
+          "label": "Cognitive Psychology · p37",
+          "type": "text",
+          "text": "KEY POINTS Its ventral areas are dedicated to motor function while the dorsal regionsare involved in sensory information circuits.• The thalamus and hypothalamus are located within the diencephalon(or “interbrain”), and are part of the limbic system.They regulateemotionsand motivated behaviors like sexuality and hunger.• The spinal cord is a tail -like structure embedded in the vertebral canal ofthe spine, and is involved in transporting sensorimotor information and",
+          "distance": 1.0095
+        },
+        {
+          "index": 8,
+          "label": "Cognitive Psychology · p50",
+          "type": "text",
+          "text": "and the endocrine system• Limbic system: collection of structures involved in processing emotion and memory• Medulla: hindbrain structure that controls automated processes like breathing,bloodpressure, and heart rate• Midbrain: division of the brain located between the forebrain and thehindbrain;contains the reticular formation• Pons: hindbrain structure that connects the brain and spinal cord; involved in regulatingbrain activity during sleep• Reticular formation: midbrain structure important in regulating the sleep/wakecycle,",
+          "distance": 1.0105
+        }
+      ]
+    },
+    {
+      "book": "Concepts of Biology.pdf",
+      "question": "Define biomarker.",
+      "type": "answerable",
+      "term": "biomarker",
+      "keywords": [
+        "biomarker",
+        "uniquely",
+        "diseased"
+      ],
+      "matched_keywords": [
+        "biomarker",
+        "uniquely",
+        "diseased"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 0.6988,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "Concepts of Biology · p255",
+          "type": "text",
+          "text": "17).Proteomic approaches are being used to improve the screening and early detection of cancer; this is achieved byidentifying proteins whose expression is affected by the disease process.An individual protein is called abiomarker, whereas a set of proteins with altered expression levels is called a protein signature.For a biomarker orprotein signature to be useful as a candidate for early screening and detection of a cancer, it must be secreted in",
+          "distance": 0.6988
+        },
+        {
+          "index": 2,
+          "label": "Concepts of Biology · p248",
+          "type": "text",
+          "text": "LEARNING OBJECTIVES A genetic map is an illustration that lists genes andtheir location on a chromosome.Genetic maps provide the big picture (similar to a map of interstate highways) anduse genetic markers (similar to landmarks).A genetic marker is a gene or sequence on a chromosome that showsgenetic linkage with a trait of interest.The genetic marker tends to be inherited with the gene of interest, and onemeasure of distance between them is the recombination frequency during meiosis.",
+          "distance": 0.81
+        },
+        {
+          "index": 3,
+          "label": "Concepts of Biology · p255",
+          "type": "text",
+          "text": "body fluids such as sweat, blood, or urine, so that large-scale screenings can be performed in a noninvasive fashion.The current problem with using biomarkers for the early detection of cancer is the high rate of false-negative results.A false-negative result is a negative test result that should have been positive.In other words, many cases of cancergo undetected, which makes biomarkers unreliable.Some examples of protein biomarkers used in cancer detection",
+          "distance": 0.8322
+        },
+        {
+          "index": 4,
+          "label": "Concepts of Biology · p257",
+          "type": "text",
+          "text": "p257: Key Termsanneal  in molecular biology, the process by whichtwo single strands of DNA hydrogen bond atcomplementary nucleotides to form a double-stranded moleculebiomarker  an individual protein that is uniquelyproduced in a diseased statebiotechnology  the use of artificial methods to modifythe genetic material of living organisms or cells toproduce novel compounds or to perform newfunctionscloning  the production of an exact copy—specifically,",
+          "distance": 0.8466
+        },
+        {
+          "index": 5,
+          "label": "Concepts of Biology · p257",
+          "type": "text",
+          "text": "a chromosome that is based on recombinationfrequencies between markersgenetic testing  identifying gene variants in anindividual that may lead to a genetic disease in thatindividualgenetically modified organism (GMO)  an organismwhose genome has been artificially changedgenomics  the study of entire genomes, including thecomplete set of genes, their nucleotide sequenceand organization, and their interactions within aspecies and with other species",
+          "distance": 0.8531
+        },
+        {
+          "index": 6,
+          "label": "Concepts of Biology · p256",
+          "type": "text",
+          "text": "The Biomedical Proteomics Program is designed to identify proteinsignatures and design effective therapies for cancer patients.24210 • BiotechnologyAccess for free at openstax.org",
+          "distance": 0.8721
+        },
+        {
+          "index": 7,
+          "label": "Concepts of Biology · p240",
+          "type": "text",
+          "text": "plasmid.A plasmid (also called a vector in this context) is a small circular DNA molecule that replicatesindependently of the chromosomal DNA in bacteria.In cloning, the plasmid molecules can be used to provide a22610 • BiotechnologyAccess for free at openstax.org",
+          "distance": 0.8788
+        },
+        {
+          "index": 8,
+          "label": "Concepts of Biology · p240",
+          "type": "text",
+          "text": "p240: FIGURE 10.4 Polymerase chain reaction, or PCR, is used to produce many copies of a specific sequence of DNA using a special form of DNApolymerase.CloningIn general, cloning means the creation of a perfect replica.Typically, the word is used to describe the creation of agenetically identical copy.In biology, the re-creation of a whole organism is referred to as “reproductive cloning.”Long before attempts were made to clone an entire organism, researchers learned how to copy short stretches of",
+          "distance": 0.8863
+        }
+      ]
+    },
+    {
+      "book": "Concepts of Biology.pdf",
+      "question": "Give the definition of blastocyst.",
+      "type": "answerable",
+      "term": "blastocyst",
+      "keywords": [
+        "blastocyst",
+        "blastula",
+        "mammalian"
+      ],
+      "matched_keywords": [
+        "blastocyst",
+        "blastula",
+        "mammalian"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 0.7976,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "Concepts of Biology · p491",
+          "type": "text",
+          "text": "called the blastula.(credit a: modification of work by Gray's Anatomy; credit b: modification of work by Pearson Scott Foresman; donated tothe Wikimedia Foundation)In mammals, the blastula forms the blastocyst in the next stage of development.Here the cells in the blastulaarrange themselves in two layers: the inner cell mass, and an outer layer called the trophoblast.The inner cell",
+          "distance": 0.7976
+        },
+        {
+          "index": 2,
+          "label": "Concepts of Biology · p503",
+          "type": "text",
+          "text": "p503: Key Termsasexual reproduction  a mechanism that producesoffspring that are genetically identical to the parentblastocyst  the structure formed when cells in themammalian blastula separate into an inner andouter layerbudding  a form of asexual reproduction that resultsfrom the outgrowth of a part of an organism leadingto a separation from the original animal into twoindividualsbulbourethral gland  the paired glands in the humanmale that produce a secretion that cleanses the",
+          "distance": 0.9404
+        },
+        {
+          "index": 3,
+          "label": "Concepts of Biology · p607",
+          "type": "text",
+          "text": "blastocyst  477body plan  350bolus  401bones  385boreal forest  546bottleneck effect  255botulism  295brachiation  387brainstem  431branch point  276bronchi  407bronchioles  407budding  357, 473Buffers  40bulbourethral gland  480Bush meat  572CCaecilians  382Calvin cycle  127calyx  338Index     593",
+          "distance": 0.952
+        },
+        {
+          "index": 4,
+          "label": "Concepts of Biology · p402",
+          "type": "text",
+          "text": "blastopore develops into the anus, with the secondopening developing into the mouthdioecious  having separate male and female sexesdiphyodont  refers to the possession of two sets ofteeth in a lifetimediploblast  an animal that develops from twoembryonic germ layersdorsal hollow nerve cord  a hollow, tubular structurederived from ectoderm, which is located dorsal tothe notochord in chordatesdown feather  feather specialized for insulationEchinodermata  a phylum of deuterostomes with",
+          "distance": 0.9882
+        },
+        {
+          "index": 5,
+          "label": "Concepts of Biology · p503",
+          "type": "text",
+          "text": "blastocyst, which becomes the embryointernal fertilization  the fertilization of eggs bysperm inside the body of the femaleinterstitial cell of Leydig  a cell type found next to theseminiferous tubules that makes testosteronelabia majora  the large folds of tissue coveringinguinal arealabia minora  the smaller folds of tissue within labiamajoraluteinizing hormone (LH)  a reproductive hormonethat causes testosterone production in males andovulation and lactation in females",
+          "distance": 0.9882
+        },
+        {
+          "index": 6,
+          "label": "Concepts of Biology · p501",
+          "type": "text",
+          "text": "CAREER CONNECTION endometrial cells, and healing of the endometrium closes up the blastocyst into the tissue.Another layer of theblastocyst, the chorion, begins releasing a hormone called human beta chorionic gonadotropin (β-HCG), whichmakes its way to the corpus luteum and keeps that structure active.This ensures adequate levels of progesteronethat will maintain the endometrium of the uterus for the support of the developing embryo.Pregnancy testsdetermine the level of β-HCG in urine or serum.",
+          "distance": 1.0057
+        },
+        {
+          "index": 7,
+          "label": "Concepts of Biology · p97",
+          "type": "text",
+          "text": "(credit: modification of work by Mariana RuizVillarreal)Phagocytosis is the process by which large particles, such as cells, are taken in by a cell.For example, whenmicroorganisms invade the human body, a type of white blood cell called a neutrophil removes the invader through",
+          "distance": 1.0156
+        },
+        {
+          "index": 8,
+          "label": "Concepts of Biology · p492",
+          "type": "text",
+          "text": "p492: mass will go on to form the embryo.The trophoblast secretes enzymes that allow implantation of the blastocyst intothe endometrium of the uterus.The trophoblast will contribute to the placenta and nourish the embryo.",
+          "distance": 1.0168
+        }
+      ]
+    },
+    {
+      "book": "Concepts of Biology.pdf",
+      "question": "What does the term amylase refer to?",
+      "type": "answerable",
+      "term": "amylase",
+      "keywords": [
+        "amylase",
+        "maltose",
+        "converts"
+      ],
+      "matched_keywords": [
+        "amylase",
+        "maltose",
+        "converts"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 1.0622,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "Concepts of Biology · p448",
+          "type": "text",
+          "text": "p448: Key Termsaction potential  a momentary change in theelectrical potential of a neuron (or muscle)membraneadrenal gland  the endocrine gland associated withthe kidneysalveolus  (plural: alveoli) (also, air sacs) the terminalstructure of the lung passage where gas exchangeoccursamygdala  a structure within the limbic system thatprocesses fearamylase  an enzyme found in saliva and secreted bythe pancreas that converts carbohydrates tomaltoseanus  the exit point of the digestive system for waste",
+          "distance": 1.0622
+        },
+        {
+          "index": 2,
+          "label": "Concepts of Biology · p415",
+          "type": "text",
+          "text": "(Figure 16.5).Saliva contains mucus that moistens food and buffers the pH of the food.Saliva also containslysozyme, which has antibacterial action.It also contains an enzyme called salivary amylase that begins the processof converting starches in the food into a disaccharide called maltose.Another enzyme called lipase is produced bycells in the tongue to break down fats.The chewing and wetting action provided by the teeth and saliva prepare thefood into a mass called the bolus for swallowing.",
+          "distance": 1.0681
+        },
+        {
+          "index": 3,
+          "label": "Concepts of Biology · p402",
+          "type": "text",
+          "text": "p402: Key Termsacoelomate  without a body cavityActinopterygii  ray-finned fishesamniote  a clade of animals that possesses anamniotic egg; includes reptiles (including birds) andmammalsamoebocyte  an amoeba-like cell of sponges whosefunctions include distribution of nutrients to othercells in the spongeAmphibia  frogs, salamanders, and caeciliansampulla of Lorenzini  a sensory organ that allowssharks to detect electromagnetic fields produced byliving things",
+          "distance": 1.0699
+        },
+        {
+          "index": 4,
+          "label": "Concepts of Biology · p61",
+          "type": "text",
+          "text": "LINK TO LEARNING proteins.Each enzyme is specific for the substrate (a reactant that binds to an enzyme) upon which it acts.Enzymescan function to break molecular bonds, to rearrange bonds, or to form new bonds.An example of an enzyme issalivary amylase, which breaks down amylose, a component of starch.Hormones are chemical signaling molecules, usually proteins or steroids, secreted by an endocrine gland or groupof endocrine cells that act to control or regulate specific physiological processes, including growth, development,",
+          "distance": 1.0808
+        },
+        {
+          "index": 5,
+          "label": "Concepts of Biology · p402",
+          "type": "text",
+          "text": "Annelida  a phylum of worm-like animals withmetamerismanthropoids  a clade consisting of monkeys, apes, andhumansAnura  frogsApoda  caeciliansArthropoda  a phylum of Ecdysozoa with jointedappendages and segmented bodiesasymmetrical  having no plane of symmetrybilateral symmetry  a type of symmetry in whichthere is only one plane of symmetry that createstwo mirror-image sidesbody plan  the shape and symmetry of an organismbrachiation  swinging through trees",
+          "distance": 1.104
+        },
+        {
+          "index": 6,
+          "label": "Concepts of Biology · p451",
+          "type": "text",
+          "text": "16.2 Digestive System There are many organs that work together to digestfood and absorb nutrients.The mouth is the point ofingestion and the location where both mechanical andchemical breakdown of food begins.Saliva contains anenzyme called amylase that breaks downcarbohydrates.The food bolus travels through theesophagus by peristaltic movements to the stomach.The stomach has an extremely acidic environment.Theenzyme pepsin digests protein in the stomach.Furtherdigestion and absorption take place in the small",
+          "distance": 1.1283
+        },
+        {
+          "index": 7,
+          "label": "Concepts of Biology · p607",
+          "type": "text",
+          "text": "alternative RNA splicing  217alveoli  407Amino acids  48amniotes  383Amoebocytes  356Amoebozoa  302Amphibia  381ampullae of Lorenzini  380amygdala  430amylase  401anabolic  93anaerobic  288analogous structure  280analogous structures  251anaphase  140aneuploid  162anions  33annealing  227Annelida  372anoxic  288anther  338Anthophyta  342Anthropoids  387antibody  455antigen  454antigen-presenting cell (APC)457Anura  381anus  403aorta  409apex consumers  525",
+          "distance": 1.1323
+        },
+        {
+          "index": 8,
+          "label": "Concepts of Biology · p386",
+          "type": "text",
+          "text": "p386: FIGURE 15.28 Antalis vulgaris shows the classic Dentaliidae shape that gives these animals their common name of “tusk shell.” (credit:Georges Jansoone)AnnelidaPhylum Annelida are segmented worms found in marine, terrestrial, and freshwater habitats, but the presence ofwater or humidity is a critical factor for their survival in terrestrial habitats.The name of the phylum is derived fromthe Latin word annellus, which means a small ring.Approximately 16,500 species have been described.",
+          "distance": 1.15
+        }
+      ]
+    },
+    {
+      "book": "Concepts of Biology.pdf",
+      "question": "What is an anneal?",
+      "type": "answerable",
+      "term": "anneal",
+      "keywords": [
+        "anneal",
+        "stranded"
+      ],
+      "matched_keywords": [],
+      "any_keyword_recalled": false,
+      "term_recalled": false,
+      "best_distance": 0.9625,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "Concepts of Biology · p386",
+          "type": "text",
+          "text": "p386: FIGURE 15.28 Antalis vulgaris shows the classic Dentaliidae shape that gives these animals their common name of “tusk shell.” (credit:Georges Jansoone)AnnelidaPhylum Annelida are segmented worms found in marine, terrestrial, and freshwater habitats, but the presence ofwater or humidity is a critical factor for their survival in terrestrial habitats.The name of the phylum is derived fromthe Latin word annellus, which means a small ring.Approximately 16,500 species have been described.",
+          "distance": 0.9625
+        },
+        {
+          "index": 2,
+          "label": "Concepts of Biology · p387",
+          "type": "text",
+          "text": "LINK TO LEARNING This video and animation (https://openstax.org/l/annelid2) provides a close-up look at annelid anatomy.Annelid DiversityPhylum Annelida includes the classes Polychaeta and Clitellata (Figure 15.30); the latter contains subclassesOligochaeta, Hirudinoidea, and Branchiobdellida.Earthworms are the most abundant members of the subclass Oligochaeta, distinguished by the presence of theclitellum, a ring structure in the skin that secretes mucus to bind mating individuals and forms a protective cocoon",
+          "distance": 0.9982
+        },
+        {
+          "index": 3,
+          "label": "Concepts of Biology · p387",
+          "type": "text",
+          "text": "p387: FIGURE 15.29 In this schematic showing the basic anatomy of annelids, the digestive system is indicated in green, the nervous system isindicated in yellow, and the circulatory system is indicated in red.Annelids may be either monoecious with permanent gonads (as in earthworms and leeches) or dioecious withtemporary or seasonal gonads (as in polychaetes).",
+          "distance": 1.0114
+        },
+        {
+          "index": 4,
+          "label": "Concepts of Biology · p402",
+          "type": "text",
+          "text": "Annelida  a phylum of worm-like animals withmetamerismanthropoids  a clade consisting of monkeys, apes, andhumansAnura  frogsApoda  caeciliansArthropoda  a phylum of Ecdysozoa with jointedappendages and segmented bodiesasymmetrical  having no plane of symmetrybilateral symmetry  a type of symmetry in whichthere is only one plane of symmetry that createstwo mirror-image sidesbody plan  the shape and symmetry of an organismbrachiation  swinging through trees",
+          "distance": 1.0124
+        },
+        {
+          "index": 5,
+          "label": "Concepts of Biology · p403",
+          "type": "text",
+          "text": "water into the water vascular systemmammal  one of the groups of endothermicvertebrates that possess hair and mammary glandsmammary gland  in female mammals, a gland thatproduces milk for newbornsmantle  a specialized epidermis that encloses allvisceral organs and secretes shells in mollusksmarsupial  one of the groups of mammals thatincludes the kangaroo, koala, bandicoot, Tasmaniandevil, and several other species; young developwithin a pouchmedusa  a free-floating cnidarian body plan with a",
+          "distance": 1.0134
+        },
+        {
+          "index": 6,
+          "label": "Concepts of Biology · p390",
+          "type": "text",
+          "text": "reptiles, birds, and mammals.(Birds are considered tetrapods because they evolved from tetrapod ancestors.)The post-anal tail is a posterior elongation of the body extending beyond the anus.The tail contains skeletal37615 • Diversity of AnimalsAccess for free at openstax.org",
+          "distance": 1.0156
+        },
+        {
+          "index": 7,
+          "label": "Concepts of Biology · p386",
+          "type": "text",
+          "text": "modifications in different segments that perform different functions.The overall body can then be divided into head,body, and tail.Physiological Processes of AnnelidaThe skin of annelids is protected by a cuticle that is thinner than the cuticle of the ecdysozoans and does not need tobe molted for growth.Chitinous hairlike extensions, anchored in the skin and projecting from the cuticle, calledchaetae, are present in every segment in most groups.",
+          "distance": 1.0335
+        },
+        {
+          "index": 8,
+          "label": "Concepts of Biology · p386",
+          "type": "text",
+          "text": "Excretion is carried out by pairs of primitive“kidneys” called metanephridia that consist of a convoluted tubule and an open, ciliated funnel present in everysegment.Annelids have a well-developed nervous system with two ventral nerve cords and a nerve ring of fusedganglia present around the pharynx.37215 • Diversity of AnimalsAccess for free at openstax.org",
+          "distance": 1.0394
+        }
+      ]
+    },
+    {
+      "book": "Criminal Law.pdf",
+      "question": "How is actus discussed in this book?",
+      "type": "answerable",
+      "term": "actus",
+      "keywords": [
+        "actus",
+        "interrelationships",
+        "essential"
+      ],
+      "matched_keywords": [
+        "actus"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 0.8129,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "Criminal Law · p15",
+          "type": "text",
+          "text": "3.1 What does the actus reus consist of?...................17",
+          "distance": 0.8129
+        },
+        {
+          "index": 2,
+          "label": "Criminal Law · p18",
+          "type": "text",
+          "text": "a.What is the actus reus of theft?b.What does the actus reus component of theft known as ‘appropriation’ in theftmean?c.If V lends D his book and a week later D decides to keep and sell the book, does Dneed to sell the book to satisfy the act component of the actus reus?Activity 3.2Consider the following cases and answer the question below.a.Aftab has an infectious respiratory disease.He kisses Miah.Miah catches Aftab’sdisease and suffers serious illness.",
+          "distance": 0.8202
+        },
+        {
+          "index": 3,
+          "label": "Criminal Law · p12",
+          "type": "text",
+          "text": "2.2.1 Actus reus The actus reus of a crime is the package of behaviour which the law prohibits.This package may prohibit simply acting in a particular way, as in the offence ofcareless driving, or it may prohibit bringing about a particular result, as in murder ormanslaughter.It may also prohibit doing something, or bringing about somethingin particular circumstances, such as, in the crime of rape, having intercourse withanother without their consent.This can be represented as follows:",
+          "distance": 0.9733
+        },
+        {
+          "index": 4,
+          "label": "Criminal Law · p18",
+          "type": "text",
+          "text": "p18: page 18University of London    International ProgrammesWhere a defendant has no control over what they are doing they are said to be actingin a state of automatism.Like insanity, its close cousin, automatism is a defence tocriminal liability: both will be looked at in detail in Chapter 10 of this module guide.3.1.3 Am I able to identify the act component in an actus reus?To decide whether D has committed the actus reus of a crime you need to:",
+          "distance": 0.9772
+        },
+        {
+          "index": 5,
+          "label": "Criminal Law · p23",
+          "type": "text",
+          "text": "present list, together with arguments against.Finally consider the arguments, for andagainst, for giving everybody a general responsibility to help others in peril.Am I ready to move on?In Chapter 4 of this module guide we shall look at the other ingredients of the actusreus, namely consequences and causation.Are you ready to move on to the nextchapter?You are if – without referring to the module guide or Wilson – you can answerthe following questions.",
+          "distance": 0.9823
+        },
+        {
+          "index": 6,
+          "label": "Criminal Law · p17",
+          "type": "text",
+          "text": "3.1\t What does the actus reus consist of? The actus reus in crime comprises:uuconduct (always)uuany circumstances necessary to render that conduct wrongful (if any are required)uuresult (if any is required).In this chapter we will concentrate on the conduct and circumstances elements ofactus reus.",
+          "distance": 0.9862
+        },
+        {
+          "index": 7,
+          "label": "Criminal Law · p17",
+          "type": "text",
+          "text": "p17: Criminal law    3    Actus reus: conduct and circumstancespage 17",
+          "distance": 0.9888
+        },
+        {
+          "index": 8,
+          "label": "Criminal Law · p11",
+          "type": "text",
+          "text": "2.1\t General principles with the mens rea for murder.In Section 4.2 of Wilson, murder is defined as ‘an unlawful killing with maliceaforethought’.We can then separate the actus reus from the mens rea.The actus reusis the prohibited act; that is, ‘an unlawful killing’.The mens rea is the accompanying",
+          "distance": 1.0021
+        }
+      ]
+    },
+    {
+      "book": "Criminal Law.pdf",
+      "question": "How is doing nothing discussed in this book?",
+      "type": "answerable",
+      "term": "doing nothing",
+      "keywords": [
+        "doing nothing",
+        "corollary",
+        "described"
+      ],
+      "matched_keywords": [
+        "doing nothing",
+        "corollary",
+        "described"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 1.0778,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "Criminal Law · p17",
+          "type": "text",
+          "text": "3.1.2 What is an act? Here there can be no criminal liability in respect of Noor.Parveen did not die as aresult of any bodily movement on the part of Noor.Doing nothing is not an act.The bodily movement must be voluntaryThe second component of the act requirement is that the bodily movement isvoluntary.In Bratty v A-G for Northern Ireland [1961] 3 All ER 523 HL, Lord Denningexplained this as follows:Illustration 3.2Yasmin is waiting at the kerbside waiting to cross a busy road.",
+          "distance": 1.0778
+        },
+        {
+          "index": 2,
+          "label": "Criminal Law · p17",
+          "type": "text",
+          "text": "3.1.2 What is an act? chased his victim, who consequently died of a heart attack.The corollary of this is that if A’s contribution to the occurrence of a criminal harmcan be described only as ‘doing nothing’ or ‘not lifting a finger’, she cannot be heldcriminally accountable for that harm.Illustration 3.1Noor sees Parveen, a blind woman whom she does not like, about to step out intoa road, unaware that a lorry is approaching at great speed.Noor does nothing towarn Parveen, who dies in the resulting crash.",
+          "distance": 1.1006
+        },
+        {
+          "index": 3,
+          "label": "Criminal Law · p19",
+          "type": "text",
+          "text": "define it simply as ‘causing death’.An act of killing involves some affirmative actionsuch as a stabbing, a shooting, a beating, a poisoning, a suffocating and so on.But itis possible to ‘cause death’ by doing nothing.For example, it is a perfectly correct useof language to say that a parent who gives her baby no food so that it dies causes thedeath of the child – and indeed ‘kills’ the child.The controversy concerns how far thisprinciple should stretch.",
+          "distance": 1.1605
+        },
+        {
+          "index": 4,
+          "label": "Criminal Law · p19",
+          "type": "text",
+          "text": "Only one person can pull a trigger, but every passerby whosees a baby drowning in a puddle but does nothing to help can be said to ‘cause’ thebaby’s death.Are they all to be charged with murder?How do we ensure that only thetruly deserving suffer conviction and punishment?",
+          "distance": 1.1622
+        },
+        {
+          "index": 5,
+          "label": "Criminal Law · p21",
+          "type": "text",
+          "text": "5.D.1 ‘Acts and omissions: what’s the difference?’ and answerthe following questions.a.Why were the doctors in Airedale NHS Trust v Bland (1993) not guilty of murderfor switching off the machine keeping Anthony Bland alive?b.Do you think this is the right decision?c.If Anthony Bland’s parents had switched off the machine out of compassion forhis position would they have been guilty of murder?3.The defendant’s failure to act must be in breach of that duty",
+          "distance": 1.1886
+        },
+        {
+          "index": 6,
+          "label": "Criminal Law · p23",
+          "type": "text",
+          "text": "4.\t Under what circumstances will a duty to act arise? 5.What is the difference between an act and an omission?Why does it matter?",
+          "distance": 1.1937
+        },
+        {
+          "index": 7,
+          "label": "Criminal Law · p21",
+          "type": "text",
+          "text": "commission?If it is the latter then A is guilty of murder: if the former then it is nothing.So much hangs on a simple question of definition.The usual definition of an act, as weknow, is ‘a bodily movement’.Since A has moved his body then, assuming death wouldhave been prevented by maintaining his grip, A seems to be guilty of murder.Simple intheory, but not so simple in practice.To understand why you will need to read Wilson.Activity 3.6Read Wilson, Section 4.",
+          "distance": 1.1944
+        },
+        {
+          "index": 8,
+          "label": "Criminal Law · p19",
+          "type": "text",
+          "text": "not onerous in its demands, it is not contrary to principle.A more controversial exception to the act requirement concerns crimes ofcommission.Can these be committed by omission?Crimes of commission are thosecrimes whose definition includes an actus reus which satisfies the act requirement, butwhose result component can be caused by doing nothing.For example, the actus reusof murder is ‘an unlawful killing’.Dictionaries define ‘kill’ as ‘an act of killing’, but also",
+          "distance": 1.201
+        }
+      ]
+    },
+    {
+      "book": "Criminal Law.pdf",
+      "question": "What is blood transfusion?",
+      "type": "answerable",
+      "term": "blood transfusion",
+      "keywords": [
+        "blood transfusion",
+        "agreeing",
+        "easily"
+      ],
+      "matched_keywords": [
+        "blood transfusion",
+        "agreeing",
+        "easily"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 1.0123,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "Criminal Law · p33",
+          "type": "text",
+          "text": "4.3.6 Supervening acts of the victim responsible for V’s resultant death from tetanus.In Blaue [1975] 1 WLR 1411, D stabbed V,causing serious blood loss.Doctors treating V told her she needed a blood transfusionelse she would die.V refused the transfusion for religious reasons and died of bloodloss.D argued that he was not the cause of V’s death: the cause was V’s refusal.TheCourt of Appeal rejected this argument, stating that the defendant must ‘take thevictim as he finds him’.D’s act was still a substantial and operative cause of death.",
+          "distance": 1.0123
+        },
+        {
+          "index": 2,
+          "label": "Criminal Law · p31",
+          "type": "text",
+          "text": "4.3.3 Problem cases her to hospital.The hospital tells Eve that she needs a blood transfusion andthat she will die without it.Eve refuses, as she still wants to die – which she does.Is Adam the legal cause of her death?Please note here that there is no rightanswer.Questions about whether the factual cause of a criminal harm is also thecause recognised by the law is a matter of moral and common-sense judgement– so exercise yours!",
+          "distance": 1.0825
+        },
+        {
+          "index": 3,
+          "label": "Criminal Law · p35",
+          "type": "text",
+          "text": "4.4.1 New acts intervening In a number of cases in the past 20 years, the supplierof drugs to a person who has died following self-injection has been charged withmanslaughter.The main question for the court is whether the unlawful act of supplycauses the death.If we apply the usual rule of foreseeability (see Roberts and the DraftCriminal Code) the supply is the legal cause of death.However, supplying drugs tosomeone does not cause them to take the drugs.It is their choice.",
+          "distance": 1.1691
+        },
+        {
+          "index": 4,
+          "label": "Criminal Law · p34",
+          "type": "text",
+          "text": "4.4\t Breaking the chain of causation whether foreseeable or not.An act or event which breaks the chain of causation is known as a novus actusinterveniens, or a new act intervening.Now we will examine the special characteristicsof a novus actus interveniens, of which the case of Jordan (1956) is an example.In thiscase the court ruled, rightly or wrongly, that the intervening causal contribution ofa third party was so powerful and independent of the initial wrongful act of thedefendant that that act was no longer fairly treated as the cause of death.",
+          "distance": 1.1713
+        },
+        {
+          "index": 5,
+          "label": "Criminal Law · p17",
+          "type": "text",
+          "text": "3.1.2 What is an act? There are two components to acts.The first is a ‘bodily movement’ (American ModelPenal Code).The second is that the bodily movement be ‘voluntary’.A bodily movementThe conduct element in murder consists of any act which causes the death of a humanbeing.There is no need for an act of violence; any act which causes death will do.Poisoning the victim’s drink is an act.Cutting the brake cables of the victim’s car is anact.In Hayward (1908) 21 Cox CC 692 it was sufficient that the accused threatened and",
+          "distance": 1.173
+        },
+        {
+          "index": 6,
+          "label": "Criminal Law · p31",
+          "type": "text",
+          "text": "4.3.3 Problem cases Activity 4.4Read Wilson, Section 5.6.A ‘Subsisting conditions’ and answer the followingquestions.a.Why was Blaue the cause of V’s death when V could have easily prevented it byagreeing to a blood transfusion?b.Eve asks Adam, her husband, to shoot her because she is terminally ill andwishes to die.Adam does so out of compassion and respect for her wishes.However, his shot fails to kill her but causes massive internal bleeding.Adamthen realises that he does not want to be responsible for Eve’s death so he takes",
+          "distance": 1.1734
+        },
+        {
+          "index": 7,
+          "label": "Criminal Law · p21",
+          "type": "text",
+          "text": "5.D.1 ‘Acts and omissions: what’s the difference?’ and answerthe following questions.a.Why were the doctors in Airedale NHS Trust v Bland (1993) not guilty of murderfor switching off the machine keeping Anthony Bland alive?b.Do you think this is the right decision?c.If Anthony Bland’s parents had switched off the machine out of compassion forhis position would they have been guilty of murder?3.The defendant’s failure to act must be in breach of that duty",
+          "distance": 1.1757
+        },
+        {
+          "index": 8,
+          "label": "Criminal Law · p36",
+          "type": "text",
+          "text": "4.4.2 Intervening events An intervening event will break the chain of causation if it is:uuabnormaluuindependent of D’s act (i.e.a complete coincidence), anduusufficient in itself to cause the death or other harm.This would apply to case (e) in Activity 4.1 above, the ambulance case.It wouldalso apply if V died in hospital due to an earthquake or contracted a fatal illnessindependent of their condition.For example, in Bush v Commonwealth (1880) V died ofscarlet fever contracted in hospital following D’s attack.",
+          "distance": 1.1789
+        }
+      ]
+    },
+    {
+      "book": "Criminal Law.pdf",
+      "question": "What is the role of result crimes?",
+      "type": "answerable",
+      "term": "result crimes",
+      "keywords": [
+        "result crimes",
+        "capable",
+        "commission"
+      ],
+      "matched_keywords": [
+        "result crimes",
+        "commission"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 0.7321,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "Criminal Law · p27",
+          "type": "text",
+          "text": "4.1\t Result crimes accident.Result crimes, however, require both wrongful conduct and harm.So the crime ofcausing death by dangerous driving requires both dangerous driving and a death.Crucially, however, the prosecution must also prove causation.In other words, it mustprove that the victim met their death as a result of the defendant driving dangerously.For all result crimes, therefore, the prosecution bears the burden of proving that thedefendant’s conduct caused the prohibited result.",
+          "distance": 0.7321
+        },
+        {
+          "index": 2,
+          "label": "Criminal Law · p27",
+          "type": "text",
+          "text": "4.1\t Result crimes The third element in actus reus concerns result crimes only.You will remember thatsome crimes do not require proof of harm.These are known as conduct crimes.They require proof only of some form of wrongful conduct.An example is dangerousdriving; a person can be convicted of dangerous driving if, for example, they drive toofast or aggressively, ignore traffic lights or road signs, or overtake while driving rounda blind corner.A conviction does not require anybody to be hurt or for there to be an",
+          "distance": 0.8397
+        },
+        {
+          "index": 3,
+          "label": "Criminal Law · p22",
+          "type": "text",
+          "text": "Let’s see.Read Wilson, Section4.5.D ‘Omissions and crimes of commission’ and then complete the following.a.Name three crimes which cannot be committed by omission.b.For result crimes, how does the criminal law ensure that liability for failing toprevent a result does not criminalise too many people?c.Under what circumstances is a person placed under a duty to act to preventharm?d.Does a sibling owe a duty to other siblings?e.Do offspring owe duties to parents?",
+          "distance": 0.8948
+        },
+        {
+          "index": 4,
+          "label": "Criminal Law · p27",
+          "type": "text",
+          "text": "4.1\t Result crimes caused B’s death.Similarly, if A sets light to B’s house or stabs B, it should not be toodifficult for the prosecution to show that A’s act caused the criminal damage or thewound, as the case may be.The prosecution’s task becomes harder, however, when more than one event or actcontributes to the result.In such circumstances questions as to whether D’s act oromission was the cause of the harm demand the application of legal principles.Sowhat are the principles governing causation in the criminal law?",
+          "distance": 0.907
+        },
+        {
+          "index": 5,
+          "label": "Criminal Law · p27",
+          "type": "text",
+          "text": "4.1\t Result crimes In murder or manslaughter thiswill be the death; in criminal damage it will be the damage done to the property; inmalicious wounding it will be the wound, and so on.In this chapter we consider whatthe prosecution has to show if it is to discharge its burden of proving causation.In the vast majority of cases this will be straightforward.For example, if A shoots B witha gun and B dies, it should not be too difficult for the prosecution to show that A’s act",
+          "distance": 0.913
+        },
+        {
+          "index": 6,
+          "label": "Criminal Law · p25",
+          "type": "text",
+          "text": "4.1 Result crimes   ...............................27",
+          "distance": 0.9191
+        },
+        {
+          "index": 7,
+          "label": "Criminal Law · p27",
+          "type": "text",
+          "text": "4.1\t Result crimes V falls unconscious and dies almostimmediately.Does D cause V’s death?",
+          "distance": 0.9253
+        },
+        {
+          "index": 8,
+          "label": "Criminal Law · p16",
+          "type": "text",
+          "text": "criminal law can get involved.",
+          "distance": 0.9448
+        }
+      ]
+    },
+    {
+      "book": "Microbiology.pdf",
+      "question": "Since the presence of a capsule is directly related to a microbe’s it, the ability to determine whether cells in a sample have capsules is an important",
+      "type": "fuzzy_desc",
+      "term": "virulence",
+      "keywords": [
+        "virulence"
+      ],
+      "matched_keywords": [
+        "virulence"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 0.6348,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "Microbiology · p376",
+          "type": "text",
+          "text": "microbiologists.The number of bacteria in a clinical sample serves as an indication of the extent of an infection.Quality control of drinking water, food, medication, and even cosmetics relies on estimates of bacterial counts todetect contamination and prevent the spread of disease.Two major approaches are used to measure cell number.The direct methods involve counting cells, whereas the indirect methods depend on the measurement of cellpresence or activity without actually counting individual cells.",
+          "distance": 0.6348
+        },
+        {
+          "index": 2,
+          "label": "Microbiology · p378",
+          "type": "text",
+          "text": "one cell may pass through the aperture at any given time and skew the results.This method also does not differentiatebetween live and dead cells.Direct counts provide an estimate of the total number of cells in a sample.However, in many situations, it is importantto know the number of live, or viable, cells.Counts of live cells are needed when assessing the extent of an infection,the effectiveness of antimicrobial compounds and medication, or contamination of food and water.",
+          "distance": 0.6486
+        },
+        {
+          "index": 3,
+          "label": "Microbiology · p87",
+          "type": "text",
+          "text": "p87: Figure 2.36 Ziehl-Neelsen staining has rendered these Mycobacterium tuberculosis cells red and thesurrounding growth indicator medium blue.(credit: modification of work by American Society for Microbiology)Capsule StainingCertain bacteria and yeasts have a protective outer structure called a capsule.Since the presence of a capsule isdirectly related to a microbe’s virulence (its ability to cause disease), the ability to determine whether cells in a sample",
+          "distance": 0.6876
+        },
+        {
+          "index": 4,
+          "label": "Microbiology · p128",
+          "type": "text",
+          "text": "p128: often to eliminate microbes.Figure 3.29 (a) Capsules are a type of glycocalyx composed of an organized layer of polysaccharides.(b) A capsulestain of Pseudomonas aeruginosa, a bacterial pathogen capable of causing many different types of infections inhumans.(credit b: modification of work by American Society for Microbiology)The ability to produce a capsule can contribute to a microbe’s pathogenicity (ability to cause disease) becausethe capsule can make it more difficult for phagocytic cells (such as white blood cells) to engulf and kill the",
+          "distance": 0.6966
+        },
+        {
+          "index": 5,
+          "label": "Microbiology · p345",
+          "type": "text",
+          "text": "contain a number of miniature reaction tubes, each typically including a specific substrate and pH indicator.After inoculation of the test panel with a small sample of the microbe in question and incubation, scientistscan compare the results to a database that includes the expected results for specific biochemical reactionsfor known microbes, thus enabling rapid identification of a sample microbe.These test panels have allowedscientists to reduce costs while improving efficiency and reproducibility by performing a larger number of tests",
+          "distance": 0.6982
+        },
+        {
+          "index": 6,
+          "label": "Microbiology · p315",
+          "type": "text",
+          "text": "7.5 Using Biochemistry to Identify Microorganisms Learning Objectives•Describe examples of biosynthesis products within a cell that can be detected to identify bacteriaAccurate identification of bacterial isolates is essential in a clinical microbiology laboratory because the results ofteninform decisions about treatment that directly affect patient outcomes.For example, cases of food poisoning requireaccurate identification of the causative agent so that physicians can prescribe appropriate treatment.",
+          "distance": 0.7025
+        },
+        {
+          "index": 7,
+          "label": "Microbiology · p87",
+          "type": "text",
+          "text": "have capsules is an important diagnostic tool.Capsules do not absorb most basic dyes; therefore, a negative stainingtechnique (staining around the cells) is typically used for capsule staining.The dye stains the background but doesnot penetrate the capsules, which appear like halos around the borders of the cell.The specimen does not need to beheat-fixed prior to negative staining.One common negative staining technique for identifying encapsulated yeast and bacteria is to add a few drops of India",
+          "distance": 0.7238
+        },
+        {
+          "index": 8,
+          "label": "Microbiology · p382",
+          "type": "text",
+          "text": "associated with a decrease in percent transmission and increase in absorbance measured by the spectrophotometer.Measuring turbidity is a fast method to estimate cell density as long as there are enough cells in a sample to produceturbidity.It is possible to correlate turbidity readings to the actual number of cells by performing a viable platecount of samples taken from cultures having a range of absorbance values.Using these values, a calibration curve is",
+          "distance": 0.7252
+        }
+      ]
+    },
+    {
+      "book": "Microbiology.pdf",
+      "question": "What does this book say about lymphatic systems?",
+      "type": "answerable",
+      "term": "lymphatic systems",
+      "keywords": [
+        "lymphatic systems",
+        "epstein-barr",
+        "cytomegalovirus"
+      ],
+      "matched_keywords": [
+        "lymphatic systems"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 0.7872,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "Microbiology · p1118",
+          "type": "text",
+          "text": "The circulatory and lymphatic systems are networks of vessels and a pump that transport blood and lymph,respectively, throughout the body.When these systems are infected with a microorganism, the network of vessels canfacilitate the rapid dissemination of the microorganism to other regions of the body, sometimes with serious results.In this section, we will examine some of the key anatomical features of the circulatory and lymphatic systems, as well",
+          "distance": 0.7872
+        },
+        {
+          "index": 2,
+          "label": "Microbiology · p1119",
+          "type": "text",
+          "text": "However, thesevessels do not form a full circulating system and are not pressurized by the heart.Rather, the lymphatic system isan open system with the fluid moving in one direction from the extremities toward two drainage points into veins",
+          "distance": 0.8534
+        },
+        {
+          "index": 3,
+          "label": "Microbiology · p1122",
+          "type": "text",
+          "text": "drains from surrounding tissues.The lymphatic system filters fluids that have accumulated in tissues before theyare returned to the blood.A brief overview of this process is provided at this(https://openstax.org/l/22lymphatic) website.•What is the main function of the lymphatic system?Infections of the Circulatory SystemUnder normal circumstances, the circulatory system and the blood should be sterile; the circulatory system has nonormal microbiota.",
+          "distance": 0.8546
+        },
+        {
+          "index": 4,
+          "label": "Microbiology · p1118",
+          "type": "text",
+          "text": "p1118: 25.1 Anatomy of the Circulatory and Lymphatic SystemsLearning Objectives•Describe the major anatomical features of the circulatory and lymphatic systems•Explain why the circulatory and lymphatic systems lack normal microbiota•Explain how microorganisms overcome defenses of the circulatory and lymphatic systems to cause infection•Describe general signs and symptoms of disease associated with infections of the circulatory and lymphaticsystems",
+          "distance": 0.858
+        },
+        {
+          "index": 5,
+          "label": "Microbiology · p1170",
+          "type": "text",
+          "text": "25.1 Anatomy of the Circulatory and Lymphatic Systems •The circulatory system moves blood throughout the body and has no normal microbiota.•The lymphatic system moves fluids from the interstitial spaces of tissues toward the circulatory system andfilters the lymph.It also has no normal microbiota.•The circulatory and lymphatic systems are home to many components of the host immune defenses.•Infections of the circulatory system may occur after a break in the skin barrier or they may enter thebloodstream at the site of a localized infection.",
+          "distance": 0.8692
+        },
+        {
+          "index": 6,
+          "label": "Microbiology · p1121",
+          "type": "text",
+          "text": "p1121: Figure 25.4 Blood enters the capillaries from an arteriole (red) and leaves through venules (blue).Interstitial fluidsmay drain into the lymph capillaries (green) and proceed to lymph nodes.(credit: modification of work by NationalCancer Institute, National Institutes of Health)The lymphatic system contains two types of lymphoid tissues.The primary lymphoid tissue includes bone marrowand the thymus.Bone marrow contains the hematopoietic stem cells (HSC) that differentiate and mature into the",
+          "distance": 0.8717
+        },
+        {
+          "index": 7,
+          "label": "Microbiology · p782",
+          "type": "text",
+          "text": "about inflammation and innate immunity in this chapter.",
+          "distance": 0.8872
+        },
+        {
+          "index": 8,
+          "label": "Microbiology · p1164",
+          "type": "text",
+          "text": "Chapter 25 | Circulatory and Lymphatic System Infections This OpenStax book is available for free at http://cnx.org/content/col12087/1.4",
+          "distance": 0.8919
+        }
+      ]
+    },
+    {
+      "book": "Microbiology.pdf",
+      "question": "What does this book say about microbial?",
+      "type": "answerable",
+      "term": "microbial",
+      "keywords": [
+        "microbial",
+        "alike",
+        "clinicians"
+      ],
+      "matched_keywords": [
+        "microbial"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 0.7671,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "Microbiology · p11",
+          "type": "text",
+          "text": "org.FormatYou can access this textbook for free in web view or PDF through openstax.org, and for a low cost in print.About MicrobiologyMicrobiology is designed to cover the scope and sequence requirements for the single-semester Microbiology coursefor non-majors.The book presents the core concepts of microbiology with a focus on applications for careers inallied health.The pedagogical features of Microbiology make the material interesting and accessible to students while",
+          "distance": 0.7671
+        },
+        {
+          "index": 2,
+          "label": "Microbiology · p12",
+          "type": "text",
+          "text": "p12: relevance, such as environmental and applied microbiology and the history of science.With these objectives in mind, the content of this textbook has been arranged in a logical progression fromfundamental to more advanced concepts.The opening chapters present an overview of the discipline, with individualchapters focusing on microscopy and cellular biology as well as each of the classifications of microorganisms.Students then explore the foundations of microbial biochemistry, metabolism, and genetics, topics that provide a",
+          "distance": 0.7972
+        },
+        {
+          "index": 3,
+          "label": "Microbiology · p12",
+          "type": "text",
+          "text": "basis for understanding the various means by which we can control and combat microbial growth.Beginning withChapter 15, the focus turns to microbial pathogenicity, emphasizing how interactions between microbes and thehuman immune system contribute to human health and disease.The last several chapters of the text provide a surveyof medical microbiology, presenting the characteristics of microbial diseases organized by body system.A brief Table of Contents follows.",
+          "distance": 0.7976
+        },
+        {
+          "index": 4,
+          "label": "Microbiology · p378",
+          "type": "text",
+          "text": "Chapter 9 | Microbial Growth This OpenStax book is available for free at http://cnx.org/content/col12087/1.4",
+          "distance": 0.8405
+        },
+        {
+          "index": 5,
+          "label": "Microbiology · p380",
+          "type": "text",
+          "text": "Chapter 9 | Microbial Growth This OpenStax book is available for free at http://cnx.org/content/col12087/1.4",
+          "distance": 0.8405
+        },
+        {
+          "index": 6,
+          "label": "Microbiology · p388",
+          "type": "text",
+          "text": "Chapter 9 | Microbial Growth This OpenStax book is available for free at http://cnx.org/content/col12087/1.4",
+          "distance": 0.8405
+        },
+        {
+          "index": 7,
+          "label": "Microbiology · p390",
+          "type": "text",
+          "text": "Chapter 9 | Microbial Growth This OpenStax book is available for free at http://cnx.org/content/col12087/1.4",
+          "distance": 0.8405
+        },
+        {
+          "index": 8,
+          "label": "Microbiology · p396",
+          "type": "text",
+          "text": "Chapter 9 | Microbial Growth This OpenStax book is available for free at http://cnx.org/content/col12087/1.4",
+          "distance": 0.8405
+        }
+      ]
+    },
+    {
+      "book": "Microbiology.pdf",
+      "question": "What is protozoan?",
+      "type": "answerable",
+      "term": "protozoan",
+      "keywords": [
+        "protozoan",
+        "directs",
+        "paramecium"
+      ],
+      "matched_keywords": [
+        "protozoan"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 0.7868,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "Microbiology · p43",
+          "type": "text",
+          "text": "p43: Figure 1.15 Assorted diatoms, a kind of algae, live in annual sea ice in McMurdo Sound, Antarctica.Diatoms rangein size from 2 μm to 200 μm and are visualized here using light microscopy.(credit: modification of work by NationalOceanic and Atmospheric Administration)Protozoa (singular: protozoan) are protists that make up the backbone of many food webs by providing nutrients forother organisms.Protozoa are very diverse.Some protozoa move with help from hair-like structures called cilia or",
+          "distance": 0.7868
+        },
+        {
+          "index": 2,
+          "label": "Microbiology · p1271",
+          "type": "text",
+          "text": "and multicellular types that lack specialized tissuesproton motive force electrochemical gradientformed by the accumulation of hydrogen ions (alsoknown as protons) on one side of a membranerelative to the other protozoan (plural: protozoa) aunicellular eukaryotic organism, usually motileprotozoans informal term for some protists,generally those that are nonphotosynthetic,unicellular, and motile protozoology the study ofprotozoaprovirus animal virus genome that has integrated",
+          "distance": 0.7958
+        },
+        {
+          "index": 3,
+          "label": "Microbiology · p1097",
+          "type": "text",
+          "text": "It is endemic to tropicaland subtropical regions and therefore uncommon in the United States, although there have been outbreaks associatedwith contaminated produce imported from regions where the protozoan is more common.",
+          "distance": 0.8802
+        },
+        {
+          "index": 4,
+          "label": "Microbiology · p1052",
+          "type": "text",
+          "text": "12. What is the only common infection of thereproductive tract caused by a protozoan?a.gonorrheab.chlamydiac.trichomoniasisd.candidiasis",
+          "distance": 0.8823
+        },
+        {
+          "index": 5,
+          "label": "Microbiology · p640",
+          "type": "text",
+          "text": "p640: Antiprotozoan DrugsThere are a few mechanisms by which antiprotozoan drugs target infectious protozoans (Table 14.9).Some areantimetabolites, such as atovaquone, proguanil, and artemisinins.Atovaquone, in addition to being antifungal, blockselectron transport in protozoans and is used for the treatment of protozoan infections including malaria, babesiosis,and toxoplasmosis.Proguanil is another synthetic antimetabolite that is processed in parasitic cells into its active",
+          "distance": 0.9003
+        },
+        {
+          "index": 6,
+          "label": "Microbiology · p208",
+          "type": "text",
+          "text": "Some protists, including protozoans, have distinct layersof cytoplasm under the membrane.In these protists, the outer gel layer (with microfilaments of actin) is called theectoplasm.Inside this layer is a sol (fluid) region of cytoplasm called the endoplasm.These structures contribute tocomplex cell shapes in some protozoans, whereas others (such as amoebas) have more flexible shapes (Figure 5.5).Different groups of protozoans have specialized feeding structures.",
+          "distance": 0.9079
+        },
+        {
+          "index": 7,
+          "label": "Microbiology · p208",
+          "type": "text",
+          "text": "This is a different processthan the conjugation that occurs in bacteria.The term protist conjugation refers to a true form of eukaryotic sexualreproduction between two cells of different mating types.It is found in ciliates, a group of protozoans, and isdescribed later in this subsection.All protozoans have a plasma membrane, or plasmalemma, and some have bands of protein just inside the membranethat add rigidity, forming a structure called the pellicle.",
+          "distance": 0.9154
+        },
+        {
+          "index": 8,
+          "label": "Microbiology · p207",
+          "type": "text",
+          "text": "During the feeding and growth part of their life cycle, theyare called trophozoites; these feed on small particulate food sources such as bacteria.While some types of protozoaexist exclusively in the trophozoite form, others can develop from trophozoite to an encapsulated cyst stage whenenvironmental conditions are too harsh for the trophozoite.A cyst is a cell with a protective wall, and the process bywhich a trophozoite becomes a cyst is called encystment.",
+          "distance": 0.9166
+        }
+      ]
+    },
+    {
+      "book": "Operating Systems - Three Easy Pieces.pdf",
+      "question": "Explain virtual machine monitors.",
+      "type": "answerable",
+      "term": "virtual machine monitors",
+      "keywords": [
+        "virtual machine monitors",
+        "appendix",
+        "stuck"
+      ],
+      "matched_keywords": [
+        "virtual machine monitors"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 0.5241,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "Operating Systems - Three Easy Pieces · p609",
+          "type": "text",
+          "text": "VIRTUAL MACHINE MONITORS OS begin running.It is as simple as that (well, almost).Assume we are running on a single processor, and that we wish tomultiplex between two virtual machines, that is, between two OSes andtheir respective applications.In a manner quite similar to an operatingsystem switching between running processes (a context switch), a virtualmachine monitor must perform a machine switch between running vir-tual machines.Thus, when performing such a switch, the VMM must",
+          "distance": 0.5241
+        },
+        {
+          "index": 2,
+          "label": "Operating Systems - Three Easy Pieces · p609",
+          "type": "text",
+          "text": "VIRTUAL MACHINE MONITORS cuss the primary technology underlying Disco and through that windowtry to understand how virtualization works.B.3Virtualizing the CPUTo run a virtual machine (e.g., an OS and its applications) on top of avirtual machine monitor, the basic technique that is used is limited directexecution, a technique we saw before when discussing how the OS vir-tualizes the CPU.Thus, when we wish to “boot” a new OS on top of theVMM, we simply jump to the address of the ﬁrst instruction and let the",
+          "distance": 0.5512
+        },
+        {
+          "index": 3,
+          "label": "Operating Systems - Three Easy Pieces · p608",
+          "type": "text",
+          "text": "HOW TO VIRTUALIZE THE MACHINE UNDERNEATH THE OS The virtual machine monitor must transparently virtualize the ma-chine underneath the OS; what are the techniques required to do so?1",
+          "distance": 0.5552
+        },
+        {
+          "index": 4,
+          "label": "Operating Systems - Three Easy Pieces · p609",
+          "type": "text",
+          "text": "VIRTUAL MACHINE MONITORS operating system types and versions on just one machine.This resurgence in virtualization began in earnest the mid-to-late 1990’s,and was led by a group of researchers at Stanford headed by ProfessorMendel Rosenblum.His group’s work on Disco [B+97], a virtual machinemonitor for the MIPS processor, was an early effort that revived VMMsand eventually led that group to the founding of VMware [V98], now amarket leader in virtualization technology.In this chapter, we will dis-",
+          "distance": 0.5881
+        },
+        {
+          "index": 5,
+          "label": "Operating Systems - Three Easy Pieces · p608",
+          "type": "text",
+          "text": "Speciﬁcally, the monitor sits between one or more operating systemsand the hardware and gives the illusion to each running OS that it con-trols the machine.Behind the scenes, however, the monitor actually isin control of the hardware, and must multiplex running OSes across thephysical resources of the machine.Indeed, the VMM serves as an operat-ing system for operating systems, but at a much lower level; the OS muststill think it is interacting with the physical hardware.",
+          "distance": 0.5945
+        },
+        {
+          "index": 6,
+          "label": "Operating Systems - Three Easy Pieces · p617",
+          "type": "text",
+          "text": "VIRTUAL MACHINE MONITORS virtualization provided by the VMM isn’t a complete one, but rather apartial one requiring OS changes to operate effectively.Research showsthat a properly-designed para-virtualized system, with just the right OSchanges, can be made to be nearly as efﬁcient a system without a VMM[BD+03].VMM is running underneath two different OSes, one in the idle loop andone usefully running user processes, it would be useful for the VMM toknow that one OS is idle so it can give more CPU time to the OS doing",
+          "distance": 0.6017
+        },
+        {
+          "index": 7,
+          "label": "Operating Systems - Three Easy Pieces · p617",
+          "type": "text",
+          "text": "VIRTUAL MACHINE MONITORS hardware of the machine.The key method that VMMs use to do so isto extend the notion of limited direct execution; by setting up the hard-",
+          "distance": 0.6023
+        },
+        {
+          "index": 8,
+          "label": "Operating Systems - Three Easy Pieces · p608",
+          "type": "text",
+          "text": "p608: BVirtual Machine MonitorsB.1IntroductionYears ago, IBM sold expensive mainframes to large organizations, anda problem arose: what if the organization wanted to run different oper-ating systems on the machine at the same time?Some applications hadbeen developed on one OS, and some on others, and thus the problem.As a solution, IBM introduced yet another level of indirection in the formof a virtual machine monitor (VMM) (also called a hypervisor) [G74].",
+          "distance": 0.6062
+        }
+      ]
+    },
+    {
+      "book": "Operating Systems - Three Easy Pieces.pdf",
+      "question": "What is on-disk?",
+      "type": "answerable",
+      "term": "on-disk",
+      "keywords": [
+        "on-disk",
+        "swapping"
+      ],
+      "matched_keywords": [
+        "on-disk"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 0.8009,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "Operating Systems - Three Easy Pieces · p487",
+          "type": "text",
+          "text": "40.6 Access Paths: Reading and WritingNow that we have some idea of how ﬁles and directories are stored ondisk, we should be able to follow the ﬂow of operation during the activityof reading or writing a ﬁle.Understanding what happens on this accesspath is thus the second key in developing an understanding of how a ﬁlesystem works; pay attention!For the following examples, let us assume that the ﬁle system has beenmounted and thus that the superblock is already in memory.",
+          "distance": 0.8009
+        },
+        {
+          "index": 2,
+          "label": "Operating Systems - Three Easy Pieces · p424",
+          "type": "text",
+          "text": "37.2 Basic GeometryLet’s start to understand some of the components of a modern disk.We start with a platter, a circular hard surface on which data is storedpersistently by inducing magnetic changes to it.A disk may have oneor more platters; each platter has 2 sides, each of which is called a sur-face.These platters are usually made of some hard material (such asaluminum), and then coated with a thin magnetic layer that enables thedrive to persistently store bits even when the drive is powered off.",
+          "distance": 0.801
+        },
+        {
+          "index": 3,
+          "label": "Operating Systems - Three Easy Pieces · p32",
+          "type": "text",
+          "text": "2.4 device; in modern systems, a hard drive is a common repository for long-lived information, although solid-state drives (SSDs) are making head-way in this arena as well.The software in the operating system that usually manages the disk iscalled the ﬁle system; it is thus responsible for storing any ﬁles the usercreates in a reliable and efﬁcient manner on the disks of the system.Unlike the abstractions provided by the OS for the CPU and memory,the OS does not create a private, virtualized disk for each application.",
+          "distance": 0.8396
+        },
+        {
+          "index": 4,
+          "label": "Operating Systems - Three Easy Pieces · p423",
+          "type": "text",
+          "text": "the ﬁle system software that manages it.Many of these details are avail-able in excellent papers by Ruemmler and Wilkes [RW92] and Anderson,Dykes, and Riedel [ADR03].CRUX: HOW TO STORE AND ACCESS DATA ON DISKHow do modern hard-disk drives store data?What is the interface?How is the data actually laid out and accessed?How does disk schedul-ing improve performance?",
+          "distance": 0.8639
+        },
+        {
+          "index": 5,
+          "label": "Operating Systems - Three Easy Pieces · p423",
+          "type": "text",
+          "text": "p423: 37Hard Disk DrivesThe last chapter introduced the general concept of an I/O device andshowed you how the OS might interact with such a beast.In this chapter,we dive into more detail about one device in particular: the hard diskdrive.These drives have been the main form of persistent data storage incomputer systems for decades and much of the development of ﬁle sys-tem technology (coming soon) is predicated on their behavior.Thus, itis worth understanding the details of a disk’s operation before building",
+          "distance": 0.8657
+        },
+        {
+          "index": 6,
+          "label": "Operating Systems - Three Easy Pieces · p550",
+          "type": "text",
+          "text": "44.5 Here is anexample of what this added information would look like on a two-disksystem.Note that this ﬁgure, like the others before it, is not to scale, as thechecksums are usually small (e.g., 8 bytes) whereas the blocks are muchlarger (e.g., 4 KB or bigger):Disk 0Disk 1C[D0]disk=0block=0D0C[D1]disk=0block=1D1C[D2]disk=0block=2D2C[D0]disk=1block=0D0C[D1]disk=1block=1D1C[D2]disk=1block=2D2You can see from the on-disk format that there is now a fair amount of",
+          "distance": 0.8677
+        },
+        {
+          "index": 7,
+          "label": "Operating Systems - Three Easy Pieces · p483",
+          "type": "text",
+          "text": "FILE SYSTEM IMPLEMENTATION data blocks reside on disk (e.g., pointers of some kind).We refer to allsuch information about a ﬁle as metadata; in fact, any information insidethe ﬁle system that isn’t pure user data is often referred to as such.Anexample inode from ext2 [P09] is shown in Figure 40.11.One of the most important decisions in the design of the inode is howit refers to where data blocks are.One simple approach would be tohave one or more direct pointers (disk addresses) inside the inode; each",
+          "distance": 0.8848
+        },
+        {
+          "index": 8,
+          "label": "Operating Systems - Three Easy Pieces · p429",
+          "type": "text",
+          "text": "SATA drive ﬁrst.Let’s look at a couple of modern disks from Seagate.The ﬁrst,known as the Cheetah 15K.5 [S09b], is a high-performance SCSI drive.The second, the Barracuda [S09a], is a drive built for capacity.Details onboth are found in Figure 37.5.As you can see, the drives have quite different characteristics, andin many ways nicely summarize two important components of the diskdrive market.The ﬁrst is the “high performance” drive market, wheredrives are engineered to spin as fast as possible, deliver low seek times,",
+          "distance": 0.8975
+        }
+      ]
+    },
+    {
+      "book": "Operating Systems - Three Easy Pieces.pdf",
+      "question": "What is the role of fast file system?",
+      "type": "answerable",
+      "term": "fast file system",
+      "keywords": [
+        "fast file system",
+        "ext2-doc",
+        "nongnu"
+      ],
+      "matched_keywords": [
+        "fast file system"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 0.6907,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "Operating Systems - Three Easy Pieces · p498",
+          "type": "text",
+          "text": "41.2 FFS: Disk Awareness Is The SolutionA group at Berkeley decided to build a better, faster ﬁle system, whichthey cleverly called the Fast File System (FFS).The idea was to designthe ﬁle system structures and allocation policies to be “disk aware” andthus improve performance, which is exactly what they did.FFS thus ush-ered in a new era of ﬁle system research; by keeping the same interfaceto the ﬁle system (the same APIs, including open(), read(), write(),",
+          "distance": 0.6907
+        },
+        {
+          "index": 2,
+          "label": "Operating Systems - Three Easy Pieces · p497",
+          "type": "text",
+          "text": "LOCALITY AND THE FAST FILE SYSTEM data structures?How do we make the ﬁle system “disk aware”?",
+          "distance": 0.742
+        },
+        {
+          "index": 3,
+          "label": "Operating Systems - Three Easy Pieces · p499",
+          "type": "text",
+          "text": "LOCALITY AND THE FAST FILE SYSTEM systems (such as Linux ext2, ext3, and ext4) instead organize the driveinto block groups, each of which is just a consecutive portion of the disk’saddress space.The picture below illustrates an example where every 8blocks are organized into a different block group (note that real groupswould consist of many more blocks):Group 0Group 1Group 2Whether you call them cylinder groups or block groups, these groupsare the central mechanism that FFS uses to improve performance.",
+          "distance": 0.7841
+        },
+        {
+          "index": 4,
+          "label": "Operating Systems - Three Easy Pieces · p32",
+          "type": "text",
+          "text": "2.4 device; in modern systems, a hard drive is a common repository for long-lived information, although solid-state drives (SSDs) are making head-way in this arena as well.The software in the operating system that usually manages the disk iscalled the ﬁle system; it is thus responsible for storing any ﬁles the usercreates in a reliable and efﬁcient manner on the disks of the system.Unlike the abstractions provided by the OS for the CPU and memory,the OS does not create a private, virtualized disk for each application.",
+          "distance": 0.7864
+        },
+        {
+          "index": 5,
+          "label": "Operating Systems - Three Easy Pieces · p499",
+          "type": "text",
+          "text": "LOCALITY AND THE FAST FILE SYSTEM blocks of the group are allocated.A per-group inode bitmap (ib) anddata bitmap (db) serve this role for inodes and data blocks in each group.Bitmaps are an excellent way to manage free space in a ﬁle system be-cause it is easy to ﬁnd a large chunk of free space and allocate it to a ﬁle,perhaps avoiding some of the fragmentation problems of the free list inthe old ﬁle system.Finally, the inode and data block regions are just like those in the pre-",
+          "distance": 0.7884
+        },
+        {
+          "index": 6,
+          "label": "Operating Systems - Three Easy Pieces · p499",
+          "type": "text",
+          "text": "LOCALITY AND THE FAST FILE SYSTEM are allocated or free.Here is a depiction of what FFS keeps within a singlecylinder group:S ib dbInodesDataLet’s now examine the components of this single cylinder group inmore detail.FFS keeps a copy of the super block (S) in each group forreliability reasons.The super block is needed to mount the ﬁle system;by keeping multiple copies, if one copy becomes corrupt, you can stillmount and access the ﬁle system by using a working replica.Within each group, FFS needs to track whether the inodes and data",
+          "distance": 0.7949
+        },
+        {
+          "index": 7,
+          "label": "Operating Systems - Three Easy Pieces · p505",
+          "type": "text",
+          "text": "LOCALITY AND THE FAST FILE SYSTEM FFS was oneof the ﬁrst ﬁle systems to allow for long ﬁle names, thus enabling moreexpressive names in the ﬁle system instead of the traditional ﬁxed-sizeapproach (e.g., 8 characters).Further, a new concept was introduced",
+          "distance": 0.8058
+        },
+        {
+          "index": 8,
+          "label": "Operating Systems - Three Easy Pieces · p491",
+          "type": "text",
+          "text": "40.7 Caching and BufferingAs the examples above show, reading and writing ﬁles can be expen-sive, incurring many I/Os to the (slow) disk.To remedy what wouldclearly be a huge performance problem, most ﬁle systems aggressivelyuse system memory (DRAM) to cache important blocks.Imagine the open example above: without caching, every ﬁle openwould require at least two reads for every level in the directory hierarchy(one to read the inode of the directory in question, and at least one to read",
+          "distance": 0.8144
+        }
+      ]
+    },
+    {
+      "book": "Operating Systems - Three Easy Pieces.pdf",
+      "question": "What is virtual machine?",
+      "type": "answerable",
+      "term": "virtual machine",
+      "keywords": [
+        "virtual machine",
+        "gulati",
+        "irfan"
+      ],
+      "matched_keywords": [
+        "virtual machine"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 0.7396,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "Operating Systems - Three Easy Pieces · p25",
+          "type": "text",
+          "text": "HOW TO VIRTUALIZE RESOURCES The primary way the OS does this is through a general technique thatwe call virtualization.That is, the OS takes a physical resource (such asthe processor, or memory, or a disk) and transforms it into a more gen-eral, powerful, and easy-to-use virtual form of itself.Thus, we sometimesrefer to the operating system as a virtual machine.Of course, in order to allow users to tell the OS what to do and thusmake use of the features of the virtual machine (such as running a pro-",
+          "distance": 0.7396
+        },
+        {
+          "index": 2,
+          "label": "Operating Systems - Three Easy Pieces · p613",
+          "type": "text",
+          "text": "VIRTUAL MACHINE MONITORS Butwe have left out a big part of the equation: how does the VMM virtualizememory?Each OS normally thinks of physical memory as a linear array of pages,and assigns each page to itself or user processes.The OS itself, of course,already virtualizes memory for its running processes, such that each pro-cess has the illusion of its own private address space.Now we must addanother layer of virtualization, so that multiple OSes can share the actualphysical memory of the machine, and we must do so transparently.",
+          "distance": 0.7543
+        },
+        {
+          "index": 3,
+          "label": "Operating Systems - Three Easy Pieces · p137",
+          "type": "text",
+          "text": "virtualizing memory, that knows where in the physical memory of themachine these instructions and data values lie.So never forget: if youprint out an address in a program, it’s a virtual one, an illusion of howthings are laid out in memory; only the OS (and the hardware) knows thereal truth.Here’s a little program that prints out the locations of the main() rou-tine (where code lives), the value of a heap-allocated value returned frommalloc(), and the location of an integer on the stack:",
+          "distance": 0.7618
+        },
+        {
+          "index": 4,
+          "label": "Operating Systems - Three Easy Pieces · p138",
+          "type": "text",
+          "text": "13.5 SummaryWe have seen the introduction of a major OS subsystem: virtual mem-ory.The VM system is responsible for providing the illusion of a large,sparse, private address space to programs, which hold all of their instruc-tions and data therein.The OS, with some serious hardware help, willtake each of these virtual memory references, and turn them into physi-cal addresses, which can be presented to the physical memory in order tofetch the desired information.",
+          "distance": 0.7624
+        },
+        {
+          "index": 5,
+          "label": "Operating Systems - Three Easy Pieces · p618",
+          "type": "text",
+          "text": "VMM can completely control how machine resources are allocated whilepreserving the illusion that the OS requires.You might have noticed some similarities between what the OS doesfor processes and what the VMM does for OSes.They both virtualizethe hardware after all, and hence do some of the same things.However,there is one key difference: with the OS virtualization, a number of newabstractions and nice interfaces are provided; with VMM-level virtual-",
+          "distance": 0.7687
+        },
+        {
+          "index": 6,
+          "label": "Operating Systems - Three Easy Pieces · p153",
+          "type": "text",
+          "text": "Through virtualization, the OS (with the hardware’s help) turns the uglymachine reality into something that is a useful, powerful, and easy to useabstraction.",
+          "distance": 0.7695
+        },
+        {
+          "index": 7,
+          "label": "Operating Systems - Three Easy Pieces · p613",
+          "type": "text",
+          "text": "VIRTUAL MACHINE MONITORS Virtual Address Space\"Physical Memory\"Machine Memory0123OS Page TableVPN 0 to PFN 10VPN 2 to PFN 03VPN 3 to PFN 080123456789101112131415VMM Page TablePFN 03 to MFN 06PFN 08 to MFN 10PFN 10 to MFN 0501234567891011121314151617181920212223Figure B.1: VMM Memory VirtualizationB.4Virtualizing MemoryYou should now have a basic idea of how the processor is virtualized:the VMM acts like an OS and schedules different virtual machines to run,and some interesting interactions occur when privilege levels change.",
+          "distance": 0.7702
+        },
+        {
+          "index": 8,
+          "label": "Operating Systems - Three Easy Pieces · p44",
+          "type": "text",
+          "text": "Good idea!Let us take the most basic of resources, the CPU.Assume there is onephysical CPU in a system (though now there are often two or four or more).Whatvirtualization does is take that single CPU and make it look like many virtualCPUs to the applications running on the system.Thus, while each application3",
+          "distance": 0.7728
+        }
+      ]
+    },
+    {
+      "book": "Psychology2e_WEB.pdf",
+      "question": "Point where we cannot respond to visual information in that portion of the visual field",
+      "type": "fuzzy_desc",
+      "term": "blind spot",
+      "keywords": [
+        "blind spot"
+      ],
+      "matched_keywords": [
+        "blind spot"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 0.7273,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "Psychology2e_WEB · p167",
+          "type": "text",
+          "text": "blind spots do not overlap.Second, our visual system fills in the blind spot so that although we cannot respondto visual information that occurs in that portion of the visual field, we are also not aware that information ismissing.The optic nerve from each eye merges just below the brain at a point called the optic chiasm.As Figure 5.13shows, the optic chiasm is an X-shaped structure that sits just below the cerebral cortex at the front of thebrain.",
+          "distance": 0.7273
+        },
+        {
+          "index": 2,
+          "label": "Psychology2e_WEB · p167",
+          "type": "text",
+          "text": "Rods and cones are connected (via several interneurons) to retinal ganglion cells.Axons from the retinalganglion cells converge and exit through the back of the eye to form the optic nerve.The optic nerve carriesvisual information from the retina to the brain.There is a point in the visual field called the blind spot: Evenwhen light from a small object is focused on the blind spot, we do not see it.We are not consciously aware ofour blind spots for two reasons: First, each eye gets a slightly different view of the visual field; therefore, the",
+          "distance": 0.7638
+        },
+        {
+          "index": 3,
+          "label": "Psychology2e_WEB · p184",
+          "type": "text",
+          "text": "binocular disparity slightly different view of the world that each eye receivesblind spot point where we cannot respond to visual information in that portion of the visual fieldbottom-up processing system in which perceptions are built from sensory inputclosure organizing our perceptions into complete objects rather than as a series of partscochlea fluid-filled, snail-shaped structure that contains the sensory receptor cells of the auditory system",
+          "distance": 0.7702
+        },
+        {
+          "index": 4,
+          "label": "Psychology2e_WEB · p404",
+          "type": "text",
+          "text": "unconscious mental activity of which we are unaware and unable to accessSummary",
+          "distance": 0.7984
+        },
+        {
+          "index": 5,
+          "label": "Psychology2e_WEB · p103",
+          "type": "text",
+          "text": "LINK TO LEARNING FIGURE 3.21 Damage to either Broca’s area or Wernicke’s area can result in language deficits.The types of deficitsare very different, however, depending on which area is affected.The occipital lobe is located at the very back of the brain, and contains the primary visual cortex, which isresponsible for interpreting incoming visual information.The occipital cortex is organized retinotopically,",
+          "distance": 0.8341
+        },
+        {
+          "index": 6,
+          "label": "Psychology2e_WEB · p167",
+          "type": "text",
+          "text": "At the point of the optic chiasm, information from the right visual field (which comes from both eyes) issent to the left side of the brain, and information from the left visual field is sent to the right side of the brain.",
+          "distance": 0.8514
+        },
+        {
+          "index": 7,
+          "label": "Psychology2e_WEB · p160",
+          "type": "text",
+          "text": "LINK TO LEARNING Inattentionalblindness is the failure to notice something that is completely visible because the person was activelyattending to something else and did not pay attention to other things (Mack & Rock, 1998; Simons & Chabris,",
+          "distance": 0.8621
+        },
+        {
+          "index": 8,
+          "label": "Psychology2e_WEB · p159",
+          "type": "text",
+          "text": "In fact, we oftendon’t perceive stimuli that remain relatively constant over prolonged periods of time.This is known assensory adaptation.Imagine going to a city that you have never visited.You check in to the hotel, but whenyou get to your room, there is a road construction sign with a bright flashing light outside your window.Unfortunately, there are no other rooms available, so you are stuck with a flashing light.You decide to watchtelevision to unwind.",
+          "distance": 0.8724
+        }
+      ]
+    },
+    {
+      "book": "The Interpretation of Dreams — Sigmund Freud.pdf",
+      "question": "Describe dream-thoughts.",
+      "type": "answerable",
+      "term": "dream-thoughts",
+      "keywords": [
+        "dream-thoughts",
+        "undergone"
+      ],
+      "matched_keywords": [
+        "dream-thoughts",
+        "undergone"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 0.4717,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p469",
+          "type": "text",
+          "text": "covers in the dream-thoughts.(H)",
+          "distance": 0.4717
+        },
+        {
+          "index": 2,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p538",
+          "type": "text",
+          "text": "us to the dream-thoughts of which we are in search.(B)",
+          "distance": 0.5995
+        },
+        {
+          "index": 3,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p260",
+          "type": "text",
+          "text": "over, will bring us back to dream-interpretation.One day I had been trying to discover what might be the meaning ofthe feelings of being inhibited, of being glued to the spot, of not beingable to get something done, and so on, which occur so often in dreamsand are so closely akin to feelings of anxiety.That night I had the follow-ing dream:I was very incompletely dressed and was going upstairs from a ﬂat on theground ﬂoor to a higher storey.I was going up three steps at a time and was",
+          "distance": 0.6239
+        },
+        {
+          "index": 4,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p9",
+          "type": "text",
+          "text": "THE METHOD OF INTERPRETING DREAMS: AN ANALYSIS OF A",
+          "distance": 0.6325
+        },
+        {
+          "index": 5,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p539",
+          "type": "text",
+          "text": "dreaming: a thought, and as a rule a thought of something that is wished,is objectiﬁed in the dream, is represented as a scene, or, as it seems to us,is experienced.How, then, are we to explain this characteristic peculiarity of thedream-work, or, to put the question more modestly, how are we to ﬁnd aplace for it in the nexus of psychical processes?If we look into the matter more closely we shall observe that two almostindependent features stand out as characteristic of the form taken by this",
+          "distance": 0.6343
+        },
+        {
+          "index": 6,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p492",
+          "type": "text",
+          "text": "complained about me, and I defended myself in the words which I knowfrom my father’s account: ‘I hit him ‘cos he hit me.’ This memory, ormore probably phantasy, which came into my mind while I was analysingthe dream—without further evidence I myself could not tell how1—constituted an intermediate element in the dream-thoughts, which gath-ered up the emotions raging in them as a well collects the water that ﬂowsinto it.From this point the dream-thoughts proceeded along some such",
+          "distance": 0.635
+        },
+        {
+          "index": 7,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p356",
+          "type": "text",
+          "text": "covery that dreams are wish-fulﬁlments.3(D)",
+          "distance": 0.6568
+        },
+        {
+          "index": 8,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p151",
+          "type": "text",
+          "text": "p151: a dream represents a fulﬁlled wish, what is the origin of the remarkableand puzzling form in which the wish-fulﬁlment is expressed?What alter-ation have the dream-thoughts undergone before being changed into themanifest dream which we remember when we wake up?How does thatalteration take place?What is the source of the material that has beenmodiﬁed into the dream?What is the source of the many peculiaritiesthat are to be observed in the dream-thoughts—such, for instance, as the",
+          "distance": 0.658
+        }
+      ]
+    },
+    {
+      "book": "The Interpretation of Dreams — Sigmund Freud.pdf",
+      "question": "What does this book say about castration?",
+      "type": "answerable",
+      "term": "castration",
+      "keywords": [
+        "castration",
+        "baldness",
+        "decapitation"
+      ],
+      "matched_keywords": [
+        "castration",
+        "baldness",
+        "decapitation"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 1.0391,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p400",
+          "type": "text",
+          "text": "also the opening line of the last section of the ﬁnal Chorus in Beethoven’s operaFidelio—his librettist having apparently plagiarized Schiller.]2 [Footnote added 1914:] A tooth being pulled out by someone else in a dream is as arule to be interpreted as castration (like having one’s hair cut by a barber, according",
+          "distance": 1.0391
+        },
+        {
+          "index": 2,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p379",
+          "type": "text",
+          "text": "to which girls are boys who have been castrated.[Cf.Freud, 1908c.]When I suggested to her that she had had this childish belief, she at onceconﬁrmed the fact by telling me that she had heard the anecdote of thelittle boy’s saying to the little girl: ‘Cut off?’ and of the little girl’s reply-ing: ‘No, always been like that.’Thus the sending away of the little one (of the genital organ) in theﬁrst dream was also related to the threat of castration.",
+          "distance": 1.0488
+        },
+        {
+          "index": 3,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p411",
+          "type": "text",
+          "text": "in which eye-symbolism is prominent, see Rank (1913).Other papers on eye-dreams and eye-symbolism, by Eder [1913], Ferenczi [1913] and Reitler[1913a] will be found in the same place.The blinding in the legend of Oedipus,as well as elsewhere, stands for castration.—[Added 1911:] Incidentally, the sym-bolic interpretation of undisguised Oedipus dreams was not unknown to the an-cients.Rank (1910, 534) writes: ‘Thus Julius Caesar is reported to have had a",
+          "distance": 1.0583
+        },
+        {
+          "index": 4,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p276",
+          "type": "text",
+          "text": "Caskets’ (1913f ) and in the second part of his ‘Thoughts on War and Death’(1915b).]",
+          "distance": 1.1006
+        },
+        {
+          "index": 5,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p373",
+          "type": "text",
+          "text": "beating it, etc., often represent masturbation in dreams.[1911.]—To rep-resent castration symbolically, the dream-work makes use of baldness, hair-cutting, falling out of teeth and decapitation.If one of the ordinarysymbols for a penis occurs in a dream doubled or multiplied, it is to beregarded as a warding-off of castration.1 The appearance in dreams oflizards—animals whose tails grow again if they are pulled off—has thesame signiﬁcance.(Cf.the lizard-dream on pp.",
+          "distance": 1.108
+        },
+        {
+          "index": 6,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p182",
+          "type": "text",
+          "text": "amounts to the same thing, that you had killed a child.The intermediatelinks are easily indicated.You remember that a few days ago we were talk-ing about marriage difﬁculties and how inconsistent it is that there shouldbe no objection to carrying out intercourse in such a way that no fertiliza-tion takes place, whereas any interference when once the ovum and semenhave come together and a foetus has been formed is punished as a crime.We went on to recall the mediaeval controversy over the exact point of",
+          "distance": 1.1237
+        },
+        {
+          "index": 7,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p424",
+          "type": "text",
+          "text": "as a great achievement [‘Leistung’].He was escaping from his uncomfort-able situation (in the treatment) by tearing himself out of his feminineattitude....The absurd detail of the strip of wood not simply breakingbut splitting lengthways was explained thus: the dreamer recalled that thiscombination of doubling and destroying was an allusion to castration.Dreams very often represent castration by the presence of two penis sym-bols as the deﬁant expression of an antithetical wish [cf.",
+          "distance": 1.1246
+        },
+        {
+          "index": 8,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p472",
+          "type": "text",
+          "text": "p472: them?—She had read a story in which a negro, who had stirred up hiscompanions to revolt, was hunted with blood-hounds and climbed upa tree to save himself.She went on, in the highest spirits, to produce anumber of fragmentary recollections, such as the advice on how to catchlions from Fliegende Blatter: ‘Take a desert and put it through a sieve andthe lions will be left over.’ And again, the highly amusing but not veryproper anecdote of an ofﬁcial who was asked why he did not take more",
+          "distance": 1.1284
+        }
+      ]
+    },
+    {
+      "book": "The Interpretation of Dreams — Sigmund Freud.pdf",
+      "question": "What does this book say about condensation?",
+      "type": "answerable",
+      "term": "condensation",
+      "keywords": [
+        "condensation",
+        "compares",
+        "scale"
+      ],
+      "matched_keywords": [
+        "condensation",
+        "compares",
+        "scale"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 0.889,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p361",
+          "type": "text",
+          "text": "444.]2 [The two previous ones being condensation and displacement.]3 [This paragraph and the subsequent quotation from Silberer were added in 1914.]",
+          "distance": 0.889
+        },
+        {
+          "index": 2,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p318",
+          "type": "text",
+          "text": "’ This last word was the315A.The Work of Condensation1 In waking life this same kind of analysis and synthesis of syllables—a syllabicchemistry, in fact—plays a part in a great number of jokes: ‘What is the cheapestway of obtaining silver?You go down an avenue of silver poplars [Pappeln, whichmeans both “poplars” and “babbling”] and call for silence.The babbling thenceases and the silver is released.’ The ﬁrst reader and critic of this book—and his",
+          "distance": 0.9179
+        },
+        {
+          "index": 3,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p595",
+          "type": "text",
+          "text": "ceptual presentation is not in any respect more intense on account of theirpsychical signiﬁcance.In the process of condensation, on the other hand,every psychical interconnection is transformed into an intensiﬁcation of itsideational content.The case is the same as when, in preparing a book forthe press, I have some word which is of special importance for understand-ing the text printed in spaced or heavy type; or in speech I should pro-nounce the same word loudly and slowly and with special emphasis.",
+          "distance": 0.9203
+        },
+        {
+          "index": 4,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p300",
+          "type": "text",
+          "text": "]2 [Footnote added 1914:] The occurrence of condensation in dreams has beenhinted at by many writers.Du Prel (1885, 85) has a passage in which he says itis absolutely certain that there has been a process of condensation of the groupsof ideas in dreams.",
+          "distance": 0.9244
+        },
+        {
+          "index": 5,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p316",
+          "type": "text",
+          "text": "p316: dream-thoughts, how new unities are formed (in the shape of collectiveﬁgures and composite structures), and how intermediate common entitiesare constructed.The further questions of the purpose of condensation andof the factors which tend to produce it will not be raised till we come toconsider the whole question of the psychical processes at work in the for-mation of dreams.[See pp.345 f.and Chapter VII, Section E, especiallypp.592 ff.] We will be content for the present with recognizing the fact",
+          "distance": 0.9252
+        },
+        {
+          "index": 6,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p299",
+          "type": "text",
+          "text": "THE WORK OF CONDENSATION The ﬁrst thing that becomes clear to anyone who compares the dream-content with the dream-thoughts is that a work of condensation on a largescale has been carried out.Dreams are brief, meagre and laconic in com-parison with the range and wealth of the dream-thoughts.If a dream iswritten out it may perhaps ﬁll half a page.The analysis setting out thedream-thoughts underlying it may occupy six, eight or a dozen times asmuch space.This relation varies with different dreams; but so far as my",
+          "distance": 0.9532
+        },
+        {
+          "index": 7,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p304",
+          "type": "text",
+          "text": "301A.The Work of Condensation1 [...a thousand threads one treadle throws,Where ﬂy the shuttles hither and thither,Unseen the threads are knit together,And an inﬁnite combination grows.Goethe, Faust, Part I [Scene 4](Bayard Taylor’s translation).]",
+          "distance": 0.9705
+        },
+        {
+          "index": 8,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p315",
+          "type": "text",
+          "text": "gain some insight into the processes of condensation during the forma-tion of dreams.We have been able to observe certain of their details, suchas how preference is given to elements that occur several times over in the312VI.The Dream-Work",
+          "distance": 0.9944
+        }
+      ]
+    },
+    {
+      "book": "The Interpretation of Dreams — Sigmund Freud.pdf",
+      "question": "What is present work?",
+      "type": "answerable",
+      "term": "present work",
+      "keywords": [
+        "present work",
+        "approach",
+        "intended"
+      ],
+      "matched_keywords": [],
+      "any_keyword_recalled": false,
+      "term_recalled": false,
+      "best_distance": 1.086,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p495",
+          "type": "text",
+          "text": "selves is already present, they ﬁnd the harder part of their task—the taskof forcing their way through to representation—already accomplished forthem.Here once more we are brought up against the problem of anxiety-dreams; and these, as we shall ﬁnd, form a marginal case in the functionof dreaming.[Cf.pp.579 ff.]492VI.The Dream-Work",
+          "distance": 1.086
+        },
+        {
+          "index": 2,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p251",
+          "type": "text",
+          "text": "material) we have been led to attribute a hitherto indeﬁnable quality of being‘currently active.’ We can foresee, then, without any great difﬁculty, whatwill happen if fresh material in the form of sensations is added during sleepto these currently active memories.It is once again owing to the fact of theirbeing currently active that these sensory excitations are of importance for thedream; they are united with the other currently active psychical material to",
+          "distance": 1.1013
+        },
+        {
+          "index": 3,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p540",
+          "type": "text",
+          "text": "liarity of dreams.We can deal with it by drawing attention to consciousphantasies—to day-dreams—which treat their ideational content in just thesame manner.While Daudet’s Monsieur Joyeuse1 was wandering, out ofwork, through the streets of Paris (though his daughters believed that he hada job and was sitting in an ofﬁce), he was dreaming of developments thatmight bring him inﬂuential help and lead to his ﬁnding employment—andhe was dreaming in the present tense.",
+          "distance": 1.102
+        },
+        {
+          "index": 4,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p258",
+          "type": "text",
+          "text": "rently active one is called up for the sake of constructing a dream.Adream, however, has no alternative but to represent a wish in the situationof having been fulﬁlled; it is, as it were, faced with the problem of lookingfor a wish which can be represented as fulﬁlled by the currently active sen-sation.If this immediate material is of a painful or distressing kind, thatdoes not necessarily mean that it cannot be used for the construction of adream.",
+          "distance": 1.1332
+        },
+        {
+          "index": 5,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p447",
+          "type": "text",
+          "text": "1 The ﬁrst  sentences of444VI.The Dream-Work1 [This was the patient frequently referred to in Freud’s letters to Fliess (Freud,1950a) as ‘E.’ The present dream is referred to in Letter 126 (December 21, 1899)",
+          "distance": 1.1411
+        },
+        {
+          "index": 6,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p540",
+          "type": "text",
+          "text": "Thus dreams make use of the presenttense in the same manner and by the same right as day-dreams.The presenttense is the one in which wishes are represented as fulﬁlled.But dreams differ from day-dreams in their second characteristic:namely, in the fact of their ideational content being transformed fromthoughts into sensory images, to which belief is attached and which appearto be experienced.I must add at once that not every dream exhibits thistransformation from idea into sensory image.",
+          "distance": 1.142
+        },
+        {
+          "index": 7,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p578",
+          "type": "text",
+          "text": "p578: regressive change in direction, and so on.I have been obliged to adopt thisorder in my description; but what happens in reality is no doubt asimultaneous exploring of one path and another, a swinging of the excita-tion now this way and now that, until at last it accumulates in the directionthat is most opportune and one particular grouping becomes the perma-nent one.Certain personal experiences of my own lead me to suspect thatthe dream-work often requires more than a day and a night in order to",
+          "distance": 1.1457
+        },
+        {
+          "index": 8,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p509",
+          "type": "text",
+          "text": "Bernard-Leroy and Tobowolska (1901) commenton this view: ‘On a cru pouvoir placer le rêve au moment du réveil, et ilsont attribué à la pensée de la veille la fonction de construire le rêve avecles images présentes dans la pensée du sommeil.’4506VI.The Dream-Work1 [‘The mind endeavours to carry out upon these incoherent trains of hallucina-tions the same work of logical co-ordination that it carries out upon sensationsduring the daytime.It connects up all these detached images by an imaginary",
+          "distance": 1.1494
+        }
+      ]
+    },
+    {
+      "book": "The Interpretation of Dreams — Sigmund Freud.pdf",
+      "question": "What is the role of dream-images?",
+      "type": "answerable",
+      "term": "dream-images",
+      "keywords": [
+        "dream-images",
+        "arouses",
+        "indistinctly"
+      ],
+      "matched_keywords": [
+        "dream-images"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 0.7729,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p70",
+          "type": "text",
+          "text": "dream-images.While we are awake we are aware of a diffuse general sen-sibility or coenaesthesia, but only as a vague quality of our mood; to thisfeeling, according to medical opinion, all the organic systems contributea share.At night, however, it would seem that this same feeling, growninto a powerful inﬂuence and acting through its various components, be-comes the strongest and at the same time the commonest source for in-stigating dream-images.",
+          "distance": 0.7729
+        },
+        {
+          "index": 2,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p93",
+          "type": "text",
+          "text": "’]2 [‘There is a further distinction and one of capital importance: namely, that theintellectual faculties of a sleeping man do not exhibit the balance maintained ina man who is awake.’]3 [This paragraph and the next were added in 1914.]4 [‘Dream-images are copies of ideas.The essential thing is the idea, the vision isa mere accessory.When this is once established, we must know how to followthe sequence of the ideas, we must know how to analyse the texture of dreams;",
+          "distance": 0.7945
+        },
+        {
+          "index": 3,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p26",
+          "type": "text",
+          "text": "matter of concern to physicians.As will be seen in the sequel, dreams canmake no such claim to practical importance; but their theoretical value asa paradigm is on the other hand proportionately greater.Anyone who hasfailed to explain the origin of dream-images can scarcely hope to under-stand phobias, obsessions or delusions or to bring a therapeutic inﬂuenceto bear on them.But the same correlation that is responsible for the importance of thesubject must also bear the blame for the deﬁciencies of the present work.",
+          "distance": 0.846
+        },
+        {
+          "index": 4,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p82",
+          "type": "text",
+          "text": "p82: of abstraction) of images—these are two characteristics which perseverein dreams and which the psychological analysis of dreams forces us to rec-ognize as essential features of dream-life.We have already seen [pp.63 ff.]that these images—hypnagogic hallucinations—are themselves identicalin their content with dream-images.1Dreams, then, think predominantly in visual images—but not exclu-sively.They make use of auditory images as well, and, to a lesser extent,",
+          "distance": 0.8509
+        },
+        {
+          "index": 5,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p191",
+          "type": "text",
+          "text": "RECENT AND INDIFFERENT MATERIAL IN DREAMS 188V.Material and Sources of Dreams1 The view adopted by Robert [1886, 9 f.] that the purpose of dreams is to unbur-den our memory of the useless impressions of daytime [cf.pp.105 f.] is plainlyno longer tenable if indifferent memory images from our childhood appear at allfrequently in dreams.Otherwise we could only conclude that dreams performtheir function most inadequately.2 [The different ways of beginning the interpretation of a dream are discussed in",
+          "distance": 0.8531
+        },
+        {
+          "index": 6,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p540",
+          "type": "text",
+          "text": "Thus dreams make use of the presenttense in the same manner and by the same right as day-dreams.The presenttense is the one in which wishes are represented as fulﬁlled.But dreams differ from day-dreams in their second characteristic:namely, in the fact of their ideational content being transformed fromthoughts into sensory images, to which belief is attached and which appearto be experienced.I must add at once that not every dream exhibits thistransformation from idea into sensory image.",
+          "distance": 0.855
+        },
+        {
+          "index": 7,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p580",
+          "type": "text",
+          "text": "forces.And we can now see what that function is.Dreaming has taken onthe task of bringing back under control of the preconscious the excitationin the Ucs.which has been left free; in so doing, it discharges the Ucs.ex-citation, serves it as a safety valve and at the same time preserves the sleepof the preconscious in return for a small expenditure of waking activity.Thus, like all the other psychical structures in the series of which it is amember, it constitutes a compromise; it is in the service of both of the",
+          "distance": 0.8558
+        },
+        {
+          "index": 8,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p67",
+          "type": "text",
+          "text": "stantly moving succession of images shown us by our dreams.No onewho attaches importance to these observations of Ladd’s will underesti-mate the part played in dreams by these subjective sources of stimulation,for, as we know, visual images constitute the principal component of our64I.The Scientific Literature on Dreams",
+          "distance": 0.8602
+        }
+      ]
+    },
+    {
+      "book": "The Interpretation of Dreams — Sigmund Freud.pdf",
+      "question": "What is the role of logical relations?",
+      "type": "answerable",
+      "term": "logical relations",
+      "keywords": [
+        "logical relations",
+        "manifold",
+        "complicated"
+      ],
+      "matched_keywords": [
+        "logical relations",
+        "manifold",
+        "complicated"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 1.0395,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p368",
+          "type": "text",
+          "text": "ultimate meaning of the symbolic relation, and they indicate that it is of agenetic character.Things that are symbolically connected today were prob-ably united in the prehistoric times by conceptual and linguistic identity.2The symbolic relation seems to be a relic and a mark of former identity.Inthis connection we may observe how in a number of cases the use of acommon symbol extends further than the use of a common language, aswas already pointed out by Schubert (1814).",
+          "distance": 1.0395
+        },
+        {
+          "index": 2,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p331",
+          "type": "text",
+          "text": "The different portions of this complicated structure stand, of course, inthe most manifold logical relations to one another.They can representforeground and background, digressions and illustrations, conditions,chains of evidence and counter-arguments.When the whole mass of thesedream-thoughts is brought under the pressure of the dream-work, and itselements are turned about, broken into fragments and jammed together—almost like pack-ice—the question arises of what happens to the logical",
+          "distance": 1.0483
+        },
+        {
+          "index": 3,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p334",
+          "type": "text",
+          "text": "far as I can see, signify that there is a causal relation between the thoughtsbehind the two parts.It often seems as though the same material were331C.The Means of Representation",
+          "distance": 1.0876
+        },
+        {
+          "index": 4,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p277",
+          "type": "text",
+          "text": "of ﬁlial piety demand of this relation and what everyday observationshows it in fact to be.More than one occasion for hostility lies concealedin the relation between parents and children—a relation which affordsthe most ample opportunities for wishes to arise which cannot pass thecensorship.Let us consider ﬁrst the relation between father and son.The sanctitywhich we attribute to the rules laid down in the Decalogue has, I think,blunted our powers of perceiving the real facts.",
+          "distance": 1.0911
+        },
+        {
+          "index": 5,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p271",
+          "type": "text",
+          "text": "I must therefore reconstruct a portion of the vanished mentallife of children on the basis of the evidence of the present.1Let us ﬁrst consider the relation of children to their brothers and sis-ters.I do not know why we presuppose that that relation must be a lovingone; for instances of hostility between adult brothers and sisters forcethemselves upon everyone’s experience and we can often establish the factthat the disunity originated in childhood or has always existed.",
+          "distance": 1.0945
+        },
+        {
+          "index": 6,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p536",
+          "type": "text",
+          "text": "Whenever one psychical element is linked with another by an objectionable orsuperﬁcial association, there is also a legitimate and deeper link between themwhich is subjected to the resistance of the censorship.1The real reason for the prevalence of superﬁcial associations is not theabandonment of purposive ideas but the pressure of the censorship.Super-ﬁcial associations replace deep ones if the censorship makes the normalconnecting paths impassable.",
+          "distance": 1.1153
+        },
+        {
+          "index": 7,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p596",
+          "type": "text",
+          "text": "when we try to express preconscious thoughts in speech.They are thenregarded as species of ‘slips of the tongue.’(3) The ideas which transfer their intensities to each other stand inthe loosest mutual relations.They are linked by associations of a kindthat is scorned by our normal thinking and relegated to the use of jokes.In particular, we ﬁnd associations based on homonyms and verbal simi-larities treated as equal in value to the rest.(4) Thoughts which are mutually contradictory make no attempt to",
+          "distance": 1.1222
+        },
+        {
+          "index": 8,
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p144",
+          "type": "text",
+          "text": "called with satisfaction whenever I felt isolated in my opinions.Surely thisfriend who played so large a part in my life must appear again elsewherein these trains of thought.Yes.For he had a special knowledge of the con-sequences of affections of the nose and its accessory cavities; and he haddrawn scientiﬁc attention to some very remarkable connections betweenthe turbinal bones and the female organs of sex.(Cf.the three curly struc-tures in Irma’s throat.",
+          "distance": 1.134
+        }
+      ]
+    },
+    {
+      "book": "Think Python — Allen Downey.pdf",
+      "question": "What about the it, which is written '' and contains no letters?",
+      "type": "fuzzy_desc",
+      "term": "empty string",
+      "keywords": [
+        "empty string"
+      ],
+      "matched_keywords": [
+        "empty string"
+      ],
+      "any_keyword_recalled": true,
+      "term_recalled": true,
+      "best_distance": 0.9026,
+      "chunks": [
+        {
+          "index": 1,
+          "label": "Think Python — Allen Downey · p96",
+          "type": "text",
+          "text": "Chapter 8. Strings An empty string contains no characters and has length 0, but other than that, it is the sameas any other string.Exercise 8.3.Given that fruit is a string, what does fruit[:] mean?",
+          "distance": 0.9026
+        },
+        {
+          "index": 2,
+          "label": "Think Python — Allen Downey · p109",
+          "type": "text",
+          "text": "10.1 The elementsof a list don’t have to be the same type.The following list contains a string, a ﬂoat, aninteger, and (lo!) another list:['spam', 2.0, 5, [10, 20]]A list within another list is nested.A list that contains no elements is called an empty list; you can create one with emptybrackets, [].As you might expect, you can assign list values to variables:>>> cheeses = ['Cheddar', 'Edam', 'Gouda']>>> numbers = [17, 123]>>> empty = []>>> print cheeses, numbers, empty",
+          "distance": 0.9397
+        },
+        {
+          "index": 3,
+          "label": "Think Python — Allen Downey · p64",
+          "type": "text",
+          "text": "5.4 indented body.Statements like this are called compound statements.There is no limit on the number of statements that can appear in the body, but there has tobe at least one.Occasionally, it is useful to have a body with no statements (usually as aplace keeper for code you haven’t written yet).In that case, you can use the pass statement,which does nothing.if x < 0:pass# need to handle negative values!",
+          "distance": 0.9839
+        },
+        {
+          "index": 4,
+          "label": "Think Python — Allen Downey · p123",
+          "type": "text",
+          "text": "keys and the values are all strings.The function dict creates a new dictionary with no items.Because dict is the name of abuilt-in function, you should avoid using it as a variable name.>>> eng2sp = dict()>>> print eng2sp{}The squiggly-brackets, {}, represent an empty dictionary.To add items to the dictionary,you can use square brackets:>>> eng2sp['one'] = 'uno'This line creates an item that maps from the key 'one' to the value 'uno'.If we print the",
+          "distance": 0.9956
+        },
+        {
+          "index": 5,
+          "label": "Think Python — Allen Downey · p104",
+          "type": "text",
+          "text": "9.2 number of words that don’t contain any of them.Can you ﬁnd a combination of 5 forbidden lettersthat excludes the smallest number of words?Exercise 9.4.Write a function named uses_only that takes a word and a string of letters, andthat returns True if the word contains only letters in the list.Can you make a sentence using onlythe letters acefhlo?Other than “Hoe alfalfa?”Exercise 9.5.Write a function named uses_all that takes a word and a string of required letters,",
+          "distance": 0.9958
+        },
+        {
+          "index": 6,
+          "label": "Think Python — Allen Downey · p104",
+          "type": "text",
+          "text": "9.2 All right, I’ll stop now.Write a function called has_no_e that returns True if the given word doesn’t have the letter “e” init.Modify your program from the previous section to print only the words that have no “e” and com-pute the percentage of the words in the list have no “e.”Exercise 9.3.Write a function named avoids that takes a word and a string of forbidden letters,and that returns True if the word doesn’t use any of the forbidden letters.Modify your program to prompt the user to enter a string of forbidden letters and then print the",
+          "distance": 1.003
+        },
+        {
+          "index": 7,
+          "label": "Think Python — Allen Downey · p104",
+          "type": "text",
+          "text": "9.2 ExercisesThere are solutions to these exercises in the next section.You should at least attempt eachone before you read the solutions.Exercise 9.2.In 1939 Ernest Vincent Wright published a 50,000 word novel called Gadsby thatdoes not contain the letter “e.” Since “e” is the most common letter in English, that’s not easy todo.In fact, it is difﬁcult to construct a solitary thought without using that most common symbol.It isslow going at ﬁrst, but with caution and hours of training you can gradually gain facility.",
+          "distance": 1.0049
+        },
+        {
+          "index": 8,
+          "label": "Think Python — Allen Downey · p48",
+          "type": "text",
+          "text": "2.2360679774997898 BingBing>>> print resultNoneThe value None is not the same as the string 'None'.It is a special value that has its owntype:>>> print type(None)<type 'NoneType'>The functions we have written so far are all void.We will start writing fruitful functions ina few chapters.",
+          "distance": 1.0081
+        }
+      ]
+    }
+  ]
+}

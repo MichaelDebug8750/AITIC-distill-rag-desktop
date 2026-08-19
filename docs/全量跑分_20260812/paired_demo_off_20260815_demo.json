@@ -1,0 +1,311 @@
+{
+  "schema": 1,
+  "tag": "paired_demo_off_20260815",
+  "base_url": "http://127.0.0.1:8021",
+  "hybrid_requested": false,
+  "service": {
+    "ollama": "已连接",
+    "ollama_host": "http://127.0.0.1:11434",
+    "chunks": 810,
+    "llm_model": "qwen3:8b",
+    "vl_model": "qwen3-vl:8b",
+    "embed_model": "bge-m3",
+    "offline": true,
+    "relevance_trim": true,
+    "context_budget": 900,
+    "budget_escalated": 1800,
+    "top_k": 8,
+    "hybrid_default": false,
+    "evidence_floor": 0.99,
+    "style_gate_max": 0.96,
+    "widen_refusal": false,
+    "keyword_df_ratio": "0",
+    "db_path": "E:\\Ollama_test_beta\\data\\webui_knowledge_bases\\20260812_143403_be688296\\vectordb",
+    "library": {
+      "subject": "incoming",
+      "sources": [
+        "GNU_make中文手册.pdf"
+      ],
+      "built_at": "2026-08-12 14:34:14"
+    },
+    "active_library_id": "20260812_143403_be688296",
+    "build": null,
+    "cwd": "E:\\Ollama_test_beta\\code",
+    "ready": true,
+    "upload_enabled": true
+  },
+  "results": [
+    {
+      "book": "Think Python",
+      "question": "What is a stack diagram, and what information does each frame contain?",
+      "library_id": "20260806_075049_dab0c710",
+      "hybrid_requested": false,
+      "status": 200,
+      "elapsed": 9.851,
+      "abstained": false,
+      "answer": "A stack diagram is a graphical representation of a stack of functions, their variables, and the values they refer to, with each frame containing the local variables and parameters of a function [p.51].\n\n**从功能上看**，a stack diagram serves to illustrate the state of a program at a particular point in its execution, showing which functions are active and the values of their variables. The stack diagram is particularly useful for debugging and understanding the flow of execution in programs, especially when dealing with recursion or nested function calls.",
+      "supplement": "A stack diagram is a visual tool that shows how functions are organized in memory during the execution of a program. It represents the \"stack\" of functions that are currently active, along with their local variables and parameters. Each frame in the stack diagram corresponds to a specific function call and contains the information needed for that function to run properly.\n\nEach frame in the stack diagram holds the local variables and parameters of a function. These are the values that the function uses during its execution. For example, if a function is called with a value for a parameter, that value is stored in the frame for that function. Similarly, any variables declared inside the function are also stored in the same frame. This helps programmers understand what data is available to each function at any given moment.\n\nStack diagrams are especially helpful when debugging or analyzing programs that use recursion or nested function calls. They provide a clear picture of the program's state at a particular moment, showing which functions are currently running and what values they are working with. This makes it easier to track down errors or understand how different parts of the program interact.",
+      "retrieval": "vector",
+      "cite_ok": true,
+      "confidence": "低",
+      "rounds": 2,
+      "sources": [
+        {
+          "label": "Think Python — Allen Downey · p195",
+          "type": "text",
+          "loc": "",
+          "page": 195,
+          "library": "Think Python — Allen Downey",
+          "library_id": "20260806_075049_dab0c710",
+          "source": "Think Python — Allen Downey.pdf",
+          "snippet": "18.8 Class diagramsSo far we have seen stack diagrams, which show the state of a program, and object dia-grams, which show the attributes of an object and their values.These diagrams representa snapshot in the execution "
+        },
+        {
+          "label": "Think Python — Allen Downey · p235",
+          "type": "text",
+          "loc": "",
+          "page": 235,
+          "library": "Think Python — Allen Downey",
+          "library_id": "20260806_075049_dab0c710",
+          "source": "Think Python — Allen Downey.pdf",
+          "snippet": "each level of recursion.Remember that a stack diagram shows the state of the program at a particular point inits execution.To get the diagram you want, sometimes you have to think about where toinvoke object_diagram.In t"
+        },
+        {
+          "label": "Think Python — Allen Downey · p47",
+          "type": "text",
+          "loc": "",
+          "page": 47,
+          "library": "Think Python — Allen Downey",
+          "library_id": "20260806_075049_dab0c710",
+          "source": "Think Python — Allen Downey.pdf",
+          "snippet": "3.10 Stack diagramsTo keep track of which variables can be used where, it is sometimes useful to draw a stackdiagram.Like state diagrams, stack diagrams show the value of each variable, but theyalso show the function eac"
+        },
+        {
+          "label": "Think Python — Allen Downey · p51",
+          "type": "text",
+          "loc": "",
+          "page": 51,
+          "library": "Think Python — Allen Downey",
+          "library_id": "20260806_075049_dab0c710",
+          "source": "Think Python — Allen Downey.pdf",
+          "snippet": "p51: 3.16.Exercises29stack diagram: A graphical representation of a stack of functions, their variables, and thevalues they refer to.frame: A box in a stack diagram that represents a function call.It contains the local v"
+        }
+      ],
+      "support_audit": {
+        "triggered": true,
+        "state": "pruned",
+        "checked": 4,
+        "supported": 0,
+        "pruned": 1,
+        "unknown": 3,
+        "orphaned": 1,
+        "reason": "逐句核验存在未知项，已保留原句并降低可信度",
+        "verdicts": [
+          {
+            "id": 1,
+            "status": "UNKNOWN",
+            "reason": "quote_not_exact"
+          },
+          {
+            "id": 2,
+            "status": "UNSUPPORTED",
+            "reason": "explicit_unsupported"
+          },
+          {
+            "id": 3,
+            "status": "UNKNOWN",
+            "reason": "quote_not_exact"
+          },
+          {
+            "id": 4,
+            "status": "UNKNOWN",
+            "reason": "quote_not_exact"
+          },
+          {
+            "id": null,
+            "status": "ORPHANED",
+            "reason": "antecedent_pruned"
+          }
+        ]
+      }
+    },
+    {
+      "book": "The Interpretation of Dreams",
+      "question": "What is dream-content?",
+      "library_id": "legacy",
+      "hybrid_requested": false,
+      "status": 200,
+      "elapsed": 13.634,
+      "abstained": false,
+      "answer": "Dream-content is a transcript of the dream-thoughts into another mode of expression, whose characters and syntactic laws it is our business to discover by comparing the original and the translation [p.298].\n\nDream-content can be thought of as a transformed version of the dream-thoughts, much like a translation from one language to another. [p.298] The dream-thoughts are the original thoughts that occur during sleep, while the dream-content is how these thoughts are expressed in the dream. [p.298] The task of interpretation involves uncovering these mechanisms and understanding how the dream-thoughts are converted into the dream-content we experience. [p.9]\n\nThe material also suggests that the dream-content is a highly incomplete and fragmentary version of the dream-thoughts [p.302]. This implies that not all elements of the dream-thoughts are present in the dream-content, and the selection of which elements are included is determined by specific conditions. [p.302]",
+      "supplement": "Dream-content refers to the way thoughts from a dream are expressed in the dream itself. It is a transformed version of the original thoughts, much like a translation from one language to another. The dream-thoughts are the original ideas or feelings that occur during sleep, while the dream-content is how these thoughts are restructured and presented in the dream. This transformation is not always straightforward, and the dream-content can be incomplete or fragmented, meaning not all elements of the original thoughts are fully represented.\n\nUnderstanding dream-content is important because it helps us uncover the underlying thoughts and emotions that shape our dreams. The process of interpreting a dream involves identifying how the original thoughts have been changed or condensed into the dream-content we experience. This can reveal hidden meanings, unresolved feelings, or unconscious desires.\n\nFor example, if someone dreams about flying, the dream-content is the act of flying. However, the dream-thoughts might be related to a feeling of freedom or escape from a difficult situation in waking life. The dream-content, while seemingly simple, is a transformed expression of more complex emotions or thoughts.",
+      "retrieval": "vector",
+      "cite_ok": true,
+      "confidence": "中",
+      "rounds": 2,
+      "sources": [
+        {
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p298",
+          "type": "text",
+          "loc": "",
+          "page": 298,
+          "library": "The Interpretation of Dreams — Sigmund Freud.pdf",
+          "library_id": "legacy",
+          "source": "The Interpretation of Dreams — Sigmund Freud.pdf",
+          "snippet": "and the latent dream-thoughts, and of tracing out the processes by whichthe latter have been changed into the former.The dream-thoughts and the dream-content are presented to us like twoversions of the same subject-matte"
+        },
+        {
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p302",
+          "type": "text",
+          "loc": "",
+          "page": 302,
+          "library": "The Interpretation of Dreams — Sigmund Freud.pdf",
+          "library_id": "legacy",
+          "source": "The Interpretation of Dreams — Sigmund Freud.pdf",
+          "snippet": "dream-thoughts, but a highly incomplete and fragmentary version of them.This view, as we shall soon discover, is a most inadequate one.But we maytake it as a provisional starting-point and go on to a further question.If "
+        },
+        {
+          "label": "The Interpretation of Dreams — Sigmund Freud.pdf · p9",
+          "type": "text",
+          "loc": "",
+          "page": 9,
+          "library": "The Interpretation of Dreams — Sigmund Freud.pdf",
+          "library_id": "legacy",
+          "source": "The Interpretation of Dreams — Sigmund Freud.pdf",
+          "snippet": "THE METHOD OF INTERPRETING DREAMS: AN ANALYSIS OF A"
+        }
+      ],
+      "support_audit": {
+        "triggered": true,
+        "state": "pruned",
+        "checked": 6,
+        "supported": 4,
+        "pruned": 2,
+        "unknown": 0,
+        "orphaned": 0,
+        "reason": "可疑结论已完成本地逐句核验",
+        "verdicts": [
+          {
+            "id": 1,
+            "status": "SUPPORTED",
+            "reason": "validated"
+          },
+          {
+            "id": 2,
+            "status": "SUPPORTED",
+            "reason": "validated"
+          },
+          {
+            "id": 3,
+            "status": "PARTIAL",
+            "reason": "validated"
+          },
+          {
+            "id": 4,
+            "status": "SUPPORTED",
+            "reason": "validated"
+          },
+          {
+            "id": 6,
+            "status": "SUPPORTED",
+            "reason": "validated"
+          },
+          {
+            "id": 7,
+            "status": "UNSUPPORTED",
+            "reason": "explicit_unsupported"
+          }
+        ]
+      }
+    },
+    {
+      "book": "Criminal Law",
+      "question": "How does the book distinguish actus reus from mens rea, and why are both generally required?",
+      "library_id": "20260806_073737_29d3901f",
+      "hybrid_requested": false,
+      "status": 200,
+      "elapsed": 9.3,
+      "abstained": false,
+      "answer": "The book distinguishes actus reus from mens rea by defining actus reus as the prohibited act, such as 'unlawful killing', while mens rea refers to the 'guilty mind' or 'fault element' [p.11]. \n\n**从功能上看**，actus reus represents the physical act that constitutes the crime, while mens rea refers to the mental state or intention behind the act. Both are generally required because a crime cannot be established solely by one element; the prosecution must prove both the unlawful act and the necessary mental state to satisfy the legal definition of the crime [p.11]. For instance, in the case of murder, the prosecution must demonstrate that the defendant committed the actus reus (unlawful killing) and that they had the mens rea (malice aforethought) [p.11]. This dual requirement ensures that the legal system holds individuals accountable not just for their actions, but also for their intentions, thereby upholding the principle of justice and preventing wrongful convictions.",
+      "supplement": "The textbook distinguishes *actus reus* from *mens rea* by defining *actus reus* as the actual, prohibited act, such as \"unlawful killing,\" while *mens rea* refers to the \"guilty mind\" or the mental state of the person committing the act. In other words, *actus reus* is the physical action that constitutes a crime, and *mens rea* is the mental intention or knowledge that makes the act illegal.\n\nBoth elements are generally required because a crime cannot be proven based on just one. The legal system requires that the prosecution show both the unlawful act and the necessary mental state to meet the definition of the crime. This ensures that individuals are not unfairly held responsible for actions they did not intend or know were wrong.\n\nFor example, in the case of murder, the prosecution must prove that the defendant committed the act of unlawful killing (*actus reus*) and that they had the required mental state, such as malice aforethought (*mens rea*). This dual requirement helps the legal system hold people accountable for both their actions and their intentions.",
+      "retrieval": "vector",
+      "cite_ok": true,
+      "confidence": "低",
+      "rounds": 2,
+      "sources": [
+        {
+          "label": "Criminal Law · p11",
+          "type": "text",
+          "loc": "",
+          "page": 11,
+          "library": "Criminal Law",
+          "library_id": "20260806_073737_29d3901f",
+          "source": "Criminal Law.pdf",
+          "snippet": "2.1\t General principles with the mens rea for murder.In Section 4.2 of Wilson, murder is defined as ‘an unlawful killing with maliceaforethought’.We can then separate the actus reus from the mens rea.The actus reusis the"
+        },
+        {
+          "label": "Criminal Law · p12",
+          "type": "text",
+          "loc": "",
+          "page": 12,
+          "library": "Criminal Law",
+          "library_id": "20260806_073737_29d3901f",
+          "source": "Criminal Law.pdf",
+          "snippet": "2.2.2 Mens rea The actus reus of a crime comprises conduct, with or without a designated result,including the presence of any circumstances necessary for that conduct to becriminalised."
+        },
+        {
+          "label": "Criminal Law · p14",
+          "type": "text",
+          "loc": "",
+          "page": 14,
+          "library": "Criminal Law",
+          "library_id": "20260806_073737_29d3901f",
+          "source": "Criminal Law.pdf",
+          "snippet": "of proof is on the prosecution.So with respect to the actus reus the prosecution mustdo the proving, and it must prove every bit of the actus reus.For example, the actusreus of the crime of rape is having intercourse wit"
+        },
+        {
+          "label": "Criminal Law · p15",
+          "type": "text",
+          "loc": "",
+          "page": 15,
+          "library": "Criminal Law",
+          "library_id": "20260806_073737_29d3901f",
+          "source": "Criminal Law.pdf",
+          "snippet": "3.1 What does the actus reus consist of?...................17"
+        }
+      ],
+      "support_audit": {
+        "triggered": true,
+        "state": "degraded",
+        "checked": 4,
+        "supported": 0,
+        "pruned": 0,
+        "unknown": 4,
+        "orphaned": 0,
+        "reason": "逐句核验存在未知项，已保留原句并降低可信度",
+        "verdicts": [
+          {
+            "id": 1,
+            "status": "UNKNOWN",
+            "reason": "missing_or_duplicate"
+          },
+          {
+            "id": 2,
+            "status": "UNKNOWN",
+            "reason": "missing_or_duplicate"
+          },
+          {
+            "id": 3,
+            "status": "UNKNOWN",
+            "reason": "missing_or_duplicate"
+          },
+          {
+            "id": 4,
+            "status": "UNKNOWN",
+            "reason": "missing_or_duplicate"
+          }
+        ]
+      }
+    }
+  ]
+}
