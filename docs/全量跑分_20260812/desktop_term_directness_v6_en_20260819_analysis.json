@@ -1,0 +1,32 @@
+{
+  "tag": "desktop_term_directness_v6_en_20260819",
+  "suite": "en",
+  "rows": 1007,
+  "unique_keys": true,
+  "outcomes": {
+    "拒答正确": 284,
+    "编造": 16,
+    "命中": 532,
+    "过度拒答": 103,
+    "未命中": 72
+  },
+  "answerable": 707,
+  "unanswerable": 300,
+  "rows_sha256": "923f705200e1587c064b4dceca6a4a54fa73713c6bfdf7ba7e350772be7f7799",
+  "vs_project_report": {
+    "hit": -2,
+    "refusal": 9,
+    "fab": -9
+  },
+  "noise_reference": {
+    "value": 5,
+    "source": "Beta 线 2026-08-16 同配置零改动重跑，净值差 +5；跨时段实测",
+    "caveat": "非本构建同时段实测；要严格判定需在 Plus 上补一个同时段空跑臂"
+  },
+  "verdict": {
+    "safety_better_than_report": true,
+    "hit_within_noise_of_report": true,
+    "conclusion": "安全侧两项改善均超出噪声，命中差异落在噪声内 → 达到汇报口径"
+  },
+  "note": "v4→v6 逐题变动 155/1007 = 15.4%，净值 −1：改动主要在换一批答错的题，不是净改善或净恶化。用 ±5 噪声去卡 2 题的命中差距无法支撑结论。"
+}

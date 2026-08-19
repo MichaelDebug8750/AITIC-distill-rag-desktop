@@ -1,0 +1,36 @@
+{
+  "tag": "desktop_anchor_directness_v4_cn_20260818",
+  "suite": "cn",
+  "rows": 104,
+  "outcomes": {
+    "拒答正确": 40,
+    "命中": 60,
+    "过度拒答": 4
+  },
+  "confidence": {
+    "证据不足": 44,
+    "低": 43,
+    "中": 16,
+    "高": 1
+  },
+  "http_errors": 0,
+  "citation_failures": 0,
+  "reassembly_pruned_rows": 8,
+  "rows_sha256": "6990d37b5a5d3c1e8d36f9e9f735a97497aa923a4da5ad5bb7009397095978a4",
+  "checks": {
+    "rows_expected": true,
+    "unique_keys": true,
+    "manifest_complete": true,
+    "rows_hash": true,
+    "fingerprints_stable": true,
+    "libraries_stable": true,
+    "service_stable": true,
+    "desktop_adapter": true,
+    "http_errors_zero": true,
+    "citation_failures_zero": true,
+    "hit_at_least_web_floor": true,
+    "refusal_equals_web": true,
+    "fabrication_equals_web": true
+  },
+  "passed": true
+}

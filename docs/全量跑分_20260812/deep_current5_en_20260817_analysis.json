@@ -1,0 +1,64 @@
+{
+  "tag": "deep_current5_en_20260817",
+  "rows_path": "E:\\Ollama_test_beta\\docs\\全量跑分_20260812\\deep_current5_en_20260817_rows.jsonl",
+  "rows_sha256": "91c1a2bdce4e78b3146a92d5dd298ca4f060ac4e5903db4a9cd9b7d411933964",
+  "rows": 1007,
+  "unique_canonical_keys": 1007,
+  "outcomes": {
+    "拒答正确": 277,
+    "编造": 23,
+    "命中": 548,
+    "未命中": 88,
+    "过度拒答": 71
+  },
+  "confidence": {
+    "证据不足": 348,
+    "中": 129,
+    "低": 522,
+    "高": 8
+  },
+  "http_errors": 0,
+  "citation_failures": 0,
+  "adjacent_duplicate_citations": 0,
+  "library_snapshot_count": 12,
+  "library_snapshot_stable": true,
+  "row_library_ids": 12,
+  "paired_with_baseline": 1007,
+  "paired_migrations": {
+    "命中 -> 未命中": 16,
+    "命中 -> 过度拒答": 18,
+    "拒答正确 -> 编造": 4,
+    "未命中 -> 命中": 15,
+    "未命中 -> 过度拒答": 13,
+    "编造 -> 拒答正确": 7,
+    "过度拒答 -> 命中": 25,
+    "过度拒答 -> 未命中": 12
+  },
+  "runtime": {
+    "python": "3.14.6",
+    "packages": {
+      "fastapi": "0.139.2",
+      "uvicorn": "0.49.0",
+      "pymupdf": "1.27.2.3",
+      "chromadb": "1.5.9",
+      "ollama": "0.6.2",
+      "python-multipart": "0.0.32",
+      "modelscope": "1.38.0"
+    }
+  },
+  "checks": {
+    "rows_expected": true,
+    "unique_canonical_keys": true,
+    "manifest_completed": true,
+    "fingerprints_stable": true,
+    "rows_hash_matches": true,
+    "library_snapshot": true,
+    "http_errors_zero": true,
+    "citation_failures_zero": true,
+    "adjacent_duplicate_citations_zero": true,
+    "hit_at_least_floor": true,
+    "refusal_at_least_floor": true,
+    "fabrication_at_most_ceiling": true
+  },
+  "passed": true
+}

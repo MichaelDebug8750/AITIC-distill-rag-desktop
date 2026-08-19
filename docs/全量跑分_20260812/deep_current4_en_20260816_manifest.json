@@ -1,0 +1,47 @@
+{
+  "tag": "deep_current4_en_20260816",
+  "port": "8032",
+  "hybrid_request": false,
+  "service_config": {
+    "llm_model": "qwen3:8b",
+    "embed_model": "bge-m3",
+    "hybrid_default": false,
+    "evidence_floor": 0.99,
+    "style_gate_max": 0.96,
+    "widen_refusal": false,
+    "keyword_df_ratio": "0",
+    "db_path": "E:\\Ollama_test_beta\\data\\webui_knowledge_bases\\20260812_143403_be688296\\vectordb",
+    "runtime": {
+      "python": "3.14.6",
+      "packages": {
+        "fastapi": "0.139.2",
+        "uvicorn": "0.49.0",
+        "pymupdf": "1.27.2.3",
+        "chromadb": "1.5.9",
+        "ollama": "0.6.2",
+        "python-multipart": "0.0.32",
+        "modelscope": "1.38.0"
+      }
+    }
+  },
+  "fingerprints": {
+    "eval\\eval_ALL.jsonl": "64b28a26ff0f5387e54b3966539a8ee8625d53cd92b7e9eb8c94b529f4c817ad",
+    "code\\webui.py": "672b9b494c11b49ad80189fa330ba8d29f23a8c13b4d907b95bdbca0e46fd8fc",
+    "code\\webui_index.html": "98f2749475ca27f6a3ff171d50e890e5ba647ecfe4a506dbce35d8c6e02cf7f5",
+    "code\\test_pipeline.py": "ebcce170038b1ab0d55c37e4b87dacbae825c400bb158127b2fd88c64e2d3e12",
+    "code\\main.py": "fe179db3d558a65d6452767fed3f19ed5671696d0446d2ff4b54e13d85bf52c4",
+    "docs\\全量跑分_20260812\\fullrun3.py": "c96c3e125388bc9bea240306efd5a835d8763ed66b882b0192f5ae1a01244cff"
+  },
+  "recorded_at": "2026-08-16 22:11:14",
+  "preexisting_rows_without_manifest": false,
+  "completed_at": "2026-08-17 00:06:00",
+  "completed_rows": 1007,
+  "end_fingerprints": {
+    "eval\\eval_ALL.jsonl": "64b28a26ff0f5387e54b3966539a8ee8625d53cd92b7e9eb8c94b529f4c817ad",
+    "code\\webui.py": "672b9b494c11b49ad80189fa330ba8d29f23a8c13b4d907b95bdbca0e46fd8fc",
+    "code\\webui_index.html": "98f2749475ca27f6a3ff171d50e890e5ba647ecfe4a506dbce35d8c6e02cf7f5",
+    "code\\test_pipeline.py": "ebcce170038b1ab0d55c37e4b87dacbae825c400bb158127b2fd88c64e2d3e12",
+    "code\\main.py": "fe179db3d558a65d6452767fed3f19ed5671696d0446d2ff4b54e13d85bf52c4",
+    "docs\\全量跑分_20260812\\fullrun3.py": "c96c3e125388bc9bea240306efd5a835d8763ed66b882b0192f5ae1a01244cff"
+  }
+}

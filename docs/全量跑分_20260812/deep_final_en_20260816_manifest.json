@@ -1,0 +1,35 @@
+{
+  "tag": "deep_final_en_20260816",
+  "port": "8027",
+  "hybrid_request": false,
+  "service_config": {
+    "llm_model": "qwen3:8b",
+    "embed_model": "bge-m3",
+    "hybrid_default": false,
+    "evidence_floor": 0.99,
+    "style_gate_max": 0.96,
+    "widen_refusal": false,
+    "keyword_df_ratio": "0",
+    "db_path": "E:\\Ollama_test_beta\\data\\webui_knowledge_bases\\20260812_143403_be688296\\vectordb"
+  },
+  "fingerprints": {
+    "eval\\eval_ALL.jsonl": "64b28a26ff0f5387e54b3966539a8ee8625d53cd92b7e9eb8c94b529f4c817ad",
+    "code\\webui.py": "749581ff379d122495436ec8d98d0b4888db48254650078cd86ea8cb8223e2e4",
+    "code\\webui_index.html": "5da41a755c357fb6f6c92c76d7cf07add503f2b08dc54e1288b8bbc3d149dc43",
+    "code\\test_pipeline.py": "228daf3c415e6019a94916de75b76b93c977f63106cd0f1ecad45d17b3bcb6bc",
+    "code\\main.py": "fe179db3d558a65d6452767fed3f19ed5671696d0446d2ff4b54e13d85bf52c4",
+    "docs\\全量跑分_20260812\\fullrun3.py": "4267afc1d1c1db803a4c62f10307cd1871506f18f47159ac2154ff22bd8abe78"
+  },
+  "recorded_at": "2026-08-16 12:04:31",
+  "preexisting_rows_without_manifest": false,
+  "completed_at": "2026-08-16 14:00:27",
+  "completed_rows": 1007,
+  "end_fingerprints": {
+    "eval\\eval_ALL.jsonl": "64b28a26ff0f5387e54b3966539a8ee8625d53cd92b7e9eb8c94b529f4c817ad",
+    "code\\webui.py": "749581ff379d122495436ec8d98d0b4888db48254650078cd86ea8cb8223e2e4",
+    "code\\webui_index.html": "5da41a755c357fb6f6c92c76d7cf07add503f2b08dc54e1288b8bbc3d149dc43",
+    "code\\test_pipeline.py": "228daf3c415e6019a94916de75b76b93c977f63106cd0f1ecad45d17b3bcb6bc",
+    "code\\main.py": "fe179db3d558a65d6452767fed3f19ed5671696d0446d2ff4b54e13d85bf52c4",
+    "docs\\全量跑分_20260812\\fullrun3.py": "4267afc1d1c1db803a4c62f10307cd1871506f18f47159ac2154ff22bd8abe78"
+  }
+}

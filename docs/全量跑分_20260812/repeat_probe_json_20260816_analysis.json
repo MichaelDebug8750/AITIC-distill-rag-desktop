@@ -1,0 +1,196 @@
+{
+  "schema": 1,
+  "tag": "repeat_probe_json_20260816",
+  "service": {
+    "ollama": "已连接",
+    "ollama_host": "http://127.0.0.1:11434",
+    "chunks": 810,
+    "llm_model": "qwen3:8b",
+    "vl_model": "qwen3-vl:8b",
+    "embed_model": "bge-m3",
+    "offline": true,
+    "relevance_trim": true,
+    "context_budget": 900,
+    "budget_escalated": 1800,
+    "top_k": 8,
+    "hybrid_default": false,
+    "evidence_floor": 0.99,
+    "style_gate_max": 0.96,
+    "widen_refusal": false,
+    "support_json": true,
+    "keyword_df_ratio": "0",
+    "db_path": "E:\\Ollama_test_beta\\data\\webui_knowledge_bases\\20260812_143403_be688296\\vectordb",
+    "library": {
+      "subject": "incoming",
+      "sources": [
+        "GNU_make中文手册.pdf"
+      ],
+      "built_at": "2026-08-12 14:34:14"
+    },
+    "active_library_id": "20260812_143403_be688296",
+    "build": null,
+    "cwd": "E:\\Ollama_test_beta\\code",
+    "ready": true,
+    "upload_enabled": true
+  },
+  "repeats": 10,
+  "selected": [
+    {
+      "book_key": "anatomy_and_physiology_2e",
+      "book": "Anatomy_and_Physiology_2e.pdf",
+      "question": "Describe autophagy.",
+      "type": "answerable",
+      "expect": "answer",
+      "keywords": [
+        "autophagy",
+        "lysosomal"
+      ],
+      "baseline_outcomes": [
+        "命中",
+        "过度拒答"
+      ]
+    },
+    {
+      "book_key": "anatomy_and_physiology_2e",
+      "book": "Anatomy_and_Physiology_2e.pdf",
+      "question": "What does angle of the mandible mean?",
+      "type": "answerable",
+      "expect": "answer",
+      "keywords": [
+        "angle of the mandible",
+        "corner",
+        "ramus"
+      ],
+      "baseline_outcomes": [
+        "命中",
+        "过度拒答"
+      ]
+    },
+    {
+      "book_key": "anatomy_and_physiology_2e",
+      "book": "Anatomy_and_Physiology_2e.pdf",
+      "question": "What does hydrostatic pressure mean?",
+      "type": "answerable",
+      "expect": "answer",
+      "keywords": [
+        "hydrostatic pressure",
+        "pumping",
+        "exerted"
+      ],
+      "baseline_outcomes": [
+        "命中",
+        "过度拒答"
+      ]
+    },
+    {
+      "book_key": "businesslawandthelegalenvironment",
+      "book": "Business Law and the Legal Environment.pdf",
+      "question": "What are sticky wages and prices?",
+      "type": "unanswerable",
+      "expect": "abstain",
+      "keywords": [],
+      "baseline_outcomes": [
+        "编造",
+        "拒答正确"
+      ]
+    },
+    {
+      "book_key": "cognitivepsychology",
+      "book": "Cognitive Psychology.pdf",
+      "question": "Explain the term pluralist theory.",
+      "type": "unanswerable",
+      "expect": "abstain",
+      "keywords": [],
+      "baseline_outcomes": [
+        "拒答正确",
+        "编造"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "book": "Anatomy_and_Physiology_2e.pdf",
+      "question": "Describe autophagy.",
+      "baseline_outcomes": [
+        "命中",
+        "过度拒答"
+      ],
+      "outcomes": {
+        "命中": 10
+      },
+      "unique_answers": 1,
+      "unique_source_orders": 1,
+      "audit_signatures": {
+        "(0, 2, 0)": 10
+      }
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e.pdf",
+      "question": "What does angle of the mandible mean?",
+      "baseline_outcomes": [
+        "命中",
+        "过度拒答"
+      ],
+      "outcomes": {
+        "命中": 10
+      },
+      "unique_answers": 2,
+      "unique_source_orders": 1,
+      "audit_signatures": {
+        "(2, 0, 0)": 1,
+        "(1, 3, 0)": 9
+      }
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e.pdf",
+      "question": "What does hydrostatic pressure mean?",
+      "baseline_outcomes": [
+        "命中",
+        "过度拒答"
+      ],
+      "outcomes": {
+        "命中": 10
+      },
+      "unique_answers": 2,
+      "unique_source_orders": 2,
+      "audit_signatures": {
+        "(0, 9, 0)": 1,
+        "(0, 6, 0)": 9
+      }
+    },
+    {
+      "book": "Business Law and the Legal Environment.pdf",
+      "question": "What are sticky wages and prices?",
+      "baseline_outcomes": [
+        "编造",
+        "拒答正确"
+      ],
+      "outcomes": {
+        "拒答正确": 10
+      },
+      "unique_answers": 1,
+      "unique_source_orders": 1,
+      "audit_signatures": {
+        "(0, 0, 0)": 10
+      }
+    },
+    {
+      "book": "Cognitive Psychology.pdf",
+      "question": "Explain the term pluralist theory.",
+      "baseline_outcomes": [
+        "拒答正确",
+        "编造"
+      ],
+      "outcomes": {
+        "编造": 1,
+        "拒答正确": 9
+      },
+      "unique_answers": 2,
+      "unique_source_orders": 2,
+      "audit_signatures": {
+        "(0, 6, 0)": 1,
+        "(0, 0, 0)": 9
+      }
+    }
+  ]
+}

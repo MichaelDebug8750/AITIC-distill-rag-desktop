@@ -1,0 +1,147 @@
+{
+  "schema": 1,
+  "tag": "desktop_full1_cn_20260818",
+  "suite": "cn",
+  "adapter": "DesktopBackend.ask_stream",
+  "hybrid_request": false,
+  "project_root": "E:\\Ollama_test_beta_plus",
+  "service_config": {
+    "llm_model": "qwen3:8b",
+    "embed_model": "bge-m3",
+    "hybrid_default": false,
+    "evidence_floor": 0.99,
+    "style_gate_max": 0.96,
+    "widen_refusal": false,
+    "keyword_df_ratio": "0",
+    "runtime": {
+      "python": "3.14.6",
+      "packages": {
+        "fastapi": "0.139.2",
+        "uvicorn": "0.49.0",
+        "pymupdf": "1.27.2.3",
+        "chromadb": "1.5.9",
+        "ollama": "0.6.2",
+        "python-multipart": "0.0.32",
+        "modelscope": "missing"
+      }
+    }
+  },
+  "fingerprints": {
+    "docs\\全量跑分_20260812\\eval_cn.jsonl": "e84e9c9b956798b64c48cba8d49e73b69abf3bf48104330e73049729953f6ea4",
+    "docs\\全量跑分_20260812\\eval_cn2.jsonl": "2155f20f9726e3c543b594f0c9070529448c089a686fdeb580ea9f1b651a832b",
+    "docs\\全量跑分_20260812\\eval_cn_aigc.jsonl": "301d0d3b40663564014c2b1edeaf81d928c01b57daf3a013b534e81eb3f72f06",
+    "docs\\全量跑分_20260812\\eval_cn_gnu_make.jsonl": "a0a506ace2cd75c86e499bd4af97cab8dd080246d64d01692f40bdf122767e5a",
+    "code\\webui.py": "39f4a85e7a6f9a5c78424105b02de0bd3f343be4d2d4fd8b71a3834cf0c06741",
+    "code\\test_pipeline.py": "494364cd0cc054d34b173fd43d8e7969009393ccea705cc06ac70841321dd14f",
+    "code\\main.py": "fe179db3d558a65d6452767fed3f19ed5671696d0446d2ff4b54e13d85bf52c4",
+    "desktop_app\\backend.py": "ef8321b770347f38fb7724d8e45669d780e5f5ace8dc6c7bde87d87ccefa5af9",
+    "desktop_app\\main_window.py": "1f59d03209aaa4bf98886749a5428b35b3b575359df9ab65e52f6733fcad1b9b",
+    "packaging\\desktop_full_eval.py": "fc682d8f52d817036cef262bdb3ad4502cbbb9572d7218bdcc5775ec56fe22e4"
+  },
+  "libraries": [
+    {
+      "id": "20260806_072523_2db5c2b9",
+      "name": "多模态AIGC讲义合订本_中文翻译与小白解释",
+      "source": "多模态AIGC讲义合订本_中文翻译与小白解释.pdf",
+      "chunks": 274,
+      "built_at": "2026-08-06 07:33:09",
+      "status": "ready"
+    },
+    {
+      "id": "20260812_143348_d5a3c794",
+      "name": "Emacs生存指南",
+      "source": "Emacs生存指南.pdf",
+      "chunks": 28,
+      "built_at": "2026-08-12 14:33:48",
+      "status": "ready"
+    },
+    {
+      "id": "20260812_143403_be688296",
+      "name": "GNU_make中文手册",
+      "source": "GNU_make中文手册.pdf",
+      "chunks": 810,
+      "built_at": "2026-08-12 14:34:14",
+      "status": "ready"
+    },
+    {
+      "id": "20260813_205105_d3ef435a",
+      "name": "简明世界经济史",
+      "source": "简明世界经济史.epub",
+      "chunks": 218,
+      "built_at": "2026-08-13 20:51:12",
+      "status": "ready"
+    }
+  ],
+  "expected_rows": 104,
+  "started_at": "2026-08-18 00:49:33",
+  "completed_at": "2026-08-18 01:03:15",
+  "completed_rows": 104,
+  "rows_sha256": "6e608c463cc9f8e51d98314ce304d27a98e71de1f04d2e17aa509dea2d386820",
+  "end_fingerprints": {
+    "docs\\全量跑分_20260812\\eval_cn.jsonl": "e84e9c9b956798b64c48cba8d49e73b69abf3bf48104330e73049729953f6ea4",
+    "docs\\全量跑分_20260812\\eval_cn2.jsonl": "2155f20f9726e3c543b594f0c9070529448c089a686fdeb580ea9f1b651a832b",
+    "docs\\全量跑分_20260812\\eval_cn_aigc.jsonl": "301d0d3b40663564014c2b1edeaf81d928c01b57daf3a013b534e81eb3f72f06",
+    "docs\\全量跑分_20260812\\eval_cn_gnu_make.jsonl": "a0a506ace2cd75c86e499bd4af97cab8dd080246d64d01692f40bdf122767e5a",
+    "code\\webui.py": "39f4a85e7a6f9a5c78424105b02de0bd3f343be4d2d4fd8b71a3834cf0c06741",
+    "code\\test_pipeline.py": "494364cd0cc054d34b173fd43d8e7969009393ccea705cc06ac70841321dd14f",
+    "code\\main.py": "fe179db3d558a65d6452767fed3f19ed5671696d0446d2ff4b54e13d85bf52c4",
+    "desktop_app\\backend.py": "ef8321b770347f38fb7724d8e45669d780e5f5ace8dc6c7bde87d87ccefa5af9",
+    "desktop_app\\main_window.py": "1f59d03209aaa4bf98886749a5428b35b3b575359df9ab65e52f6733fcad1b9b",
+    "packaging\\desktop_full_eval.py": "fc682d8f52d817036cef262bdb3ad4502cbbb9572d7218bdcc5775ec56fe22e4"
+  },
+  "end_libraries": [
+    {
+      "id": "20260806_072523_2db5c2b9",
+      "name": "多模态AIGC讲义合订本_中文翻译与小白解释",
+      "source": "多模态AIGC讲义合订本_中文翻译与小白解释.pdf",
+      "chunks": 274,
+      "built_at": "2026-08-06 07:33:09",
+      "status": "ready"
+    },
+    {
+      "id": "20260812_143348_d5a3c794",
+      "name": "Emacs生存指南",
+      "source": "Emacs生存指南.pdf",
+      "chunks": 28,
+      "built_at": "2026-08-12 14:33:48",
+      "status": "ready"
+    },
+    {
+      "id": "20260812_143403_be688296",
+      "name": "GNU_make中文手册",
+      "source": "GNU_make中文手册.pdf",
+      "chunks": 810,
+      "built_at": "2026-08-12 14:34:14",
+      "status": "ready"
+    },
+    {
+      "id": "20260813_205105_d3ef435a",
+      "name": "简明世界经济史",
+      "source": "简明世界经济史.epub",
+      "chunks": 218,
+      "built_at": "2026-08-13 20:51:12",
+      "status": "ready"
+    }
+  ],
+  "end_service_config": {
+    "llm_model": "qwen3:8b",
+    "embed_model": "bge-m3",
+    "hybrid_default": false,
+    "evidence_floor": 0.99,
+    "style_gate_max": 0.96,
+    "widen_refusal": false,
+    "keyword_df_ratio": "0",
+    "runtime": {
+      "python": "3.14.6",
+      "packages": {
+        "fastapi": "0.139.2",
+        "uvicorn": "0.49.0",
+        "pymupdf": "1.27.2.3",
+        "chromadb": "1.5.9",
+        "ollama": "0.6.2",
+        "python-multipart": "0.0.32",
+        "modelscope": "missing"
+      }
+    }
+  }
+}

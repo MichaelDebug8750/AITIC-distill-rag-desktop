@@ -1,0 +1,17 @@
+{
+  "tag": "cleanbase",
+  "port": "8011",
+  "hybrid_request": null,
+  "service_config": {
+    "llm_model": "qwen3:8b",
+    "embed_model": "bge-m3",
+    "hybrid_default": false,
+    "evidence_floor": 0.99,
+    "style_gate_max": 0.96,
+    "widen_refusal": false,
+    "keyword_df_ratio": "0",
+    "db_path": "E:\\Ollama_test_beta\\data\\webui_knowledge_bases\\20260812_143403_be688296\\vectordb"
+  },
+  "recorded_at": "2026-08-14 23:30:48",
+  "preexisting_rows_without_manifest": true
+}

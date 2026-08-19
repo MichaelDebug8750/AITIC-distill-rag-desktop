@@ -1,0 +1,271 @@
+{
+  "schema": 1,
+  "tag": "desktop_unseeded_anchor_directness_v5_en_20260818",
+  "suite": "en",
+  "adapter": "DesktopBackend.ask_stream",
+  "hybrid_request": false,
+  "project_root": "E:\\Ollama_test_beta_plus",
+  "service_config": {
+    "llm_model": "qwen3:8b",
+    "embed_model": "bge-m3",
+    "hybrid_default": false,
+    "evidence_floor": 0.99,
+    "style_gate_max": 0.96,
+    "model_seed": null,
+    "widen_refusal": false,
+    "keyword_df_ratio": "0",
+    "runtime": {
+      "python": "3.14.6",
+      "packages": {
+        "fastapi": "0.139.2",
+        "uvicorn": "0.49.0",
+        "pymupdf": "1.27.2.3",
+        "chromadb": "1.5.9",
+        "ollama": "0.6.2",
+        "python-multipart": "0.0.32",
+        "modelscope": "missing"
+      }
+    }
+  },
+  "fingerprints": {
+    "eval\\eval_ALL.jsonl": "64b28a26ff0f5387e54b3966539a8ee8625d53cd92b7e9eb8c94b529f4c817ad",
+    "code\\webui.py": "e84d516982cac7c55de7215054dc78ad86d4c9c3a0b5529b6e65181eba78f7bc",
+    "code\\test_pipeline.py": "f76cbc3f3ee00c6ae3ae881b7bcf5f1e474850dc476ac70ab583999c88fb0ff1",
+    "code\\main.py": "fe179db3d558a65d6452767fed3f19ed5671696d0446d2ff4b54e13d85bf52c4",
+    "desktop_app\\backend.py": "ef8321b770347f38fb7724d8e45669d780e5f5ace8dc6c7bde87d87ccefa5af9",
+    "desktop_app\\main_window.py": "1f59d03209aaa4bf98886749a5428b35b3b575359df9ab65e52f6733fcad1b9b",
+    "packaging\\desktop_full_eval.py": "6395f22af618ae8e2133721b4aea7f73d0faa1aad055b53e65d4e7ff1c364620"
+  },
+  "libraries": [
+    {
+      "id": "20260806_073737_29d3901f",
+      "name": "Criminal Law",
+      "source": "Criminal Law.pdf",
+      "chunks": 245,
+      "built_at": "2026-08-06 07:37:40",
+      "status": "ready"
+    },
+    {
+      "id": "20260806_075049_dab0c710",
+      "name": "Think Python — Allen Downey",
+      "source": "Think Python — Allen Downey.pdf",
+      "chunks": 1441,
+      "built_at": "2026-08-06 07:51:10",
+      "status": "ready"
+    },
+    {
+      "id": "20260812_142123_6432dbab",
+      "name": "Cognitive Psychology",
+      "source": "Cognitive Psychology.pdf",
+      "chunks": 1466,
+      "built_at": "2026-08-12 14:21:46",
+      "status": "ready"
+    },
+    {
+      "id": "20260812_142302_ef072e72",
+      "name": "Anatomy_and_Physiology_2e",
+      "source": "Anatomy_and_Physiology_2e.pdf",
+      "chunks": 9163,
+      "built_at": "2026-08-12 14:24:46",
+      "status": "ready"
+    },
+    {
+      "id": "20260812_142447_68cdf829",
+      "name": "Microbiology",
+      "source": "Microbiology.pdf",
+      "chunks": 8956,
+      "built_at": "2026-08-12 14:26:27",
+      "status": "ready"
+    },
+    {
+      "id": "20260812_142632_8a406ffc",
+      "name": "Concepts of Biology",
+      "source": "Concepts of Biology.pdf",
+      "chunks": 4129,
+      "built_at": "2026-08-12 14:27:19",
+      "status": "ready"
+    },
+    {
+      "id": "20260812_142732_44c49025",
+      "name": "Psychology2e_WEB",
+      "source": "Psychology2e_WEB.pdf",
+      "chunks": 5212,
+      "built_at": "2026-08-12 14:28:40",
+      "status": "ready"
+    },
+    {
+      "id": "20260812_142847_d1afa4ed",
+      "name": "Business Ethics",
+      "source": "Business Ethics.pdf",
+      "chunks": 2651,
+      "built_at": "2026-08-12 14:29:18",
+      "status": "ready"
+    },
+    {
+      "id": "20260812_142932_8eb4a565",
+      "name": "Principles of Microeconomics",
+      "source": "Principles of Microeconomics.pdf",
+      "chunks": 4082,
+      "built_at": "2026-08-12 14:30:21",
+      "status": "ready"
+    },
+    {
+      "id": "20260812_143033_1a701cae",
+      "name": "Business Law and the Legal Environment",
+      "source": "Business Law and the Legal Environment.pdf",
+      "chunks": 10678,
+      "built_at": "2026-08-12 14:32:46",
+      "status": "ready"
+    },
+    {
+      "id": "20260812_143248_af2845ed",
+      "name": "Operating Systems - Three Easy Pieces",
+      "source": "Operating Systems - Three Easy Pieces.pdf",
+      "chunks": 4211,
+      "built_at": "2026-08-12 14:33:38",
+      "status": "ready"
+    },
+    {
+      "id": "legacy",
+      "name": "The Interpretation of Dreams — Sigmund Freud.pdf",
+      "source": "The Interpretation of Dreams — Sigmund Freud.pdf",
+      "chunks": 3788,
+      "built_at": "2026-08-02 15:36:30",
+      "status": "ready"
+    }
+  ],
+  "expected_rows": 1007,
+  "started_at": "2026-08-18 15:51:09",
+  "completed_at": "2026-08-18 18:23:55",
+  "completed_rows": 1007,
+  "rows_sha256": "6caa2315e3fff6e9beb3b145418304671286c2c6171e12e6f82e6ed4bc4ddf3e",
+  "end_fingerprints": {
+    "eval\\eval_ALL.jsonl": "64b28a26ff0f5387e54b3966539a8ee8625d53cd92b7e9eb8c94b529f4c817ad",
+    "code\\webui.py": "e84d516982cac7c55de7215054dc78ad86d4c9c3a0b5529b6e65181eba78f7bc",
+    "code\\test_pipeline.py": "f76cbc3f3ee00c6ae3ae881b7bcf5f1e474850dc476ac70ab583999c88fb0ff1",
+    "code\\main.py": "fe179db3d558a65d6452767fed3f19ed5671696d0446d2ff4b54e13d85bf52c4",
+    "desktop_app\\backend.py": "ef8321b770347f38fb7724d8e45669d780e5f5ace8dc6c7bde87d87ccefa5af9",
+    "desktop_app\\main_window.py": "1f59d03209aaa4bf98886749a5428b35b3b575359df9ab65e52f6733fcad1b9b",
+    "packaging\\desktop_full_eval.py": "6395f22af618ae8e2133721b4aea7f73d0faa1aad055b53e65d4e7ff1c364620"
+  },
+  "end_libraries": [
+    {
+      "id": "20260806_073737_29d3901f",
+      "name": "Criminal Law",
+      "source": "Criminal Law.pdf",
+      "chunks": 245,
+      "built_at": "2026-08-06 07:37:40",
+      "status": "ready"
+    },
+    {
+      "id": "20260806_075049_dab0c710",
+      "name": "Think Python — Allen Downey",
+      "source": "Think Python — Allen Downey.pdf",
+      "chunks": 1441,
+      "built_at": "2026-08-06 07:51:10",
+      "status": "ready"
+    },
+    {
+      "id": "20260812_142123_6432dbab",
+      "name": "Cognitive Psychology",
+      "source": "Cognitive Psychology.pdf",
+      "chunks": 1466,
+      "built_at": "2026-08-12 14:21:46",
+      "status": "ready"
+    },
+    {
+      "id": "20260812_142302_ef072e72",
+      "name": "Anatomy_and_Physiology_2e",
+      "source": "Anatomy_and_Physiology_2e.pdf",
+      "chunks": 9163,
+      "built_at": "2026-08-12 14:24:46",
+      "status": "ready"
+    },
+    {
+      "id": "20260812_142447_68cdf829",
+      "name": "Microbiology",
+      "source": "Microbiology.pdf",
+      "chunks": 8956,
+      "built_at": "2026-08-12 14:26:27",
+      "status": "ready"
+    },
+    {
+      "id": "20260812_142632_8a406ffc",
+      "name": "Concepts of Biology",
+      "source": "Concepts of Biology.pdf",
+      "chunks": 4129,
+      "built_at": "2026-08-12 14:27:19",
+      "status": "ready"
+    },
+    {
+      "id": "20260812_142732_44c49025",
+      "name": "Psychology2e_WEB",
+      "source": "Psychology2e_WEB.pdf",
+      "chunks": 5212,
+      "built_at": "2026-08-12 14:28:40",
+      "status": "ready"
+    },
+    {
+      "id": "20260812_142847_d1afa4ed",
+      "name": "Business Ethics",
+      "source": "Business Ethics.pdf",
+      "chunks": 2651,
+      "built_at": "2026-08-12 14:29:18",
+      "status": "ready"
+    },
+    {
+      "id": "20260812_142932_8eb4a565",
+      "name": "Principles of Microeconomics",
+      "source": "Principles of Microeconomics.pdf",
+      "chunks": 4082,
+      "built_at": "2026-08-12 14:30:21",
+      "status": "ready"
+    },
+    {
+      "id": "20260812_143033_1a701cae",
+      "name": "Business Law and the Legal Environment",
+      "source": "Business Law and the Legal Environment.pdf",
+      "chunks": 10678,
+      "built_at": "2026-08-12 14:32:46",
+      "status": "ready"
+    },
+    {
+      "id": "20260812_143248_af2845ed",
+      "name": "Operating Systems - Three Easy Pieces",
+      "source": "Operating Systems - Three Easy Pieces.pdf",
+      "chunks": 4211,
+      "built_at": "2026-08-12 14:33:38",
+      "status": "ready"
+    },
+    {
+      "id": "legacy",
+      "name": "The Interpretation of Dreams — Sigmund Freud.pdf",
+      "source": "The Interpretation of Dreams — Sigmund Freud.pdf",
+      "chunks": 3788,
+      "built_at": "2026-08-02 15:36:30",
+      "status": "ready"
+    }
+  ],
+  "end_service_config": {
+    "llm_model": "qwen3:8b",
+    "embed_model": "bge-m3",
+    "hybrid_default": false,
+    "evidence_floor": 0.99,
+    "style_gate_max": 0.96,
+    "model_seed": null,
+    "widen_refusal": false,
+    "keyword_df_ratio": "0",
+    "runtime": {
+      "python": "3.14.6",
+      "packages": {
+        "fastapi": "0.139.2",
+        "uvicorn": "0.49.0",
+        "pymupdf": "1.27.2.3",
+        "chromadb": "1.5.9",
+        "ollama": "0.6.2",
+        "python-multipart": "0.0.32",
+        "modelscope": "missing"
+      }
+    }
+  }
+}

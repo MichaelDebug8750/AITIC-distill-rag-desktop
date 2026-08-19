@@ -1,0 +1,15 @@
+{
+  "tag": "hybgate",
+  "port": "8012",
+  "hybrid_request": null,
+  "service_config": {
+    "llm_model": "qwen3:8b",
+    "embed_model": "bge-m3",
+    "db_path": "E:\\Ollama_test_beta\\data\\webui_knowledge_bases\\20260812_143403_be688296\\vectordb"
+  },
+  "effective_retrieval_verified": "hybrid",
+  "verification_endpoint": "/api/retrieve",
+  "verification_note": "The already-running service predates the expanded /api/status fields; a live retrieve-only request without a hybrid override returned retrieval=hybrid and llm_called=false.",
+  "recorded_at": "2026-08-14 16:18:00",
+  "preexisting_rows_without_manifest": true
+}

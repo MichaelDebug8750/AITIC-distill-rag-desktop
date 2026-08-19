@@ -1,0 +1,140 @@
+{
+  "file": "deep_current5_cn_20260817_rows.jsonl",
+  "records": 416,
+  "passes": {
+    "1": {
+      "cases": 104,
+      "A": {
+        "命中": 59,
+        "过度拒答": 4,
+        "拒答正确": 40,
+        "未命中": 1
+      },
+      "B": {
+        "命中": 60,
+        "拒答正确": 40,
+        "过度拒答": 4
+      },
+      "hit_gained": 2,
+      "hit_lost": 1,
+      "hit_delta": 1,
+      "hit_p": 1.0,
+      "fab_new": 0,
+      "fab_cured": 0,
+      "fab_delta": 0,
+      "fab_p": 1.0
+    },
+    "2": {
+      "cases": 104,
+      "A": {
+        "命中": 60,
+        "拒答正确": 40,
+        "过度拒答": 3,
+        "未命中": 1
+      },
+      "B": {
+        "命中": 59,
+        "拒答正确": 40,
+        "过度拒答": 5
+      },
+      "hit_gained": 0,
+      "hit_lost": 1,
+      "hit_delta": -1,
+      "hit_p": 1.0,
+      "fab_new": 0,
+      "fab_cured": 0,
+      "fab_delta": 0,
+      "fab_p": 1.0
+    }
+  },
+  "rows_sha256": "2f3773f998b27f08eeeea79e22bc752d3c95dfc1ddc3e05ada756b297b6550d7",
+  "analyzer_sha256": "5016247d74a6b28440b7cd75b8385b5875b4a4338e88f0cccd900928f338a668",
+  "fingerprints_current": {
+    "docs\\全量跑分_20260812\\eval_cn.jsonl": "e84e9c9b956798b64c48cba8d49e73b69abf3bf48104330e73049729953f6ea4",
+    "docs\\全量跑分_20260812\\eval_cn2.jsonl": "2155f20f9726e3c543b594f0c9070529448c089a686fdeb580ea9f1b651a832b",
+    "docs\\全量跑分_20260812\\eval_cn_gnu_make.jsonl": "a0a506ace2cd75c86e499bd4af97cab8dd080246d64d01692f40bdf122767e5a",
+    "docs\\全量跑分_20260812\\eval_cn_aigc.jsonl": "301d0d3b40663564014c2b1edeaf81d928c01b57daf3a013b534e81eb3f72f06",
+    "code\\webui.py": "71aef9c0307f7606f825a3a9d6daf231229b876047c48faa49ed86847d5d29b2",
+    "code\\webui_index.html": "98f2749475ca27f6a3ff171d50e890e5ba647ecfe4a506dbce35d8c6e02cf7f5",
+    "code\\test_pipeline.py": "ce718786674bde7a98db2030fdba9ba7aad71a4595ddb34a1edab40ab07f6cf9",
+    "code\\main.py": "fe179db3d558a65d6452767fed3f19ed5671696d0446d2ff4b54e13d85bf52c4",
+    "docs\\全量跑分_20260812\\paired_ab_run.py": "4dc60d665345aa4ffa19016a93d70b53a44fc0eefca1d62f53c7ce22b801c866"
+  },
+  "missing_fingerprint_files": [],
+  "live_service": {
+    "ollama_host": "http://127.0.0.1:11434",
+    "llm_model": "qwen3:8b",
+    "vl_model": "qwen3-vl:8b",
+    "embed_model": "bge-m3",
+    "offline": true,
+    "relevance_trim": true,
+    "context_budget": 900,
+    "budget_escalated": 1800,
+    "top_k": 8,
+    "evidence_floor": 0.99,
+    "style_gate_max": 0.96,
+    "widen_refusal": false,
+    "keyword_df_ratio": "0",
+    "cwd": "E:\\Ollama_test_beta\\code"
+  },
+  "live_library_count": 16,
+  "live_error": "",
+  "citation_failures": 0,
+  "adjacent_duplicate_citations": 0,
+  "persistent_new": [],
+  "persistent_cured": [],
+  "repeatability": {
+    "A": {
+      "cases": 104,
+      "outcome_flip_count": 1,
+      "abstain_flip_count": 1,
+      "outcome_flips": [
+        [
+          "emacs生存指南",
+          "C-h v 用来查什么？"
+        ]
+      ],
+      "abstain_flips": [
+        [
+          "emacs生存指南",
+          "C-h v 用来查什么？"
+        ]
+      ]
+    },
+    "B": {
+      "cases": 104,
+      "outcome_flip_count": 1,
+      "abstain_flip_count": 1,
+      "outcome_flips": [
+        [
+          "简明世界经济史",
+          "元朝的货币是什么？"
+        ]
+      ],
+      "abstain_flips": [
+        [
+          "简明世界经济史",
+          "元朝的货币是什么？"
+        ]
+      ]
+    }
+  },
+  "pre_registered": {
+    "complete": true,
+    "hit_ok": false,
+    "fab_counts_ok": true,
+    "persistent_new_count": 0,
+    "safety_ok_before_manual_review": true,
+    "candidate_for_default": false
+  },
+  "integrity": {
+    "records_complete": true,
+    "fingerprints_stable": true,
+    "service_stable": true,
+    "libraries_stable": true,
+    "http_errors_zero": true,
+    "citation_failures_zero": true,
+    "adjacent_duplicate_citations_zero": true
+  },
+  "passed_integrity": true
+}

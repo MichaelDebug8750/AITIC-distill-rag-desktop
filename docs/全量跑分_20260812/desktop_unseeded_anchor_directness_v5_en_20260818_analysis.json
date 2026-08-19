@@ -1,0 +1,41 @@
+{
+  "tag": "desktop_unseeded_anchor_directness_v5_en_20260818",
+  "suite": "en",
+  "rows": 1007,
+  "outcomes": {
+    "拒答正确": 280,
+    "编造": 20,
+    "命中": 524,
+    "过度拒答": 99,
+    "未命中": 84
+  },
+  "confidence": {
+    "证据不足": 379,
+    "低": 505,
+    "中": 113,
+    "高": 10
+  },
+  "http_errors": 0,
+  "citation_failures": 0,
+  "reassembly_pruned_rows": 74,
+  "rows_sha256": "6caa2315e3fff6e9beb3b145418304671286c2c6171e12e6f82e6ed4bc4ddf3e",
+  "checks": {
+    "rows_expected": true,
+    "unique_keys": true,
+    "manifest_complete": true,
+    "rows_hash": true,
+    "fingerprints_stable": true,
+    "libraries_stable": true,
+    "service_stable": true,
+    "desktop_adapter": true,
+    "http_errors_zero": true,
+    "citation_failures_zero": true,
+    "hit_at_least_web_current5": false,
+    "refusal_at_least_web_current5": true,
+    "fabrication_at_most_web_current5": true,
+    "project_report_hit_floor": false,
+    "project_report_refusal_floor": true,
+    "project_report_fabrication_ceiling": true
+  },
+  "passed": false
+}

@@ -1,0 +1,41 @@
+{
+  "tag": "desktop_full1_en_20260817",
+  "suite": "en",
+  "rows": 1007,
+  "outcomes": {
+    "拒答正确": 275,
+    "编造": 25,
+    "命中": 536,
+    "过度拒答": 88,
+    "未命中": 83
+  },
+  "confidence": {
+    "证据不足": 363,
+    "中": 124,
+    "低": 512,
+    "高": 8
+  },
+  "http_errors": 0,
+  "citation_failures": 0,
+  "reassembly_pruned_rows": 77,
+  "rows_sha256": "5728222fd144c88c780fd40f488f5ab31d979c8f92aa06dc82b7034fc35aca2a",
+  "checks": {
+    "rows_expected": true,
+    "unique_keys": true,
+    "manifest_complete": true,
+    "rows_hash": true,
+    "fingerprints_stable": true,
+    "libraries_stable": true,
+    "service_stable": true,
+    "desktop_adapter": true,
+    "http_errors_zero": true,
+    "citation_failures_zero": true,
+    "hit_at_least_web_current5": false,
+    "refusal_at_least_web_current5": false,
+    "fabrication_at_most_web_current5": false,
+    "project_report_hit_floor": true,
+    "project_report_refusal_floor": true,
+    "project_report_fabrication_ceiling": true
+  },
+  "passed": false
+}

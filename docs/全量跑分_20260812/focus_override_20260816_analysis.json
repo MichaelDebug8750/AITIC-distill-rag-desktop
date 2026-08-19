@@ -1,0 +1,120 @@
+{
+  "schema": 1,
+  "tag": "focus_override_20260816",
+  "records": 1007,
+  "floor": 0.99,
+  "focus_extracted": 688,
+  "focus_matches_dataset_term": 680,
+  "answerable": {
+    "n": 707,
+    "focus_hit": 411,
+    "blocked": 30,
+    "blocked_focus_hit": 13
+  },
+  "unanswerable": {
+    "n": 300,
+    "focus_hit": 0,
+    "blocked": 230,
+    "blocked_focus_hit": 0
+  },
+  "unanswerable_focus_collisions": [],
+  "blocked_answerable_focus_hits": [
+    {
+      "book": "Business Ethics.pdf",
+      "question": "What is a golden mean?",
+      "dataset_term": "golden mean",
+      "focus": "golden mean",
+      "best_distance": 1.0025
+    },
+    {
+      "book": "Business Law and the Legal Environment.pdf",
+      "question": "How is nonbreaching discussed in this book?",
+      "dataset_term": "nonbreaching",
+      "focus": "nonbreaching",
+      "best_distance": 1.0147
+    },
+    {
+      "book": "Criminal Law.pdf",
+      "question": "What does this book say about operative?",
+      "dataset_term": "operative",
+      "focus": "operative",
+      "best_distance": 1.0008
+    },
+    {
+      "book": "Criminal Law.pdf",
+      "question": "What is blood transfusion?",
+      "dataset_term": "blood transfusion",
+      "focus": "blood transfusion",
+      "best_distance": 1.0123
+    },
+    {
+      "book": "Criminal Law.pdf",
+      "question": "How is doing nothing discussed in this book?",
+      "dataset_term": "doing nothing",
+      "focus": "doing nothing",
+      "best_distance": 1.0778
+    },
+    {
+      "book": "Criminal Law.pdf",
+      "question": "How is actual bodily discussed in this book?",
+      "dataset_term": "actual bodily",
+      "focus": "actual bodily",
+      "best_distance": 1.144
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e.pdf",
+      "question": "What is meant by acinus?",
+      "dataset_term": "acinus",
+      "focus": "acinus",
+      "best_distance": 0.994
+    },
+    {
+      "book": "Anatomy_and_Physiology_2e.pdf",
+      "question": "Give the definition of hypercapnia.",
+      "dataset_term": "hypercapnia",
+      "focus": "hypercapnia",
+      "best_distance": 1.0031
+    },
+    {
+      "book": "Concepts of Biology.pdf",
+      "question": "What does the term amylase refer to?",
+      "dataset_term": "amylase",
+      "focus": "amylase",
+      "best_distance": 1.0622
+    },
+    {
+      "book": "Cognitive Psychology.pdf",
+      "question": "How is illusory discussed in this book?",
+      "dataset_term": "illusory",
+      "focus": "illusory",
+      "best_distance": 1.0487
+    },
+    {
+      "book": "The Interpretation of Dreams — Sigmund Freud.pdf",
+      "question": "How is infantile discussed in this book?",
+      "dataset_term": "infantile",
+      "focus": "infantile",
+      "best_distance": 1.0057
+    },
+    {
+      "book": "The Interpretation of Dreams — Sigmund Freud.pdf",
+      "question": "What is the role of logical relations?",
+      "dataset_term": "logical relations",
+      "focus": "logical relations",
+      "best_distance": 1.0395
+    },
+    {
+      "book": "The Interpretation of Dreams — Sigmund Freud.pdf",
+      "question": "What does this book say about castration?",
+      "dataset_term": "castration",
+      "focus": "castration",
+      "best_distance": 1.0391
+    }
+  ],
+  "types": {
+    "answerable": 494,
+    "unanswerable": 300,
+    "fuzzy_desc": 103,
+    "fuzzy_kw": 110
+  }
+}

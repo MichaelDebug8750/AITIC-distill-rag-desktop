@@ -1,0 +1,62 @@
+{
+  "file": "paired_cn_20260815_rows.jsonl",
+  "records": 416,
+  "passes": {
+    "1": {
+      "cases": 104,
+      "A": {
+        "命中": 59,
+        "拒答正确": 40,
+        "过度拒答": 4,
+        "未命中": 1
+      },
+      "B": {
+        "命中": 58,
+        "过度拒答": 5,
+        "拒答正确": 40,
+        "未命中": 1
+      },
+      "hit_gained": 2,
+      "hit_lost": 3,
+      "hit_delta": -1,
+      "hit_p": 1.0,
+      "fab_new": 0,
+      "fab_cured": 0,
+      "fab_delta": 0,
+      "fab_p": 1.0
+    },
+    "2": {
+      "cases": 104,
+      "A": {
+        "命中": 59,
+        "过度拒答": 4,
+        "拒答正确": 40,
+        "未命中": 1
+      },
+      "B": {
+        "命中": 58,
+        "过度拒答": 5,
+        "拒答正确": 40,
+        "未命中": 1
+      },
+      "hit_gained": 2,
+      "hit_lost": 3,
+      "hit_delta": -1,
+      "hit_p": 1.0,
+      "fab_new": 0,
+      "fab_cured": 0,
+      "fab_delta": 0,
+      "fab_p": 1.0
+    }
+  },
+  "persistent_new": [],
+  "persistent_cured": [],
+  "pre_registered": {
+    "complete": true,
+    "hit_ok": false,
+    "fab_counts_ok": true,
+    "persistent_new_count": 0,
+    "safety_ok_before_manual_review": true,
+    "candidate_for_default": false
+  }
+}

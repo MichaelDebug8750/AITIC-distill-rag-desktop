@@ -1,0 +1,18 @@
+{
+  "arm": "aa2",
+  "hybrid_enabled": false,
+  "evidence_floor": 0.99,
+  "style_gate": 0.96,
+  "verify_keep": false,
+  "adopt_abstain": false,
+  "widen_refusal": false,
+  "kw_df_ratio_env": null,
+  "env": {
+    "DISTILL_HYBRID": null,
+    "AITIC_EVIDENCE_FLOOR": null,
+    "AITIC_STYLE_GATE": null,
+    "AITIC_VERIFY_KEEP": null,
+    "AITIC_ADOPT_ABSTAIN": null,
+    "AITIC_WIDEN_REFUSAL": null
+  }
+}

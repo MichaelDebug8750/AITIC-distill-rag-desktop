@@ -1,0 +1,94 @@
+{
+  "file": "focus_floor_en_repaired_20260816_rows.jsonl",
+  "suite": "english",
+  "records": 4028,
+  "fingerprint_drift": [],
+  "passes": {
+    "1": {
+      "cases": 1007,
+      "A": {
+        "未命中": 88,
+        "命中": 541,
+        "编造": 24,
+        "拒答正确": 276,
+        "过度拒答": 78
+      },
+      "B": {
+        "未命中": 90,
+        "命中": 553,
+        "编造": 28,
+        "过度拒答": 64,
+        "拒答正确": 272
+      },
+      "triggered": 7,
+      "hit_gained": 39,
+      "hit_lost": 27,
+      "hit_delta": 12,
+      "hit_p": 0.1752857944430353,
+      "fab_new": 8,
+      "fab_cured": 4,
+      "fab_delta": 4,
+      "fab_p": 0.3876953125,
+      "baseline_floor_ok": false,
+      "automatic_pass_ok": false
+    },
+    "2": {
+      "cases": 1007,
+      "A": {
+        "未命中": 91,
+        "命中": 548,
+        "编造": 28,
+        "过度拒答": 68,
+        "拒答正确": 272
+      },
+      "B": {
+        "未命中": 95,
+        "命中": 545,
+        "编造": 24,
+        "拒答正确": 276,
+        "过度拒答": 67
+      },
+      "triggered": 7,
+      "hit_gained": 35,
+      "hit_lost": 38,
+      "hit_delta": -3,
+      "hit_p": 0.8151212352249975,
+      "fab_new": 7,
+      "fab_cured": 11,
+      "fab_delta": -4,
+      "fab_p": 0.480682373046875,
+      "baseline_floor_ok": true,
+      "automatic_pass_ok": false
+    }
+  },
+  "persistent_new_fabrication": [],
+  "persistent_hit_loss": [
+    [
+      "anatomy_and_physiology_2e",
+      "What is meant by acetylcholine?"
+    ],
+    [
+      "businesslawandthelegalenvironment",
+      "2005 version of this act, the Revised Model Business Corporation Act, will be referred to throughout our discussion of corporation law."
+    ],
+    [
+      "businesslawandthelegalenvironment",
+      "What is the role of trial court?"
+    ],
+    [
+      "principlesofmicroeconomics",
+      "Define marginal profit."
+    ],
+    [
+      "psychology2e_web",
+      "noticed watched increase"
+    ]
+  ],
+  "pre_registered": {
+    "automatic_passes_ok": false,
+    "persistent_new_fabrication_count": 0,
+    "persistent_hit_loss_count": 5,
+    "safety_ok_before_single_pass_manual_review": false,
+    "candidate_for_adoption": false
+  }
+}

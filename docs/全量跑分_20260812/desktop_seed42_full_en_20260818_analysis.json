@@ -1,0 +1,41 @@
+{
+  "tag": "desktop_seed42_full_en_20260818",
+  "suite": "en",
+  "rows": 1007,
+  "outcomes": {
+    "拒答正确": 275,
+    "编造": 25,
+    "命中": 534,
+    "过度拒答": 87,
+    "未命中": 86
+  },
+  "confidence": {
+    "证据不足": 362,
+    "中": 132,
+    "低": 503,
+    "高": 10
+  },
+  "http_errors": 0,
+  "citation_failures": 0,
+  "reassembly_pruned_rows": 81,
+  "rows_sha256": "3052129ab9642a2779ef94a385f7eb2381f3a80b6d0951c55dabdc4117d3b181",
+  "checks": {
+    "rows_expected": true,
+    "unique_keys": true,
+    "manifest_complete": true,
+    "rows_hash": true,
+    "fingerprints_stable": true,
+    "libraries_stable": true,
+    "service_stable": true,
+    "desktop_adapter": true,
+    "http_errors_zero": true,
+    "citation_failures_zero": true,
+    "hit_at_least_web_current5": false,
+    "refusal_at_least_web_current5": false,
+    "fabrication_at_most_web_current5": false,
+    "project_report_hit_floor": true,
+    "project_report_refusal_floor": true,
+    "project_report_fabrication_ceiling": true
+  },
+  "passed": false
+}

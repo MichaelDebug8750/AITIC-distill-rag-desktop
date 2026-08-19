@@ -134,7 +134,47 @@
   .msg.ai{align-self:flex-start;background:var(--card);border:1px solid var(--line);
           border-radius:12px 12px 12px 3px;padding:15px 17px;width:88%;box-shadow:var(--shadow)}
   .ans{font-size:16px;line-height:1.9;white-space:pre-wrap;word-break:break-word}
+  /* 走 renderAnswerBody 的答案已是块级排版，再留 pre-wrap 会让段间空行翻倍 */
+  /* 正文 / 教材外补充 / 简报共用同一个渲染器，样式也共用，别按容器各写一套 */
+  .formatted{white-space:normal}
+  .formatted>p{margin:0 0 12px}
+  .formatted>p:last-child{margin-bottom:0}
+  .formatted strong{font-weight:700;color:var(--navy)}
+  .ans-list{margin:0 0 12px;padding-left:22px}
+  .ans-list li{margin:4px 0}
   .ans.refuse{color:var(--red);font-weight:bold}
+  /* 中途停止的不完整响应：必须一眼看出证据元数据未完整交付 */
+  .ans.unverified{color:#7A5B12;border-left:3px solid #D98A3A;padding-left:11px}
+  /* 批量跑题报告 */
+  .batch-bar{margin-top:10px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:12px;color:#6F7E90}
+  .batch-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:9px;margin-bottom:10px}
+  .batch-summary>div{border:1px solid #DDE3EA;border-radius:6px;padding:9px 11px;background:#F8FAFC}
+  .batch-summary b{display:block;font-size:11.5px;color:#5C6B7E;font-weight:700}
+  .batch-summary span{display:block;font-size:21px;font-weight:750;color:#17375E;line-height:1.35}
+  .batch-summary small{font-size:11px;color:#8A94A4}
+  .batch-rows{display:grid;gap:7px;max-height:420px;overflow-y:auto}
+  .batch-row{border:1px solid #DDE3EA;border-left:3px solid #9AA7B5;border-radius:4px;padding:8px 10px;background:#fff}
+  .batch-row.hit{border-left-color:#2E8B57}.batch-row.refused{border-left-color:#3B6EA5}
+  .batch-row.miss{border-left-color:#C0392B}.batch-row.over_refused{border-left-color:#D98A3A}
+  .batch-q{font-size:12.5px;font-weight:650;color:#2C3E52;overflow-wrap:anywhere}
+  .batch-meta{font-size:11.5px;color:#6C7989;margin:3px 0}
+  .batch-a{font-size:11.5px;color:#8A94A4;line-height:1.55;overflow-wrap:anywhere}
+  /* 原文核对：命中的块要一眼认出来，否则用户还是得自己在整页里找 */
+  .cite-open{margin-left:8px;border:1px solid #C9D8E6;background:#fff;color:#28527A;
+             border-radius:4px;padding:1px 8px;font-size:11.5px;font-weight:650;cursor:pointer}
+  .cite-open:hover{background:#EAF1F8;border-color:#9DB9D4}
+  .source-block{border:1px solid #DDE3EA;border-radius:6px;padding:9px 11px;margin-bottom:8px;background:#fff}
+  .source-block.matched{border-color:#8EB99C;background:#F3FAF5;box-shadow:0 0 0 2px rgba(142,185,156,.18)}
+  .source-block-head{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;
+                     font-size:11.5px;font-weight:700;color:#5C6B7E;margin-bottom:5px}
+  .source-block.matched .source-block-head{color:#1E7E34}
+  .source-block-body{font-size:13px;line-height:1.75;color:#33404F;white-space:pre-wrap;
+                     overflow-wrap:anywhere;max-height:320px;overflow-y:auto}
+  .prune-note{margin-top:10px;padding:9px 12px;border-radius:7px;background:#F4F8F4;
+              border:1px solid #C6DCC6;color:#2F6B3A;font-size:12.5px;line-height:1.6}
+  .unverified-note{margin-top:10px;padding:10px 12px;border-radius:7px;background:#FFFCF5;
+                   border:1px dashed #E0B45A;color:#8C5A00;font-size:13px;line-height:1.7}
+  .unverified-note b{color:#B45B00}
   .refusal-note{margin-top:10px;padding:10px 12px;border-radius:7px;background:#FFF7F5;
                 border:1px solid #F3D6D1;color:#7B4A43;font-size:13px;line-height:1.6}
   .refusal-note code{color:var(--red);font-family:Consolas,monospace;font-weight:700}
@@ -201,6 +241,98 @@
   .signal-mark.ok{color:#1E7E34}.signal-mark.no{color:#B45B00}
   .gap-list{margin:0;padding-left:17px;font-size:11.5px;color:#8A5A1E;line-height:1.7}
   .relation-row{font-size:11.5px;color:#526174;line-height:1.6;padding:2px 0;overflow-wrap:anywhere}
+  /* ---- A/B 对比 ---- */
+  .compare-setup{display:grid;gap:8px;margin-bottom:10px}
+  .compare-setup label{display:grid;gap:4px;font-size:12px;color:#526174;font-weight:650}
+  .compare-setup select,.compare-setup input{border:1px solid #D7E2EE;border-radius:6px;
+        padding:8px 10px;font-size:13px;background:#fff;color:var(--navy2);outline:none;width:100%}
+  .compare-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;margin-top:8px}
+  .compare-arm{border:1px solid #DDE3EA;border-left:3px solid #6E93B8;border-radius:4px;
+               background:#fff;padding:10px 12px;min-width:0}
+  .compare-arm-head{display:flex;align-items:center;justify-content:space-between;gap:8px;
+                    flex-wrap:wrap;font-size:13px;color:#17375E;margin-bottom:6px}
+  .compare-metrics{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:7px}
+  .compare-metrics span{font-size:11px;background:#EEF3F8;color:#3B5A7A;border:1px solid #DBE5EF;
+                        border-radius:3px;padding:1px 7px;white-space:nowrap}
+  .compare-answer{font-size:13px;line-height:1.75;color:#2C3E52;white-space:pre-wrap;
+                  overflow-wrap:anywhere;max-height:280px;overflow-y:auto}
+  .compare-src{margin-top:7px;font-size:11px;color:#6F7E90;overflow-wrap:anywhere}
+  /* ---- 原页图像 ---- */
+  /* ---- 侧栏工具导航（原顶栏 8 个页签下沉至此）---- */
+  .side-nav{display:grid;gap:2px;margin:10px 0 4px}
+  .side-nav-item{display:grid;grid-template-columns:22px 1fr;align-items:center;gap:8px;
+                 width:100%;border:none;background:none;border-radius:8px;cursor:pointer;
+                 padding:7px 9px;font-size:13.5px;color:#3A4655;text-align:left;
+                 transition:background .12s,color .12s}
+  .side-nav-item i{font-style:normal;font-size:14px;line-height:1;text-align:center;opacity:.9}
+  .side-nav-item span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .side-nav-item:hover{background:rgba(23,55,94,.06);color:var(--navy)}
+  .side-nav-item.active{background:rgba(23,55,94,.10);color:var(--navy);font-weight:700}
+  .side-nav-item:focus-visible{outline:2px solid rgba(46,107,170,.5);outline-offset:1px}
+  .side-nav-more{position:relative}
+  .side-nav-more-btn{width:100%}
+  /* 侧栏是 overflow:auto，绝对定位的飞出菜单会被整块裁掉（实测命中测试落在 #chat 上，
+     而且撑出 scrollWidth 444 > clientWidth 284 的横向滚动条）。改 fixed 逃出裁剪，
+     坐标由 openMoreMenu() 按「更多」按钮的实时位置算。 */
+  .side-nav-more-menu{position:fixed;z-index:70;min-width:168px;
+    display:grid;gap:2px;padding:6px;background:#fff;border:1px solid #DFE4EA;border-radius:12px;
+    box-shadow:0 12px 30px rgba(20,35,53,.16)}
+  .side-nav-more-menu .side-nav-item{width:100%}
+  /* 侧栏折叠：桌面隐藏整条侧栏，把重开入口交回顶栏的 ☰ */
+  .brand-row{display:flex;align-items:flex-start;gap:8px}
+  .brand-row .brand{flex:1;min-width:0}
+  .sidebar-collapse{flex-shrink:0;border:1px solid #D3DFEC;background:#fff;color:var(--navy2);
+    width:28px;height:28px;border-radius:8px;font-size:14px;line-height:1;cursor:pointer;padding:0}
+  .sidebar-collapse:hover{background:#EAF1F8}
+  /* 只在桌面折叠。窄屏侧栏是覆盖式抽屉，若这条生效，其特异性(0,1,2)会压过
+     媒体查询里的 aside{display:flex}(0,0,1)，导致移动端抽屉再也拉不出来。 */
+  @media (min-width:801px){ body.sidebar-collapsed aside{display:none} }
+  /* ---- 主次操作分级：提问是主操作，其余降为描边按钮 ---- */
+  .action.primary{background:linear-gradient(180deg,#2E6BAA,#245A93);color:#fff;border:none;
+                  box-shadow:0 1px 3px rgba(36,90,147,.28)}
+  .action.primary:hover:not(:disabled){filter:brightness(1.07)}
+  .action.ghost{background:#fff;color:var(--navy2);border:1px solid var(--line);
+                box-shadow:none;font-weight:650}
+  .action.ghost:hover:not(:disabled){background:#F1F5FA;border-color:#B9CCE0}
+  .action.ghost[aria-expanded="true"]{background:#EAF2FA;border-color:#6E9AC4;color:#1F4E79}
+  /* ---- 检索设置弹层 ---- */
+  /* [hidden] 的 display:none 优先级最低，会被下面的 display:grid/flex 压过——
+     面板就会在"以为收起"的状态下一直占着位置。必须显式让 hidden 胜出。 */
+  [hidden]{display:none!important}
+  .retrieval-panel{margin-top:9px;border:1px solid var(--line);border-radius:10px;background:#fff;
+                   padding:10px 12px;display:grid;gap:9px;box-shadow:0 4px 14px rgba(20,40,70,.07)}
+  .rp-row{display:grid;grid-template-columns:76px auto 1fr;gap:10px;align-items:center;
+          font-size:12.5px;color:var(--navy2);cursor:pointer}
+  .rp-name{font-weight:700;white-space:nowrap}
+  .rp-ctl{display:flex;align-items:center;gap:5px}
+  .rp-ctl input[type=number]{width:62px;border:1px solid var(--line);border-radius:6px;
+                             padding:5px 7px;font-size:12.5px;outline:none}
+  .rp-why{font-size:11.5px;color:#7A8797;line-height:1.5;overflow-wrap:anywhere}
+  /* 收起后仍要让用户看见自己开着什么——"收起"不等于"隐藏状态" */
+  .active-flags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+  .active-flag{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:650;
+               background:#EAF2FA;color:#1F4E79;border:1px solid #C3D8EB;border-radius:20px;
+               padding:3px 10px}
+  .active-flag button{border:none;background:none;color:#5A7C9E;cursor:pointer;font-size:13px;
+                      line-height:1;padding:0 0 0 2px}
+  .active-flag button:hover{color:#B4451F}
+  @media (max-width:800px){ .rp-row{grid-template-columns:1fr;gap:4px} .rp-why{margin-bottom:2px} }
+  /* ---- 失败诊断与补救 ---- */
+  .diagnosis{margin-top:12px;border:1px solid #CFE0F0;border-left:3px solid #4F81BD;
+             border-radius:9px;background:linear-gradient(180deg,#F7FBFF,#F2F7FC);padding:12px 14px}
+  .diagnosis-head{font-size:13px;font-weight:750;color:#244D78;margin-bottom:5px}
+  .diagnosis-cause{font-size:13px;line-height:1.7;color:#3E5771;margin-bottom:9px;overflow-wrap:anywhere}
+  .fix-actions{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:8px}
+  .fix-action{border:1px solid #9DBFDE;border-radius:7px;background:#fff;color:#1F4E79;
+              padding:6px 12px;font-size:12.5px;font-weight:650;cursor:pointer;
+              transition:background .15s,border-color .15s,transform .1s}
+  .fix-action:hover{background:#EAF2FA;border-color:#6E9AC4;transform:translateY(-1px)}
+  .fix-action:active{transform:none}
+  .fix-why{font-size:11.5px;color:#6C7989;line-height:1.65;overflow-wrap:anywhere}
+  .fix-note{margin-top:7px;font-size:11px;color:#8A94A4}
+  .page-meta{font-size:11.5px;color:#6F7E90;margin:8px 0 6px;overflow-wrap:anywhere}
+  .page-image{width:100%;height:auto;border:1px solid #DDE3EA;border-radius:4px;background:#fff;
+              display:block;box-shadow:0 1px 4px rgba(20,40,70,.08)}
   .confidence{display:inline-flex;align-items:center;border-radius:12px;padding:2px 9px;font-size:12px;
               font-weight:750;white-space:nowrap}
   /* ---- 第二部分：模型常识补全 ----
@@ -208,6 +340,14 @@
      用琥珀色 + 虚线边框 + 显著抬头，避免任何人把它当成书里的内容。 */
   .supplement{margin-top:12px;border:1px dashed #E0B45A;border-left:3px solid #D98A3A;
               border-radius:9px;background:#FFFCF5;padding:11px 13px}
+  /* 两段式段头：上「完整解答」下「教材依据」。分界必须一眼看出来，
+     否则用户会把未经溯源的那段当成教材内容。 */
+  .grounded-head{display:flex;align-items:center;gap:9px;margin:18px 0 8px;
+    font-size:13px;font-weight:700;color:var(--navy)}
+  .grounded-head::after{content:'';flex:1;height:1px;background:var(--line)}
+  .grounded-badge{font-size:11px;font-weight:600;color:#2C6E49;
+    background:#E7F4EC;border:1px solid #BFE3CD;border-radius:20px;padding:2px 9px}
+  .supplement-slot:empty{display:none}
   .supplement-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;
                    font-size:13px;font-weight:750;color:#8C5A00;margin-bottom:6px}
   .supplement-badge{border:1px solid #E0B45A;background:#FFF3D9;color:#8C5A00;
@@ -230,6 +370,11 @@
   .generated-question .q-title{font-weight:750;color:#17375E;margin-bottom:5px}
   .generated-question .q-answer{font-size:13px;line-height:1.65;color:#526174}
   .generated-question .q-source{margin-top:5px;font-size:11px;color:#6F7E90}
+  .quiz-reveal{display:none;margin-top:7px}
+  .question-set.quiz-mode .generated-question:not(.revealed) .quiz-answer{display:none}
+  .question-set.quiz-mode .quiz-reveal{display:inline-flex}
+  .question-set.quiz-mode .generated-question{background:#FFFDF7;border-left-color:#B57A21}
+  .question-set.quiz-mode .generated-question.revealed{background:#F8FAFC;border-left-color:#285D8F}
 
   footer{background:rgba(255,255,255,.96);border-top:1px solid var(--line);padding:14px 24px;flex-shrink:0}
   /* 必须允许换行：网格布局只在 ≤800px 生效，801–1100px 这段若不换行，
@@ -256,13 +401,14 @@
     body{flex-direction:column;overflow:hidden}
     aside{width:100%;height:auto;max-height:42vh;padding:12px 14px;display:grid;
           grid-template-columns:1fr 1fr;gap:8px;box-shadow:0 6px 20px rgba(23,55,94,.12)}
-    aside .brand,.badge,.kb-manager,.recent-title,#libraryList,.library-box{grid-column:1/-1}
+    aside .brand,.badge,aside .kb-manager,aside .recent-title,aside #libraryList,aside .library-box{grid-column:1/-1}
     aside .brand{padding-left:9px}
     aside h1{font-size:15px;margin-bottom:2px}
     aside .sub{font-size:11px}
     .badge{font-size:12px;padding:5px 9px}
     .box{padding:9px 10px}
-    .box.optional,aside .foot,.recent-title,#libraryList{display:none}
+    /* 只收窄侧栏里的，抽屉里的同名节点不受影响——否则借出去就变成 0 尺寸 */
+    .box.optional,aside .foot,aside .recent-title,aside #libraryList{display:none}
     .big{font-size:27px}
     main{min-height:0}
     header{padding:10px 14px;gap:10px}
@@ -354,7 +500,7 @@
   .multi-toggle{width:58px;min-width:58px;height:42px;align-self:center;padding:0 5px;overflow:hidden}
   .multi-toggle span{white-space:nowrap}.multi-toggle input{width:14px;height:14px;flex:0 0 auto}
   .session-pill{font-variant-numeric:tabular-nums}
-  .tool-drawer-shade{position:fixed;inset:0;background:rgba(21,35,52,.28);z-index:50;display:none}
+  .tool-drawer-shade{position:fixed;inset:0;background:rgba(21,35,52,.28);z-index:70;display:none}
   .tool-drawer-shade.open{display:block}
   .tool-drawer{position:absolute;right:0;top:0;height:100%;width:min(560px,92vw);background:#fff;
                border-left:1px solid #D7E0E9;box-shadow:-12px 0 35px rgba(23,55,94,.15);display:flex;flex-direction:column}
@@ -381,16 +527,39 @@
   .retrieval-banner{border-left:3px solid #285D8F;background:#EEF4F9;padding:9px 11px;color:#244D78;font-size:13px;margin-bottom:8px}
   .source-score{float:right;color:#7A8797;font-size:11px;font-weight:500}
   .composer-note{font-size:11px;color:#7A8797;margin-top:7px;display:flex;justify-content:space-between;gap:8px}
-  .sidebar-session-list{display:grid;gap:4px;max-height:188px;overflow:auto}
-  .sidebar-session{width:100%;border:0;background:transparent;color:#34475C;border-radius:7px;padding:8px 9px;
-                   text-align:left;cursor:pointer;display:grid;gap:3px;min-width:0}
+  .sidebar-session-list{display:grid;gap:4px;max-height:none;overflow:visible}
+  /* 行 = 打开区 + 操作区。图钉/删除平时收起，悬停或键盘聚焦时显示，避免列表被图标淹没。 */
+  .sidebar-session{width:100%;border-radius:7px;min-width:0;
+                   display:grid;grid-template-columns:1fr auto;align-items:center}
   .sidebar-session:hover,.sidebar-session.active{background:#E9EDF2}
+  .sidebar-session-open{border:0;background:transparent;color:#34475C;padding:8px 4px 8px 9px;
+                        text-align:left;cursor:pointer;display:grid;gap:3px;min-width:0}
+  .sidebar-session-actions{display:flex;align-items:center;padding-right:2px}
+  .sidebar-session-pin,.sidebar-session-rename,.sidebar-session-delete{border:0;background:transparent;color:#9AA7B4;cursor:pointer;
+                       font-size:13px;line-height:1;padding:6px;border-radius:6px;visibility:hidden}
+  .sidebar-session:hover .sidebar-session-pin,.sidebar-session:focus-within .sidebar-session-pin,
+  .sidebar-session:hover .sidebar-session-rename,.sidebar-session:focus-within .sidebar-session-rename,
+  .sidebar-session:hover .sidebar-session-delete,.sidebar-session:focus-within .sidebar-session-delete,
+  .sidebar-session-pin.on{visibility:visible}
+  .sidebar-session-pin.on{color:var(--orange)}
+  .sidebar-session-pin:hover,.sidebar-session-rename:hover{background:#DCE3EB;color:var(--navy)}
+  .sidebar-session-delete:hover{background:#FCE8E6;color:#B42318}
+  .session-group{display:grid;gap:2px}
+  #panelStash{display:none!important}
+  /* 借给抽屉时不再是侧栏窄条，撑满抽屉宽度 */
+  #drawerBody>#stashLibraryPicker,#drawerBody>#stashLibraryBuild,#drawerBody>#stashStatus{display:grid;gap:10px}
+  #drawerBody>#stashStatus{grid-template-columns:repeat(auto-fit,minmax(210px,1fr));align-items:start}
   .sidebar-session-title{font-size:12.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-  .sidebar-session-meta{font-size:10.5px;color:#7B8897;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .sidebar-session-meta{display:none;font-size:10.5px;color:#7B8897;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .sidebar-session-empty{font-size:11.5px;color:#7B8897;padding:7px 9px;line-height:1.5}
   .mobile-sidebar-tools{display:none}
+  /* 工具下沉侧栏后，移动端这三项与 .side-nav 重复；元素保留（事件按 id 绑定），只隐藏 */
+  #mobileSettings,#mobileChunks,#mobileHistory{display:none!important}
   .sidebar-backdrop{display:none;position:fixed;inset:0;background:rgba(10,20,32,.34);z-index:55}
   #sidebarToggle{display:none}
+  body.sidebar-collapsed #sidebarToggle{display:inline-flex}
+  .header-left{display:flex;align-items:center;gap:10px;min-width:0}
+  #sidebarToggle .ico-narrow{display:none}
 
   /* ---------- Chat-first：保留知识库工具，但把主要空间还给对话 ---------- */
   aside{width:300px;background:#F7F7F8;border-right:1px solid #E3E5E8;padding:16px 14px;gap:10px}
@@ -412,15 +581,30 @@
   .agent-details[open]>summary::before{content:'－'}
   .agent-details-content{margin-top:9px}
   footer{background:linear-gradient(to top,#fff 82%,rgba(255,255,255,.9));border-top:0;padding:10px 18px 14px}
+  /* 输入框独占首行、控件排第二行：控件增减时行数恒定为 2，
+     不会像原来那样每加一个按钮就把底部撑高一截（曾从 150px 涨到 314px）。 */
   .inp{width:min(100%,940px);margin-inline:auto;display:grid;gap:8px;
-       grid-template-columns:minmax(0,1fr) auto auto auto auto;
-       grid-template-areas:'question question question question send' 'mode style brief questions questions'}
+       grid-template-columns:auto auto 1fr auto auto auto auto;
+       grid-template-areas:'question question question question question question question'
+                           'mode style . settings questions brief send'}
   #q{grid-area:question;min-height:52px;max-height:170px;height:52px;resize:none;overflow-y:auto;
      border-radius:18px;padding:14px 17px;background:#fff;box-shadow:0 6px 24px rgba(25,41,60,.08)}
   #send{grid-area:send;border-radius:16px;min-width:88px}
-  #answerMode{grid-area:mode}#answerStyle{grid-area:style}#brief{grid-area:brief}#questions{grid-area:questions}
+  #answerMode{grid-area:mode}#answerStyle{grid-area:style}
+  #retrievalSettings{grid-area:settings}#brief{grid-area:brief}#questions{grid-area:questions}
   .mode-select,.action{height:40px;min-height:40px;border-radius:10px;font-size:13px;box-shadow:none}
   .action{min-width:94px;padding:0 15px}
+  .composer-library-hint{width:min(100%,940px);margin:0 auto 8px;padding:8px 11px;
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    border:1px solid #D7E3EF;border-radius:12px;background:#F4F8FC;color:#36526F;font-size:12.5px}
+  .composer-library-hint-copy{display:flex;align-items:center;gap:7px;min-width:0}
+  .composer-library-hint-copy b{color:#17375E;white-space:nowrap}
+  .composer-library-hint-copy span{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .composer-library-hint button{flex:0 0 auto;border:1px solid #B8CCE0;border-radius:8px;background:#fff;
+    color:#24527E;font:inherit;font-weight:700;padding:5px 9px;cursor:pointer}
+  .composer-library-hint button:hover{background:#E8F1F9;border-color:#87AACB}
+  .composer-library-hint.needs-library{background:#FFF8E8;border-color:#EBCB86;color:#7A5314}
+  .composer-library-hint.needs-library .composer-library-hint-copy b{color:#7A5314}
   .composer-note{width:min(100%,940px);margin:7px auto 0}
 
   @media (max-width:1100px){.workflow-nav{display:none}}
@@ -434,9 +618,15 @@
     aside .recent-title{display:block}
     aside #libraryList{display:flex}
     .mobile-sidebar-tools{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+    /* 窄屏放不下飞出式菜单：侧栏 330 + 菜单 168 = 498 > 375，必然出界。
+       改成跟在「更多」下面的缩进子菜单，随侧栏一起滚。 */
+    .side-nav-more-menu{position:static;min-width:0;margin-top:2px;padding:0 0 0 14px;
+      background:transparent;border:0;box-shadow:none}
     main{width:100%;height:100dvh;min-height:0}
     header{min-height:56px;padding:0 12px}.header-title{min-width:0}.header-title .d{display:none}
-    .header-tools>:not(#sidebarToggle){display:none}#sidebarToggle{display:inline-flex;padding:7px 10px}
+    .header-tools>*{display:none}
+    #sidebarToggle{display:inline-flex;padding:7px 10px}
+    #sidebarToggle .ico-wide{display:none}#sidebarToggle .ico-narrow{display:inline}
     #chat{padding:18px 14px 24px;gap:18px}
     #chat>.hint,#chat>.msg.ai{width:100%}
     .hint{padding:20px 17px}.workbench-flow{display:none}
@@ -447,105 +637,111 @@
     #q{width:100%;min-height:48px;height:48px;padding:12px 14px;border-radius:15px}
     #send{width:76px;min-width:76px;border-radius:14px}
     .mode-select,.action{width:100%;min-width:0;height:38px;min-height:38px;padding:0 8px}
+    .sidebar-session-pin,.sidebar-session-rename,.sidebar-session-delete{visibility:visible}
+    .composer-library-hint{align-items:flex-start;gap:8px;padding:8px 10px;font-size:12px}
+    .composer-library-hint-copy{display:grid;gap:2px}
+    .composer-library-hint-copy span{white-space:normal;line-height:1.4}
+    .composer-library-hint button{padding:5px 8px}
     .composer-note{align-items:flex-start;line-height:1.45}.composer-note>span:first-child{display:none}
     .note-right{width:100%;justify-content:space-between}
     .evidence-trace{grid-template-columns:1fr}
+  }
+
+  /* ---------- 对话优先侧栏：固定入口，剩余高度全部交给置顶/最近会话 ---------- */
+  .brand-row{display:flex;align-items:center;gap:8px;min-height:38px}
+  .brand-identity{display:flex;align-items:center;gap:9px;min-width:0;flex:1}
+  .brand-mark{width:31px;height:31px;border:1.5px solid #C8CDD3;border-radius:9px;display:grid;
+              place-items:center;color:#111;font-weight:800;font-size:13px;background:#fff;flex:0 0 auto}
+  aside .brand{border-left:0;padding:0;min-width:0}
+  aside .brand h1{font-size:15px;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0}
+  aside .brand .sub{display:none}
+  .sidebar-top-actions{display:flex;align-items:center;gap:4px}
+  .sidebar-top-icon,.sidebar-collapse{width:34px;height:34px;border:0;border-radius:9px;background:transparent;
+                    color:#5D6670;display:grid;place-items:center;cursor:pointer;font-size:18px;padding:0}
+  .sidebar-top-icon:hover,.sidebar-collapse:hover{background:#E9E9EB;color:#111}
+  #netBadge{font-size:11px;padding:3px 8px;border-radius:12px;width:max-content;margin:0;background:#EAF6EE;
+            border-color:#CBE7D4;color:#26733D}
+  #newChat{background:#ECECEE;border:0;color:#111;text-align:left;border-radius:10px;padding:11px 13px;
+           font-size:14px;font-weight:650;box-shadow:none}
+  #newChat:hover{background:#E2E2E5;color:#111}
+  .side-nav{gap:2px}
+  .side-nav-item{border-radius:9px;padding:9px 11px}
+  .side-nav-more-menu{max-height:min(560px,calc(100vh - 32px));overflow-y:auto}
+  .conversation-scroll{flex:1 1 auto;min-height:0;overflow-y:auto;display:grid;align-content:start;gap:12px;
+                       margin:2px -4px 0;padding:0 4px 12px;scrollbar-gutter:stable}
+  .conversation-scroll .session-group{min-height:0}
+  .conversation-scroll .recent-title{padding:6px 8px 2px}
+  .sidebar-session-title{font-size:14px;color:#202123}
+  .sidebar-session-open{padding:9px 5px 9px 9px}
+  aside .foot{display:none}
+  .new-chat-source-actions{position:sticky;bottom:-16px;z-index:2;display:grid;gap:9px;margin:8px -18px -16px;
+                           padding:13px 18px 16px;border-top:1px solid #E0E6ED;background:rgba(255,255,255,.97);
+                           box-shadow:0 -8px 18px rgba(23,55,94,.06)}
+  .new-chat-source-actions[hidden]{display:none}
+  .new-chat-source-summary{font-size:13px;line-height:1.55;color:#526174}
+  .new-chat-source-summary b{color:#17375E}
+  .new-chat-source-buttons{display:flex;justify-content:flex-end;gap:8px}
+  @media (max-width:800px){
+    .side-nav-more-menu{max-height:34vh;overflow-y:auto}
+    .conversation-scroll{overflow-y:visible;flex:none}
+    .new-chat-source-buttons{display:grid;grid-template-columns:1fr 1fr}
   }
 </style>
 </head>
 <body>
 
 <aside>
-  <div class="brand">
-    <h1>知识蒸馏 RAG · 本地问答系统</h1>
-    <div class="sub">可溯源 · 不编造 · 全本地</div>
-  </div>
-
-  <div class="badge" id="netBadge" aria-live="polite">🔒 全本地运行 · 数据不出机</div>
-
-  <button class="sidebar-action" id="newChat" type="button">＋ 新对话</button>
-  <div class="recent-title">最近对话</div>
-  <div class="sidebar-session-list" id="sessionList"><div class="sidebar-session-empty">完成一次问答后，会话会保存在本机。</div></div>
-  <div class="sidebar-tools">
-    <button class="sidebar-action" id="exportChat" type="button">↓ 导出对话</button>
-    <button class="sidebar-action" id="copyChat" type="button">⧉ 复制对话</button>
-    <button class="sidebar-action wide" id="feedbackCenter" type="button">反馈与回归集</button>
-  </div>
-  <div class="mobile-sidebar-tools" aria-label="移动端工具">
-    <button class="sidebar-action" id="mobileSettings" type="button">设置</button>
-    <button class="sidebar-action" id="mobileChunks" type="button">分块浏览</button>
-    <button class="sidebar-action" id="mobileHistory" type="button">会话记录</button>
-    <button class="sidebar-action" id="mobileMetrics" type="button">本轮统计</button>
-  </div>
-
-  <section class="kb-manager" aria-labelledby="kbManagerTitle">
-    <div class="kb-title" id="kbManagerTitle"><span>新建知识库</span><small>PDF → 建库 → 问答</small></div>
-    <label class="file-pick" id="filePick" for="pdfFile" tabindex="0">
-      <span>选择或拖入 PDF</span>
-      <span id="fileName">尚未选择文件</span>
-    </label>
-    <input id="pdfFile" type="file" accept="application/pdf,.pdf">
-    <div class="build-options">
-      <span>默认处理完整文档</span>
-      <label title="识别 PDF 中的图表页；耗时会更长"><input id="useVl" type="checkbox" checked>识别图表</label>
+  <div class="brand-row">
+    <div class="brand-identity" title="知识蒸馏 RAG · 本地可信问答系统">
+      <span class="brand-mark" aria-hidden="true">知</span>
+      <div class="brand"><h1>知识蒸馏</h1><div class="sub">可溯源 · 不编造 · 全本地</div></div>
     </div>
-    <div class="build-options" title="长文档可从指定页开始挑选图表页，避免前部目录耗尽识别额度">
-      <span>图表识别起始页</span>
-      <label>第 <input id="vlFrom" type="number" min="1" max="100000" value="1" inputmode="numeric"> 页</label>
-    </div>
-    <button id="buildPdf" type="button" disabled>开始建库</button>
-    <div class="build-state" id="buildState" aria-live="polite">
-      <div class="progress-track"><div id="progressBar"></div></div>
-      <div id="progressText"><span>准备中…</span><span>0%</span></div>
-    </div>
-  </section>
-
-  <div class="recent-title">最近知识库</div>
-  <div class="library-controls">
-    <input id="librarySearch" class="library-search" type="search" placeholder="搜索知识库…" aria-label="搜索知识库">
-    <div class="library-batch">
-      <button id="selectAllLibraries" type="button">全选联合</button>
-      <button id="clearLibraries" type="button" title="退出联合检索，只保留当前知识库">仅当前库</button>
-      <span id="selectedCount">已选 1/4</span>
+    <div class="sidebar-top-actions">
+      <button class="sidebar-top-icon" id="navHistory" type="button" title="搜索已保存的对话与收藏" aria-label="搜索已保存的对话与收藏">⌕</button>
+      <button class="sidebar-collapse" id="sidebarCollapse" type="button" title="关闭边栏" aria-label="关闭边栏">◧</button>
     </div>
   </div>
-  <div id="libraryList"><div class="lib-meta">正在读取…</div></div>
 
-  <div class="box">
-    <h3>系统状态</h3>
-    <div class="kv"><span>Ollama</span><span id="sOllama">检测中…</span></div>
-    <div class="kv"><span>知识库</span><span id="sReady">—</span></div>
-    <div class="kv"><span>地址</span><span id="sHost" style="font-size:11px">—</span></div>
-    <div id="sErr" style="display:none;font-size:11.5px;color:#F2A6A0;background:#4a1f1f;
-         border-radius:5px;padding:8px;margin-top:8px;line-height:1.6;word-break:break-all"></div>
+  <div class="badge" id="netBadge" aria-live="polite">● 本地 · 数据不出机</div>
+
+  <button class="sidebar-action" id="newChat" type="button">✎　新对话</button>
+
+  <!-- 工具从顶栏下沉到侧栏：顶栏原有 8 个页签，一眼扫不过来。
+       这里改成一列带图标的条目，主次清楚，也给正文让出横向空间。
+       注意：元素必须全部保留——事件按 id 绑定，少一个就会在 addEventListener 抛错。 -->
+  <nav class="side-nav" aria-label="工具">
+    <button class="side-nav-item active" id="navAsk" type="button"><i>◎</i><span>问答</span></button>
+    <button class="side-nav-item" id="navLibrary" type="button"><i>▥</i><span>资料库</span></button>
+    <button class="side-nav-item" id="navEvidence" type="button"><i>⌕</i><span>证据审查</span></button>
+    <button class="side-nav-item" id="navChunks" type="button"><i>▦</i><span>分块浏览</span></button>
+    <button class="side-nav-item" id="navHealth" type="button"><i>◐</i><span>知识库诊断</span></button>
+    <button class="side-nav-item" id="settingsBtn" type="button"><i>⚙</i><span>设置</span></button>
+    <!-- 低频工具收进「更多」。这些工具仍是 .side-nav-item，事件与高亮沿用同一套绑定；
+         它们处于展开态时 #navMore 跟着高亮，否则用户看不出当前在哪个工具里。 -->
+    <div class="side-nav-more">
+      <button class="side-nav-item side-nav-more-btn" id="navMore" type="button"
+               aria-expanded="false" aria-haspopup="true" aria-controls="sideNavMoreMenu"><i>⋯</i><span>更多</span></button>
+      <div class="side-nav-more-menu" id="sideNavMoreMenu" role="menu" hidden>
+        <button class="side-nav-item" id="navStatus" type="button" role="menuitem"><i>◫</i><span>运行状态</span></button>
+        <button class="side-nav-item" id="navCompare" type="button" role="menuitem"><i>⇄</i><span>A/B 对比</span></button>
+        <button class="side-nav-item" id="navConcept" type="button" role="menuitem"><i>▤</i><span>概念对照</span></button>
+        <button class="side-nav-item" id="navFeedback" type="button" role="menuitem"><i>⚑</i><span>反馈与回归集</span></button>
+        <button class="side-nav-item" id="navExport" type="button" role="menuitem"><i>↓</i><span>导出对话</span></button>
+        <button class="side-nav-item" id="navCopy" type="button" role="menuitem"><i>⧉</i><span>复制对话</span></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="conversation-scroll" aria-label="对话列表">
+    <div class="session-group" id="pinnedGroup" hidden>
+      <div class="recent-title">已置顶</div>
+      <div class="sidebar-session-list" id="pinnedList"></div>
+    </div>
+    <div class="session-group" id="recentGroup">
+      <div class="recent-title">最近</div>
+      <div class="sidebar-session-list" id="sessionList"><div class="sidebar-session-empty">完成一次问答后，会话会保存在本机。</div></div>
+    </div>
   </div>
-
-  <div class="box">
-    <h3>知识块总数</h3>
-    <div class="big" id="sChunks">—<small>块</small></div>
-  </div>
-
-  <div class="box library-box">
-    <h3>当前知识库</h3>
-    <div class="kv"><span>学科</span><span id="sSubject">检测中…</span></div>
-    <div class="kv"><span>教材</span><span id="sSource" title="">—</span></div>
-  </div>
-
-  <div class="box optional">
-    <h3>模型</h3>
-    <div class="kv"><span>问答</span><span id="sLLM">—</span></div>
-    <div class="kv"><span>视觉</span><span id="sVL">—</span></div>
-    <div class="kv"><span>向量</span><span id="sEmb">—</span></div>
-  </div>
-
-  <div class="box optional">
-    <h3>检索配置</h3>
-    <div class="kv"><span>Top-K</span><span id="sTopK">—</span></div>
-    <div class="kv"><span>上下文预算</span><span id="sBudget">—</span></div>
-    <div class="kv"><span>动态升配</span><span id="sEsc">—</span></div>
-    <div class="kv"><span>相关度整块保留</span><span id="sTrim">—</span></div>
-  </div>
-
   <div class="foot">
     回答仅依据知识库内容<br>
     无依据时明确拒答，绝不编造<br>
@@ -555,21 +751,18 @@
 
 <main>
   <header>
-    <div class="header-title">
-      <div class="t">问答</div>
-      <div class="d">每句话可溯源到原文页码 · 无依据即拒答</div>
+    <div class="header-left">
+      <!-- 边栏收起后的重开入口。仿 ChatGPT 放左上角，和边栏本身同侧，
+           别混在右侧那排状态控件里。窄屏它就是抽屉的汉堡键。 -->
+      <button class="focus-toggle" id="sidebarToggle" type="button" aria-expanded="false" aria-label="展开边栏"
+              title="展开边栏"><span class="ico-wide">⇥</span><span class="ico-narrow">☰</span></button>
+      <div class="header-title">
+        <div class="t">问答</div>
+        <div class="d">每句话可溯源到原文页码 · 无依据即拒答</div>
+      </div>
     </div>
-    <nav class="workflow-nav" aria-label="知识工作流程">
-      <button class="workflow-tab" id="navLibrary" type="button">资料管理</button>
-      <button class="workflow-tab active" id="navAsk" type="button">问答验证</button>
-      <button class="workflow-tab" id="navEvidence" type="button">证据审查</button>
-      <button class="workflow-tab" id="navChunks" type="button">分块浏览</button>
-      <button class="workflow-tab" id="navHistory" type="button">会话记录</button>
-    </nav>
     <div class="header-tools">
-      <button class="focus-toggle" id="sidebarToggle" type="button" aria-expanded="false" aria-label="打开侧栏">☰</button>
       <button class="focus-toggle session-pill" id="metricsBtn" type="button">本轮 0 次</button>
-      <button class="focus-toggle" id="settingsBtn" type="button">设置</button>
       <button class="focus-toggle" id="focusMode" type="button">专注模式</button>
       <div class="pill" id="dbPath" title="">正在读取知识库…</div>
     </div>
@@ -594,12 +787,21 @@
   </div>
 
   <footer>
+    <div class="composer-library-hint" id="composerLibraryHint">
+      <span class="composer-library-hint-copy">
+        <b>📚 提问前请先选择资料</b>
+        <span id="composerLibraryHintText" role="status" aria-live="polite">正在读取已选资料…</span>
+      </span>
+      <button id="composerChooseLibrary" type="button">选择资料</button>
+    </div>
     <div class="inp">
-      <textarea id="q" rows="1" placeholder="输入你的问题…" autocomplete="off" aria-label="问题"></textarea>
-      <select id="answerMode" class="mode-select" aria-label="回答模式" title="自动：简单问题快速返回，复杂或证据不足时进入 Agent Loop">
-        <option value="auto">自动判断</option>
-        <option value="fast">快速回答</option>
-        <option value="deep">深度分析</option>
+      <textarea id="q" rows="1" maxlength="4000" placeholder="输入你的问题…" autocomplete="off" aria-label="问题"></textarea>
+      <!-- 「自动判断」这个名字已经名不副实：现在只要答得出就一律走 Agent 校验轮，
+           不再按问题难易分流。留下"快速"作为明确的提速选项，代价写在 title 里。 -->
+      <select id="answerMode" class="mode-select" aria-label="回答模式"
+              title="Agent 校验：先检索作答，再补充检索并校准后返回。快速回答只做一轮生成，但仍执行最终引用与逐句核验。">
+        <option value="auto">Agent 校验</option>
+        <option value="fast">快速回答（单轮生成）</option>
         <option value="retrieve">仅检索证据</option>
       </select>
       <select id="answerStyle" class="mode-select" aria-label="回答风格">
@@ -607,17 +809,42 @@
         <option value="standard" selected>标准</option>
         <option value="detailed">详细</option>
       </select>
-      <button id="send" class="action" type="button">提问</button>
-      <button id="brief" class="action" type="button">生成简报</button>
-      <button id="questions" class="action" type="button" title="依据当前所选知识库生成问题、预期答案和出处">生成测试题</button>
+      <button id="send" class="action primary" type="button">提问</button>
+      <button id="brief" class="action ghost" type="button">简报</button>
+      <button id="questions" class="action ghost" type="button" title="依据当前所选知识库生成问题、预期答案和出处">测试题</button>
+      <button id="retrievalSettings" class="action ghost" type="button"
+              aria-expanded="false" aria-controls="retrievalPanel"
+              title="页范围、混合检索、教材外补充">⚙ 检索设置</button>
     </div>
-    <div class="composer-note"><span>Enter 提问 · Ctrl+K 聚焦输入 · Ctrl+Shift+K 浏览分块</span>
-      <span class="note-right">
-        <label class="extend-toggle" title="关闭后只回答教材里有依据的内容（严格溯源模式）">
-          <input type="checkbox" id="extendAnswer"><span>允许标注式教材外补充</span>
-        </label>
-        <span id="retrievalScope">正在检索当前知识库</span>
-      </span></div>
+
+    <!-- 收起次要开关是为了给对话让出空间；但**开着什么必须一眼可见**，
+         否则"收起"就变成了"隐藏状态"，用户会不知道自己为什么拿到这个结果。 -->
+    <div class="active-flags" id="activeFlags" hidden></div>
+
+    <div class="retrieval-panel" id="retrievalPanel" hidden>
+      <label class="rp-row" title="把检索限制在指定页范围内；范围内没依据会诚实拒答，不会偷偷用范围外的内容">
+        <span class="rp-name">页范围</span>
+        <span class="rp-ctl">
+          <input type="number" id="scopeFrom" min="1" placeholder="起" aria-label="页范围起始页">
+          <span>–</span>
+          <input type="number" id="scopeTo" min="1" placeholder="止" aria-label="页范围结束页">
+        </span>
+        <span class="rp-why">留空＝全书。范围内没依据会诚实拒答，不会去范围外找。</span>
+      </label>
+      <label class="rp-row" title="除向量检索外并入关键词召回（RRF 融合）">
+        <span class="rp-name">混合检索</span>
+        <span class="rp-ctl"><input type="checkbox" id="hybridToggle"></span>
+        <span class="rp-why">向量证据足够时并入关键词召回，适合精确术语与代码标识符；默认关。</span>
+      </label>
+      <label class="rp-row" title="关闭后只显示「教材依据」一段（严格溯源模式）">
+        <span class="rp-name">完整解答段</span>
+        <span class="rp-ctl"><input type="checkbox" id="extendAnswer"></span>
+        <span class="rp-why">在最上面加一段可读的完整解答（含模型常识，标注未经溯源，不计入引用校验）。关掉只看教材依据。</span>
+      </label>
+    </div>
+
+    <div class="composer-note"><span>Enter 提问 · Shift+Enter 换行 · Ctrl+K 聚焦 · Ctrl+Shift+K 分块</span>
+      <span id="retrievalScope">正在检索当前知识库</span></div>
   </footer>
 </main>
 
@@ -630,15 +857,171 @@
   </section>
 </div>
 
+<!-- 侧栏瘦身：下半部分整块搬到这里暂存。必须是「移动节点」而不是重建 HTML——
+     #libraryList / #sOllama / #progressBar 这些都在被 JS 按 id 实时更新，
+     一旦重建，已绑定的事件和更新目标就全指向了不存在的旧节点。 -->
+<div id="panelStash" hidden>
+  <div id="stashLibraryPicker">
+    <div class="recent-title">最近知识库</div>
+    <div class="library-controls">
+      <input id="librarySearch" class="library-search" type="search" placeholder="搜索知识库…" aria-label="搜索知识库">
+      <div class="library-batch">
+        <button id="selectAllLibraries" type="button">全选（最多4本）</button>
+        <button id="clearLibraries" type="button" title="只使用当前这一本资料">仅当前资料</button>
+        <span id="selectedCount">已选 1/4</span>
+      </div>
+    </div>
+    <div id="libraryList"><div class="lib-meta">正在读取…</div></div>
+    <div class="new-chat-source-actions" id="newChatSourceActions" hidden>
+      <div class="new-chat-source-summary" id="newChatSourceSummary">请选择本轮资料。</div>
+      <div class="new-chat-source-buttons">
+        <button class="drawer-button secondary" id="newChatSourceCancel" type="button">取消</button>
+        <button class="drawer-button" id="newChatSourceConfirm" type="button">使用已选资料开始对话</button>
+      </div>
+    </div>
+  </div>
+  <div id="stashLibraryBuild">
+    <section class="kb-manager" aria-labelledby="kbManagerTitle">
+      <div class="kb-title" id="kbManagerTitle"><span>新建知识库</span><small>PDF → 建库 → 问答</small></div>
+      <label class="file-pick" id="filePick" for="pdfFile" tabindex="0">
+        <span>选择或拖入 PDF</span>
+        <span id="fileName">尚未选择文件</span>
+      </label>
+      <input id="pdfFile" type="file" accept="application/pdf,.pdf"
+             aria-label="选择要建立知识库的 PDF 文件">
+      <div class="build-options">
+        <span>默认处理完整文档</span>
+        <label title="识别 PDF 中的图表页；耗时会更长"><input id="useVl" type="checkbox" checked>识别图表</label>
+      </div>
+      <div class="build-options" title="长文档可从指定页开始挑选图表页，避免前部目录耗尽识别额度">
+        <span>图表识别起始页</span>
+        <label>第 <input id="vlFrom" type="number" min="1" max="100000" value="1" inputmode="numeric"> 页</label>
+      </div>
+      <button id="buildPdf" type="button" disabled>开始建库</button>
+      <div class="build-state" id="buildState" aria-live="polite">
+        <div class="progress-track"><div id="progressBar"></div></div>
+        <div id="progressText"><span>准备中…</span><span>0%</span></div>
+      </div>
+    </section>
+
+  </div>
+  <div id="stashStatus">
+    <div class="box">
+      <h3>系统状态</h3>
+      <div class="kv"><span>Ollama</span><span id="sOllama">检测中…</span></div>
+      <div class="kv"><span>知识库</span><span id="sReady">—</span></div>
+      <div class="kv"><span>地址</span><span id="sHost" style="font-size:11px">—</span></div>
+      <div id="sErr" style="display:none;font-size:11.5px;color:#F2A6A0;background:#4a1f1f;
+           border-radius:5px;padding:8px;margin-top:8px;line-height:1.6;word-break:break-all"></div>
+    </div>
+
+    <div class="box">
+      <h3>知识块总数</h3>
+      <div class="big" id="sChunks">—<small>块</small></div>
+    </div>
+
+    <div class="box library-box">
+      <h3>当前知识库</h3>
+      <div class="kv"><span>学科</span><span id="sSubject">检测中…</span></div>
+      <div class="kv"><span>教材</span><span id="sSource" title="">—</span></div>
+    </div>
+
+    <div class="box optional">
+      <h3>模型</h3>
+      <div class="kv"><span>问答</span><span id="sLLM">—</span></div>
+      <div class="kv"><span>视觉</span><span id="sVL">—</span></div>
+      <div class="kv"><span>向量</span><span id="sEmb">—</span></div>
+    </div>
+
+    <div class="box optional">
+      <h3>实际运行时</h3>
+      <div class="kv"><span>Python</span><span id="sPython">—</span></div>
+      <div class="kv"><span>关键依赖</span><span id="sRuntime" title="">—</span></div>
+    </div>
+
+    <div class="box optional">
+      <h3>检索配置</h3>
+      <div class="kv"><span>Top-K</span><span id="sTopK">—</span></div>
+      <div class="kv"><span>上下文预算</span><span id="sBudget">—</span></div>
+      <div class="kv"><span>动态升配</span><span id="sEsc">—</span></div>
+      <div class="kv"><span>相关度整块保留</span><span id="sTrim">—</span></div>
+    </div>
+
+  </div>
+  <div id="stashChatTools">
+    <div class="sidebar-tools">
+      <button class="sidebar-action" id="exportChat" type="button">↓ 导出对话</button>
+      <button class="sidebar-action" id="copyChat" type="button">⧉ 复制对话</button>
+      <button class="sidebar-action wide" id="feedbackCenter" type="button">反馈与回归集</button>
+    </div>
+    <div class="mobile-sidebar-tools" aria-label="移动端工具">
+      <button class="sidebar-action" id="mobileSettings" type="button">设置</button>
+      <button class="sidebar-action" id="mobileChunks" type="button">分块浏览</button>
+      <button class="sidebar-action" id="mobileHistory" type="button">会话记录</button>
+      <button class="sidebar-action" id="mobileMetrics" type="button">本轮统计</button>
+    </div>
+
+  </div>
+</div>
+
 <script>
 const $ = s => document.querySelector(s);
 const chat = $('#chat'), qEl = $('#q'), sendBtn = $('#send'), briefBtn = $('#brief'),
       questionBtn = $('#questions'), answerMode = $('#answerMode'), answerStyle = $('#answerStyle'),
-      extendAnswer = $('#extendAnswer');
+      extendAnswer = $('#extendAnswer'), hybridToggle = $('#hybridToggle');
+let hybridOn = false;
+function syncHybridToggle(){ if(hybridToggle) hybridToggle.checked = hybridOn; renderActiveFlags(); }
+
+// 检索设置收进弹层是为了给对话让空间；但开着什么必须始终可见——
+// 收起不等于隐藏状态，否则用户拿到意外结果时无从判断是不是自己设的开关造成的。
+function renderActiveFlags(){
+  const wrap = $('#activeFlags'); if(!wrap) return;
+  const flags = [];
+  const scope = currentPageScope();
+  if(scope){
+    const lo = scope.from == null ? '' : scope.from, hi = scope.to == null ? '' : scope.to;
+    flags.push({key:'scope', text:'页范围 ' + (lo && hi ? `${lo}–${hi}` : (lo ? `${lo} 起` : `至 ${hi}`))});
+  }
+  if(hybridOn) flags.push({key:'hybrid', text:'混合检索'});
+  if(extendAnswer && extendAnswer.checked) flags.push({key:'extend', text:'教材外补充'});
+  wrap.hidden = flags.length === 0;
+  wrap.innerHTML = flags.map(f=>`<span class="active-flag">${escapeHtml(f.text)}
+      <button type="button" data-action="clear-flag" data-flag="${escapeAttr(f.key)}" aria-label="取消${escapeAttr(f.text)}">×</button></span>`).join('');
+}
+
+function clearFlag(key){
+  if(key === 'scope'){ const a=$('#scopeFrom'), b=$('#scopeTo'); if(a)a.value=''; if(b)b.value=''; }
+  if(key === 'hybrid'){ hybridOn = false; if(hybridToggle) hybridToggle.checked = false; }
+  if(key === 'extend' && extendAnswer){
+    extendAnswer.checked = false; extendAnswer.dispatchEvent(new Event('change'));
+  }
+  renderActiveFlags();
+}
+if(hybridToggle) hybridToggle.addEventListener('change', ()=>{ hybridOn = hybridToggle.checked; renderActiveFlags(); });
+['#scopeFrom','#scopeTo'].forEach(sel=>{ const el=$(sel); if(el) el.addEventListener('input', renderActiveFlags); });
+// 设置面板开合
+const rpBtn = $('#retrievalSettings'), rpPanel = $('#retrievalPanel');
+if(rpBtn && rpPanel) rpBtn.addEventListener('click', ()=>{
+  const open = rpPanel.hidden;
+  rpPanel.hidden = !open;
+  rpBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  if(open){ const f=rpPanel.querySelector('input'); if(f) f.focus(); }
+});
+// 页范围：留空即不限定。范围内没依据会诚实拒答，不会偷偷用范围外的内容。
+function currentPageScope(){
+  const a = $('#scopeFrom'), b = $('#scopeTo');
+  const from = a && a.value.trim() ? Number(a.value) : null;
+  const to   = b && b.value.trim() ? Number(b.value) : null;
+  if(from === null && to === null) return null;
+  return {from, to};
+}
 const pdfFile = $('#pdfFile'), buildBtn = $('#buildPdf'), buildState = $('#buildState');
 let busy = false, systemReady = false, building = false, currentLibrary = {}, activeRequest = null;
 let turnHistory = [];
 let selectedLibraries = new Set();
+// 新对话的资料选择是两阶段事务：抽屉里只改草稿，确认后才替换当前会话范围。
+// 这样按取消/Esc 不会把正在查看的旧会话悄悄切到别的教材。
+let newChatSourceDraft = null;
 let allLibraries = [], activeLibraryId = '', workspaceInstruction = '';
 let currentSessionId = 's-' + Date.now(), currentSessionStarted = Date.now();
 let sessionMetrics = {queries:0,tokens:0,totalMs:0,refusals:0,retrievals:0};
@@ -655,10 +1038,12 @@ answerStyle.addEventListener('change', ()=>{ try{ localStorage.setItem('aitic-an
 // 记住用户是否明确允许教材外补充；首次使用默认关闭，优先保证严格溯源。
 try{
   const saved = localStorage.getItem('aitic-extend-answer');
-  if(saved !== null && extendAnswer) extendAnswer.checked = saved === '1';
+  // 无存量选择时也必须显式关掉，不能让 HTML 默认属性偷偷改变严格溯源口径。
+  if(extendAnswer) extendAnswer.checked = saved === '1';
 }catch(_){ }
 if(extendAnswer) extendAnswer.addEventListener('change', ()=>{
   try{ localStorage.setItem('aitic-extend-answer', extendAnswer.checked ? '1' : '0'); }catch(_){ }
+  renderActiveFlags();
 });
 
 function updateMetrics(extra={}){
@@ -666,11 +1051,113 @@ function updateMetrics(extra={}){
   $('#metricsBtn').textContent = `本轮 ${sessionMetrics.queries} 次`;
 }
 
+// ---------- 焦点锁定 ----------
+// 浮层打开时，Tab 会一路跑到背景页面上去：键盘用户看不到焦点在哪，
+// 还可能在"看不见的地方"触发提问或切库。抽屉与移动侧栏共用这一套。
+const FOCUSABLE = 'a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),'
+                + 'textarea:not([disabled]),[tabindex]:not([tabindex="-1"])';
+let focusTrap = null;      // {panel, restoreTo, onKey, onClose}
+
+// 不能用 offsetParent 判可见：规范规定 position:fixed 的元素 offsetParent 恒为 null，
+// 而移动端的侧栏和遮罩正是 fixed —— 用它判断会永远得出"不可见"（实测踩过）。
+function isVisible(el){
+  if(!el) return false;
+  const cs = getComputedStyle(el);
+  if(cs.display === 'none' || cs.visibility === 'hidden') return false;
+  const r = el.getBoundingClientRect();
+  return r.width > 0 && r.height > 0;
+}
+
+function visibleFocusable(panel){
+  return [...panel.querySelectorAll(FOCUSABLE)]
+    .filter(el => isVisible(el) || el === document.activeElement);
+}
+
+function trapFocus(panel, onClose){
+  releaseFocusTrap();                       // 同一时刻只允许一个浮层持有焦点
+  const restoreTo = document.activeElement;
+  const onKey = e => {
+    if(e.key === 'Escape'){
+      // 必须 stopImmediatePropagation：页面上还有一个 Escape 处理器，若让事件继续分发，
+      // 它会发现"抽屉已经关了"而顺势去 stopActiveRequest()，把正在生成的回答一起停掉。
+      e.preventDefault(); e.stopImmediatePropagation();
+      // 移动侧栏里的「更多」是比侧栏更内层的浮层：第一次 Esc 只关菜单，
+      // 第二次 Esc 才关侧栏。否则侧栏先消失而菜单仍是展开态，重开时会残留。
+      const sidebar = $('#sidebar') || $('.sidebar') || document.querySelector('aside');
+      const more = $('#sideNavMoreMenu');
+      if(panel === sidebar && more && !more.hidden){
+        closeMoreMenu(); $('#navMore').focus(); return;
+      }
+      onClose(); return;
+    }
+    if(e.key !== 'Tab') return;
+    const items = visibleFocusable(panel);
+    if(!items.length){ e.preventDefault(); return; }
+    const first = items[0], last = items[items.length - 1];
+    // 焦点已经跑到浮层外面时，Tab 要把它拉回来，而不是继续往背景走
+    if(!panel.contains(document.activeElement)){ e.preventDefault(); first.focus(); return; }
+    if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+  };
+  document.addEventListener('keydown', onKey, true);
+  focusTrap = {panel, restoreTo, onKey, onClose};
+  // 面板可能有进场动画，此刻内部元素还没布局好，直接聚焦会落空。
+  // 刻意**不用 requestAnimationFrame**：页面不合成帧时（标签页后台、
+  // 窗口不可见）rAF 根本不触发，焦点就永远进不去。setTimeout 不受影响。
+  // 同时给面板兜一个 tabindex，元素全不可聚焦时至少焦点落在面板上而不是留在背景。
+  if(!panel.hasAttribute('tabindex')) panel.setAttribute('tabindex','-1');
+  const settle = () => {
+    if(!focusTrap || focusTrap.panel !== panel) return true;      // 已被别的浮层接管
+    if(panel.contains(document.activeElement)) return true;        // 已经进去了
+    const items = visibleFocusable(panel);
+    (items[0] || panel).focus?.();
+    return panel.contains(document.activeElement);
+  };
+  if(!settle()) setTimeout(() => { if(!settle()) setTimeout(settle, 120); }, 0);
+}
+
+function releaseFocusTrap(){
+  if(!focusTrap) return;
+  document.removeEventListener('keydown', focusTrap.onKey, true);
+  const back = focusTrap.restoreTo;
+  focusTrap = null;
+  // 焦点必须回到打开浮层的那个按钮，否则键盘用户会"掉回"页面顶部
+  if(back && back.isConnected && back.focus) back.focus();
+}
+
+// 从侧栏搬出来的面板是「借用」给抽屉的真实节点，用完必须原样还回暂存区。
+// 直接 innerHTML='' 会把它们连同已绑定的事件一起销毁，之后建库进度条、
+// 知识库列表这些按 id 更新的地方就再也刷不动了。
+let drawerHosted = [];
+function returnHostedPanels(){
+  const stash = $('#panelStash'); if(!stash) return;
+  drawerHosted.forEach(({node, home})=>(home||stash).appendChild(node));
+  drawerHosted = [];
+}
 function openDrawer(title, html){
+  returnHostedPanels();
   $('#drawerTitle').textContent=title; $('#drawerBody').innerHTML=html;
   $('#drawerShade').classList.add('open'); $('#drawerShade').setAttribute('aria-hidden','false');
+  trapFocus($('#drawerShade'), closeDrawer);
 }
-function closeDrawer(){ $('#drawerShade').classList.remove('open'); $('#drawerShade').setAttribute('aria-hidden','true'); }
+function openDrawerPanels(title, selectors){
+  returnHostedPanels();
+  $('#drawerTitle').textContent=title; $('#drawerBody').innerHTML='';
+  selectors.forEach(sel=>{
+    const node=document.querySelector(sel); if(!node) return;
+    drawerHosted.push({node, home:node.parentElement});
+    $('#drawerBody').appendChild(node);
+  });
+  $('#drawerShade').classList.add('open'); $('#drawerShade').setAttribute('aria-hidden','false');
+  trapFocus($('#drawerShade'), closeDrawer);
+}
+function closeDrawer(){
+  cancelNewChatSourceFlow();
+  $('#drawerShade').classList.remove('open'); $('#drawerShade').setAttribute('aria-hidden','true');
+  returnHostedPanels();
+  releaseFocusTrap();
+  markSideNav('navAsk');   // 工具用完回到问答，避免侧栏一直亮着一个已关闭的面板
+}
 $('#drawerClose').addEventListener('click',closeDrawer);
 $('#drawerShade').addEventListener('click',e=>{ if(e.target===$('#drawerShade')) closeDrawer(); });
 
@@ -679,10 +1166,39 @@ function setSidebar(open){
   document.body.classList.toggle('sidebar-open', !!open);
   $('#sidebarToggle').setAttribute('aria-expanded', open ? 'true' : 'false');
   $('#sidebarBackdrop').setAttribute('aria-hidden', open ? 'false' : 'true');
+  // 只有移动端的遮罩态才锁焦点：桌面端侧栏是常驻可见的，锁了会挡住正常 Tab。
+  // 用遮罩是否真的显示来判断，比写死断点更贴合实际布局。
+  syncSidebarFocusTrap();
 }
-function closeSidebar(){ setSidebar(false); }
-$('#sidebarToggle').addEventListener('click', ()=>setSidebar(!document.body.classList.contains('sidebar-open')));
+function syncSidebarFocusTrap(){
+  const open = document.body.classList.contains('sidebar-open');
+  const overlay = isVisible($('#sidebarBackdrop'));
+  const panel = $('#sidebar') || $('.sidebar') || document.querySelector('aside');
+  if(open && overlay && panel){
+    if(!focusTrap || focusTrap.panel !== panel) trapFocus(panel, closeSidebar);
+  }else if(focusTrap && focusTrap.panel === panel){
+    releaseFocusTrap();
+  }
+}
+function closeSidebar(){ closeMoreMenu(); setSidebar(false); }
+// 桌面折叠边栏（≤800px 是覆盖式抽屉，那边仍走 setSidebar）
+const SIDEBAR_KEY = 'aitic-sidebar-collapsed';
+const isNarrow = () => window.matchMedia('(max-width:800px)').matches;
+function setSidebarCollapsed(on){
+  document.body.classList.toggle('sidebar-collapsed', !!on);
+  try{ localStorage.setItem(SIDEBAR_KEY, on ? '1' : '0'); }catch(_){}
+  if(on) closeMoreMenu();
+}
+$('#sidebarCollapse').addEventListener('click', ()=>{
+  if(isNarrow()) closeSidebar(); else setSidebarCollapsed(true);
+});
+try{ if(localStorage.getItem(SIDEBAR_KEY)==='1') document.body.classList.add('sidebar-collapsed'); }catch(_){}
+$('#sidebarToggle').addEventListener('click', ()=>{
+  if(isNarrow()) setSidebar(!document.body.classList.contains('sidebar-open'));
+  else setSidebarCollapsed(!document.body.classList.contains('sidebar-collapsed'));
+});
 $('#sidebarBackdrop').addEventListener('click', closeSidebar);
+window.addEventListener('resize', syncSidebarFocusTrap, {passive:true});
 
 function resizeComposer(){
   qEl.style.height='auto';
@@ -697,20 +1213,74 @@ function setFocusMode(enabled){
 }
 try{ setFocusMode(localStorage.getItem('aitic-focus-mode') === '1'); }catch(_){ setFocusMode(false); }
 $('#focusMode').addEventListener('click', ()=>setFocusMode(!document.body.classList.contains('focus-mode')));
-$('#navLibrary').addEventListener('click', ()=>{
+function openLibraryChooser(){
   if(document.body.classList.contains('focus-mode')) setFocusMode(false);
-  if(window.matchMedia('(max-width:800px)').matches) setSidebar(true);
-  document.querySelector('.kb-manager')?.scrollIntoView({behavior:'smooth',block:'start'});
-  setTimeout(()=>$('#filePick')?.focus(),250);
+  // 选书在前、建库在后：进来最常做的是换一本书，不是新建
+  openDrawerPanels('资料库 · 选择一本或多本问答', ['#stashLibraryPicker', '#stashLibraryBuild']);
+}
+$('#navLibrary').addEventListener('click', openLibraryChooser);
+$('#composerChooseLibrary').addEventListener('click', openLibraryChooser);
+$('#navStatus').addEventListener('click', ()=>openDrawerPanels('运行状态', ['#stashStatus']));
+// 这三项复用侧栏原按钮的处理器，避免同一套逻辑写两遍走岔
+$('#navFeedback').addEventListener('click', ()=>$('#feedbackCenter').click());
+$('#navExport').addEventListener('click', ()=>$('#exportChat').click());
+$('#navCopy').addEventListener('click', ()=>$('#copyChat').click());
+// 侧栏选中态：原来 .workflow-tab.active 是写死的，点了也不变。
+// 抽屉类工具用完会关闭，所以高亮只是短暂反馈，关掉抽屉后回到「问答」。
+// 从菜单实际内容推导，别硬编码——加条目忘了同步，表现是打开该工具时侧栏毫无选中反馈
+const MORE_NAV_IDS = [...document.querySelectorAll('#sideNavMoreMenu .side-nav-item')].map(b=>b.id);
+function markSideNav(id){
+  document.querySelectorAll('.side-nav-item').forEach(b=>b.classList.toggle('active', b.id===id));
+  // 「更多」自己不是工具，只在收着的低频工具被选中时代为高亮
+  $('#navMore').classList.toggle('active', id !== 'navAsk' && MORE_NAV_IDS.includes(id));
+}
+function placeMoreMenu(){
+  const menu = $('#sideNavMoreMenu');
+  if(menu.hidden || getComputedStyle(menu).position !== 'fixed') return;  // 窄屏是内嵌子菜单，不定位
+  const btn = $('#navMore').getBoundingClientRect();
+  const box = menu.getBoundingClientRect();
+  const pad = 8;
+  const left = Math.min(btn.right + 6, innerWidth - box.width - pad);
+  const top  = Math.min(Math.max(pad, btn.bottom - box.height), innerHeight - box.height - pad);
+  menu.style.left = Math.max(pad, left) + 'px';
+  menu.style.top  = Math.max(pad, top) + 'px';
+}
+function setMoreMenu(open){
+  $('#sideNavMoreMenu').hidden = !open;
+  $('#navMore').setAttribute('aria-expanded', open ? 'true' : 'false');
+  if(open) placeMoreMenu();
+}
+function closeMoreMenu(){ setMoreMenu(false); }
+// fixed 定位不跟随祖先滚动，侧栏一滚菜单就会脱开按钮
+$('aside').addEventListener('scroll', placeMoreMenu, {passive:true});
+addEventListener('resize', ()=>{ placeMoreMenu(); });
+$('#navMore').addEventListener('click', e=>{
+  e.stopPropagation();
+  setMoreMenu($('#sideNavMoreMenu').hidden);
 });
-$('#navAsk').addEventListener('click', ()=>qEl.focus());
+document.addEventListener('click', e=>{
+  if(!$('#sideNavMoreMenu').hidden && !e.target.closest('.side-nav-more')) closeMoreMenu();
+});
+document.querySelectorAll('.side-nav-item').forEach(btn=>{
+  if(btn.id === 'navMore') return;   // 开合由上面的处理器负责，别当成工具项
+  btn.addEventListener('click', ()=>{
+    markSideNav(btn.id);
+    closeMoreMenu();
+    // 移动端侧栏是覆盖层，不收起的话打开的面板会被它盖住
+    if(document.body.classList.contains('sidebar-open')) closeSidebar();
+  });
+});
+$('#navAsk').addEventListener('click', ()=>{ qEl.focus(); });
 $('#navEvidence').addEventListener('click', ()=>{
   const target = [...document.querySelectorAll('.agent-summary')].pop();
   if(target) target.scrollIntoView({behavior:'smooth',block:'center'});
   else renderWelcome('尚无证据记录，请先提问');
 });
 $('#navChunks').addEventListener('click', openChunkBrowser);
-$('#navHistory').addEventListener('click', openHistoryDrawer);
+$('#navHealth').addEventListener('click', openLibraryHealth);
+$('#navCompare').addEventListener('click', openComparePanel);
+$('#navConcept').addEventListener('click', openConceptPanel);
+$('#navHistory').addEventListener('click', ()=>{ closeSidebar(); openHistoryDrawer(); });
 $('#settingsBtn').addEventListener('click', openSettingsDrawer);
 $('#metricsBtn').addEventListener('click', openMetricsDrawer);
 $('#mobileSettings').addEventListener('click', ()=>{ closeSidebar(); openSettingsDrawer(); });
@@ -770,7 +1340,14 @@ function resetConversation(){
   renderSessionList();
 }
 function requestHistory(){
-  return turnHistory.slice(-4).map(x=>({role:x.role, content:String(x.content||'').slice(0,360)}));
+  // 兼容旧版曾经保存的未校验轮次：它们既不能展示，也不能进入模型历史。
+  return turnHistory.filter(x => !x.unverified).slice(-4)
+    .map(x=>({role:x.role, content:String(x.content||'').slice(0,360)}));
+}
+function selectedLibrarySummary(){
+  const chosen=selectedLibraryIds().map(id=>allLibraries.find(x=>String(x.id)===String(id))).filter(Boolean);
+  return chosen.map(x=>String(x.name||x.source||'未命名资料').replace(/\.(pdf|epub|txt|md)$/i,'')).join(' + ')
+    || ((currentLibrary.sources||[])[0]||'当前知识库');
 }
 function rememberTurn(question, result){
   const assistant = typeof result === 'object' && result !== null
@@ -784,30 +1361,50 @@ function rememberTurn(question, result){
   const existing=storageGet('aitic-chat-sessions',[]).find(x=>x.id===currentSessionId);
   const sessions=storageGet('aitic-chat-sessions',[]).filter(x=>x.id!==currentSessionId);
   sessions.unshift({id:currentSessionId,title:existing?.title||String(question||'新对话').slice(0,42),updated:Date.now(),
-                    source:((currentLibrary.sources||[])[0]||'当前知识库'),turns:turnHistory,
+                    source:selectedLibrarySummary(),turns:turnHistory,
                     libraryIds:selectedLibraryIds(),activeLibraryId:activeLibraryId});
   storageSet('aitic-chat-sessions',sessions.slice(0,12));
   renderSessionList();
 }
 function selectedLibraryIds(){ return [...selectedLibraries]; }
 
-function renderSavedSession(item){
+async function renderSavedSession(item){
   if(!item) return;
   const readyIds=new Set(allLibraries.filter(x=>x.status==='ready').map(x=>String(x.id)));
-  const remembered=(Array.isArray(item.libraryIds)?item.libraryIds:[])
+  const saved=(Array.isArray(item.libraryIds)?item.libraryIds:[]).map(String).slice(0,4);
+  const remembered=saved
     .map(String).filter(id=>readyIds.has(id)).slice(0,4);
+  if(saved.length && !remembered.length){
+    openDrawer('此对话的资料已不可用', '<div class="empty-state">原会话绑定的知识库已删除或尚未建好。为避免错用当前教材，本次没有自动回退；请重新选择资料后开始新对话。</div>');
+    return;
+  }
   if(remembered.length){
     selectedLibraries=new Set(remembered);
-    renderLibraries({libraries:allLibraries,active_id:activeLibraryId});
+    const savedPrimary=String(item.activeLibraryId||'');
+    const primary=remembered.includes(savedPrimary)?savedPrimary:remembered[0];
+    if(primary && primary!==String(activeLibraryId)){
+      try{
+        const res=await fetch('/api/libraries/'+encodeURIComponent(primary)+'/activate',{method:'POST'});
+        const data=await res.json(); if(!res.ok) throw new Error(data.error||'恢复知识库失败');
+        activeLibraryId=primary; await loadStatus();
+      }catch(e){
+        openDrawer('无法恢复此对话', `<div class="empty-state">${escapeHtml(e.message||String(e))}</div>`); return;
+      }
+    }
+    renderLibraries({libraries:allLibraries,active_id:primary||activeLibraryId});
   }
-  currentSessionId=item.id; turnHistory=Array.isArray(item.turns)?item.turns:[]; chat.innerHTML='';
+  currentSessionId=item.id;
+  turnHistory=(Array.isArray(item.turns)?item.turns:[]).filter(turn=>!turn.unverified);
+  chat.innerHTML='';
   let lastQuestion='';
   for(const turn of turnHistory){
     if(turn.role==='user'){
       lastQuestion=String(turn.content||''); chat.appendChild(el('msg me',escapeHtml(lastQuestion))); continue;
     }
-    const box=el('msg ai'),ans=el('ans'+(turn.abstained?' refuse':''));
-    ans.textContent=turn.abstained?'知识库中没有找到足够依据，已拒绝回答。':String(turn.content||'');
+    const box=el('msg ai'),ans=el('ans'+(turn.abstained?' refuse':' formatted'));
+    // 历史回放要和当场生成排版一致，否则同一条答案刷新前后长得不一样
+    if(turn.abstained) ans.textContent='知识库中没有找到足够依据，已拒绝回答。';
+    else { ans.innerHTML=renderAnswerBody(String(turn.content||'')); ans.dataset.raw=String(turn.content||''); }
     box.appendChild(ans);
     if(turn.abstained) box.insertAdjacentHTML('beforeend','<div class="refusal-note"><code>[NO REFERENCE FOUND]</code><br>历史记录：当时未找到足够证据支持作答。</div>');
     else{ box.insertAdjacentHTML('beforeend',renderCites(turn.sources));box.insertAdjacentHTML('beforeend',renderCiteCheck(turn.cite_check)); }
@@ -818,32 +1415,145 @@ function renderSavedSession(item){
   closeSidebar(); renderSessionList(); scroll();
 }
 
+const PINNED_KEY='aitic-pinned-sessions';
+const SESSION_TITLE_MAX=60;
+const pinnedIds = () => storageGet(PINNED_KEY, []);
+function togglePinned(id){
+  const ids=pinnedIds(), at=ids.indexOf(id);
+  if(at>=0) ids.splice(at,1); else ids.unshift(id);
+  storageSet(PINNED_KEY, ids);
+  renderSessionList();
+}
+function renameSavedSession(id){
+  const sessions=storageGet('aitic-chat-sessions',[]);
+  const index=sessions.findIndex(x=>String(x.id)===String(id));
+  if(index<0) return false;
+  const oldTitle=String(sessions[index].title||'未命名对话');
+  const entered=window.prompt('重命名对话',oldTitle);
+  if(entered===null) return false;
+  const title=String(entered).replace(/[\u0000-\u001f\u007f]/g,' ')
+    .replace(/\s+/g,' ').trim().slice(0,SESSION_TITLE_MAX);
+  if(!title){ window.alert('对话名称不能为空。'); return false; }
+  sessions[index]={...sessions[index],title};
+  storageSet('aitic-chat-sessions',sessions);
+  renderSessionList();
+  return true;
+}
+function deleteSavedSession(id){
+  const sessions=storageGet('aitic-chat-sessions',[]);
+  const item=sessions.find(x=>String(x.id)===String(id));
+  if(!item) return false;
+  if(String(id)===String(currentSessionId) && busy){
+    window.alert('当前回答仍在生成，请先停止生成后再删除此对话。');
+    return false;
+  }
+  const title=String(item.title||'未命名对话');
+  if(!window.confirm(`删除对话“${title}”？\n删除后无法恢复。`)) return false;
+  storageSet('aitic-chat-sessions', sessions.filter(x=>String(x.id)!==String(id)));
+  storageSet(PINNED_KEY, pinnedIds().filter(x=>String(x)!==String(id)));
+  if(String(id)===String(currentSessionId)){
+    resetConversation();
+    chat.innerHTML='';
+    renderWelcome('已删除当前对话');
+    qEl.value=''; resizeComposer(); qEl.focus();
+  }else renderSessionList();
+  return true;
+}
+function sessionRowHtml(item, pinned){
+  // 整行原本是一个 <button>，加不了内层按钮（嵌套 button 是非法 HTML，
+  // 浏览器会把内层提出去，图钉就飘到列表外面）。改成 div 容器 + 两个按钮。
+  return `<div class="sidebar-session${item.id===currentSessionId?' active':''}">
+    <button type="button" class="sidebar-session-open" data-side-session="${escapeAttr(item.id)}">
+      <span class="sidebar-session-title">${escapeHtml(item.title||'未命名对话')}</span>
+      <span class="sidebar-session-meta">${escapeHtml(item.source||'当前知识库')} · ${(item.turns||[]).filter(t=>t.role==='user').length} 轮</span>
+    </button>
+    <span class="sidebar-session-actions">
+      <button type="button" class="sidebar-session-pin${pinned?' on':''}" data-pin-session="${escapeAttr(item.id)}"
+        title="${pinned?'取消置顶':'置顶'}" aria-label="${pinned?'取消置顶':'置顶'}">${pinned?'★':'☆'}</button>
+      <button type="button" class="sidebar-session-rename" data-rename-session="${escapeAttr(item.id)}"
+        title="重命名对话" aria-label="重命名对话：${escapeAttr(item.title||'未命名对话')}">✎</button>
+      <button type="button" class="sidebar-session-delete" data-delete-session="${escapeAttr(item.id)}"
+        title="删除对话" aria-label="删除对话：${escapeAttr(item.title||'未命名对话')}">✕</button>
+    </span>
+  </div>`;
+}
 function renderSessionList(){
   const area=$('#sessionList'); if(!area)return;
-  const sessions=storageGet('aitic-chat-sessions',[]).slice(0,6);
-  if(!sessions.length){area.innerHTML='<div class="sidebar-session-empty">完成一次问答后，会话会保存在本机。</div>';return;}
-  area.innerHTML=sessions.map(item=>`<button type="button" class="sidebar-session${item.id===currentSessionId?' active':''}" data-side-session="${escapeHtml(item.id)}">
-    <span class="sidebar-session-title">${escapeHtml(item.title||'未命名对话')}</span>
-    <span class="sidebar-session-meta">${escapeHtml(item.source||'当前知识库')} · ${(item.turns||[]).filter(t=>t.role==='user').length} 轮</span></button>`).join('');
-  area.querySelectorAll('[data-side-session]').forEach(btn=>btn.addEventListener('click',()=>{
+  const all=storageGet('aitic-chat-sessions',[]);
+  const pins=pinnedIds();
+  const pinned=pins.map(id=>all.find(x=>x.id===id)).filter(Boolean);
+  const recent=all.filter(x=>!pins.includes(x.id));
+
+  // 两段都按内容动态显隐：置顶为空就整段不占位，最近为空才显示引导文案
+  const pinnedGroup=$('#pinnedGroup'), pinnedArea=$('#pinnedList');
+  if(pinnedGroup&&pinnedArea){
+    pinnedGroup.hidden = !pinned.length;
+    pinnedArea.innerHTML = pinned.map(x=>sessionRowHtml(x,true)).join('');
+  }
+  area.innerHTML = recent.length
+    ? recent.map(x=>sessionRowHtml(x,false)).join('')
+    : `<div class="sidebar-session-empty">${pinned.length?'其余对话会显示在这里。':'完成一次问答后，会话会保存在本机。'}</div>`;
+
+  document.querySelectorAll('[data-side-session]').forEach(btn=>btn.addEventListener('click',()=>{
     renderSavedSession(storageGet('aitic-chat-sessions',[]).find(x=>x.id===btn.dataset.sideSession));
+  }));
+  document.querySelectorAll('[data-pin-session]').forEach(btn=>btn.addEventListener('click',e=>{
+    e.stopPropagation(); togglePinned(btn.dataset.pinSession);
+  }));
+  document.querySelectorAll('[data-rename-session]').forEach(btn=>btn.addEventListener('click',e=>{
+    e.stopPropagation(); renameSavedSession(btn.dataset.renameSession);
+  }));
+  document.querySelectorAll('[data-delete-session]').forEach(btn=>btn.addEventListener('click',e=>{
+    e.stopPropagation(); deleteSavedSession(btn.dataset.deleteSession);
   }));
 }
 
-function openHistoryDrawer(){
+function historySearchText(item){
+  const turns=(item&&Array.isArray(item.turns)?item.turns:[])
+    .map(turn=>turn&&turn.content||'').join('\n');
+  return [item&&item.title||'',item&&item.source||'',turns,
+    item&&item.question||'',item&&item.answer||''].join('\n')
+    .normalize('NFKC').toLowerCase();
+}
+function historyPreview(item, query){
+  const terms=String(query||'').normalize('NFKC').toLowerCase().trim().split(/\s+/).filter(Boolean);
+  const candidates=(item.turns||[]).map(turn=>String(turn&&turn.content||'').replace(/\s+/g,' ').trim()).filter(Boolean);
+  const chosen=candidates.find(text=>terms.some(term=>text.normalize('NFKC').toLowerCase().includes(term)))||candidates[0]||'';
+  return chosen.length>132?chosen.slice(0,129)+'…':chosen;
+}
+function renderHistoryResults(query){
   const sessions=storageGet('aitic-chat-sessions',[]), favorites=storageGet('aitic-favorites',[]);
-  const sessionHtml=sessions.length?sessions.map(x=>`<div class="history-card" data-session-id="${escapeHtml(x.id)}">
+  const terms=String(query||'').normalize('NFKC').toLowerCase().trim().split(/\s+/).filter(Boolean);
+  const matches=item=>{
+    const text=historySearchText(item);
+    return terms.every(term=>text.includes(term));
+  };
+  const matchedSessions=sessions.filter(matches), matchedFavorites=favorites.filter(matches);
+  $('#historyResultCount').textContent=`找到 ${matchedSessions.length} 个对话、${matchedFavorites.length} 条收藏`;
+  $('#historySessionResults').innerHTML=matchedSessions.length?matchedSessions.map(x=>`<div class="history-card" data-session-id="${escapeAttr(x.id)}">
     <div class="history-head"><span>${escapeHtml(x.title||'未命名对话')}</span><span>${new Date(x.updated).toLocaleDateString('zh-CN')}</span></div>
-    <div class="history-preview">${escapeHtml(x.source||'当前知识库')} · ${(x.turns||[]).filter(t=>t.role==='user').length} 轮</div></div>`).join('')
-    :'<div class="empty-state">尚无已保存会话；完成一次问答后会自动保存在本机浏览器。</div>';
-  const favoriteHtml=favorites.length?favorites.map((x,i)=>`<div class="favorite-card">
-    <div class="history-head"><span>收藏回答 ${i+1}</span><span>${new Date(x.time).toLocaleDateString('zh-CN')}</span></div>
+    <div class="history-preview">${escapeHtml(x.source||'当前知识库')} · ${(x.turns||[]).filter(t=>t.role==='user').length} 轮</div>
+    ${historyPreview(x,query)?`<div class="chunk-text">${escapeHtml(historyPreview(x,query))}</div>`:''}</div>`).join('')
+    :`<div class="empty-state">${sessions.length?'没有匹配的已保存对话。':'尚无已保存对话；完成一次问答后会自动保存在本机浏览器。'}</div>`;
+  $('#historyFavoriteResults').innerHTML=matchedFavorites.length?matchedFavorites.map(x=>`<div class="favorite-card">
+    <div class="history-head"><span>收藏回答 ${favorites.indexOf(x)+1}</span><span>${new Date(x.time).toLocaleDateString('zh-CN')}</span></div>
     <div class="history-preview">${escapeHtml(x.question||'')}</div><div class="chunk-text">${escapeHtml(x.answer||'')}</div></div>`).join('')
-    :'<div class="empty-state">暂无收藏回答。</div>';
-  openDrawer('会话记录与收藏',`<h3>最近会话</h3>${sessionHtml}<h3 style="margin-top:8px">收藏回答</h3>${favoriteHtml}`);
+    :`<div class="empty-state">${favorites.length?'没有匹配的收藏回答。':'暂无收藏回答。'}</div>`;
   $('#drawerBody').querySelectorAll('[data-session-id]').forEach(card=>card.addEventListener('click',()=>{
-    renderSavedSession(sessions.find(x=>x.id===card.dataset.sessionId)); closeDrawer();
+    renderSavedSession(sessions.find(x=>String(x.id)===String(card.dataset.sessionId))); closeDrawer();
   }));
+}
+function openHistoryDrawer(){
+  openDrawer('搜索已保存的对话与收藏',`<div class="drawer-toolbar">
+    <input class="drawer-input" id="historySearch" type="search" autocomplete="off"
+      placeholder="搜索标题、资料名、问题或回答…" aria-label="搜索已保存的对话与收藏">
+  </div>
+  <div class="history-preview" id="historyResultCount" aria-live="polite"></div>
+  <h3>已保存对话</h3><div id="historySessionResults"></div>
+  <h3 style="margin-top:8px">收藏回答</h3><div id="historyFavoriteResults"></div>`);
+  const input=$('#historySearch');
+  input.addEventListener('input',()=>renderHistoryResults(input.value));
+  renderHistoryResults('');
 }
 
 async function downloadRegressionJsonl(button, status){
@@ -865,13 +1575,80 @@ async function downloadRegressionJsonl(button, status){
   finally{ button.disabled=false; button.textContent=old; }
 }
 
+// 「pipeline 自闭环」的最后一环：标记问题 → 进回归集 → 一键重跑 → 看改没改。
+// 重跑是逐条真调模型，慢，所以必须能取消，并且全程告诉用户跑到第几条。
+async function runFeedbackRegression(button, area){
+  const old = button.textContent;
+  const controller = new AbortController();
+  const request = { controller, type: 'regression', finished: false };
+  activeRequest = request;
+  button.textContent = '取消重跑';
+  button.classList.add('danger');
+  const cancel = () => { controller.abort(); };
+  button.addEventListener('click', cancel, { once: true });
+  area.className = '';
+  area.innerHTML = '<div class="empty-state">正在逐条重跑（每条都真调一次模型，请稍候）…</div>';
+  try{
+    const res = await fetch('/api/feedback/rerun', {
+      method: 'POST', headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ limit: 10 }), signal: controller.signal });
+    const data = await res.json();
+    if(!res.ok || data.error) throw new Error(data.error || ('HTTP ' + res.status));
+    const t = data.run.tally || {};
+    const prev = data.previous && data.previous.tally;
+    const cell = (label, key) => {
+      const now = Number(t[key] || 0);
+      const was = prev ? Number(prev[key] || 0) : null;
+      const delta = was === null ? '' : (now === was ? ' ±0' : (now > was ? ' +' : ' ') + (now - was));
+      return `<div class="metric-card"><b>${now}${delta}</b><span>${label}</span></div>`;
+    };
+    area.innerHTML =
+      `<div class="metric-grid" style="margin-bottom:10px">
+        ${cell('仍然拒答','仍然拒答')}${cell('改为作答','由拒答改为作答')}
+        ${cell('改为拒答','由作答改为拒答')}${cell('仍然作答','仍然作答')}
+        ${cell('跳过','跳过')}
+      </div>
+      <div class="unverified-note">${escapeHtml(data.note)}</div>`
+      + (prev ? `<div class="setting-help">对照上一次运行：${escapeHtml(data.previous.time)}</div>` : '')
+      + (data.items || []).map(it => it.skipped
+          ? `<div class="favorite-card" style="margin-bottom:7px">
+              <div class="history-head"><span>已跳过</span><span></span></div>
+              <div class="history-preview">${escapeHtml(it.question || '')}</div>
+              <div class="setting-help">${escapeHtml(it.reason || '')}</div></div>`
+          : `<div class="favorite-card" style="margin-bottom:7px">
+              <div class="history-head"><span>${escapeHtml(it.transition)}</span>
+                <span>${escapeHtml(it.reported_at || '')}</span></div>
+              <div class="history-preview">${escapeHtml(it.question || '')}</div>
+              <div class="setting-help">当初标记：${escapeHtml(it.kind || '')} ·
+                答案${it.answer_changed ? '已变化' : '未变化'} ·
+                可信度 ${escapeHtml(it.confidence_before || '—')} → ${escapeHtml(it.confidence_after || '—')} ·
+                引用校验${it.cite_ok ? '通过' : '未通过'}</div>
+              ${it.stop_reason ? `<div class="setting-help">${escapeHtml(it.stop_reason)}</div>` : ''}
+              <div class="chunk-text">${escapeHtml(it.answer_preview || '')}</div></div>`).join('');
+  }catch(e){
+    area.className = '';
+    area.innerHTML = controller.signal.aborted
+      ? '<div class="unverified-note">已取消重跑。服务端当前正在处理的那一条可能仍会跑完。</div>'
+      : '<div class="empty-state">重跑失败：' + escapeHtml(String(e.message || e)) + '</div>';
+  }finally{
+    request.finished = true;
+    if(activeRequest === request) activeRequest = null;
+    button.removeEventListener('click', cancel);
+    button.textContent = old;
+    button.classList.remove('danger');
+  }
+}
+
 async function openFeedbackDrawer(){
   openDrawer('反馈与回归集',`<div class="drawer-toolbar">
+    <button id="rerunRegression" class="drawer-button" type="button">重跑失败样本并对照</button>
     <button id="downloadRegression" class="drawer-button" type="button">下载失败回归 JSONL</button>
     <span id="feedbackExportStatus" class="setting-help">失败反馈会去重导出，纳入正式评测前需人工复核。</span>
     </div><div id="feedbackRows" class="empty-state">正在读取最近反馈…</div>`);
   const button=$('#downloadRegression'),status=$('#feedbackExportStatus');
   button.addEventListener('click',()=>downloadRegressionJsonl(button,status));
+  $('#rerunRegression').addEventListener('click',
+    e=>runFeedbackRegression(e.currentTarget, $('#feedbackRows')));
   try{
     const res=await fetch('/api/feedback?limit=50'),data=await res.json();
     if(!res.ok || data.error) throw new Error(data.error||`HTTP ${res.status}`);
@@ -919,12 +1696,12 @@ function openMetricsDrawer(){
     <div class="metric-card"><b>${sessionMetrics.tokens}</b><span>累计 Token</span></div>
     <div class="metric-card"><b>${(avg/1000).toFixed(1)}s</b><span>平均耗时</span></div>
     <div class="metric-card"><b>${sessionMetrics.refusals}</b><span>无依据拒答</span></div>
-    <div class="metric-card"><b>${selectedLibraries.size||1}</b><span>当前联合知识库</span></div></div>
+    <div class="metric-card"><b>${selectedLibraries.size||1}</b><span>本次查询资料</span></div></div>
     <div class="setting-help">统计仅保存在当前页面，不上传、不联网。</div>`);
 }
 
 function chunkLibraryOptions(){
-  return allLibraries.filter(x=>x.status==='ready').map(x=>`<option value="${escapeHtml(x.id)}" ${String(x.id)===String(activeLibraryId)?'selected':''}>${escapeHtml(x.name)}</option>`).join('');
+  return allLibraries.filter(x=>x.status==='ready').map(x=>`<option value="${escapeAttr(x.id)}" ${String(x.id)===String(activeLibraryId)?'selected':''}>${escapeHtml(x.name)}</option>`).join('');
 }
 function openChunkBrowser(){
   openDrawer('知识分块浏览',`<div class="drawer-toolbar"><select id="chunkLibrary" class="drawer-select">${chunkLibraryOptions()}</select>
@@ -992,6 +1769,11 @@ async function loadStatus(){
     $('#sLLM').textContent = r.llm_model || '—';
     $('#sVL').textContent  = r.vl_model || '—';
     $('#sEmb').textContent = r.embed_model || '—';
+    const runtime = r.runtime || {}, packages = runtime.packages || {};
+    $('#sPython').textContent = runtime.python || '—';
+    const runtimeText = Object.entries(packages).map(([name,version])=>`${name} ${version}`).join(' · ');
+    $('#sRuntime').textContent = runtimeText || '—';
+    $('#sRuntime').title = runtimeText;
     $('#sTopK').textContent = r.top_k;
     $('#sBudget').textContent = r.context_budget + ' 字符';
     $('#sEsc').textContent = '→ ' + r.budget_escalated;
@@ -1074,17 +1856,39 @@ function showBuild(phase, progress, isError=false){
   $('#progressBar').style.width = pct + '%';
   $('#progressBar').style.background = isError
     ? '#F2776B' : 'linear-gradient(90deg,var(--orange),#FFD47A)';
-  $('#progressText').innerHTML = `<span title="${escapeHtml(phase)}">${escapeHtml(phase)}</span><span>${Math.round(pct)}%</span>`;
+  $('#progressText').innerHTML = `<span title="${escapeAttr(phase)}">${escapeHtml(phase)}</span><span>${Math.round(pct)}%</span>`;
 }
 
 function updateRetrievalScope(){
   const chosen=[...selectedLibraries].map(id=>allLibraries.find(lib=>String(lib.id)===String(id))).filter(Boolean);
   const names=chosen.map(lib=>String(lib.name||lib.source||'未命名知识库').replace(/\.(pdf|epub|txt|md)$/i,''));
   const fallback=$('#dbPath')?.dataset.fallback||'当前知识库';
-  const short=names.length>1?`联合 ${names.length} 库：${names.slice(0,2).join(' + ')}${names.length>2?'…':''}`
+  const short=names.length>1?`正在查询 ${names.length} 本资料 · ${names.slice(0,2).join(' + ')}${names.length>2?'…':''}`
     :`正在检索：${names[0]||fallback}`;
   if($('#dbPath')){ $('#dbPath').textContent=short;$('#dbPath').title=names.join(' + ')||$('#dbPath').dataset.fallbackTitle||fallback; }
   if($('#retrievalScope')) $('#retrievalScope').textContent=short;
+  const hint=$('#composerLibraryHint'), hintText=$('#composerLibraryHintText');
+  if(hint && hintText){
+    hint.classList.toggle('needs-library', names.length===0);
+    hintText.textContent=names.length
+      ? `当前已选 ${names.length} 本：${names.slice(0,2).join(' + ')}${names.length>2?'…':''}。回答只依据所选资料。`
+      : '尚未选择资料，请先选择一本或多本资料，再开始问答。';
+  }
+}
+
+function selectionForUi(){ return newChatSourceDraft instanceof Set ? newChatSourceDraft : selectedLibraries; }
+function refreshNewChatSourceActions(){
+  const actions=$('#newChatSourceActions'), summary=$('#newChatSourceSummary'), confirm=$('#newChatSourceConfirm');
+  if(!actions || !summary || !confirm) return;
+  const active=newChatSourceDraft instanceof Set;
+  actions.hidden=!active;
+  if(!active) return;
+  const chosen=[...newChatSourceDraft].map(id=>allLibraries.find(x=>String(x.id)===String(id))).filter(Boolean);
+  const names=chosen.map(x=>String(x.name||x.source||'未命名资料').replace(/\.(pdf|epub|txt|md)$/i,''));
+  const mode=names.length>1?`<b>已选择 ${names.length} 本资料</b>`:(names.length===1?'<b>单资料问答</b>':'<b>尚未选择资料</b>');
+  summary.innerHTML=`${mode}${names.length?`<br>${escapeHtml(names.join(' + '))}`:'<br>请从上方勾选已有知识库，或拖入 PDF 新建。'}`;
+  confirm.disabled=!names.length;
+  confirm.textContent=names.length>1?`使用 ${names.length} 本资料开始问答`:'使用已选资料开始问答';
 }
 
 function renderLibraries(data){
@@ -1094,10 +1898,15 @@ function renderLibraries(data){
   const keyword=($('#librarySearch')?.value||'').trim().toLowerCase();
   const libs = allLibraries.filter(lib=>!keyword||`${lib.name||''} ${lib.source||''} ${lib.subject||''}`.toLowerCase().includes(keyword));
   if(!libs.length){ area.innerHTML='<div class="lib-meta">暂无知识库</div>'; return; }
-  if(!selectedLibraries.size && data.active_id) selectedLibraries.add(data.active_id);
   const validIds = new Set(allLibraries.filter(x=>x.status==='ready').map(x=>String(x.id)));
-  selectedLibraries = new Set([...selectedLibraries].filter(x=>validIds.has(String(x))));
-  if(!selectedLibraries.size && data.active_id) selectedLibraries.add(String(data.active_id));
+  if(newChatSourceDraft instanceof Set){
+    newChatSourceDraft = new Set([...newChatSourceDraft].map(String).filter(x=>validIds.has(x)));
+    if(!newChatSourceDraft.size && data.active_id && validIds.has(String(data.active_id))) newChatSourceDraft.add(String(data.active_id));
+  }else{
+    selectedLibraries = new Set([...selectedLibraries].map(String).filter(x=>validIds.has(x)));
+    if(!selectedLibraries.size && data.active_id && validIds.has(String(data.active_id))) selectedLibraries.add(String(data.active_id));
+  }
+  const uiSelection=selectionForUi();
   area.innerHTML = libs.map(lib=>{
     const status = lib.status || 'missing';
     const cls = ['library-item', lib.active ? 'active' : '', status].filter(Boolean).join(' ');
@@ -1112,40 +1921,88 @@ function renderLibraries(data){
         || '本地知识库';
     const count = Number.isFinite(lib.chunks) && lib.chunks > 0 ? lib.chunks + ' 块' : '';
     const ready = status === 'ready';
-    const checked = selectedLibraries.has(String(lib.id)) ? 'checked' : '';
-    return `<div class="library-row"><button type="button" class="${cls}" data-library-id="${escapeHtml(lib.id)}"
-              ${status !== 'ready' ? 'disabled' : ''} title="${escapeHtml(meta)}">
+    const checked = uiSelection.has(String(lib.id)) ? 'checked' : '';
+    return `<div class="library-row"><button type="button" class="${cls}" data-library-id="${escapeAttr(lib.id)}"
+              ${status !== 'ready' ? 'disabled' : ''} title="${escapeAttr(meta)}">
       <span class="lib-dot"></span><span class="lib-copy"><span class="lib-name">${escapeHtml(stripExt(lib.name)||'未命名知识库')}</span>
       <span class="lib-meta">${escapeHtml(meta)}</span></span><span class="lib-count">${escapeHtml(count)}</span></button>
-      <label class="multi-toggle" title="勾选后参与跨资料联合检索">
-        <input type="checkbox" data-library-check="${escapeHtml(lib.id)}" ${checked} ${ready ? '' : 'disabled'}><span>联合</span>
+      <label class="multi-toggle" title="勾选后，提问会同时查询这些资料（最多 4 本）">
+        <input type="checkbox" data-library-check="${escapeAttr(lib.id)}" ${checked} ${ready ? '' : 'disabled'}><span>加入问答</span>
       </label></div>`;
   }).join('');
   area.querySelectorAll('.library-item:not(:disabled)').forEach(btn=>{
-    btn.addEventListener('click', ()=>switchLibrary(btn.dataset.libraryId));
+    btn.addEventListener('click', ()=>{
+      if(newChatSourceDraft instanceof Set){
+        newChatSourceDraft=new Set([String(btn.dataset.libraryId)]);
+        renderLibraries({libraries:allLibraries,active_id:activeLibraryId});
+      }else switchLibrary(btn.dataset.libraryId);
+    });
   });
   area.querySelectorAll('[data-library-check]').forEach(input=>{
     input.addEventListener('change', ()=>{
       const id = String(input.dataset.libraryCheck);
-      if(input.checked) selectedLibraries.add(id); else selectedLibraries.delete(id);
-      if(selectedLibraries.size > 4){ input.checked=false; selectedLibraries.delete(id); showBuild('联合检索最多选择 4 个知识库',100,true); }
-      $('#selectedCount').textContent=`已选 ${selectedLibraries.size}/4`;
-      updateRetrievalScope();
+      const target=selectionForUi();
+      if(input.checked) target.add(id); else target.delete(id);
+      if(target.size > 4){ input.checked=false; target.delete(id); showBuild('最多可同时选择 4 本资料',100,true); }
+      $('#selectedCount').textContent=`已选 ${target.size}/4`;
+      if(newChatSourceDraft instanceof Set) refreshNewChatSourceActions(); else updateRetrievalScope();
     });
   });
-  $('#selectedCount').textContent=`已选 ${selectedLibraries.size}/4`;
-  updateRetrievalScope();
+  $('#selectedCount').textContent=`已选 ${uiSelection.size}/4`;
+  refreshNewChatSourceActions();
+  if(!(newChatSourceDraft instanceof Set)) updateRetrievalScope();
 }
 
 $('#librarySearch').addEventListener('input',()=>renderLibraries({libraries:allLibraries,active_id:activeLibraryId}));
 $('#selectAllLibraries').addEventListener('click',()=>{
-  selectedLibraries=new Set(allLibraries.filter(x=>x.status==='ready').slice(0,4).map(x=>String(x.id)));
+  const next=new Set(allLibraries.filter(x=>x.status==='ready').slice(0,4).map(x=>String(x.id)));
+  if(newChatSourceDraft instanceof Set) newChatSourceDraft=next; else selectedLibraries=next;
   renderLibraries({libraries:allLibraries,active_id:activeLibraryId});
 });
 $('#clearLibraries').addEventListener('click',()=>{
-  selectedLibraries=activeLibraryId ? new Set([String(activeLibraryId)]) : new Set();
+  const next=activeLibraryId ? new Set([String(activeLibraryId)]) : new Set();
+  if(newChatSourceDraft instanceof Set) newChatSourceDraft=next; else selectedLibraries=next;
   renderLibraries({libraries:allLibraries,active_id:activeLibraryId});
 });
+
+async function beginNewChatSourceFlow(){
+  if(busy) return;
+  newChatSourceDraft=new Set([...selectedLibraries]);
+  closeSidebar();
+  await loadLibraries();
+  openDrawerPanels('开始新对话 · 选择资料', ['#stashLibraryBuild', '#stashLibraryPicker']);
+  refreshNewChatSourceActions();
+}
+
+function cancelNewChatSourceFlow(){
+  if(!(newChatSourceDraft instanceof Set)) return;
+  newChatSourceDraft=null;
+  const actions=$('#newChatSourceActions'); if(actions) actions.hidden=true;
+  if($('#libraryList')) renderLibraries({libraries:allLibraries,active_id:activeLibraryId});
+}
+
+async function confirmNewChatSourceFlow(){
+  if(!(newChatSourceDraft instanceof Set) || busy) return;
+  const readyIds=new Set(allLibraries.filter(x=>x.status==='ready').map(x=>String(x.id)));
+  const ids=[...newChatSourceDraft].map(String).filter(id=>readyIds.has(id)).slice(0,4);
+  if(!ids.length){ refreshNewChatSourceActions(); return; }
+  const primary=ids.includes(String(activeLibraryId))?String(activeLibraryId):ids[0];
+  setBusy(true);
+  try{
+    if(primary!==String(activeLibraryId)){
+      const res=await fetch('/api/libraries/'+encodeURIComponent(primary)+'/activate',{method:'POST'});
+      const data=await res.json(); if(!res.ok) throw new Error(data.error||'切换资料失败');
+    }
+    selectedLibraries=new Set(ids); activeLibraryId=primary; newChatSourceDraft=null;
+    await loadStatus(); await loadLibraries();
+    resetConversation(); renderWelcome(ids.length>1?`已选择 ${ids.length} 本资料`:'新对话');
+    qEl.value=''; resizeComposer(); closeDrawer(); closeSidebar(); qEl.focus();
+  }catch(e){ showBuild('无法开始新对话：'+(e.message||String(e)),100,true); }
+  finally{ setBusy(false); }
+}
+
+$('#newChatSourceCancel').addEventListener('click', closeDrawer);
+$('#newChatSourceConfirm').addEventListener('click', confirmNewChatSourceFlow);
 
 async function loadLibraries(){
   try{
@@ -1170,7 +2027,7 @@ async function switchLibrary(id){
     const res = await fetch('/api/libraries/' + encodeURIComponent(id) + '/activate', {method:'POST'});
     const data = await res.json();
     if(!res.ok) throw new Error(data.error||'切换失败');
-    // 点知识库卡片表示切成单库；只有主动勾选“联合”时才进行跨库检索。
+    // 点知识库卡片表示切成单库；只有主动勾选“加入问答”时才同时查询多本资料。
     selectedLibraries = new Set([String(id)]);
     await loadStatus();
     resetConversation();
@@ -1200,9 +2057,14 @@ async function pollBuild(jobId){
       showBuild(`建库完成 · ${job.chunks||0} 个知识块 · 已自动切换`, 100);
       selectedPdf = null; pdfFile.value = ''; $('#fileName').textContent = '尚未选择文件';
       buildBtn.disabled = true;
+      if(job.library_id){
+        selectedLibraries=new Set([String(job.library_id)]);
+        activeLibraryId=String(job.library_id);
+      }
+      newChatSourceDraft=null;
       await loadStatus(); await loadLibraries();
       resetConversation();
-      renderWelcome('新知识库已就绪'); qEl.focus();
+      renderWelcome('新知识库已就绪'); closeDrawer(); closeSidebar(); qEl.focus();
     }else{
       showBuild('建库失败：' + (job.error||'请检查 Ollama 与 PDF'), 100, true);
     }
@@ -1251,9 +2113,7 @@ function uploadAndBuild(){
 
 pdfFile.addEventListener('change', ()=>setSelectedPdf(pdfFile.files && pdfFile.files[0]));
 buildBtn.addEventListener('click', uploadAndBuild);
-$('#newChat').addEventListener('click', ()=>{ if(!busy){
-  resetConversation(); renderWelcome('新对话'); qEl.value=''; resizeComposer(); closeSidebar(); qEl.focus();
-} });
+$('#newChat').addEventListener('click', beginNewChatSourceFlow);
 const filePick = $('#filePick');
 filePick.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); pdfFile.click(); } });
 ['dragenter','dragover'].forEach(name=>filePick.addEventListener(name,e=>{e.preventDefault();filePick.classList.add('drag');}));
@@ -1273,18 +2133,92 @@ document.addEventListener('click', e=>{
 function el(cls, html){ const d=document.createElement('div'); d.className=cls; if(html) d.innerHTML=html; return d; }
 function scroll(){ chat.scrollTop = chat.scrollHeight; }
 
+// 原页图像 + 命中高亮：让"可溯源"从页码文字变成肉眼可核对的东西。
+async function openSourcePage(libraryId, page, source, probe, label){
+  openDrawer('原页 · ' + (label || ('p.' + page)),
+             '<div class="empty-state">正在渲染原书该页…</div>');
+  const url = '/api/source/page?library_id=' + encodeURIComponent(libraryId)
+            + '&page=' + encodeURIComponent(page)
+            + '&source=' + encodeURIComponent(source || '')
+            + '&highlight=' + encodeURIComponent(probe || '');
+  try{
+    const res = await fetch(url);
+    if(!res.ok){
+      const d = await res.json().catch(()=>({}));
+      throw new Error(d.error || ('HTTP ' + res.status));
+    }
+    // 高亮命中数为 0 时必须如实说明，不能让用户以为"没黄块=系统没找到证据"
+    const hits = Number(res.headers.get('x-highlight-hits') || 0);
+    const src = decodeURIComponent(res.headers.get('x-source-file') || '');
+    const blob = await res.blob();
+    const objectUrl = URL.createObjectURL(blob);
+    const note = hits > 0
+      ? `<div class="prune-note">已在本页标出 ${hits} 处命中片段。</div>`
+      : `<div class="unverified-note">本页未能定位到该引用片段的原文位置（分块可能跨页重排，或该块来自图表解析）。<b>页面本身是真实的原书第 ${escapeHtml(String(page))} 页</b>，请自行核对。</div>`;
+    $('#drawerBody').innerHTML = note
+      + `<div class="page-meta">来源文件：${escapeHtml(src || '未知')}　第 ${escapeHtml(String(page))} 页</div>`
+      + `<img class="page-image" alt="原书第 ${escapeHtml(String(page))} 页" src="${objectUrl}">`;
+    $('#drawerBody').querySelector('.page-image')
+      .addEventListener('load', ()=>URL.revokeObjectURL(objectUrl), {once:true});
+  }catch(e){
+    $('#drawerBody').innerHTML =
+      `<div class="unverified-note">无法渲染原页：${escapeHtml(String(e.message||e))}</div>`;
+  }
+}
+
 function renderCites(sources){
   if(!sources || !sources.length) return '';
-  let h = '<div class="cites"><h4>📎 引用来源（点击展开原文片段）</h4>';
+  let h = '<div class="cites"><h4>📎 本轮检索证据（含未被正文引用的候选；点击展开）</h4>';
   for(const s of sources){
     const sn = s.snippet ? `<div class="sn">${escapeHtml(s.snippet)}…</div>` : '';
     const score = s.distance==null ? '' : `<span class="source-score">距离 ${Number(s.distance).toFixed(3)}</span>`;
+    // 「查看原文」：片段只能看个大概，要真核对"这句话是不是被原文支持"，
+    // 必须能看到该页的完整上下文。这是可溯源的最后一公里。
+    const canOpen = s.library_id && (s.page != null || s.loc);
+    const open = canOpen ? `<button type="button" class="cite-open" data-action="open-source"
+        data-library="${escapeAttr(s.library_id)}" data-page="${escapeAttr(s.page==null?'':s.page)}"
+        data-loc="${escapeAttr(s.loc||'')}" data-source="${escapeAttr(s.source||'')}"
+        data-probe="${escapeAttr((s.snippet||'').slice(0,60))}"
+        data-label="${escapeAttr(s.label)}">🔎 查看原文</button>` : '';
+    // 原页图像：把"可溯源"从页码文字变成肉眼可验证。仅 PDF 且有页码时提供。
+    const canPage = s.library_id && s.page != null;
+    const pageBtn = canPage ? `<button type="button" class="cite-open" data-action="open-page"
+        data-library="${escapeAttr(s.library_id)}" data-page="${escapeAttr(s.page)}" data-source="${escapeAttr(s.source||'')}"
+        data-probe="${escapeAttr((s.snippet||'').slice(0,120))}"
+        data-label="${escapeAttr(s.label)}">📄 看原页</button>` : '';
     h += `<div class="cite"><span class="lb">${escapeHtml(s.label)}</span>
-          <span class="ty">${escapeHtml(s.type)}</span>${score}${sn}</div>`;
+          <span class="ty">${escapeHtml(s.type)}</span>${score}${open}${pageBtn}${sn}</div>`;
   }
   return h + '</div>';
 }
 function escapeHtml(t){ const d=document.createElement('div'); d.textContent=t||''; return d.innerHTML; }
+// 答案排版：**先转义、再按白名单还原**这三种记号。顺序不能反——
+// 模型输出是不可信文本，任何时候都不能整段塞进 innerHTML。
+// 白名单只有：段落、'- ' 要点、**粗体**。链接、图片、原始 HTML 一律不认。
+function renderAnswerBody(text){
+  const src = String(text == null ? '' : text);
+  const bold = s => escapeHtml(s).replace(/\*\*([^*\n]{1,80})\*\*/g, '<strong>$1</strong>');
+  const out = [];
+  let bullets = [];
+  const flush = () => {
+    if(!bullets.length) return;
+    out.push('<ul class="ans-list">' + bullets.map(x => '<li>' + bold(x) + '</li>').join('') + '</ul>');
+    bullets = [];
+  };
+  for(const rawLine of src.split(/\r?\n/)){
+    const line = rawLine.trim();
+    const item = line.match(/^[-*•]\s+(.*)$/);
+    if(item){ bullets.push(item[1]); continue; }
+    flush();
+    if(line) out.push('<p>' + bold(line) + '</p>');
+  }
+  flush();
+  return out.join('') || escapeHtml(src);
+}
+function escapeAttr(t){
+  return String(t==null?'':t).replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
 function renderCiteCheck(cc){
   if(!cc || !cc.total) return '';
   const ok = cc.ok;
@@ -1301,23 +2235,88 @@ function renderCiteCheck(cc){
 
 // 第二部分：模型常识补全。与教材依据严格分区展示——它不参与引用校验，
 // 也不进任何抗幻觉指标，所以必须让人一眼看出"这段不是书里的"。
+// 两段式（会议决议）：上面「完整解答」可读、含模型常识；下面「教材依据」逐条带页码。
+// 顺序是刻意的——先让人看懂，再让人验证。但正因为可读的那段在最前面，
+// 「未经溯源」的标记必须足够重，不能让人把它当成教材内容。
 function renderSupplement(supplement){
   if(!supplement || !supplement.text) return '';
   return `<div class="supplement">
-    <div class="supplement-head"><span>教材之外的补充说明</span>
-      <span class="supplement-badge">模型常识 · 无出处</span></div>
-    <div class="supplement-note">本节来自模型自身知识，<b>不出自所选教材</b>，未经原文核对，也不计入上方的引用校验与可信度。需要严格溯源时请关闭「允许标注式教材外补充」。</div>
-    <div class="supplement-body">${escapeHtml(supplement.text)}</div>
+    <div class="supplement-head"><span>完整解答</span>
+      <span class="supplement-badge">含模型常识 · 未经溯源</span></div>
+    <div class="supplement-note">本段为便于理解而写，<b>包含教材之外的内容</b>，未经原文核对，<b>不计入下方的引用校验与可信度</b>。要严格溯源请只看下方「教材依据」。</div>
+    <div class="supplement-body formatted" data-raw="${escapeAttr(supplement.text)}">${renderAnswerBody(supplement.text)}</div>
   </div>`;
+}
+
+// 答得不理想时告诉用户下一步怎么办。每条建议都绑一个能直接点的动作，
+// 不做"建议您尝试调整问题"这种说了等于没说的提示。
+function renderDiagnosis(agent){
+  const d = (agent || {}).diagnosis;
+  if(!d || !(d.actions||[]).length) return '';
+  const acts = d.actions.map(a=>`<button type="button" class="fix-action"
+      data-action="fix" data-fix="${escapeAttr(a.do)}" title="${escapeAttr(a.why||'')}">
+      ${escapeHtml(a.label)}</button>`).join('');
+  const why = d.actions.map(a=>`<div class="fix-why">· <b>${escapeHtml(a.label)}</b>：${escapeHtml(a.why||'')}</div>`).join('');
+  return `<div class="diagnosis">
+    <div class="diagnosis-head">🧭 这次没答好，原因是</div>
+    <div class="diagnosis-cause">${escapeHtml(d.cause||'')}</div>
+    <div class="fix-actions">${acts}</div>
+    <div class="fix-whys">${why}</div>
+    <div class="fix-note">${escapeHtml(d.note||'')}</div>
+  </div>`;
+}
+
+// 每个动作都真的改掉对应设置并重问，不是提示完就完了
+function applyFix(kind, question){
+  const retry = () => { qEl.value = question || ''; if(qEl.value) ask(); };
+  if(kind === 'clear_scope'){
+    const a = $('#scopeFrom'), b = $('#scopeTo');
+    if(a) a.value = ''; if(b) b.value = '';
+    retry(); return;
+  }
+  if(kind === 'enable_extend'){
+    if(extendAnswer){ extendAnswer.checked = true; extendAnswer.dispatchEvent(new Event('change')); }
+    retry(); return;
+  }
+  if(kind === 'enable_hybrid'){
+    hybridOn = true; syncHybridToggle(); retry(); return;
+  }
+  if(kind === 'deep_mode'){
+    // “全做 Agent”后 auto 与旧 deep 走同一路径；界面只保留一个不重复的名称。
+    if(answerMode) answerMode.value = 'auto';
+    retry(); return;
+  }
+  if(kind === 'regenerate'){ retry(); return; }
+  if(kind === 'pick_library'){
+    openDrawerPanels('选择资料', ['#stashLibraryPicker']);
+    const first = document.querySelector('#librarySearch'); if(first) first.focus();
+    return;
+  }
+  if(kind === 'rephrase'){ qEl.value = question || ''; qEl.focus(); qEl.select?.(); return; }
+  if(kind === 'open_page'){
+    const btn = document.querySelector('.msg.ai:last-of-type [data-action="open-page"]')
+             || document.querySelector('[data-action="open-page"]');
+    if(btn) btn.click();
+    return;
+  }
+}
+
+function groundedHead(abstained){
+  return `<div class="grounded-head"><span>教材依据</span>` +
+    `<span class="grounded-badge">${abstained ? '本教材中无依据' : '逐条可溯源 · 参与可信度计算'}</span></div>`;
 }
 
 function renderAgentSummary(agent){
   if(!agent) return '';
   const confidence = agent.confidence || {};
   const state = ['supported','partial','insufficient'].includes(confidence.state) ? confidence.state : 'partial';
-  const path = agent.path === 'agent_loop'
+  // 后半句必须用后端算出的 stop_reason。原来这里写死「首轮证据充分」，
+  // 只看 path 不看核验结果——实测出现过「删掉 5 条无据结论、0 条原文匹配」
+  // 却仍显示「证据充分」的自相矛盾状态。
+  const lane = agent.path === 'agent_loop'
     ? `Agent Loop · ${Number(agent.rounds||2)} 轮检索与核验`
-    : '快速 RAG · 首轮证据充分';
+    : '快速 RAG';
+  const path = agent.stop_reason ? `${lane} · ${agent.stop_reason}` : lane;
   const history = agent.history_used ? ' · 已结合上文理解追问' : '';
   const intent = agent.intent || {};
   const libraries = (agent.libraries||[]).map(x=>x.name).filter(Boolean);
@@ -1407,6 +2406,247 @@ function renderEvidenceChain(agent, chainId){
     </div>`;
 }
 
+// 库健康度：问答之前先让用户知道"这个库值不值得信、哪些内容可能检索不到"。
+// ---------- A/B 对比 ----------
+// 评委要求「A/B test，最好和最坏都要展示」。此前只有离线消融数据，界面里看不到。
+// 这里让同一个问题当场跑两套配置并排对照；两臂在后端复用同一条问答链路。
+const COMPARE_PRESETS = {
+  extend:  {name:'严格溯源 vs 允许教材外补充',
+            a:{label:'严格溯源', extend:false}, b:{label:'允许补充', extend:true}},
+  style:   {name:'简洁 vs 详细',
+            a:{label:'简洁', style:'concise'}, b:{label:'详细', style:'detailed'}},
+  mode:    {name:'单轮生成 vs Agent 校验',
+            a:{label:'单轮生成', mode:'fast'}, b:{label:'Agent 校验', mode:'auto'}},
+  hybrid:  {name:'纯向量检索 vs 混合检索（关键词+向量）',
+            a:{label:'纯向量', hybrid:false}, b:{label:'混合检索', hybrid:true}},
+};
+
+function comparePanelHtml(){
+  const options = Object.entries(COMPARE_PRESETS)
+    .map(([k,v])=>`<option value="${k}">${escapeHtml(v.name)}</option>`).join('');
+  return `<div class="compare-setup">
+      <label>对照维度<select id="cmpPreset">${options}</select></label>
+      <label>问题<input id="cmpQuestion" type="text" placeholder="输入要对照的问题…"></label>
+      <button class="answer-tool" id="cmpRun" type="button">开始对照</button>
+    </div>
+    <div class="prune-note">两侧走的是同一条检索/生成/校验链路，只有所选那一个开关不同——控制变量由代码结构保证。</div>
+    <div id="cmpResult"></div>`;
+}
+
+function compareArmHtml(arm){
+  const m = arm.metrics || {};
+  const conf = m.confidence || '—';
+  const state = m.abstained ? 'insufficient' : (m.cite_ok ? 'supported' : 'partial');
+  const g = (m.grounding_avg === null || m.grounding_avg === undefined)
+    ? '未计算' : Math.round(m.grounding_avg * 100) + '%';
+  return `<div class="compare-arm">
+    <div class="compare-arm-head"><b>${escapeHtml(arm.label)}</b>
+      <span class="confidence ${state}">可信度：${escapeHtml(conf)}</span></div>
+    <div class="compare-metrics">
+      <span>${m.abstained ? '已拒答' : '作答'}</span>
+      <span>引用 ${m.cite_ok ? '全部命中' : '未通过'}（${m.cite_total}）</span>
+      <span>有据结论 ${m.claims_supported}/${m.claims}</span>
+      <span>平均接地率 ${g}</span>
+      <span>${m.tokens} token · ${(m.elapsed_ms/1000).toFixed(1)}s</span>
+    </div>
+    <div class="compare-answer">${escapeHtml(arm.answer || '（空）')}</div>
+    ${(m.sources||[]).length ? `<div class="compare-src">来源：${escapeHtml(m.sources.join('、'))}</div>` : ''}
+    ${arm.supplement ? `<div class="supplement-note" style="margin-top:8px">另附教材之外的补充说明（模型常识 · 无出处），不计入上方引用校验。</div>` : ''}
+  </div>`;
+}
+
+async function runCompare(){
+  const question = ($('#cmpQuestion').value || '').trim();
+  if(!question){ $('#cmpResult').innerHTML = '<div class="empty-state">请先输入问题。</div>'; return; }
+  const preset = COMPARE_PRESETS[$('#cmpPreset').value] || COMPARE_PRESETS.extend;
+  const btn = $('#cmpRun'); btn.disabled = true; btn.textContent = '对照进行中…';
+  $('#cmpResult').innerHTML = '<div class="empty-state">两侧依次真实跑，请稍候…</div>';
+  try{
+    const res = await fetch('/api/compare', {method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({question, libraries:selectedLibraryIds(),
+                            style:answerStyle.value||'standard', mode:answerMode.value||'auto',
+                            variants:[preset.a, preset.b]})});
+    const d = await res.json();
+    if(!res.ok) throw new Error(d.error || `HTTP ${res.status}`);
+    $('#cmpResult').innerHTML =
+      `<div class="compare-grid">${d.arms.map(compareArmHtml).join('')}</div>
+       <div class="chain-section"><h5>可客观判定的差异</h5>
+         ${d.differences.map(x=>`<div class="relation-row">· ${escapeHtml(x)}</div>`).join('')}</div>
+       <div class="prune-note">${escapeHtml(d.note)}</div>`;
+  }catch(e){
+    $('#cmpResult').innerHTML = `<div class="unverified-note">对照失败：${escapeHtml(String(e.message||e))}</div>`;
+  }finally{ btn.disabled = false; btn.textContent = '开始对照'; }
+}
+
+// ---------- 跨教材概念对照 ----------
+// 与 A/B 对比的区别：那个比"配置"，这个比"内容"——同一概念在几本教材里分别怎么讲。
+function openConceptPanel(){
+  const libs = selectedLibraryIds();
+  if(libs.length < 2){
+    openDrawer('概念对照',
+      '<div class="empty-state">请先在左侧勾选<b>至少两个</b>知识库（最多四个），再来做跨教材对照。</div>');
+    return;
+  }
+  openDrawer('概念对照', `<div class="compare-setup">
+      <label>概念<input id="cptTerm" type="text" placeholder="例如：递归、function、正当防卫…"></label>
+      <button class="answer-tool" id="cptRun" type="button">开始对照</button>
+    </div>
+    <div class="prune-note">每本书<b>独立检索、独立作答</b>，各带各的引用；某本书里没有该概念时会如实标注，不会硬凑。</div>
+    <div id="cptResult"></div>`);
+  $('#cptRun').addEventListener('click', runConcept);
+  $('#cptTerm').addEventListener('keydown', e=>{ if(e.key==='Enter') runConcept(); });
+  $('#cptTerm').focus();
+}
+
+async function runConcept(){
+  const term = ($('#cptTerm').value || '').trim();
+  if(!term){ $('#cptResult').innerHTML = '<div class="empty-state">请先输入要对照的概念。</div>'; return; }
+  const btn = $('#cptRun'); btn.disabled = true; btn.textContent = '对照进行中…';
+  $('#cptResult').innerHTML = '<div class="empty-state">逐本书真实检索作答，请稍候…</div>';
+  try{
+    const res = await fetch('/api/concept', {method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({concept: term, libraries: selectedLibraryIds(),
+                            style: answerStyle.value || 'standard'})});
+    const d = await res.json();
+    if(!res.ok) throw new Error(d.error || `HTTP ${res.status}`);
+    const cards = (d.books||[]).map(b=>`<div class="compare-arm" ${b.covered?'':'style="border-left-color:#D98A3A"'}>
+        <div class="compare-arm-head"><b>${escapeHtml(b.library)}</b>
+          <span class="confidence ${b.covered?'supported':'insufficient'}">${b.covered?('可信度：'+escapeHtml(b.confidence||'—')):'未覆盖该概念'}</span></div>
+        <div class="compare-answer">${escapeHtml(b.covered ? (b.answer||'') : (b.note||'这本书里没有找到该概念的依据'))}</div>
+        ${(b.sources||[]).length?`<div class="compare-src">来源：${escapeHtml(b.sources.join('、'))}</div>`:''}
+      </div>`).join('');
+    const cov = d.coverage || {};
+    const missing = (cov.missing||[]).length
+      ? `<div class="unverified-note">以下教材中未找到该概念：<b>${escapeHtml(cov.missing.join('、'))}</b>。这是如实标注，不是失败。</div>` : '';
+    const shared = (d.shared_terms||[]).length
+      ? `<div class="chain-section"><h5>各书共同提到的词</h5><div class="relation-row">${escapeHtml(d.shared_terms.join('、'))}</div></div>` : '';
+    const uniq = Object.keys(d.unique_terms||{}).length
+      ? `<div class="chain-section"><h5>各书独有的词</h5>${Object.entries(d.unique_terms)
+          .map(([k,v])=>`<div class="relation-row">· <b>${escapeHtml(k)}</b>：${escapeHtml(v.join('、'))}</div>`).join('')}</div>` : '';
+    $('#cptResult').innerHTML = `${missing}
+      <div class="page-meta">实际提问：${escapeHtml(d.question_used||'')}　覆盖 ${cov.covered||0}/${cov.total||0} 本</div>
+      <div class="compare-grid">${cards}</div>${shared}${uniq}
+      <div class="prune-note">${escapeHtml(d.note||'')}</div>`;
+  }catch(e){
+    $('#cptResult').innerHTML = `<div class="unverified-note">对照失败：${escapeHtml(String(e.message||e))}</div>`;
+  }finally{ btn.disabled = false; btn.textContent = '开始对照'; }
+}
+
+function openComparePanel(){
+  openDrawer('A/B 对比', comparePanelHtml());
+  $('#cmpRun').addEventListener('click', runCompare);
+  $('#cmpQuestion').addEventListener('keydown', e=>{ if(e.key==='Enter') runCompare(); });
+  const last = [...chat.querySelectorAll('.msg.me')].pop();
+  if(last) $('#cmpQuestion').value = last.textContent.trim().slice(0,200);
+}
+
+async function openLibraryHealth(){
+  const id = (selectedLibraryIds()[0]) || activeLibraryId;
+  if(!id){ openDrawer('知识库诊断','<div class="empty-state">请先选择一个知识库。</div>'); return; }
+  openDrawer('知识库诊断', '<div class="empty-state">正在统计…</div>');
+  try{
+    const res = await fetch('/api/library/health?library_id=' + encodeURIComponent(id));
+    const d = await res.json();
+    if(!res.ok) throw new Error(d.error || `HTTP ${res.status}`);
+    const warn = (d.warnings||[]).length
+      ? `<div class="unverified-note"><b>⚠ 需要注意</b><br>${d.warnings.map(escapeHtml).join('<br>')}</div>`
+      : '<div class="prune-note">✓ 未发现明显的分块或覆盖问题。</div>';
+    const kinds = Object.entries(d.kinds||{}).map(([k,v])=>`${escapeHtml(k)} ${v}`).join(' · ');
+    $('#drawerBody').innerHTML = `
+      <div class="batch-summary">
+        <div><b>知识块总数</b><span>${d.chunks_total}</span><small>抽样 ${d.sampled} 块统计</small></div>
+        <div><b>块长中位数</b><span>${d.length.median}</span><small>目标 ${d.length.target} / 上限 ${d.length.cap}</small></div>
+        <div><b>页覆盖（全库）</b><span>${d.pages.covered||0}</span><small>${d.pages.min==null?'无页码信息':'p'+d.pages.min+' – p'+d.pages.max}</small></div>
+        <div><b>过短 / 过长块</b><span>${(d.tiny_ratio*100).toFixed(0)}% / ${(d.huge_ratio*100).toFixed(0)}%</span><small>过短难支撑作答</small></div>
+      </div>
+      ${warn}
+      <div class="lib-meta" style="margin-top:8px">内容类型：${kinds||'—'}<br>${escapeHtml(d.note||'')}</div>`;
+  }catch(e){
+    $('#drawerBody').innerHTML = `<div class="empty-state">诊断失败：${escapeHtml(String(e.message||e))}</div>`;
+  }
+}
+
+// 批量跑题：把"出题 → 跑 → 自检"接成闭环。
+// 只有人工录入的 GT 关键词才进入正式命中率；模型草拟参考答案只给辅助词面覆盖。
+async function runBatch(button){
+  const items = window.__lastQuestionSet || [];
+  if(!items.length){ button.textContent = '没有可跑的题目'; return; }
+  const controller = new AbortController();
+  const box = el('msg ai');
+  const ans = el('ans','<span class="cursor"></span> 正在批量跑题并判分…');
+  box.appendChild(ans); chat.appendChild(box); scroll();
+  const request = {type:'batch', controller, box, ansEl:ans};
+  activeRequest = request; setBusy(true);
+  try{
+    const res = await fetch('/api/batch',{method:'POST',headers:{'Content-Type':'application/json'},
+      signal:controller.signal,
+      body:JSON.stringify({items, libraries:selectedLibraryIds(), style:answerStyle.value||'standard'})});
+    const d = await res.json();
+    if(activeRequest !== request) return;
+    if(!res.ok) throw new Error(d.error || `HTTP ${res.status}`);
+    const s = d.summary || {};
+    const pct = v => v==null ? '—' : (v*100).toFixed(1)+'%';
+    const badge = v => ({hit:'✅ 命中',miss:'❌ 未命中',refused:'🛡 正确拒答',
+                         over_refused:'⚠️ 过度拒答',n_a:'— 不计分',error:'⚠️ 出错'})[v]||v;
+    ans.className='ans';
+    ans.innerHTML = `<div class="batch-summary">
+        <div><b>人工 GT 命中率</b><span>${pct(s.hit_rate)}</span><small>${s.hit||0}/${s.answerable_graded||0}</small></div>
+        <div><b>探针拒答率</b><span>${pct(s.refuse_rate)}</span><small>${s.probe_refused||0}/${s.probe_total||0}</small></div>
+        <div><b>已作答引用合法率</b><span>${pct(s.cite_ok_rate)}</span><small>${s.citation_checked||0} 题参与</small></div>
+        <div><b>自动参考词面覆盖</b><span>${pct(s.weak_overlap_rate)}</span><small>${s.weak_high||0}/${s.weak_total||0} · 辅助项</small></div>
+      </div>
+      ${s.not_graded ? `<div class="unverified-note">其中 ${s.not_graded} 题只有模型草拟参考答案，<b>未计入正式准确率</b>。词面覆盖仅供排查，不能代表语义正确。</div>`:''}
+      <div class="batch-rows">${(d.rows||[]).map((r,i)=>`
+        <div class="batch-row ${r.verdict}">
+          <div class="batch-q">${i+1}. ${escapeHtml(r.question)}</div>
+          <div class="batch-meta">${badge(r.verdict)} · ${escapeHtml(r.reason||'')}
+            ${r.weak_check?` · 自动参考覆盖 ${(Number(r.weak_check.coverage||0)*100).toFixed(0)}%（辅助）`:''}
+            ${r.confidence?' · 可信度 '+escapeHtml(r.confidence):''}</div>
+          <div class="batch-a">${escapeHtml((r.answer||'').slice(0,160))}</div>
+        </div>`).join('')}</div>
+      <div class="lib-meta" style="margin-top:8px">${escapeHtml(d.note||'')}</div>`;
+    box.insertAdjacentHTML('beforeend',
+      `<div class="meta"><span>批量跑题完成</span><span>${s.total||0} 题</span>
+       <span>耗时 ${((d.elapsed_ms||0)/1000).toFixed(1)}s</span></div>`);
+  }catch(e){
+    if(e.name==='AbortError' || activeRequest !== request) return;
+    ans.className='ans refuse'; ans.textContent='批量跑题失败：'+String(e.message||e);
+  }finally{
+    if(activeRequest===request){ activeRequest=null; setBusy(false); scroll(); qEl.focus(); }
+  }
+}
+
+// 点开一条引用 → 看该页完整原文，并标出答案实际用的是哪一块。
+// 只给片段是没法核对的：用户需要看到上下文才能判断"这句话是不是真被原文支持"。
+async function openSourceViewer(data){
+  const label = data.label || '原文';
+  openDrawer('原文核对 · ' + label, '<div class="empty-state">正在读取原文…</div>');
+  const params = new URLSearchParams({library_id: data.library || '', source: data.source || '', probe: ''});
+  if(data.loc) params.set('loc', data.loc); else params.set('page', data.page || '0');
+  if(data.probe) params.set('highlight', data.probe);
+  try{
+    const res = await fetch('/api/source?' + params.toString());
+    const d = await res.json();
+    if(!res.ok) throw new Error(d.error || `HTTP ${res.status}`);
+    const blocks = (d.blocks||[]).map(b=>`
+      <div class="source-block${b.matched?' matched':''}">
+        <div class="source-block-head">${b.matched?'✓ 答案引用的就是这一块':'同页其他内容'}
+          <span>${escapeHtml(b.label)} · ${escapeHtml(b.type)}</span></div>
+        <div class="source-block-body">${escapeHtml(b.text)}</div>
+      </div>`).join('');
+    $('#drawerBody').innerHTML =
+      `<div class="lib-meta" style="margin-bottom:8px">${escapeHtml(d.library?.name||'')} ·
+        共 ${d.total} 块，其中 ${d.matched} 块被本次回答引用</div>${blocks
+        || '<div class="empty-state">该位置没有可显示的内容。</div>'}`;
+  }catch(e){
+    $('#drawerBody').innerHTML =
+      `<div class="empty-state">读取原文失败：${escapeHtml(String(e.message||e))}</div>`;
+  }
+}
+
+// 排版后的 .ans 是块级结构，textContent 会把段落和要点粘成一行。
+// 渲染时存下的 markdown 原文才是可读的导出内容。
+function answerText(el){ return String(el.dataset.raw || el.textContent || '').trim(); }
 function conversationMarkdown(){
   const messages = [...chat.querySelectorAll('.msg')];
   if(!messages.length) return '';
@@ -1420,18 +2660,27 @@ function conversationMarkdown(){
     }
     const answer = msg.querySelector('.ans');
     if(!answer) continue;
-    parts.push('## 回答', '', answer.textContent.trim(), '');
+    // 中途停止的响应没有收到完整 done 元数据，导出时必须标出来。
+    // 不标的话，导出的记录里它和有据结论长得一模一样——这比不导出更危险。
+    if(answer.classList.contains('unverified')){
+      parts.push('## 回答（⚠ 生成中途被停止 · 未收到完整校验结果，请勿直接引用）',
+                 '', answerText(answer), '');
+      continue;
+    }
+    parts.push('## 回答', '', answerText(answer), '');
     const cites = [...msg.querySelectorAll('.cite')].map(c=>{
       const label = c.querySelector('.lb')?.textContent.trim() || '';
       const snippet = c.querySelector('.sn')?.textContent.trim() || '';
       return snippet ? `- ${label}：${snippet}` : `- ${label}`;
     }).filter(Boolean);
-    if(cites.length) parts.push('### 引用来源', '', ...cites, '');
+    if(cites.length) parts.push('### 本轮检索证据（含未被正文引用的候选）', '', ...cites, '');
     // 补充说明必须连同标注一起导出：只导第一部分会静默丢内容，
     // 不带标注地导出则更糟——读者会以为那也是教材里的。
+    // 和 .ans 同样的理由：这一段也是 renderAnswerBody 生成的块级结构，
+    // textContent 会把段落全部粘连。渲染时存下的 markdown 原文才是可导出的内容。
     const sup = msg.querySelector('.supplement-body');
-    if(sup) parts.push('### 教材之外的补充说明（模型常识 · 无出处 · 未经原文核对）',
-                       '', sup.textContent.trim(), '');
+    if(sup) parts.push('### 完整解答（含模型常识 · 未经溯源 · 不计入引用校验）',
+                       '', answerText(sup), '');
   }
   return parts.join('\n').trim() + '\n';
 }
@@ -1449,9 +2698,12 @@ async function copyText(text, button){
 
 function appendAnswerTools(box, question='', mode='ask'){
   const tools = el('answer-tools');
-  const copy = document.createElement('button');
-  copy.type='button'; copy.className='answer-tool'; copy.dataset.action='copy-answer'; copy.textContent='⧉ 复制回答';
-  tools.appendChild(copy);
+  if(mode!=='stopped'){
+    const copy = document.createElement('button');
+    copy.type='button'; copy.className='answer-tool'; copy.dataset.action='copy-answer'; copy.textContent='⧉ 复制回答';
+    tools.appendChild(copy);
+  }
+  // 'stopped' 档只留重新生成：没有完成最终核验的片段不展示、不复制、不入历史。
   if(mode==='ask' || mode==='brief' || mode==='retrieve'){
     for(const [action,label] of [['feedback-up','👍 有用'],['feedback-down','👎 待改进'],['favorite','☆ 收藏']]){
       const button=document.createElement('button');button.type='button';button.className='answer-tool';
@@ -1467,6 +2719,18 @@ function appendAnswerTools(box, question='', mode='ask'){
   box.appendChild(tools);
 }
 
+// 未收到 done 的轮次没有完整引用、证据链和可信度，因此不展示或保存任何答案片段。
+function finishInterrupted(box, ansEl, question, headline, metaText){
+  ansEl.className = 'ans';
+  ansEl.textContent = '（本轮生成未完成，未展示或保存答案）';
+  box.insertAdjacentHTML('beforeend',
+    '<div class="unverified-note"><b>⚠ 未形成可交付答案</b><br>' + headline
+    + '为避免把未经完整校验的片段误当成结论，本轮未展示、未复制，也未写入会话历史。'
+    + '需要完整可核对的答案请点「重新生成」。</div>');
+  appendAnswerTools(box, question, 'stopped');
+  box.insertAdjacentHTML('beforeend', '<div class="meta"><span>' + metaText + '</span></div>');
+}
+
 function stopActiveRequest(){
   if(!activeRequest) return;
   const req = activeRequest;
@@ -1475,12 +2739,33 @@ function stopActiveRequest(){
     if(req.controller) req.controller.abort();
     if(req.es) req.es.close();
     if(req.evBox && req.evBox.isConnected) req.evBox.remove();
-    const text = req.getText().trim();
-    req.ansEl.className = 'ans';
-    req.ansEl.textContent = text || '（已停止生成）';
-    req.box.insertAdjacentHTML('beforeend','<div class="meta"><span>⏹ 已手动停止</span></div>');
-    if(text) appendAnswerTools(req.box, req.question, 'ask');
+    if(req.supplementWait && req.supplementWait.isConnected) req.supplementWait.remove();
+    finishInterrupted(req.box, req.ansEl, req.question,
+                      '这轮回答在生成中途被你停止。', '⏹ 已手动停止 · 未交付');
   }else if(req.type === 'brief'){
+    req.controller.abort();
+    if(req.ansEl){
+      req.ansEl.className = 'ans';
+      req.ansEl.textContent = '（已停止等待简报；服务端当前的模型调用可能仍会完成）';
+    }
+    req.box.insertAdjacentHTML('beforeend','<div class="meta"><span>⏹ 已停止等待</span></div>');
+  }else if(req.type === 'batch'){
+    req.controller.abort();
+    if(req.ansEl){
+      req.ansEl.className='ans';
+      req.ansEl.textContent='（已停止等待批量自检；服务端当前正在处理的单题可能仍会完成）';
+    }
+    req.box.insertAdjacentHTML('beforeend','<div class="meta"><span>⏹ 已停止等待</span></div>');
+  }else if(req.type === 'questions'){
+    req.controller.abort();
+    if(req.ansEl){
+      req.ansEl.className = 'ans';
+      req.ansEl.textContent = '（已停止生成测试题）';
+    }
+    req.box.insertAdjacentHTML('beforeend','<div class="meta"><span>⏹ 已手动停止</span></div>');
+  }else if(req.type === 'regression'){
+    // 回归重跑活在抽屉里，没有 box/ansEl；漏掉这一支的话 Esc 只会把 activeRequest
+    // 置空而不真的 abort，取消键看着有反应、实际没停。收尾提示由发起方的 catch 负责。
     req.controller.abort();
   }
   setBusy(false); scroll(); qEl.focus();
@@ -1495,7 +2780,8 @@ async function retrieveOnly(q){
   const t0=Date.now();
   try{
     const res=await fetch('/api/retrieve',{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({question:q,libraries:selectedLibraryIds(),limit:8})}),data=await res.json();
+      body:JSON.stringify({question:q,libraries:selectedLibraryIds(),limit:8,
+        page_scope:currentPageScope(),hybrid:hybridOn})}),data=await res.json();
     if(!res.ok)throw new Error(data.error||'检索失败');
     ans.innerHTML=`<div class="retrieval-banner">仅检索模式：返回原文证据，不调用大模型生成答案。</div>${renderCites(data.sources)}`;
     box.insertAdjacentHTML('beforeend',`<div class="meta"><span>意图：${escapeHtml(data.intent?.name||'事实查询')}</span>
@@ -1519,13 +2805,22 @@ function ask(){
   const box = el('msg ai');
   const evBox = el('ev', '<span>🔍 正在检索知识库…</span>');
   const ansEl = el('ans'); ansEl.innerHTML = '<span class="cursor"></span>';
-  box.appendChild(evBox); box.appendChild(ansEl);
+  // 「完整解答」排在「教材依据」之前，但它在服务端是最后生成的
+  // （必须等所有溯源判定算完，确保它无法影响任何指标）。所以这里先占位。
+  const supEl = document.createElement('div');
+  supEl.className = 'supplement-slot';
+  const groundedHeadEl = document.createElement('div');
+  groundedHeadEl.innerHTML = groundedHead(false);
+  box.appendChild(evBox); box.appendChild(supEl);
+  box.appendChild(groundedHeadEl); box.appendChild(ansEl);
+  // 不用挂到 request 上：request 是下面才声明的 const，这里读会踩 TDZ；
+  // 而 onStreamEvent 是同作用域闭包，直接就能拿到这两个节点。
   chat.appendChild(box); scroll();
 
   let buf = '';
   const mode = answerMode.value || 'auto';
   const controller = new AbortController();
-  const request = {type:'stream', controller, box, evBox, ansEl, question:q, getText:()=>buf, finished:false};
+  const request = {type:'stream', controller, box, evBox, ansEl, question:q, finished:false};
   activeRequest = request; setBusy(true);
 
   function onStreamEvent(name, d){
@@ -1539,16 +2834,30 @@ function ask(){
       if(d.tag === 'escalated' || d.tag === 'final'){
         buf=''; ansEl.innerHTML='<span class="cursor"></span>';
       }
-    }else if(name === 'delta'){
+    }else if(name === 'verified_delta'){
+      // 只重放最终核验后的文字；模型原始草稿从不发送到浏览器。
+      if(!request.verifiedStarted){
+        request.verifiedStarted = true; buf='';
+        ansEl.className = 'ans formatted';
+        ansEl.innerHTML = '<span class="cursor"></span>';
+      }
       buf += d.text || '';
-      ansEl.innerHTML = escapeHtml(buf) + '<span class="cursor"></span>';
+      // 边流边排版。原来流式段用纯 escapeHtml，生成过程中会露出字面 `**从功能上看**`，
+      // 答完才突然变粗体——演示时看得一清二楚。重放的本来就是核验后的最终文本，
+      // 直接走同一个渲染器即可；未闭合的 `**` 匹配不上，会照原样显示到闭合为止。
+      ansEl.innerHTML = renderAnswerBody(buf);
+      const tail = ansEl.lastElementChild;
+      const caret = document.createElement('span');
+      caret.className = 'cursor';
+      (tail && tail.tagName !== 'UL' ? tail : ansEl).appendChild(caret);  // 光标贴在末段行内
       scroll();
     }else if(name === 'supplement_start'){
       const w = el('evidence-wait');
       w.innerHTML = `<span>📖 ${escapeHtml(d.label||'正在补充背景说明…')}</span>`;
       box.appendChild(w); scroll(); request.supplementWait = w;
     }else if(name === 'escalate'){
-      const w = el('ev esc', `⚡ 动态预算升配 ${d.from} → ${d.to}：${d.reason}`);
+      const w = el('ev esc');
+      w.textContent = `⚡ 动态预算升配 ${d.from} → ${d.to}：${d.reason}`;
       box.insertBefore(w, ansEl); scroll();
     }else if(name === 'error'){
       throw new Error(d.msg || '连接中断');
@@ -1556,8 +2865,15 @@ function ask(){
       request.finished = true;
       evBox.remove();
       if(request.supplementWait) request.supplementWait.remove();
-      ansEl.className = 'ans' + (d.abstained ? ' refuse' : '');
-      ansEl.textContent = d.abstained ? '知识库中没有找到足够依据，已拒绝回答。' : (d.answer || '(空)');
+      // 拒答文案保持纯文本；只有正文走排版渲染（转义在 renderAnswerBody 内部先做）
+      if(d.abstained){
+        ansEl.className = 'ans refuse';
+        ansEl.textContent = '知识库中没有找到足够依据，已拒绝回答。';
+      }else{
+        ansEl.className = 'ans formatted';
+        ansEl.innerHTML = renderAnswerBody(d.answer || '(空)');
+        ansEl.dataset.raw = d.answer || '';   // 排版后 textContent 会把段落粘成一坨，导出取这份
+      }
       if(d.abstained){
         box.insertAdjacentHTML('beforeend',
           '<div class="refusal-note"><code>[NO REFERENCE FOUND]</code><br>已检查检索候选内容，但没有足够证据支持作答，因此第一部分不给结论。'
@@ -1566,8 +2882,33 @@ function ask(){
         box.insertAdjacentHTML('beforeend', renderCites(d.sources));
         box.insertAdjacentHTML('beforeend', renderCiteCheck(d.cite_check));
       }
+      // 你选了 A+B 但 B 已失效时必须说出来：不说的话，答案看起来完全正常，
+      // 你无从知道它其实只查了 A。（全部失效会直接报错，不会走到这里。）
+      if((d.dropped_libraries||[]).length){
+        box.insertAdjacentHTML('beforeend',
+          '<div class="unverified-note"><b>⚠ 部分知识库未参与检索</b><br>'
+          + escapeHtml(d.dropped_libraries.join('、'))
+          + ' 已删除或尚未建好，本次回答<b>只依据其余知识库</b>。</div>');
+      }
+      // 告知最终核验裁掉了多少条，而不向用户暴露被删除的原始草稿。
+      const audit = (d.agent||{}).support_audit || {};
+      if(audit.triggered && Number(audit.pruned||0) > 0){
+        box.insertAdjacentHTML('beforeend',
+          `<div class="prune-note">✓ 逐句核验已移除 <b>${Number(audit.pruned)}</b> 条教材未能支持的结论`
+          + (Number(audit.orphaned||0)
+              ? `；另有 ${Number(audit.orphaned)} 条因先行词被移除而失去指代对象，一并删去（不替它补主语）` : '')
+          + (Number(audit.unknown||0) ? `，另有 ${Number(audit.unknown)} 条无法判定已保留并标记需复核` : '')
+          + `。上方为核验后的结果。</div>`);
+      }
       box.insertAdjacentHTML('beforeend', renderAgentSummary(d.agent));
-      box.insertAdjacentHTML('beforeend', renderSupplement(d.supplement));
+      box.insertAdjacentHTML('beforeend', renderDiagnosis(d.agent));
+      // 填进上方占位；没有补充段时把占位和段头一起撤掉，免得留空壳
+      if(d.supplement && d.supplement.text){
+        supEl.innerHTML = renderSupplement(d.supplement);
+        groundedHeadEl.innerHTML = groundedHead(!!d.abstained);
+      }else{
+        supEl.remove(); groundedHeadEl.remove();
+      }
       const tag = d.escalated ? ' · 动态升配' : '';
       const confidenceState = d.agent?.confidence?.state || (d.abstained ? 'insufficient' : 'partial');
       const st = confidenceState === 'supported' ? '✅ 有证据支持'
@@ -1589,7 +2930,8 @@ function ask(){
         method:'POST', headers:{'Content-Type':'application/json'}, signal:controller.signal,
         body:JSON.stringify({question:q, mode, history:requestHistory(), libraries:selectedLibraryIds(),
           style:answerStyle.value||'standard', instruction:workspaceInstruction,
-          extend:!!(extendAnswer && extendAnswer.checked)})
+          extend:!!(extendAnswer && extendAnswer.checked),
+          page_scope: currentPageScope(), hybrid: hybridOn})
       });
       if(!response.ok){
         let message=`请求失败（${response.status}）`;
@@ -1620,7 +2962,11 @@ function ask(){
     }catch(e){
       if(e.name==='AbortError' || activeRequest!==request) return;
       evBox.className='ev'; evBox.innerHTML=`<span style="color:#C0392B">❌ ${escapeHtml(e.message||'连接中断')}</span>`;
-      ansEl.innerHTML=buf?escapeHtml(buf):''; activeRequest=null; setBusy(false);
+      if(request.supplementWait && request.supplementWait.isConnected) request.supplementWait.remove();
+      finishInterrupted(box, ansEl, q,
+                        '这轮回答因「' + escapeHtml(e.message||'连接中断') + '」而中断。',
+                        '❌ 生成中断 · 未交付');
+      activeRequest=null; setBusy(false); scroll();
     }
   })();
 }
@@ -1650,10 +2996,13 @@ async function briefAsk(){
       method:'POST', headers:{'Content-Type':'application/json'},
       body: JSON.stringify({ topic: q, libraries: selectedLibraryIds() }), signal: controller.signal
     })).json();
+    if(activeRequest !== request) return;
     if(r.error) throw new Error(r.error);
-    ansEl.className = 'ans' + (r.abstained ? ' refuse' : '');
+    // 简报与正文同源、同信任级别，走同一个「先转义再按白名单还原」的渲染器
+    ansEl.className = 'ans' + (r.abstained ? ' refuse' : ' formatted');
     ansEl.innerHTML = r.abstained ? '知识库中没有找到足够依据，已拒绝生成简报。'
-      : escapeHtml(r.answer || '(\u7A7A)').replace(/\n/g,'<br>');
+      : renderAnswerBody(r.answer || '(空)');
+    if(!r.abstained) ansEl.dataset.raw = r.answer || '';
     if(r.abstained){
       box.insertAdjacentHTML('beforeend','<div class="refusal-note"><code>[NO REFERENCE FOUND]</code><br>检索材料不足或引用未通过校验，因此不把无依据内容包装成简报。</div>');
     }else{
@@ -1671,12 +3020,13 @@ async function briefAsk(){
       sources:r.sources||[],cite_check:r.cite_check||null,agent:r.agent||null,supplement:r.supplement||null});
     updateMetrics({queries:1,tokens:r.tokens||0,totalMs:ms,refusals:r.abstained?1:0});
   }catch(e){
+    if(e.name === 'AbortError' || activeRequest !== request) return;
     ansEl.className = 'ans refuse';
-    ansEl.innerHTML = e.name === 'AbortError' ? '（已停止生成）'
-      : '\u274C \u751F\u6210\u5931\u8D25\uFF1A' + escapeHtml(String(e.message||e));
+    ansEl.innerHTML = '\u274C \u751F\u6210\u5931\u8D25\uFF1A' + escapeHtml(String(e.message||e));
   }finally{
-    if(activeRequest === request) activeRequest = null;
-    setBusy(false); scroll(); qEl.focus();
+    if(activeRequest === request){
+      activeRequest = null; setBusy(false); scroll(); qEl.focus();
+    }
   }
 }
 briefBtn.onclick = briefAsk;
@@ -1691,12 +3041,22 @@ async function generateQuestions(){
   const box=el('msg ai');
   const ans=el('ans'); ans.innerHTML='<span class="cursor"></span> 正在提炼问题、预期答案和出处…';
   box.appendChild(ans); chat.appendChild(box); scroll();
+  // 出题要跑一次生成 + 探针双重校验，可能十几秒。接进 activeRequest，
+  // 停止按钮才管用；否则用户只能干等或刷新页面。
+  const controller = new AbortController();
+  const request = {type:'questions', controller, box, ansEl:ans};
+  // 顺序要紧：停止按钮的显示条件是 busy && activeRequest 同时成立。
+  // 先 setBusy 再赋值的话，按钮状态在 activeRequest 还是 null 时就渲染完了，
+  // 结果是"忙着但停不掉"。ask() 里也是先赋值后 setBusy。
+  activeRequest = request; setBusy(true);
   try{
     const response=await fetch('/api/questions',{
-      method:'POST',headers:{'Content-Type':'application/json'},
+      method:'POST',headers:{'Content-Type':'application/json'},signal:controller.signal,
       body:JSON.stringify({topic,count:3,libraries:selectedLibraryIds()})
     });
+    if(activeRequest !== request) return;   // 期间被停止，结果丢弃
     const data=await response.json();
+    if(activeRequest !== request) return;   // JSON 解析期间也可能被停止
     if(!response.ok || data.error) throw new Error(data.error||`HTTP ${response.status}`);
     ans.className='ans';
     ans.innerHTML='<div class="question-set">'+(data.questions||[]).map((item,index)=>{
@@ -1706,18 +3066,29 @@ async function generateQuestions(){
         `<span class="claim-chip ${probe?'warn':'ok'}">${probe?'不可答（应拒答）':'可答'}</span>`,
         `<span class="claim-chip mute">${item.difficulty==='advanced'?'进阶':'基础'}</span>`,
       ].concat((item.task_tags||[]).map(t=>`<span class="claim-chip mute">${escapeHtml(t)}</span>`));
-      return `<div class="generated-question" style="${probe?'border-left-color:#D98A3A':''}">
+      return `<div class="generated-question" style="${probe?'--probe-color:#D98A3A;border-left-color:var(--probe-color)':''}">
        <div class="q-title">${index+1}. ${escapeHtml(item.question)}</div>
        <div class="claim-meta">${chips.join('')}</div>
-       <div class="q-answer"><b>预期答案：</b>${escapeHtml(item.expected_answer)}</div>
+       <div class="quiz-answer"><div class="q-answer"><b>模型草拟参考答案（待人工确认，非 GT）：</b>${escapeHtml(item.expected_answer)}</div>
        <div class="q-source">${probe
           ? '构造依据：'+escapeHtml(item.probe_basis||'')
-          : '出处：'+escapeHtml(item.source||'—')+' · 预期引用：'+escapeHtml(item.expected_citation||'—')}</div></div>`;
+          : '出处：'+escapeHtml(item.source||'—')+' · 预期引用：'+escapeHtml(item.expected_citation||'—')}</div></div>
+       <button type="button" class="answer-tool quiz-reveal" data-action="reveal-question" aria-expanded="false">查看参考答案与出处</button></div>`;
     }).join('')+'</div>';
     box.insertAdjacentHTML('beforeend',`<div class="meta"><span>已生成 ${(data.questions||[]).length} 题</span>
       <span>可答 ${data.answerable_count||0} · 探针 ${data.probe_count||0}</span>
       <span>${escapeHtml((data.libraries||[]).map(x=>x.name).join(' + '))}</span>
       <span>耗时 ${((data.elapsed_ms||0)/1000).toFixed(1)}s</span></div>`);
+    // 自动参考答案只用于辅助词面自检；没有人工订正关键词时不计入正式准确率。
+    window.__lastQuestionSet = (data.questions||[]).map(x=>({
+      question: x.question, answerable: x.answerable !== false,
+      expected_answer: x.expected_answer || '',
+      keywords: Array.isArray(x.keywords) ? x.keywords : []
+    }));
+    box.insertAdjacentHTML('beforeend',
+      `<div class="batch-bar"><button type="button" class="answer-tool" data-action="toggle-quiz">◉ 进入自测（逐题揭晓）</button>
+       <button type="button" class="answer-tool" data-action="run-batch">▶ 用这批题做自动回归自检</button>
+       <span>共 ${(data.questions||[]).length} 题（可答 ${data.answerable_count||0} · 探针 ${data.probe_count||0}）· 自动参考答案不计正式准确率</span></div>`);
     appendAnswerTools(box,'','questions');
     const readableQuestions=(data.questions||[]).map((item,index)=>{
       const probe=item.answerable===false;
@@ -1727,18 +3098,30 @@ async function generateQuestions(){
     rememberTurn(topic?`生成测试题：${topic}`:'依据当前资料生成测试题',{
       answer:readableQuestions||'未生成题目',sources:data.sources||[],cite_check:data.cite_check||null,agent:data.agent||null});
     updateMetrics({queries:1,totalMs:data.elapsed_ms||0});
-  }catch(e){ ans.className='ans refuse'; ans.textContent='生成失败：'+String(e.message||e); }
-  finally{ setBusy(false); scroll(); qEl.focus(); }
+  }catch(e){
+    if(e.name === 'AbortError' || activeRequest !== request) return;  // 用户主动停止，不报错
+    ans.className='ans refuse'; ans.textContent='生成失败：'+String(e.message||e);
+  }
+  finally{
+    if(activeRequest === request){
+      activeRequest = null; setBusy(false); scroll(); qEl.focus();
+    }
+  }
 }
 questionBtn.onclick=generateQuestions;
+// e.currentTarget 只在事件派发期间有效，回调返回后浏览器就把它置为 null。
+// 原来在 setTimeout 里再读它，1300ms 后必抛 TypeError，文案永久卡在「暂无对话」。
+// 先把节点取出来存成常量，定时器闭包持有的就是元素本身。
 $('#copyChat').addEventListener('click', e=>{
+  const btn = e.currentTarget;
   const text = conversationMarkdown();
-  if(!text){ e.currentTarget.textContent='暂无对话'; setTimeout(()=>e.currentTarget.textContent='⧉ 复制对话',1300); return; }
-  copyText(text, e.currentTarget);
+  if(!text){ btn.textContent='暂无对话'; setTimeout(()=>{ btn.textContent='⧉ 复制对话'; },1300); return; }
+  copyText(text, btn);
 });
 $('#exportChat').addEventListener('click', e=>{
+  const btn = e.currentTarget;
   const text = conversationMarkdown();
-  if(!text){ e.currentTarget.textContent='暂无对话'; setTimeout(()=>e.currentTarget.textContent='↓ 导出对话',1300); return; }
+  if(!text){ btn.textContent='暂无对话'; setTimeout(()=>{ btn.textContent='↓ 导出对话'; },1300); return; }
   const blob = new Blob([text], {type:'text/markdown;charset=utf-8'});
   const url = URL.createObjectURL(blob), a = document.createElement('a');
   const stamp = new Date().toISOString().slice(0,19).replace(/[:T]/g,'-');
@@ -1748,13 +3131,16 @@ $('#exportChat').addEventListener('click', e=>{
 // 上报到服务端，失败不打断本地交互——反馈本身不该因为一次网络抖动就丢掉用户的操作。
 function reportFeedback(kind, button){
   const msg = button.closest('.msg.ai');
+  const ansEl = msg?.querySelector('.ans');
   const payload = {
     kind,
     question: button.dataset.question || '',
-    answer: msg?.querySelector('.ans')?.textContent.trim() || '',
+    // 反馈记录会被 /api/feedback/rerun 拿来和重跑结果逐字比对；
+    // 存被压平的文本会让每次重跑都报「答案已变化」，对照就失去意义。
+    answer: ansEl ? answerText(ansEl) : '',
     libraries: selectedLibraryIds(),
     confidence: msg?.querySelector('.confidence')?.textContent.replace('可信度：','').trim() || '',
-    abstained: /NO REFERENCE FOUND/i.test(msg?.querySelector('.ans')?.textContent || ''),
+    abstained: /NO REFERENCE FOUND/i.test(ansEl ? answerText(ansEl) : ''),
   };
   fetch('/api/feedback', {method:'POST', headers:{'Content-Type':'application/json'},
                           body: JSON.stringify(payload)}).catch(()=>{});
@@ -1763,8 +3149,45 @@ document.addEventListener('click', e=>{
   const button = e.target.closest('[data-action]');
   if(!button) return;
   if(button.dataset.action === 'copy-answer'){
-    const answer = button.closest('.msg.ai')?.querySelector('.ans')?.textContent.trim() || '';
-    copyText(answer, button); return;
+    // 必须走 answerText：.ans 排版后是 <p>/<ul> 结构，textContent 不插换行，
+    // 直接取会把段落和要点粘成一行，和「复制对话」按钮的结果对不上。
+    const el = button.closest('.msg.ai')?.querySelector('.ans');
+    copyText(el ? answerText(el) : '', button); return;
+  }
+  if(button.dataset.action === 'open-source'){
+    openSourceViewer(button.dataset); return;
+  }
+  if(button.dataset.action === 'toggle-quiz'){
+    const set=button.closest('.msg.ai')?.querySelector('.question-set');
+    if(!set) return;
+    const active=set.classList.toggle('quiz-mode');
+    set.querySelectorAll('.generated-question').forEach(card=>card.classList.remove('revealed'));
+    set.querySelectorAll('[data-action="reveal-question"]').forEach(reveal=>{
+      reveal.setAttribute('aria-expanded','false');
+      reveal.textContent='查看参考答案与出处';
+    });
+    button.textContent=active?'◉ 退出自测（显示全部）':'◉ 进入自测（逐题揭晓）';
+    return;
+  }
+  if(button.dataset.action === 'reveal-question'){
+    const card=button.closest('.generated-question');
+    if(!card) return;
+    const revealed=card.classList.toggle('revealed');
+    button.setAttribute('aria-expanded',revealed?'true':'false');
+    button.textContent=revealed?'收起参考答案':'查看参考答案与出处';
+    return;
+  }
+  if(button.dataset.action === 'run-batch' && !busy){ runBatch(button); return; }
+  if(button.dataset.action === 'clear-flag'){ clearFlag(button.dataset.flag); return; }
+  if(button.dataset.action === 'fix'){
+    const q = button.closest('.msg.ai')?.previousElementSibling?.textContent?.trim() || '';
+    applyFix(button.dataset.fix, q);
+    return;
+  }
+  if(button.dataset.action === 'open-page'){
+    openSourcePage(button.dataset.library, button.dataset.page,
+                   button.dataset.source || '', button.dataset.probe || '', button.dataset.label || '');
+    return;
   }
   if(button.dataset.action === 'toggle-chain'){
     const body = document.getElementById(button.dataset.target);
@@ -1785,7 +3208,9 @@ document.addEventListener('click', e=>{
     button.classList.add('feedback-active');button.textContent=value==='useful'?'✓ 已标记有用':'✓ 已记录待改进';return;
   }
   if(button.dataset.action === 'favorite'){
-    const msg=button.closest('.msg.ai'),answer=msg?.querySelector('.ans')?.textContent.trim()||'';
+    // 收藏也要存 markdown 原文：会话记录抽屉会把它原样显示，压平后没法看
+    const msg=button.closest('.msg.ai'),ansEl=msg?.querySelector('.ans');
+    const answer=ansEl?answerText(ansEl):'';
     const list=storageGet('aitic-favorites',[]);list.unshift({time:Date.now(),question:button.dataset.question||'',answer});
     storageSet('aitic-favorites',list.slice(0,30));button.classList.add('favorite-active');button.textContent='★ 已收藏';return;
   }
@@ -1807,12 +3232,14 @@ document.addEventListener('keydown',e=>{
   if((e.ctrlKey||e.metaKey)&&e.shiftKey&&e.key.toLowerCase()==='k'){e.preventDefault();openChunkBrowser();return;}
   if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();qEl.focus();return;}
   if(e.key==='Escape'){
-    if($('#drawerShade').classList.contains('open')) closeDrawer();
+    if(!$('#sideNavMoreMenu').hidden){ closeMoreMenu(); $('#navMore').focus(); }
+    else if($('#drawerShade').classList.contains('open')) closeDrawer();
     else if(document.body.classList.contains('sidebar-open')) closeSidebar();
     else if(activeRequest) stopActiveRequest();
   }
 });
 resizeComposer();
+renderActiveFlags();   // 首屏就要反映持久化下来的开关状态
 qEl.focus();
 </script>
 </body>
