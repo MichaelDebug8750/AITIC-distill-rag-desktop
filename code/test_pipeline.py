@@ -5094,6 +5094,46 @@ class TestDeepAuditRegressions20260816:
 
 
 @needs_desktop_backend
+class TestDesktopEvidencePanelIsNotCalledCitations:
+    """证据面板列的是检索候选，不能叫"引用来源"。
+
+    ``webui._sources_from`` 遍历 ``packed_idx``——**打包进模型上下文的全部块**——
+    完全不按"答案是否引用过"过滤。桌面线现测 8 题中 5 题（62%）的面板含正文
+    从未引用的卡片。把它标成"引用来源"，等于让界面替答案认领它没引用的证据，
+    与"每句话可溯源"的产品口径自相矛盾。网页端已改过同一处文案并留了守卫，
+    桌面端此前没有继承，这里补上。
+    """
+
+    def _read_main_window(self):
+        path = os.path.join(os.path.dirname(_HERE), "desktop_app", "main_window.py")
+        with open(path, encoding="utf-8") as handle:
+            return handle.read()
+
+    def _visible_labels(self):
+        """只取真正会显示给用户的字符串：表头与 QLabel 的字面量参数。
+
+        不能对整份源码做子串查找——解释"为什么不能叫引用来源"的注释本身
+        就含这个词，会把守卫变成永远失败的假警报。
+        """
+        source = self._read_main_window()
+        labels = []
+        for call in re.findall(r"setHeaderLabels\(\[(.*?)\]\)", source, re.S):
+            labels += re.findall(r'"([^"]*)"', call)
+        labels += re.findall(r'QLabel\("([^"]*)"\)', source)
+        return labels
+
+    def test_panel_does_not_claim_the_cards_are_citations(self):
+        labels = self._visible_labels()
+        assert labels, "没解析到任何界面文案，守卫本身失效了"
+        for bad in ("引用来源", "引用与证据片段", "引用来源与证据片段"):
+            assert bad not in labels, "界面仍把检索候选标成 %r" % bad
+
+    def test_panel_says_what_the_cards_actually_are(self):
+        source = self._read_main_window()
+        assert "本轮检索证据" in source
+        assert "含未被正文引用的候选块" in source,             "富界面必须显式说明面板含未被正文引用的候选，不能只靠表头暗示"
+
+
 class TestDesktopOllamaLifecycle:
     """The packaged Ollama service must not leak llama-server children."""
 
