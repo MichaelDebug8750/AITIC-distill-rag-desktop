@@ -2329,8 +2329,13 @@ def _unnamed_explicit_term_issue(question, packed):
     The candidate prompt requires the model not to invent a term, but prompt-only
     enforcement can fail (for example, turning ``self-awareness`` into the unseen
     phrase ``Objective self-awareness``).  This check uses the exact adopted evidence
-    snapshot and adds no model sampling.  It remains candidate-only until the paired
-    evaluation is complete.
+    snapshot and adds no model sampling.
+
+    The paired evaluation is now complete and did not support promoting it: at
+    n=1007 against a blank arm the net was -3, and "Define Objective
+    self-awareness." -- the very example above -- turned from a correct refusal
+    into a fabrication with the guard enabled.  It stays candidate-only; see the
+    _TERM_DIRECTNESS definition for the full accounting.
     """
     if not _TERM_DIRECTNESS:
         return None
@@ -2560,11 +2565,32 @@ def _response_preference(style="standard", instruction=""):
 _VERIFY_KEEP = os.environ.get("AITIC_VERIFY_KEEP", "0").strip().lower() in ("1", "true", "on")
 # English full-run failures showed two related defects: some answers switched
 # to Chinese, and some description-style questions explained a concept without
-# naming its exact English term.  The adjacent controls passed before promotion:
-# failures 8 -> 14 hits, existing-hit control unchanged at 16, and out-of-library
-# fabrications 3 -> 1.  Keep the environment switch so the prior arm remains
-# reproducible, but ship the evidence-preserving rule enabled by default.
-_TERM_DIRECTNESS = os.environ.get("AITIC_TERM_DIRECTNESS", "1").strip().lower() in (
+# naming its exact English term.  A 40-question pilot on then-failing rows looked
+# convincing (8 -> 14 hits, existing-hit control unchanged at 16, out-of-library
+# fabrications 3 -> 1), and the rule shipped enabled on that basis.
+#
+# The full English run then contradicted the pilot.  Paired on (book, question)
+# against a same-code blank arm, n=1007, every row matched:
+#     hits   537 -> 532    (32 gained, 37 lost)
+#     fabs    17 ->  16    (4 fixed, but 3 newly introduced)
+#     net = -5 + 2*(+1) = -3, with 94/1007 = 9.3% of rows flipping either way
+# The pilot's +6 came entirely from the 40 rows it was selected on, and that
+# slice never had a blank arm; at full scale the same change is net negative.
+#
+# Two pre-registered rules both say revert:
+#   - PLAN_weekend.md fixes the acceptance gate at net > 3N against every blank
+#     arm.  A negative net cannot clear it for any positive N, so this fails
+#     without having to settle the exact noise figure first.
+#   - CODEX_CHECKPOINT_20260818.md says roll back on any out-of-library safety
+#     regression.  Three previously-correct refusals became fabrications, one of
+#     them "Define Objective self-awareness." -- the exact failure mode
+#     _unnamed_explicit_term_issue was written to prevent.
+#
+# So this returns to candidate-only: off by default, switch kept so both arms
+# stay reproducible.  Evidence lives in docs/全量跑分_20260812/ as
+# desktop_v6_blank_en_20260819_rows.jsonl (blank arm) and
+# desktop_term_directness_v6_en_20260819_rows.jsonl (candidate arm).
+_TERM_DIRECTNESS = os.environ.get("AITIC_TERM_DIRECTNESS", "0").strip().lower() in (
     "1", "true", "on")
 
 

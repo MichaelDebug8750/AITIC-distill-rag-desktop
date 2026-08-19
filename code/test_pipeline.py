@@ -3966,9 +3966,18 @@ class TestLaterRoundNeverDegrades:
 class TestAgentAnswerLanguage:
     """含英文术语的中文问题仍须用中文回答，并由 Agent 代码侧复核。"""
 
-    def test_term_directness_is_the_shipped_default_but_remains_switchable(self):
+    def test_term_directness_stays_candidate_only_but_remains_switchable(self):
+        """默认必须是关闭。
+
+        这条开关一度按 40 题试点的 +6 命中提升上线为默认开启，随后 n=1007
+        全量配对（对同代码空跑臂）测得净值 -3，并新增 3 条库外编造。
+        PLAN_weekend.md 的采纳判据是"净值 > 3N 且两个空跑臂都要过"，负净值
+        在任何正噪声下都过不了；CODEX_CHECKPOINT_20260818.md 又写明"任一
+        库外安全恶化立即回退"。两条判据都指向关闭，故在此锁死默认值，
+        防止再次被小样本试点推上线。
+        """
         source = _read_webui_source()
-        assert 'os.environ.get("AITIC_TERM_DIRECTNESS", "1")' in source
+        assert 'os.environ.get("AITIC_TERM_DIRECTNESS", "0")' in source
 
     def test_mixed_chinese_question_gets_an_explicit_chinese_rule(self):
         from webui import _answer_language_rule
