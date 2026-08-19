@@ -93,12 +93,46 @@ def _now_text():
     return time.strftime("%Y-%m-%d %H:%M:%S")
 
 
+_OLLAMA_VERSION_TTL = 30.0
+_ollama_version_cache = {"at": 0.0, "value": None}
+
+
+def _ollama_server_version():
+    """Ollama **服务端**版本。
+
+    ``packages["ollama"]`` 记的是 Python 客户端包，与服务端各自独立升级。
+    v6 事故（模糊题掉约 30pp，症状是只吐 ``[p.955]`` 不写正文）的真因正是
+    服务端 0.31.1 → 0.32.3，而当时的清单里只有客户端版本——**肇事者一格都没记**，
+    排查因此绕了很久。查一次 ``/api/version`` 就能补上这一格。
+
+    取不到时返回 ``"unreachable"``：清单缺一格可以接受，跑分因为记录版本而中断不行。
+    30 秒 TTL 是折中——``/api/status`` 会被前端反复轮询，不能每次都发请求；
+    但缓存又不能长到让清单的起止两次记录看不出中途换过服务端，
+    而全量跑分以小时计，30 秒远小于它。
+    """
+    now = time.time()
+    if (_ollama_version_cache["value"] is not None
+            and now - _ollama_version_cache["at"] < _OLLAMA_VERSION_TTL):
+        return _ollama_version_cache["value"]
+    value = "unreachable"
+    try:
+        import urllib.request
+        with urllib.request.urlopen(M._ollama_host() + "/api/version", timeout=2) as resp:
+            value = str(json.loads(resp.read().decode("utf-8")).get("version") or "unknown")
+    except Exception:
+        value = "unreachable"
+    _ollama_version_cache.update({"at": now, "value": value})
+    return value
+
+
 def _runtime_info():
     """返回当前**实际**运行时，供跑分产物与故障排查自证。"""
+    server = _ollama_server_version()
     try:
         from importlib.metadata import PackageNotFoundError, version
     except ImportError:  # pragma: no cover - 项目支持的 Python 版本都有此模块
-        return {"python": sys.version.split()[0], "packages": {}}
+        return {"python": sys.version.split()[0], "packages": {},
+                "ollama_server": server}
     packages = {}
     for label, distribution in (
             ("fastapi", "fastapi"), ("uvicorn", "uvicorn"), ("pymupdf", "pymupdf"),
@@ -108,7 +142,9 @@ def _runtime_info():
             packages[label] = version(distribution)
         except PackageNotFoundError:
             packages[label] = "missing"
-    return {"python": sys.version.split()[0], "packages": packages}
+    # ollama_server 与 packages["ollama"] 是两件事，别再混用：前者是服务端，后者是客户端库。
+    return {"python": sys.version.split()[0], "packages": packages,
+            "ollama_server": server}
 
 
 def _registry_default():
@@ -2421,8 +2457,12 @@ def _enforce_final_directness(question, answer, packed_idx, metas, packed,
         return answer, cite_check, claims, support_audit, directness
     reason = "最终裁剪后答案不完整：%s" % directness.get("detail", "正面性校验失败")
     refused = _NO_REFERENCE
+    # ``refused_by`` 必须在这里落下来。下面返回的 directness 是**在拒答文本上重算**的，
+    # 而拒答走 is_abstain 的早退分支，issues 会变成空列表——触发的守卫代码到此就丢了。
+    # 丢了之后 _agent_payload 只看得到 is_abstain，会把"守卫拒答"写成"检索不到证据"，
+    # 于是评测日志与界面都指向错误的原因。v6 事故的教训正是归因错一次就白查一整天。
     audit = dict(support_audit or {}, triggered=True, state="refused", reason=reason,
-                 final_directness_refused=True)
+                 final_directness_refused=True, refused_by=sorted(hit))
     return (refused, _verify_citations(refused, packed_idx, metas), [], audit,
             _answer_directness(question, refused, []))
 
@@ -3405,7 +3445,16 @@ def _agent_payload(answer, cite_check, sources, rounds, mode, history_used,
                                      rounds, libraries, directness, support_audit)
     audit = support_audit or {}
     if M.is_abstain(answer):
-        stop = "补充检索后证据仍不足，停止生成结论" if rounds > 1 else "首轮未找到可支持结论的证据"
+        # 拒答有两种来源，此前一律写成"证据不足"：
+        #   a) 真的没检索到可支持结论的证据
+        #   b) 证据检索到了、答案也生成了，但被输出校验的某道守卫拒掉
+        # 二者的排查方向完全相反，混成一句会把 (b) 误导成检索问题。
+        refused_by = list(audit.get("refused_by") or [])
+        if refused_by:
+            stop = "答案已生成，但被输出校验拒绝：%s" % "、".join(refused_by)
+        else:
+            stop = ("补充检索后证据仍不足，停止生成结论" if rounds > 1
+                    else "首轮未找到可支持结论的证据")
     elif audit.get("pruned"):
         # 裁掉过结论就不能再说「证据充分」——截图里 7 条删掉 5 条、0 条原文匹配，
         # 界面却写着「首轮证据充分」，因为这句文案是前端写死的、不看核验结果。

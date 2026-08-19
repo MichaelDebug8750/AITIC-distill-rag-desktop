@@ -4052,6 +4052,45 @@ class TestAgentAnswerLanguage:
         assert "unnamed_explicit_term" not in {
             item["code"] for item in directness["issues"]}
 
+    def test_guard_refusal_is_not_reported_as_missing_evidence(self, monkeypatch):
+        """守卫拒答不能写成"检索不到证据"。
+
+        两种拒答的排查方向完全相反：一种要去查检索与建库，另一种要去查输出
+        校验。此前它们共用同一句 stop_reason，而触发的守卫代码在
+        _enforce_final_directness 返回前就被丢掉了——返回的 directness 是在
+        拒答文本上重算的，issues 恒为空。锁住 refused_by 的落盘与透出。
+        """
+        import webui
+        monkeypatch.setattr(webui, "_TERM_DIRECTNESS", True)
+        claims = [{"claim": "Objective self-awareness is awareness of identity.",
+                   "measured": False, "supported": True, "citations": ["p.664"]}]
+        answer, cite, final_claims, audit, directness = webui._enforce_final_directness(
+            "Define Objective self-awareness.",
+            "Objective self-awareness is awareness of identity. [p.664]",
+            [0], [{"page": 664}],
+            ["The examination checks language, orientation, and self-awareness."],
+            {"ok": True, "fabricated": []}, claims, {"triggered": False})
+        assert answer == "[NO REFERENCE FOUND]"
+        # 守卫代码必须留在 audit 上；directness 此时已被重算成空 issues
+        assert audit["refused_by"] == ["unnamed_explicit_term"]
+        assert directness["issues"] == []
+
+        payload = webui._agent_payload(
+            answer, cite, [], 1, "auto", False, claims=final_claims,
+            support_audit=audit, directness=directness)
+        assert "unnamed_explicit_term" in payload["stop_reason"]
+        assert "未找到" not in payload["stop_reason"]
+
+    def test_real_missing_evidence_still_says_so(self):
+        """反向：没有守卫触发的拒答，仍要报"证据不足"。"""
+        import webui
+        payload = webui._agent_payload(
+            "[NO REFERENCE FOUND]", {"ok": True, "fabricated": []}, [], 2,
+            "auto", False, claims=[], support_audit={"triggered": False},
+            directness={"ok": True, "issues": []})
+        assert "证据仍不足" in payload["stop_reason"]
+        assert "输出校验" not in payload["stop_reason"]
+
     def test_term_evidence_guard_remains_candidate_only(self, monkeypatch):
         import webui
         monkeypatch.setattr(webui, "_TERM_DIRECTNESS", False)
@@ -5141,6 +5180,55 @@ class TestDesktopOllamaLifecycle:
 
         assert calls == [("stop", 5), ("start", 5)]
         assert result["restarted"] is True
+
+
+class TestRuntimeRecordsTheOllamaServer:
+    """跑分清单必须记服务端版本，不能只记客户端包版本。
+
+    v6 事故的真因是 Ollama 服务端 0.31.1 → 0.32.3；当时清单里只有
+    ``packages["ollama"]``（Python 客户端），两者独立升级，所以那份清单
+    根本记不到肇事者。这组用例锁住这一格不被删掉、也不被跟客户端混淆。
+    """
+
+    def _clear(self, webui):
+        webui._ollama_version_cache.update({"at": 0.0, "value": None})
+
+    def test_runtime_info_carries_a_separate_server_field(self, monkeypatch):
+        import webui
+        self._clear(webui)
+        monkeypatch.setattr(webui, "_ollama_server_version", lambda: "9.9.9")
+        info = webui._runtime_info()
+        assert info["ollama_server"] == "9.9.9"
+        # 客户端包版本仍在，且是另一格——不能用一个顶替另一个
+        assert "ollama" in info["packages"]
+        assert info["packages"]["ollama"] != info["ollama_server"]
+
+    def test_unreachable_server_degrades_instead_of_raising(self, monkeypatch):
+        """取不到版本只能降级标注，不能让整轮跑分挂在这一行。"""
+        import webui
+        self._clear(webui)
+        monkeypatch.setattr(webui.M, "_ollama_host", lambda: "http://127.0.0.1:1")
+        assert webui._ollama_server_version() == "unreachable"
+
+    def test_version_is_cached_but_not_forever(self, monkeypatch):
+        """缓存要挡住 /api/status 的轮询，又不能久到让起止两次记录看不出换版本。"""
+        import webui
+        self._clear(webui)
+        calls = []
+
+        def fake_host():
+            calls.append(1)
+            return "http://127.0.0.1:1"
+
+        monkeypatch.setattr(webui.M, "_ollama_host", fake_host)
+        webui._ollama_server_version()
+        webui._ollama_server_version()
+        assert len(calls) == 1, "TTL 内应命中缓存"
+        # 把缓存时间推到 TTL 之外，必须重新查
+        webui._ollama_version_cache["at"] -= webui._OLLAMA_VERSION_TTL + 1
+        webui._ollama_server_version()
+        assert len(calls) == 2, "超过 TTL 必须重新查"
+        assert webui._OLLAMA_VERSION_TTL <= 60, "TTL 不能长到掩盖跑分期间的服务端变更"
 
 
 class TestSuiteIntegrity:
